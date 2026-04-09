@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* REVA App — exacte kleurvariabelen */
+  --background: #f8f7f4;
+  --foreground: #1a1a1a;
+
+  --sidebar-bg: #18181a;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-text: #7c7c8a;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #e8632a;
+
+  --card-bg: #ffffff;
+  --card-border: #e8e5df;
+
+  /* Aliassen die in Tailwind via @theme inline gebruikt worden */
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --border: #e8e5df;
+
+  --muted: #f1ede8;
+  --muted-foreground: #6b7280;
+
+  /* Primaire accentkleur: REVA oranje */
+  --accent: #e8632a;
+  --accent-hover: #d4581f;
+  --accent-light: #fff3ee;
+
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─── Animaties ─────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes successPop {
+  0%   { transform: scale(0.85); }
+  60%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-fade-in     { animation: fadeIn 0.6s ease-out both; }
+.animate-fade-in-up  { animation: fadeInUp 0.6s ease-out both; }
+.animate-slide-right { animation: slideRight 0.7s ease-out both; }
+.animate-pulse-soft  { animation: pulseSoft 2s ease-in-out infinite; }
+.animate-success-pop { animation: successPop 0.4s ease-out both; }
+
+.delay-100  { animation-delay: 100ms; }
+.delay-200  { animation-delay: 200ms; }
+.delay-300  { animation-delay: 300ms; }
+.delay-400  { animation-delay: 400ms; }
+.delay-500  { animation-delay: 500ms; }
+.delay-600  { animation-delay: 600ms; }
+.delay-700  { animation-delay: 700ms; }
+.delay-800  { animation-delay: 800ms; }
+.delay-900  { animation-delay: 900ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* ─── Touch press state ─────────────────────────────────────── */
+.touch-press:active {
+  transform: scale(0.96);
+  opacity: 0.85;
+  transition: transform 0.1s, opacity 0.1s;
+}
+
+/* ─── Input componenten ─────────────────────────────────────── */
+.reva-input {
+  width: 100%;
+  background: transparent;
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  color: var(--foreground);
+}
+
+.reva-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.reva-input-wrapper {
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--border);
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.reva-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 99, 42, 0.12);
+}
+
+/* ─── Scrollbar styling ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1cdc7; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #b5b0a8; }
