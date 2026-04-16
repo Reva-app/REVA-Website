@@ -60,6 +60,7 @@ export function Footer() {
               {[
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Algemene Voorwaarden", href: "/algemene-voorwaarden" },
+                { label: "Account verwijderen", href: "/verwijder-account" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
                 <li key={l.href}>
