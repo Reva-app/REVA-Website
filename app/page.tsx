@@ -1,8 +1,10 @@
-import { LaunchPage } from "@/components/LaunchPage";
 import { HomePage } from "@/components/HomePage";
-import { LAUNCH_MODE } from "@/config/launch";
+import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export default function Home() {
-  if (LAUNCH_MODE) return <LaunchPage />;
-  return <HomePage />;
+  return (
+    <SiteLayout>
+      <HomePage />
+    </SiteLayout>
+  );
 }
