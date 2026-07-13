@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Functies — REVA App",
@@ -25,6 +26,10 @@ export const metadata: Metadata = {
     description: "Alle 9 functies van REVA voor een gestructureerd en overzichtelijk hersteltraject.",
     locale: "nl_NL",
     type: "website",
+    url: "https://www.reva-app.nl/functies",
+  },
+  alternates: {
+    canonical: "https://www.reva-app.nl/functies",
   },
 };
 
@@ -179,7 +184,14 @@ const features = [
 
 export default function FunctiesPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Functies", url: "https://www.reva-app.nl/functies" },
+        ])}
+      />
+      <SiteLayout>
       {/* Hero */}
       <section className="py-16 md:py-24" style={{ background: "#f8f7f4" }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
@@ -374,6 +386,7 @@ export default function FunctiesPage() {
           </AnimateIn>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

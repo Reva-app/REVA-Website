@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — REVA App",
@@ -10,11 +11,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://www.reva-app.nl/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Privacy Policy", url: "https://www.reva-app.nl/privacy-policy" },
+        ])}
+      />
+      <SiteLayout>
       <LegalLayout title="Privacy Policy" lastUpdated="16 april 2026">
 
         <p>
@@ -360,6 +371,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
       </LegalLayout>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

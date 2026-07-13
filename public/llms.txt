@@ -1,0 +1,30 @@
+# REVA
+
+> REVA is een persoonlijk herstel dashboard voor mensen die revalideren van een knieblessure, een knieoperatie of een ander langdurig hersteltraject. In de REVA App houd je op één plek dagelijkse check-ins, afspraken, trainingen, medicatie, je medisch dossier en je voortgang bij.
+
+REVA is een Nederlandstalig product. De marketingwebsite (deze site) legt uit wat REVA is en overtuigt bezoekers om een account aan te maken. De app zelf draait los op `dashboard.reva-app.nl`.
+
+## Kernfeiten
+
+- Doelgroep: mensen met een knieblessure, mensen na een knieoperatie (of andere ingreep zoals een heupvervanging), sporters in een langdurig revalidatietraject, en mensen in andere langdurige hersteltrajecten.
+- Kernfuncties: persoonlijk dashboard, dagelijkse check-ins (pijn, energie, stemming), afspraken bijhouden, trainingen en oefeningen volgen, medicatie- en pijnregistratie, digitaal dossier, voortgangsanalyse met grafieken, zorgverzekering & contactgegevens, doelen & mijlpalen.
+- Prijs: REVA Premium kost €6,99 per maand, met 4 dagen gratis proberen zonder creditcard. Maandelijks opzegbaar.
+- Beschikbaar via web, iOS en Android.
+- Taal: volledig Nederlandstalig product en website.
+- Privacy: gezondheidsdata wordt versleuteld opgeslagen en nooit verkocht of gedeeld met derden.
+
+## Pagina's
+
+- [Homepage](https://www.reva-app.nl/): Wat REVA is, voor wie het is en waarom het waardevol is tijdens herstel.
+- [Functies](https://www.reva-app.nl/functies): Gedetailleerde uitleg van alle functies van de REVA App.
+- [Prijzen](https://www.reva-app.nl/prijzen): Prijsmodel, proefperiode en veelgestelde vragen over abonnement en facturatie.
+- [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op de meest gestelde vragen over REVA.
+- [Blog](https://www.reva-app.nl/blog): Artikelen over herstel, revalidatie, knieoperaties en sporthervatting na een blessure.
+- [Documentatie](https://www.reva-app.nl/documentatie): Uitleg per functie voor nieuwe gebruikers.
+- [Contact](https://www.reva-app.nl/contact): Contactformulier voor vragen over REVA.
+
+## Overig
+
+- [Privacy policy](https://www.reva-app.nl/privacy-policy)
+- [Algemene voorwaarden](https://www.reva-app.nl/algemene-voorwaarden)
+- [Sitemap](https://www.reva-app.nl/sitemap.xml)

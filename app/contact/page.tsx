@@ -3,16 +3,34 @@ import { Mail, MessageSquare } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Contact — REVA App",
   description:
     "Heb je een vraag of wil je meer weten over REVA? Neem contact op, we helpen je graag.",
+  openGraph: {
+    title: "Contact — REVA App",
+    description: "Heb je een vraag of wil je meer weten over REVA? Neem contact op.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/contact",
+  },
+  alternates: {
+    canonical: "https://www.reva-app.nl/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Contact", url: "https://www.reva-app.nl/contact" },
+        ])}
+      />
+      <SiteLayout>
       {/* Hero */}
       <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
@@ -95,6 +113,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

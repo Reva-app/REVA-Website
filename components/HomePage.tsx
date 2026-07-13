@@ -21,8 +21,11 @@ import {
   Shield,
   Clock,
   Users,
+  Calendar,
+  Plus,
 } from "lucide-react";
 import { AnimateIn } from "./ui/AnimateIn";
+import { getSortedBlogPosts } from "@/lib/blog-posts";
 
 const DASHBOARD_URL = "https://dashboard.reva-app.nl";
 
@@ -174,6 +177,25 @@ const targetGroups = [
     title: "Langdurig hersteltraject",
     description:
       "Maanden of langer herstel vraagt om overzicht. REVA houdt alles bij — van medicatie en afspraken tot je voortgang week na week.",
+  },
+];
+
+const homeFaq = [
+  {
+    q: "Wat is REVA?",
+    a: "REVA is een persoonlijk herstel dashboard voor mensen die revalideren van een knieblessure, operatie of langdurig hersteltraject.",
+  },
+  {
+    q: "Kan ik REVA eerst gratis proberen?",
+    a: "Ja, je kunt REVA Premium 4 dagen volledig gratis proberen. Geen creditcard nodig.",
+  },
+  {
+    q: "Werkt REVA ook op mobiel?",
+    a: "Ja. REVA is beschikbaar op web, iOS en Android.",
+  },
+  {
+    q: "Is mijn data veilig bij REVA?",
+    a: "Ja. Je gezondheidsdata wordt versleuteld opgeslagen en nooit gedeeld of verkocht.",
   },
 ];
 
@@ -447,15 +469,17 @@ function UspSection() {
                   >
                     {u.highlight}
                   </span>
-                  <div className="flex items-end gap-2 mb-4">
-                    <p className="text-4xl font-bold" style={{ color: "#1a1a1a" }}>{u.stat}</p>
-                    <p className="text-sm mb-1.5" style={{ color: "#9ca3af" }}>{u.statLabel}</p>
-                  </div>
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: "#1c1c1e" }}
-                  >
-                    <Icon className="w-5 h-5 text-white" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: "#1c1c1e" }}
+                    >
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex items-end gap-1.5">
+                      <p className="text-4xl font-bold leading-none" style={{ color: "#1a1a1a" }}>{u.stat}</p>
+                      <p className="text-sm mb-0.5" style={{ color: "#9ca3af" }}>{u.statLabel}</p>
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>{u.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{u.description}</p>
@@ -700,6 +724,100 @@ function PricingTeaserSection() {
   );
 }
 
+function FaqTeaserSection() {
+  return (
+    <section className="py-16 md:py-20 border-t" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
+      <div className="max-w-3xl mx-auto px-5 md:px-8">
+        <AnimateIn direction="up" className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: "#1a1a1a" }}>
+            Veelgestelde vragen
+          </h2>
+        </AnimateIn>
+        <div className="space-y-3">
+          {homeFaq.map((item, i) => (
+            <AnimateIn key={item.q} direction="up" delay={i * 60}>
+              <div className="rounded-2xl p-5 border" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+                <p className="font-semibold text-sm mb-1.5" style={{ color: "#1a1a1a" }}>{item.q}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.a}</p>
+              </div>
+            </AnimateIn>
+          ))}
+        </div>
+        <AnimateIn direction="up" delay={240} className="mt-8 text-center">
+          <Link
+            href="/faq"
+            className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange"
+            style={{ color: "#e8632a" }}
+          >
+            Bekijk alle veelgestelde vragen
+            <Plus className="w-3.5 h-3.5" />
+          </Link>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+function BlogTeaserSection() {
+  const posts = getSortedBlogPosts().slice(0, 3);
+
+  return (
+    <section className="py-16 md:py-20 border-t" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <AnimateIn direction="up" className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
+            Vanuit de blog
+          </h2>
+          <p className="text-sm" style={{ color: "#6b7280" }}>
+            Praktische artikelen over herstel, revalidatie en sporthervatting.
+          </p>
+        </AnimateIn>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {posts.map((post, i) => (
+            <AnimateIn key={post.slug} direction="up" delay={i * 80}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="flex flex-col h-full rounded-2xl p-6 border transition-shadow hover:shadow-md"
+                style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
+              >
+                <span
+                  className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-3 px-2.5 py-1 rounded-full"
+                  style={{ color: "#e8632a", background: "#fff3ee" }}
+                >
+                  {post.category}
+                </span>
+                <p className="text-base font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
+                  {post.title}
+                </p>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                  {post.excerpt}
+                </p>
+                <span
+                  className="mt-auto flex items-center gap-1.5 text-xs pt-3 border-t"
+                  style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  {post.readTime} leestijd
+                </span>
+              </Link>
+            </AnimateIn>
+          ))}
+        </div>
+        <AnimateIn direction="up" delay={240} className="mt-8 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange"
+            style={{ color: "#e8632a" }}
+          >
+            Bekijk alle artikelen
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
 function CtaSection() {
   return (
     <section className="py-20 md:py-28" style={{ background: "#1c1c1e" }}>
@@ -754,6 +872,8 @@ export function HomePage() {
       <TrustSection />
       <TestimonialsSection />
       <PricingTeaserSection />
+      <FaqTeaserSection />
+      <BlogTeaserSection />
       <CtaSection />
     </>
   );

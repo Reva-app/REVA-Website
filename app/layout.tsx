@@ -111,44 +111,6 @@ const jsonLd = {
       },
       inLanguage: "nl-NL",
     },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.reva-app.nl/#faq",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Wat is REVA?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "REVA is een persoonlijk herstel dashboard voor mensen die herstellen van een knieblessure, operatie of langdurig revalidatietraject. Je houdt er dagelijkse check-ins, afspraken, medicatie, oefeningen en voortgang bij op één plek.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Voor wie is REVA bedoeld?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "REVA is bedoeld voor mensen met een knieblessure, na een knieoperatie of in een langdurig hersteltraject. Ook voor sporters die terug willen keren naar hun sport na een blessure.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Hoeveel kost REVA?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "REVA Premium kost €6,99 per maand. Je kunt 4 dagen volledig gratis proberen, zonder creditcard.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Kan ik REVA gratis proberen?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Ja, je kunt REVA Premium 4 dagen volledig gratis proberen. Geen creditcard nodig. Daarna betaal je €6,99 per maand.",
-          },
-        },
-      ],
-    },
   ],
 };
 

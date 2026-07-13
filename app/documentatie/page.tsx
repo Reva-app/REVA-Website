@@ -5,11 +5,22 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Documentatie — REVA App",
   description:
     "Alles wat je nodig hebt om aan de slag te gaan met REVA. Uitleg per functie, tips en veelgestelde vragen.",
+  openGraph: {
+    title: "Documentatie — REVA App",
+    description: "Uitleg per functie, tips en veelgestelde vragen om aan de slag te gaan met REVA.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/documentatie",
+  },
+  alternates: {
+    canonical: "https://www.reva-app.nl/documentatie",
+  },
 };
 
 const sections = [
@@ -168,7 +179,14 @@ const sections = [
 
 export default function DocumentatiePage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Documentatie", url: "https://www.reva-app.nl/documentatie" },
+        ])}
+      />
+      <SiteLayout>
       {/* Hero */}
       <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
@@ -235,6 +253,7 @@ export default function DocumentatiePage() {
           </div>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

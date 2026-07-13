@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Settings, Trash2, AlertTriangle, CheckCircle, ChevronRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Account verwijderen — REVA App",
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://www.reva-app.nl/verwijder-account",
   },
 };
 
@@ -47,7 +51,14 @@ const steps = [
 
 export default function VerwijderAccountPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Account verwijderen", url: "https://www.reva-app.nl/verwijder-account" },
+        ])}
+      />
+      <SiteLayout>
       {/* Hero */}
       <section className="py-14 md:py-18 border-b" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
         <div className="max-w-3xl mx-auto px-5 md:px-8">
@@ -216,6 +227,7 @@ export default function VerwijderAccountPage() {
           </AnimateIn>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Algemene Voorwaarden — REVA App",
   description:
     "De algemene voorwaarden van REVA App. Lees de afspraken en gebruiksregels van onze dienst.",
+  alternates: {
+    canonical: "https://www.reva-app.nl/algemene-voorwaarden",
+  },
 };
 
 export default function AlgemeneVoorwaardenPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Algemene Voorwaarden", url: "https://www.reva-app.nl/algemene-voorwaarden" },
+        ])}
+      />
+      <SiteLayout>
       <LegalLayout title="Algemene Voorwaarden" lastUpdated="9 april 2025">
         <h2>1. Definities</h2>
         <p>In deze algemene voorwaarden wordt verstaan onder:</p>
@@ -118,6 +129,7 @@ export default function AlgemeneVoorwaardenPage() {
           <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.
         </p>
       </LegalLayout>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

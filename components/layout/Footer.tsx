@@ -39,6 +39,8 @@ export function Footer() {
               {[
                 { label: "Functies", href: "/functies" },
                 { label: "Prijzen", href: "/prijzen" },
+                { label: "Blog", href: "/blog" },
+                { label: "FAQ", href: "/faq" },
                 { label: "Documentatie", href: "/documentatie" },
                 { label: "Inloggen", href: `${DASHBOARD_URL}/login` },
               ].map((l) => (

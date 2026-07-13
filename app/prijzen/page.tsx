@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Shield, Clock, CreditCard } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Prijzen — REVA App",
@@ -13,6 +14,10 @@ export const metadata: Metadata = {
     description: "4 dagen REVA Premium gratis proberen. Daarna €6,99/maand. Geen verborgen kosten.",
     locale: "nl_NL",
     type: "website",
+    url: "https://www.reva-app.nl/prijzen",
+  },
+  alternates: {
+    canonical: "https://www.reva-app.nl/prijzen",
   },
 };
 
@@ -57,9 +62,30 @@ const faq = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function PrijzenPage() {
   return (
-    <SiteLayout>
+    <>
+      <JsonLd data={faqJsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "https://www.reva-app.nl/" },
+          { name: "Prijzen", url: "https://www.reva-app.nl/prijzen" },
+        ])}
+      />
+      <SiteLayout>
       {/* Hero */}
       <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
@@ -226,6 +252,7 @@ export default function PrijzenPage() {
           </AnimateIn>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }
