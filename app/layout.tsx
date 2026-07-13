@@ -10,33 +10,41 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reva-app.nl"),
   title: {
-    default: "REVA — Grip op je herstel",
+    default: "REVA | Grip op je herstel",
     template: "%s | REVA App",
   },
   description:
-    "REVA is jouw persoonlijk herstel dashboard voor revalidatie na knieblessure, knieoperatie of langdurig hersteltraject. Houd overzicht over afspraken, check-ins, medicatie, oefeningen en voortgang — op één plek.",
+    "REVA is jouw persoonlijk herstel dashboard voor iedereen die grip wil op zijn of haar herstel: na een knieblessure, enkelblessure, schouderblessure, heupoperatie, rugklachten, sportblessure of een ander langdurig hersteltraject. Houd afspraken, dagelijkse check-ins, medicatie, oefeningen en voortgang overzichtelijk bij op één plek, zodat jij en je zorgverleners precies zien hoe je herstel verloopt.",
   keywords: [
     "herstel dashboard",
     "revalidatie app",
+    "blessure herstellen app",
+    "sportblessure herstel",
+    "herstel na operatie",
     "knieblessure app",
     "knieoperatie herstel",
+    "enkelblessure herstel",
+    "schouderblessure herstel",
+    "heupoperatie herstel",
+    "rugblessure herstel",
     "revalidatie bijhouden",
     "hersteltraject app",
+    "fysiotherapie app",
     "medicatie bijhouden",
     "afspraken fysiotherapeut",
-    "herstel na operatie",
     "revalidatie overzicht",
     "pijnscore bijhouden",
     "dagelijkse check-in herstel",
+    "grip op je herstel",
     "REVA app",
   ],
   authors: [{ name: "REVA App" }],
   creator: "REVA App",
   publisher: "REVA App",
   openGraph: {
-    title: "REVA — Grip op je herstel",
+    title: "REVA | Grip op je herstel",
     description:
-      "Jouw persoonlijk herstel dashboard. Houd grip op je revalidatie met dagelijkse check-ins, afspraken, medicatie en voortgangsanalyse. 4 dagen gratis proberen.",
+      "Jouw persoonlijk herstel dashboard voor elke blessure, operatie of langdurig hersteltraject. Houd grip op je herstel met dagelijkse check-ins, afspraken, medicatie en voortgangsanalyse. Nu volledig gratis te gebruiken.",
     siteName: "REVA App",
     locale: "nl_NL",
     type: "website",
@@ -44,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "REVA — Grip op je herstel",
+    title: "REVA | Grip op je herstel",
     description:
-      "Jouw persoonlijk herstel dashboard voor revalidatie na blessure of operatie. 4 dagen gratis proberen.",
+      "Jouw persoonlijk herstel dashboard voor iedereen die herstelt van een blessure of operatie. Nu volledig gratis te gebruiken.",
   },
   robots: {
     index: true,
@@ -78,7 +86,11 @@ const jsonLd = {
         url: "https://www.reva-app.nl/logo.png",
       },
       description:
-        "REVA is een persoonlijk herstel dashboard voor mensen met een knieblessure, na een operatie of in een langdurig revalidatietraject.",
+        "REVA is een persoonlijk herstel dashboard voor mensen met een knieblessure, enkelblessure, schouderblessure, heupoperatie, rugklachten, sportblessure of een ander langdurig revalidatietraject.",
+      founder: {
+        "@type": "Person",
+        name: "Stef Robberts",
+      },
       sameAs: [],
     },
     {
@@ -86,7 +98,7 @@ const jsonLd = {
       "@id": "https://www.reva-app.nl/#website",
       url: "https://www.reva-app.nl",
       name: "REVA App",
-      description: "Grip op je herstel — jouw persoonlijk revalidatie dashboard",
+      description: "Grip op je herstel: jouw persoonlijk revalidatie dashboard voor elke blessure of operatie",
       publisher: {
         "@id": "https://www.reva-app.nl/#organization",
       },
@@ -100,14 +112,13 @@ const jsonLd = {
       operatingSystem: "Web, iOS, Android",
       url: "https://www.reva-app.nl",
       description:
-        "Persoonlijk herstel dashboard voor revalidatie na knieblessure of operatie. Houd check-ins, afspraken, medicatie en voortgang bij op één plek.",
+        "Persoonlijk herstel dashboard voor revalidatie na een blessure of operatie, van knie tot schouder, enkel of heup. Houd check-ins, afspraken, medicatie en voortgang bij op één plek.",
       offers: {
         "@type": "Offer",
-        price: "6.99",
+        price: "0",
         priceCurrency: "EUR",
-        priceValidUntil: "2027-01-01",
         availability: "https://schema.org/InStock",
-        description: "REVA Premium — 4 dagen gratis proberen, daarna €6,99 per maand",
+        description: "REVA is momenteel in ontwikkeling en volledig gratis te gebruiken.",
       },
       inLanguage: "nl-NL",
     },

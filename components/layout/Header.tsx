@@ -8,7 +8,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Functies", href: "/functies" },
-  { label: "Prijzen", href: "/prijzen" },
+  { label: "Over REVA", href: "/over-reva" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -111,15 +111,24 @@ export function Header() {
           </a>
         </div>
 
-        {/* Mobile burger */}
-        <button
-          className="md:hidden p-2 rounded-lg transition-colors"
-          style={{ color: "#374151" }}
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Menu openen"
-        >
-          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile actions: directe inlogknop + menu */}
+        <div className="md:hidden flex items-center gap-2">
+          <a
+            href={`${DASHBOARD_URL}/login`}
+            className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors"
+            style={{ color: "#374151", borderColor: "#e8e5df", background: "#ffffff" }}
+          >
+            Inloggen
+          </a>
+          <button
+            className="p-2 rounded-lg transition-colors"
+            style={{ color: "#374151" }}
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Menu openen"
+          >
+            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -141,14 +150,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-3 flex flex-col gap-2 border-t mt-3" style={{ borderColor: "#e8e5df" }}>
-            <a
-              href={`${DASHBOARD_URL}/login`}
-              className="flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-medium border"
-              style={{ color: "#374151", borderColor: "#e8e5df" }}
-            >
-              Inloggen
-            </a>
+          <div className="pt-3 border-t mt-3" style={{ borderColor: "#e8e5df" }}>
             <a
               href={`${DASHBOARD_URL}/register`}
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium text-white"

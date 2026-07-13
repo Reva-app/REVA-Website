@@ -4,7 +4,7 @@ import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — REVA App",
+  title: "Privacy Policy",
   description:
     "Lees hoe REVA omgaat met jouw persoonsgegevens en gezondheidsdata. Wij verwerken jouw data uitsluitend voor jouw herstel en verkopen deze nooit aan derden.",
   robots: {

@@ -6,7 +6,7 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Account verwijderen — REVA App",
+  title: "Account verwijderen",
   description:
     "Lees hoe je jouw REVA account en alle bijbehorende gegevens permanent kunt verwijderen via de instellingen van de app.",
   robots: {
@@ -73,7 +73,7 @@ export default function VerwijderAccountPage() {
             </h1>
             <p className="text-base leading-relaxed max-w-xl" style={{ color: "#6b7280" }}>
               Je kunt je REVA account en alle bijbehorende gegevens op elk moment permanent verwijderen.
-              Dit is een onomkeerbare actie — lees deze pagina goed door voordat je verder gaat.
+              Dit is een onomkeerbare actie, dus lees deze pagina goed door voordat je verder gaat.
             </p>
           </AnimateIn>
         </div>

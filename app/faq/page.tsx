@@ -7,12 +7,12 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Veelgestelde vragen — REVA App",
+  title: "Veelgestelde vragen",
   description:
-    "Antwoorden op de meest gestelde vragen over REVA: wat het is, voor wie het bedoeld is, wat het kost en hoe veilig je data is.",
+    "Antwoorden op de meest gestelde vragen over REVA: wat het is, voor wie het bedoeld is, welke blessures en operaties je ermee kunt bijhouden, wat het kost en hoe veilig je data is.",
   openGraph: {
-    title: "Veelgestelde vragen — REVA App",
-    description: "Antwoorden op de meest gestelde vragen over REVA en de REVA App.",
+    title: "Veelgestelde vragen",
+    description: "Antwoorden op de meest gestelde vragen over REVA, voor iedereen die grip wil op zijn of haar herstel.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/faq",
@@ -30,19 +30,23 @@ const faqGroups = [
     items: [
       {
         q: "Wat is REVA?",
-        a: "REVA is een persoonlijk herstel dashboard voor mensen die revalideren van een knieblessure, een operatie of een langdurig hersteltraject. In de app houd je dagelijkse check-ins, afspraken, oefeningen, medicatie en voortgang bij op één overzichtelijke plek.",
+        a: "REVA is een persoonlijk herstel dashboard voor iedereen die grip wil op zijn of haar herstel. Of je nu revalideert van een blessure, een operatie hebt gehad of in een langdurig hersteltraject zit: in de app houd je dagelijkse check-ins, afspraken, oefeningen, medicatie en voortgang bij op één overzichtelijke plek.",
       },
       {
         q: "Voor wie is REVA bedoeld?",
-        a: "REVA is bedoeld voor mensen met een knieblessure, mensen die herstellen van een operatie zoals een knie- of heupoperatie, sporters in een langdurig revalidatietraject en iedereen die structuur wil tijdens een lang hersteltraject.",
+        a: "REVA is bedoeld voor iedereen die herstelt van een blessure of operatie: van een knieblessure, enkelblessure of schouderblessure tot een heupoperatie, rugklachten of een andere ingreep. Ook sporters in een langdurig revalidatietraject en mensen die simpelweg structuur willen tijdens hun herstel gebruiken REVA.",
       },
       {
         q: "Is REVA alleen voor knieblessures?",
-        a: "Nee. REVA is gebouwd met knieherstel als vertrekpunt, maar werkt voor elk langdurig hersteltraject waarin je afspraken, oefeningen, medicatie en voortgang wilt bijhouden.",
+        a: "Nee. REVA is oorspronkelijk ontstaan vanuit een knieblessure, maar werkt inmiddels voor elke blessure, operatie of langdurig hersteltraject waarin je afspraken, oefeningen, medicatie en voortgang wilt bijhouden. Denk aan enkel-, schouder-, heup- en rugklachten, maar ook aan herstel na een val of botbreuk.",
+      },
+      {
+        q: "Werkt REVA ook voor een enkelblessure, schouderblessure of sportblessure?",
+        a: "Ja. De functies van REVA zijn algemeen bruikbaar voor elk type blessure of operatie. Je kunt zelf aangeven waar je van herstelt, en de check-ins, oefeningen en pijnregistratie richt je in op jouw eigen situatie.",
       },
       {
         q: "Kan ik REVA gebruiken naast mijn fysiotherapeut?",
-        a: "Ja. REVA vervangt geen fysiotherapeut of arts, maar helpt je om je herstel gestructureerd bij te houden zodat je met concrete gegevens naar je afspraken gaat.",
+        a: "Ja. REVA vervangt geen fysiotherapeut, arts of ander zorgverlener, maar helpt je om je herstel gestructureerd bij te houden zodat je met concrete gegevens naar je afspraken gaat.",
       },
     ],
   },
@@ -51,7 +55,7 @@ const faqGroups = [
     items: [
       {
         q: "Wat kan ik allemaal bijhouden in REVA?",
-        a: "In REVA houd je je dagelijkse check-ins (pijn, energie, stemming), afspraken, trainingen en oefeningen, medicatie en pijnregistratie, je digitale dossier en je voortgang met grafieken bij.",
+        a: "In REVA houd je je dagelijkse check-ins (pijn, energie, stemming), afspraken, trainingen en oefeningen, medicatie en pijnregistratie, foto's van je herstel, je digitale dossier en je voortgang met grafieken bij.",
       },
       {
         q: "Hoeveel tijd kost een dagelijkse check-in?",
@@ -62,25 +66,25 @@ const faqGroups = [
         a: "Ja. Je voegt afspraken toe met datum, tijd en locatie en krijgt een herinnering. Medicatie en pijnregistratie houd je apart bij, zodat je patronen kunt herkennen, bijvoorbeeld dat je pijn toeneemt na een zware trainingsdag.",
       },
       {
+        q: "Kan ik foto's van mijn herstel toevoegen?",
+        a: "Ja. Je kunt foto's toevoegen aan je dossier of check-ins, bijvoorbeeld van een wond, zwelling of littekenherstel, zodat je zichtbaar kunt volgen hoe je herstel er ook uiterlijk aan toe is.",
+      },
+      {
         q: "Werkt REVA ook op mobiel?",
         a: "Ja. REVA is beschikbaar op web, iOS en Android, zodat je je herstel altijd en overal kunt bijhouden.",
       },
     ],
   },
   {
-    category: "Prijzen & proefperiode",
+    category: "Gratis gebruik",
     items: [
       {
         q: "Wat kost REVA?",
-        a: "REVA Premium kost €6,99 per maand.",
+        a: "Niets op dit moment. REVA is nog in ontwikkeling en is voorlopig volledig gratis te gebruiken, zonder creditcard.",
       },
       {
-        q: "Kan ik REVA eerst gratis proberen?",
-        a: "Ja. Je kunt REVA Premium 4 dagen volledig gratis proberen, zonder dat je een creditcard hoeft op te geven.",
-      },
-      {
-        q: "Kan ik op elk moment opzeggen?",
-        a: "Ja. Je abonnement is maandelijks opzegbaar, zonder langlopende verplichtingen of verborgen kosten.",
+        q: "Blijft REVA gratis?",
+        a: "Dat kunnen we nu nog niet garanderen. We bouwen REVA momenteel door samen met onze eerste gebruikers. Mochten we in de toekomst betaalde functies toevoegen, dan laten we dat ruim van tevoren weten.",
       },
     ],
   },
@@ -170,11 +174,11 @@ export default function FaqPage() {
                 Nog niet alle antwoorden gevonden?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                Stel je vraag rechtstreeks aan ons, of probeer REVA 4 dagen gratis en ervaar het zelf.
+                Stel je vraag rechtstreeks aan ons, of probeer REVA gratis en ervaar het zelf.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a href={`${DASHBOARD_URL}/register`} className="btn-primary px-6 py-3">
-                  Start 4 dagen gratis
+                  Start gratis
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link href="/contact" className="btn-dark px-6 py-3 text-sm">

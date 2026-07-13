@@ -18,12 +18,12 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Functies — REVA App",
+  title: "Functies",
   description:
-    "Ontdek alle 9 functies van REVA: dagelijkse check-ins, afspraken, medicatie, dossier, voortgangsanalyse, zorgverzekering en meer. Alles op één plek voor jouw hersteltraject.",
+    "Ontdek alle 9 functies van REVA: dagelijkse check-ins, afspraken, medicatie, dossier, voortgangsanalyse, zorgverzekering en meer. Geschikt voor iedereen die herstelt van een blessure of operatie, van knie en enkel tot schouder, heup en rug. Alles op één plek voor jouw hersteltraject.",
   openGraph: {
-    title: "Functies — REVA App",
-    description: "Alle 9 functies van REVA voor een gestructureerd en overzichtelijk hersteltraject.",
+    title: "Functies",
+    description: "Alle 9 functies van REVA voor een gestructureerd en overzichtelijk herstel, ongeacht je blessure of operatie.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/functies",
@@ -43,7 +43,7 @@ const features = [
     description:
       "Het dashboard is de eerste pagina die je ziet als je REVA opent. In één oogopslag zie je alles wat er toe doet: je dagelijkse streak, de pijnscore van gisteren, je volgende afspraak en je voortgang over de afgelopen week.",
     example:
-      "Stel je voor: je wordt wakker na je knieoperatie. Je opent REVA en ziet direct dat je al 12 dagen in herstel bent, dat je pijnscore gisteren 3.2 was (verbeterd ten opzichte van vorige week) en dat je morgen om 10:00 bij de fysiotherapeut bent.",
+      "Stel je voor: je wordt wakker na je operatie of een zware trainingsdag. Je opent REVA en ziet direct dat je al 12 dagen in herstel bent, dat je pijnscore gisteren 3.2 was, verbeterd ten opzichte van vorige week, en dat je morgen om 10:00 bij de fysiotherapeut bent.",
     benefits: [
       "Altijd direct overzicht zonder door meerdere schermen te scrollen",
       "Motiverende streak die je aanmoedigt elke dag bij te houden",
@@ -59,7 +59,7 @@ const features = [
     description:
       "Elke dag vul je een korte check-in in: hoe is je pijnniveau, hoe is je energieniveau en hoe voel je je mentaal? Dit duurt minder dan een minuut, maar levert over tijd waardevolle inzichten op over hoe je herstel werkelijk verloopt.",
     example:
-      "Na weken van dagelijkse check-ins zie je duidelijk dat je pijnscore elke maandag iets hoger is — dat wil zeggen na het weekend. Dit helpt je en je fysiotherapeut begrijpen wanneer je meer rust nodig hebt.",
+      "Na weken van dagelijkse check-ins zie je duidelijk dat je pijnscore elke maandag iets hoger is, dus na het weekend. Dit helpt je en je fysiotherapeut begrijpen wanneer je meer rust nodig hebt.",
     benefits: [
       "In minder dan 60 seconden gedaan",
       "Pijn, energie en stemming apart bijgehouden",
@@ -77,7 +77,7 @@ const features = [
     example:
       "Je hebt in de komende weken vijf afspraken verspreid over drie zorgverleners. In REVA staan ze netjes op volgorde met datum, tijd en locatie. Geen dubbele reserveringen, geen vergeten controles.",
     benefits: [
-      "Alle afspraken op één plek — geen losse aantekeningen meer",
+      "Alle afspraken op één plek, geen losse aantekeningen meer",
       "Automatische herinneringen zodat je nooit te laat bent",
       "Overzicht van komende én afgelopen afspraken",
       "Per afspraak notities toevoegen voor voorbereiding",
@@ -91,7 +91,7 @@ const features = [
     description:
       "Je fysiotherapeut geeft je oefeningen mee. In REVA registreer je welke oefeningen je hebt gedaan, hoe lang en hoe het voelde. Zo bouw je rustig en gestructureerd op, en zie je duidelijk je activiteitspatroon over de weken.",
     example:
-      "Je hebt 7 oefeningen per dag gekregen van je fysiotherapeut. In REVA vink je ze één voor één af als je ze hebt gedaan. Je ziet meteen: 5 van de 7 klaar. En volgende week zie je dat je consistent 6 of 7 oefeningen afrondde — dat is vooruitgang.",
+      "Je hebt 7 oefeningen per dag gekregen van je fysiotherapeut. In REVA vink je ze één voor één af als je ze hebt gedaan. Je ziet meteen: 5 van de 7 klaar. En volgende week zie je dat je consistent 6 of 7 oefeningen afrondde, en dat is vooruitgang.",
     benefits: [
       "Oefeningen afvinken geeft motivatie en overzicht",
       "Activiteitsniveau bijhouden over weken en maanden",
@@ -107,7 +107,7 @@ const features = [
     description:
       "Registreer welke medicatie je neemt, welke dosering en op welke tijden. REVA houdt de pijnontwikkeling bij naast je medicatiegebruik, zodat je zelf en je arts duidelijk kunnen zien wat werkt en wat niet.",
     example:
-      "Je gebruikt pijnstillers na je operatie. In REVA zie je dat je de eerste week 3 keer per dag ibuprofen nam, en dat dit na drie weken al terugliep naar eenmaal per dag — een teken dat je herstel vordert.",
+      "Je gebruikt pijnstillers na je operatie. In REVA zie je dat je de eerste week 3 keer per dag ibuprofen nam, en dat dit na drie weken al terugliep naar eenmaal per dag: een duidelijk teken dat je herstel vordert.",
     benefits: [
       "Nooit meer vergeten of je je medicatie al hebt genomen",
       "Pijnverloop direct naast medicatiegebruik zichtbaar",
@@ -121,9 +121,9 @@ const features = [
     title: "Persoonlijk dossier",
     subtitle: "Alles op één veilige plek",
     description:
-      "Upload brieven van de specialist, röntgenfoto's, operatieverslagen of uitslagen. Jouw digitale dossier in REVA is altijd beschikbaar — ook als je naar een nieuwe zorgverlener gaat of een second opinion vraagt.",
+      "Upload brieven van de specialist, röntgenfoto's, operatieverslagen of uitslagen. Jouw digitale dossier in REVA is altijd beschikbaar, ook als je naar een nieuwe zorgverlener gaat of een second opinion vraagt.",
     example:
-      "Je bent bij een nieuwe fysiotherapeut en moet je diagnose uitleggen. Je opent je REVA dossier, toont de brief van de orthopeed en de röntgenuitslag. De fysiotherapeut heeft direct de juiste context — in plaats van dat je alles uit je hoofd moet reconstrueren.",
+      "Je bent bij een nieuwe fysiotherapeut en moet je diagnose uitleggen. Je opent je REVA dossier, toont de brief van de orthopeed en de röntgenuitslag. De fysiotherapeut heeft direct de juiste context, in plaats van dat je alles uit je hoofd moet reconstrueren.",
     benefits: [
       "Documenten altijd bij de hand op je telefoon of laptop",
       "Veilig opgeslagen, versleuteld en privé",
@@ -139,7 +139,7 @@ const features = [
     description:
       "REVA zet je dagelijkse check-ins en activiteitsdata om in inzichtelijke grafieken. Je ziet trends in pijn, energie en stemming over weken. Dat geeft je motivatie op goede dagen en inzicht op moeilijke momenten.",
     example:
-      "Na 6 weken revalidatie open je de analyseweergave in REVA. Je ziet dat je pijnscore van gemiddeld 4.5 naar 2.1 is gedaald — een halvering. Je energieniveau is elk week iets gestegen. Dat zijn concrete bewijzen dat je herstel werkt.",
+      "Na 6 weken revalidatie open je de analyseweergave in REVA. Je ziet dat je pijnscore van gemiddeld 4.5 naar 2.1 is gedaald, ongeveer een halvering. Je energieniveau is elk week iets gestegen. Dat zijn concrete bewijzen dat je herstel werkt.",
     benefits: [
       "Grafieken van pijn, energie en stemming over tijd",
       "Weekoverzichten om trends te herkennen",
@@ -155,7 +155,7 @@ const features = [
     description:
       "Sla je zorgverzekeringsgegevens op in REVA: je polisnummer, de naam van je zorgverzekeraar, het telefoonnummer van je ziekenhuis en andere relevante contacten. Zo heb je altijd alles bij de hand als je snel moet bellen of een afspraak wil maken.",
     example:
-      "Je wilt het ziekenhuis bellen om een afspraak te verzetten, maar je weet je polisnummer niet meer uit je hoofd en je verzekeringspas ligt ergens thuis. In REVA open je de zorgverzekeringskaart — alles staat er direct in.",
+      "Je wilt het ziekenhuis bellen om een afspraak te verzetten, maar je weet je polisnummer niet meer uit je hoofd en je verzekeringspas ligt ergens thuis. In REVA open je de zorgverzekeringskaart, en alles staat er direct in.",
     benefits: [
       "Polisnummer en verzekeringsnaam altijd bij de hand",
       "Contacten van het ziekenhuis, huisarts en specialist opslaan",
@@ -169,9 +169,9 @@ const features = [
     title: "Doelen & mijlpalen",
     subtitle: "Van kleine stap naar volledig herstel",
     description:
-      "Stel persoonlijke hersteldoelen in en vier elke mijlpaal die je bereikt. Of het nu gaat om 'lopen zonder kruk', 'volledig trap op en af' of 'terugkeren naar sport' — REVA helpt je je herstelreis te structureren en te motiveren.",
+      "Stel persoonlijke hersteldoelen in en vier elke mijlpaal die je bereikt. Of het nu gaat om 'lopen zonder kruk', 'volledig trap op en af' of 'terugkeren naar sport': REVA helpt je je herstelreis te structureren en te motiveren.",
     example:
-      "Je stelt het doel in: 'Binnen 8 weken 10 minuten lopen zonder pijn'. Na 6 weken bereik je dit doel 2 weken eerder dan gepland. REVA markeert dit als een behaalde mijlpaal — een moment om trots op te zijn.",
+      "Je stelt het doel in: 'Binnen 8 weken 10 minuten lopen zonder pijn'. Na 6 weken bereik je dit doel 2 weken eerder dan gepland. REVA markeert dit als een behaalde mijlpaal, een moment om trots op te zijn.",
     benefits: [
       "Concrete doelen geven richting aan je hersteltraject",
       "Mijlpalen vieren geeft motivatie om door te gaan",
@@ -204,7 +204,10 @@ export default function FunctiesPage() {
               <span style={{ color: "#e8632a" }}>gestructureerd herstel</span>
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-              REVA bundelt alles wat je nodig hebt tijdens je revalidatie. Van dagelijkse check-ins tot zorgverzekering en hersteldoelen — op één plek, overzichtelijk en betrouwbaar.
+              REVA bundelt alles wat je nodig hebt tijdens je revalidatie, of je nu herstelt van een
+              knieblessure, enkelblessure, schouderoperatie, heupvervanging of een ander langdurig
+              hersteltraject. Van dagelijkse check-ins tot zorgverzekering en hersteldoelen: alles op
+              één plek, overzichtelijk en betrouwbaar.
             </p>
           </AnimateIn>
 
@@ -213,14 +216,14 @@ export default function FunctiesPage() {
               href={`${DASHBOARD_URL}/register`}
               className="btn-primary px-5 py-3 text-sm"
             >
-              Start 4 dagen gratis
+              Start gratis
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              href="/prijzen"
+              href="/faq"
               className="btn-secondary px-5 py-3 text-sm"
             >
-              Bekijk prijzen
+              Veelgestelde vragen
             </Link>
           </AnimateIn>
         </div>
@@ -365,24 +368,24 @@ export default function FunctiesPage() {
               Alle 9 modules direct beschikbaar
             </h2>
             <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#7c7c8a" }}>
-              Begin met 4 dagen REVA Premium volledig gratis. Geen creditcard, geen gedoe. Gewoon beginnen en zelf ervaren hoe het werkt.
+              REVA is nu volledig gratis te gebruiken. Geen creditcard, geen gedoe. Gewoon beginnen en zelf ervaren hoe het werkt.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={`${DASHBOARD_URL}/register`}
                 className="btn-primary px-6 py-3.5 text-base"
               >
-                Start 4 dagen gratis
+                Start gratis
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link
-                href="/prijzen"
+                href="/faq"
                 className="btn-dark px-6 py-3.5 text-sm"
               >
-                Bekijk de prijs
+                Veelgestelde vragen
               </Link>
             </div>
-            <p className="mt-5 text-xs" style={{ color: "#52525e" }}>Daarna €6,99/maand · Altijd opzegbaar</p>
+            <p className="mt-5 text-xs" style={{ color: "#52525e" }}>Nu volledig gratis · Geen creditcard nodig</p>
           </AnimateIn>
         </div>
       </section>

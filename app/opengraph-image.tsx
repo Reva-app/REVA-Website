@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "REVA — Grip op je herstel";
+export const alt = "REVA: grip op je herstel";
 export const size = {
   width: 1200,
   height: 630,
@@ -56,7 +56,7 @@ export default async function Image() {
             Grip op je herstel
           </div>
           <div style={{ fontSize: "30px", color: "#9ca3af", maxWidth: "820px" }}>
-            Persoonlijk herstel dashboard voor revalidatie na een knieblessure,
+            Persoonlijk herstel dashboard voor revalidatie na een blessure,
             operatie of langdurig hersteltraject.
           </div>
         </div>

@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
-    // Fout van Klaviyo — log details server-side, stuur generieke melding
+    // Fout van Klaviyo: log details server-side, stuur generieke melding
     const errorBody = await response.json().catch(() => null);
     console.error("Klaviyo fout:", response.status, errorBody);
 

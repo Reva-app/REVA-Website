@@ -20,7 +20,7 @@ export function ContactForm() {
     }
     setError("");
     setStatus("loading");
-    // Simulate — vervang door echte API call
+    // Simulate: vervang door echte API call
     await new Promise((r) => setTimeout(r, 1000));
     setStatus("success");
   };

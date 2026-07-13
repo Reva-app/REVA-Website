@@ -8,12 +8,12 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Documentatie — REVA App",
+  title: "Documentatie",
   description:
-    "Alles wat je nodig hebt om aan de slag te gaan met REVA. Uitleg per functie, tips en veelgestelde vragen.",
+    "Alles wat je nodig hebt om aan de slag te gaan met REVA, ongeacht welke blessure of operatie je herstelt. Uitleg per functie, tips en veelgestelde vragen.",
   openGraph: {
-    title: "Documentatie — REVA App",
-    description: "Uitleg per functie, tips en veelgestelde vragen om aan de slag te gaan met REVA.",
+    title: "Documentatie",
+    description: "Uitleg per functie, tips en veelgestelde vragen om aan de slag te gaan met REVA, voor elke blessure of operatie.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/documentatie",
@@ -163,11 +163,11 @@ const sections = [
       },
       {
         heading: "Kan ik mijn gegevens exporteren?",
-        text: "Ja, met REVA Pro kun je een export maken van je check-ins, afspraken en andere gegevens als PDF of CSV.",
+        text: "Ja, je kunt een export maken van je check-ins, afspraken en andere gegevens als PDF of CSV, bijvoorbeeld om te delen met je fysiotherapeut of arts.",
       },
       {
         heading: "Is REVA geschikt voor alle soorten blessures?",
-        text: "Ja. REVA is ontworpen voor iedereen in een hersteltraject, ongeacht het type blessure of operatie.",
+        text: "Ja. REVA is ontworpen voor iedereen in een hersteltraject, ongeacht het type blessure of operatie. Van een knieblessure, enkelblessure of schouderoperatie tot een heupvervanging, rugklachten of herstel na een val of botbreuk.",
       },
       {
         heading: "Wat doe ik als ik een probleem heb?",
@@ -209,7 +209,7 @@ export default function DocumentatiePage() {
         <div className="max-w-4xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
 
-            {/* Sidebar nav — CSS-only hover, no event handlers */}
+            {/* Sidebar nav: CSS-only hover, no event handlers */}
             <aside className="hidden md:block">
               <div className="sticky top-24 space-y-1">
                 {sections.map((s) => {

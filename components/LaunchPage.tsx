@@ -193,7 +193,7 @@ const DashboardMockup = () => (
               style={{ borderColor: "#e8632a", background: "#fff3ee" }}
             >
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#e8632a" }} />
-              <span className="text-[9px] font-medium" style={{ color: "#e8632a" }}>Fase 2 — Vroeg herstel</span>
+              <span className="text-[9px] font-medium" style={{ color: "#e8632a" }}>Fase 2: vroeg herstel</span>
             </div>
             <div className="flex gap-5 mt-2.5">
               <div>

@@ -51,6 +51,12 @@ body {
   height: 100%;
 }
 
+html {
+  /* Iets grotere basis dan de standaard 16px, voor betere leesbaarheid
+     (ook voor bezoekers die minder goed zien tijdens hun herstel). */
+  font-size: 112.5%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

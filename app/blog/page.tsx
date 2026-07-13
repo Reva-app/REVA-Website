@@ -4,15 +4,16 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BlogIllustration } from "@/components/blog/BlogIllustration";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog — REVA App",
+  title: "Blog",
   description:
-    "Artikelen over herstel, revalidatie, knieoperaties en sporthervatting na een blessure. Praktische uitleg om grip te houden op je hersteltraject.",
+    "Artikelen over herstel, revalidatie, operaties en sporthervatting na een blessure. Praktische uitleg om grip te houden op je hersteltraject, welke blessure of operatie je ook hebt.",
   openGraph: {
-    title: "Blog — REVA App",
-    description: "Artikelen over herstel, revalidatie en sporthervatting na een blessure.",
+    title: "Blog",
+    description: "Artikelen over herstel, revalidatie en sporthervatting na een blessure of operatie.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/blog",
@@ -71,7 +72,9 @@ export default function BlogIndexPage() {
                 Uitleg en inzichten over herstel
               </h1>
               <p className="text-lg" style={{ color: "#6b7280" }}>
-                Praktische artikelen over revalidatie, knieoperaties en sporthervatting — geschreven om je te helpen grip te houden op je hersteltraject.
+                Praktische artikelen over revalidatie, operaties en sporthervatting, geschreven om
+                je te helpen grip te houden op je hersteltraject, ongeacht welke blessure of
+                operatie je herstelt.
               </p>
             </AnimateIn>
           </div>
@@ -85,33 +88,36 @@ export default function BlogIndexPage() {
                 <AnimateIn key={post.slug} direction="up" delay={i * 60}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex flex-col h-full rounded-2xl p-6 border transition-shadow hover:shadow-md"
+                    className="flex flex-col h-full rounded-2xl border overflow-hidden transition-shadow hover:shadow-md"
                     style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
                   >
-                    <span
-                      className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-4 px-2.5 py-1 rounded-full"
-                      style={{ color: "#e8632a", background: "#fff3ee" }}
-                    >
-                      {post.category}
-                    </span>
-                    <h2 className="text-lg font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
-                      {post.title}
-                    </h2>
-                    <p className="text-sm leading-relaxed mb-5" style={{ color: "#6b7280" }}>
-                      {post.excerpt}
-                    </p>
-                    <div
-                      className="mt-auto flex items-center gap-4 text-xs pt-4 border-t"
-                      style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
-                    >
-                      <span className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {formatDate(post.publishedAt)}
+                    <BlogIllustration category={post.category} className="aspect-[16/9]" />
+                    <div className="flex flex-col flex-1 p-6">
+                      <span
+                        className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-4 px-2.5 py-1 rounded-full"
+                        style={{ color: "#e8632a", background: "#fff3ee" }}
+                      >
+                        {post.category}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5" />
-                        {post.readTime}
-                      </span>
+                      <h2 className="text-lg font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
+                        {post.title}
+                      </h2>
+                      <p className="text-sm leading-relaxed mb-5" style={{ color: "#6b7280" }}>
+                        {post.excerpt}
+                      </p>
+                      <div
+                        className="mt-auto flex items-center gap-4 text-xs pt-4 border-t"
+                        style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
+                      >
+                        <span className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" />
+                          {formatDate(post.publishedAt)}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5" />
+                          {post.readTime}
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 </AnimateIn>
@@ -128,10 +134,10 @@ export default function BlogIndexPage() {
                 Klaar om je herstel bij te houden?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                Start vandaag 4 dagen gratis met REVA en ervaar hoe overzicht je herstel makkelijker maakt.
+                Start vandaag gratis met REVA en ervaar hoe overzicht je herstel makkelijker maakt.
               </p>
               <a href="https://dashboard.reva-app.nl/register" className="btn-primary px-6 py-3">
-                Start 4 dagen gratis
+                Start gratis
                 <ArrowRight className="w-4 h-4" />
               </a>
             </AnimateIn>

@@ -5,6 +5,7 @@ import { ArrowRight, Calendar, Clock, ArrowLeft } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BlogIllustration } from "@/components/blog/BlogIllustration";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 type Props = {
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://www.reva-app.nl/blog/${post.slug}`;
 
   return {
-    title: `${post.title} — REVA App`,
+    title: post.title,
     description: post.metaDescription,
     openGraph: {
       title: post.title,
@@ -121,7 +122,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
                 {post.title}
               </h1>
-              <div className="flex items-center gap-4 text-sm" style={{ color: "#9ca3af" }}>
+              <div className="flex items-center gap-4 text-sm mb-8" style={{ color: "#9ca3af" }}>
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" />
                   {formatDate(post.publishedAt)}
@@ -131,6 +132,9 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.readTime} leestijd
                 </span>
               </div>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={80}>
+              <BlogIllustration category={post.category} className="w-full aspect-[21/9] rounded-2xl" />
             </AnimateIn>
           </div>
         </section>
@@ -183,10 +187,10 @@ export default async function BlogPostPage({ params }: Props) {
                   Houd grip op je eigen herstel
                 </h3>
                 <p className="text-sm mb-5" style={{ color: "#7c7c8a" }}>
-                  Start vandaag 4 dagen gratis met REVA. Geen creditcard nodig.
+                  Start vandaag gratis met REVA. Geen creditcard nodig.
                 </p>
                 <a href="https://dashboard.reva-app.nl/register" className="btn-primary px-5 py-2.5 text-sm">
-                  Start 4 dagen gratis
+                  Start gratis
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

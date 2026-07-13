@@ -4,7 +4,7 @@ import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Algemene Voorwaarden — REVA App",
+  title: "Algemene Voorwaarden",
   description:
     "De algemene voorwaarden van REVA App. Lees de afspraken en gebruiksregels van onze dienst.",
   alternates: {
@@ -65,65 +65,59 @@ export default function AlgemeneVoorwaardenPage() {
           dan 16 jaar hebben toestemming nodig van een ouder of voogd.
         </p>
 
-        <h2>5. Abonnement en betaling</h2>
+        <h2>5. Gratis gebruik tijdens ontwikkeling</h2>
         <p>
-          Na de gratis proefperiode van 30 dagen kun je kiezen voor een betaald abonnement.
-          De actuele prijzen zijn te vinden op de prijzenpagina. Betaling verloopt via de
-          aangeboden betaalmethoden.
+          REVA is momenteel in ontwikkeling. De dienst is op dit moment volledig gratis te
+          gebruiken, zonder creditcard en zonder verplichtingen. Er is op dit moment geen
+          betaald abonnement.
         </p>
         <p>
-          Abonnementen worden automatisch verlengd tenzij je opzegt. Opzeggen kan op elk moment
-          via je accountinstellingen, met ingang van de volgende facturatieperiode.
-        </p>
-
-        <h2>6. Proefperiode</h2>
-        <p>
-          Nieuwe gebruikers krijgen een proefperiode van 30 dagen met volledige toegang tot alle
-          functies. Er is geen creditcard vereist voor de proefperiode. Na afloop van de
-          proefperiode wordt het account automatisch omgezet naar de beperkte gratis versie,
-          tenzij je een betaald abonnement activeert.
+          Wij kunnen niet garanderen dat de dienst altijd gratis blijft. Mochten wij in de
+          toekomst besluiten om betaalde functies of een abonnement in te voeren, dan
+          informeren wij bestaande gebruikers hierover ruim van tevoren, zodat je zelf kunt
+          beslissen of je wilt doorgaan.
         </p>
 
-        <h2>7. Beschikbaarheid en onderhoud</h2>
+        <h2>6. Beschikbaarheid en onderhoud</h2>
         <p>
           Wij streven naar een beschikbaarheid van 99,5%. Gepland onderhoud kondigen wij
           vooraf aan. Wij zijn niet aansprakelijk voor schade als gevolg van tijdelijke
           onbeschikbaarheid.
         </p>
 
-        <h2>8. Intellectueel eigendom</h2>
+        <h2>7. Intellectueel eigendom</h2>
         <p>
           Alle rechten op de REVA App, inclusief software, ontwerp, teksten en merknamen,
           berusten bij REVA. Jij bezit alle rechten op de gegevens die je zelf invoert. Wij
           claimen geen eigendom op jouw persoonlijke gegevens.
         </p>
 
-        <h2>9. Aansprakelijkheid</h2>
+        <h2>8. Aansprakelijkheid</h2>
         <p>
           REVA is niet aansprakelijk voor indirecte schade, gevolgschade of gederfde winst.
           Onze aansprakelijkheid is in alle gevallen beperkt tot het bedrag dat jij in de
-          afgelopen drie maanden aan abonnement hebt betaald.
+          afgelopen drie maanden eventueel aan REVA hebt betaald.
         </p>
         <p>
           REVA is geen medisch hulpmiddel en is niet gecertificeerd als zodanig. Het gebruik
           van de app vervangt nooit professioneel medisch advies.
         </p>
 
-        <h2>10. Beëindiging</h2>
+        <h2>9. Beëindiging</h2>
         <p>
           Je kunt je account op elk moment verwijderen via de instellingen. Wij behouden het
           recht om accounts te sluiten bij misbruik of overtreding van deze voorwaarden.
           Bij beëindiging worden jouw gegevens binnen 30 dagen verwijderd.
         </p>
 
-        <h2>11. Toepasselijk recht</h2>
+        <h2>10. Toepasselijk recht</h2>
         <p>
           Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd
           aan de bevoegde rechter in Nederland. Wij geven altijd de voorkeur aan een oplossing
           in onderling overleg voordat een geschil aan de rechter wordt voorgelegd.
         </p>
 
-        <h2>12. Contact</h2>
+        <h2>11. Contact</h2>
         <p>
           Bij vragen over deze algemene voorwaarden kun je contact opnemen via{" "}
           <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.

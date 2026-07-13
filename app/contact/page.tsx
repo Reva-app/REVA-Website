@@ -6,11 +6,11 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact — REVA App",
+  title: "Contact",
   description:
     "Heb je een vraag of wil je meer weten over REVA? Neem contact op, we helpen je graag.",
   openGraph: {
-    title: "Contact — REVA App",
+    title: "Contact",
     description: "Heb je een vraag of wil je meer weten over REVA? Neem contact op.",
     locale: "nl_NL",
     type: "website",

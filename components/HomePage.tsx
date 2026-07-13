@@ -25,6 +25,7 @@ import {
   Plus,
 } from "lucide-react";
 import { AnimateIn } from "./ui/AnimateIn";
+import { BlogIllustration } from "./blog/BlogIllustration";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 
 const DASHBOARD_URL = "https://dashboard.reva-app.nl";
@@ -48,7 +49,7 @@ const features = [
     icon: CalendarDays,
     title: "Afspraken bijhouden",
     description:
-      "Fysiotherapeut, specialist of controle — plan en bekijk al je afspraken op één plek.",
+      "Fysiotherapeut, specialist of controle: plan en bekijk al je afspraken op één plek, met herinneringen zodat je nooit iets mist.",
   },
   {
     icon: Dumbbell,
@@ -66,7 +67,7 @@ const features = [
     icon: FolderOpen,
     title: "Persoonlijk dossier",
     description:
-      "Diagnoses, röntgenfoto's, brieven van specialisten — alles veilig opgeslagen in jouw digitale dossier.",
+      "Diagnoses, röntgenfoto's, operatieverslagen en brieven van specialisten: alles veilig en overzichtelijk opgeslagen in jouw digitale dossier.",
   },
   {
     icon: BarChart3,
@@ -84,7 +85,7 @@ const features = [
     icon: Target,
     title: "Doelen & mijlpalen",
     description:
-      "Stel hersteldoelen in en vier elke mijlpaal. Van eerste stap zonder kruk tot volledig herstel — stap voor stap vooruit.",
+      "Stel hersteldoelen in en vier elke mijlpaal, van de eerste stap zonder kruk tot volledig herstel. Stap voor stap vooruit, met concreet bewijs van je voortgang.",
   },
 ];
 
@@ -93,7 +94,7 @@ const usps = [
     icon: Layers,
     title: "9 functionaliteiten",
     description:
-      "Van dagelijkse check-ins tot zorgverzekering en hersteldoelen — REVA bundelt alles wat je nodig hebt in één complete herstelapp. Geen losse schriftjes of aparte apps meer.",
+      "Van dagelijkse check-ins tot zorgverzekering en hersteldoelen: REVA bundelt alles wat je nodig hebt tijdens je herstel in één complete app. Geen losse schriftjes of aparte apps meer nodig.",
     highlight: "Compleet",
     stat: "9",
     statLabel: "modules",
@@ -111,7 +112,7 @@ const usps = [
     icon: Smartphone,
     title: "Altijd bij de hand",
     description:
-      "REVA werkt op je telefoon, tablet en laptop. Je gegevens zijn gesynchroniseerd en overal bereikbaar — thuis, bij je fysiotherapeut of in het ziekenhuis.",
+      "REVA werkt op je telefoon, tablet en laptop. Je gegevens zijn automatisch gesynchroniseerd en altijd bereikbaar, thuis, onderweg, bij je fysiotherapeut of tijdens een controleafspraak in het ziekenhuis.",
     highlight: "Toegankelijk",
     stat: "24/7",
     statLabel: "beschikbaar",
@@ -164,30 +165,30 @@ const targetGroups = [
     icon: Users,
     title: "Na een operatie",
     description:
-      "Knieoperatie, heupvervanging of andere ingreep — REVA helpt je gestructureerd te revalideren met een helder overzicht van je herstelproces.",
+      "Knieoperatie, heupvervanging, schouderoperatie of een andere ingreep: REVA helpt je gestructureerd te revalideren met een helder overzicht van je hele herstelproces.",
   },
   {
     icon: Dumbbell,
     title: "Sporters met een blessure",
     description:
-      "Blessures kosten tijd en frustratie. REVA geeft je structuur tijdens je herstel, zodat je verantwoord en gemotiveerd terugkeert naar je sport.",
+      "Een knieblessure, enkelblessure of andere sportblessure kost tijd en frustratie. REVA geeft je structuur tijdens je herstel, zodat je verantwoord en gemotiveerd terugkeert naar je sport.",
   },
   {
     icon: Clock,
     title: "Langdurig hersteltraject",
     description:
-      "Maanden of langer herstel vraagt om overzicht. REVA houdt alles bij — van medicatie en afspraken tot je voortgang week na week.",
+      "Maanden of langer herstellen vraagt om overzicht. REVA houdt alles voor je bij, van medicatie en afspraken tot je voortgang week na week en maand na maand.",
   },
 ];
 
 const homeFaq = [
   {
     q: "Wat is REVA?",
-    a: "REVA is een persoonlijk herstel dashboard voor mensen die revalideren van een knieblessure, operatie of langdurig hersteltraject.",
+    a: "REVA is een persoonlijk herstel dashboard voor iedereen die revalideert van een blessure, operatie of langdurig hersteltraject: van knie en enkel tot schouder, heup en rug.",
   },
   {
-    q: "Kan ik REVA eerst gratis proberen?",
-    a: "Ja, je kunt REVA Premium 4 dagen volledig gratis proberen. Geen creditcard nodig.",
+    q: "Wat kost REVA?",
+    a: "Niets op dit moment. REVA is nu volledig gratis te gebruiken terwijl we de app samen met onze eerste gebruikers doorontwikkelen.",
   },
   {
     q: "Werkt REVA ook op mobiel?",
@@ -235,7 +236,7 @@ function PhoneMockup() {
               <p className="text-[9px] mb-2" style={{ color: "#6b7280" }}>Herstel van knieband blessure · dag 33</p>
               <div className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1" style={{ borderColor: "#e8632a", background: "#fff3ee" }}>
                 <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#e8632a" }} />
-                <span className="text-[9px] font-medium" style={{ color: "#e8632a" }}>Fase 2 — Vroeg herstel</span>
+                <span className="text-[9px] font-medium" style={{ color: "#e8632a" }}>Fase 2: vroeg herstel</span>
               </div>
               <div className="flex gap-5 mt-2.5">
                 <div><p className="text-xl font-bold" style={{ color: "#1a1a1a" }}>33</p><p className="text-[9px]" style={{ color: "#6b7280" }}>dagen herstel</p></div>
@@ -312,8 +313,10 @@ function HeroSection() {
               <span style={{ color: "#e8632a" }}>dag voor dag.</span>
             </h1>
             <p className="animate-fade-in-up delay-300 text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-              REVA helpt je alles bij te houden wat er tijdens je revalidatie toe doet.
-              Van afspraken en check-ins tot medicatie en voortgang. Overzichtelijk, rustig en betrouwbaar.
+              REVA helpt je alles bij te houden wat er tijdens je herstel toe doet, of je nu revalideert
+              van een knieblessure, enkelblessure, schouderoperatie, heupvervanging of een ander langdurig
+              hersteltraject. Van afspraken en dagelijkse check-ins tot medicatie, oefeningen en voortgang:
+              overzichtelijk, rustig en betrouwbaar op één plek.
             </p>
             <div className="animate-fade-in-up delay-400 flex flex-wrap gap-3">
               <a
@@ -323,23 +326,23 @@ function HeroSection() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
               >
-                Start 4 dagen gratis
+                Start gratis
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link
-                href="/prijzen"
+                href="/functies"
                 className="flex items-center gap-2 px-5 py-3 rounded-lg font-medium border transition-colors"
                 style={{ color: "#374151", borderColor: "#e8e5df", background: "#ffffff" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#f9fafb"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#ffffff"; }}
               >
-                Bekijk prijzen
+                Bekijk functies
               </Link>
             </div>
-            <div className="animate-fade-in-up delay-500 flex items-center gap-5">
+            <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-5">
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#16a34a" }} />
-                <span className="text-sm" style={{ color: "#6b7280" }}>4 dagen Premium gratis</span>
+                <span className="text-sm" style={{ color: "#6b7280" }}>Nu volledig gratis</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#16a34a" }} />
@@ -347,12 +350,12 @@ function HeroSection() {
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#16a34a" }} />
-                <span className="text-sm" style={{ color: "#6b7280" }}>Altijd opzegbaar</span>
+                <span className="text-sm" style={{ color: "#6b7280" }}>In 1 minuut aan de slag</span>
               </div>
             </div>
           </div>
 
-          {/* Right — mockup */}
+          {/* Right: mockup */}
           <div className="flex justify-center lg:justify-end animate-slide-right delay-300">
             <PhoneMockup />
           </div>
@@ -365,7 +368,7 @@ function HeroSection() {
 function StatsSection() {
   const stats = [
     { value: "9", label: "modules in één app" },
-    { value: "4 dagen", label: "Premium gratis proberen" },
+    { value: "€0", label: "nu volledig gratis te gebruiken" },
     { value: "100%", label: "jouw data, jouw privacy" },
   ];
   return (
@@ -396,7 +399,9 @@ function FeaturesSection() {
             Alles in één app
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            REVA bundelt alles wat je nodig hebt tijdens je hersteltraject. Zo heb je altijd overzicht, zonder gedoe.
+            REVA bundelt alles wat je nodig hebt tijdens je hersteltraject in één overzichtelijke app,
+            van je eerste dag na een blessure of operatie tot je volledige herstel. Zo heb je altijd
+            overzicht, zonder gedoe en zonder losse schriftjes of aparte apps.
           </p>
         </AnimateIn>
 
@@ -450,15 +455,21 @@ function UspSection() {
             Rust in je herstel
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            Herstel vraagt al genoeg van je. REVA zorgt dat je hoofd leeg kan zijn, terwijl de app het bijhoudt.
+            Herstel vraagt al genoeg van je, of het nu gaat om een blessure, operatie of langdurig
+            revalidatietraject. REVA zorgt dat je hoofd leeg kan zijn, terwijl de app alles voor je bijhoudt.
           </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:mx-0 md:px-0 md:pb-0">
           {usps.map((u, i) => {
             const Icon = u.icon;
             return (
-              <AnimateIn key={u.title} direction="up" delay={i * 120}>
+              <AnimateIn
+                key={u.title}
+                direction="up"
+                delay={i * 120}
+                className="shrink-0 w-[82%] snap-center md:w-auto md:shrink md:snap-none"
+              >
                 <div
                   className="rounded-2xl p-8 h-full"
                   style={{ background: "#f8f7f4", border: "1px solid #e8e5df" }}
@@ -488,6 +499,9 @@ function UspSection() {
             );
           })}
         </div>
+        <p className="mt-3 text-xs text-center md:hidden" style={{ color: "#9ca3af" }}>
+          ← Swipe voor meer →
+        </p>
       </div>
     </section>
   );
@@ -505,7 +519,8 @@ function TargetGroupSection() {
             REVA is voor jou als je herstelt
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            Of het nu gaat om een knieoperatie, spierblessure of langdurig revalidatietraject — REVA geeft je structuur en overzicht.
+            Of het nu gaat om een knieblessure, schouderoperatie, spierblessure, heupvervanging of een ander
+            langdurig revalidatietraject: REVA geeft je structuur en overzicht, welke blessure of operatie je ook hebt.
           </p>
         </AnimateIn>
 
@@ -548,7 +563,8 @@ function HowItWorksSection() {
             In drie stappen aan de slag
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#7c7c8a" }}>
-            REVA is snel opgezet. In een paar minuten heb je een overzicht dat werkt.
+            REVA is binnen enkele minuten opgezet, zonder technische kennis. Zo heb je snel een
+            overzicht dat echt werkt tijdens je herstel.
           </p>
         </AnimateIn>
 
@@ -596,7 +612,7 @@ function TrustSection() {
     {
       icon: CheckCircle,
       title: "Geen verborgen kosten",
-      description: "4 dagen volledig gratis proberen. Daarna één helder tarief van €6,99 per maand. Geen kleine lettertjes.",
+      description: "REVA is nu volledig gratis te gebruiken. Geen creditcard nodig, geen kleine lettertjes.",
     },
   ];
 
@@ -687,12 +703,12 @@ function PricingTeaserSection() {
         <AnimateIn direction="up">
           <div className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style={{ background: "#f8f7f4", border: "1px solid #e8e5df" }}>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#e8632a" }}>REVA Premium</p>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#e8632a" }}>In ontwikkeling</p>
               <h3 className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: "#1a1a1a" }}>
-                4 dagen gratis uitproberen
+                Nu volledig gratis te gebruiken
               </h3>
               <p className="text-sm" style={{ color: "#6b7280" }}>
-                Geen creditcard nodig. Daarna slechts €6,99 per maand. Altijd opzegbaar.
+                We bouwen REVA nog volop uit samen met onze eerste gebruikers. Geen creditcard, geen verplichtingen.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -707,13 +723,13 @@ function PricingTeaserSection() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <Link
-                href="/prijzen"
+                href="/faq"
                 className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg font-medium text-sm border transition-colors"
                 style={{ color: "#374151", borderColor: "#e8e5df", background: "#ffffff" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#f9fafb"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#ffffff"; }}
               >
-                Alle prijzen bekijken
+                Veelgestelde vragen
                 <ChevronRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -777,28 +793,31 @@ function BlogTeaserSection() {
             <AnimateIn key={post.slug} direction="up" delay={i * 80}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="flex flex-col h-full rounded-2xl p-6 border transition-shadow hover:shadow-md"
+                className="flex flex-col h-full rounded-2xl border overflow-hidden transition-shadow hover:shadow-md"
                 style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
               >
-                <span
-                  className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-3 px-2.5 py-1 rounded-full"
-                  style={{ color: "#e8632a", background: "#fff3ee" }}
-                >
-                  {post.category}
-                </span>
-                <p className="text-base font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
-                  {post.title}
-                </p>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
-                  {post.excerpt}
-                </p>
-                <span
-                  className="mt-auto flex items-center gap-1.5 text-xs pt-3 border-t"
-                  style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
-                >
-                  <Calendar className="w-3.5 h-3.5" />
-                  {post.readTime} leestijd
-                </span>
+                <BlogIllustration category={post.category} className="aspect-[16/9]" />
+                <div className="flex flex-col flex-1 p-6">
+                  <span
+                    className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-3 px-2.5 py-1 rounded-full"
+                    style={{ color: "#e8632a", background: "#fff3ee" }}
+                  >
+                    {post.category}
+                  </span>
+                  <p className="text-base font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
+                    {post.title}
+                  </p>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                    {post.excerpt}
+                  </p>
+                  <span
+                    className="mt-auto flex items-center gap-1.5 text-xs pt-3 border-t"
+                    style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
+                  >
+                    <Calendar className="w-3.5 h-3.5" />
+                    {post.readTime} leestijd
+                  </span>
+                </div>
               </Link>
             </AnimateIn>
           ))}
@@ -828,7 +847,7 @@ function CtaSection() {
           </h2>
           <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "#7c7c8a" }}>
             Start vandaag. Geen creditcard nodig, geen verplichtingen.
-            4 dagen REVA Premium volledig gratis — gewoon beginnen en zelf ervaren.
+            REVA is nu volledig gratis te gebruiken. Gewoon beginnen en zelf ervaren wat overzicht met je herstel doet.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -838,20 +857,20 @@ function CtaSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Start 4 dagen gratis
+              Start gratis
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              href="/prijzen"
+              href="/faq"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-medium text-sm transition-colors"
               style={{ color: "#ffffff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.14)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
             >
-              Meer over de prijs
+              Veelgestelde vragen
             </Link>
           </div>
-          <p className="mt-5 text-sm" style={{ color: "#52525e" }}>Daarna €6,99/maand · Altijd opzegbaar</p>
+          <p className="mt-5 text-sm" style={{ color: "#52525e" }}>Nu volledig gratis · Geen creditcard nodig</p>
         </AnimateIn>
       </div>
     </section>
