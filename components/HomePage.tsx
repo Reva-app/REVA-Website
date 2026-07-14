@@ -723,13 +723,13 @@ function PricingTeaserSection() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <Link
-                href="/faq"
+                href="/prijzen"
                 className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg font-medium text-sm border transition-colors"
                 style={{ color: "#374151", borderColor: "#e8e5df", background: "#ffffff" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#f9fafb"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#ffffff"; }}
               >
-                Veelgestelde vragen
+                Bekijk prijzen
                 <ChevronRight className="w-3.5 h-3.5" />
               </Link>
             </div>

@@ -6,11 +6,11 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "In ontwikkeling",
+  title: "Prijzen — nu volledig gratis",
   description:
     "REVA is nog in ontwikkeling. De app is voorlopig volledig gratis te gebruiken, zonder creditcard en zonder verplichtingen.",
   openGraph: {
-    title: "In ontwikkeling",
+    title: "Prijzen — nu volledig gratis",
     description: "REVA is nog in ontwikkeling en voorlopig volledig gratis te gebruiken.",
     locale: "nl_NL",
     type: "website",

@@ -38,6 +38,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "Functies", href: "/functies" },
+                { label: "Prijzen", href: "/prijzen" },
                 { label: "Over REVA", href: "/over-reva" },
                 { label: "Blog", href: "/blog" },
                 { label: "FAQ", href: "/faq" },
