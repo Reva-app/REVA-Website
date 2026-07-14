@@ -49,9 +49,23 @@ const steps = [
   },
 ];
 
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Hoe verwijder je je REVA account",
+  description: "Stap voor stap uitleg om je REVA account en alle bijbehorende gegevens permanent te verwijderen.",
+  step: steps.map((step) => ({
+    "@type": "HowToStep",
+    position: Number(step.nr),
+    name: step.title,
+    text: step.description,
+  })),
+};
+
 export default function VerwijderAccountPage() {
   return (
     <>
+      <JsonLd data={howToJsonLd} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },

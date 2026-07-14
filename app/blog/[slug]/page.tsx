@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": ["BlogPosting", "Article"],
     "@id": `${url}#article`,
     headline: post.title,
     description: post.metaDescription,
@@ -73,9 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
       "@id": url,
     },
     author: {
-      "@type": "Organization",
-      name: "REVA App",
-      url: "https://www.reva-app.nl",
+      "@type": "Person",
+      "@id": "https://www.reva-app.nl/#person-stef-robberts",
+      name: "Stef Robberts",
+      url: "https://www.reva-app.nl/over-reva",
     },
     publisher: {
       "@type": "Organization",

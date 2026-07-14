@@ -177,9 +177,24 @@ const sections = [
   },
 ];
 
+const gettingStarted = sections.find((s) => s.id === "aan-de-slag")!;
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Hoe begin je met REVA",
+  description: "Stap voor stap aan de slag met REVA: account aanmaken, profiel instellen en dashboard inrichten.",
+  step: gettingStarted.content.map((c) => ({
+    "@type": "HowToStep",
+    name: c.heading,
+    text: c.text,
+  })),
+};
+
 export default function DocumentatiePage() {
   return (
     <>
+      <JsonLd data={howToJsonLd} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },

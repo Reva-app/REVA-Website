@@ -105,7 +105,7 @@ const jsonLd = {
       inLanguage: "nl-NL",
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": ["SoftwareApplication", "WebApplication", "MobileApplication"],
       "@id": "https://www.reva-app.nl/#app",
       name: "REVA App",
       applicationCategory: "HealthApplication",

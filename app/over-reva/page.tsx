@@ -60,6 +60,7 @@ const aboutJsonLd = {
   url: "https://www.reva-app.nl/over-reva",
   mainEntity: {
     "@type": "Person",
+    "@id": "https://www.reva-app.nl/#person-stef-robberts",
     name: "Stef Robberts",
     jobTitle: "Oprichter van REVA",
     worksFor: {
