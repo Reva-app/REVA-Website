@@ -10,10 +10,10 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Documentatie",
   description:
-    "Alles wat je nodig hebt om aan de slag te gaan met REVA, ongeacht welke blessure of operatie je herstelt. Uitleg per functie, tips en veelgestelde vragen.",
+    "Een kijkje in het patiëntenportaal van REVA: zo ervaren je patiënten check-ins, afspraken, oefeningen en dossier in de praktijk.",
   openGraph: {
     title: "Documentatie",
-    description: "Uitleg per functie, tips en veelgestelde vragen om aan de slag te gaan met REVA, voor elke blessure of operatie.",
+    description: "Zo werkt het patiëntenportaal van REVA voor de patiënten van jouw praktijk.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/documentatie",
@@ -210,10 +210,11 @@ export default function DocumentatiePage() {
               Documentatie
             </span>
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
-              Hoe werkt REVA?
+              Zo werkt het portaal voor je patiënten
             </h1>
             <p className="text-lg" style={{ color: "#6b7280" }}>
-              Alles wat je nodig hebt om aan de slag te gaan en het meeste uit REVA te halen.
+              Een kijkje in wat je patiënten ervaren in hun eigen REVA-portaal, van de eerste
+              check-in tot hun dossier en voortgang.
             </p>
           </AnimateIn>
         </div>

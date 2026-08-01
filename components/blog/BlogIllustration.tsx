@@ -1,11 +1,10 @@
-import { Bandage, TrendingUp, ClipboardList, Footprints, Pill, type LucideIcon } from "lucide-react";
+import { MessageSquare, Laptop2, ShieldCheck, Building2, ClipboardList, type LucideIcon } from "lucide-react";
 
 const categoryConfig: Record<string, { icon: LucideIcon }> = {
-  "Knieoperatie": { icon: Bandage },
-  "Herstel & mindset": { icon: TrendingUp },
-  "Revalidatie": { icon: ClipboardList },
-  "Sport & blessures": { icon: Footprints },
-  "Medicatie & pijn": { icon: Pill },
+  "Patiëntcommunicatie": { icon: MessageSquare },
+  "Digitalisering": { icon: Laptop2 },
+  "AVG & privacy": { icon: ShieldCheck },
+  "Praktijkvoering": { icon: Building2 },
 };
 
 export function BlogIllustration({

@@ -86,8 +86,9 @@ export default function VerwijderAccountPage() {
               Account verwijderen
             </h1>
             <p className="text-base leading-relaxed max-w-xl" style={{ color: "#6b7280" }}>
-              Je kunt je REVA account en alle bijbehorende gegevens op elk moment permanent verwijderen.
-              Dit is een onomkeerbare actie, dus lees deze pagina goed door voordat je verder gaat.
+              Patiënten van jouw praktijk kunnen hun REVA account en alle bijbehorende gegevens op
+              elk moment zelf permanent verwijderen. Dit is een onomkeerbare actie, dus deze pagina
+              legt precies uit hoe dat werkt.
             </p>
           </AnimateIn>
         </div>

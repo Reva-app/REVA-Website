@@ -6,7 +6,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Lees hoe REVA omgaat met jouw persoonsgegevens en gezondheidsdata. Wij verwerken jouw data uitsluitend voor jouw herstel en verkopen deze nooit aan derden.",
+    "Lees hoe REVA als verwerker omgaat met patiëntgegevens namens fysiotherapiepraktijken, en welke afspraken daarover gelden in de verwerkersovereenkomst.",
   robots: {
     index: true,
     follow: true,
@@ -26,46 +26,77 @@ export default function PrivacyPolicyPage() {
         ])}
       />
       <SiteLayout>
-      <LegalLayout title="Privacy Policy" lastUpdated="16 april 2026">
+      <LegalLayout title="Privacy Policy" lastUpdated="31 juli 2026">
 
         <p>
-          REVA App hecht grote waarde aan jouw privacy. Jouw gezondheidsgegevens zijn bijzonder
-          persoonlijk en gevoelig. In deze privacyverklaring leggen wij helder en transparant uit
-          welke gegevens wij verwerken, waarom wij dat doen en welke rechten jij hebt als gebruiker.
+          <strong>Opmerking vooraf:</strong> deze pagina gaat ervan uit dat de fysiotherapiepraktijk
+          die REVA gebruikt, verwerkingsverantwoordelijke is voor de gegevens van haar patiënten, en
+          dat REVA App optreedt als verwerker op basis van een verwerkersovereenkomst met die
+          praktijk. Deze tekst is nog niet juridisch getoetst aan het daadwerkelijke
+          dienstverleningsmodel en dient voor publicatie te worden gecontroleerd door een jurist.
         </p>
 
-        <h2>1. Wie zijn wij?</h2>
         <p>
-          REVA App is een product ontwikkeld en beheerd in Nederland. REVA biedt een persoonlijk
-          herstel dashboard waarmee gebruikers hun revalidatietraject kunnen bijhouden na een
-          blessure, operatie of langdurig herstelproces.
+          REVA App hecht grote waarde aan de privacy van praktijken en hun patiënten. Gezondheidsgegevens
+          zijn bijzonder persoonlijk en gevoelig. In deze privacyverklaring leggen wij helder en
+          transparant uit welke gegevens wij verwerken, in welke rol, waarom wij dat doen en welke
+          rechten betrokkenen hebben.
+        </p>
+
+        <h2>1. Wie zijn wij en in welke rol?</h2>
+        <p>
+          REVA App is een patiëntenportaal voor fysiotherapiepraktijken, ontwikkeld en beheerd in
+          Nederland. Praktijken gebruiken REVA om patiënten na een blessure of operatie te begeleiden:
+          patiënten houden zelf hun herstel bij, de praktijk krijgt daar overzicht over.
         </p>
         <p>
-          Voor vragen over deze privacyverklaring of over de verwerking van jouw gegevens kun je
-          contact opnemen via{" "}
-          <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.
+          In deze relatie is de fysiotherapiepraktijk de <strong>verwerkingsverantwoordelijke</strong>{" "}
+          voor de gegevens van haar patiënten: de praktijk bepaalt met welk doel en op welke manier
+          patiëntgegevens worden verwerkt. REVA App treedt op als <strong>verwerker</strong>: wij
+          verwerken gegevens uitsluitend in opdracht van en volgens de instructies van de praktijk,
+          vastgelegd in de <a href="/legal/dpa">verwerkersovereenkomst</a>, die elke praktijk
+          accepteert bij het afsluiten van een abonnement.
+        </p>
+        <p>
+          Voor gegevens van de praktijk zelf, zoals accountgegevens van het praktijkteam en
+          facturatiegegevens, is REVA App verwerkingsverantwoordelijke.
+        </p>
+        <p>
+          Voor vragen over deze privacyverklaring kun je contact opnemen via{" "}
+          <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>. Ben je patiënt bij een praktijk die
+          REVA gebruikt en heb je een vraag over jouw gegevens? Neem dan in eerste instantie contact
+          op met jouw praktijk, zij is verantwoordelijk voor de verwerking van jouw gegevens.
         </p>
 
         <h2>2. Welke gegevens verwerken wij?</h2>
         <p>
-          REVA verwerkt gegevens die jij zelf actief invoert, aangevuld met technische gebruiksgegevens.
-          Wij verwerken uitsluitend wat noodzakelijk is voor de dienstverlening.
+          REVA verwerkt gegevens die de praktijk en haar patiënten zelf invoeren, aangevuld met
+          technische gebruiksgegevens. Wij verwerken uitsluitend wat noodzakelijk is voor de
+          dienstverlening.
         </p>
 
-        <p><strong>2.1 Accountgegevens</strong></p>
+        <p><strong>2.1 Praktijkgegevens</strong></p>
+        <ul>
+          <li>Naam en gegevens van de praktijk</li>
+          <li>Naam, e-mailadres en rol van teamleden met een REVA-account</li>
+          <li>Wachtwoord (versleuteld opgeslagen, nooit leesbaar voor ons)</li>
+          <li>Facturatie- en contractgegevens</li>
+        </ul>
+
+        <p><strong>2.2 Patiëntaccountgegevens</strong></p>
         <ul>
           <li>Naam (voornaam en/of achternaam)</li>
           <li>E-mailadres</li>
           <li>Wachtwoord (versleuteld opgeslagen, nooit leesbaar voor ons)</li>
-          <li>Datum van registratie</li>
+          <li>Datum van uitnodiging en registratie</li>
         </ul>
 
-        <p><strong>2.2 Gezondheidsgegevens (bijzondere persoonsgegevens)</strong></p>
+        <p><strong>2.3 Gezondheidsgegevens van patiënten (bijzondere persoonsgegevens)</strong></p>
         <p>
           De onderstaande gegevens zijn gezondheidsgegevens in de zin van artikel 9 van de
-          Algemene Verordening Gegevensbescherming (AVG). Wij verwerken deze gegevens uitsluitend
-          op basis van jouw expliciete toestemming, die je geeft bij het aanmaken van een account
-          en bevestigt bij het invoeren van deze gegevens.
+          Algemene Verordening Gegevensbescherming (AVG). Deze gegevens worden door de patiënt zelf
+          ingevoerd binnen het portaal van de praktijk, en verwerkt door REVA App als verwerker in
+          opdracht van de praktijk.
         </p>
         <ul>
           <li>
@@ -73,11 +104,11 @@ export default function PrivacyPolicyPage() {
             stemming en eventuele notities per dag.
           </li>
           <li>
-            <strong>Afspraken:</strong> datum, tijd, type afspraak (fysiotherapeut, orthopeed,
-            specialist, huisarts, etc.), locatie en persoonlijke notities.
+            <strong>Afspraken:</strong> datum, tijd, type afspraak, behandelaar, locatie en
+            notities.
           </li>
           <li>
-            <strong>Trainingen en oefeningen:</strong> type oefening, aantal herhalingen of
+            <strong>Herstelplannen en oefeningen:</strong> type oefening, aantal herhalingen of
             duur, afvinkstatus en activiteitsoverzichten per week.
           </li>
           <li>
@@ -85,26 +116,26 @@ export default function PrivacyPolicyPage() {
             registratie van innames en eventuele bijwerkingen of opmerkingen.
           </li>
           <li>
-            <strong>Persoonlijk dossier:</strong> documenten die je zelf uploadt, zoals
-            diagnoseverslagen, röntgenfoto's, brieven van specialisten, operatieverslagen
-            of andere medische documenten.
+            <strong>Patiëntdossier:</strong> documenten die de patiënt of de praktijk uploadt,
+            zoals diagnoseverslagen, röntgenfoto&apos;s, brieven van specialisten of andere medische
+            documenten.
           </li>
           <li>
             <strong>Zorgverzekering en contactgegevens:</strong> naam van de zorgverzekeraar,
             polisnummer, contactgegevens van het ziekenhuis, specialist, huisarts of andere
-            zorgverleners die jij zelf invoert.
+            zorgverleners.
           </li>
           <li>
-            <strong>Doelen en mijlpalen:</strong> persoonlijke hersteldoelen die jij formuleert
-            en mijlpalen die jij markeert als behaald.
+            <strong>Behandeldoelen en mijlpalen:</strong> doelen die per patiënt worden
+            vastgelegd en mijlpalen die als behaald worden gemarkeerd.
           </li>
           <li>
             <strong>Herstelcontext:</strong> type blessure of aandoening, operatiedatum,
-            herstelstadium en andere informatie die jij toevoegt om je dashboard in te richten.
+            herstelstadium en andere informatie die relevant is voor het behandeltraject.
           </li>
         </ul>
 
-        <p><strong>2.3 Technische gebruiksgegevens</strong></p>
+        <p><strong>2.4 Technische gebruiksgegevens</strong></p>
         <ul>
           <li>IP-adres (anoniem verwerkt voor beveiligingsdoeleinden)</li>
           <li>Browsertype en besturingssysteem</li>
@@ -112,30 +143,28 @@ export default function PrivacyPolicyPage() {
           <li>Paginabezoeken binnen de applicatie (voor het verbeteren van de gebruikerservaring)</li>
         </ul>
 
-        <p><strong>2.4 Betalingsgegevens</strong></p>
+        <p><strong>2.5 Betalingsgegevens</strong></p>
         <p>
-          Betaalgegevens (zoals creditcardnummer of IBAN) worden nooit direct door REVA verwerkt of
+          Betaalgegevens van praktijken (zoals IBAN) worden nooit direct door REVA App verwerkt of
           opgeslagen. Betalingen verlopen via een gecertificeerde betalingsdienstverlener. Wij
-          ontvangen uitsluitend een bevestiging van de transactie (betaald/niet betaald) en het
-          abonnementstype.
+          ontvangen uitsluitend een bevestiging van de transactie.
         </p>
 
-        <h2>3. Waarom verwerken wij jouw gegevens?</h2>
-        <p>Wij verwerken jouw gegevens uitsluitend voor de volgende doeleinden:</p>
+        <h2>3. Waarom verwerken wij deze gegevens?</h2>
+        <p>Wij verwerken gegevens uitsluitend voor de volgende doeleinden:</p>
         <ul>
           <li>
-            <strong>Het leveren van de REVA dienst:</strong> om jouw persoonlijk dashboard te
-            tonen, check-ins op te slaan, afspraken te beheren en inzichten over je herstel
-            te genereren.
+            <strong>Het leveren van de REVA dienst:</strong> om het praktijkoverzicht te tonen,
+            check-ins van patiënten op te slaan, afspraken te beheren en voortgangsinzichten te
+            genereren voor de praktijk.
           </li>
           <li>
-            <strong>Accountbeheer:</strong> om jouw account en abonnement te beheren, inclusief
-            aanmelden, inloggen en het bijhouden van je abonnementsstatus.
+            <strong>Accountbeheer:</strong> om praktijk- en patiëntaccounts te beheren, inclusief
+            uitnodigen, inloggen en het bijhouden van de abonnementsstatus van de praktijk.
           </li>
           <li>
-            <strong>Servicemeldingen:</strong> om je te informeren over wijzigingen in de app,
-            nieuwe functies of technische mededelingen. Wij sturen geen commerciële e-mails
-            zonder jouw toestemming.
+            <strong>Servicemeldingen:</strong> om praktijken te informeren over wijzigingen in de
+            app, nieuwe functies of technische mededelingen.
           </li>
           <li>
             <strong>Verbetering van de dienst:</strong> geanonimiseerde gebruiksgegevens helpen
@@ -143,7 +172,7 @@ export default function PrivacyPolicyPage() {
             gezondheidsgegevens worden hiervoor nooit gebruikt.
           </li>
           <li>
-            <strong>Beveiliging:</strong> om misbruik te detecteren en jouw account en data te
+            <strong>Beveiliging:</strong> om misbruik te detecteren en accounts en data te
             beschermen.
           </li>
           <li>
@@ -154,44 +183,35 @@ export default function PrivacyPolicyPage() {
 
         <h2>4. Rechtsgrond voor verwerking</h2>
         <p>
-          De verwerking van jouw persoonsgegevens is gebaseerd op de volgende rechtsgrondslagen
-          zoals bedoeld in de AVG:
+          Voor gegevens van de praktijk zelf (praktijkaccount, facturatie) is de rechtsgrond de
+          uitvoering van de overeenkomst tussen REVA App en de praktijk (art. 6 lid 1 sub b AVG).
         </p>
-        <ul>
-          <li>
-            <strong>Uitvoering van een overeenkomst (art. 6 lid 1 sub b AVG):</strong> voor de
-            verwerking van accountgegevens en technische gegevens die noodzakelijk zijn om de
-            dienst te leveren.
-          </li>
-          <li>
-            <strong>Expliciete toestemming (art. 6 lid 1 sub a en art. 9 lid 2 sub a AVG):</strong>{" "}
-            voor de verwerking van gezondheidsgegevens. Gezondheidsgegevens zijn bijzondere
-            persoonsgegevens waarvoor wij jouw uitdrukkelijke toestemming nodig hebben. Je geeft
-            deze toestemming bij registratie en bevestigt deze elke keer dat je gezondheidsdata
-            invoert. Je kunt deze toestemming te allen tijde intrekken door je account te
-            verwijderen.
-          </li>
-          <li>
-            <strong>Gerechtvaardigde belangen (art. 6 lid 1 sub f AVG):</strong> voor
-            beveiligingsdoeleinden en het geanonimiseerd verbeteren van de dienst, voor zover
-            jouw belangen niet zwaarder wegen.
-          </li>
-        </ul>
-
-        <h2>5. Hoe lang bewaren wij jouw gegevens?</h2>
         <p>
-          Wij bewaren jouw gegevens zo lang als noodzakelijk voor de doeleinden waarvoor zij zijn
-          verzameld:
+          Voor patiëntgegevens, waaronder gezondheidsgegevens, geldt dat de praktijk als
+          verwerkingsverantwoordelijke de rechtsgrond bepaalt en met de patiënt afstemt, doorgaans de
+          uitvoering van de behandelovereenkomst en waar vereist expliciete toestemming van de patiënt
+          (art. 6 lid 1 sub a en art. 9 lid 2 sub a of h AVG). REVA App verwerkt deze gegevens louter
+          op instructie van de praktijk, vastgelegd in de verwerkersovereenkomst.
+        </p>
+
+        <h2>5. Hoe lang bewaren wij gegevens?</h2>
+        <p>
+          Wij bewaren gegevens zo lang als noodzakelijk voor de doeleinden waarvoor zij zijn
+          verzameld, en in lijn met de afspraken in de verwerkersovereenkomst met de praktijk:
         </p>
         <ul>
           <li>
-            <strong>Actieve accounts:</strong> alle gegevens worden bewaard zolang je een actief
-            account hebt bij REVA.
+            <strong>Actieve accounts:</strong> gegevens worden bewaard zolang de praktijk een
+            actief abonnement heeft en de patiënt een actief account heeft.
           </li>
           <li>
-            <strong>Na accountverwijdering:</strong> jouw gegevens worden binnen <strong>30 dagen</strong>{" "}
-            na het verwijderen van je account permanent en onherstelbaar gewist, inclusief alle
-            gezondheidsgegevens, documenten en check-ins.
+            <strong>Na accountverwijdering:</strong> gegevens van een patiënt worden binnen{" "}
+            <strong>30 dagen</strong> na verwijdering permanent en onherstelbaar gewist, inclusief
+            alle gezondheidsgegevens, documenten en check-ins.
+          </li>
+          <li>
+            <strong>Na beëindiging van de praktijkovereenkomst:</strong> gegevens worden verwijderd
+            of aan de praktijk overgedragen conform de afspraken in de verwerkersovereenkomst.
           </li>
           <li>
             <strong>Back-ups:</strong> back-ups worden maximaal 90 dagen bewaard waarna ze
@@ -204,27 +224,32 @@ export default function PrivacyPolicyPage() {
           </li>
         </ul>
 
-        <h2>6. Delen wij jouw gegevens met derden?</h2>
+        <h2>6. Delen wij gegevens met derden?</h2>
         <p>
-          Wij verkopen jouw gegevens nooit aan derden. Jouw gezondheidsgegevens worden nooit
-          gedeeld met externe partijen zonder jouw expliciete toestemming.
+          Wij verkopen gegevens nooit aan derden. Gezondheidsgegevens worden nooit gedeeld met
+          externe partijen zonder geldige grondslag.
         </p>
         <p>
-          Wij maken gebruik van een beperkt aantal zorgvuldig geselecteerde subverwerkers die
-          in opdracht van ons technische diensten verlenen:
+          Uiteraard heeft de praktijk zelf, als verwerkingsverantwoordelijke, toegang tot de gegevens
+          van haar eigen patiënten binnen REVA. Dat is geen verstrekking aan een derde, maar
+          onderdeel van de behandelrelatie tussen praktijk en patiënt.
+        </p>
+        <p>
+          Daarnaast maken wij gebruik van een beperkt aantal zorgvuldig geselecteerde subverwerkers
+          die in opdracht van ons technische diensten verlenen:
         </p>
         <ul>
           <li>
-            <strong>Hostingprovider:</strong> voor het opslaan van jouw data op beveiligde servers.
+            <strong>Hostingprovider:</strong> voor het opslaan van data op beveiligde servers.
             Met deze partij is een verwerkersovereenkomst gesloten conform de AVG.
           </li>
           <li>
-            <strong>Betalingsdienstverlener:</strong> voor de verwerking van betalingen. Deze
-            partij heeft geen toegang tot jouw gezondheidsgegevens.
+            <strong>Betalingsdienstverlener:</strong> voor de verwerking van betalingen van
+            praktijken. Deze partij heeft geen toegang tot patiëntgegevens.
           </li>
           <li>
             <strong>E-maildienst:</strong> uitsluitend voor het versturen van transactionele
-            e-mails (zoals wachtwoordherstel en abonnementsbevestigingen).
+            e-mails (zoals wachtwoordherstel en uitnodigingen).
           </li>
         </ul>
         <p>
@@ -234,12 +259,13 @@ export default function PrivacyPolicyPage() {
         </p>
         <p>
           Wij verstrekken gegevens aan overheidsinstanties of toezichthouders uitsluitend indien
-          wij hiertoe wettelijk verplicht zijn.
+          wij hiertoe wettelijk verplicht zijn, en informeren de betrokken praktijk daarover waar dat
+          wettelijk is toegestaan.
         </p>
 
-        <h2>7. Beveiliging van jouw gegevens</h2>
+        <h2>7. Beveiliging van gegevens</h2>
         <p>
-          Wij nemen de beveiliging van jouw (gezondheids)gegevens zeer serieus en passen passende
+          Wij nemen de beveiliging van (gezondheids)gegevens zeer serieus en passen passende
           technische en organisatorische maatregelen toe:
         </p>
         <ul>
@@ -247,105 +273,80 @@ export default function PrivacyPolicyPage() {
           <li>Alle datatransport verloopt via beveiligde HTTPS-verbindingen (TLS).</li>
           <li>Toegang tot productiedatabases is strikt beperkt en wordt gelogd.</li>
           <li>Wachtwoorden worden nooit in leesbare vorm opgeslagen (bcrypt hashing).</li>
-          <li>Geüploade documenten in het persoonlijk dossier worden versleuteld bewaard.</li>
+          <li>Geüploade documenten in het patiëntdossier worden versleuteld bewaard.</li>
           <li>Regelmatige beveiligingsevaluaties en updates van onze systemen.</li>
         </ul>
         <p>
-          Bij een datalek dat risico oplevert voor jouw rechten en vrijheden, informeren wij jou
-          en de Autoriteit Persoonsgegevens conform de wettelijke verplichting binnen 72 uur.
+          Bij een datalek dat risico oplevert voor de rechten en vrijheden van betrokkenen,
+          informeren wij de betrokken praktijk zonder onnodige vertraging, zodat de praktijk als
+          verwerkingsverantwoordelijke aan haar eigen meldplichten kan voldoen.
         </p>
 
-        <h2>8. Jouw rechten onder de AVG</h2>
+        <h2>8. Rechten van patiënten onder de AVG</h2>
         <p>
-          Als betrokkene heb je op grond van de Algemene Verordening Gegevensbescherming de
-          volgende rechten:
+          Patiënten hebben op grond van de Algemene Verordening Gegevensbescherming rechten ten
+          aanzien van hun gegevens, waaronder recht op inzage, rectificatie, verwijdering, beperking
+          van verwerking, overdraagbaarheid en bezwaar. Omdat de praktijk verwerkingsverantwoordelijke
+          is, kunnen deze verzoeken het beste eerst bij de eigen praktijk worden ingediend. Wij
+          ondersteunen praktijken bij het afhandelen van dergelijke verzoeken.
         </p>
-        <ul>
-          <li>
-            <strong>Recht op inzage (art. 15 AVG):</strong> je hebt het recht om een overzicht
-            op te vragen van alle persoonsgegevens die wij van jou verwerken.
-          </li>
-          <li>
-            <strong>Recht op rectificatie (art. 16 AVG):</strong> je kunt onjuiste of
-            onvolledige gegevens laten corrigeren. Veel gegevens kun je ook zelf aanpassen
-            in de app.
-          </li>
-          <li>
-            <strong>Recht op verwijdering (art. 17 AVG):</strong> je kunt verzoeken al jouw
-            gegevens te verwijderen. Dit kan ook direct in de app via accountverwijdering.
-          </li>
-          <li>
-            <strong>Recht op beperking van verwerking (art. 18 AVG):</strong> je kunt de
-            verwerking van jouw gegevens tijdelijk laten beperken terwijl een klacht of
-            verzoek wordt behandeld.
-          </li>
-          <li>
-            <strong>Recht op overdraagbaarheid (art. 20 AVG):</strong> je kunt jouw gegevens
-            opvragen in een gestructureerd, veelgebruikt en machineleesbaar formaat.
-          </li>
-          <li>
-            <strong>Recht van bezwaar (art. 21 AVG):</strong> je kunt bezwaar maken tegen de
-            verwerking van jouw gegevens op basis van gerechtvaardigde belangen.
-          </li>
-          <li>
-            <strong>Recht op intrekking van toestemming:</strong> je kunt je toestemming voor
-            de verwerking van gezondheidsgegevens te allen tijde intrekken. Dit doet geen
-            afbreuk aan de rechtmatigheid van de verwerking vóór intrekking.
-          </li>
-        </ul>
         <p>
-          Om gebruik te maken van een van bovenstaande rechten, stuur een e-mail naar{" "}
-          <a href="mailto:info@reva-app.nl">info@reva-app.nl</a> met een duidelijke omschrijving
-          van je verzoek. Wij reageren binnen <strong>30 dagen</strong>. Wij kunnen om
-          verificatie van jouw identiteit vragen voordat wij een verzoek verwerken.
+          Een patiënt kan daarnaast op elk moment zelf het eigen account en de bijbehorende gegevens
+          permanent verwijderen via de instellingen van de app, zoals beschreven op onze{" "}
+          <a href="/verwijder-account">pagina over accountverwijdering</a>.
+        </p>
+        <p>
+          Voor vragen over hoe REVA App als verwerker met gegevens omgaat, kun je een e-mail sturen
+          naar <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.
         </p>
 
         <h2>9. Cookies en vergelijkbare technologieën</h2>
         <p>
-          REVA maakt gebruik van een beperkt aantal cookies die strikt noodzakelijk zijn voor de
-          werking van de applicatie:
+          Binnen de REVA App (dashboard.reva-app.nl) gebruiken wij een beperkt aantal cookies die
+          strikt noodzakelijk zijn voor de werking van de applicatie:
         </p>
         <ul>
           <li>
-            <strong>Sessiecookies:</strong> om jou ingelogd te houden tijdens het gebruik van
-            de app. Deze cookies worden verwijderd zodra je uitlogt of je browser sluit.
+            <strong>Sessiecookies:</strong> om gebruikers ingelogd te houden tijdens het gebruik
+            van de app. Deze cookies worden verwijderd zodra je uitlogt of je browser sluit.
           </li>
           <li>
-            <strong>Veiligheids-tokens:</strong> om CSRF-aanvallen te voorkomen en jouw sessie
-            te beveiligen.
+            <strong>Veiligheids-tokens:</strong> om CSRF-aanvallen te voorkomen en sessies te
+            beveiligen.
           </li>
         </ul>
         <p>
-          Wij gebruiken geen tracking cookies, advertentiecookies of analytische cookies van
-          derden zonder jouw toestemming. Wij plaatsen geen cookies voor profilering of
-          gerichte advertenties.
+          Op onze marketingwebsite (www.reva-app.nl) plaatsen wij op dit moment geen analytische of
+          marketingcookies. Voordat wij dat ooit zouden doen, vragen wij altijd eerst jouw
+          expliciete toestemming via de cookiemelding op de website. Wij plaatsen geen cookies voor
+          profilering of gerichte advertenties zonder toestemming. Zie ons volledige{" "}
+          <a href="/cookiebeleid">cookiebeleid</a> voor alle details en om je voorkeuren op elk
+          moment aan te passen.
         </p>
 
         <h2>10. Gegevens van minderjarigen</h2>
         <p>
-          REVA is niet gericht op personen jonger dan 16 jaar. Wij verwerken bewust geen
-          gegevens van minderjarigen zonder toestemming van een ouder of wettelijk voogd.
-          Als je vermoedt dat wij gegevens van een minderjarige verwerken zonder geldige
-          toestemming, neem dan contact op via{" "}
-          <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.
+          Sommige patiënten van een praktijk kunnen minderjarig zijn. De praktijk is als
+          verwerkingsverantwoordelijke verantwoordelijk voor het verkrijgen van de juiste toestemming
+          van een ouder of wettelijk voogd waar dat wettelijk vereist is, voordat een minderjarige
+          patiënt toegang krijgt tot REVA.
         </p>
 
         <h2>11. Internationale doorgifte</h2>
         <p>
-          Jouw gegevens worden opgeslagen op servers binnen de Europese Economische Ruimte (EER).
-          Wij geven jouw gegevens niet door aan landen buiten de EER, tenzij er passende
-          waarborgen zijn getroffen conform de AVG (zoals een adequaatheidsbesluit of
-          standaardcontractbepalingen).
+          Gegevens worden opgeslagen op servers binnen de Europese Economische Ruimte (EER). Wij
+          geven gegevens niet door aan landen buiten de EER, tenzij er passende waarborgen zijn
+          getroffen conform de AVG (zoals een adequaatheidsbesluit of standaardcontractbepalingen).
         </p>
 
         <h2>12. Klachten</h2>
         <p>
-          Heb je een klacht over hoe wij met jouw gegevens omgaan? Neem dan eerst contact met
-          ons op via <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>. Wij nemen iedere
-          klacht serieus en streven ernaar dit binnen 30 dagen op te lossen.
+          Heb je als praktijk een klacht over hoe wij met gegevens omgaan? Neem dan eerst contact met
+          ons op via <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>. Ben je patiënt, neem dan
+          in eerste instantie contact op met je praktijk.
         </p>
         <p>
-          Kom je er met ons niet uit, dan heb je het recht een klacht in te dienen bij de
+          Kom je er niet uit, dan heeft de betrokkene het recht een klacht in te dienen bij de
           Nederlandse toezichthouder: de{" "}
           <strong>Autoriteit Persoonsgegevens</strong> via{" "}
           <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer">
@@ -361,9 +362,8 @@ export default function PrivacyPolicyPage() {
           het laatst is bijgewerkt.
         </p>
         <p>
-          Bij wezenlijke wijzigingen die van invloed zijn op hoe wij jouw gezondheidsgegevens
-          verwerken, informeren wij jou actief via e-mail of een melding in de app, en vragen wij
-          opnieuw jouw toestemming waar dat wettelijk vereist is.
+          Bij wezenlijke wijzigingen die van invloed zijn op hoe wij gezondheidsgegevens verwerken,
+          informeren wij aangesloten praktijken actief via e-mail.
         </p>
         <p>
           De meest actuele versie van deze privacyverklaring is altijd beschikbaar op{" "}

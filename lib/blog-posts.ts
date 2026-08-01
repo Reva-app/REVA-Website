@@ -18,298 +18,299 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "herstellen-na-knieoperatie-eerste-weken",
-    title: "Herstellen na een knieoperatie: wat je de eerste weken kunt verwachten",
+    slug: "tijd-besparen-patientcommunicatie-fysiopraktijk",
+    title: "Stop met WhatsAppen: zo win je uren terug in je fysiopraktijk",
     metaDescription:
-      "Wat gebeurt er de eerste weken na een knieoperatie? Een overzicht van zwelling, pijn, mobiliteit en waarom overzicht houden je herstel helpt, ook bij andere operaties.",
+      "Telefoontjes en WhatsApp-berichten tussen behandelingen door kosten fysiopraktijken veel tijd. Een overzicht van waar die tijd naartoe gaat en hoe een patiëntenportaal dat oplost.",
     excerpt:
-      "De eerste weken na een knieoperatie zijn bepalend voor je herstel. Dit kun je realistisch verwachten, week voor week.",
-    category: "Knieoperatie",
-    publishedAt: "2026-05-04",
-    readTime: "8 min",
+      "Telefoontjes en appjes tussen behandelingen door kosten meer tijd dan je denkt. Zo win je die tijd terug.",
+    category: "Patiëntcommunicatie",
+    publishedAt: "2026-07-06",
+    readTime: "7 min",
     intro: [
-      "Een knieoperatie is een ingrijpende gebeurtenis, ook al is de ingreep zelf vaak succesvol en routinematig voor de chirurg. Of het nu gaat om een kruisbandreconstructie, een meniscusoperatie, een kniebandreconstructie of een totale knievervanging: wat er ná de operatie gebeurt, bepaalt grotendeels hoe goed en hoe snel je herstelt. De eerste weken voelen voor veel mensen onvoorspelbaar. De ene dag gaat het beter dan verwacht, de andere dag lijkt het alsof je stilstaat. Dat is normaal.",
-      "Hieronder een realistisch overzicht van wat je de eerste weken kunt verwachten. Elk lichaam en elke operatie is anders, dus zie dit als een algemene richtlijn en luister altijd allereerst naar de instructies van je chirurg en fysiotherapeut. Veel van de fasen die hieronder beschreven staan, gelden overigens niet alleen voor een knieoperatie: ook na een heupoperatie, schouderoperatie of andere ingreep herken je vergelijkbare stappen van zwelling, mobiliteit opbouwen en langzaam meer belasten.",
+      "Een volle agenda met behandelingen is de kern van een fysiopraktijk, maar het is niet de enige plek waar de tijd naartoe gaat. Tussen de behandelingen door komen telefoontjes, WhatsApp-berichten en vragen aan de balie binnen, allemaal van patiënten die willen laten weten hoe het gaat of die een vraag hebben over hun herstel.",
+      "Die communicatie is belangrijk, patiënten die zich gehoord voelen, houden zich beter aan hun behandelplan. Het probleem zit niet in de communicatie zelf, maar in hoe versnipperd die binnenkomt en hoe veel tijd het kost om die bij te houden naast een volle praktijk.",
     ],
     sections: [
       {
-        heading: "De eerste 48 uur: rust en voorzichtig bewegen",
+        heading: "Waar de tijd nu naartoe gaat",
         paragraphs: [
-          "Direct na de operatie draait alles om pijnbeheersing, het beperken van zwelling en het voorkomen van complicaties zoals trombose. De meeste ziekenhuizen en klinieken moedigen je aan om binnen 24 uur al voorzichtig te bewegen, vaak met hulp van een looprek of krukken.",
-          "Zwelling en stijfheid zijn in deze fase het grootst. Elevatie van het been, ijs en de voorgeschreven pijnmedicatie zijn de belangrijkste hulpmiddelen. Verwacht geen grote sprongen vooruit: het doel is simpelweg dat je lichaam de kans krijgt om te herstellen van de ingreep zelf, voordat er van actieve revalidatie sprake kan zijn.",
+          "Een telefoontje van twee minuten lijkt onschuldig, maar bij tien patiënten per week is dat al twintig minuten, en dan tel je de tijd om terug te bellen, een notitie te maken of een collega bij te praten nog niet mee. WhatsApp voelt sneller, maar brengt een ander probleem met zich mee: berichten verspreiden zich over meerdere gesprekken, telefoons en soms zelfs meerdere behandelaars.",
+          "Het resultaat is dat waardevolle informatie, zoals een oplopende pijnscore of een gemiste oefening, ergens in een berichtenlijst blijft hangen in plaats van dat die op tijd bij de juiste behandelaar terechtkomt.",
         ],
       },
       {
-        heading: "Week 1: zwelling, pijn en de eerste oefeningen",
+        heading: "WhatsApp voelt snel, maar kost tijd",
         paragraphs: [
-          "In de eerste week start meestal de eerste lichte fysiotherapie: buig- en strekoefeningen om stijfheid te voorkomen, en oefeningen om de spieren rond de knie weer te activeren. Pijn en zwelling pieken vaak rond dag drie tot vijf, wat verontrustend kan aanvoelen als je dit niet verwacht.",
-          "Veel mensen onderschatten hoe vermoeiend deze week is, niet alleen fysiek, maar ook mentaal. Je lichaam verbruikt veel energie aan herstel, dus voldoende rust is net zo belangrijk als de oefeningen zelf. Slaap, voeding en het rustig aan doen tussen oefenmomenten door zijn in deze fase minstens zo belangrijk als de oefeningen zelf.",
+          "WhatsApp is laagdrempelig voor de patiënt, en dat is precies waarom het zo vaak wordt gebruikt. Voor de praktijk is het echter een van de moeilijkste kanalen om te beheren: berichten komen op persoonlijke telefoons binnen, zijn niet doorzoekbaar per patiënt en verdwijnen tussen andere gesprekken.",
+          "Bij meerdere behandelaars wordt dit nog lastiger. Wie heeft het laatste bericht van een patiënt gezien? Is er al gereageerd? Zonder een centraal overzicht is die informatie afhankelijk van wie toevallig die telefoon in handen had.",
         ],
       },
       {
-        heading: "Week 2 en 3: opbouwen van mobiliteit",
+        heading: "Wat je eigenlijk zou willen: signalen, geen ruis",
         paragraphs: [
-          "Vanaf week twee zie je bij de meeste mensen geleidelijk verbetering: minder zwelling, meer buigingsgraad in de knie en meer vertrouwen bij het lopen. Dit is ook het moment waarop de meeste mensen hun krukken langzaam durven los te laten, in overleg met hun fysiotherapeut.",
-          "Het is verleidelijk om in deze fase harder te pushen omdat het beter voelt. Toch is dit precies het moment waarop overbelasting vaak misgaat. Een tijdelijke terugval in zwelling of pijn na een actieve dag is geen reden tot paniek, maar wel een signaal om het tempo aan te passen en een dag rustiger aan te doen.",
+          "De vraag is niet of je met patiënten wilt communiceren tussen behandelingen door, dat wil je, het levert waardevolle informatie op. De vraag is hoe je alleen de signalen ziet die aandacht nodig hebben, zonder elk bericht apart te moeten lezen en beoordelen.",
+          "Dat is een ander probleem dan 'minder communiceren'. Het gaat om structuur: patiënten geven op een vaste, voorspelbare manier aan hoe het gaat, en jij ziet in één overzicht wie daarvan afwijkt.",
         ],
       },
       {
-        heading: "Week 4 tot 6: van herstel naar revalidatie",
+        heading: "Hoe een patiëntenportaal dit oplost",
         paragraphs: [
-          "Rond week vier tot zes verschuift de focus vaak van 'herstellen van de operatie' naar 'revalideren richting je oude niveau'. Kracht, balans en functionele bewegingen, zoals traplopen of langer wandelen, komen steeds meer aan bod.",
-          "Dit is ook het moment waarop het waardevol wordt om terug te kijken: hoe heeft je pijn zich ontwikkeld, hoe vaak heb je je oefeningen gedaan, welke afspraken staan er nog gepland? Zonder een vorm van bijhouden vervaagt dat overzicht snel, en juist die informatie is waardevol tijdens je volgende afspraak met de fysiotherapeut.",
-        ],
-      },
-      {
-        heading: "Geldt dit ook voor andere operaties?",
-        paragraphs: [
-          "De precieze tijdlijnen verschillen per ingreep en per persoon, maar de grote lijn is bij veel operaties vergelijkbaar: eerst pijn- en zwellingsbeheersing, dan voorzichtig mobiliteit opbouwen, en pas daarna kracht en functie herstellen. Dat geldt voor een knieoperatie, maar net zo goed voor een heupvervanging, schouderoperatie, enkeloperatie of rugoperatie. Wie zo'n traject volgt, herkent zich vaak in dezelfde onzekerheid, dezelfde pieken en dalen, en dezelfde behoefte aan overzicht.",
-        ],
-      },
-      {
-        heading: "Waarom overzicht houden in deze fase het verschil maakt",
-        paragraphs: [
-          "Herstel na een operatie is geen rechte lijn. Juist daarom is het waardevol om dagelijks een paar dingen bij te houden: je pijnscore, hoe je je energetisch voelt, welke oefeningen je hebt gedaan en welke afspraken eraan komen. Zo herken je patronen, bijvoorbeeld dat je pijn steevast toeneemt na een dag zonder rust, en kun je dit gericht bespreken met je fysiotherapeut.",
-          "REVA is hiervoor gebouwd: een persoonlijk herstel dashboard waarin je dagelijkse check-ins, afspraken, oefeningen en voortgang op één plek bijhoudt, zodat je nooit het overzicht kwijtraakt tijdens je herstel, ongeacht welke operatie of blessure je hebt.",
+          "Een patiëntenportaal zoals REVA verplaatst die communicatie van losse berichten naar gestructureerde check-ins. Patiënten geven op vaste momenten aan hoe hun pijn, energie en herstel verlopen, en die gegevens komen automatisch samen in een overzicht per praktijk.",
+          "In plaats van elk bericht te lezen, zie je in één oogopslag wie een hoge pijnscore doorgaf of een check-in heeft gemist. Je beslist zelf wie je actief benadert, in plaats van dat iedere binnenkomende vraag om directe aandacht vraagt.",
         ],
         list: [
-          "Dagelijkse pijnscore en energieniveau bijhouden",
-          "Oefeningen en trainingen afvinken",
-          "Afspraken met fysiotherapeut of chirurg overzichtelijk plannen",
-          "Voortgang in grafieken terugzien over weken en maanden",
+          "Minder telefoontjes en WhatsApp-berichten tussen behandelingen door",
+          "Eén overzicht in plaats van losse gesprekken per behandelaar",
+          "Signalering van patiënten die aandacht nodig hebben",
+          "Meer tijd voor de patiënten die dat echt nodig hebben",
         ],
       },
     ],
   },
   {
-    slug: "grip-op-je-herstel-7-tips",
-    title: "Hoe houd je grip op je herstel? 7 praktische tips",
+    slug: "therapietrouw-verhogen-patienten-herkennen",
+    title: "De stille afhakers: zo herken je patiënten voordat ze stoppen",
     metaDescription:
-      "7 praktische tips om structuur en grip te houden tijdens een langdurig hersteltraject, van vast ritme tot het vieren van kleine mijlpalen. Toepasbaar bij elke blessure of operatie.",
+      "Patiënten die afhaken doen dat vaak geleidelijk en onopgemerkt. Zo herken je vroege signalen van afnemende therapietrouw en werkt structureel bijhouden beter dan een los gesprek.",
     excerpt:
-      "Grip houden op een langdurig hersteltraject is lastig. Deze 7 tips helpen je structuur, motivatie en overzicht te bewaren.",
-    category: "Herstel & mindset",
-    publishedAt: "2026-05-18",
+      "Patiënten haken zelden plotseling af. De signalen zijn er vaak al weken eerder, als je weet waar je op moet letten.",
+    category: "Therapietrouw",
+    publishedAt: "2026-07-13",
     readTime: "7 min",
     intro: [
-      "Een langdurig hersteltraject vraagt om meer dan geduld alleen. Zonder structuur voelt herstel al snel chaotisch: losse afspraken, vergeten oefeningen, een pijnscore die je alleen op je gevoel probeert te onthouden. Dat geldt of je nu herstelt van een knieblessure, een schouderoperatie, een enkelblessure of een langdurig revalidatietraject na een val. Deze zeven tips helpen je om praktisch grip te houden op je herstel, dag na dag.",
+      "Een patiënt die afhaakt van zijn of haar behandelplan doet dat zelden van de ene op de andere dag. Meestal gaat er een periode aan vooraf waarin oefeningen wat vaker worden overgeslagen, afspraken wat losser worden ingepland en de motivatie langzaam wegzakt.",
+      "Het probleem is dat die signalen makkelijk gemist worden als je ze alleen tijdens de behandeling zelf kunt observeren. Tegen de tijd dat een patiënt een afspraak afzegt of niet meer terugkomt, is er vaak al veel tijd verloren gegaan.",
     ],
     sections: [
       {
-        heading: "1. Houd een vast dagritme aan",
+        heading: "Waarom afhaken vaak geleidelijk gaat",
         paragraphs: [
-          "Herstel gaat makkelijker als je lichaam weet wat het kan verwachten. Een vaste tijd voor oefeningen, medicatie en rust helpt niet alleen fysiek, maar geeft ook mentale rust. Je hoeft niet elke dag opnieuw te beslissen wanneer je iets doet: het ritme doet dat voor je, ook op dagen dat je weinig energie hebt.",
+          "Therapietrouw daalt zelden in één keer. Een patiënt die het druk heeft, slaat een oefendag over. Die ene dag wordt een week, en die week wordt het nieuwe normaal. Zonder een vast moment om daarop terug te kijken, valt dat patroon vaak pas op als het al ver gevorderd is.",
+          "Voor de behandelaar is dat frustrerend: het gevoel bekruipt je pas achteraf dat er eerder had kunnen worden bijgestuurd, als het signaal maar op tijd zichtbaar was geweest.",
         ],
       },
       {
-        heading: "2. Noteer dagelijks je pijn en energie",
+        heading: "De signalen die je makkelijk mist",
         paragraphs: [
-          "Pijn en energie schommelen sterk tijdens herstel, en het is moeilijk om achteraf terug te halen hoe een week écht verliep. Een korte dagelijkse check-in, hooguit een minuut, geeft je een eerlijk beeld over tijd, in plaats van een vaag 'het ging wisselend'. Dat is waardevol voor jezelf, maar ook voor je fysiotherapeut of arts.",
+          "Een paar patronen komen vaak terug bij patiënten die dreigen af te haken: een dalend aantal afgevinkte oefeningen, een pijnscore die stagneert in plaats van verbetert, en check-ins die minder consistent binnenkomen. Los van elkaar lijken dit kleine dingen. Samen vormen ze een duidelijk signaal.",
+          "Zonder gestructureerde gegevens is dit lastig te zien. Je vertrouwt dan op wat een patiënt vertelt tijdens de behandeling, en patiënten die minder gemotiveerd zijn, zijn vaak ook minder geneigd om dat actief te melden.",
         ],
       },
       {
-        heading: "3. Zet realistische doelen op korte termijn",
+        heading: "Waarom een los gesprek niet genoeg is",
         paragraphs: [
-          "Een groot einddoel zoals 'weer sporten' voelt in het begin ver weg en kan demotiverend werken. Kleinere doelen, zoals een week zonder gemiste oefeningen of tien graden meer buiging in een gewricht, zijn concreter en geven je vaker een gevoel van vooruitgang.",
+          "Een goed gesprek tijdens de behandeling blijft waardevol, maar het is een momentopname. Het vertelt je hoe het nu gaat, niet hoe het patroon zich de afgelopen weken heeft ontwikkeld. Juist die trend is waar vroege signalen van afhakende patiënten in zichtbaar worden.",
+          "Om dat patroon te zien heb je gegevens nodig die niet afhankelijk zijn van het geheugen van de patiënt of van wat er toevallig ter sprake komt tijdens een behandeling van twintig minuten.",
         ],
       },
       {
-        heading: "4. Bouw rust net zo bewust in als inspanning",
+        heading: "Structureel bijhouden in plaats van incidenteel navragen",
         paragraphs: [
-          "Veel mensen plannen hun oefeningen, maar niet hun rust. Rust is echter geen bijzaak tijdens herstel: het is het moment waarop je lichaam daadwerkelijk herstelt. Behandel rustmomenten als een vast onderdeel van je schema, niet als iets dat overblijft als er tijd over is.",
+          "Een patiëntenportaal maakt therapietrouw zichtbaar zonder dat je er actief naar hoeft te vragen. Oefeningen die worden afgevinkt, check-ins die binnenkomen en pijnscores die zich ontwikkelen, geven samen een objectief beeld van hoe een patiënt er werkelijk voor staat.",
+          "In REVA zie je dat per patiënt terug: wie het schema consistent volgt en wie afwijkt van het gebruikelijke patroon. Dat maakt het mogelijk om bij te sturen op het moment dat het nog een klein gesprek is, in plaats van een grote inhaalslag.",
         ],
-      },
-      {
-        heading: "5. Betrek je omgeving bij je herstel",
-        paragraphs: [
-          "Partners, familie of vrienden willen vaak helpen, maar weten niet altijd hoe. Door je voortgang concreet te delen, bijvoorbeeld 'deze week ging het beter met traplopen', maak je het makkelijker voor hen om aan te sluiten en je te steunen op de momenten dat het zwaar is.",
-        ],
-      },
-      {
-        heading: "6. Bereid je afspraken voor",
-        paragraphs: [
-          "Een afspraak met je fysiotherapeut of arts is waardevoller als je concrete informatie meeneemt: hoe je pijn zich ontwikkelde, welke oefeningen lastig waren, wanneer je terugval voelde. Zonder die gegevens val je vaak terug op een algemeen 'het gaat wel oké'.",
-        ],
-      },
-      {
-        heading: "7. Vier kleine mijlpalen",
-        paragraphs: [
-          "De eerste keer weer traplopen zonder pijn, een week volledig zonder gemiste check-in, minder pijnmedicatie nodig hebben dan de week ervoor: dit zijn allemaal signalen van echte vooruitgang. Sta er bewust bij stil. Herstel is een optelsom van kleine stappen, niet van één groot moment.",
-        ],
-      },
-      {
-        heading: "Structuur maakt herstel behapbaar",
-        paragraphs: [
-          "Al deze tips komen neer op hetzelfde principe: herstel is makkelijker vol te houden met structuur en overzicht dan zonder, welke blessure of operatie de aanleiding ook is. REVA is gebouwd om dat overzicht voor je te organiseren: je check-ins, afspraken, oefeningen en voortgang op één plek, zodat grip houden op je herstel geen dagelijkse puzzel meer is.",
+        list: [
+          "Vroege signalen van afnemende therapietrouw per patiënt zichtbaar",
+          "Objectieve gegevens naast het gesprek tijdens de behandeling",
+          "Sneller bijsturen voordat een patiënt volledig afhaakt",
+          "Minder afhankelijk van wat een patiënt zich nog herinnert",
         ],
       },
     ],
   },
   {
-    slug: "wat-noteer-je-tijdens-revalidatie",
-    title: "Wat noteer je tijdens revalidatie? Een compleet overzicht",
+    slug: "van-whatsapp-naar-patientenportaal",
+    title: "Van WhatsApp-chaos naar overzicht: waarom praktijken overstappen",
     metaDescription:
-      "Welke gegevens zijn waardevol om bij te houden tijdens revalidatie? Een compleet overzicht van pijn, afspraken, oefeningen, medicatie en voortgang, voor elke blessure of operatie.",
+      "Steeds meer fysiotherapiepraktijken stappen over van WhatsApp en telefoon naar een patiëntenportaal. Wat die overstap in de praktijk oplevert en waar je op let bij de keuze.",
     excerpt:
-      "Van pijnscore tot mijlpalen: dit zijn de gegevens die je tijdens revalidatie het beste kunt bijhouden, en waarom.",
-    category: "Revalidatie",
-    publishedAt: "2026-06-01",
-    readTime: "7 min",
+      "WhatsApp werkte prima toen de praktijk klein was. Bij groei wordt het al snel een systeem dat tegen je begint te werken.",
+    category: "Digitalisering",
+    publishedAt: "2026-07-20",
+    readTime: "6 min",
     intro: [
-      "Revalidatie levert veel informatie op, maar alleen als je die vastlegt. Zonder bijhouden vervagen details snel: hoeveel pijn had je precies vorige week dinsdag, en was dat na of voor je training? Dit overzicht laat zien welke gegevens het meest waardevol zijn om bij te houden tijdens een hersteltraject, en waarom, ongeacht of je herstelt van een knieblessure, schouderoperatie, heupvervanging, rugklachten of een andere ingreep.",
+      "Veel fysiotherapiepraktijken zijn begonnen met WhatsApp als praktische manier om met patiënten te communiceren: laagdrempelig, iedereen heeft het al, en het kost niets om op te zetten. Voor een kleine praktijk met een handvol vaste patiënten werkt dat prima.",
+      "Naarmate een praktijk groeit, met meer patiënten, meer behandelaars en soms meerdere locaties, begint diezelfde laagdrempeligheid tegen te werken. Wat begon als een snelle oplossing wordt een systeem waarin informatie makkelijk verloren gaat.",
     ],
     sections: [
       {
-        heading: "Pijn en symptomen",
+        heading: "Wat WhatsApp goed doet, en waar het misgaat",
         paragraphs: [
-          "Pijn is de meest voor de hand liggende, maar ook de meest onderschatte gegevens tijdens herstel. Een dagelijkse pijnscore, bijvoorbeeld op een schaal van 0 tot 10, laat trends zien die je op je gevoel nooit zou herkennen, zoals een terugkerende piek na een specifieke oefening of activiteit.",
+          "WhatsApp is direct, vertrouwd en drempelloos voor patiënten. Dat is ook precies het probleem: er is geen structuur. Berichten van verschillende patiënten, over verschillende onderwerpen, komen door elkaar binnen op persoonlijke telefoons van behandelaars.",
+          "Zodra een praktijk groeit, ontstaan er vragen die WhatsApp niet beantwoordt: wie heeft dit bericht al gezien? Staat deze informatie ook in het dossier? Wat gebeurt er als een behandelaar met vakantie is of de praktijk verlaat?",
         ],
       },
       {
-        heading: "Afspraken en behandelingen",
+        heading: "De verborgen kosten van versnippering",
         paragraphs: [
-          "Een hersteltraject brengt vaak meerdere zorgverleners met zich mee: fysiotherapeut, chirurg, huisarts, soms een sportarts of ergotherapeut. Al deze afspraken overzichtelijk op één plek bijhouden voorkomt dubbele boekingen, gemiste controles en het gevoel dat je het overzicht kwijt bent.",
+          "Versnipperde communicatie kost meer dan tijd alleen. Belangrijke signalen, zoals een patiënt die aangeeft dat de pijn toeneemt, kunnen tussen andere berichten verdwijnen. Bij een personeelswissel gaat historische context verloren als die alleen op een telefoon van een vertrekkende behandelaar heeft gestaan.",
+          "Daarnaast is WhatsApp niet gebouwd voor gezondheidsgegevens. Praktijken die groeien en professionaliseren, lopen hier vroeg of laat tegenaan: patiëntinformatie hoort in een systeem waar je grip op hebt, niet verspreid over privételefoons.",
         ],
       },
       {
-        heading: "Oefeningen en trainingen",
+        heading: "Wat de overstap in de praktijk oplevert",
         paragraphs: [
-          "Welke oefeningen heb je gedaan, hoe vaak en hoe voelde dat? Dit is direct bruikbare informatie voor je fysiotherapeut om je programma bij te sturen. Het geeft jou bovendien een tastbaar bewijs van consistentie, ook op dagen dat vooruitgang niet voelbaar is.",
+          "Praktijken die overstappen naar een patiëntenportaal, merken vooral verschil in overzicht. In plaats van berichten na te zoeken, staat alle communicatie en voortgang per patiënt op één centrale plek, toegankelijk voor het hele team.",
+          "Dat overzicht is vooral waardevol op de momenten dat het ertoe doet: bij een personeelswissel, bij overdracht tussen behandelaars, of simpelweg tijdens een drukke dag waarop je snel moet kunnen zien wie aandacht nodig heeft.",
         ],
       },
       {
-        heading: "Medicatie en pijnregistratie",
+        heading: "Waar je op let bij de keuze",
         paragraphs: [
-          "Wanneer nam je pijnmedicatie, en hielp het? Dit soort gegevens is waardevol om te bepalen of je medicatie nog nodig is, moet worden aangepast, of dat pijn een ander patroon vertoont dan verwacht.",
-        ],
-      },
-      {
-        heading: "Foto's van je herstel",
-        paragraphs: [
-          "Bij sommige blessures en operaties is ook het zichtbare herstel relevant: een wond die geneest, zwelling die afneemt, een litteken dat verandert. Een paar foto's per week geven, naast je pijnscore en check-ins, een compleet beeld van hoe je herstel zich ontwikkelt, ook op momenten dat je dat zelf niet goed kunt inschatten.",
-        ],
-      },
-      {
-        heading: "Energie en mentale toestand",
-        paragraphs: [
-          "Herstel is niet alleen fysiek. Energieniveau en stemming beïnvloeden hoeveel je aankunt, en andersom. Het bijhouden hiervan helpt om fysieke tegenslagen in perspectief te plaatsen: soms is een mindere dag simpelweg een vermoeide dag, geen achteruitgang.",
-        ],
-      },
-      {
-        heading: "Doelen en mijlpalen",
-        paragraphs: [
-          "Concrete doelen, zoals meer buiging in een gewricht, een langere wandeling zonder pijn of terugkeer naar een specifieke sport, geven richting aan je herstel. Het bijhouden van mijlpalen maakt vooruitgang zichtbaar, ook wanneer die langzaam gaat.",
-        ],
-      },
-      {
-        heading: "Alles op één plek",
-        paragraphs: [
-          "Losse notities, een dagboekje en berichten aan jezelf raken al snel versnipperd. REVA brengt al deze gegevens (pijn, afspraken, oefeningen, medicatie, foto's, energie en mijlpalen) samen in één persoonlijk herstel dashboard, zodat je nooit meer hoeft te zoeken naar wat je vorige week hebt bijgehouden.",
+          "Niet elk systeem is gebouwd voor de dagelijkse realiteit van een fysiopraktijk. Let op of een portaal patiënten laagdrempelig toegang geeft zonder ingewikkelde installatie, of het overzicht geeft per patiënt én over je hele caseload, en of het voldoet aan de eisen rond gezondheidsdata.",
+          "REVA is gebouwd vanuit die praktijkbehoefte: een patiëntenportaal dat de laagdrempeligheid van WhatsApp behoudt voor de patiënt, maar het overzicht en de structuur biedt die een groeiende praktijk nodig heeft.",
         ],
       },
     ],
   },
   {
-    slug: "sporthervatting-na-blessure",
-    title: "Sporthervatting na een blessure: veilig en verantwoord opbouwen",
+    slug: "wat-is-een-patientenportaal",
+    title: "Patiëntenportaal: nice-to-have of onmisbaar voor je praktijk?",
     metaDescription:
-      "Hoe bouw je verantwoord sporthervatting op na een blessure? Signalen dat je klaar bent, opbouwstrategie en de rol van je fysiotherapeut, voor elke sportblessure.",
+      "Een patiëntenportaal legt communicatie en voortgang tussen praktijk en patiënt vast op één centrale plek. Uitleg over wat het is, wat het oplost en voor welke praktijken het meerwaarde heeft.",
     excerpt:
-      "Terugkeren naar sport na een blessure gaat het beste stap voor stap. Zo bouw je veilig en verantwoord op.",
-    category: "Sport & blessures",
-    publishedAt: "2026-06-15",
+      "De term valt steeds vaker, maar wat is een patiëntenportaal precies en wanneer heeft het meerwaarde voor jouw praktijk?",
+    category: "Digitalisering",
+    publishedAt: "2026-07-27",
+    readTime: "6 min",
+    intro: [
+      "De term patiëntenportaal duikt steeds vaker op in gesprekken tussen fysiotherapiepraktijken, maar wat het precies inhoudt, is niet altijd duidelijk. Voor sommige praktijken klinkt het als iets voor grote, complexe organisaties. In werkelijkheid is het een hulpmiddel dat net zo goed waarde heeft voor een praktijk met twee behandelaars als voor een praktijk met twintig.",
+    ],
+    sections: [
+      {
+        heading: "Wat een patiëntenportaal precies is",
+        paragraphs: [
+          "Een patiëntenportaal is een omgeving waarin patiënten zelf gegevens over hun herstel bijhouden, zoals pijn, energie en oefeningen, en waar zij afspraken en documenten terugvinden. De praktijk krijgt aan de andere kant een overzicht van al die gegevens, per patiënt en over de hele caseload.",
+          "Het verschil met bijvoorbeeld e-mail of WhatsApp is structuur: informatie komt niet als los bericht binnen, maar als onderdeel van een vast, herkenbaar overzicht dat voor iedere patiënt op dezelfde manier is opgebouwd.",
+        ],
+      },
+      {
+        heading: "Wat het oplost voor een praktijk",
+        paragraphs: [
+          "Het kernprobleem dat een patiëntenportaal oplost, is versnippering. Zonder centraal systeem verspreidt patiëntinformatie zich over telefoons, e-mails en het geheugen van individuele behandelaars. Een portaal brengt dat samen op één plek, toegankelijk voor iedereen in de praktijk die daar toegang toe moet hebben.",
+          "Daarnaast geeft het patiënten een eigen rol in het bijhouden van hun herstel. In plaats van dat alle informatie via de behandelaar moet lopen, registreren patiënten zelf hoe het gaat, wat tijd bespaart en vaak een completer beeld geeft dan een los gesprek tijdens de behandeling.",
+        ],
+      },
+      {
+        heading: "Voor welke praktijken het meerwaarde heeft",
+        paragraphs: [
+          "Een patiëntenportaal is niet alleen voor grote praktijken. Ook een eenmanspraktijk profiteert van minder losse telefoontjes en een professionelere uitstraling naar patiënten. Bij praktijken met meerdere behandelaars of vestigingen wordt de meerwaarde nog groter, omdat overdracht en samenwerking anders al snel afhankelijk worden van losse aantekeningen.",
+          "De grootste meerwaarde ontstaat bij praktijken die willen groeien of professionaliseren: een eigen patiëntenportaal versterkt het imago van de praktijk en maakt tegelijk het werk van het team overzichtelijker.",
+        ],
+      },
+      {
+        heading: "Hoe REVA hierin past",
+        paragraphs: [
+          "REVA is het patiëntenportaal waarin patiënten hun herstel bijhouden en praktijken in één overzicht zien wie aandacht nodig heeft. Het is opgezet om snel te implementeren, zonder een lang IT-traject.",
+        ],
+        list: [
+          "Eén centrale plek voor communicatie en voortgang per patiënt",
+          "Overzicht voor je hele team, niet alleen de behandelend fysiotherapeut",
+          "Patiënten houden zelf hun herstel bij, met minder tijdsdruk voor de praktijk",
+          "Bruikbaar voor zowel kleine als groeiende praktijken",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "avg-patientdata-fysiopraktijk",
+    title: "AVG en patiëntdata: de praktische gids voor je fysiopraktijk",
+    metaDescription:
+      "Fysiotherapiepraktijken verwerken gevoelige gezondheidsgegevens en hebben daarom een zorgplicht onder de AVG. Een overzicht van de belangrijkste aandachtspunten bij het digitaliseren van patiëntcommunicatie.",
+    excerpt:
+      "Gezondheidsgegevens zijn bijzondere persoonsgegevens onder de AVG. Een overzicht van waar je op let als je patiëntcommunicatie digitaliseert.",
+    category: "AVG & privacy",
+    publishedAt: "2026-07-31",
     readTime: "8 min",
     intro: [
-      "Voor sporters is de terugkeer naar hun sport vaak het echte doel van revalidatie, niet alleen 'pijnvrij zijn', maar weer kunnen presteren zoals voorheen. Juist die drang om terug te keren zorgt geregeld voor te snel opbouwen, met een nieuwe blessure of terugval als gevolg. Dit artikel geeft een realistisch kader voor verantwoorde sporthervatting, of het nu gaat om een knieblessure, enkelblessure, hamstringblessure of schouderblessure.",
+      "Fysiotherapiepraktijken werken dagelijks met gevoelige informatie: pijnklachten, medische geschiedenis, behandelverslagen. Onder de Algemene Verordening Gegevensbescherming (AVG) vallen dit soort gegevens onder de categorie bijzondere persoonsgegevens, met strengere eisen dan gewone contactgegevens.",
+      "Dit artikel geeft een algemeen overzicht van de belangrijkste aandachtspunten. Het is geen juridisch advies: raadpleeg bij twijfel altijd een specialist op het gebied van privacyrecht of de Autoriteit Persoonsgegevens.",
     ],
     sections: [
       {
-        heading: "Waarom te snel opbouwen vaak misgaat",
+        heading: "Wie is verantwoordelijk voor patiëntdata?",
         paragraphs: [
-          "Een blessure geneest niet lineair, en 'geen pijn meer voelen' betekent niet automatisch dat weefsel, kracht en stabiliteit alweer op het oude niveau zijn. Veel herblessures ontstaan juist in de fase waarin iemand zich weer goed voelt en te snel terugkeert naar volledige belasting.",
+          "Als praktijk ben je in de regel de verwerkingsverantwoordelijke voor de gegevens van je patiënten: jij bepaalt waarom en hoe die gegevens worden verwerkt. Maak je gebruik van software zoals een patiëntenportaal, dan treedt de leverancier van die software meestal op als verwerker, die de gegevens namens jou verwerkt.",
+          "Dat onderscheid is belangrijk, want het bepaalt wie welke verantwoordelijkheid draagt. Als verwerkingsverantwoordelijke blijf jij eindverantwoordelijk richting je patiënten, ook als een externe partij de technische verwerking uitvoert.",
         ],
       },
       {
-        heading: "Signalen dat je klaar bent voor de volgende stap",
+        heading: "Waarom een verwerkersovereenkomst nodig is",
         paragraphs: [
-          "In plaats van te vertrouwen op alleen 'hoe het voelt', is het waardevoller om te kijken naar een combinatie van signalen: pijnvrij bewegen tijdens dagelijkse activiteiten, voldoende kracht en stabiliteit in vergelijking met de andere kant van het lichaam, en het vermogen om basisbewegingen (lopen, traplopen, van richting veranderen) zonder compensatie uit te voeren.",
+          "Wanneer je patiëntdata laat verwerken door een softwareleverancier, schrijft de AVG voor dat daar een verwerkersovereenkomst voor moet zijn. Daarin staat onder meer vastgelegd welke gegevens worden verwerkt, met welk doel, hoe lang ze worden bewaard en welke beveiligingsmaatregelen gelden.",
+          "Voordat je een patiëntenportaal of ander softwaresysteem in gebruik neemt, is het verstandig om te controleren of een verwerkersovereenkomst beschikbaar is en of deze aansluit bij de situatie van jouw praktijk.",
         ],
       },
       {
-        heading: "Stapsgewijs opbouwen in plaats van springen",
+        heading: "Toestemming en informatieplicht",
         paragraphs: [
-          "Een veelgebruikt uitgangspunt is om trainingsbelasting geleidelijk te verhogen, bijvoorbeeld met kleine stappen per week in plaats van grote sprongen. Van wandelen naar joggen, van joggen naar intervallen, van individuele training naar contact met teamgenoten: elke stap verdient tijd om te wennen voordat je verder opbouwt.",
-          "Een tijdelijke toename van lichte pijn of stijfheid na een nieuwe belasting is niet per definitie een probleem. Aanhoudende of toenemende pijn de dag erna is wél een signaal om een stap terug te doen.",
+          "Patiënten moeten weten welke gegevens worden verzameld en waarom, en in veel gevallen is voor de verwerking van gezondheidsgegevens expliciete toestemming vereist. Dat betekent dat een patiëntenportaal helder moet communiceren wat er met check-ins, dossiers en andere gegevens gebeurt.",
+          "Een goed portaal maakt dit voor de patiënt inzichtelijk, zodat toestemming niet alleen een vinkje is bij registratie, maar aansluit bij wat de patiënt daadwerkelijk begrijpt over het gebruik van zijn of haar gegevens.",
         ],
       },
       {
-        heading: "De rol van je fysiotherapeut",
+        heading: "Beveiliging en bewaartermijnen",
         paragraphs: [
-          "Een fysiotherapeut of sportarts kan objectief beoordelen of kracht, stabiliteit en beweeglijkheid daadwerkelijk voldoende zijn hersteld, iets wat lastig is om zelf goed in te schatten, zeker als je gemotiveerd bent om snel terug te keren. Regelmatig overleg tijdens de opbouwfase voorkomt dat enthousiasme de overhand krijgt op verstandig opbouwen.",
+          "Gezondheidsgegevens moeten passend beveiligd worden, denk aan versleuteling, beperkte toegang en beveiligde verbindingen. Daarnaast geldt dat gegevens niet langer bewaard mogen worden dan noodzakelijk. Na beëindiging van de behandelrelatie of op verzoek van de patiënt moeten gegevens binnen een redelijke termijn kunnen worden verwijderd.",
+          "Dit is een van de redenen waarom losse WhatsApp-berichten en spreadsheets in de praktijk lastig verdedigbaar zijn: er is geen duidelijke bewaartermijn, geen centrale verwijdermogelijkheid en vaak geen goed zicht op wie toegang heeft.",
         ],
       },
       {
-        heading: "De mentale kant van terugkeren",
+        heading: "Hoe REVA hierin ondersteunt",
         paragraphs: [
-          "Naast het fysieke aspect speelt vertrouwen een grote rol. Twijfel of angst voor een nieuwe blessure is normaal en verdient net zoveel aandacht als kracht en mobiliteit. Een geleidelijke opbouw geeft niet alleen je lichaam, maar ook je hoofd de tijd om weer vertrouwen op te bouwen.",
-        ],
-      },
-      {
-        heading: "Overzicht houden tijdens de opbouwfase",
-        paragraphs: [
-          "Juist in deze fase is bijhouden waardevol: welke belasting deed je, hoe reageerde je lichaam de dag erna, en hoe ontwikkelt je pijnscore zich over de weken? Met dat overzicht herken je sneller of een opbouwstap te groot was, in plaats van dat achteraf te ontdekken via een nieuwe blessure. REVA helpt je dit per dag bij te houden, zodat je opbouw gebaseerd is op gegevens in plaats van alleen op gevoel.",
+          "REVA is gebouwd met deze eisen als uitgangspunt. Patiëntdata wordt versleuteld opgeslagen, praktijken werken op basis van een verwerkersovereenkomst, en patiënten kunnen hun account en gegevens op elk moment zelf laten verwijderen. Dat ontslaat je niet van je eigen verantwoordelijkheid als verwerkingsverantwoordelijke, maar het geeft wel een stevige basis om vanuit te werken.",
         ],
       },
     ],
   },
   {
-    slug: "medicatie-en-pijnregistratie-bijhouden",
-    title: "Omgaan met medicatie en pijnregistratie tijdens herstel",
+    slug: "fysio-op-vakantie-continuiteit-van-zorg",
+    title: "Je fysio is met vakantie: wat gebeurt er dan met je herstel?",
     metaDescription:
-      "Waarom is pijnregistratie waardevol tijdens herstel, en hoe houd je medicatiegebruik overzichtelijk bij? Praktische uitleg en tips voor elke blessure of operatie.",
+      "In de zomer zijn fysiotherapeuten met vakantie en worden patiënten tijdelijk bij een collega of andere locatie ingepland. Zonder centraal overzicht gaat daarbij vaak informatie verloren. Zo voorkom je dat met een patiëntenportaal.",
     excerpt:
-      "Pijn en medicatie bijhouden geeft je en je zorgverleners waardevol inzicht tijdens herstel. Zo pak je het praktisch aan.",
-    category: "Medicatie & pijn",
-    publishedAt: "2026-06-29",
-    readTime: "7 min",
+      "Het is weer vakantieperiode. Fijn voor je collega's, maar wat gebeurt er met de behandeling van hun patiënten in die twee weken?",
+    category: "Praktijkvoering",
+    publishedAt: "2026-08-03",
+    readTime: "6 min",
     intro: [
-      "Pijn en medicatie horen voor veel mensen bij herstel, maar worden zelden systematisch bijgehouden. Terwijl juist deze gegevens (hoeveel pijn, wanneer, en welke medicatie hielp) waardevolle aanknopingspunten geven voor jezelf en je zorgverleners. Dit geldt bij acute pijn na een operatie, maar net zo goed bij chronische klachten zoals langdurige rugpijn. Dit artikel legt uit waarom, en hoe je dit praktisch aanpakt.",
+      "Het is weer die tijd van het jaar: de agenda's lopen leeg, collega's plannen twee weken vakantie in, en iedereen kijkt ernaar uit om even niks te moeten. Ook fysiotherapeuten hebben, gelukkig, gewoon vakantie. Voor de praktijk betekent dat vaak schuiven: patiënten worden tijdelijk bij een collega ingepland, of soms zelfs op een andere locatie.",
+      "Precies daar gaat het regelmatig mis. Niet omdat de waarnemende fysio het niet goed doet, maar omdat die simpelweg niet dezelfde informatie tot zijn beschikking heeft als de vaste behandelaar.",
     ],
     sections: [
       {
-        heading: "Waarom pijn bijhouden meer oplevert dan je denkt",
+        heading: "Een herkenbare situatie",
         paragraphs: [
-          "Pijn is subjectief en wisselt per dag, per activiteit en soms zelfs per moment van de dag. Zonder registratie onthoud je vooral de uitschieters, zoals een hele zware dag of juist een dag zonder klachten, en verdwijnt de rest in een vage indruk. Met dagelijkse registratie ontstaat een eerlijker beeld: neemt de pijn geleidelijk af, blijft die gelijk, of zie je pieken die samenhangen met specifieke activiteiten?",
+          "Neem een praktijk met meerdere vestigingen, iets wat steeds vaker voorkomt. Een patiënt wordt normaal behandeld op locatie A, waar ook het papieren herstelschema in een map ligt. De vaste fysio gaat twee weken op vakantie, en de patiënt wordt voor die periode ingepland op locatie B, bij een collega die het overneemt.",
+          "Alleen ligt dat schema dus op locatie A. De patiënt heeft het niet bij de hand, en de waarnemende fysio ook niet. Er zijn geen interne notities overgedragen, dus die collega weet eigenlijk niet veel meer dan wat de patiënt zelf op dat moment kan vertellen. Twee weken behandeling die, in het beste geval, op gevoel worden ingevuld.",
         ],
       },
       {
-        heading: "Hoe een pijnscore werkt",
+        heading: "Waarom dit vaker gebeurt dan je denkt",
         paragraphs: [
-          "De meest gebruikte methode is een schaal van 0 (geen pijn) tot 10 (ondraaglijke pijn). Belangrijker dan het exacte cijfer is de consistentie: als je elke dag op hetzelfde moment scoort, wordt het patroon over tijd betekenisvol, ook al is de score zelf subjectief.",
+          "Dit is geen uitzonderlijk scenario. Vakantie, ziekte, een drukke periode waarin patiënten worden herverdeeld over het team: het gebeurt continu in een praktijk die groeit of meerdere locaties heeft. Zolang informatie vastzit aan een papieren dossier, een los systeem per locatie of het geheugen van één behandelaar, ontstaat er bij iedere overdracht hetzelfde risico.",
+          "Het is niet dat waarnemende fysio's hun werk niet goed kunnen doen. Het probleem is dat ze moeten werken zonder de context die de vaste behandelaar wél heeft: hoe de pijn zich de afgelopen weken ontwikkelde, welke oefeningen wel en niet aansloegen, waar de patiënt precies in het schema zit.",
         ],
       },
       {
-        heading: "Medicatie op tijd en overzichtelijk bijhouden",
+        heading: "Wat de patiënt intussen wel kan doen",
         paragraphs: [
-          "Naast pijn is het waardevol om bij te houden wanneer je medicatie hebt ingenomen, en of dit het gewenste effect had. Dit voorkomt niet alleen gemiste doses, maar geeft ook een compleet beeld: als pijn ondanks medicatie aanhoudt, is dat relevante informatie voor een vervolgafspraak.",
+          "Belangrijk detail: een patiënt hoeft tijdens zo'n overdracht niet stil te staan. Met een goed bijgehouden herstelplan kan iemand prima twee weken zelfstandig verder, ook zonder dat elke sessie exact wordt begeleid. Wat daarvoor nodig is, is dat het schema, de voortgang en de laatste check-ins ergens staan waar zowel de patiënt als iedere behandelaar bij kan, ongeacht op welke locatie die op dat moment werkt.",
+          "Dat is een andere insteek dan 'de fysio moet er altijd bij zijn'. Het gaat erom dat het herstel niet afhankelijk is van één persoon of één map op één locatie.",
         ],
       },
       {
-        heading: "Patronen herkennen",
+        heading: "Hoe REVA dit voorkomt",
         paragraphs: [
-          "Met een paar weken aan gegevens worden patronen zichtbaar die op losse dagen onzichtbaar blijven: pijn die structureel toeneemt na een trainingsdag, een terugkerende piek in het weekend, of juist een geleidelijke, geruststellende afname over tijd. Deze patronen zijn precies wat een fysiotherapeut of arts nodig heeft om een behandeling gericht bij te sturen.",
+          "In REVA staat het herstelplan van een patiënt niet vast aan een locatie of een behandelaar, maar aan het patiëntdossier zelf. Elke fysio binnen de praktijk, op elke vestiging, ziet dezelfde actuele informatie: het schema, de laatste check-ins, pijnscores en voortgang tot nu toe.",
+          "Neemt een collega tijdelijk een patiënt over, dan opent die het dossier in REVA en heeft binnen een minuut hetzelfde beeld als de vaste behandelaar. De patiënt merkt daar weinig van, behalve dat de begeleiding gewoon doorloopt, ook als de eigen fysio twee weken op een strand ligt.",
         ],
-      },
-      {
-        heading: "Beter communiceren met je zorgverleners",
-        paragraphs: [
-          "In plaats van tijdens een afspraak te vertrouwen op je geheugen, met een vaag 'het ging wisselend de laatste weken', geeft een overzicht van pijnscores en medicatiegebruik je fysiotherapeut of arts concrete gegevens om op te reageren. Dat leidt tot gerichtere adviezen en een efficiënter gebruik van je afspraaktijd.",
-        ],
-      },
-      {
-        heading: "Eén plek voor pijn, medicatie en de rest van je herstel",
-        paragraphs: [
-          "Pijn en medicatie staan zelden op zichzelf: ze hangen samen met je oefeningen, je energie en je afspraken. REVA brengt dit allemaal samen in één dashboard, zodat je niet alleen pijn en medicatie bijhoudt, maar ook het volledige beeld van je herstel overzichtelijk houdt, ongeacht welke blessure of operatie de aanleiding is.",
+        list: [
+          "Eén herstelplan per patiënt, zichtbaar voor elke behandelaar en elke vestiging",
+          "Geen papieren schema's die aan één locatie vastzitten",
+          "Check-ins en voortgang lopen door, ook zonder de vaste fysio",
+          "Waarnemende collega's zijn binnen een minuut op de hoogte, in plaats van te gissen",
         ],
       },
     ],

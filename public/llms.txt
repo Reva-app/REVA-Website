@@ -1,29 +1,30 @@
 # REVA
 
-> REVA is een persoonlijk herstel dashboard voor iedereen die grip wil op zijn of haar herstel: na een knieblessure, enkelblessure, schouderblessure, heupoperatie, rugklachten, sportblessure of een ander langdurig hersteltraject. In de REVA App houd je op één plek dagelijkse check-ins, afspraken, trainingen, medicatie, foto's, je medisch dossier en je voortgang bij.
+> REVA is een patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij (pijn, energie, oefeningen, medicatie en voortgang), terwijl de praktijk in één overzicht ziet wie aandacht nodig heeft. Minder telefoontjes en WhatsApp-berichten, meer overzicht over de hele patiëntenpopulatie.
 
-REVA is een Nederlandstalig product, opgericht door Stef Robberts na zijn eigen herstel van een zware knieblessure (uit de kom geschoten knieschijf en een volledig afgescheurde kniepees, gevolgd door een operatie). De marketingwebsite (deze site) legt uit wat REVA is en overtuigt bezoekers om een account aan te maken. De app zelf draait los op `dashboard.reva-app.nl`.
+REVA is een Nederlandstalig product, opgericht door Stef Robberts na zijn eigen herstel van een zware knieblessure (uit de kom geschoten knieschijf en een volledig afgescheurde kniepees, gevolgd door een operatie). Wat begon als persoonlijk hulpmiddel om zijn eigen herstel bij te houden, wordt nu aangeboden aan fysiotherapiepraktijken als patiëntenportaal. De marketingwebsite (deze site) richt zich op praktijkeigenaren en fysiotherapeuten, en legt uit wat REVA voor hun praktijk kan betekenen. De app zelf draait los op `dashboard.reva-app.nl`.
 
 ## Kernfeiten
 
-- Doelgroep: iedereen die herstelt van een blessure of operatie, waaronder een knieblessure, enkelblessure, schouderblessure, heupoperatie, rugklachten of een sportblessure, sporters in een langdurig revalidatietraject, en mensen in andere langdurige hersteltrajecten.
-- Kernfuncties: persoonlijk dashboard, dagelijkse check-ins (pijn, energie, stemming), afspraken bijhouden, trainingen en oefeningen volgen, medicatie- en pijnregistratie, foto's van je herstel, digitaal dossier, voortgangsanalyse met grafieken, zorgverzekering en contactgegevens, doelen en mijlpalen.
-- Prijs: REVA is momenteel in ontwikkeling en volledig gratis te gebruiken, zonder creditcard. Er wordt nog geen betaald abonnement aangeboden.
-- Beschikbaar via web, iOS en Android.
+- Doelgroep: fysiotherapiepraktijken, van eenmanspraktijken tot praktijken met meerdere behandelaars en vestigingen.
+- Wat REVA oplost: fysiotherapeuten zien in één oogopslag welke patiënten aandacht nodig hebben (hoge pijnscore, weinig activiteit, gemiste check-ins), zonder elk dossier handmatig te checken. Minder tijd kwijt aan telefoontjes en appjes over hoe het gaat, patiënten loggen dat zelf. Een professioneel patiëntenportaal in de eigen huisstijl versterkt het imago van de praktijk.
+- Kernfuncties: praktijkoverzicht met signalering, check-ins van patiënten (pijn, energie, stemming), afspraken en behandelplan, herstelplannen en oefeningen, pijn- en medicatieregistratie, digitaal patiëntdossier, voortgangsanalyse met grafieken, patiëntgegevens en contacten, behandeldoelen en mijlpalen.
+- Prijs: afhankelijk van de grootte van de praktijk (aantal behandelaars, patiënten en vestigingen). Geen vaste prijslijst, wel een voorstel op maat na een demo.
+- Beschikbaar via web, iOS en Android, voor zowel praktijkteams als patiënten.
 - Taal: volledig Nederlandstalig product en website.
-- Privacy: gezondheidsdata wordt versleuteld opgeslagen en nooit verkocht of gedeeld met derden.
-- Herkomst: REVA is gebouwd door de oprichter voor zijn eigen herstel en daarna beschikbaar gemaakt voor iedereen die grip wil op zijn of haar herstel.
+- Privacy: gezondheidsdata wordt versleuteld opgeslagen. De praktijk is verwerkingsverantwoordelijke voor patiëntgegevens, REVA treedt op als verwerker op basis van een verwerkersovereenkomst.
+- Herkomst: REVA is gebouwd door de oprichter voor zijn eigen herstel en wordt nu aangeboden aan fysiotherapiepraktijken om hun patiënten te begeleiden.
 
 ## Pagina's
 
-- [Homepage](https://www.reva-app.nl/): Wat REVA is, voor wie het is en waarom het waardevol is tijdens herstel.
-- [Functies](https://www.reva-app.nl/functies): Gedetailleerde uitleg van alle functies van de REVA App.
-- [Over REVA](https://www.reva-app.nl/over-reva): Het persoonlijke verhaal achter REVA, ontstaan vanuit het eigen hersteltraject van oprichter Stef Robberts na een zware knieblessure.
-- [Prijzen](https://www.reva-app.nl/prijzen): Uitleg dat REVA nog in ontwikkeling is en voorlopig volledig gratis te gebruiken is.
-- [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op de meest gestelde vragen over REVA.
-- [Blog](https://www.reva-app.nl/blog): Artikelen over herstel, revalidatie, operaties en sporthervatting na een blessure.
-- [Documentatie](https://www.reva-app.nl/documentatie): Uitleg per functie voor nieuwe gebruikers.
-- [Contact](https://www.reva-app.nl/contact): Contactformulier voor vragen over REVA.
+- [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
+- [Functies](https://www.reva-app.nl/functies): Gedetailleerde uitleg van alle 9 functies van REVA, vanuit het perspectief van de praktijk.
+- [Over REVA](https://www.reva-app.nl/over-reva): Het persoonlijke verhaal achter REVA, ontstaan vanuit het eigen hersteltraject van oprichter Stef Robberts.
+- [Prijzen](https://www.reva-app.nl/prijzen): Uitleg dat de prijs van REVA afhankelijk is van de praktijkgrootte, met een voorstel op maat na een demo.
+- [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op vragen van praktijkeigenaren over REVA, implementatie, prijzen en privacy.
+- [Blog](https://www.reva-app.nl/blog): Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG.
+- [Documentatie](https://www.reva-app.nl/documentatie): Een kijkje in het patiëntenportaal, wat patiënten van een aangesloten praktijk ervaren.
+- [Contact](https://www.reva-app.nl/contact): Formulier om een demo aan te vragen.
 
 ## Overig
 

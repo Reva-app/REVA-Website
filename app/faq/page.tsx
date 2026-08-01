@@ -9,10 +9,10 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Veelgestelde vragen",
   description:
-    "Antwoorden op de meest gestelde vragen over REVA: wat het is, voor wie het bedoeld is, welke blessures en operaties je ermee kunt bijhouden, wat het kost en hoe veilig je data is.",
+    "Antwoorden op de meest gestelde vragen over REVA: wat het is, voor wie het bedoeld is, hoe de implementatie werkt, wat het kost en hoe REVA omgaat met patiëntdata.",
   openGraph: {
     title: "Veelgestelde vragen",
-    description: "Antwoorden op de meest gestelde vragen over REVA, voor iedereen die grip wil op zijn of haar herstel.",
+    description: "Antwoorden op de meest gestelde vragen over REVA, voor fysiotherapiepraktijken.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/faq",
@@ -22,31 +22,46 @@ export const metadata: Metadata = {
   },
 };
 
-const DASHBOARD_URL = "https://dashboard.reva-app.nl";
-
 const faqGroups = [
   {
     category: "Algemeen",
     items: [
       {
-        q: "Wat is REVA?",
-        a: "REVA is een persoonlijk herstel dashboard voor iedereen die grip wil op zijn of haar herstel. Of je nu revalideert van een blessure, een operatie hebt gehad of in een langdurig hersteltraject zit: in de app houd je dagelijkse check-ins, afspraken, oefeningen, medicatie en voortgang bij op één overzichtelijke plek.",
+        q: "Wat is REVA precies?",
+        a: "REVA is een patiëntenportaal dat specifiek gebouwd is voor fysiotherapiepraktijken. Patiënten houden na een blessure of operatie zelf hun herstel bij: dagelijkse check-ins over pijn en energie, foto-updates, medicatiegebruik en de voortgang van hun oefenprogramma. Als praktijk zie je al die informatie automatisch samenkomen in één overzicht, inclusief signalering van patiënten die extra aandacht nodig hebben. Zo hoef je niet meer zelf actief te bellen of appen om te weten hoe het met iemand gaat.",
       },
       {
         q: "Voor wie is REVA bedoeld?",
-        a: "REVA is bedoeld voor iedereen die herstelt van een blessure of operatie: van een knieblessure, enkelblessure of schouderblessure tot een heupoperatie, rugklachten of een andere ingreep. Ook sporters in een langdurig revalidatietraject en mensen die simpelweg structuur willen tijdens hun herstel gebruiken REVA.",
+        a: "REVA is bedoeld voor fysiotherapiepraktijken van elke omvang: van zelfstandige fysiotherapeuten tot praktijken met meerdere behandelaars en vestigingen. Het is vooral waardevol voor praktijken die patiënten begeleiden na een operatie, blessure of langdurig hersteltraject, waarbij overzicht en therapietrouw tussen behandelingen door belangrijk zijn.",
       },
       {
-        q: "Is REVA alleen voor knieblessures?",
-        a: "Nee. REVA is oorspronkelijk ontstaan vanuit een knieblessure, maar werkt inmiddels voor elke blessure, operatie of langdurig hersteltraject waarin je afspraken, oefeningen, medicatie en voortgang wilt bijhouden. Denk aan enkel-, schouder-, heup- en rugklachten, maar ook aan herstel na een val of botbreuk.",
+        q: "Vervangt REVA mijn bestaande EPD of praktijksoftware?",
+        a: "Nee, REVA vervangt je bestaande EPD, agenda- of declaratiesysteem niet. REVA is een aanvullend patiëntenportaal dat zich specifiek richt op de communicatie en het overzicht tussen behandelingen door: check-ins, herstelplannen en voortgang. De meeste praktijken gebruiken REVA naast hun huidige software. Tijdens een demo bespreken we hoe REVA aansluit op wat je al gebruikt.",
       },
       {
-        q: "Werkt REVA ook voor een enkelblessure, schouderblessure of sportblessure?",
-        a: "Ja. De functies van REVA zijn algemeen bruikbaar voor elk type blessure of operatie. Je kunt zelf aangeven waar je van herstelt, en de check-ins, oefeningen en pijnregistratie richt je in op jouw eigen situatie.",
+        q: "Wat maakt REVA anders dan een algemene fitness- of trainings-app?",
+        a: "Generieke fitness-apps zijn gebouwd voor trainingsschema's, niet voor een medisch hersteltraject. REVA is specifiek ontworpen rond de fases van herstel na een blessure of operatie: het combineert pijn- en medicatieregistratie, een digitaal dossier, behandeldoelen en voortgangsanalyse in één systeem dat is afgestemd op fysiotherapie, niet op sportprestatie.",
+      },
+    ],
+  },
+  {
+    category: "Implementatie",
+    items: [
+      {
+        q: "Hoe lang duurt het om REVA in mijn praktijk in te richten?",
+        a: "De meeste praktijken hebben REVA snel operationeel, zonder een langdurig IT-traject. Je richt je organisatie in, voegt medewerkers en locaties toe en stelt herstelplannen samen die je telkens opnieuw kunt gebruiken. Daarna kun je direct je eerste patiënten uitnodigen.",
       },
       {
-        q: "Kan ik REVA gebruiken naast mijn fysiotherapeut?",
-        a: "Ja. REVA vervangt geen fysiotherapeut, arts of ander zorgverlener, maar helpt je om je herstel gestructureerd bij te houden zodat je met concrete gegevens naar je afspraken gaat.",
+        q: "Heeft mijn team veel training nodig om met REVA te werken?",
+        a: "Nee. REVA is bewust eenvoudig en intuïtief opgezet, vergelijkbaar met apps die je team al dagelijks gebruikt. De meeste fysiotherapeuten en praktijkmedewerkers hebben binnen enkele minuten door hoe het werkt. Bij de start begeleiden we je team persoonlijk, zodat iedereen zich vanaf dag één zeker voelt.",
+      },
+      {
+        q: "Werkt REVA ook met meerdere behandelaars of vestigingen?",
+        a: "Ja. Je kunt meerdere medewerkers met verschillende rollen toevoegen en meerdere locaties inrichten binnen dezelfde organisatie. Patiënten en herstelplannen zijn overzichtelijk gekoppeld aan de juiste behandelaar en vestiging, ook als een patiënt van behandelaar wisselt.",
+      },
+      {
+        q: "Kan ik REVA eerst zien voordat ik overstap?",
+        a: "Ja. Tijdens een persoonlijke demo laten we REVA zien aan de hand van jouw eigen praktijksituatie, zodat je precies ziet hoe het voor jouw patiënten en team zou werken voordat je een keuze maakt.",
       },
     ],
   },
@@ -54,37 +69,37 @@ const faqGroups = [
     category: "Gebruik & functies",
     items: [
       {
-        q: "Wat kan ik allemaal bijhouden in REVA?",
-        a: "In REVA houd je je dagelijkse check-ins (pijn, energie, stemming), afspraken, trainingen en oefeningen, medicatie en pijnregistratie, foto's van je herstel, je digitale dossier en je voortgang met grafieken bij.",
+        q: "Wat houdt een patiënt precies bij in REVA?",
+        a: "Patiënten vullen dagelijks een korte check-in in over pijn, energie en hoe het herstel voelt, loggen medicatiegebruik, voegen foto-updates toe en vinken hun oefenprogramma af. Al die gegevens komen automatisch samen in het dossier dat jij als fysio inziet, inclusief grafieken die trends in pijn en therapietrouw laten zien.",
       },
       {
-        q: "Hoeveel tijd kost een dagelijkse check-in?",
-        a: "Een check-in duurt minder dan een minuut. Je beantwoordt een paar korte vragen over pijn, energie en gemoedstoestand.",
+        q: "Hoe nodig ik een patiënt uit voor REVA?",
+        a: "Je vult de gegevens van je patiënt in: de blessure of operatie, de startdatum en het herstelplan dat bij de situatie past. REVA bouwt hier automatisch een persoonlijk dashboard voor, en de patiënt ontvangt direct een e-mail om zijn of haar eigen portaal te activeren.",
       },
       {
-        q: "Kan ik mijn afspraken en medicatie bijhouden in REVA?",
-        a: "Ja. Je voegt afspraken toe met datum, tijd en locatie en krijgt een herinnering. Medicatie en pijnregistratie houd je apart bij, zodat je patronen kunt herkennen, bijvoorbeeld dat je pijn toeneemt na een zware trainingsdag.",
+        q: "Kan ik oefeningen of herstelplannen aanpassen tijdens een consult?",
+        a: "Ja. Tijdens het consult kun je oefeningen direct toevoegen, aanpassen of verwijderen uit het herstelplan van een patiënt. De patiënt ziet de wijziging meteen terug in zijn of haar eigen portaal, zonder dat je een los document hoeft door te sturen.",
       },
       {
-        q: "Kan ik foto's van mijn herstel toevoegen?",
-        a: "Ja. Je kunt foto's toevoegen aan je dossier of check-ins, bijvoorbeeld van een wond, zwelling of littekenherstel, zodat je zichtbaar kunt volgen hoe je herstel er ook uiterlijk aan toe is.",
-      },
-      {
-        q: "Werkt REVA ook op mobiel?",
-        a: "Ja. REVA is beschikbaar op web, iOS en Android, zodat je je herstel altijd en overal kunt bijhouden.",
+        q: "Werkt REVA ook op de telefoon van mijn patiënten?",
+        a: "Ja. Zowel jij als je patiënten kunnen REVA gebruiken via de browser, iOS en Android. Patiënten vullen hun dagelijkse check-in doorgaans in minder dan een minuut in op hun telefoon.",
       },
     ],
   },
   {
-    category: "Gratis gebruik",
+    category: "Prijzen",
     items: [
       {
-        q: "Wat kost REVA?",
-        a: "Niets op dit moment. REVA is nog in ontwikkeling en is voorlopig volledig gratis te gebruiken, zonder creditcard.",
+        q: "Wat kost REVA voor mijn praktijk?",
+        a: "REVA heeft vier pakketten: Solo (49 euro per maand) voor de zelfstandige fysiotherapeut, Team (129 euro per maand) voor een kleine praktijk, Praktijk (349 euro per maand) voor meerdere vestigingen en Enterprise (vanaf 699 euro per maand) voor grote praktijken en ketens. Bij jaarlijkse facturering betaal je het equivalent van 2 maanden gratis. Bekijk de prijzenpagina voor de volledige vergelijking.",
       },
       {
-        q: "Blijft REVA gratis?",
-        a: "Dat kunnen we nu nog niet garanderen. We bouwen REVA momenteel door samen met onze eerste gebruikers. Mochten we in de toekomst betaalde functies toevoegen, dan laten we dat ruim van tevoren weten.",
+        q: "Zitten er verborgen kosten aan REVA?",
+        a: "Nee. Elk pakket heeft een vaste maand- of jaarprijs waarin alle functies van REVA zijn inbegrepen, zonder verborgen kosten.",
+      },
+      {
+        q: "Is er een proefperiode of gratis versie?",
+        a: "Neem contact op om de mogelijkheden te bespreken. We laten je tijdens een persoonlijke demo eerst zien hoe REVA werkt, zodat je een weloverwogen keuze kunt maken voordat je instapt.",
       },
     ],
   },
@@ -92,16 +107,16 @@ const faqGroups = [
     category: "Veiligheid & privacy",
     items: [
       {
-        q: "Is mijn data veilig bij REVA?",
-        a: "Ja. Jouw gezondheidsdata wordt versleuteld opgeslagen en nooit gedeeld of verkocht aan derden. Je gegevens zijn en blijven van jou.",
+        q: "Is patiëntdata veilig bij REVA?",
+        a: "Ja. Gezondheidsgegevens van patiënten worden versleuteld opgeslagen en nooit gedeeld of verkocht aan derden. REVA is gebouwd met de vertrouwelijkheid van medische gegevens als uitgangspunt.",
       },
       {
-        q: "Kan ik mijn account en gegevens verwijderen?",
-        a: "Ja, je kunt je account en alle bijbehorende gegevens op elk moment permanent verwijderen via de instellingen van de app.",
+        q: "Is REVA AVG-proof, en is er een verwerkersovereenkomst?",
+        a: "Ja. Jouw praktijk blijft verwerkingsverantwoordelijke voor de gegevens van je patiënten, en REVA treedt op als verwerker op basis van een verwerkersovereenkomst die aansluit bij de AVG.",
       },
       {
-        q: "Is er een versie voor zorgverleners of praktijken?",
-        a: "REVA werkt momenteel aan een variant voor fysiotherapiepraktijken en revalidatiecentra. Neem contact op voor meer informatie.",
+        q: "Kan een patiënt zijn of haar gegevens laten verwijderen?",
+        a: "Ja. Een patiënt kan op elk moment vragen om het eigen account en de bijbehorende gegevens te laten verwijderen, in lijn met de AVG.",
       },
     ],
   },
@@ -144,7 +159,7 @@ export default function FaqPage() {
                 Alles wat je wilt weten over REVA
               </h1>
               <p className="text-lg" style={{ color: "#6b7280" }}>
-                Vind je je vraag hier niet terug? Neem gerust contact met ons op.
+                Vind je je vraag over REVA voor jouw praktijk hier niet terug? Neem gerust contact met ons op.
               </p>
             </AnimateIn>
           </div>
@@ -174,16 +189,16 @@ export default function FaqPage() {
                 Nog niet alle antwoorden gevonden?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                Stel je vraag rechtstreeks aan ons, of probeer REVA gratis en ervaar het zelf.
+                Stel je vraag rechtstreeks aan ons, of plan een demo en ervaar zelf hoe REVA werkt.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href={`${DASHBOARD_URL}/register`} className="btn-primary px-6 py-3">
-                  Start gratis
+                <Link href="/contact" className="btn-primary px-6 py-3">
+                  Vraag een demo aan
                   <ArrowRight className="w-4 h-4" />
-                </a>
-                <Link href="/contact" className="btn-dark px-6 py-3 text-sm">
-                  Neem contact op
                 </Link>
+                <a href="mailto:info@reva-app.nl" className="btn-dark px-6 py-3 text-sm">
+                  Stel je vraag per e-mail
+                </a>
               </div>
             </AnimateIn>
           </div>

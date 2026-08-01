@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 export function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", practice: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      setError("Vul alle velden in.");
+    if (!form.name || !form.practice || !form.email || !form.message) {
+      setError("Vul alle verplichte velden in.");
       return;
     }
     if (!form.email.includes("@")) {
@@ -32,9 +32,9 @@ export function ContactForm() {
         style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}
       >
         <CheckCircle className="w-8 h-8 text-green-600" />
-        <p className="font-semibold text-green-800">Bericht verstuurd!</p>
+        <p className="font-semibold text-green-800">Aanvraag verstuurd!</p>
         <p className="text-sm text-green-700">
-          Bedankt voor je bericht. We reageren zo snel mogelijk, meestal binnen één werkdag.
+          Bedankt voor je aanvraag. We nemen binnen één werkdag contact met je op om een demo in te plannen.
         </p>
       </div>
     );
@@ -74,12 +74,50 @@ export function ContactForm() {
           />
         </div>
         <div className="space-y-1.5">
+          <label className="text-sm font-medium" style={{ color: "#374151" }}>Praktijknaam</label>
+          <input
+            type="text"
+            value={form.practice}
+            onChange={(e) => setForm((f) => ({ ...f, practice: e.target.value }))}
+            placeholder="Naam van je praktijk"
+            style={inputStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
           <label className="text-sm font-medium" style={{ color: "#374151" }}>E-mail</label>
           <input
             type="email"
             value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-            placeholder="jouw@email.nl"
+            placeholder="jouw@praktijk.nl"
+            style={inputStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <label className="text-sm font-medium" style={{ color: "#374151" }}>Telefoonnummer <span style={{ color: "#9ca3af", fontWeight: 400 }}>(optioneel)</span></label>
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+            placeholder="06 12345678"
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor = "#e8632a";
@@ -97,7 +135,7 @@ export function ContactForm() {
         <textarea
           value={form.message}
           onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-          placeholder="Schrijf hier je bericht..."
+          placeholder="Vertel kort over je praktijk: aantal behandelaars, aantal locaties en wat je graag wilt weten."
           rows={5}
           style={{ ...inputStyle, resize: "vertical", minHeight: 130 }}
           onFocus={(e) => {
@@ -124,7 +162,7 @@ export function ContactForm() {
         {status === "loading" ? (
           <><Loader2 className="w-4 h-4 animate-spin" /> Versturen...</>
         ) : (
-          <><Send className="w-4 h-4" /> Verstuur bericht</>
+          <><Send className="w-4 h-4" /> Vraag een demo aan</>
         )}
       </button>
     </form>

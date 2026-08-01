@@ -19,6 +19,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/functies/voor-fysios`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/functies/voor-patienten`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/over-reva`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -28,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/prijzen`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.4,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/faq`,
@@ -51,8 +63,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/contact`,
       lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/verwijder-account`,
@@ -68,6 +80,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/algemene-voorwaarden`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/legal/dpa`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/cookiebeleid`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,

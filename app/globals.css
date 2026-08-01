@@ -51,12 +51,6 @@ body {
   height: 100%;
 }
 
-html {
-  /* Iets grotere basis dan de standaard 16px, voor betere leesbaarheid
-     (ook voor bezoekers die minder goed zien tijdens hun herstel). */
-  font-size: 112.5%;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -94,11 +88,23 @@ body {
   100% { transform: scale(1); }
 }
 
+@keyframes slideThumb {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(6px); }
+}
+
+@keyframes arrowNudge {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(4px); }
+}
+
 .animate-fade-in     { animation: fadeIn 0.6s ease-out both; }
 .animate-fade-in-up  { animation: fadeInUp 0.6s ease-out both; }
 .animate-slide-right { animation: slideRight 0.7s ease-out both; }
 .animate-pulse-soft  { animation: pulseSoft 2s ease-in-out infinite; }
+.animate-arrow-nudge { animation: arrowNudge 1.6s ease-in-out infinite; }
 .animate-success-pop { animation: successPop 0.4s ease-out both; }
+.animate-slide-thumb { animation: slideThumb 2.4s ease-in-out infinite; }
 
 .delay-100  { animation-delay: 100ms; }
 .delay-200  { animation-delay: 200ms; }
@@ -250,6 +256,33 @@ body {
 
 .hover-orange { transition: color 150ms; }
 .hover-orange:hover { color: #e8632a; }
+
+/* ─── Breakout-grid: links uitgelijnd met de container, rechts full-bleed ──
+   Kolom 2 heeft dezelfde breedte/inset als max-w-6xl + px-5/px-8, kolom 3 loopt
+   door tot de rand van het scherm. Gebaseerd op de eigen breedte van de sectie
+   (niet 100vw), dus geen scrollbar-afwijkingen. */
+.breakout-grid {
+  display: grid;
+  grid-template-columns: minmax(1.25rem, 1fr) min(1088px, calc(100% - 2.5rem)) minmax(0, 1fr);
+}
+@media (min-width: 768px) {
+  .breakout-grid {
+    grid-template-columns: minmax(2rem, 1fr) min(1088px, calc(100% - 4rem)) minmax(0, 1fr);
+  }
+}
+.breakout-grid > .breakout-bleed-right {
+  grid-column: 2 / 4;
+  min-width: 0;
+}
+
+/* ─── Verborgen scrollbar voor horizontale sliders ──────────────*/
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 /* ─── Scrollbar styling ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }

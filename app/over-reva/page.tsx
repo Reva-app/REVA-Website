@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Activity, Stethoscope, Code2, Heart, Quote, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
@@ -8,10 +9,10 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Over REVA",
   description:
-    "Het verhaal achter REVA: hoe een zware knieblessure tijdens het voetballen leidde tot een persoonlijk herstel dashboard voor iedereen die grip wil op zijn of haar herstel.",
+    "Het verhaal achter REVA: hoe een afgescheurde kniepees en een omslachtige eigen administratie via WhatsApp en Word leidden tot een patiëntenportaal voor fysiotherapiepraktijken.",
   openGraph: {
     title: "Over REVA",
-    description: "Het persoonlijke verhaal achter REVA, ontstaan vanuit een eigen hersteltraject na een zware knieblessure.",
+    description: "Het persoonlijke verhaal achter REVA, ontstaan vanuit een eigen hersteltraject en uitgegroeid tot een patiëntenportaal voor fysiotherapiepraktijken.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/over-reva",
@@ -21,32 +22,30 @@ export const metadata: Metadata = {
   },
 };
 
-const DASHBOARD_URL = "https://dashboard.reva-app.nl";
-
 const timeline = [
   {
     icon: Activity,
-    date: "8 maart",
+    date: "Vijf wedstrijden voor het einde",
     title: "De blessure",
-    description: "Tijdens het voetballen schiet de knieschijf uit de kom en scheurt de kniepees volledig af.",
+    description: "Tijdens een van zijn laatste wedstrijden scheurt de kniepees van Stef volledig af.",
   },
   {
     icon: Stethoscope,
-    date: "10 maart",
+    date: "Kort daarna",
     title: "De operatie",
-    description: "Twee dagen later volgt de operatie. Daarna begint het echte werk: het herstel.",
+    description: "Een operatie volgt, en daarmee begint een lang en onzeker hersteltraject.",
   },
   {
     icon: Code2,
-    date: "De weken erna",
+    date: "Tijdens het herstel",
     title: "REVA ontstaat",
-    description: "Uit de behoefte om herstel nauwkeurig bij te houden, wordt de eerste versie van REVA gebouwd.",
+    description: "Uit WhatsApp-berichtjes aan zichzelf, losse notities en een Word-document groeit het eerste persoonlijke dashboard.",
   },
   {
     icon: Heart,
     date: "Vandaag",
-    title: "REVA voor iedereen",
-    description: "Wat begon als persoonlijk hulpmiddel, is nu een dashboard voor iedereen die grip wil op zijn herstel.",
+    title: "REVA voor praktijken",
+    description: "Wat begon als persoonlijk hulpmiddel, wordt nu aangeboden aan fysiotherapiepraktijken.",
   },
 ];
 
@@ -56,7 +55,7 @@ const aboutJsonLd = {
   "@id": "https://www.reva-app.nl/over-reva#aboutpage",
   name: "Over REVA",
   description:
-    "Het verhaal achter REVA: ontstaan vanuit een persoonlijk hersteltraject na een zware knieblessure.",
+    "Het verhaal achter REVA: ontstaan vanuit een persoonlijk hersteltraject na een afgescheurde kniepees.",
   url: "https://www.reva-app.nl/over-reva",
   mainEntity: {
     "@type": "Person",
@@ -91,8 +90,8 @@ export default function OverRevaPage() {
                 Het verhaal achter REVA
               </h1>
               <p className="text-lg" style={{ color: "#6b7280" }}>
-                REVA is niet ontstaan op een tekentafel, maar op de bank tijdens mijn eigen herstel
-                van een zware knieblessure. Dit is dat verhaal.
+                REVA is niet ontstaan op een tekentafel, maar tijdens mijn eigen herstel van een
+                afgescheurde kniepees. Dit is dat verhaal.
               </p>
             </AnimateIn>
           </div>
@@ -140,59 +139,129 @@ export default function OverRevaPage() {
         <section className="py-12 md:py-16" style={{ background: "#f8f7f4" }}>
           <div className="max-w-3xl mx-auto px-5 md:px-8">
             <AnimateIn direction="up">
-              <div className="space-y-8" style={{ color: "#374151", lineHeight: 1.8, fontSize: "1.0625rem" }}>
+              <div className="space-y-8 text-base leading-relaxed" style={{ color: "#374151" }}>
                 <div>
                   <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                    8 maart: een zaterdag op het voetbalveld
+                    Vijf wedstrijden voor het einde
                   </h2>
                   <p>
-                    Op 8 maart stond ik op het voetbalveld, zoals zoveel zaterdagen daarvoor. Een
-                    verkeerde beweging, een klap op mijn knie, en ineens lag ik op het gras. Mijn
-                    knieschijf was uit de kom geschoten en bij de val had ik mijn volledige kniepees
-                    afgescheurd. Binnen een paar seconden veranderde mijn zaterdagmiddag in het begin
-                    van een lang hersteltraject.
+                    Ik had voor mezelf al besloten dat ik na dat seizoen zou stoppen met voetballen.
+                    Nog vijf wedstrijden te gaan, was het idee. Tijdens een van die laatste
+                    wedstrijden scheurde mijn kniepees volledig af. In plaats van een rustig afscheid
+                    van het voetbal, begon er een lang en onzeker hersteltraject.
+                  </p>
+                </div>
+              </div>
+            </AnimateIn>
+
+            {/* Foto's: ziekenhuis en röntgenfoto */}
+            <AnimateIn direction="up" delay={80} className="mt-8 grid grid-cols-2 gap-4">
+              <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "#e8e5df" }}>
+                <div className="relative w-full" style={{ aspectRatio: "3 / 4" }}>
+                  <Image
+                    src="/ziekenhuis-knie.jpeg"
+                    alt="Stef vanuit het ziekenhuisbed, kort na de operatie aan zijn knie"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 340px, 45vw"
+                  />
+                </div>
+              </div>
+              <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "#e8e5df", background: "#000" }}>
+                <div className="relative w-full" style={{ aspectRatio: "3 / 4" }}>
+                  <Image
+                    src="/rontgenfoto-knie.png"
+                    alt="Röntgenfoto van Stef's knieblessure"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 340px, 45vw"
+                  />
+                </div>
+              </div>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={100}>
+              <p className="text-xs text-center mt-3" style={{ color: "#9ca3af" }}>
+                Vanuit het ziekenhuisbed, en de röntgenfoto van diezelfde dag.
+              </p>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={120} className="mt-10">
+              <div className="space-y-8 text-base leading-relaxed" style={{ color: "#374151" }}>
+                <div>
+                  <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
+                    De operatie, en de afstand die ik voelde
+                  </h2>
+                  <p>
+                    Kort na de blessure volgde een operatie. Daarna begon het echte werk. Ik heb
+                    zelf het CIOS gedaan en dus wel een sportachtergrond, maar dat maakte het
+                    herstel niet per se makkelijker. Wat me vooral opviel: de afstand tussen een
+                    fysiotherapeut en een patiënt is bij veel praktijken best groot. Je ziet elkaar
+                    een keer per week, en de rest van de tijd sta je er grotendeels alleen voor.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                    De operatie en de eerste weken
+                    Systemen die niet aansloten
                   </h2>
                   <p>
-                    Twee dagen later, op dinsdag 10 maart, werd ik geopereerd. De operatie verliep
-                    goed, maar ik wist dat het echte werk nog moest beginnen. Ik ben iemand die
-                    graag alles piekfijn in de gaten houdt, dus ik wilde mijn herstel heel
-                    nauwkeurig gaan bijhouden: hoe mijn pijn zich ontwikkelde, welke oefeningen ik
-                    deed, wanneer ik medicatie nam en hoe mijn knie er letterlijk uitzag naarmate de
-                    weken vorderden.
+                    Ik ging op zoek naar een manier om mijn herstel bij te houden, en merkte al snel
+                    dat de bestaande systemen niet aansloten op wat ik nodig had. Software voor
+                    fysiopraktijken is meestal gericht op declareren en agenda&apos;s. Apps voor
+                    herstel zijn vaak generieke fitnessschema&apos;s. Geen van beide keek echt naar
+                    wat er allemaal bij een hersteltraject komt kijken: de verschillende fases, de
+                    schema&apos;s, de kleine dingen die je dag in dag uit bijhoudt.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                    Waarom bestaande apps niet volstonden
+                    Wat ik zelf ben gaan bijhouden
                   </h2>
                   <p>
-                    Al snel merkte ik dat daar eigenlijk geen goede, complete app voor bestond. Er
-                    waren losse appjes voor stappen tellen, een notitieapp voor mijn oefeningen, een
-                    fotomap voor mijn knie en een agenda voor mijn afspraken. Niets bracht het
-                    samen. Dus besloot ik het zelf te bouwen, in eerste instantie puur voor mezelf.
+                    Dus begon ik het zelf te doen, op de meest omslachtige manier die er is. Mijn
+                    medicatie-inname hield ik bij door mezelf berichtjes te sturen via WhatsApp. In
+                    mijn Notities-app schreef ik op hoe ik me voelde. En in één lang Word-document
+                    beschreef ik dag voor dag wat er gebeurde, puur voor mezelf, om het later te
+                    kunnen teruglezen.
                   </p>
                 </div>
+              </div>
+            </AnimateIn>
 
+            {/* WhatsApp screenshot */}
+            <AnimateIn direction="up" delay={100} className="mt-8 flex justify-center">
+              <div className="rounded-2xl overflow-hidden border w-[220px]" style={{ borderColor: "#e8e5df" }}>
+                <div className="relative w-full" style={{ aspectRatio: "9 / 16" }}>
+                  <Image
+                    src="/Whats-app.jpeg"
+                    alt="WhatsApp-berichtjes waarmee Stef zijn medicatie-inname bijhield"
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+              </div>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={120}>
+              <p className="text-xs text-center mt-3" style={{ color: "#9ca3af" }}>
+                Zo hield ik destijds mijn medicatie-inname bij: via WhatsApp-berichtjes aan mezelf.
+              </p>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={140} className="mt-10">
+              <div className="space-y-8 text-base leading-relaxed" style={{ color: "#374151" }}>
                 <div>
                   <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                    Wat REVA me tijdens mijn herstel gaf
+                    Het eerste persoonlijke dashboard
                   </h2>
                   <p>
-                    Wat me tijdens mijn eigen herstel enorm heeft geholpen, is dat je door er
-                    dagelijks mee bezig te zijn de kleine stapjes ziet die je anders zou missen. Op
-                    een moeilijke dag voelt herstel soms alsof je geen millimeter opschiet. Maar als
-                    je terugkijkt op je check-ins van de afgelopen weken, je foto&apos;s naast elkaar
-                    legt en je grafieken bekijkt, zie je zwart op wit hoeveel vooruitgang je
-                    eigenlijk hebt geboekt. Door mijn herstel op meerdere fronten bij te houden,
-                    zoals foto&apos;s, dagelijkse check-ins, medicatie en oefeningen, kreeg ik steeds
-                    weer een positief gevoel over mijn herstel, ook op de dagen dat het zwaar was.
+                    Eigenlijk was ik op zoek naar één plek waar al die losse stukjes samenkwamen, en
+                    die plek bestond nog niet. Dus bouwde ik hem zelf: een persoonlijk dashboard
+                    waar ik uiteindelijk zelf enorm veel aan heb gehad. Terugkijken op wat ik de
+                    weken daarvoor allemaal al had gedaan, gaf me grip. Herstel werd daardoor
+                    tastbaarder, in plaats van een vaag gevoel van &ldquo;het gaat wel oké&rdquo; of
+                    &ldquo;het gaat niet zo goed&rdquo;.
                   </p>
                 </div>
               </div>
@@ -213,28 +282,26 @@ export default function OverRevaPage() {
             </AnimateIn>
 
             <AnimateIn direction="up" delay={150} className="mt-10">
-              <div style={{ color: "#374151", lineHeight: 1.8, fontSize: "1.0625rem" }}>
+              <div className="text-base leading-relaxed" style={{ color: "#374151" }}>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                  REVA nu, voor iedereen die herstelt
+                  REVA nu, en waar we naartoe willen
                 </h2>
                 <p>
-                  Dat is de reden dat ik REVA heb ontwikkeld. Wat begon als een persoonlijk
-                  hulpmiddel tijdens mijn eigen herstel van een knieblessure, wil ik nu beschikbaar
-                  maken voor iedereen die grip wil op zijn of haar herstel. Of je nu net als ik een
-                  sportblessure hebt, herstelt van een operatie of een ander langdurig
-                  hersteltraject doorloopt: ik hoop dat REVA jou net zo goed kan steunen als het mij
-                  heeft geholpen.
+                  Dat persoonlijke dashboard heb ik doorontwikkeld tot wat REVA nu is: een
+                  patiëntenportaal dat elke fysiotherapiepraktijk aan haar patiënten kan aanbieden.
+                  We zijn daarmee nog lang niet klaar. Er staan functies op de planning, zoals een
+                  agendamodule, en daarbij kunnen we alle hulp gebruiken. Fysiotherapeuten en
+                  patiënten kunnen via een feedbackformulier wensen, bugs en ideeën met ons delen.
+                  Zo bouwen we, stap voor stap, aan wat wij hopen dat het systeem voor
+                  fysiotherapie in Nederland wordt.
                 </p>
               </div>
             </AnimateIn>
 
             {/* Signature */}
             <AnimateIn direction="up" delay={200} className="mt-10 flex items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold shrink-0"
-                style={{ background: "#e8632a" }}
-              >
-                S
+              <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 relative">
+                <Image src="/stef.png" alt="Stef Robberts, oprichter van REVA" fill className="object-cover" sizes="48px" />
               </div>
               <div>
                 <p className="font-semibold" style={{ color: "#1a1a1a" }}>Stef Robberts</p>
@@ -249,16 +316,16 @@ export default function OverRevaPage() {
           <div className="max-w-2xl mx-auto px-5 md:px-8 text-center">
             <AnimateIn direction="up">
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
-                Ook grip krijgen op je herstel?
+                Nieuwsgierig wat REVA voor jouw praktijk kan doen?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                REVA is nu volledig gratis te gebruiken. Geen creditcard nodig, gewoon beginnen.
+                Plan een demo en ontdek hoe REVA past bij jouw praktijk.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href={`${DASHBOARD_URL}/register`} className="btn-primary px-6 py-3">
-                  Start gratis
+                <Link href="/contact" className="btn-primary px-6 py-3">
+                  Vraag een demo aan
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <Link href="/functies" className="btn-dark px-6 py-3 text-sm">
                   Bekijk functies
                 </Link>

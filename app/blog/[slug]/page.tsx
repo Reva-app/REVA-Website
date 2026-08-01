@@ -173,8 +173,8 @@ export default async function BlogPostPage({ params }: Props) {
               ))}
 
               <p className="text-xs mt-10 pt-6 border-t" style={{ color: "#9ca3af", borderColor: "#e8e5df" }}>
-                Dit artikel is bedoeld als algemene informatie en vervangt geen medisch advies.
-                Raadpleeg bij twijfel altijd je arts of fysiotherapeut.
+                Dit artikel is bedoeld als algemene informatie en vervangt geen juridisch of
+                professioneel advies. Raadpleeg bij twijfel altijd een specialist.
               </p>
             </AnimateIn>
 
@@ -185,15 +185,15 @@ export default async function BlogPostPage({ params }: Props) {
                 style={{ background: "#1c1c1e" }}
               >
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Houd grip op je eigen herstel
+                  Overzicht over je patiënten, zonder extra telefoontjes
                 </h3>
                 <p className="text-sm mb-5" style={{ color: "#7c7c8a" }}>
-                  Start vandaag gratis met REVA. Geen creditcard nodig.
+                  Ontdek tijdens een demo hoe REVA past bij jouw praktijk.
                 </p>
-                <a href="https://dashboard.reva-app.nl/register" className="btn-primary px-5 py-2.5 text-sm">
-                  Start gratis
+                <Link href="/contact" className="btn-primary px-5 py-2.5 text-sm">
+                  Vraag een demo aan
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </AnimateIn>
           </div>

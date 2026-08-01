@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Mail, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { Mail, MessageSquare, HelpCircle } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Vraag een demo aan",
   description:
-    "Heb je een vraag of wil je meer weten over REVA? Neem contact op, we helpen je graag.",
+    "Vraag een demo aan en ontdek hoe REVA past bij jouw fysiotherapiepraktijk. We nemen binnen één werkdag contact op.",
   openGraph: {
-    title: "Contact",
-    description: "Heb je een vraag of wil je meer weten over REVA? Neem contact op.",
+    title: "Vraag een demo aan",
+    description: "Ontdek hoe REVA past bij jouw fysiotherapiepraktijk. Vraag een demo aan.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/contact",
@@ -36,13 +37,13 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <AnimateIn direction="up">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
-              Contact
+              Demo aanvragen
             </span>
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
-              Hoe kunnen we helpen?
+              Ontdek wat REVA voor jouw praktijk kan doen
             </h1>
             <p className="text-lg" style={{ color: "#6b7280" }}>
-              Heb je een vraag, opmerking of wil je meer weten over REVA? Stuur ons een bericht.
+              Vul het formulier in en we plannen een persoonlijke demo, afgestemd op jouw praktijk.
             </p>
           </AnimateIn>
         </div>
@@ -58,7 +59,7 @@ export default function ContactPage() {
               <AnimateIn direction="left">
                 <div>
                   <h2 className="text-xl font-semibold mb-5" style={{ color: "#1a1a1a" }}>
-                    Neem contact op
+                    Praat met ons over jouw praktijk
                   </h2>
                   <div className="space-y-4">
                     <div
@@ -99,6 +100,24 @@ export default function ContactPage() {
                         </p>
                       </div>
                     </div>
+                    <Link
+                      href="/faq"
+                      className="flex items-start gap-3 rounded-2xl p-4 border transition-colors hover:shadow-md"
+                      style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
+                    >
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                        style={{ background: "#fff3ee" }}
+                      >
+                        <HelpCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-0.5" style={{ color: "#1a1a1a" }}>Liever eerst antwoorden?</p>
+                        <p className="text-sm hover-orange" style={{ color: "#6b7280" }}>
+                          Bekijk de veelgestelde vragen
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </AnimateIn>

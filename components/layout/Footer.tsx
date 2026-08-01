@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FooterCookieSettingsLink } from "@/components/FooterCookieSettingsLink";
 
 const DASHBOARD_URL = "https://dashboard.reva-app.nl";
 
@@ -20,14 +21,23 @@ export function Footer() {
               <span className="text-base font-semibold tracking-tight text-white">REVA</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "#7c7c8a" }}>
-              Jouw persoonlijk herstel dashboard. Grip op je herstel, dag voor dag.
+              Het patiëntenportaal voor fysiotherapiepraktijken. Overzicht over je patiënten, minder telefoontjes.
             </p>
-            <a
-              href={`${DASHBOARD_URL}/register`}
+            <Link
+              href="/contact"
               className="btn-primary px-4 py-2 text-sm"
             >
-              Start gratis
-            </a>
+              Vraag een demo aan
+            </Link>
+            <div className="text-xs leading-relaxed pt-2" style={{ color: "#52525e" }}>
+              <p>REVA B.V.</p>
+              <p>KvK: [KvK-nummer]</p>
+              <p>BTW: [BTW-nummer]</p>
+              <p>[Vestigingsplaats]</p>
+              <a href="mailto:info@reva-app.nl" className="footer-link">
+                info@reva-app.nl
+              </a>
+            </div>
           </div>
 
           {/* Product links */}
@@ -63,6 +73,7 @@ export function Footer() {
               {[
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Algemene Voorwaarden", href: "/algemene-voorwaarden" },
+                { label: "Cookiebeleid", href: "/cookiebeleid" },
                 { label: "Account verwijderen", href: "/verwijder-account" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
@@ -72,6 +83,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <FooterCookieSettingsLink />
+              </li>
             </ul>
           </div>
         </div>
@@ -82,7 +96,7 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.06)", color: "#52525e" }}
         >
           <p>© {new Date().getFullYear()} REVA App · reva-app.nl</p>
-          <p>Gebouwd voor mensen die beter worden.</p>
+          <p>Gebouwd voor de fysiotherapiepraktijk van vandaag.</p>
         </div>
       </div>
     </footer>

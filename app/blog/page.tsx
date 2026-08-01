@@ -10,10 +10,10 @@ import { getSortedBlogPosts } from "@/lib/blog-posts";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Artikelen over herstel, revalidatie, operaties en sporthervatting na een blessure. Praktische uitleg om grip te houden op je hersteltraject, welke blessure of operatie je ook hebt.",
+    "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG. Praktische inzichten om overzicht te houden over je patiënten.",
   openGraph: {
     title: "Blog",
-    description: "Artikelen over herstel, revalidatie en sporthervatting na een blessure of operatie.",
+    description: "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw en digitalisering.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/blog",
@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
           "@id": "https://www.reva-app.nl/blog#blog",
           name: "REVA Blog",
           description:
-            "Artikelen over herstel, revalidatie, knieoperaties en sporthervatting na een blessure.",
+            "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG.",
           url: "https://www.reva-app.nl/blog",
           inLanguage: "nl-NL",
           blogPost: posts.map((post) => ({
@@ -69,12 +69,11 @@ export default function BlogIndexPage() {
                 Blog
               </span>
               <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
-                Uitleg en inzichten over herstel
+                Inzichten voor fysiotherapiepraktijken
               </h1>
               <p className="text-lg" style={{ color: "#6b7280" }}>
-                Praktische artikelen over revalidatie, operaties en sporthervatting, geschreven om
-                je te helpen grip te houden op je hersteltraject, ongeacht welke blessure of
-                operatie je herstelt.
+                Praktische artikelen over patiëntcommunicatie, therapietrouw en digitalisering,
+                geschreven om je te helpen overzicht te houden over je praktijk.
               </p>
             </AnimateIn>
           </div>
@@ -131,15 +130,15 @@ export default function BlogIndexPage() {
           <div className="max-w-2xl mx-auto px-5 md:px-8 text-center">
             <AnimateIn direction="up">
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
-                Klaar om je herstel bij te houden?
+                Klaar voor overzicht over je patiënten?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                Start vandaag gratis met REVA en ervaar hoe overzicht je herstel makkelijker maakt.
+                Vraag een demo aan en ontdek hoe REVA past bij jouw praktijk.
               </p>
-              <a href="https://dashboard.reva-app.nl/register" className="btn-primary px-6 py-3">
-                Start gratis
+              <Link href="/contact" className="btn-primary px-6 py-3">
+                Vraag een demo aan
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </AnimateIn>
           </div>
         </section>

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Shield, CreditCard, Sparkles } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { PricingTable } from "@/components/PricingTable";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { pricingTiers } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: "Prijzen — nu volledig gratis",
+  title: "Prijzen",
   description:
-    "REVA is nog in ontwikkeling. De app is voorlopig volledig gratis te gebruiken, zonder creditcard en zonder verplichtingen.",
+    "REVA heeft vier heldere pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Alle functies inbegrepen, geen verborgen kosten.",
   openGraph: {
-    title: "Prijzen — nu volledig gratis",
-    description: "REVA is nog in ontwikkeling en voorlopig volledig gratis te gebruiken.",
+    title: "Prijzen",
+    description: "Vier heldere pakketten voor fysiotherapiepraktijken, van zelfstandig fysiotherapeut tot praktijk met meerdere vestigingen.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/prijzen",
@@ -21,40 +23,65 @@ export const metadata: Metadata = {
   },
 };
 
-const DASHBOARD_URL = "https://dashboard.reva-app.nl";
-
 const includedFeatures = [
-  "Persoonlijk herstel dashboard",
-  "Dagelijkse check-ins (pijn, energie, stemming)",
-  "Afspraken bijhouden",
-  "Trainingen en oefeningen volgen",
-  "Medicatie en pijnregistratie",
-  "Persoonlijk digitaal dossier",
-  "Voortgang en analyse met grafieken",
-  "Zorgverzekering & contactgegevens",
-  "Doelen & mijlpalen instellen",
+  "Praktijkoverzicht met signalering",
+  "Check-ins van patiënten (pijn, energie, stemming)",
+  "Afspraken en behandelplan",
+  "Herstelplannen en oefeningen",
+  "Pijn- en medicatieregistratie",
+  "Digitaal patiëntdossier",
+  "Voortgangsanalyse met grafieken",
+  "Patiëntgegevens en contacten",
+  "Behandeldoelen en mijlpalen",
+];
+
+const tierExplanations = [
+  {
+    name: "Solo",
+    price: "49 euro per maand",
+    text: "Je werkt alleen en hebt geen uitgebreid team nodig om toch overzicht te houden over je patiënten. Met ruimte voor 200 patiënten heb je volop tijd om te groeien voordat je aan een groter pakket toe bent.",
+  },
+  {
+    name: "Team",
+    price: "129 euro per maand",
+    text: "Met twee tot vijf medewerkers werk je samen aan overzicht over tot 750 patiënten. Dit pakket wordt het vaakst gekozen: het past precies bij praktijken die net beginnen te groeien.",
+  },
+  {
+    name: "Praktijk",
+    price: "349 euro per maand",
+    text: "Vanaf zes medewerkers en meerdere vestigingen komt er meer bij kijken dan software alleen. Daarom krijg je bij dit pakket ook persoonlijke onboarding en prioriteitsondersteuning, zodat een grotere implementatie soepel verloopt.",
+  },
+  {
+    name: "Enterprise",
+    price: "vanaf 699 euro per maand",
+    text: "Bij 16 medewerkers of meer, en een onbeperkt aantal vestigingen en patiënten, werken we op maat. Je krijgt een vaste accountmanager en maken we afspraken die passen bij de schaal van jouw organisatie.",
+  },
 ];
 
 const faq = [
   {
-    q: "Is REVA echt gratis?",
-    a: "Ja, volledig. Je kunt nu alle functies van REVA gebruiken zonder te betalen en zonder creditcard.",
+    q: "Wat kost REVA?",
+    a: "REVA heeft vier pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Bij jaarlijkse facturering betaal je het equivalent van 2 maanden gratis. Welk pakket het beste past hangt af van het aantal medewerkers, vestigingen en patiënten in je praktijk.",
   },
   {
-    q: "Waarom is REVA nog gratis?",
-    a: "REVA is nog in ontwikkeling. We willen eerst een groep gebruikers goed helpen en van hun feedback leren, voordat we de app verder doorontwikkelen.",
+    q: "Zijn alle functies inbegrepen, in elk pakket?",
+    a: "Ja. Er is geen aparte, afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA. Het verschil tussen de pakketten zit in het aantal medewerkers, vestigingen en patiënten, en in het niveau van support en onboarding.",
   },
   {
-    q: "Blijft REVA altijd gratis?",
-    a: "Dat kunnen we op dit moment niet garanderen. Mochten we in de toekomst betaalde functies toevoegen, dan laten we dat ruim van tevoren weten aan alle gebruikers.",
+    q: "Kan ik maandelijks of jaarlijks betalen?",
+    a: "Beide kan. Bij jaarlijkse betaling ontvang je het equivalent van 2 maanden gratis ten opzichte van maandelijks betalen.",
   },
   {
-    q: "Is er een versie voor zorgverleners of praktijken?",
-    a: "We werken aan een variant voor fysiotherapiepraktijken en revalidatiecentra. Neem contact op voor meer informatie.",
+    q: "Wat gebeurt er als mijn praktijk groeit?",
+    a: "Je kunt op elk moment overstappen naar een groter pakket. Neem contact met ons op zodra je tegen de grenzen van je huidige pakket aanloopt, dan regelen we de overstap samen.",
   },
   {
-    q: "Is mijn gezondheidsdata veilig?",
-    a: "Ja. Jouw data wordt versleuteld opgeslagen en nooit gedeeld of verkocht. Jouw gezondheidsinformatie is privé en blijft van jou.",
+    q: "Kan ik REVA eerst zien voordat ik een pakket kies?",
+    a: "Ja. Tijdens een persoonlijke demo laten we REVA zien aan de hand van jouw praktijk, zodat je precies weet wat je kunt verwachten voordat je een pakket kiest.",
+  },
+  {
+    q: "Is patiëntdata veilig bij REVA?",
+    a: "Ja, in elk pakket. Gezondheidsdata wordt versleuteld opgeslagen en REVA werkt op basis van een verwerkersovereenkomst met jouw praktijk.",
   },
 ];
 
@@ -71,133 +98,99 @@ const faqJsonLd = {
   })),
 };
 
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "REVA patiëntenportaal",
+  description: "Patiëntenportaal voor fysiotherapiepraktijken, beschikbaar in vier pakketten.",
+  brand: {
+    "@type": "Brand",
+    name: "REVA",
+  },
+  offers: pricingTiers.map((tier) => ({
+    "@type": "Offer",
+    name: `REVA ${tier.name}`,
+    price: tier.monthly,
+    priceCurrency: "EUR",
+    priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
+    url: "https://www.reva-app.nl/prijzen",
+    availability: "https://schema.org/InStock",
+  })),
+};
+
 export default function PrijzenPage() {
   return (
     <>
       <JsonLd data={faqJsonLd} />
+      <JsonLd data={productJsonLd} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
-          { name: "In ontwikkeling", url: "https://www.reva-app.nl/prijzen" },
+          { name: "Prijzen", url: "https://www.reva-app.nl/prijzen" },
         ])}
       />
       <SiteLayout>
       {/* Hero */}
       <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
-        <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
           <AnimateIn direction="up">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
-              In ontwikkeling
+              Prijzen
             </span>
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
-              Nu volledig gratis te gebruiken
+              Eenvoudige, transparante prijzen
             </h1>
             <p className="text-lg" style={{ color: "#6b7280" }}>
-              We bouwen REVA nog volop uit. Daarom is de app op dit moment gratis, zonder creditcard en zonder verplichtingen.
+              Kies het pakket dat past bij de grootte van je praktijk. Van zelfstandig
+              fysiotherapeut tot praktijk met meerdere vestigingen: elk pakket geeft toegang tot
+              alle functies van REVA.
             </p>
           </AnimateIn>
         </div>
       </section>
 
-      {/* Pricing card */}
+      {/* Pricing table */}
       <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
-        <div className="max-w-lg mx-auto px-5 md:px-8">
-          <AnimateIn direction="up">
-            <div
-              className="rounded-2xl p-8 relative overflow-hidden"
-              style={{ background: "#1c1c1e" }}
-            >
-              <span
-                className="absolute top-5 right-5 text-xs font-semibold px-2.5 py-1 rounded-full"
-                style={{ background: "#e8632a", color: "#ffffff" }}
-              >
-                Early access
-              </span>
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <PricingTable />
+        </div>
+      </section>
 
-              <div className="mb-6">
-                <p className="text-sm font-semibold mb-1" style={{ color: "#7c7c8a" }}>REVA</p>
-                <div className="flex items-end gap-2 mb-1">
-                  <p className="text-5xl font-bold text-white">€0</p>
-                  <p className="text-sm mb-2" style={{ color: "#7c7c8a" }}>voorlopig</p>
-                </div>
-                <p className="text-sm" style={{ color: "#52525e" }}>
-                  Alle functies direct beschikbaar. Geen creditcard nodig.
-                </p>
-              </div>
-
-              <ul className="space-y-3 mb-8">
-                {includedFeatures.map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-white">
-                    <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#e8632a" }} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={`${DASHBOARD_URL}/register`}
-                className="btn-primary flex justify-center px-5 py-3.5 text-base w-full"
-              >
-                Start gratis
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <p className="text-center text-xs mt-4" style={{ color: "#52525e" }}>
-                Geen creditcard · Geen verplichtingen · Nu volledig gratis
-              </p>
-            </div>
+      {/* Why this tier makes sense, per package */}
+      <section className="py-16 md:py-20 border-t" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
+        <div className="max-w-4xl mx-auto px-5 md:px-8">
+          <AnimateIn direction="up" className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: "#1a1a1a" }}>
+              Welk pakket past bij jouw praktijk?
+            </h2>
           </AnimateIn>
-
-          {/* Trust icons */}
-          <AnimateIn direction="up" delay={150} className="mt-8 grid grid-cols-3 gap-4">
-            {[
-              { icon: Shield, label: "Veilige data" },
-              { icon: Sparkles, label: "Alle functies" },
-              { icon: CreditCard, label: "Geen creditcard" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center gap-2 text-center">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "#fff3ee" }}>
-                  <Icon className="w-4 h-4" style={{ color: "#e8632a" }} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {tierExplanations.map((t, i) => (
+              <AnimateIn key={t.name} direction="up" delay={i * 80}>
+                <div
+                  className="h-full rounded-2xl p-6 border"
+                  style={{ background: "#ffffff", borderColor: "#e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#e8632a" }}>
+                    {t.name} &middot; {t.price}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{t.text}</p>
                 </div>
-                <p className="text-xs font-medium" style={{ color: "#6b7280" }}>{label}</p>
-              </div>
+              </AnimateIn>
             ))}
-          </AnimateIn>
+          </div>
         </div>
       </section>
 
-      {/* Why free right now */}
-      <section className="py-12 md:py-16 border-t" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
-        <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <AnimateIn direction="up">
-            <div className="rounded-2xl p-7 md:p-8 border" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
-              <h2 className="text-xl md:text-2xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
-                Waarom is REVA nu gratis?
-              </h2>
-              <p className="text-sm leading-relaxed mb-3" style={{ color: "#6b7280" }}>
-                REVA is nog in ontwikkeling. Voordat we de app verder uitbouwen, willen we eerst
-                een groep gebruikers goed helpen tijdens hun herstel en van hun ervaringen leren.
-                Daarom is REVA voorlopig volledig gratis, zonder beperkingen op functies.
-              </p>
-              <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                We kunnen op dit moment niet garanderen dat REVA altijd gratis blijft. Mochten we
-                in de toekomst betaalde functies toevoegen, dan laten we dat ruim van tevoren weten
-                aan iedereen die de app gebruikt.
-              </p>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* What's included: expanded */}
-      <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
+      {/* Full feature set, shared across all tiers */}
+      <section className="py-16 md:py-20" style={{ background: "#ffffff" }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8">
           <AnimateIn direction="up" className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: "#1a1a1a" }}>
-              Alles inbegrepen. Geen verrassingen.
+              In elk pakket: het complete REVA-portaal
             </h2>
             <p className="mt-3 text-sm" style={{ color: "#6b7280" }}>
-              REVA geeft je nu toegang tot alle 9 modules, direct en volledig.
+              Geen aparte, afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA.
             </p>
           </AnimateIn>
 
@@ -222,7 +215,7 @@ export default function PrijzenPage() {
         <div className="max-w-2xl mx-auto px-5 md:px-8">
           <AnimateIn direction="up" className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: "#1a1a1a" }}>
-              Veelgestelde vragen
+              Veelgestelde vragen over prijzen
             </h2>
           </AnimateIn>
           <div className="space-y-4">
@@ -255,19 +248,19 @@ export default function PrijzenPage() {
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <AnimateIn direction="up">
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
-              Begin vandaag. Volledig gratis.
+              Klaar om te starten met REVA?
             </h2>
             <p className="mb-6" style={{ color: "#7c7c8a" }}>
-              Geen creditcard nodig, geen verplichtingen. Ervaar zelf wat REVA voor je herstel doet.
+              Vraag een demo aan en we helpen je het juiste pakket te kiezen voor jouw praktijk.
             </p>
-            <a
-              href={`${DASHBOARD_URL}/register`}
-              className="btn-primary px-6 py-3"
+            <Link
+              href="/contact"
+              className="group btn-primary px-6 py-3"
             >
-              Start gratis
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="mt-4 text-xs" style={{ color: "#52525e" }}>Nu volledig gratis · Geen creditcard nodig</p>
+              Vraag een demo aan
+              <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+            </Link>
+            <p className="mt-4 text-xs" style={{ color: "#52525e" }}>Persoonlijke demo · Geen verplichtingen</p>
           </AnimateIn>
         </div>
       </section>
