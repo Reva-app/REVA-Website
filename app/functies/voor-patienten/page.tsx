@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Functies voor patiënten",
@@ -59,6 +59,15 @@ export default function FunctiesVoorPatientenPage() {
   return (
     <>
       <JsonLd
+        data={webPageJsonLd({
+          url: "https://www.reva-app.nl/functies/voor-patienten",
+          name: "Functies voor patiënten | REVA",
+          description:
+            "Ontdek wat patiënten ervaren in het REVA-portaal dat jouw praktijk aan hen aanbiedt: dagelijkse check-ins, herstelplannen en oefeningen, pijn- en medicatieregistratie.",
+        })}
+      />
+      <JsonLd data={itemListJsonLd(features.map((f) => ({ name: f.title, description: f.description })))} />
+      <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
           { name: "Functies", url: "https://www.reva-app.nl/functies" },
@@ -73,11 +82,11 @@ export default function FunctiesVoorPatientenPage() {
               <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
                 Voor patiënten
               </span>
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
                 Een portaal dat je patiënten<br />
                 <span style={{ color: "#e8632a" }}>zelf grip geeft op hun herstel</span>
               </h1>
-              <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+              <p className="text-base max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
                 Als jouw praktijk REVA aanbiedt, krijgen patiënten een persoonlijk portaal waarin ze
                 dagelijks bijhouden hoe het herstel gaat. Overzichtelijk voor hen, en automatisch
                 zichtbaar voor jou en je team.
@@ -85,9 +94,9 @@ export default function FunctiesVoorPatientenPage() {
             </AnimateIn>
 
             <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="btn-primary px-5 py-3 text-sm">
+              <Link href="/contact" className="group btn-primary px-5 py-3 text-sm">
                 Vraag een demo aan
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
               <Link href="/functies/voor-fysios" className="btn-secondary px-5 py-3 text-sm">
                 Bekijk functies voor fysio&apos;s
@@ -122,7 +131,7 @@ export default function FunctiesVoorPatientenPage() {
         </section>
 
         {/* Video placeholder */}
-        <section className="py-16 md:py-20 border-t" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
+        <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <AnimateIn direction="up" className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
@@ -161,9 +170,9 @@ export default function FunctiesVoorPatientenPage() {
                 praktijk overzicht oplevert.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="btn-primary px-6 py-3.5 text-base">
+                <Link href="/contact" className="group btn-primary px-6 py-3.5 text-base">
                   Vraag een demo aan
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <Link href="/functies" className="btn-dark px-6 py-3.5 text-sm">
                   Bekijk alle functies

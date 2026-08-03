@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Algemene Voorwaarden",
   description:
     "De algemene voorwaarden van REVA App voor fysiotherapiepraktijken. Lees de afspraken en gebruiksregels van onze dienst.",
+  openGraph: {
+    title: "Algemene Voorwaarden",
+    description: "De algemene voorwaarden van REVA App voor fysiotherapiepraktijken.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/algemene-voorwaarden",
+  },
   alternates: {
     canonical: "https://www.reva-app.nl/algemene-voorwaarden",
   },

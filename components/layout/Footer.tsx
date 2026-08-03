@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { FooterCookieSettingsLink } from "@/components/FooterCookieSettingsLink";
 
 const DASHBOARD_URL = "https://dashboard.reva-app.nl";
@@ -25,9 +26,10 @@ export function Footer() {
             </p>
             <Link
               href="/contact"
-              className="btn-primary px-4 py-2 text-sm"
+              className="group btn-primary px-4 py-2 text-sm"
             >
               Vraag een demo aan
+              <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <div className="text-xs leading-relaxed pt-2" style={{ color: "#52525e" }}>
               <p>REVA B.V.</p>
@@ -41,7 +43,7 @@ export function Footer() {
           </div>
 
           {/* Product links */}
-          <div className="space-y-3">
+          <nav className="space-y-3" aria-label="Product">
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#52525e" }}>
               Product
             </p>
@@ -62,10 +64,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Legal links */}
-          <div className="space-y-3">
+          <nav className="space-y-3" aria-label="Juridisch">
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#52525e" }}>
               Juridisch
             </p>
@@ -87,7 +89,7 @@ export function Footer() {
                 <FooterCookieSettingsLink />
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom bar */}

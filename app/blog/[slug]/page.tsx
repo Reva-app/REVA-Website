@@ -190,9 +190,9 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="text-sm mb-5" style={{ color: "#7c7c8a" }}>
                   Ontdek tijdens een demo hoe REVA past bij jouw praktijk.
                 </p>
-                <Link href="/contact" className="btn-primary px-5 py-2.5 text-sm">
+                <Link href="/contact" className="group btn-primary px-5 py-2.5 text-sm">
                   Vraag een demo aan
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
               </div>
             </AnimateIn>

@@ -68,10 +68,10 @@ export default function BlogIndexPage() {
               <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
                 Blog
               </span>
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
                 Inzichten voor fysiotherapiepraktijken
               </h1>
-              <p className="text-lg" style={{ color: "#6b7280" }}>
+              <p className="text-base" style={{ color: "#6b7280" }}>
                 Praktische artikelen over patiëntcommunicatie, therapietrouw en digitalisering,
                 geschreven om je te helpen overzicht te houden over je praktijk.
               </p>
@@ -135,9 +135,9 @@ export default function BlogIndexPage() {
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
                 Vraag een demo aan en ontdek hoe REVA past bij jouw praktijk.
               </p>
-              <Link href="/contact" className="btn-primary px-6 py-3">
+              <Link href="/contact" className="group btn-primary px-6 py-3">
                 Vraag een demo aan
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
             </AnimateIn>
           </div>

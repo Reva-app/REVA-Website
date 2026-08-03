@@ -137,10 +137,10 @@ export default function PrijzenPage() {
             <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
               Prijzen
             </span>
-            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
+            <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
               Eenvoudige, transparante prijzen
             </h1>
-            <p className="text-lg" style={{ color: "#6b7280" }}>
+            <p className="text-base" style={{ color: "#6b7280" }}>
               Kies het pakket dat past bij de grootte van je praktijk. Van zelfstandig
               fysiotherapeut tot praktijk met meerdere vestigingen: elk pakket geeft toegang tot
               alle functies van REVA.

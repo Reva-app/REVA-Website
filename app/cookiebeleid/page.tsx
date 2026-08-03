@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Cookiebeleid",
   description:
     "Lees welke cookies REVA gebruikt, waarom, en hoe je op elk moment je cookievoorkeuren kunt aanpassen.",
+  openGraph: {
+    title: "Cookiebeleid",
+    description: "Welke cookies REVA gebruikt en hoe je je voorkeuren aanpast.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/cookiebeleid",
+  },
   robots: {
     index: true,
     follow: true,

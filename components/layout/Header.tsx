@@ -109,7 +109,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Hoofdnavigatie">
           {/* Functies dropdown */}
           <div
             className="relative"
@@ -119,7 +119,11 @@ export function Header() {
           >
             <button
               type="button"
+              id="functies-menu-button"
               onClick={() => setFunctiesOpen((v) => !v)}
+              aria-expanded={functiesOpen}
+              aria-haspopup="true"
+              aria-controls="functies-dropdown"
               className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors"
               style={{
                 color: functiesOpen || isActive("/functies") ? "#e8632a" : navTextColor,
@@ -135,6 +139,9 @@ export function Header() {
                 {/* Onzichtbare brug: voorkomt dat de dropdown sluit tijdens het oversteken van de kleine ruimte tussen knop en menu */}
                 <div className="absolute left-0 top-full w-full h-2" aria-hidden="true" />
                 <div
+                  id="functies-dropdown"
+                  role="menu"
+                  aria-labelledby="functies-menu-button"
                   className="absolute left-0 top-full mt-2 rounded-2xl border p-3 space-y-1"
                   style={{ background: "#ffffff", borderColor: "#e8e5df", boxShadow: "0 12px 32px rgba(0,0,0,0.1)", width: 320 }}
                 >
@@ -179,6 +186,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
               className="px-3.5 py-2 rounded-lg text-sm font-medium transition-colors"
               style={{
                 color: isActive(link.href) ? "#e8632a" : navTextColor,
@@ -236,7 +244,9 @@ export function Header() {
             className="p-2 rounded-lg transition-colors"
             style={{ color: navTextColor }}
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Menu openen"
+            aria-label={menuOpen ? "Menu sluiten" : "Menu openen"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -246,11 +256,13 @@ export function Header() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
+          id="mobile-menu"
           className="md:hidden border-t px-5 py-4 space-y-1"
           style={{ borderColor: "#e8e5df" }}
         >
           <Link
             href="/functies"
+            aria-current={isActive("/functies") ? "page" : undefined}
             className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
             style={{
               color: isActive("/functies") ? "#e8632a" : "#374151",
@@ -263,6 +275,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
               className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
               style={{
                 color: isActive(link.href) ? "#e8632a" : "#374151",

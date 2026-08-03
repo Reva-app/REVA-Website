@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Verwerkersovereenkomst",
   description:
     "De verwerkersovereenkomst (DPA) tussen REVA en fysiotherapiepraktijken die REVA gebruiken, conform de AVG. Wordt geaccepteerd bij het afsluiten van een abonnement.",
+  openGraph: {
+    title: "Verwerkersovereenkomst",
+    description: "De verwerkersovereenkomst (DPA) tussen REVA en jouw praktijk, conform de AVG.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/legal/dpa",
+  },
   robots: {
     index: true,
     follow: true,

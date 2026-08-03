@@ -3,14 +3,29 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
+const softwareOptions = [
+  "Nog geen patiëntenportaal",
+  "Ander patiëntenportaal",
+  "Losse tools (WhatsApp, Excel, etc.)",
+  "Weet ik nog niet",
+];
+
 export function ContactForm() {
-  const [form, setForm] = useState({ name: "", practice: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    practice: "",
+    email: "",
+    phone: "",
+    employees: "",
+    software: "",
+    message: "",
+  });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!form.name || !form.practice || !form.email || !form.message) {
+    if (!form.name || !form.practice || !form.email) {
       setError("Vul alle verplichte velden in.");
       return;
     }
@@ -52,72 +67,74 @@ export function ContactForm() {
     transition: "border-color 0.2s, box-shadow 0.2s",
   };
 
+  const selectStyle: React.CSSProperties = { ...inputStyle, color: form.software ? "#1a1a1a" : "#9ca3af" };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.5">
-          <label className="text-sm font-medium" style={{ color: "#374151" }}>Naam</label>
-          <input
-            type="text"
-            value={form.name}
-            onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-            placeholder="Jouw naam"
-            style={inputStyle}
-            onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
-              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
-            }}
-            onBlur={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
-              (e.target as HTMLInputElement).style.boxShadow = "none";
-            }}
-          />
-        </div>
-        <div className="space-y-1.5">
-          <label className="text-sm font-medium" style={{ color: "#374151" }}>Praktijknaam</label>
-          <input
-            type="text"
-            value={form.practice}
-            onChange={(e) => setForm((f) => ({ ...f, practice: e.target.value }))}
-            placeholder="Naam van je praktijk"
-            style={inputStyle}
-            onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
-              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
-            }}
-            onBlur={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
-              (e.target as HTMLInputElement).style.boxShadow = "none";
-            }}
-          />
-        </div>
+      <div className="space-y-1.5">
+        <label className="text-sm font-medium" style={{ color: "#374151" }}>Je naam</label>
+        <input
+          type="text"
+          value={form.name}
+          onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+          placeholder="Voor- en achternaam"
+          style={inputStyle}
+          onFocus={(e) => {
+            (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+            (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+          }}
+          onBlur={(e) => {
+            (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+            (e.target as HTMLInputElement).style.boxShadow = "none";
+          }}
+        />
       </div>
+
+      <div className="space-y-1.5">
+        <label className="text-sm font-medium" style={{ color: "#374151" }}>Bedrijf</label>
+        <input
+          type="text"
+          value={form.practice}
+          onChange={(e) => setForm((f) => ({ ...f, practice: e.target.value }))}
+          placeholder="Bijv. Fysiopraktijk de Linde"
+          style={inputStyle}
+          onFocus={(e) => {
+            (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+            (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+          }}
+          onBlur={(e) => {
+            (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+            (e.target as HTMLInputElement).style.boxShadow = "none";
+          }}
+        />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <label className="text-sm font-medium" style={{ color: "#374151" }}>Telefoon</label>
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+            placeholder="06 1234 5678"
+            style={inputStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
+          />
+        </div>
         <div className="space-y-1.5">
           <label className="text-sm font-medium" style={{ color: "#374151" }}>E-mail</label>
           <input
             type="email"
             value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-            placeholder="jouw@praktijk.nl"
-            style={inputStyle}
-            onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
-              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
-            }}
-            onBlur={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
-              (e.target as HTMLInputElement).style.boxShadow = "none";
-            }}
-          />
-        </div>
-        <div className="space-y-1.5">
-          <label className="text-sm font-medium" style={{ color: "#374151" }}>Telefoonnummer <span style={{ color: "#9ca3af", fontWeight: 400 }}>(optioneel)</span></label>
-          <input
-            type="tel"
-            value={form.phone}
-            onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-            placeholder="06 12345678"
+            placeholder="naam@praktijk.nl"
             style={inputStyle}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor = "#e8632a";
@@ -130,14 +147,64 @@ export function ContactForm() {
           />
         </div>
       </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <label className="text-sm font-medium" style={{ color: "#374151" }}>
+            Aantal medewerkers <span style={{ color: "#9ca3af", fontWeight: 400 }}>optioneel</span>
+          </label>
+          <input
+            type="number"
+            min={1}
+            value={form.employees}
+            onChange={(e) => setForm((f) => ({ ...f, employees: e.target.value }))}
+            placeholder="Bijv. 4"
+            style={inputStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8632a";
+              (e.target as HTMLInputElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "#e8e5df";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <label className="text-sm font-medium" style={{ color: "#374151" }}>
+            Huidige software <span style={{ color: "#9ca3af", fontWeight: 400 }}>optioneel</span>
+          </label>
+          <select
+            value={form.software}
+            onChange={(e) => setForm((f) => ({ ...f, software: e.target.value }))}
+            style={selectStyle}
+            onFocus={(e) => {
+              (e.target as HTMLSelectElement).style.borderColor = "#e8632a";
+              (e.target as HTMLSelectElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLSelectElement).style.borderColor = "#e8e5df";
+              (e.target as HTMLSelectElement).style.boxShadow = "none";
+            }}
+          >
+            <option value="">Kies je huidige software</option>
+            {softwareOptions.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       <div className="space-y-1.5">
-        <label className="text-sm font-medium" style={{ color: "#374151" }}>Bericht</label>
+        <label className="text-sm font-medium" style={{ color: "#374151" }}>
+          Opmerkingen <span style={{ color: "#9ca3af", fontWeight: 400 }}>optioneel</span>
+        </label>
         <textarea
           value={form.message}
           onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-          placeholder="Vertel kort over je praktijk: aantal behandelaars, aantal locaties en wat je graag wilt weten."
-          rows={5}
-          style={{ ...inputStyle, resize: "vertical", minHeight: 130 }}
+          placeholder="Iets wat we vooraf moeten weten? Bijvoorbeeld hoe je van ons gehoord hebt, met hoeveel locaties je werkt, of waar je tegenaan loopt."
+          rows={4}
+          style={{ ...inputStyle, resize: "vertical", minHeight: 110 }}
           onFocus={(e) => {
             (e.target as HTMLTextAreaElement).style.borderColor = "#e8632a";
             (e.target as HTMLTextAreaElement).style.boxShadow = "0 0 0 3px rgba(232,99,42,0.12)";
@@ -154,7 +221,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm text-white transition-colors disabled:opacity-60"
+        className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-white transition-colors disabled:opacity-60"
         style={{ background: "#e8632a" }}
         onMouseEnter={(e) => { if (status !== "loading") (e.currentTarget as HTMLButtonElement).style.background = "#d4581f"; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "#e8632a"; }}
@@ -162,9 +229,17 @@ export function ContactForm() {
         {status === "loading" ? (
           <><Loader2 className="w-4 h-4 animate-spin" /> Versturen...</>
         ) : (
-          <><Send className="w-4 h-4" /> Vraag een demo aan</>
+          <><Send className="w-4 h-4" /> Stuur mijn aanvraag</>
         )}
       </button>
+
+      <p className="text-xs text-center leading-relaxed" style={{ color: "#9ca3af" }}>
+        Door te versturen ga je akkoord met onze{" "}
+        <a href="/privacy-policy" className="hover-orange" style={{ color: "#6b7280", textDecoration: "underline" }}>
+          privacyverklaring
+        </a>
+        . We nemen doorgaans binnen één werkdag contact met je op.
+      </p>
     </form>
   );
 }

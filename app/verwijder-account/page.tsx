@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Account verwijderen",
   description:
     "Lees hoe je jouw REVA account en alle bijbehorende gegevens permanent kunt verwijderen via de instellingen van de app.",
+  openGraph: {
+    title: "Account verwijderen",
+    description: "Stap voor stap uitleg om een REVA account en alle bijbehorende gegevens permanent te verwijderen.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/verwijder-account",
+  },
   robots: {
     index: true,
     follow: true,

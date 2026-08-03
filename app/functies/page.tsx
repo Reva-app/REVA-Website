@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Functies",
@@ -184,6 +184,24 @@ export default function FunctiesPage() {
   return (
     <>
       <JsonLd
+        data={webPageJsonLd({
+          url: "https://www.reva-app.nl/functies",
+          name: "Functies | REVA",
+          description:
+            "Alle 9 functies van REVA voor overzicht over je patiënten, ongeacht de grootte van je praktijk.",
+          type: "CollectionPage",
+        })}
+      />
+      <JsonLd
+        data={itemListJsonLd(
+          features.map((f) => ({
+            name: f.title,
+            description: f.subtitle,
+            url: `https://www.reva-app.nl/functies#${f.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-")}`,
+          }))
+        )}
+      />
+      <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
           { name: "Functies", url: "https://www.reva-app.nl/functies" },
@@ -197,11 +215,11 @@ export default function FunctiesPage() {
             <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
               Functies
             </span>
-            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
+            <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
               9 modules voor<br />
               <span style={{ color: "#e8632a" }}>grip op je patiëntenzorg</span>
             </h1>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            <p className="text-base max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
               REVA bundelt alles wat je praktijk nodig heeft om patiënten te begeleiden na een
               blessure of operatie. Van check-ins en afspraken tot dossier en behandeldoelen:
               alles op één plek, overzichtelijk en betrouwbaar voor je hele team.
@@ -211,10 +229,10 @@ export default function FunctiesPage() {
           <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="btn-primary px-5 py-3 text-sm"
+              className="group btn-primary px-5 py-3 text-sm"
             >
               Vraag een demo aan
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <Link
               href="/faq"
@@ -223,11 +241,24 @@ export default function FunctiesPage() {
               Veelgestelde vragen
             </Link>
           </AnimateIn>
+
+          <AnimateIn direction="up" delay={200} className="mt-6">
+            <p className="text-sm" style={{ color: "#9ca3af" }}>
+              Bekijk functies per rol:{" "}
+              <Link href="/functies/voor-fysios" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+                voor fysio&apos;s
+              </Link>
+              {" "}·{" "}
+              <Link href="/functies/voor-patienten" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+                voor patiënten
+              </Link>
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
       {/* Feature overview grid */}
-      <section className="py-12 border-y" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+      <section className="py-12" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {features.map((f, i) => {
@@ -370,10 +401,10 @@ export default function FunctiesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="btn-primary px-6 py-3.5 text-base"
+                className="group btn-primary px-6 py-3.5 text-base"
               >
                 Vraag een demo aan
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
               <Link
                 href="/faq"

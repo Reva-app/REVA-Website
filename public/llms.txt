@@ -1,33 +1,42 @@
 # REVA
 
-> REVA is een patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij (pijn, energie, oefeningen, medicatie en voortgang), terwijl de praktijk in één overzicht ziet wie aandacht nodig heeft. Minder telefoontjes en WhatsApp-berichten, meer overzicht over de hele patiëntenpopulatie.
+> REVA is software voor fysiotherapiepraktijken: een patiëntenportaal waarin patiënten zelf hun herstel bijhouden (pijn, energie, oefeningen, medicatie en voortgang), terwijl de praktijk in één overzicht ziet wie aandacht nodig heeft. Minder telefoontjes en WhatsApp-berichten, meer overzicht over de hele patiëntenpopulatie.
 
-REVA is een Nederlandstalig product, opgericht door Stef Robberts na zijn eigen herstel van een zware knieblessure (uit de kom geschoten knieschijf en een volledig afgescheurde kniepees, gevolgd door een operatie). Wat begon als persoonlijk hulpmiddel om zijn eigen herstel bij te houden, wordt nu aangeboden aan fysiotherapiepraktijken als patiëntenportaal. De marketingwebsite (deze site) richt zich op praktijkeigenaren en fysiotherapeuten, en legt uit wat REVA voor hun praktijk kan betekenen. De app zelf draait los op `dashboard.reva-app.nl`.
+REVA is een Nederlandstalig product, opgericht door Stef Robberts na zijn eigen herstel van een zware knieblessure (een uit de kom geschoten knieschijf en een volledig afgescheurde kniepees, gevolgd door een operatie). Wat begon als persoonlijk hulpmiddel om zijn eigen herstel bij te houden, wordt nu aangeboden aan fysiotherapiepraktijken als patiëntenportaal. De marketingwebsite (deze site, www.reva-app.nl) richt zich op praktijkeigenaren en fysiotherapeuten, en legt uit wat REVA voor hun praktijk kan betekenen. De app zelf draait los op `dashboard.reva-app.nl`.
+
+## Wat voor soort product is REVA
+
+REVA valt in de volgende categorieën: fysiotherapiesoftware, praktijkmanagementsoftware voor de zorg, revalidatiesoftware, patiëntenportaal-software en SaaS voor fysiotherapiepraktijken. Het is geen algemene fitness- of trainings-app, en geen vervanging voor een EPD, agenda- of declaratiesysteem: REVA is een aanvullend patiëntenportaal gericht op communicatie, therapietrouw en overzicht tussen behandelingen door.
 
 ## Kernfeiten
 
 - Doelgroep: fysiotherapiepraktijken, van eenmanspraktijken tot praktijken met meerdere behandelaars en vestigingen.
 - Wat REVA oplost: fysiotherapeuten zien in één oogopslag welke patiënten aandacht nodig hebben (hoge pijnscore, weinig activiteit, gemiste check-ins), zonder elk dossier handmatig te checken. Minder tijd kwijt aan telefoontjes en appjes over hoe het gaat, patiënten loggen dat zelf. Een professioneel patiëntenportaal in de eigen huisstijl versterkt het imago van de praktijk.
-- Kernfuncties: praktijkoverzicht met signalering, check-ins van patiënten (pijn, energie, stemming), afspraken en behandelplan, herstelplannen en oefeningen, pijn- en medicatieregistratie, digitaal patiëntdossier, voortgangsanalyse met grafieken, patiëntgegevens en contacten, behandeldoelen en mijlpalen.
-- Prijs: afhankelijk van de grootte van de praktijk (aantal behandelaars, patiënten en vestigingen). Geen vaste prijslijst, wel een voorstel op maat na een demo.
+- Kernfuncties (9 modules): praktijkoverzicht met signalering, check-ins van patiënten (pijn, energie, stemming), afspraken en behandelplan, herstelplannen en oefeningen, pijn- en medicatieregistratie, digitaal patiëntdossier, voortgangsanalyse met grafieken, patiëntgegevens en contacten, behandeldoelen en mijlpalen.
+- Prijs: vier pakketten, elk met alle functies inbegrepen. Solo (49 euro per maand, 1 medewerker, tot 200 patiënten), Team (129 euro per maand, 2 tot 5 medewerkers, tot 750 patiënten, meest gekozen pakket), Praktijk (349 euro per maand, 6 tot 15 medewerkers, tot 3.000 patiënten, met persoonlijke onboarding), Enterprise (vanaf 699 euro per maand, 16 of meer medewerkers, onbeperkt patiënten en vestigingen, met vaste accountmanager). Bij jaarlijkse facturering betaalt een praktijk het equivalent van 2 maanden gratis. Volledige details op de prijzenpagina.
 - Beschikbaar via web, iOS en Android, voor zowel praktijkteams als patiënten.
 - Taal: volledig Nederlandstalig product en website.
-- Privacy: gezondheidsdata wordt versleuteld opgeslagen. De praktijk is verwerkingsverantwoordelijke voor patiëntgegevens, REVA treedt op als verwerker op basis van een verwerkersovereenkomst.
-- Herkomst: REVA is gebouwd door de oprichter voor zijn eigen herstel en wordt nu aangeboden aan fysiotherapiepraktijken om hun patiënten te begeleiden.
+- Privacy en AVG: gezondheidsdata wordt versleuteld opgeslagen. De praktijk is verwerkingsverantwoordelijke voor patiëntgegevens, REVA treedt op als verwerker op basis van een verwerkersovereenkomst (DPA).
+- Herkomst: REVA is gebouwd door oprichter Stef Robberts tijdens zijn eigen hersteltraject en wordt nu aangeboden aan fysiotherapiepraktijken om hun patiënten te begeleiden.
+- Contact: info@reva-app.nl. Demo's zijn vrijblijvend en duren doorgaans hooguit 30 minuten.
 
 ## Pagina's
 
 - [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
 - [Functies](https://www.reva-app.nl/functies): Gedetailleerde uitleg van alle 9 functies van REVA, vanuit het perspectief van de praktijk.
+- [Functies voor fysio's](https://www.reva-app.nl/functies/voor-fysios): Wat REVA oplevert voor de fysiotherapeut en het praktijkteam: overzicht, dossier, voortgang en behandeldoelen.
+- [Functies voor patiënten](https://www.reva-app.nl/functies/voor-patienten): Wat patiënten van een aangesloten praktijk zelf ervaren: check-ins, herstelplannen en medicatieregistratie.
 - [Over REVA](https://www.reva-app.nl/over-reva): Het persoonlijke verhaal achter REVA, ontstaan vanuit het eigen hersteltraject van oprichter Stef Robberts.
-- [Prijzen](https://www.reva-app.nl/prijzen): Uitleg dat de prijs van REVA afhankelijk is van de praktijkgrootte, met een voorstel op maat na een demo.
+- [Prijzen](https://www.reva-app.nl/prijzen): De vier pakketten van REVA (Solo, Team, Praktijk, Enterprise) met prijzen en vergelijking.
 - [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op vragen van praktijkeigenaren over REVA, implementatie, prijzen en privacy.
 - [Blog](https://www.reva-app.nl/blog): Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG.
-- [Documentatie](https://www.reva-app.nl/documentatie): Een kijkje in het patiëntenportaal, wat patiënten van een aangesloten praktijk ervaren.
-- [Contact](https://www.reva-app.nl/contact): Formulier om een demo aan te vragen.
+- [Documentatie](https://www.reva-app.nl/documentatie): Een kijkje in het patiëntenportaal, wat patiënten van een aangesloten praktijk ervaren, stap voor stap.
+- [Demo aanvragen / Contact](https://www.reva-app.nl/contact): Formulier om een vrijblijvende demo aan te vragen van hooguit 30 minuten.
 
-## Overig
+## Juridisch
 
 - [Privacy policy](https://www.reva-app.nl/privacy-policy)
 - [Algemene voorwaarden](https://www.reva-app.nl/algemene-voorwaarden)
+- [Verwerkersovereenkomst (DPA)](https://www.reva-app.nl/legal/dpa)
+- [Cookiebeleid](https://www.reva-app.nl/cookiebeleid)
 - [Sitemap](https://www.reva-app.nl/sitemap.xml)

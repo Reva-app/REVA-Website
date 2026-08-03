@@ -155,10 +155,10 @@ export default function FaqPage() {
               <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
                 Veelgestelde vragen
               </span>
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
                 Alles wat je wilt weten over REVA
               </h1>
-              <p className="text-lg" style={{ color: "#6b7280" }}>
+              <p className="text-base" style={{ color: "#6b7280" }}>
                 Vind je je vraag over REVA voor jouw praktijk hier niet terug? Neem gerust contact met ons op.
               </p>
             </AnimateIn>
@@ -192,9 +192,9 @@ export default function FaqPage() {
                 Stel je vraag rechtstreeks aan ons, of plan een demo en ervaar zelf hoe REVA werkt.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="btn-primary px-6 py-3">
+                <Link href="/contact" className="group btn-primary px-6 py-3">
                   Vraag een demo aan
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <a href="mailto:info@reva-app.nl" className="btn-dark px-6 py-3 text-sm">
                   Stel je vraag per e-mail

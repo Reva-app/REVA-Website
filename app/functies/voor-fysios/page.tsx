@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   LayoutDashboard,
   CalendarDays,
@@ -12,7 +13,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Functies voor fysio's",
@@ -73,6 +74,15 @@ export default function FunctiesVoorFysiosPage() {
   return (
     <>
       <JsonLd
+        data={webPageJsonLd({
+          url: "https://www.reva-app.nl/functies/voor-fysios",
+          name: "Functies voor fysio's | REVA",
+          description:
+            "Ontdek wat REVA voor jou en je team als fysiotherapeut doet: praktijkoverzicht, afspraken en behandelplan, digitaal patiëntdossier, voortgangsanalyse en behandeldoelen.",
+        })}
+      />
+      <JsonLd data={itemListJsonLd(features.map((f) => ({ name: f.title, description: f.description })))} />
+      <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
           { name: "Functies", url: "https://www.reva-app.nl/functies" },
@@ -87,11 +97,11 @@ export default function FunctiesVoorFysiosPage() {
               <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
                 Voor fysio&apos;s
               </span>
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
                 Overzicht en grip,<br />
                 <span style={{ color: "#e8632a" }}>gebouwd voor jouw team</span>
               </h1>
-              <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+              <p className="text-base max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
                 REVA geeft jou en je collega&apos;s overzicht over de hele caseload, zonder dat je
                 daar actief achteraan hoeft te bellen of appen. Van praktijkoverzicht tot dossier en
                 voortgang: alles wat je als fysio nodig hebt om patiënten goed te begeleiden.
@@ -99,13 +109,32 @@ export default function FunctiesVoorFysiosPage() {
             </AnimateIn>
 
             <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="btn-primary px-5 py-3 text-sm">
+              <Link href="/contact" className="group btn-primary px-5 py-3 text-sm">
                 Vraag een demo aan
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
               <Link href="/functies/voor-patienten" className="btn-secondary px-5 py-3 text-sm">
                 Bekijk functies voor patiënten
               </Link>
+            </AnimateIn>
+          </div>
+        </section>
+
+        {/* Showcase foto */}
+        <section className="py-12 md:py-16" style={{ background: "#f8f7f4" }}>
+          <div className="max-w-5xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up">
+              <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "#e8e5df" }}>
+                <div className="relative w-full" style={{ aspectRatio: "16 / 10" }}>
+                  <Image
+                    src="/7.png"
+                    alt="Een fysiotherapeut die op kantoor REVA gebruikt, terwijl op de achtergrond een patiënt wordt behandeld"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 1024px, 100vw"
+                  />
+                </div>
+              </div>
             </AnimateIn>
           </div>
         </section>
@@ -136,7 +165,7 @@ export default function FunctiesVoorFysiosPage() {
         </section>
 
         {/* Video placeholder */}
-        <section className="py-16 md:py-20 border-t" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
+        <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <AnimateIn direction="up" className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
@@ -175,9 +204,9 @@ export default function FunctiesVoorFysiosPage() {
                 jij en je collega&apos;s patiënten begeleiden.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="btn-primary px-6 py-3.5 text-base">
+                <Link href="/contact" className="group btn-primary px-6 py-3.5 text-base">
                   Vraag een demo aan
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <Link href="/functies" className="btn-dark px-6 py-3.5 text-sm">
                   Bekijk alle functies

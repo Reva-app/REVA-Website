@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { preload } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -80,8 +81,8 @@ const homeFaq = [
 
 const rotatingPhrases = [
   "tijd willen besparen.",
-  "patiënten centraal zetten.",
-  "fysio's en patiënten verbindt.",
+  "kwalitatieve herstelplannen willen.",
+  "inzicht in hun data willen hebben.",
 ];
 
 function useTypewriter(phrases: string[], typingSpeed = 45, deletingSpeed = 30, pause = 1800) {
@@ -118,13 +119,14 @@ function useTypewriter(phrases: string[], typingSpeed = 45, deletingSpeed = 30, 
 
 function HeroSection() {
   const rotatingText = useTypewriter(rotatingPhrases);
+  preload("/headline-reva-app.webp", { as: "image", fetchPriority: "high" });
 
   return (
     <section
       className="relative overflow-hidden flex items-center"
       style={{
         minHeight: "88vh",
-        backgroundImage: "url(/headline-reva-app.png)",
+        backgroundImage: "url(/headline-reva-app.webp)",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -148,9 +150,10 @@ function HeroSection() {
           </div>
 
           <h1
-            className="animate-fade-in-up delay-200 whitespace-normal md:whitespace-nowrap text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.15]"
+            className="animate-fade-in-up delay-200 md:whitespace-nowrap text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.15]"
           >
-            <span className="text-white">De software voor fysio&apos;s die </span>
+            <span className="text-white">Voor fysiopraktijken die </span>
+            <br className="md:hidden" />
             <span style={{ color: "#e8632a" }}>
               {rotatingText}
               <span className="animate-pulse-soft">|</span>
@@ -158,11 +161,9 @@ function HeroSection() {
           </h1>
 
           <div className="max-w-2xl space-y-6">
-          <p className="animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
-            Fysiotherapiepraktijken gebruiken REVA om patiënten na een blessure of operatie te
-            begeleiden met persoonlijke herstelplannen, terwijl het team in één overzicht ziet wie
-            aandacht nodig heeft. Minder telefoontjes en administratie, meer tijd die het je fysio&apos;s
-            oplevert.
+          <p className="hidden md:block animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
+            Bundel de expertise van je praktijk in herstelplannen, begeleid iedere patiënt
+            persoonlijk en zie in één overzicht waar jouw aandacht nodig is.
           </p>
 
           <div className="animate-fade-in-up delay-400 flex">
@@ -1133,7 +1134,7 @@ function CtaSection() {
     <section
       className="relative overflow-hidden"
       style={{
-        backgroundImage: "url(/headline-2.png)",
+        backgroundImage: "url(/headline-2.webp)",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

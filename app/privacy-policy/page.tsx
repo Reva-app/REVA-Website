@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Lees hoe REVA als verwerker omgaat met patiëntgegevens namens fysiotherapiepraktijken, en welke afspraken daarover gelden in de verwerkersovereenkomst.",
+  openGraph: {
+    title: "Privacy Policy",
+    description: "Hoe REVA omgaat met patiëntgegevens namens fysiotherapiepraktijken.",
+    locale: "nl_NL",
+    type: "website",
+    url: "https://www.reva-app.nl/privacy-policy",
+  },
   robots: {
     index: true,
     follow: true,
