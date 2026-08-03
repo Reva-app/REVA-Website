@@ -15,7 +15,7 @@ import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/compo
 export const metadata: Metadata = {
   title: "Functies voor patiënten",
   description:
-    "Ontdek wat patiënten ervaren in het REVA-portaal dat jouw praktijk aan hen aanbiedt: dagelijkse check-ins, herstelplannen en oefeningen, pijn- en medicatieregistratie, altijd bij de hand op de telefoon.",
+    "Wat patiënten ervaren in het REVA-portaal dat jouw praktijk aanbiedt: dagelijkse check-ins, herstelplannen, oefeningen en medicatieregistratie op de telefoon.",
   openGraph: {
     title: "Functies voor patiënten",
     description: "Check-ins, herstelplannen en medicatieregistratie: wat patiënten ervaren in het REVA-portaal.",
@@ -94,7 +94,7 @@ export default function FunctiesVoorPatientenPage() {
             </AnimateIn>
 
             <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="group btn-primary px-5 py-3 text-sm">
+              <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm">
                 Vraag een demo aan
                 <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
@@ -170,7 +170,7 @@ export default function FunctiesVoorPatientenPage() {
                 praktijk overzicht oplevert.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="group btn-primary px-6 py-3.5 text-base">
+                <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3.5 text-base">
                   Vraag een demo aan
                   <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>

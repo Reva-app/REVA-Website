@@ -168,7 +168,7 @@ function HeroSection() {
 
           <div className="animate-fade-in-up delay-400 flex">
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="group inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
@@ -1166,7 +1166,7 @@ function CtaSection() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-medium text-white transition-colors duration-300 text-base"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}

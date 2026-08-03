@@ -18,11 +18,11 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Functies",
+  title: "Functies patiëntenportaal fysiotherapie",
   description:
-    "Ontdek alle 9 functies van REVA: patiëntoverzicht, check-ins, afspraken, herstelplannen, medicatie, dossier en voortgangsanalyse. Het patiëntenportaal voor fysiotherapiepraktijken, alles op één plek voor je hele caseload.",
+    "Alle functies van REVA op een rij: patiëntoverzicht, check-ins, afspraken, herstelplannen, medicatie, dossier en voortgangsanalyse. Alles op één plek.",
   openGraph: {
-    title: "Functies",
+    title: "Functies patiëntenportaal fysiotherapie",
     description: "Alle 9 functies van REVA voor overzicht over je patiënten, ongeacht de grootte van je praktijk.",
     locale: "nl_NL",
     type: "website",
@@ -228,7 +228,7 @@ export default function FunctiesPage() {
 
           <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="group btn-primary px-5 py-3 text-sm"
             >
               Vraag een demo aan
@@ -400,7 +400,7 @@ export default function FunctiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/contact"
+                href="/demo-aanvragen"
                 className="group btn-primary px-6 py-3.5 text-base"
               >
                 Vraag een demo aan

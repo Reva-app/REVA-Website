@@ -7,11 +7,11 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Veelgestelde vragen",
+  title: "Veelgestelde vragen over REVA",
   description:
-    "Antwoorden op de meest gestelde vragen over REVA: wat het is, voor wie het bedoeld is, hoe de implementatie werkt, wat het kost en hoe REVA omgaat met patiëntdata.",
+    "Antwoorden op de meest gestelde vragen over REVA: wat het patiëntenportaal doet, hoe implementatie werkt, wat het kost en hoe REVA omgaat met patiëntdata.",
   openGraph: {
-    title: "Veelgestelde vragen",
+    title: "Veelgestelde vragen over REVA",
     description: "Antwoorden op de meest gestelde vragen over REVA, voor fysiotherapiepraktijken.",
     locale: "nl_NL",
     type: "website",
@@ -192,7 +192,7 @@ export default function FaqPage() {
                 Stel je vraag rechtstreeks aan ons, of plan een demo en ervaar zelf hoe REVA werkt.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="group btn-primary px-6 py-3">
+                <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
                   Vraag een demo aan
                   <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>

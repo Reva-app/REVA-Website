@@ -2,8 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FooterCookieSettingsLink } from "@/components/FooterCookieSettingsLink";
 
-const DASHBOARD_URL = "https://dashboard.reva-app.nl";
-
 export function Footer() {
   return (
     <footer style={{ background: "#18181a", color: "#ffffff" }}>
@@ -25,7 +23,7 @@ export function Footer() {
               Het patiëntenportaal voor fysiotherapiepraktijken. Overzicht over je patiënten, minder telefoontjes.
             </p>
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="group btn-primary px-4 py-2 text-sm"
             >
               Vraag een demo aan
@@ -55,7 +53,7 @@ export function Footer() {
                 { label: "Blog", href: "/blog" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Documentatie", href: "/documentatie" },
-                { label: "Inloggen", href: `${DASHBOARD_URL}/login` },
+                { label: "Inloggen", href: "/inloggen" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="footer-link">

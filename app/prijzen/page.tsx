@@ -8,11 +8,11 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { pricingTiers } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: "Prijzen",
+  title: "Prijzen patiëntenportaal fysiotherapie",
   description:
-    "REVA heeft vier heldere pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Alle functies inbegrepen, geen verborgen kosten.",
+    "REVA heeft vier heldere pakketten: Solo vanaf 49, Team vanaf 129, Praktijk vanaf 349 en Enterprise vanaf 699 euro per maand. Alle functies inbegrepen.",
   openGraph: {
-    title: "Prijzen",
+    title: "Prijzen patiëntenportaal fysiotherapie",
     description: "Vier heldere pakketten voor fysiotherapiepraktijken, van zelfstandig fysiotherapeut tot praktijk met meerdere vestigingen.",
     locale: "nl_NL",
     type: "website",
@@ -254,7 +254,7 @@ export default function PrijzenPage() {
               Vraag een demo aan en we helpen je het juiste pakket te kiezen voor jouw praktijk.
             </p>
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="group btn-primary px-6 py-3"
             >
               Vraag een demo aan

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { CookieConsentProvider } from "@/lib/cookie-consent";
 import { CookieBanner } from "@/components/CookieBanner";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | REVA App",
   },
   description:
-    "REVA is het patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij: pijn, energie, oefeningen en voortgang. Jij ziet dat in één overzicht, met signalering van wie aandacht nodig heeft. Minder telefoontjes, meer overzicht over je hele praktijk.",
+    "Patiëntenportaal voor fysiotherapiepraktijken. Patiënten loggen pijn, energie en oefeningen zelf, jij ziet direct wie aandacht nodig heeft. Minder bellen.",
   keywords: [
     "patiëntenportaal fysiotherapie",
     "software fysiotherapiepraktijk",
@@ -128,7 +129,7 @@ const jsonLd = {
           "@type": "ContactPoint",
           contactType: "sales",
           email: "info@reva-app.nl",
-          url: "https://www.reva-app.nl/contact",
+          url: "https://www.reva-app.nl/demo-aanvragen",
           areaServed: "NL",
           availableLanguage: ["Dutch", "nl"],
         },
@@ -136,6 +137,7 @@ const jsonLd = {
           "@type": "ContactPoint",
           contactType: "customer support",
           email: "info@reva-app.nl",
+          url: "https://www.reva-app.nl/contact",
           areaServed: "NL",
           availableLanguage: ["Dutch", "nl"],
         },
@@ -207,6 +209,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <CookieConsentProvider>
+          <GoogleTagManager />
           {children}
           <CookieBanner />
         </CookieConsentProvider>

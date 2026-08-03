@@ -6,7 +6,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Verwerkersovereenkomst",
   description:
-    "De verwerkersovereenkomst (DPA) tussen REVA en fysiotherapiepraktijken die REVA gebruiken, conform de AVG. Wordt geaccepteerd bij het afsluiten van een abonnement.",
+    "De verwerkersovereenkomst (DPA) tussen REVA en fysiotherapiepraktijken conform de AVG, geaccepteerd bij het afsluiten van een abonnement op REVA.",
   openGraph: {
     title: "Verwerkersovereenkomst",
     description: "De verwerkersovereenkomst (DPA) tussen REVA en jouw praktijk, conform de AVG.",

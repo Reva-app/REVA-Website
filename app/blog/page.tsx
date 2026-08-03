@@ -8,11 +8,11 @@ import { BlogIllustration } from "@/components/blog/BlogIllustration";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog voor fysiotherapiepraktijken",
   description:
-    "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG. Praktische inzichten om overzicht te houden over je patiënten.",
+    "Artikelen over patiëntcommunicatie, therapietrouw, digitalisering en AVG voor fysiotherapiepraktijken. Praktische inzichten om overzicht te houden.",
   openGraph: {
-    title: "Blog",
+    title: "Blog voor fysiotherapiepraktijken",
     description: "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw en digitalisering.",
     locale: "nl_NL",
     type: "website",
@@ -135,7 +135,7 @@ export default function BlogIndexPage() {
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
                 Vraag een demo aan en ontdek hoe REVA past bij jouw praktijk.
               </p>
-              <Link href="/contact" className="group btn-primary px-6 py-3">
+              <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
                 Vraag een demo aan
                 <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>

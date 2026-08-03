@@ -61,10 +61,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/demo-aanvragen`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/inloggen`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.4,
     },
     {
       url: `${baseUrl}/verwijder-account`,

@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Over REVA",
   description:
-    "Het verhaal achter REVA: hoe een afgescheurde kniepees en een omslachtige eigen administratie via WhatsApp en Word leidden tot een patiëntenportaal voor fysiotherapiepraktijken.",
+    "Het verhaal achter REVA: hoe een afgescheurde kniepees en omslachtige administratie via WhatsApp en Word leidden tot een patiëntenportaal voor fysiopraktijken.",
   openGraph: {
     title: "Over REVA",
     description: "Het persoonlijke verhaal achter REVA, ontstaan vanuit een eigen hersteltraject en uitgegroeid tot een patiëntenportaal voor fysiotherapiepraktijken.",
@@ -249,7 +249,7 @@ export default function OverRevaPage() {
                 Plan een demo en ontdek hoe REVA past bij jouw praktijk.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/contact" className="group btn-primary px-6 py-3">
+                <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
                   Vraag een demo aan
                   <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>

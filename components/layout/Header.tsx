@@ -34,8 +34,6 @@ const functiesLinks = [
   },
 ];
 
-const DASHBOARD_URL = "https://dashboard.reva-app.nl";
-
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [functiesOpen, setFunctiesOpen] = useState(false);
@@ -210,17 +208,17 @@ export function Header() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-2">
-          <a
-            href={`${DASHBOARD_URL}/login`}
+          <Link
+            href="/inloggen"
             className="px-4 py-2 rounded-lg text-sm font-medium border transition-colors"
             style={{ color: navTextColor, borderColor: barTransparent ? "rgba(255,255,255,0.4)" : "#d1d5db", background: barTransparent ? "transparent" : "#ffffff" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = barTransparent ? "rgba(255,255,255,0.5)" : "#f9fafb"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = barTransparent ? "transparent" : "#ffffff"; }}
           >
             Inloggen
-          </a>
+          </Link>
           <Link
-            href="/contact"
+            href="/demo-aanvragen"
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-white transition-colors"
             style={{ background: "#e8632a" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
@@ -233,13 +231,13 @@ export function Header() {
 
         {/* Mobile actions: directe inlogknop + menu */}
         <div className="md:hidden flex items-center gap-2">
-          <a
-            href={`${DASHBOARD_URL}/login`}
+          <Link
+            href="/inloggen"
             className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors"
             style={{ color: navTextColor, borderColor: barTransparent ? "rgba(255,255,255,0.4)" : "#d1d5db", background: barTransparent ? "transparent" : "#ffffff" }}
           >
             Inloggen
-          </a>
+          </Link>
           <button
             className="p-2 rounded-lg transition-colors"
             style={{ color: navTextColor }}
@@ -287,7 +285,7 @@ export function Header() {
           ))}
           <div className="pt-3 border-t mt-3" style={{ borderColor: "#e8e5df" }}>
             <Link
-              href="/contact"
+              href="/demo-aanvragen"
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium text-white"
               style={{ background: "#e8632a" }}
             >

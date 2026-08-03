@@ -110,7 +110,7 @@ export function PricingTable() {
                 </ul>
 
                 <Link
-                  href="/contact"
+                  href={tier.enterprise ? "/contact" : "/demo-aanvragen"}
                   className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-colors duration-300"
                   style={
                     tier.popular
