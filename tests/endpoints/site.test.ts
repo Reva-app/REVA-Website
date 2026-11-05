@@ -17,11 +17,13 @@ test("homepage: Markdown bij Accept: text/markdown", async () => {
   assert.match(body, /^# REVA App/);
 });
 
-test("homepage: HTML bij Accept: text/html, met Vary: Accept", async () => {
+// Vary: Accept is verplicht op de Markdown-response. Voorgebouwde HTML-pagina's krijgen op
+// Vercel een vaste Vary-header uit de cache; omdat proxy.ts vóór die cache draait, krijgt een
+// Markdown-verzoek nooit opgeslagen HTML. Daarom controleren we hier dat HTML HTML blijft.
+test("homepage: HTML bij Accept: text/html", async () => {
   const res = await get("/", "text/html");
   assert.equal(res.status, 200);
   assert.match(res.headers.get("content-type") ?? "", /^text\/html/);
-  assert.ok(variesOnAccept(res.headers.get("vary")), `Vary: ${res.headers.get("vary")}`);
   const html = await res.text();
   assert.match(html, /<title>REVA App \| Patiëntenportaal en fysiotherapiesoftware<\/title>/);
   assert.ok(html.includes('"@type":"Organization"'));
@@ -33,6 +35,7 @@ test("404: Markdown met uitleg en links, status 404", async () => {
   const res = await get("/deze-pagina-bestaat-echt-niet", "text/markdown");
   assert.equal(res.status, 404);
   assert.match(res.headers.get("content-type") ?? "", /^text\/markdown/);
+  assert.ok(variesOnAccept(res.headers.get("vary")), `Vary: ${res.headers.get("vary")}`);
   const body = await res.text();
   assert.ok(body.length >= 20);
   assert.ok(body.includes("/llms.txt") && body.includes("/sitemap.xml"));

@@ -28,13 +28,25 @@ export function htmlToMarkdown(html: string): string {
     },
   });
 
-  const body = turndown
+  // Een <br> in een kop is opmaak, geen nieuwe regel
+  turndown.addRule("headingBreaks", {
+    filter: (node) => node.nodeName === "BR" && !!node.parentElement?.closest("h1,h2,h3,h4,h5,h6"),
+    replacement: () => " ",
+  });
+
+  let body = turndown
     .turndown(main)
+    .replace(/\)\[/g, ") [") // aangrenzende links niet aan elkaar plakken
+    .replace(/[ \t]+$/gm, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 
-  const header = [title && !/^# /m.test(body) ? `# ${title}` : "", description ? `> ${description}` : ""]
-    .filter(Boolean)
-    .join("\n\n");
-  return `${header ? `${header}\n\n` : ""}${body}\n`;
+  const quote = description ? `> ${description}` : "";
+  const firstH1 = body.match(/^# .+$/m);
+  if (firstH1) {
+    // Beschrijving direct onder de titel van de pagina
+    if (quote) body = body.replace(firstH1[0], `${firstH1[0]}\n\n${quote}`);
+    return `${body}\n`;
+  }
+  return `${[title ? `# ${title}` : "", quote, body].filter(Boolean).join("\n\n")}\n`;
 }

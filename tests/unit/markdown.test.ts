@@ -62,3 +62,12 @@ test("HTML naar Markdown neemt alleen de hoofdinhoud mee", () => {
   assert.ok(md.includes("> Alle functies."));
   for (const noise of ["Menu", "Footer", "Klik", "x()"]) assert.ok(!md.includes(noise), noise);
 });
+
+test("HTML naar Markdown: kop zonder harde regelafbreking, links gescheiden, beschrijving onder de titel", () => {
+  const html = `<title>Functies | REVA App</title><meta name="description" content="Alle functies.">
+    <main><p>Functies</p><h1>9 modules voor<br>grip op je zorg</h1><a href="/demo-aanvragen">Demo</a><a href="/faq">FAQ</a></main>`;
+  const md = htmlToMarkdown(html);
+  assert.ok(md.includes("# 9 modules voor grip op je zorg\n\n> Alle functies."));
+  assert.ok(md.includes("[Demo](https://www.reva-app.nl/demo-aanvragen) [FAQ](https://www.reva-app.nl/faq)"));
+  assert.ok(!md.startsWith(">"));
+});
