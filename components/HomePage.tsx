@@ -24,7 +24,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { AnimateIn } from "./ui/AnimateIn";
-import { BlogIllustration } from "./blog/BlogIllustration";
+import { BlogCover } from "./blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { RevaGlyph } from "@/components/brand/RevaLogo";
 
@@ -62,7 +62,7 @@ const homeFaq = [
   },
   {
     q: "Wat kost REVA voor mijn praktijk?",
-    a: "REVA heeft vier pakketten vanaf 49 euro per maand, oplopend naar Team, Praktijk en Enterprise op basis van het aantal medewerkers en patiënten. Bij jaarlijkse facturering betaal je het equivalent van 2 maanden gratis.",
+    a: "REVA heeft vijf pakketten vanaf 49 euro per maand, oplopend naar Team, Praktijk, Praktijk Plus en Enterprise op basis van het aantal medewerkers, vestigingen en actieve patiënten. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA 30 dagen gratis proberen.",
   },
   {
     q: "Hoe lang duurt het om REVA in te richten?",
@@ -1089,7 +1089,7 @@ function BlogTeaserSection() {
                 className="flex flex-col h-full rounded-2xl border overflow-hidden transition-shadow hover:shadow-md"
                 style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
               >
-                <BlogIllustration category={post.category} className="aspect-[16/9]" />
+                <BlogCover post={post} className="aspect-[16/9]" />
                 <div className="flex flex-col flex-1 p-6">
                   <span
                     className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-3 px-2.5 py-1 rounded-full"

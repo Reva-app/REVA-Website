@@ -90,9 +90,9 @@ export default function AlgemeneVoorwaardenPage() {
 
         <h2>5. Abonnementen en pakketten</h2>
         <p>
-          REVA wordt aangeboden in vier pakketten: Solo, Team, Praktijk en Enterprise. Elk pakket
+          REVA wordt aangeboden in vijf pakketten: Solo, Team, Praktijk, Praktijk Plus en Enterprise. Elk pakket
           geeft toegang tot alle functies van REVA en verschilt in het aantal medewerkers,
-          vestigingen en patiënten dat is inbegrepen, en in het niveau van support en onboarding. De
+          vestigingen en actieve patiënten dat is inbegrepen, en in het niveau van support en onboarding. De
           actuele pakketten en de bijbehorende prijzen staan op{" "}
           <a href="/prijzen">reva-app.nl/prijzen</a>.
         </p>

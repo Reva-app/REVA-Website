@@ -13,7 +13,7 @@ REVA valt in de volgende categorieën: fysiotherapiesoftware, praktijkmanagement
 - Doelgroep: fysiotherapiepraktijken, van eenmanspraktijken tot praktijken met meerdere behandelaars en vestigingen.
 - Wat REVA oplost: fysiotherapeuten zien in één oogopslag welke patiënten aandacht nodig hebben (hoge pijnscore, weinig activiteit, gemiste check-ins), zonder elk dossier handmatig te checken. Minder tijd kwijt aan telefoontjes en appjes over hoe het gaat, patiënten loggen dat zelf. Een professioneel patiëntenportaal in de eigen huisstijl versterkt het imago van de praktijk.
 - Kernfuncties (9 modules): praktijkoverzicht met signalering, check-ins van patiënten (pijn, energie, stemming), afspraken en behandelplan, herstelplannen en oefeningen, pijn- en medicatieregistratie, digitaal patiëntdossier, voortgangsanalyse met grafieken, patiëntgegevens en contacten, behandeldoelen en mijlpalen.
-- Prijs: vier pakketten, elk met alle functies inbegrepen. Solo (49 euro per maand, 1 medewerker, tot 200 patiënten), Team (129 euro per maand, 2 tot 5 medewerkers, tot 750 patiënten, meest gekozen pakket), Praktijk (349 euro per maand, 6 tot 15 medewerkers, tot 3.000 patiënten, met persoonlijke onboarding), Enterprise (vanaf 699 euro per maand, 16 of meer medewerkers, onbeperkt patiënten en vestigingen, met vaste accountmanager). Bij jaarlijkse facturering betaalt een praktijk het equivalent van 2 maanden gratis. Volledige details op de prijzenpagina.
+- Prijs: vijf pakketten, elk met alle functies inbegrepen, prijzen exclusief btw. Solo (49 euro per maand, 1 medewerker, 1 vestiging, tot 200 actieve patiënten), Team (129 euro per maand, 2 tot 5 medewerkers, tot 2 vestigingen, tot 750 actieve patiënten, meest gekozen pakket), Praktijk (229 euro per maand, 6 tot 10 medewerkers, tot 3 vestigingen, tot 1.500 actieve patiënten, met persoonlijke onboarding), Praktijk Plus (349 euro per maand, 11 tot 20 medewerkers, tot 5 vestigingen, tot 3.000 actieve patiënten, met prioriteitsondersteuning), Enterprise (vanaf 699 euro per maand, 21 of meer medewerkers, onbeperkt vestigingen en patiënten, met persoonlijke accountmanager). Bij jaarlijks betalen krijgt een praktijk 2 maanden gratis. Alleen actieve patiënten tellen mee. REVA is 30 dagen gratis te proberen. Volledige details op de prijzenpagina.
 - Beschikbaar via web, iOS en Android, voor zowel praktijkteams als patiënten.
 - Taal: volledig Nederlandstalig product en website.
 - Privacy en AVG: gezondheidsdata wordt versleuteld opgeslagen. De praktijk is verwerkingsverantwoordelijke voor patiëntgegevens, REVA treedt op als verwerker op basis van een verwerkersovereenkomst (DPA).
@@ -27,11 +27,21 @@ REVA valt in de volgende categorieën: fysiotherapiesoftware, praktijkmanagement
 - [Functies voor fysio's](https://www.reva-app.nl/functies/voor-fysios): Wat REVA oplevert voor de fysiotherapeut en het praktijkteam: overzicht, dossier, voortgang en behandeldoelen.
 - [Functies voor patiënten](https://www.reva-app.nl/functies/voor-patienten): Wat patiënten van een aangesloten praktijk zelf ervaren: check-ins, herstelplannen en medicatieregistratie.
 - [Over REVA](https://www.reva-app.nl/over-reva): Het persoonlijke verhaal achter REVA, ontstaan vanuit het eigen hersteltraject van oprichter Stef Robberts.
-- [Prijzen](https://www.reva-app.nl/prijzen): De vier pakketten van REVA (Solo, Team, Praktijk, Enterprise) met prijzen en vergelijking.
+- [Prijzen](https://www.reva-app.nl/prijzen): De vijf pakketten van REVA (Solo, Team, Praktijk, Praktijk Plus, Enterprise) met prijzen en vergelijking.
 - [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op vragen van praktijkeigenaren over REVA, implementatie, prijzen en privacy.
 - [Blog](https://www.reva-app.nl/blog): Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG.
 - [Documentatie](https://www.reva-app.nl/documentatie): Een kijkje in het patiëntenportaal, wat patiënten van een aangesloten praktijk ervaren, stap voor stap.
 - [Demo aanvragen / Contact](https://www.reva-app.nl/contact): Formulier om een vrijblijvende demo aan te vragen van hooguit 30 minuten.
+
+## Blogartikelen
+
+- [Software voor fysiopraktijken](https://www.reva-app.nl/blog/software-voor-fysiopraktijken): De vijf soorten software in een fysiopraktijk (EPD, agenda, declareren, oefenprogramma's en patiëntenportaal), waar je op let bij het kiezen, wat het kost en waar REVA in past.
+- [Wat is een patiëntenportaal](https://www.reva-app.nl/blog/wat-is-een-patientenportaal): Uitleg over wat een patiëntenportaal is, het verschil met een EPD, welke functies erin horen en voor welke praktijken het meerwaarde heeft.
+- [Van WhatsApp naar patiëntenportaal](https://www.reva-app.nl/blog/van-whatsapp-naar-patientenportaal): Waarom fysiopraktijken overstappen van WhatsApp naar een patiëntenportaal, of WhatsApp past binnen de AVG en hoe je de overstap in vier stappen aanpakt.
+- [Tijd besparen op patiëntcommunicatie](https://www.reva-app.nl/blog/tijd-besparen-patientcommunicatie-fysiopraktijk): Hoeveel tijd telefoontjes en berichten tussen behandelingen door kosten, met een rekenvoorbeeld en vijf manieren om tijd terug te winnen.
+- [Therapietrouw en afhakende patiënten](https://www.reva-app.nl/blog/therapietrouw-verhogen-patienten-herkennen): Wat therapietrouw is, vijf vroege signalen van afhakende patiënten en wat je doet als je een signaal ziet.
+- [AVG en patiëntdata in de fysiopraktijk](https://www.reva-app.nl/blog/avg-patientdata-fysiopraktijk): Praktische gids over de AVG: bijzondere persoonsgegevens, grondslag onder de WGBO, verwerkersovereenkomst, bewaartermijnen, datalekken en een checklist.
+- [Continuïteit van zorg bij vakantie](https://www.reva-app.nl/blog/fysio-op-vakantie-continuiteit-van-zorg): Hoe je de zorg laat doorlopen als een fysiotherapeut afwezig is, met een overdrachtschecklist en aandachtspunten bij meerdere vestigingen.
 
 ## Juridisch
 

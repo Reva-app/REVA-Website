@@ -44,13 +44,12 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 />
               </button>
             </h3>
-            {isOpen && (
-              <div id={panelId} role="region" aria-labelledby={buttonId} className="px-5 pb-4">
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                  {item.a}
-                </p>
-              </div>
-            )}
+            {/* Altijd in de HTML (alleen verborgen), zodat zoekmachines alle antwoorden kunnen lezen */}
+            <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="px-5 pb-4">
+              <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                {item.a}
+              </p>
+            </div>
           </div>
         );
       })}

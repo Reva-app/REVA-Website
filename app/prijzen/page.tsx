@@ -5,15 +5,15 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { PricingTable } from "@/components/PricingTable";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { pricingTiers } from "@/lib/pricing";
+import { enterpriseTier, pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Prijzen patiëntenportaal fysiotherapie",
   description:
-    "REVA heeft vier heldere pakketten: Solo vanaf 49, Team vanaf 129, Praktijk vanaf 349 en Enterprise vanaf 699 euro per maand. Alle functies inbegrepen.",
+    "Vijf heldere pakketten voor fysiopraktijken: Solo 49, Team 129, Praktijk 229, Praktijk Plus 349 en Enterprise vanaf 699 euro per maand. 30 dagen gratis proberen.",
   openGraph: {
     title: "Prijzen patiëntenportaal fysiotherapie",
-    description: "Vier heldere pakketten voor fysiotherapiepraktijken, van zelfstandig fysiotherapeut tot praktijk met meerdere vestigingen.",
+    description: "Vijf heldere pakketten voor fysiotherapiepraktijken, van zelfstandig fysiotherapeut tot keten. Alle functies inbegrepen, 30 dagen gratis proberen.",
     locale: "nl_NL",
     type: "website",
     url: "https://www.reva-app.nl/prijzen",
@@ -39,45 +39,58 @@ const tierExplanations = [
   {
     name: "Solo",
     price: "49 euro per maand",
-    text: "Je werkt alleen en hebt geen uitgebreid team nodig om toch overzicht te houden over je patiënten. Met ruimte voor 200 patiënten heb je volop tijd om te groeien voordat je aan een groter pakket toe bent.",
+    text: "Je werkt als zelfstandig fysiotherapeut en wilt toch overzicht over al je patiënten. Met plek voor 200 actieve patiënten heb je volop ruimte om te groeien voordat je aan een groter pakket toe bent.",
   },
   {
     name: "Team",
     price: "129 euro per maand",
-    text: "Met twee tot vijf medewerkers werk je samen aan overzicht over tot 750 patiënten. Dit pakket wordt het vaakst gekozen: het past precies bij praktijken die net beginnen te groeien.",
+    text: "Met twee tot vijf medewerkers en tot twee vestigingen werk je samen aan overzicht over 750 actieve patiënten. Dit pakket wordt het vaakst gekozen: het past bij praktijken die aan het groeien zijn.",
   },
   {
     name: "Praktijk",
+    price: "229 euro per maand",
+    text: "Voor een gevestigde praktijk met een vast team van zes tot tien medewerkers, tot drie vestigingen en 1.500 actieve patiënten. Met persoonlijke onboarding zet je REVA in één keer goed neer voor het hele team.",
+  },
+  {
+    name: "Praktijk Plus",
     price: "349 euro per maand",
-    text: "Vanaf zes medewerkers en meerdere vestigingen komt er meer bij kijken dan software alleen. Daarom krijg je bij dit pakket ook persoonlijke onboarding en prioriteitsondersteuning, zodat een grotere implementatie soepel verloopt.",
+    text: "Werk je met elf tot twintig medewerkers op maximaal vijf locaties, dan komt er meer bij kijken dan software alleen. Je krijgt persoonlijke onboarding en prioriteitsondersteuning, voor tot 3.000 actieve patiënten.",
   },
   {
     name: "Enterprise",
     price: "vanaf 699 euro per maand",
-    text: "Bij 16 medewerkers of meer, en een onbeperkt aantal vestigingen en patiënten, werken we op maat. Je krijgt een vaste accountmanager en maken we afspraken die passen bij de schaal van jouw organisatie.",
+    text: "Meer dan twintig medewerkers of meerdere vestigingen in een keten? Dan maken we een voorstel op maat, met een onbeperkt aantal vestigingen en patiënten, een persoonlijke accountmanager en maatwerkafspraken.",
   },
 ];
 
 const faq = [
   {
     q: "Wat kost REVA?",
-    a: "REVA heeft vier pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Bij jaarlijkse facturering betaal je het equivalent van 2 maanden gratis. Welk pakket het beste past hangt af van het aantal medewerkers, vestigingen en patiënten in je praktijk.",
+    a: "REVA heeft vijf pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (229 euro per maand), Praktijk Plus (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Bij jaarlijks betalen krijg je 2 maanden gratis. Welk pakket past, hangt af van het aantal medewerkers, vestigingen en actieve patiënten in je praktijk. Alle prijzen zijn exclusief btw.",
+  },
+  {
+    q: "Kan ik REVA eerst gratis proberen?",
+    a: `Ja. Je kunt REVA ${TRIAL_DAYS} dagen gratis proberen. Wil je eerst zien hoe REVA werkt in jouw praktijk, vraag dan een persoonlijke demo aan.`,
   },
   {
     q: "Zijn alle functies inbegrepen, in elk pakket?",
-    a: "Ja. Er is geen aparte, afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA. Het verschil tussen de pakketten zit in het aantal medewerkers, vestigingen en patiënten, en in het niveau van support en onboarding.",
+    a: "Ja. Er is geen aparte, afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA. Het verschil tussen de pakketten zit in het aantal medewerkers, vestigingen en actieve patiënten, en in het niveau van support en onboarding.",
+  },
+  {
+    q: "Wat zijn actieve patiënten?",
+    a: "Alleen patiënten die op dit moment bij je in behandeling zijn, tellen mee voor je pakket. Patiënten van wie de behandeling is afgerond, tellen niet mee.",
   },
   {
     q: "Kan ik maandelijks of jaarlijks betalen?",
-    a: "Beide kan. Bij jaarlijkse betaling ontvang je het equivalent van 2 maanden gratis ten opzichte van maandelijks betalen.",
+    a: "Beide kan. Bij jaarlijks betalen krijg je 2 maanden gratis: je betaalt tien keer de maandprijs voor een heel jaar.",
+  },
+  {
+    q: "Zijn de prijzen inclusief btw?",
+    a: "Nee. Alle prijzen op deze pagina zijn exclusief btw.",
   },
   {
     q: "Wat gebeurt er als mijn praktijk groeit?",
     a: "Je kunt op elk moment overstappen naar een groter pakket. Neem contact met ons op zodra je tegen de grenzen van je huidige pakket aanloopt, dan regelen we de overstap samen.",
-  },
-  {
-    q: "Kan ik REVA eerst zien voordat ik een pakket kies?",
-    a: "Ja. Tijdens een persoonlijke demo laten we REVA zien aan de hand van jouw praktijk, zodat je precies weet wat je kunt verwachten voordat je een pakket kiest.",
   },
   {
     q: "Is patiëntdata veilig bij REVA?",
@@ -102,16 +115,26 @@ const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "REVA patiëntenportaal",
-  description: "Patiëntenportaal voor fysiotherapiepraktijken, beschikbaar in vier pakketten.",
+  description: "Patiëntenportaal voor fysiotherapiepraktijken, beschikbaar in vijf pakketten.",
   brand: {
     "@type": "Brand",
     name: "REVA",
   },
-  offers: pricingTiers.map((tier) => ({
+  offers: [
+    ...pricingTiers.map((tier) => ({ name: tier.name, price: tier.monthly })),
+    { name: enterpriseTier.name, price: enterpriseTier.fromMonthly },
+  ].map((tier) => ({
     "@type": "Offer",
     name: `REVA ${tier.name}`,
-    price: tier.monthly,
+    price: tier.price,
     priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: tier.price,
+      priceCurrency: "EUR",
+      unitText: "per maand",
+      valueAddedTaxIncluded: false,
+    },
     priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
     url: "https://www.reva-app.nl/prijzen",
     availability: "https://schema.org/InStock",
@@ -166,7 +189,12 @@ export default function PrijzenPage() {
           </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {tierExplanations.map((t, i) => (
-              <AnimateIn key={t.name} direction="up" delay={i * 80}>
+              <AnimateIn
+                key={t.name}
+                direction="up"
+                delay={i * 80}
+                className={i === tierExplanations.length - 1 ? "sm:col-span-2" : undefined}
+              >
                 <div
                   className="h-full rounded-2xl p-6 border"
                   style={{ background: "#ffffff", borderColor: "#e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}

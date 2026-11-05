@@ -4,7 +4,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { BlogIllustration } from "@/components/blog/BlogIllustration";
+import { BlogCover } from "@/components/blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -90,7 +90,7 @@ export default function BlogIndexPage() {
                     className="flex flex-col h-full rounded-2xl border overflow-hidden transition-shadow hover:shadow-md"
                     style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
                   >
-                    <BlogIllustration category={post.category} className="aspect-[16/9]" />
+                    <BlogCover post={post} className="aspect-[16/9]" />
                     <div className="flex flex-col flex-1 p-6">
                       <span
                         className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-4 px-2.5 py-1 rounded-full"

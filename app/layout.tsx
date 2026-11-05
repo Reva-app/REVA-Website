@@ -187,7 +187,7 @@ const jsonLd = {
         priceCurrency: "EUR",
         lowPrice: "49",
         highPrice: "699",
-        offerCount: "4",
+        offerCount: "5",
         url: "https://www.reva-app.nl/prijzen",
       },
     },

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { ArrowRight, Calendar, Clock, ArrowLeft, Check } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { BlogIllustration } from "@/components/blog/BlogIllustration";
+import { BlogCover } from "@/components/blog/BlogCover";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 type Props = {
@@ -26,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.metaDescription,
+    keywords: post.keywords,
     openGraph: {
       title: post.title,
       description: post.metaDescription,
@@ -33,11 +35,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       url,
       publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
     },
     alternates: {
       canonical: url,
     },
   };
+}
+
+// Zet [tekst](/pad) in alinea's om naar interne links
+function renderInline(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    return (
+      <Link key={i} href={match[2]} className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
+        {match[1]}
+      </Link>
+    );
+  });
+}
+
+function stripLinks(text: string) {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
+function headingId(heading: string) {
+  return heading
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function formatDate(dateStr: string) {
@@ -65,7 +95,17 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    ...(post.image && {
+      image: {
+        "@type": "ImageObject",
+        url: `https://www.reva-app.nl${post.image.src}`,
+        width: 2400,
+        height: 1350,
+      },
+    }),
+    ...(post.keywords && { keywords: post.keywords.join(", ") }),
+    articleSection: post.category,
     inLanguage: "nl-NL",
     url,
     mainEntityOfPage: {
@@ -89,11 +129,26 @@ export default async function BlogPostPage({ params }: Props) {
     },
   };
 
+  const faqJsonLd = post.faq && {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    mainEntity: post.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripLinks(item.answer),
+      },
+    })),
+  };
+
   const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
     <>
       <JsonLd data={articleJsonLd} />
+      {faqJsonLd && <JsonLd data={faqJsonLd} />}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
@@ -128,6 +183,9 @@ export default async function BlogPostPage({ params }: Props) {
                   <Calendar className="w-4 h-4" />
                   {formatDate(post.publishedAt)}
                 </span>
+                {post.updatedAt && post.updatedAt !== post.publishedAt && (
+                  <span className="hidden sm:inline">Bijgewerkt op {formatDate(post.updatedAt)}</span>
+                )}
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-4 h-4" />
                   {post.readTime} leestijd
@@ -135,7 +193,12 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </AnimateIn>
             <AnimateIn direction="up" delay={80}>
-              <BlogIllustration category={post.category} className="w-full aspect-[21/9] rounded-2xl" />
+              <BlogCover
+                post={post}
+                priority
+                sizes="(min-width: 768px) 704px, 100vw"
+                className="w-full aspect-[21/9] rounded-2xl"
+              />
             </AnimateIn>
           </div>
         </section>
@@ -144,33 +207,75 @@ export default async function BlogPostPage({ params }: Props) {
         <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
           <div className="max-w-3xl mx-auto px-5 md:px-8">
             <AnimateIn direction="up">
+              {post.summary && (
+                <aside
+                  className="rounded-2xl border p-6 md:p-7 mb-10"
+                  style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
+                  aria-label="In het kort"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#e8632a" }}>
+                    In het kort
+                  </p>
+                  <ul className="space-y-3">
+                    {post.summary.map((item) => (
+                      <li key={item} className="flex gap-3 text-[0.975rem] leading-relaxed" style={{ color: "#374151" }}>
+                        <span
+                          className="mt-1 w-5 h-5 rounded-full flex items-center justify-center shrink-0"
+                          style={{ background: "#fff3ee" }}
+                        >
+                          <Check className="w-3 h-3" style={{ color: "#e8632a" }} strokeWidth={3} />
+                        </span>
+                        <span>{renderInline(item)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </aside>
+              )}
+
               <div className="space-y-5 mb-10" style={{ color: "#374151", lineHeight: 1.75, fontSize: "1.0625rem" }}>
                 {post.intro.map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i}>{renderInline(p)}</p>
                 ))}
               </div>
 
               {post.sections.map((section) => (
                 <div key={section.heading} className="mb-9">
-                  <h2 className="text-xl font-semibold mb-3" style={{ color: "#1a1a1a" }}>
+                  <h2
+                    id={headingId(section.heading)}
+                    className="text-xl font-semibold mb-3 scroll-mt-28"
+                    style={{ color: "#1a1a1a" }}
+                  >
                     {section.heading}
                   </h2>
                   <div className="space-y-4" style={{ color: "#4b5563", lineHeight: 1.75, fontSize: "1.0625rem" }}>
                     {section.paragraphs.map((p, i) => (
-                      <p key={i}>{p}</p>
+                      <p key={i}>{renderInline(p)}</p>
                     ))}
                   </div>
                   {section.list && (
                     <ul className="mt-4 space-y-2 list-disc pl-5" style={{ color: "#4b5563" }}>
                       {section.list.map((item) => (
                         <li key={item} className="text-[1.0625rem] leading-relaxed">
-                          {item}
+                          {renderInline(item)}
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
               ))}
+
+              {post.faq && (
+                <div className="mt-12 mb-4">
+                  <h2
+                    id="veelgestelde-vragen"
+                    className="text-xl font-semibold mb-5 scroll-mt-28"
+                    style={{ color: "#1a1a1a" }}
+                  >
+                    Veelgestelde vragen
+                  </h2>
+                  <FaqAccordion items={post.faq.map((item) => ({ q: item.question, a: stripLinks(item.answer) }))} />
+                </div>
+              )}
 
               <p className="text-xs mt-10 pt-6 border-t" style={{ color: "#9ca3af", borderColor: "#e8e5df" }}>
                 Dit artikel is bedoeld als algemene informatie en vervangt geen juridisch of

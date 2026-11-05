@@ -91,7 +91,7 @@ const faqGroups = [
     items: [
       {
         q: "Wat kost REVA voor mijn praktijk?",
-        a: "REVA heeft vier pakketten: Solo (49 euro per maand) voor de zelfstandige fysiotherapeut, Team (129 euro per maand) voor een kleine praktijk, Praktijk (349 euro per maand) voor meerdere vestigingen en Enterprise (vanaf 699 euro per maand) voor grote praktijken en ketens. Bij jaarlijkse facturering betaal je het equivalent van 2 maanden gratis. Bekijk de prijzenpagina voor de volledige vergelijking.",
+        a: "REVA heeft vijf pakketten: Solo (49 euro per maand) voor de zelfstandige fysiotherapeut, Team (129 euro per maand) voor een kleine praktijk, Praktijk (229 euro per maand) voor een gevestigde praktijk met een vast team, Praktijk Plus (349 euro per maand) voor meerdere locaties en Enterprise (vanaf 699 euro per maand) voor grote praktijken en ketens. Bij jaarlijks betalen krijg je 2 maanden gratis. Alle prijzen zijn exclusief btw. Bekijk de prijzenpagina voor de volledige vergelijking.",
       },
       {
         q: "Zitten er verborgen kosten aan REVA?",
@@ -99,7 +99,7 @@ const faqGroups = [
       },
       {
         q: "Is er een proefperiode of gratis versie?",
-        a: "Neem contact op om de mogelijkheden te bespreken. We laten je tijdens een persoonlijke demo eerst zien hoe REVA werkt, zodat je een weloverwogen keuze kunt maken voordat je instapt.",
+        a: "Ja. Je kunt REVA 30 dagen gratis proberen. Wil je eerst zien hoe REVA werkt in jouw praktijk, dan laten we het je graag zien tijdens een persoonlijke demo.",
       },
     ],
   },
