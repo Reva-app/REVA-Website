@@ -85,6 +85,41 @@ export const enterpriseTier = {
 
 export const TRIAL_DAYS = 30;
 
+export const pricingFaq = [
+  {
+    q: "Wat kost REVA?",
+    a: "REVA heeft vijf pakketten: Solo (49 euro per maand), Team (129 euro per maand), Praktijk (229 euro per maand), Praktijk Plus (349 euro per maand) en Enterprise (vanaf 699 euro per maand). Bij jaarlijks betalen krijg je 2 maanden gratis. Welk pakket past, hangt af van het aantal medewerkers, vestigingen en actieve patiënten in je praktijk. Alle prijzen zijn exclusief btw.",
+  },
+  {
+    q: "Kan ik REVA eerst gratis proberen?",
+    a: `Ja. Je kunt REVA ${TRIAL_DAYS} dagen gratis proberen. Wil je eerst zien hoe REVA werkt in jouw praktijk, vraag dan een persoonlijke demo aan.`,
+  },
+  {
+    q: "Zijn alle functies inbegrepen, in elk pakket?",
+    a: "Ja. Er is geen aparte, afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA. Het verschil tussen de pakketten zit in het aantal medewerkers, vestigingen en actieve patiënten, en in het niveau van support en onboarding.",
+  },
+  {
+    q: "Wat zijn actieve patiënten?",
+    a: "Alleen patiënten die op dit moment bij je in behandeling zijn, tellen mee voor je pakket. Patiënten van wie de behandeling is afgerond, tellen niet mee.",
+  },
+  {
+    q: "Kan ik maandelijks of jaarlijks betalen?",
+    a: "Beide kan. Bij jaarlijks betalen krijg je 2 maanden gratis: je betaalt tien keer de maandprijs voor een heel jaar.",
+  },
+  {
+    q: "Zijn de prijzen inclusief btw?",
+    a: "Nee. Alle prijzen op deze pagina zijn exclusief btw.",
+  },
+  {
+    q: "Wat gebeurt er als mijn praktijk groeit?",
+    a: "Je kunt op elk moment overstappen naar een groter pakket. Neem contact met ons op zodra je tegen de grenzen van je huidige pakket aanloopt, dan regelen we de overstap samen.",
+  },
+  {
+    q: "Is patiëntdata veilig bij REVA?",
+    a: "Ja, in elk pakket. Gezondheidsdata wordt versleuteld opgeslagen en REVA werkt op basis van een verwerkersovereenkomst met jouw praktijk.",
+  },
+];
+
 /** Omgerekend maandbedrag bij jaarlijks betalen, afgerond op hele euro's. */
 export function yearlyPerMonth(tier: PricingTier) {
   return Math.round(tier.yearly / 12);

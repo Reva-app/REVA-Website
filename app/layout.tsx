@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reva-app.nl"),
   title: {
-    default: "REVA | Patiëntenportaal voor fysiotherapiepraktijken",
+    default: "REVA App | Patiëntenportaal en fysiotherapiesoftware",
     template: "%s | REVA App",
   },
   description:
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "REVA | Patiëntenportaal voor fysiotherapiepraktijken",
+    title: "REVA App | Patiëntenportaal en fysiotherapiesoftware",
     description:
       "Overzicht over je patiënten, zonder extra telefoontjes. REVA is het patiëntenportaal waarmee fysiotherapiepraktijken patiënten begeleiden na een blessure of operatie.",
     siteName: "REVA App",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "REVA | Patiëntenportaal voor fysiotherapiepraktijken",
+    title: "REVA App | Patiëntenportaal en fysiotherapiesoftware",
     description:
       "Overzicht over je patiënten, zonder extra telefoontjes. Het patiëntenportaal voor fysiotherapiepraktijken.",
   },
@@ -95,6 +95,7 @@ const jsonLd = {
       "@type": "Organization",
       "@id": "https://www.reva-app.nl/#organization",
       name: "REVA App",
+      alternateName: ["REVA", "REVA patiëntenportaal"],
       legalName: "REVA B.V.",
       url: "https://www.reva-app.nl",
       logo: {
