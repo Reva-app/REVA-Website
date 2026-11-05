@@ -20,6 +20,7 @@ export function SimpleContactForm() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,8 +34,23 @@ export function SimpleContactForm() {
     }
     setError("");
     setStatus("loading");
-    // Simulate: vervang door echte API call
-    await new Promise((r) => setTimeout(r, 1000));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "contact", ...form, website: honeypot }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setError(data?.error ?? "Er ging iets mis. Probeer het later opnieuw.");
+        setStatus("error");
+        return;
+      }
+    } catch {
+      setError("Geen verbinding mogelijk. Probeer het later opnieuw.");
+      setStatus("error");
+      return;
+    }
     setStatus("success");
   };
 
@@ -69,6 +85,16 @@ export function SimpleContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className="text-sm font-medium" style={{ color: "#374151" }}>Je naam</label>
