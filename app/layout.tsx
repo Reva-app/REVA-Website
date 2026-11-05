@@ -125,6 +125,14 @@ const jsonLd = {
         "Praktijkmanagement",
         "Digitale zorg",
       ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kerkstraat 129",
+        postalCode: "2153 BH",
+        addressLocality: "Nieuw-Vennep",
+        addressRegion: "Noord-Holland",
+        addressCountry: "NL",
+      },
       contactPoint: [
         {
           "@type": "ContactPoint",

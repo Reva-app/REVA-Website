@@ -26,6 +26,7 @@ test("homepage: HTML bij Accept: text/html, met Vary: Accept", async () => {
   assert.match(html, /<title>REVA App \| Patiëntenportaal en fysiotherapiesoftware<\/title>/);
   assert.ok(html.includes('"@type":"Organization"'));
   assert.ok(html.includes('"contactPoint"'));
+  assert.ok(html.includes('"@type":"PostalAddress"') && html.includes('"postalCode":"2153 BH"'));
 });
 
 test("404: Markdown met uitleg en links, status 404", async () => {
