@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { revaLogoDataUri } from "@/lib/brand";
 
-export const alt = "REVA: grip op je herstel";
+export const alt = "REVA: het patiëntenportaal voor fysiotherapiepraktijken";
 export const size = {
   width: 1200,
   height: 630,
@@ -21,43 +22,26 @@ export default async function Image() {
           padding: "80px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              width: "72px",
-              height: "72px",
-              borderRadius: "18px",
-              background: "#e8632a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "40px",
-              fontWeight: 700,
-              color: "#ffffff",
-            }}
-          >
-            R
-          </div>
-          <div style={{ fontSize: "36px", fontWeight: 600, color: "#ffffff", letterSpacing: "-0.02em" }}>
-            REVA
-          </div>
-        </div>
+        <img src={revaLogoDataUri("#ffffff")} width={212} height={72} alt="REVA" />
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <div
             style={{
-              fontSize: "76px",
+              display: "flex",
+              flexDirection: "column",
+              fontSize: "68px",
               fontWeight: 600,
               color: "#ffffff",
               letterSpacing: "-0.03em",
               lineHeight: 1.1,
             }}
           >
-            Grip op je herstel
+            <span>Overzicht over je patiënten,</span>
+            <span style={{ color: "#e8632a" }}>zonder extra telefoontjes.</span>
           </div>
-          <div style={{ fontSize: "30px", color: "#9ca3af", maxWidth: "820px" }}>
-            Persoonlijk herstel dashboard voor revalidatie na een blessure,
-            operatie of langdurig hersteltraject.
+          <div style={{ fontSize: "28px", color: "#9ca3af", maxWidth: "900px", lineHeight: 1.4 }}>
+            Het patiëntenportaal voor fysiotherapiepraktijken. Patiënten loggen zelf
+            hun herstel, jij ziet direct wie aandacht nodig heeft.
           </div>
         </div>
       </div>

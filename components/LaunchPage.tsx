@@ -2,22 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowRight, Loader2, CheckCircle, Bell, LayoutDashboard, BookOpen, ClipboardCheck, Dumbbell, MoreHorizontal, Plus } from "lucide-react";
-
-// ─── Logo ────────────────────────────────────────────────────────────────────
-
-const RevaLogo = () => (
-  <div className="flex items-center gap-2.5">
-    <div
-      className="w-8 h-8 rounded-lg flex items-center justify-center"
-      style={{ background: "#e8632a" }}
-    >
-      <span className="text-white font-bold text-base leading-none select-none">R</span>
-    </div>
-    <span className="text-lg font-semibold tracking-tight" style={{ color: "#1a1a1a" }}>
-      REVA
-    </span>
-  </div>
-);
+import { RevaGlyph, RevaLogo } from "@/components/brand/RevaLogo";
 
 // ─── Email form ───────────────────────────────────────────────────────────────
 
@@ -160,7 +145,7 @@ const DashboardMockup = () => (
               className="w-6 h-6 rounded-md flex items-center justify-center"
               style={{ background: "#e8632a" }}
             >
-              <span className="text-white font-bold text-xs leading-none">R</span>
+              <RevaGlyph className="h-3 text-white" />
             </div>
             <span className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>REVA</span>
           </div>
@@ -292,7 +277,7 @@ export const LaunchPage: React.FC = () => {
 
           {/* Logo */}
           <div className="animate-fade-in-up delay-100">
-            <RevaLogo />
+            <RevaLogo size={32} color="#1a1a1a" />
           </div>
 
           {/* Badge */}

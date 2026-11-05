@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { renderContactEmail, telHref, type ContactEmailRow } from "@/lib/contact-email";
+import { EMAIL_LOGO_CID, EMAIL_LOGO_PNG_BASE64 } from "@/lib/email-logo";
 
 // Resend — server-only (geen NEXT_PUBLIC_ prefix, nooit zichtbaar in browser)
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -31,15 +33,6 @@ const REQUIRED: Record<FormType, string[]> = {
   demo: ["name", "practice", "email"],
   contact: ["name", "email", "message"],
 };
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
 
 export async function POST(request: NextRequest) {
   if (!RESEND_API_KEY) {
@@ -90,18 +83,47 @@ export async function POST(request: NextRequest) {
 
   const rows = FIELD_LABELS[type].filter(([key]) => fields[key]);
   const text = rows.map(([key, label]) => `${label}: ${fields[key]}`).join("\n");
-  const html = `
-    <h2 style="font-family:sans-serif;color:#1a1a1a">${escapeHtml(subject)}</h2>
-    <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
-      ${rows
-        .map(
-          ([key, label]) => `<tr>
-        <td style="padding:6px 16px 6px 0;color:#6b7280;vertical-align:top">${label}</td>
-        <td style="padding:6px 0;color:#1a1a1a;white-space:pre-wrap">${escapeHtml(fields[key])}</td>
-      </tr>`
-        )
-        .join("")}
-    </table>`;
+
+  const row = (label: string, key: string, href?: string): ContactEmailRow[] =>
+    fields[key] ? [{ label, value: fields[key], href }] : [];
+  const contactRows = [
+    ...row("Naam", "name"),
+    ...row("E-mail", "email", `mailto:${fields.email}`),
+    ...(type === "demo" ? row("Telefoon", "phone", telHref(fields.phone)) : []),
+  ];
+
+  const html = renderContactEmail(
+    type === "demo"
+      ? {
+          badge: "Demo-aanvraag",
+          title: fields.practice,
+          intro: `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,
+          sections: [
+            { title: "Contactpersoon", rows: contactRows },
+            {
+              title: "Praktijk",
+              rows: [
+                ...row("Naam praktijk", "practice"),
+                ...row("Aantal medewerkers", "employees"),
+                ...row("Huidige software", "software"),
+              ],
+            },
+          ],
+          message: fields.message ? { title: "Opmerkingen", value: fields.message } : undefined,
+          replyEmail: fields.email,
+          phone: fields.phone || undefined,
+          source: "het demoformulier",
+        }
+      : {
+          badge: fields.topic || "Contactformulier",
+          title: `Nieuw bericht van ${fields.name}`,
+          intro: "Er is een vraag binnengekomen via het contactformulier. Reageer binnen één werkdag.",
+          sections: [{ title: "Afzender", rows: contactRows }],
+          message: { title: "Bericht", value: fields.message },
+          replyEmail: fields.email,
+          source: "het contactformulier",
+        }
+  );
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -117,6 +139,14 @@ export async function POST(request: NextRequest) {
         subject,
         text,
         html,
+        attachments: [
+          {
+            filename: "reva-logo.png",
+            content: EMAIL_LOGO_PNG_BASE64,
+            content_type: "image/png",
+            content_id: EMAIL_LOGO_CID,
+          },
+        ],
       }),
     });
 

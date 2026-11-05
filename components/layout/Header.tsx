@@ -11,6 +11,7 @@ import {
   Stethoscope,
   HeartPulse,
 } from "lucide-react";
+import { RevaLogo } from "@/components/brand/RevaLogo";
 
 const navLinks = [
   { label: "Over REVA", href: "/over-reva" },
@@ -92,18 +93,8 @@ export function Header() {
       >
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ background: "#e8632a" }}
-          >
-            <span className="text-white font-bold text-base leading-none select-none">
-              R
-            </span>
-          </div>
-          <span className="text-base font-semibold tracking-tight" style={{ color: navTextColor }}>
-            REVA
-          </span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="REVA, naar de homepage">
+          <RevaLogo size={32} color={barTransparent ? "#ffffff" : "#1a1a1a"} />
         </Link>
 
         {/* Desktop nav */}

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { revaLogoDataUri } from "@/lib/brand";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 export const alt = "REVA Blog";
@@ -31,27 +32,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           padding: "80px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "14px",
-              background: "#e8632a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "30px",
-              fontWeight: 700,
-              color: "#ffffff",
-            }}
-          >
-            R
-          </div>
-          <div style={{ fontSize: "28px", fontWeight: 600, color: "#ffffff", letterSpacing: "-0.02em" }}>
-            REVA
-          </div>
-        </div>
+        <img src={revaLogoDataUri("#ffffff")} width={165} height={56} alt="REVA" />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <div

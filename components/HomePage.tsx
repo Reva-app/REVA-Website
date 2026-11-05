@@ -26,6 +26,7 @@ import {
 import { AnimateIn } from "./ui/AnimateIn";
 import { BlogIllustration } from "./blog/BlogIllustration";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
+import { RevaGlyph } from "@/components/brand/RevaLogo";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -845,7 +846,7 @@ function DataFlowSection() {
                 className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center"
                 style={{ background: "#e8632a", boxShadow: "0 20px 50px rgba(232,99,42,0.35)" }}
               >
-                <span className="text-white font-bold text-2xl md:text-3xl leading-none select-none">R</span>
+                <RevaGlyph className="h-8 md:h-10 text-white" />
               </div>
             </div>
 
@@ -1149,7 +1150,7 @@ function CtaSection() {
             className="w-11 h-11 rounded-lg flex items-center justify-center mx-auto mb-6"
             style={{ background: "#e8632a" }}
           >
-            <span className="text-white font-bold text-lg leading-none select-none">R</span>
+            <RevaGlyph className="h-[22px] text-white" />
           </div>
           <span
             className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full"

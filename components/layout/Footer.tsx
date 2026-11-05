@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FooterCookieSettingsLink } from "@/components/FooterCookieSettingsLink";
+import { RevaLogo } from "@/components/brand/RevaLogo";
 
 export function Footer() {
   return (
@@ -10,14 +11,8 @@ export function Footer() {
 
           {/* Brand column */}
           <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ background: "#e8632a" }}
-              >
-                <span className="text-white font-bold text-base leading-none select-none">R</span>
-              </div>
-              <span className="text-base font-semibold tracking-tight text-white">REVA</span>
+            <Link href="/" className="flex items-center" aria-label="REVA, naar de homepage">
+              <RevaLogo size={32} color="#ffffff" />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "#7c7c8a" }}>
               Het patiëntenportaal voor fysiotherapiepraktijken. Overzicht over je patiënten, minder telefoontjes.
