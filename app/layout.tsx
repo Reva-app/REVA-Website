@@ -88,6 +88,24 @@ export const metadata: Metadata = {
   category: "business",
 };
 
+const CONSENT_MODE_DEFAULT = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied', functionality_storage: 'granted', security_storage: 'granted',
+  wait_for_update: 500
+});
+try {
+  var s = JSON.parse(localStorage.getItem('reva-cookie-consent') || 'null');
+  if (s && s.version === 1 && s.consent) {
+    var a = s.consent.analytics ? 'granted' : 'denied', m = s.consent.marketing ? 'granted' : 'denied';
+    gtag('consent', 'update', { analytics_storage: a, ad_storage: m, ad_user_data: m, ad_personalization: m });
+  }
+} catch (e) {}
+`;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -110,7 +128,7 @@ const jsonLd = {
       image: { "@id": "https://www.reva-app.nl/#logo" },
       description:
         "REVA is een patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij, praktijken krijgen overzicht en signalering van wie aandacht nodig heeft.",
-      slogan: "Grip op je herstel",
+      slogan: "Overzicht over je patiënten, zonder extra telefoontjes",
       founder: {
         "@type": "Person",
         "@id": "https://www.reva-app.nl/#person-stef-robberts",
@@ -211,6 +229,9 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${geistSans.variable} h-full antialiased`}>
       <head>
+        {/* Google Consent Mode v2: alles standaard geweigerd, vóórdat Tag Manager kan laden.
+            Een eerder opgeslagen keuze wordt meteen doorgegeven. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_MODE_DEFAULT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

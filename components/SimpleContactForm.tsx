@@ -3,10 +3,14 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
-// Pakketkeuze van de prijspagina (?pakket=enterprise), voor in de notificatiemail
+// Pakketkeuze of aanbod van de site (?pakket=enterprise, ?aanbod=pilot), voor in de notificatiemail
 function pricingChoice() {
   const params = new URLSearchParams(window.location.search);
-  return { pakket: params.get("pakket") ?? undefined, facturatie: params.get("facturatie") ?? undefined };
+  return {
+    pakket: params.get("pakket") ?? undefined,
+    facturatie: params.get("facturatie") ?? undefined,
+    aanbod: params.get("aanbod") ?? undefined,
+  };
 }
 
 const topicOptions = [

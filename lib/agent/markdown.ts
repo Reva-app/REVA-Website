@@ -6,6 +6,7 @@ import { blogPosts, getBlogPost, getSortedBlogPosts, type BlogPost } from "@/lib
 import { enterpriseTier, pricingFaq, pricingTiers, TRIAL_DAYS, yearlyPerMonth } from "@/lib/pricing";
 import { faqGroups } from "@/lib/faq";
 import { homeFaq } from "@/lib/home-faq";
+import { pilotOffer } from "@/lib/offer";
 
 export const SITE_URL = "https://www.reva-app.nl";
 
@@ -51,6 +52,19 @@ export function homeMarkdown() {
     "# REVA App: patiëntenportaal en fysiotherapiesoftware voor praktijken",
     "",
     "> REVA is een patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij (pijn, energie, oefeningen, medicatie en voortgang), en de praktijk ziet in één overzicht wie aandacht nodig heeft. Minder telefoontjes en berichten via WhatsApp, meer overzicht over alle patiënten.",
+    "",
+    ...(pilotOffer.active && pilotOffer.spotsLeft > 0
+      ? [
+          `**Pilotaanbod:** ${pilotOffer.discountPercent}% korting op het eerste jaar voor de eerste ${pilotOffer.spotsTotal} praktijken, in ruil voor feedback en een korte klantervaring. Aanmelden via ${SITE_URL}/demo-aanvragen?aanbod=${pilotOffer.param}.`,
+          "",
+        ]
+      : []),
+    "## Waarom praktijken voor REVA kiezen",
+    "",
+    "- **Europese servers:** patiëntdata staat versleuteld op servers binnen de EU, op basis van een verwerkersovereenkomst onder de AVG.",
+    "- **Patiënt en fysio dichter bij elkaar:** ook tussen afspraken door blijft de fysiotherapeut betrokken, zonder extra telefoontjes.",
+    "- **Meer grip op het herstel:** patiënten zien hun eigen voortgang, de fysiotherapeut ziet wie afwijkt van het plan.",
+    "- **Altijd een coach bij de hand:** herstelplan, oefeningen en advies staan op de telefoon van de patiënt.",
     "",
     "## Voor wie",
     "",

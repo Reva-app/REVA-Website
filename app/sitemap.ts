@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
+import { practices } from "@/lib/practices";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.reva-app.nl";
@@ -117,5 +118,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  // Praktijkenkaart pas opnemen als er praktijken op staan
+  const practiceRoutes: MetadataRoute.Sitemap = practices.length
+    ? [{ url: `${baseUrl}/praktijken`, lastModified: now, changeFrequency: "monthly", priority: 0.6 }]
+    : [];
+
+  return [...staticRoutes, ...practiceRoutes, ...blogRoutes];
 }

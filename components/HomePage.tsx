@@ -22,12 +22,19 @@ import {
   Users,
   Activity,
   MapPin,
+  Server,
+  HeartHandshake,
+  ChartLine,
+  Smartphone,
 } from "lucide-react";
 import { AnimateIn } from "./ui/AnimateIn";
 import { BlogCover } from "./blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { homeFaq } from "@/lib/home-faq";
 import { RevaGlyph } from "@/components/brand/RevaLogo";
+import { pilotDemoHref, pilotOffer } from "@/lib/offer";
+import { PilotOfferBanner } from "@/components/PilotOfferBanner";
+import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -57,8 +64,9 @@ const testimonials = [
 
 const rotatingPhrases = [
   "tijd willen besparen.",
-  "kwalitatieve herstelplannen willen.",
-  "inzicht in hun data willen hebben.",
+  "minder willen bellen en appen.",
+  "patiënten tussen afspraken volgen.",
+  "zich willen onderscheiden.",
 ];
 
 function useTypewriter(phrases: string[], typingSpeed = 45, deletingSpeed = 30, pause = 1800) {
@@ -116,13 +124,32 @@ function HeroSection() {
       <div className="relative max-w-6xl mx-auto px-5 md:px-8 w-full py-28 md:py-32">
         <div className="w-full text-left space-y-6">
           <div className="animate-fade-in-up delay-100">
-            <span
-              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
-              style={{ background: "#fff3ee", color: "#e8632a", borderColor: "rgba(232,99,42,0.2)" }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse-soft" style={{ background: "#e8632a" }} />
-              Voor fysiotherapiepraktijken
-            </span>
+            {pilotOffer.active && pilotOffer.spotsLeft > 0 ? (
+              // Pilotaanbod: de eerste praktijken krijgen korting in ruil voor feedback
+              <Link
+                href={pilotDemoHref}
+                className="group inline-flex items-center gap-2 text-xs font-medium pl-1.5 pr-3 py-1.5 rounded-full border transition-colors max-w-full"
+                style={{ background: "rgba(255,255,255,0.08)", color: "#ffffff", borderColor: "rgba(255,255,255,0.18)" }}
+              >
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-white shrink-0" style={{ background: "#e8632a" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft" />
+                  Pilotaanbod
+                </span>
+                <span className="truncate">
+                  {pilotOffer.short}
+                  <span className="hidden sm:inline"> voor de eerste {pilotOffer.spotsTotal} praktijken</span>
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: "#e8632a" }} />
+              </Link>
+            ) : (
+              <span
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
+                style={{ background: "#fff3ee", color: "#e8632a", borderColor: "rgba(232,99,42,0.2)" }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse-soft" style={{ background: "#e8632a" }} />
+                Voor fysiotherapiepraktijken
+              </span>
+            )}
           </div>
 
           <h1
@@ -137,37 +164,41 @@ function HeroSection() {
           </h1>
 
           <div className="max-w-2xl space-y-6">
-          <p className="hidden md:block animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
-            Bundel de expertise van je praktijk in herstelplannen, begeleid iedere patiënt
-            persoonlijk en zie in één overzicht waar jouw aandacht nodig is.
+          <p className="animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
+            REVA is het patiëntenportaal voor fysiotherapiepraktijken. Je patiënten houden zelf
+            hun herstel bij, jij ziet in één overzicht wie aandacht nodig heeft. Minder
+            telefoontjes, meer grip op je caseload.
           </p>
 
-          <div className="animate-fade-in-up delay-400 flex">
+          <div className="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3">
             <Link
               href="/demo-aanvragen"
-              className="group inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Demo aanvragen
+              Vraag een demo aan
               <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+            </Link>
+            <Link
+              href="/prijzen"
+              className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-base transition-colors"
+              style={{ color: "#ffffff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.14)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
+            >
+              Bekijk prijzen
             </Link>
           </div>
 
-          <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-5">
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
-              <span className="text-sm" style={{ color: "#c9c9ce" }}>Persoonlijke onboarding</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
-              <span className="text-sm" style={{ color: "#c9c9ce" }}>AVG-proof</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
-              <span className="text-sm" style={{ color: "#c9c9ce" }}>Snel te implementeren</span>
-            </div>
+          <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-x-5 gap-y-2">
+            {["Europese servers", `${TRIAL_DAYS} dagen gratis proberen`, "Persoonlijke onboarding"].map((label) => (
+              <div key={label} className="flex items-center gap-1.5">
+                <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
+                <span className="text-sm" style={{ color: "#c9c9ce" }}>{label}</span>
+              </div>
+            ))}
           </div>
           </div>
         </div>
@@ -184,7 +215,7 @@ const featureBanners = [
     href: "/functies#herstelplannen-en-oefeningen",
   },
   {
-    title: "Voorbereid het gesprek in, niet erna",
+    title: "Goed voorbereid aan elk consult",
     description:
       "Voor de afspraak zie je meteen de check-ins van de afgelopen dagen, hoe vaak er getraind is en de laatste foto-update van de blessure.",
     href: "/functies#praktijkoverzicht",
@@ -192,7 +223,7 @@ const featureBanners = [
   {
     title: "Een service waarmee je opvalt",
     description:
-      "REVA aanbieden is zichtbare extra zorg. Patiënten die tussen praktijken kiezen, ervaren dat als een concreet verschil, en dat kan net de doorslag geven voor jouw praktijk.",
+      "Een eigen patiëntenportaal in de huisstijl van je praktijk is zichtbare extra zorg. Patiënten die tussen praktijken kiezen, ervaren dat als een concreet verschil.",
     href: "/functies#check-ins-van-pati-nten",
   },
 ];
@@ -282,6 +313,7 @@ function FeatureBannerVisual({ index }: { index: number }) {
     );
   }
 
+  // Patiëntenportaal in de huisstijl van de praktijk zelf
   return (
     <div className="px-8">
       <IconChips
@@ -291,23 +323,23 @@ function FeatureBannerVisual({ index }: { index: number }) {
           { icon: Award, bg: "#fffbeb", color: "#d97706" },
         ]}
       />
-      <div
-        className="rounded-xl border p-4"
-        style={{ borderColor: "rgba(232,99,42,0.2)", background: "linear-gradient(135deg, #fff3ee 0%, #ffffff 65%)" }}
-      >
-        <div className="flex gap-0.5 mb-2">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star
-              key={i}
-              className="w-3.5 h-3.5 fill-current animate-fade-in-up"
-              style={{ color: "#e8632a", animationDelay: `${i * 80}ms` }}
-            />
-          ))}
+      <div className="rounded-xl border overflow-hidden" style={{ borderColor: "#e8e5df", background: "#ffffff" }}>
+        <div className="flex items-center gap-2 px-3 py-2" style={{ background: "#1c1c1e" }}>
+          <span className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold text-white" style={{ background: "#e8632a" }}>
+            L
+          </span>
+          <span className="text-[10px] font-semibold text-white">Fysiopraktijk de Linde</span>
+          <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: "rgba(255,255,255,0.12)", color: "#d1d5db" }}>
+            Jouw huisstijl
+          </span>
         </div>
-        <p className="text-xs leading-snug mb-1.5" style={{ color: "#1a1a1a" }}>
-          &ldquo;Fijn dat mijn fysiopraktijk dit gebruikt, ik heb altijd overzicht.&rdquo;
-        </p>
-        <p className="text-[10px]" style={{ color: "#9ca3af" }}>— Patiënt van een REVA-praktijk</p>
+        <div className="p-3 space-y-1.5" style={{ background: "#f8f7f4" }}>
+          <p className="text-[10px] font-semibold animate-fade-in-up" style={{ color: "#1a1a1a" }}>Welkom terug, Sanne</p>
+          <div className="h-1.5 rounded-full animate-fade-in-up" style={{ background: "#e8e5df", animationDelay: "120ms" }}>
+            <div className="h-1.5 rounded-full" style={{ width: "50%", background: "#e8632a" }} />
+          </div>
+          <p className="text-[9px] animate-fade-in-up" style={{ color: "#9ca3af", animationDelay: "240ms" }}>Herstelplan knie, week 6 van 12</p>
+        </div>
       </div>
     </div>
   );
@@ -502,6 +534,7 @@ function WorkflowStepVisual({ index }: { index: number }) {
 const functiesSliderItems = [
   {
     title: "Praktijkoverzicht voor eigenaren",
+    anchor: "praktijkoverzicht",
     stat: "Per fysio inzichtelijk",
     description: "Zie als praktijkeigenaar in één oogopslag hoeveel patiënten elke fysio onder behandeling heeft en waar de drukte in je praktijk zit.",
     image: "/praktijk-eigenaar.png",
@@ -509,13 +542,15 @@ const functiesSliderItems = [
   },
   {
     title: "Mijlpalen en doelstellingen",
+    anchor: "behandeldoelen-en-mijlpalen",
     stat: "Voortgang zichtbaar",
     description: "Leg doelen en mijlpalen vast, zodat patiënten letterlijk zien hoe ver ze al gekomen zijn in hun herstel.",
     image: "/5.png",
     imagePosition: "center",
   },
   {
-    title: "Voorbereid een consult in",
+    title: "Bereid een consult voor",
+    anchor: "praktijkoverzicht",
     stat: "30 seconden per patiënt",
     description: "Zie vlak voor het consult hoe het gaat: laatste check-in, pijnscore en medicatie. Zo start je goed voorbereid het gesprek.",
     image: "/2.png",
@@ -523,6 +558,7 @@ const functiesSliderItems = [
   },
   {
     title: "Nauw betrokken bij het herstel",
+    anchor: "check-ins-van-pati-nten",
     stat: "Check-ins en foto's automatisch binnen",
     description: "Volg de dagelijkse check-ins, pijnscores en foto-updates van je patiënten, zonder zelf te hoeven bellen of appen.",
     image: "/3.png",
@@ -530,6 +566,7 @@ const functiesSliderItems = [
   },
   {
     title: "Herstelplannen per fysio",
+    anchor: "herstelplannen-en-oefeningen",
     stat: "Eigen aanpak, eigen sjabloon",
     description: "Iedere fysio heeft zijn eigen visie op herstel. Bouw en beheer herstelplannen die aansluiten bij de werkwijze van elke behandelaar.",
     image: "/8.png",
@@ -537,6 +574,7 @@ const functiesSliderItems = [
   },
   {
     title: "Herstelplan per patiënt",
+    anchor: "herstelplannen-en-oefeningen",
     stat: "Volledig op maat",
     description: "Geen twee patiënten herstellen hetzelfde. Stel voor iedere patiënt een persoonlijk plan samen dat meebeweegt met zijn traject.",
     image: "/6.png",
@@ -544,6 +582,7 @@ const functiesSliderItems = [
   },
   {
     title: "Oefeningen aanpassen tijdens het consult",
+    anchor: "herstelplannen-en-oefeningen",
     stat: "Direct bijsturen",
     description: "Pas oefeningen aan, voeg ze toe of haal ze weg terwijl de patiënt nog op de behandelbank ligt.",
     image: "/4.png",
@@ -551,6 +590,7 @@ const functiesSliderItems = [
   },
   {
     title: "Afspraken automatisch in de agenda",
+    anchor: "afspraken-en-behandelplan",
     stat: "Geen dubbele boekingen",
     description: "Plan nieuwe afspraken in een paar klikken. Ze verschijnen direct in de agenda van de behandelaar.",
     image: "/1.png",
@@ -587,7 +627,7 @@ function FunctiesSliderSection() {
             return (
               <AnimateIn key={f.title} direction="up" delay={i * 60} className="shrink-0 w-[350px] snap-start">
                 <Link
-                  href={`/functies#${f.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-")}`}
+                  href={`/functies#${f.anchor}`}
                   className="group relative block w-[350px] h-[460px] rounded-2xl overflow-hidden border"
                   style={{ borderColor: "#e8e5df" }}
                 >
@@ -1134,7 +1174,7 @@ function CtaSection() {
             Aan de slag
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-5 text-white leading-tight">
-            Benieuwd hoe REVA werkt in <span style={{ color: "#e8632a" }}>jouw praktijk?</span>
+            Benieuwd wat REVA voor <span style={{ color: "#e8632a" }}>jouw praktijk</span> oplevert?
           </h2>
           <p className="text-lg mb-8" style={{ color: "#c9c9ce" }}>
             Laat je gegevens achter, dan nemen we binnen één werkdag contact op voor een
@@ -1148,7 +1188,7 @@ function CtaSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Plan een demo
+              Vraag een demo aan
               <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <Link
@@ -1172,6 +1212,134 @@ function CtaSection() {
             </Link>
             .
           </p>
+          <div className="mt-10 text-left">
+            <PilotOfferBanner dark />
+          </div>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+const usps = [
+  {
+    icon: Server,
+    title: "Europese servers",
+    text: "Patiëntdata staat versleuteld op servers binnen de EU, op basis van een verwerkersovereenkomst onder de AVG.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Patiënt en fysio dichter bij elkaar",
+    text: "Ook tussen afspraken door blijf je betrokken bij het herstel, zonder extra telefoontjes of appjes.",
+  },
+  {
+    icon: ChartLine,
+    title: "Meer grip op het herstel",
+    text: "Je patiënten zien hun eigen voortgang, jij ziet direct wie afwijkt van het plan en aandacht nodig heeft.",
+  },
+  {
+    icon: Smartphone,
+    title: "Altijd een coach bij de hand",
+    text: "Herstelplan, oefeningen en jouw advies staan op de telefoon van je patiënt, ook op dagen zonder afspraak.",
+  },
+];
+
+function UspSection() {
+  return (
+    <section className="py-14 md:py-16 border-b" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {usps.map(({ icon: Icon, title, text }, i) => (
+          <AnimateIn key={title} direction="up" delay={i * 80}>
+            <div className="flex lg:flex-col gap-4">
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "#fff3ee" }}>
+                <Icon className="w-5 h-5" style={{ color: "#e8632a" }} />
+              </div>
+              <div>
+                <h2 className="text-base font-semibold mb-1.5" style={{ color: "#1a1a1a" }}>{title}</h2>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{text}</p>
+              </div>
+            </div>
+          </AnimateIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PricingTeaserSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: "#ffffff" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <AnimateIn direction="up" className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 md:mb-12">
+          <div>
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
+              Prijzen
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "#1a1a1a" }}>
+              Heldere pakketten,<br />alle functies inbegrepen
+            </h2>
+          </div>
+          <p className="text-base max-w-sm" style={{ color: "#6b7280" }}>
+            Je betaalt naar de grootte van je praktijk, niet per functie. Probeer REVA {TRIAL_DAYS} dagen gratis.
+          </p>
+        </AnimateIn>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+          {pricingTiers.map((tier, i) => {
+            const staff = tier.features.find((f) => f.includes("medewerker")) ?? "";
+            const patients = tier.features.find((f) => f.includes("patiënten")) ?? "";
+            return (
+              <AnimateIn key={tier.name} direction="up" delay={i * 70} className="h-full">
+                <Link
+                  href={`/prijzen`}
+                  className="relative h-full flex flex-col rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={
+                    tier.popular
+                      ? { background: "#1c1c1e", boxShadow: "0 20px 40px rgba(0,0,0,0.18)" }
+                      : { background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }
+                  }
+                >
+                  {tier.popular && (
+                    <span className="absolute -top-3 left-6 text-xs font-semibold px-3 py-1 rounded-full text-white" style={{ background: "#e8632a" }}>
+                      Meest gekozen
+                    </span>
+                  )}
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#e8632a" }}>
+                    {tier.name}
+                  </p>
+                  <p className="mb-3">
+                    <span className="text-3xl font-bold tracking-tight" style={{ color: tier.popular ? "#ffffff" : "#1a1a1a" }}>
+                      &euro;{tier.monthly}
+                    </span>
+                    <span className="text-sm" style={{ color: tier.popular ? "#9ca3af" : "#6b7280" }}> / maand</span>
+                  </p>
+                  <p className="text-sm mb-4" style={{ color: tier.popular ? "#9ca3af" : "#6b7280" }}>{tier.tagline}</p>
+                  <ul className="mt-auto space-y-1.5">
+                    {[staff, patients].filter(Boolean).map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm" style={{ color: tier.popular ? "#d1d5db" : "#374151" }}>
+                        <CheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: "#e8632a" }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </AnimateIn>
+            );
+          })}
+        </div>
+
+        <AnimateIn direction="up" delay={200}>
+          <p className="text-xs mb-8" style={{ color: "#9ca3af" }}>
+            Prijzen per maand, exclusief btw. Bij jaarlijks betalen krijg je 2 maanden gratis. Meer dan 20
+            medewerkers of een keten? Dan maken we een voorstel op maat.
+          </p>
+          <PilotOfferBanner />
+          <div className="mt-8 text-center">
+            <Link href="/prijzen" className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange" style={{ color: "#e8632a" }}>
+              Bekijk alle pakketten en wat er inbegrepen is
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </AnimateIn>
       </div>
     </section>
@@ -1184,15 +1352,17 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
+      <UspSection />
       <FeatureBannersSection />
       <FunctiesSliderSection />
-      <CtaSection />
       <WorkflowSection />
       <DataFlowSection />
-      {/* <TestimonialsSection /> tijdelijk verborgen op verzoek */}
+      <PricingTeaserSection />
+      {/* <TestimonialsSection /> verborgen tot er echte klantervaringen zijn */}
       <AboutTeaserSection />
-      <BlogTeaserSection />
       <FaqTeaserSection />
+      <BlogTeaserSection />
+      <CtaSection />
     </>
   );
 }

@@ -34,7 +34,7 @@ export default function CookiebeleidPage() {
         ])}
       />
       <SiteLayout>
-      <LegalLayout title="Cookiebeleid" lastUpdated="3 augustus 2026">
+      <LegalLayout title="Cookiebeleid" lastUpdated="6 november 2026">
 
         <p>
           Deze pagina legt uit welke cookies en vergelijkbare technieken reva-app.nl gebruikt,
@@ -46,8 +46,9 @@ export default function CookiebeleidPage() {
           Cookies zijn kleine tekstbestanden die een website op je apparaat kan opslaan. Sommige
           cookies zijn noodzakelijk om een website goed te laten werken, andere worden gebruikt om
           bijvoorbeeld bezoekersgedrag te analyseren of advertenties te personaliseren. Voor alles
-          behalve strikt noodzakelijke cookies is volgens de wet (de ePrivacyverordening en de AVG)
-          jouw voorafgaande, actieve toestemming vereist.
+          behalve strikt noodzakelijke cookies is volgens de wet (artikel 11.7a van de
+          Telecommunicatiewet en de AVG) jouw voorafgaande, actieve toestemming vereist. Weigeren is
+          bij ons net zo eenvoudig als accepteren.
         </p>
 
         <h2>2. Welke cookies gebruikt REVA op dit moment?</h2>
@@ -60,9 +61,15 @@ export default function CookiebeleidPage() {
         </p>
         <p>
           Daarnaast gebruiken we Google Tag Manager om Google Analytics te laden, waarmee we
-          anoniem inzicht krijgen in hoe bezoekers onze website gebruiken. Deze analytische
-          cookies worden pas geplaatst nadat je hier expliciet toestemming voor geeft via de
-          cookiemelding, en je kunt die toestemming op elk moment weer intrekken.
+          anoniem inzicht krijgen in hoe bezoekers onze website gebruiken. Google Tag Manager wordt
+          pas geladen nadat je voor minstens één categorie toestemming geeft. We gebruiken daarbij
+          Google Consent Mode: standaard staat alles op &ldquo;geweigerd&rdquo;, en Google-diensten
+          houden zich per categorie aan jouw keuze. Geef je alleen toestemming voor analytische
+          cookies, dan worden er dus geen advertentiecookies geplaatst, en andersom.
+        </p>
+        <p>
+          Trek je je toestemming later in, dan geven we dat direct door en verwijderen we de
+          analytische cookies (zoals <code>_ga</code>) van je apparaat.
         </p>
 
         <h2>3. Cookiecategorieën</h2>
@@ -86,15 +93,21 @@ export default function CookiebeleidPage() {
         </ul>
         <p><strong>Marketing (uit, tenzij je toestemming geeft)</strong></p>
         <ul>
-          <li>Bedoeld voor het meten van de effectiviteit van advertentiecampagnes.</li>
-          <li>Wordt op dit moment niet gebruikt op reva-app.nl.</li>
+          <li>
+            Bedoeld voor het meten van de effectiviteit van advertentiecampagnes, bijvoorbeeld via
+            Google Ads of Meta.
+          </li>
+          <li>
+            Wordt op dit moment niet gebruikt op reva-app.nl. Gaan we dat wel doen, dan passen we
+            dit cookiebeleid eerst aan en vragen we opnieuw om je toestemming.
+          </li>
         </ul>
 
         <h2>4. Jouw voorkeuren aanpassen</h2>
         <p>
           Je kunt je cookievoorkeuren op elk moment wijzigen, ook als je eerder al een keuze hebt
           gemaakt. Dit kan via onderstaande knop of via &ldquo;Cookie-instellingen&rdquo; onderaan
-          elke pagina.
+          elke pagina. Je kunt per categorie kiezen, of alles in één keer weigeren of accepteren.
         </p>
         <div className="my-6">
           <CookiePreferencesButton />

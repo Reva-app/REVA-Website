@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { PricingTable } from "@/components/PricingTable";
+import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { enterpriseTier, pricingFaq as faq, pricingTiers } from "@/lib/pricing";
 
@@ -153,6 +154,9 @@ export default function PrijzenPage() {
       <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <PricingTable />
+          <div className="mt-10">
+            <PilotOfferBanner />
+          </div>
         </div>
       </section>
 

@@ -8,7 +8,9 @@ const GTM_ID = "GTM-MP34DGQB";
 export function GoogleTagManager() {
   const { consent } = useCookieConsent();
 
-  if (!consent.analytics) return null;
+  // Consent Mode (zie layout) zorgt dat Google-tags zich per categorie aan de keuze houden;
+  // Tag Manager zelf laadt pas als er voor minstens één categorie toestemming is.
+  if (!consent.analytics && !consent.marketing) return null;
 
   return (
     <>

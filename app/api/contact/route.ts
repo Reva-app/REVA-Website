@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { renderContactEmail, telHref, type ContactEmailRow } from "@/lib/contact-email";
 import { EMAIL_LOGO_CID, EMAIL_LOGO_PNG_BASE64 } from "@/lib/email-logo";
 import { describeInterest } from "@/lib/pricing";
+import { isPilotRequest, pilotOffer } from "@/lib/offer";
 
 // Resend — server-only (geen NEXT_PUBLIC_ prefix, nooit zichtbaar in browser)
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -79,24 +80,31 @@ export async function POST(request: NextRequest) {
 
   // Pakketkeuze van de prijspagina, alleen als het een bestaand pakket is
   const interest = describeInterest(body.pakket, body.facturatie);
-  const interestTag = interest ? ` (${interest.name})` : "";
+  const pilot = isPilotRequest(body.aanbod);
+  const tags = [pilot ? "Pilotaanbod" : "", interest?.name ?? ""].filter(Boolean);
+  const interestTag = tags.length ? ` (${tags.join(", ")})` : "";
 
   const subject =
     type === "demo"
       ? `Demo-aanvraag${interestTag}: ${fields.practice} (${fields.name})`
       : `Contactformulier${interestTag}: ${fields.topic || "Algemene vraag"} (${fields.name})`;
 
-  const interestRows: ContactEmailRow[] = interest
-    ? [
-        { label: "Pakket", value: interest.name },
-        ...(interest.billing
-          ? [{ label: "Betaling", value: interest.billing === "jaarlijks" ? "Jaarlijks" : "Maandelijks" }]
-          : []),
-        { label: "Prijs", value: interest.price },
-        { label: "Gekozen via", value: "Prijzenpagina" },
-      ]
-    : [];
-  const interestSections = interest ? [{ title: "Interesse", rows: interestRows }] : [];
+  const interestRows: ContactEmailRow[] = [
+    ...(pilot
+      ? [{ label: "Aanbod", value: `Pilotaanbod: ${pilotOffer.discountPercent}% korting op het eerste jaar` }]
+      : []),
+    ...(interest
+      ? [
+          { label: "Pakket", value: interest.name },
+          ...(interest.billing
+            ? [{ label: "Betaling", value: interest.billing === "jaarlijks" ? "Jaarlijks" : "Maandelijks" }]
+            : []),
+          { label: "Prijs", value: interest.price },
+          { label: "Gekozen via", value: "Prijzenpagina" },
+        ]
+      : []),
+  ];
+  const interestSections = interestRows.length ? [{ title: "Interesse", rows: interestRows }] : [];
 
   const rows = FIELD_LABELS[type].filter(([key]) => fields[key]);
   const text = [
@@ -115,9 +123,11 @@ export async function POST(request: NextRequest) {
   const html = renderContactEmail(
     type === "demo"
       ? {
-          badge: interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
+          badge: pilot ? "Demo-aanvraag · Pilotaanbod" : interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
           title: fields.practice,
-          intro: interest
+          intro: pilot
+            ? `${fields.name} wil graag een demo van REVA inplannen en reageert op het pilotaanbod (${pilotOffer.discountPercent}% korting op het eerste jaar). Neem binnen één werkdag contact op om een moment af te spreken.`
+            : interest
             ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor het pakket ${interest.name}. Neem binnen één werkdag contact op om een moment af te spreken.`
             : `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,
           sections: [
