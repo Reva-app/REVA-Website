@@ -1,127 +1,55 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 import { practices } from "@/lib/practices";
+import { pageDates } from "@/lib/page-dates";
+
+const BASE = "https://www.reva-app.nl";
+const abs = (path: string) => `${BASE}${path}`;
+
+// Pagina's in volgorde van belang. Afbeeldingen komen in de sitemap terecht als
+// image:image-regels, zodat ze in Google Afbeeldingen gevonden kunnen worden.
+const pages: { path: string; images?: string[] }[] = [
+  { path: "/", images: ["/headline-reva-app.webp", "/image-reva-app.png"] },
+  { path: "/functies", images: ["/image-reva-app.png"] },
+  { path: "/functies/voor-fysios" },
+  { path: "/functies/voor-patienten", images: ["/check-in-mobile.png"] },
+  { path: "/prijzen" },
+  { path: "/faq" },
+  { path: "/over-reva", images: ["/stef.png", "/ziekenhuis-knie.jpeg", "/rontgenfoto-knie.png"] },
+  { path: "/blog" },
+  { path: "/demo-aanvragen" },
+  { path: "/contact" },
+  { path: "/documentatie" },
+  { path: "/inloggen" },
+  { path: "/privacy-policy" },
+  { path: "/algemene-voorwaarden" },
+  { path: "/cookiebeleid" },
+  { path: "/legal/dpa" },
+  { path: "/verwijder-account" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.reva-app.nl";
-  const now = new Date();
+  const postDate = (p: (typeof blogPosts)[number]) => p.updatedAt ?? p.publishedAt;
+  const newestPost = blogPosts.map(postDate).sort().at(-1)!;
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/functies`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/functies/voor-fysios`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/functies/voor-patienten`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/over-reva`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/prijzen`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/documentatie`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/demo-aanvragen`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/inloggen`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/verwijder-account`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/algemene-voorwaarden`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/legal/dpa`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/cookiebeleid`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
-
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt ?? post.publishedAt),
-    changeFrequency: "monthly",
-    priority: 0.7,
+  const staticEntries: MetadataRoute.Sitemap = pages.map(({ path, images }) => ({
+    // De homepage zonder slash, gelijk aan de canonical
+    url: path === "/" ? BASE : abs(path),
+    // Het blogoverzicht verandert mee met het nieuwste artikel
+    lastModified: path === "/blog" ? newestPost : pageDates[path],
+    ...(images && { images: images.map(abs) }),
   }));
 
-  // Praktijkenkaart pas opnemen als er praktijken op staan
-  const practiceRoutes: MetadataRoute.Sitemap = practices.length
-    ? [{ url: `${baseUrl}/praktijken`, lastModified: now, changeFrequency: "monthly", priority: 0.6 }]
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: abs(`/blog/${post.slug}`),
+    lastModified: postDate(post),
+    ...(post.image && { images: [abs(post.image.src)] }),
+  }));
+
+  // Praktijkenkaart pas opnemen als er praktijken op staan (tot die tijd noindex)
+  const practiceEntries: MetadataRoute.Sitemap = practices.length
+    ? [{ url: abs("/praktijken"), lastModified: pageDates["/praktijken"] }]
     : [];
 
-  return [...staticRoutes, ...practiceRoutes, ...blogRoutes];
+  return [...staticEntries, ...practiceEntries, ...blogEntries];
 }

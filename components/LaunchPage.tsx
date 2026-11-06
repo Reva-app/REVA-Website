@@ -145,7 +145,7 @@ const DashboardMockup = () => (
               className="w-6 h-6 rounded-md flex items-center justify-center"
               style={{ background: "#e8632a" }}
             >
-              <RevaGlyph className="h-3 text-white" />
+              <RevaGlyph height={12} className="text-white" />
             </div>
             <span className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>REVA</span>
           </div>

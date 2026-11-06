@@ -1,16 +1,29 @@
 import { REVA_GLYPH, REVA_ORANGE, REVA_WORDMARK } from "@/lib/brand";
 
 /**
+ * Breedte en hoogte expliciet zetten (attributen én stijl). Safari berekent bij een SVG
+ * met alleen een hoogte en `width: auto` soms een te smalle breedte en knipt de rest af.
+ */
+function sized(height: number, ratio: number): { width: number; height: number; style: React.CSSProperties } {
+  const width = Math.round(height * ratio * 100) / 100;
+  return { width, height, style: { width, height } };
+}
+
+/**
  * De "R" uit het REVA-logo als inline SVG: scherp op elk formaat, neemt de
- * tekstkleur over (`text-white`). Geef alleen een hoogte mee; de breedte
+ * tekstkleur over (`text-white`). Geef de hoogte in pixels mee; de breedte
  * volgt uit de verhouding.
  */
-export function RevaGlyph({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
+export function RevaGlyph({ height, className = "" }: { height: number; className?: string }) {
+  const dims = sized(height, REVA_GLYPH.width / REVA_GLYPH.height);
   return (
     <svg
       viewBox={`0 0 ${REVA_GLYPH.width} ${REVA_GLYPH.height}`}
-      className={`w-auto shrink-0 ${className}`}
-      style={style}
+      width={dims.width}
+      height={dims.height}
+      className={`shrink-0 ${className}`}
+      style={dims.style}
+      overflow="visible"
       fill="currentColor"
       aria-hidden="true"
       focusable="false"
@@ -21,12 +34,16 @@ export function RevaGlyph({ className = "", style }: { className?: string; style
 }
 
 /** Het woord "REVA" uit het logo. Neemt de tekstkleur over; geef een hoogte mee. */
-export function RevaWordmark({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
+export function RevaWordmark({ height, className = "" }: { height: number; className?: string }) {
+  const dims = sized(height, REVA_WORDMARK.width / REVA_WORDMARK.height);
   return (
     <svg
       viewBox={`0 0 ${REVA_WORDMARK.width} ${REVA_WORDMARK.height}`}
-      className={`w-auto shrink-0 ${className}`}
-      style={style}
+      width={dims.width}
+      height={dims.height}
+      className={`shrink-0 ${className}`}
+      style={dims.style}
+      overflow="visible"
       fill="currentColor"
       role="img"
       aria-label="REVA"
@@ -47,7 +64,7 @@ export function RevaMark({ size = 32, className = "", style }: { size?: number; 
       style={{ width: size, height: size, borderRadius: size * 0.22, background: REVA_ORANGE, ...style }}
       aria-hidden="true"
     >
-      <RevaGlyph className="text-white" style={{ height: size * 0.52 }} />
+      <RevaGlyph height={Math.round(size * 0.52 * 10) / 10} className="text-white" />
     </span>
   );
 }
@@ -60,7 +77,7 @@ export function RevaLogo({ size = 32, className = "", color }: { size?: number; 
   return (
     <span className={`inline-flex items-center shrink-0 ${className}`} style={{ gap: size * 0.26, color }}>
       <RevaMark size={size} />
-      <RevaWordmark style={{ height: size * 0.46 }} />
+      <RevaWordmark height={Math.round(size * 0.46 * 10) / 10} />
     </span>
   );
 }

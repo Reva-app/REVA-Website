@@ -29,7 +29,7 @@ export default function AlgemeneVoorwaardenPage() {
         ])}
       />
       <SiteLayout>
-      <LegalLayout title="Algemene Voorwaarden" lastUpdated="1 augustus 2026">
+      <LegalLayout title="Algemene Voorwaarden" lastUpdated="5 november 2026">
         <p>
           <strong>Opmerking vooraf:</strong> deze voorwaarden gaan uit van een B2B-relatie waarin een
           fysiotherapiepraktijk REVA afneemt en zelf patiënten uitnodigt. Deze tekst is nog niet

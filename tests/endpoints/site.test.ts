@@ -132,3 +132,22 @@ test("FAQ en doelgroeppagina's hebben FAQ-schema", async () => {
   }
 });
 
+test("sitemap: elke URL bestaat, is indexeerbaar en heeft een gelijke canonical; afbeeldingen laden", async () => {
+  const xml = await (await get("/sitemap.xml", "application/xml")).text();
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const images = [...xml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
+  assert.ok(urls.length >= 20 && images.length > 0, `${urls.length} urls, ${images.length} afbeeldingen`);
+  for (const url of urls) {
+    const res = await get(url.replace("https://www.reva-app.nl", "") || "/", "text/html");
+    assert.equal(res.status, 200, url);
+    const html = await res.text();
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    assert.equal(canonical, url, `canonical van ${url}`);
+    assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), `${url} staat op noindex`);
+  }
+  for (const img of images) {
+    const res = await fetch(img.replace("https://www.reva-app.nl", BASE));
+    assert.equal(res.status, 200, img);
+  }
+});
+
