@@ -818,7 +818,7 @@ const usps = [
 function UspSection() {
   return (
     <section className="py-14 md:py-16 border-b" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
-      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.18fr_1fr_1fr] gap-8 lg:gap-6">
         {usps.map(({ icon: Icon, title, text }, i) => (
           <AnimateIn key={title} direction="up" delay={i * 80}>
             <div>
