@@ -71,3 +71,11 @@ test("HTML naar Markdown: kop zonder harde regelafbreking, links gescheiden, bes
   assert.ok(md.includes("[Demo](https://www.reva-app.nl/demo-aanvragen) [FAQ](https://www.reva-app.nl/faq)"));
   assert.ok(!md.startsWith(">"));
 });
+
+test("HTML naar Markdown: afbeeldingen weg, link los van voorgaande tekst", () => {
+  const html = `<main><h1>Over</h1><p><a href="#verhaal">Lees het verhaal</a><a href="/demo-aanvragen">Demo</a></p><img src="/x.png" alt="Portret"></main>`;
+  const md = htmlToMarkdown(html);
+  assert.ok(!md.includes("!["), md);
+  assert.ok(md.includes("Lees het verhaal [Demo](https://www.reva-app.nl/demo-aanvragen)"), md);
+});
+

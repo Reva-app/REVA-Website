@@ -81,3 +81,15 @@ test("prijzen: Product-schema met afbeelding en alle pakketten", async () => {
   for (const offer of product.offers) assert.ok(offer.validFrom && offer.priceValidUntil);
 });
 
+test("over REVA: AboutPage, Person en FAQ in de structured data", async () => {
+  const html = await (await get("/over-reva", "text/html")).text();
+  const nodes = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1]))
+    .flatMap((d) => d["@graph"] ?? [d]);
+  const types = nodes.map((n) => n["@type"]);
+  for (const t of ["AboutPage", "Person", "FAQPage"]) assert.ok(types.includes(t), t);
+  const person = nodes.find((n) => n["@type"] === "Person");
+  assert.equal(person.name, "Stef Robberts");
+  assert.match(html, /<title>Over REVA: het verhaal achter het patiëntenportaal \| REVA App<\/title>/);
+});
+

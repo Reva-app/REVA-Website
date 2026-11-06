@@ -14,8 +14,12 @@ export function htmlToMarkdown(html: string): string {
 
   const turndown = new TurndownService({ headingStyle: "atx", bulletListMarker: "-", codeBlockStyle: "fenced" });
   turndown.remove(["script", "style", "noscript", "button", "form", "iframe", "img", "picture", "video"]);
-  // svg staat niet in de HTML-elementtypes van turndown, daarom via een filterfunctie
-  turndown.remove((node) => node.nodeName.toLowerCase() === "svg");
+  // Afbeeldingen en svg expliciet weglaten: remove() heeft lagere voorrang dan de
+  // standaardregel voor afbeeldingen, addRule() gaat daar wel boven
+  turndown.addRule("dropMedia", {
+    filter: (node) => ["img", "picture", "video", "svg"].includes(node.nodeName.toLowerCase()),
+    replacement: () => "",
+  });
   // Relatieve links absoluut maken, zodat agents ze direct kunnen volgen
   turndown.addRule("absoluteLinks", {
     filter: "a",
@@ -36,7 +40,7 @@ export function htmlToMarkdown(html: string): string {
 
   let body = turndown
     .turndown(main)
-    .replace(/\)\[/g, ") [") // aangrenzende links niet aan elkaar plakken
+    .replace(/([^\s([!])\[(?=[^\]]+\]\()/g, "$1 [") // link niet aan voorgaande tekst of link plakken
     .replace(/[ \t]+$/gm, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
