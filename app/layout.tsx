@@ -148,6 +148,7 @@ const jsonLd = {
         "Praktijkmanagement",
         "Digitale zorg",
       ],
+      telephone: "+31614933478",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Kerkstraat 129",
@@ -161,6 +162,7 @@ const jsonLd = {
           "@type": "ContactPoint",
           contactType: "sales",
           email: "info@reva-app.nl",
+          telephone: "+31614933478",
           url: "https://www.reva-app.nl/demo-aanvragen",
           areaServed: "NL",
           availableLanguage: ["Dutch", "nl"],
@@ -169,6 +171,7 @@ const jsonLd = {
           "@type": "ContactPoint",
           contactType: "customer support",
           email: "info@reva-app.nl",
+          telephone: "+31614933478",
           url: "https://www.reva-app.nl/contact",
           areaServed: "NL",
           availableLanguage: ["Dutch", "nl"],

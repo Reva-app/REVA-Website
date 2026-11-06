@@ -30,8 +30,11 @@ export function Footer() {
               <p>{company.street}, {company.postalCode} {company.city}</p>
               {company.kvk && <p>KvK: {company.kvk}</p>}
               {company.vat && <p>Btw: {company.vat}</p>}
-              <a href="mailto:info@reva-app.nl" className="footer-link">
+              <a href="mailto:info@reva-app.nl" className="footer-link block">
                 info@reva-app.nl
+              </a>
+              <a href={`tel:${company.phoneIntl}`} className="footer-link block">
+                {company.phone}
               </a>
             </div>
           </div>

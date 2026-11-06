@@ -57,7 +57,7 @@ Zo helpt een agent de gebruiker verder:
 - Taal: volledig Nederlandstalig product en website.
 - Privacy en AVG: gezondheidsdata wordt versleuteld opgeslagen. De praktijk is verwerkingsverantwoordelijke voor patiëntgegevens, REVA treedt op als verwerker op basis van een verwerkersovereenkomst (DPA).
 - Herkomst: REVA is gebouwd door oprichter Stef Robberts tijdens zijn eigen hersteltraject en wordt nu aangeboden aan fysiotherapiepraktijken om hun patiënten te begeleiden.
-- Contact: info@reva-app.nl. Demo's zijn vrijblijvend en duren doorgaans hooguit 30 minuten.
+- Contact: info@reva-app.nl of 06 14933478 (maandag tot en met vrijdag, 9:00 tot 17:00). Demo's zijn vrijblijvend en duren doorgaans hooguit 30 minuten.
 
 ## Pagina's
 

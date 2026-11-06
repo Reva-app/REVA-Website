@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail, MessageCircle, HelpCircle } from "lucide-react";
+import { Mail, MessageCircle, HelpCircle, Phone } from "lucide-react";
+import { company } from "@/lib/about";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { SimpleContactForm } from "@/components/SimpleContactForm";
@@ -74,6 +75,23 @@ export default function ContactPage() {
                         <a href="mailto:info@reva-app.nl" className="text-sm leading-relaxed hover-orange" style={{ color: "#6b7280" }}>
                           info@reva-app.nl
                         </a>
+                      </div>
+                    </div>
+                  </AnimateIn>
+                  <AnimateIn direction="up" delay={140}>
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                        style={{ background: "#fff3ee" }}
+                      >
+                        <Phone className="w-4 h-4" style={{ color: "#e8632a" }} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold mb-0.5" style={{ color: "#1a1a1a" }}>Bel ons</p>
+                        <a href={`tel:${company.phoneIntl}`} className="text-sm leading-relaxed hover-orange" style={{ color: "#6b7280" }}>
+                          {company.phone}
+                        </a>
+                        <p className="text-xs mt-0.5" style={{ color: "#9ca3af" }}>Maandag tot en met vrijdag, 9:00 tot 17:00</p>
                       </div>
                     </div>
                   </AnimateIn>

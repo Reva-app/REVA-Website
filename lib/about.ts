@@ -6,6 +6,9 @@ export const company = {
   postalCode: "2153 BH",
   city: "Nieuw-Vennep",
   email: "info@reva-app.nl",
+  // Zelfde nummer als in het Google Bedrijfsprofiel
+  phone: "06 14933478",
+  phoneIntl: "+31614933478",
   founder: "Stef Robberts",
   founderLinkedIn: "https://www.linkedin.com/in/stef-robberts-82b632b6/",
   // Vul in zodra bekend; lege waarden worden niet getoond

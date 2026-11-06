@@ -27,7 +27,7 @@ const MORE_LINKS = [
   `- [Veelgestelde vragen](${SITE_URL}/faq)`,
   `- [Blog](${SITE_URL}/blog)`,
   `- [Demo aanvragen](${SITE_URL}/demo-aanvragen)`,
-  `- [Contact](${SITE_URL}/contact): info@reva-app.nl`,
+  `- [Contact](${SITE_URL}/contact): info@reva-app.nl, 06 14933478`,
   `- [Samenvatting voor AI-agents (llms.txt)](${SITE_URL}/llms.txt)`,
   `- [Sitemap](${SITE_URL}/sitemap.xml)`,
 ].join("\n");
@@ -190,7 +190,7 @@ export function notFoundMarkdown(path: string) {
     `- [Sitemap met alle pagina's](${SITE_URL}/sitemap.xml)`,
     `- [Prijzen](${SITE_URL}/prijzen)`,
     `- [Blog](${SITE_URL}/blog)`,
-    `- [Contact](${SITE_URL}/contact): info@reva-app.nl`,
+    `- [Contact](${SITE_URL}/contact): info@reva-app.nl, 06 14933478`,
     "",
   ].join("\n");
 }
