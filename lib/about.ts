@@ -7,6 +7,7 @@ export const company = {
   city: "Nieuw-Vennep",
   email: "info@reva-app.nl",
   founder: "Stef Robberts",
+  founderLinkedIn: "https://www.linkedin.com/in/stef-robberts-82b632b6/",
 };
 
 export const aboutFaq = [

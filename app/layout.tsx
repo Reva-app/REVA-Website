@@ -136,6 +136,7 @@ const jsonLd = {
         name: "Stef Robberts",
         jobTitle: "Oprichter",
         url: "https://www.reva-app.nl/over-reva",
+        sameAs: ["https://www.linkedin.com/in/stef-robberts-82b632b6/"],
       },
       knowsAbout: [
         "Fysiotherapie",
