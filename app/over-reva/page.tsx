@@ -385,8 +385,7 @@ export default function OverRevaPage() {
 
               <Chapter nr={6} title="Wat er nog komt">
                 <p>
-                  We zijn nog lang niet klaar. Er staan functies op de planning, zoals een agendamodule,
-                  en daarbij kunnen we alle hulp gebruiken. Fysiotherapeuten en patiënten delen via een
+                  We zijn nog lang niet klaar, en bij de volgende stappen kunnen we alle hulp gebruiken. Fysiotherapeuten en patiënten delen via een
                   feedbackformulier hun wensen, ideeën en bugs met ons.
                 </p>
                 <p>

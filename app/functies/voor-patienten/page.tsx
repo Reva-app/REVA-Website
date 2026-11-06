@@ -1,182 +1,233 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ClipboardCheck,
-  Dumbbell,
-  Pill,
-  Smartphone,
-  ArrowRight,
-  Play,
-} from "lucide-react";
+import { ArrowRight, Mail, KeyRound, ClipboardCheck, Smartphone, Globe } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { JsonLd, breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "@/components/seo/JsonLd";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { PilotOfferBanner } from "@/components/PilotOfferBanner";
+import { FeatureDemo } from "@/components/features/FeatureDemo";
+import { StoryRow } from "@/components/features/FeatureShowcase";
+import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
+
+const URL = "https://www.reva-app.nl/functies/voor-patienten";
 
 export const metadata: Metadata = {
-  title: "Functies voor patiënten",
+  title: "Patiëntenportaal: wat je patiënten met REVA krijgen",
   description:
-    "Wat patiënten ervaren in het REVA-portaal dat jouw praktijk aanbiedt: dagelijkse check-ins, herstelplannen, oefeningen en medicatieregistratie op de telefoon.",
+    "Zo ervaren je patiënten REVA: een eigen portaal in de huisstijl van je praktijk, met dagelijkse check-in, oefeningen, medicatieherinneringen, doelen en inzicht in hun herstel.",
   openGraph: {
-    title: "Functies voor patiënten",
-    description: "Check-ins, herstelplannen en medicatieregistratie: wat patiënten ervaren in het REVA-portaal.",
+    title: "Wat je patiënten met REVA krijgen",
+    description: "Een eigen patiëntenportaal op de telefoon van je patiënt, in de huisstijl van jouw praktijk.",
     locale: "nl_NL",
     type: "website",
-    url: "https://www.reva-app.nl/functies/voor-patienten",
+    url: URL,
   },
-  alternates: {
-    canonical: "https://www.reva-app.nl/functies/voor-patienten",
-  },
+  alternates: { canonical: URL },
 };
 
-const features = [
+const start = [
+  { icon: Mail, title: "Uitnodiging per mail", text: "Na de intake krijgt je patiënt direct een uitnodiging, in de huisstijl van je praktijk." },
+  { icon: KeyRound, title: "Account activeren", text: "Je patiënt activeert het eigen portaal. Het herstelplan staat al klaar." },
+  { icon: ClipboardCheck, title: "Eerste check-in", text: "Binnen een minuut de eerste check-in ingevuld. Vanaf dan zie jij het verloop." },
+];
+
+const experience = [
   {
-    icon: ClipboardCheck,
-    title: "Dagelijkse check-ins",
-    description:
-      "In minder dan een minuut geeft een patiënt door hoe het herstel voelt: pijn, energie en stemming. Geen telefoontje of app-bericht nodig.",
+    eyebrow: "Elke dag",
+    title: "Een check-in in minder dan een minuut",
+    text: "Je patiënt geeft een dagscore en vult aan wat relevant is: pijn, mobiliteit, energie, stemming, slaap en zwelling. Een herinnering helpt om het vol te houden, en de eigen hersteltrend laat zien dat het de goede kant op gaat.",
+    demo: "checkin" as const,
   },
   {
-    icon: Dumbbell,
-    title: "Herstelplannen en oefeningen",
-    description:
-      "Patiënten zien precies welke oefeningen ze moeten doen en vinken hun voortgang af, zodat het herstelplan altijd duidelijk is.",
+    eyebrow: "Thuis oefenen",
+    title: "Het schema van de fysio altijd bij de hand",
+    text: "De oefeningen uit de actuele fase staan klaar met sets, herhalingen en uitleg. Na een sessie logt je patiënt wat er gedaan is, eventueel met een opmerking die jij in het dossier terugziet.",
+    demo: "training" as const,
   },
   {
-    icon: Pill,
-    title: "Pijn- en medicatieregistratie",
-    description:
-      "Medicatiegebruik en pijnscores worden bijgehouden op één plek, in plaats van in losse notities of WhatsApp-berichten.",
+    eyebrow: "Medicatie",
+    title: "Herinneringen op de juiste momenten",
+    text: "Je patiënt legt het medicatieschema vast met dosering en tijdstippen en krijgt een herinnering bij elke inname. Zo zie je ook het afbouwen van pijnstilling terug.",
+    demo: "medicatie" as const,
   },
   {
-    icon: Smartphone,
-    title: "Altijd bij de hand",
-    description:
-      "Het portaal werkt op de browser, iOS en Android, zodat een patiënt zijn eigen herstel altijd en overal kan bijhouden.",
+    eyebrow: "Motivatie",
+    title: "Een doel voor ogen, en zichtbare mijlpalen",
+    text: "Een hoofddoel zoals weer voetballen of zonder pijn traplopen, met mijlpalen uit het herstelplan. Elke behaalde stap wordt zichtbaar, en dat houdt patiënten gemotiveerd.",
+    demo: "doelen" as const,
+  },
+  {
+    eyebrow: "Inzicht",
+    title: "Zien dat het herstel vooruitgaat",
+    text: "In de analyse ziet je patiënt het verloop van pijn en mobiliteit en de score op trainingsdagen tegenover rustdagen, met korte observaties in begrijpelijke taal. Dat geeft houvast, ook op een mindere dag.",
+    demo: "inzicht" as const,
+  },
+  {
+    eyebrow: "Alles op één plek",
+    title: "Een eigen dossier en dagboek",
+    text: "Brieven, verslagen en scans, foto-updates van de voortgang en contactgegevens van het behandelteam staan bij elkaar. Het dagboek laat per dag de afspraken, check-ins, trainingen en medicatie zien.",
+    demo: "patientdossier" as const,
   },
 ];
 
-export default function FunctiesVoorPatientenPage() {
+const faq = [
+  {
+    q: "Hoe krijgt een patiënt toegang tot REVA?",
+    a: "Via de praktijk. Na de intake ontvangt de patiënt een uitnodiging per mail om het eigen portaal te activeren. Zonder uitnodiging van een praktijk kan een patiënt geen account aanmaken voor jouw praktijk.",
+  },
+  {
+    q: "Werkt REVA op de telefoon van mijn patiënten?",
+    a: "Ja. REVA werkt in de browser en op iOS en Android. De dagelijkse check-in is doorgaans in minder dan een minuut ingevuld.",
+  },
+  {
+    q: "Geeft REVA medisch advies aan patiënten?",
+    a: "Nee. Observaties in de app zijn informatief en geen medisch advies. Bij medicatie staat er expliciet dat de patiënt altijd de arts of apotheker raadpleegt. Het advies komt van jou als fysiotherapeut.",
+  },
+  {
+    q: "Kan een patiënt zijn gegevens laten verwijderen?",
+    a: "Ja. Een patiënt kan het eigen account en alle bijbehorende gegevens op elk moment laten verwijderen, in lijn met de AVG.",
+  },
+];
+
+export default function VoorPatientenPage() {
   return (
     <>
       <JsonLd
         data={webPageJsonLd({
-          url: "https://www.reva-app.nl/functies/voor-patienten",
-          name: "Functies voor patiënten | REVA",
-          description:
-            "Ontdek wat patiënten ervaren in het REVA-portaal dat jouw praktijk aan hen aanbiedt: dagelijkse check-ins, herstelplannen en oefeningen, pijn- en medicatieregistratie.",
+          url: URL,
+          name: "Wat je patiënten met REVA krijgen",
+          description: "Het patiëntenportaal van REVA vanuit het perspectief van de patiënt van een aangesloten praktijk.",
         })}
       />
-      <JsonLd data={itemListJsonLd(features.map((f) => ({ name: f.title, description: f.description })))} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `${URL}#faq`,
+          mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }}
+      />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
           { name: "Functies", url: "https://www.reva-app.nl/functies" },
-          { name: "Voor patiënten", url: "https://www.reva-app.nl/functies/voor-patienten" },
+          { name: "Voor patiënten", url: URL },
         ])}
       />
       <SiteLayout>
         {/* Hero */}
         <section className="py-16 md:py-24" style={{ background: "#f8f7f4" }}>
-          <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
+          <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimateIn direction="up">
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
-                Voor patiënten
-              </span>
-              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-5" style={{ color: "#1a1a1a" }}>
-                Een portaal dat je patiënten<br />
-                <span style={{ color: "#e8632a" }}>zelf grip geeft op hun herstel</span>
+              <p className="text-sm font-semibold mb-3" style={{ color: "#e8632a" }}>Voor je patiënten</p>
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-5" style={{ color: "#1a1a1a" }}>
+                Een eigen portaal dat je patiënten grip geeft op hun herstel
               </h1>
-              <p className="text-base max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-                Als jouw praktijk REVA aanbiedt, krijgen patiënten een persoonlijk portaal waarin ze
-                dagelijks bijhouden hoe het herstel gaat. Overzichtelijk voor hen, en automatisch
-                zichtbaar voor jou en je team.
+              <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#6b7280" }}>
+                Je patiënten krijgen een persoonlijk hersteldashboard op hun telefoon, in de huisstijl van jouw
+                praktijk. Zij houden het herstel bij, jij ziet het verloop terug in het dossier.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm justify-center">
+                  Vraag een demo aan
+                  <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                </Link>
+                <Link
+                  href="/functies/voor-fysios"
+                  className="inline-flex items-center justify-center px-5 py-3 rounded-lg font-medium text-sm border transition-colors hover:bg-[#f1ede8]"
+                  style={{ background: "#ffffff", color: "#1a1a1a", borderColor: "#e8e5df" }}
+                >
+                  Wat jij ervan terugziet
+                </Link>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{ color: "#6b7280" }}>
+                <span className="flex items-center gap-1.5"><Smartphone className="w-4 h-4" style={{ color: "#e8632a" }} /> iOS en Android</span>
+                <span className="flex items-center gap-1.5"><Globe className="w-4 h-4" style={{ color: "#e8632a" }} /> In de browser</span>
+              </div>
             </AnimateIn>
-
-            <AnimateIn direction="up" delay={150} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm">
-                Vraag een demo aan
-                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-              </Link>
-              <Link href="/functies/voor-fysios" className="btn-secondary px-5 py-3 text-sm">
-                Bekijk functies voor fysio&apos;s
-              </Link>
-            </AnimateIn>
-          </div>
-        </section>
-
-        {/* Feature grid */}
-        <section className="py-16 md:py-24" style={{ background: "#ffffff" }}>
-          <div className="max-w-5xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {features.map((f, i) => {
-                const Icon = f.icon;
-                return (
-                  <AnimateIn key={f.title} direction="up" delay={i * 60}>
-                    <div
-                      className="h-full rounded-2xl p-6 border"
-                      style={{ background: "#f8f7f4", borderColor: "#e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
-                    >
-                      <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "#fff3ee" }}>
-                        <Icon className="w-5 h-5" style={{ color: "#e8632a" }} />
-                      </div>
-                      <h3 className="text-sm font-semibold mb-2" style={{ color: "#1a1a1a" }}>{f.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{f.description}</p>
-                    </div>
-                  </AnimateIn>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Video placeholder */}
-        <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
-          <div className="max-w-4xl mx-auto px-5 md:px-8">
-            <AnimateIn direction="up" className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
-                Zie het patiëntenportaal in actie
-              </h2>
-              <p className="text-base max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-                Binnenkort delen we hier een video die laat zien hoe patiënten hun herstel bijhouden
-                in REVA. Wil je het nu al zien? Vraag een persoonlijke demo aan.
-              </p>
-            </AnimateIn>
-            <AnimateIn direction="up" delay={100}>
-              <div
-                className="relative rounded-3xl overflow-hidden flex items-center justify-center"
-                style={{ aspectRatio: "16 / 9", background: "#1c1c1e" }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "rgba(232,99,42,0.18)" }}>
-                    <Play className="w-6 h-6 ml-0.5" style={{ color: "#e8632a" }} />
-                  </div>
-                  <p className="text-sm font-medium" style={{ color: "#9ca3af" }}>Video volgt binnenkort</p>
-                </div>
+            <AnimateIn direction="up" delay={120}>
+              <div className="rounded-3xl py-8 px-4" style={{ background: "#f1ede8" }}>
+                <FeatureDemo demo="checkin" />
               </div>
             </AnimateIn>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 md:py-24" style={{ background: "#1c1c1e" }}>
-          <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-            <AnimateIn direction="up">
-              <h2 className="text-2xl md:text-4xl font-semibold text-white mb-4">
-                Bied je patiënten een professioneel portaal
+        {/* Zo start je patiënt */}
+        <section className="py-16 md:py-20" style={{ background: "#ffffff" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up" className="max-w-2xl mb-10">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
+                Zo start je patiënt
               </h2>
-              <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#7c7c8a" }}>
-                Tijdens een demo laten we zien hoe patiënten REVA ervaren, en hoe dat voor jouw
-                praktijk overzicht oplevert.
+              <p className="text-base" style={{ color: "#6b7280" }}>Geen app zoeken of ingewikkelde installatie. Drie stappen en je patiënt is onderweg.</p>
+            </AnimateIn>
+            <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {start.map(({ icon: Icon, title, text }, i) => (
+                <AnimateIn key={title} direction="up" delay={i * 80} className="h-full">
+                  <li className="h-full rounded-2xl border p-6" style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}>
+                    <span className="text-sm font-semibold" style={{ color: "#e8632a" }}>Stap {i + 1}</span>
+                    <Icon className="w-5 h-5 mt-3 mb-2" style={{ color: "#1a1a1a" }} />
+                    <h3 className="text-base font-semibold mb-1.5" style={{ color: "#1a1a1a" }}>{title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{text}</p>
+                  </li>
+                </AnimateIn>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Wat je patiënt ervaart */}
+        <section className="py-16 md:py-24" style={{ background: "#f8f7f4" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up" className="max-w-2xl mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3" style={{ color: "#1a1a1a" }}>
+                Wat je patiënt in REVA kan
+              </h2>
+              <p className="text-base" style={{ color: "#6b7280" }}>
+                Alles wat een patiënt tussen de afspraken door bijhoudt, komt automatisch bij jou terecht.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3.5 text-base">
-                  Vraag een demo aan
-                  <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                </Link>
-                <Link href="/functies" className="btn-dark px-6 py-3.5 text-sm">
-                  Bekijk alle functies
-                </Link>
+            </AnimateIn>
+            <div className="space-y-20 md:space-y-28">
+              {experience.map((e, i) => (
+                <StoryRow key={e.title} index={i} {...e} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Vragen */}
+        <section className="py-16 md:py-24" style={{ background: "#ffffff" }}>
+          <div className="max-w-3xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6" style={{ color: "#1a1a1a" }}>
+                Vragen over de patiëntkant
+              </h2>
+              <FaqAccordion items={faq} />
+              <p className="mt-6 text-sm" style={{ color: "#6b7280" }}>
+                Wil je zien hoe het portaal er stap voor stap uitziet? Bekijk de{" "}
+                <Link href="/documentatie" className="font-medium hover-orange" style={{ color: "#e8632a" }}>documentatie voor patiënten</Link>.
+              </p>
+            </AnimateIn>
+          </div>
+        </section>
+
+        {/* Afsluiter */}
+        <section className="py-16 md:py-24" style={{ background: "#1c1c1e" }}>
+          <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
+            <AnimateIn direction="up">
+              <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-white mb-4">
+                Bied je patiënten een eigen portaal
+              </h2>
+              <p className="mb-8 text-base md:text-lg" style={{ color: "#9ca3af" }}>
+                Ontdek in een demo hoe REVA eruitziet in de huisstijl van jouw praktijk.
+              </p>
+              <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3 mb-10">
+                Vraag een demo aan
+                <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+              </Link>
+              <div className="text-left">
+                <PilotOfferBanner dark />
               </div>
             </AnimateIn>
           </div>

@@ -108,3 +108,27 @@ test("homepage-Markdown bevat de vergelijking", async () => {
   assert.ok(md.includes("## REVA naast WhatsApp, telefoon en Excel"));
 });
 
+const jsonLd = (html: string) =>
+  [...html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1]))
+    .flatMap((d) => d["@graph"] ?? [d]);
+
+test("functies: alle functie-ankers en een ItemList", async () => {
+  const { features } = await import("../../lib/features");
+  const html = await (await get("/functies", "text/html")).text();
+  for (const f of features) assert.ok(html.includes(`id="${f.id}"`), f.id);
+  assert.ok(jsonLd(html).some((n) => n["@type"] === "ItemList"));
+});
+
+test("FAQ en doelgroeppagina's hebben FAQ-schema", async () => {
+  const { faqGroups } = await import("../../lib/faq");
+  const faqHtml = await (await get("/faq", "text/html")).text();
+  const faq = jsonLd(faqHtml).find((n) => n["@type"] === "FAQPage");
+  assert.equal(faq.mainEntity.length, faqGroups.flatMap((g) => g.items).length);
+  for (const path of ["/functies/voor-fysios", "/functies/voor-patienten"]) {
+    const html = await (await get(path, "text/html")).text();
+    assert.ok(jsonLd(html).some((n) => n["@type"] === "FAQPage"), path);
+    assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, path);
+  }
+});
+

@@ -3,14 +3,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { FaqExplorer } from "@/components/FaqExplorer";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { faqGroups } from "@/lib/faq";
 
 export const metadata: Metadata = {
   title: "Veelgestelde vragen over REVA",
   description:
-    "Antwoorden op de meest gestelde vragen over REVA: wat het patiëntenportaal doet, hoe implementatie werkt, wat het kost en hoe REVA omgaat met patiëntdata.",
+    "Ruim 40 antwoorden over REVA, het patiëntenportaal voor fysiotherapiepraktijken: functies, implementatie, prijzen, proefperiode, AVG en beveiliging.",
   openGraph: {
     title: "Veelgestelde vragen over REVA",
     description: "Antwoorden op de meest gestelde vragen over REVA, voor fysiotherapiepraktijken.",
@@ -28,6 +28,7 @@ const allFaqItems = faqGroups.flatMap((g) => g.items);
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://www.reva-app.nl/faq#faq",
   mainEntity: allFaqItems.map((item) => ({
     "@type": "Question",
     name: item.q,
@@ -50,35 +51,23 @@ export default function FaqPage() {
       />
       <SiteLayout>
         {/* Hero */}
-        <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
-          <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
-            <AnimateIn direction="up">
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
-                Veelgestelde vragen
-              </span>
-              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
-                Alles wat je wilt weten over REVA
+        <section className="pt-16 md:pt-20 pb-10" style={{ background: "#f8f7f4" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up" className="max-w-3xl">
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-4" style={{ color: "#1a1a1a" }}>
+                Veelgestelde vragen over REVA
               </h1>
-              <p className="text-base" style={{ color: "#6b7280" }}>
-                Vind je je vraag over REVA voor jouw praktijk hier niet terug? Neem gerust contact met ons op.
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: "#6b7280" }}>
+                Antwoorden over het patiëntenportaal voor fysiotherapiepraktijken: wat het doet, hoe je
+                start, wat het kost en hoe REVA omgaat met gezondheidsgegevens.
               </p>
             </AnimateIn>
           </div>
         </section>
 
-        {/* FAQ groups */}
-        <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
-          <div className="max-w-2xl mx-auto px-5 md:px-8 space-y-12">
-            {faqGroups.map((group, gi) => (
-              <AnimateIn key={group.category} direction="up" delay={gi * 60}>
-                <div>
-                  <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#e8632a" }}>
-                    {group.category}
-                  </h2>
-                  <FaqAccordion items={group.items} />
-                </div>
-              </AnimateIn>
-            ))}
+        <section className="pb-16 md:pb-24 pt-4" style={{ background: "#f8f7f4" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <FaqExplorer groups={faqGroups} />
           </div>
         </section>
 

@@ -45,7 +45,11 @@ Zo helpt een agent de gebruiker verder:
 
 - Doelgroep: fysiotherapiepraktijken, van eenmanspraktijken tot praktijken met meerdere behandelaars en vestigingen.
 - Wat REVA oplost: fysiotherapeuten zien in één oogopslag welke patiënten aandacht nodig hebben (hoge pijnscore, weinig activiteit, gemiste check-ins), zonder elk dossier handmatig te checken. Minder tijd kwijt aan telefoontjes en appjes over hoe het gaat, patiënten loggen dat zelf. Een professioneel patiëntenportaal in de eigen huisstijl versterkt het imago van de praktijk.
-- Kernfuncties (9 modules): praktijkoverzicht met signalering, check-ins van patiënten (pijn, energie, stemming), afspraken en behandelplan, herstelplannen en oefeningen, pijn- en medicatieregistratie, digitaal patiëntdossier, voortgangsanalyse met grafieken, patiëntgegevens en contacten, behandeldoelen en mijlpalen.
+- Kernfuncties voor de praktijk: intake met REVA-analyse en voorgesteld herstelplan; herstelplannen in fases met criteria, mijlpalen, educatie en een meting bij elke fase-overgang; patiëntoverzicht met signalering (pijnscore 7 of hoger, zwelling, lage dagscore, weinig activiteit); patiëntdossier met check-in geschiedenis, foto-updates, medicatie, trainingen, observaties en interne notities; oefeningen en trainingsschema's; agenda met werkroosters, verlof, ruimtereserveringen en AI-suggestie voor de ruimteverdeling; praktijkanalyse (doorlooptijd per blessure, nieuwe patiënten, werkdruk); rollen voor praktijkeigenaar, fysiotherapeut en receptie; eigen huisstijl.
+- Kernfuncties voor patiënten: dagelijkse check-in (dagscore 1 tot 5, pijn 0 tot 10, mobiliteit, energie, stemming, slaap, zwelling), training, medicatieschema met herinneringen, doelen en mijlpalen, inzicht in de hersteltrend, eigen dossier en dagboek.
+- REVA-bibliotheek: ruim 40 voorbeeldherstelplannen en 100 oefeningen als startpunt, die de praktijk kopieert, beoordeelt en aanpast voordat ze aan patiënten worden toegewezen.
+- Beveiliging: verplichte tweestapsverificatie voor praktijkmedewerkers, activiteitenlog met inzage en wijzigingen (NEN 7513), versleutelde opslag op servers binnen de EER.
+- Geen koppeling met een EPD: REVA werkt naast het bestaande EPD. De patiëntenlijst is te exporteren als CSV.
 - Prijs: vijf pakketten, elk met alle functies inbegrepen, prijzen exclusief btw. Solo (49 euro per maand, 1 medewerker, 1 vestiging, tot 200 actieve patiënten), Team (129 euro per maand, 2 tot 5 medewerkers, tot 2 vestigingen, tot 750 actieve patiënten, meest gekozen pakket), Praktijk (229 euro per maand, 6 tot 10 medewerkers, tot 3 vestigingen, tot 1.500 actieve patiënten, met persoonlijke onboarding), Praktijk Plus (349 euro per maand, 11 tot 20 medewerkers, tot 5 vestigingen, tot 3.000 actieve patiënten, met prioriteitsondersteuning), Enterprise (vanaf 699 euro per maand, 21 of meer medewerkers, onbeperkt vestigingen en patiënten, met persoonlijke accountmanager). Bij jaarlijks betalen krijgt een praktijk 2 maanden gratis. Alleen actieve patiënten tellen mee. REVA is 30 dagen gratis te proberen. Volledige details op de prijzenpagina.
 - Pilotaanbod: de eerste 3 praktijken krijgen 50% korting op het eerste jaar, in ruil voor feedback en een korte klantervaring. Aanmelden via https://www.reva-app.nl/demo-aanvragen?aanbod=pilot.
 - Hosting: patiëntdata staat versleuteld op servers binnen de Europese Economische Ruimte.
@@ -58,12 +62,12 @@ Zo helpt een agent de gebruiker verder:
 ## Pagina's
 
 - [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
-- [Functies](https://www.reva-app.nl/functies): Gedetailleerde uitleg van alle 9 functies van REVA, vanuit het perspectief van de praktijk.
+- [Functies](https://www.reva-app.nl/functies): Alle functies van REVA per doelgroep (fysiotherapeut, praktijk, patiënt), met per functie uitleg en een korte animatie.
 - [Functies voor fysio's](https://www.reva-app.nl/functies/voor-fysios): Wat REVA oplevert voor de fysiotherapeut en het praktijkteam: overzicht, dossier, voortgang en behandeldoelen.
 - [Functies voor patiënten](https://www.reva-app.nl/functies/voor-patienten): Wat patiënten van een aangesloten praktijk zelf ervaren: check-ins, herstelplannen en medicatieregistratie.
 - [Over REVA](https://www.reva-app.nl/over-reva): Het verhaal van oprichter Stef Robberts, van knieblessure en losse notities tot patiëntenportaal, plus de missie, uitgangspunten, veelgestelde vragen en bedrijfsgegevens van REVA B.V. (Nieuw-Vennep).
 - [Prijzen](https://www.reva-app.nl/prijzen): De vijf pakketten van REVA (Solo, Team, Praktijk, Praktijk Plus, Enterprise) met prijzen en vergelijking.
-- [Veelgestelde vragen](https://www.reva-app.nl/faq): Antwoorden op vragen van praktijkeigenaren over REVA, implementatie, prijzen en privacy.
+- [Veelgestelde vragen](https://www.reva-app.nl/faq): Ruim 40 antwoorden in zes categorieën: algemeen, functies, patiënten, implementatie, prijzen en veiligheid.
 - [Blog](https://www.reva-app.nl/blog): Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw, digitalisering en AVG.
 - [Documentatie](https://www.reva-app.nl/documentatie): Een kijkje in het patiëntenportaal, wat patiënten van een aangesloten praktijk ervaren, stap voor stap.
 - [Demo aanvragen / Contact](https://www.reva-app.nl/contact): Formulier om een vrijblijvende demo aan te vragen van hooguit 30 minuten.

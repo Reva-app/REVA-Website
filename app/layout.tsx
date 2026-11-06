@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { CookieConsentProvider } from "@/lib/cookie-consent";
 import { CookieBanner } from "@/components/CookieBanner";
 import { NewsletterPopup } from "@/components/NewsletterPopup";
+import { features } from "@/lib/features";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "./globals.css";
 
@@ -200,17 +201,7 @@ const jsonLd = {
         "@type": "BusinessAudience",
         audienceType: "Fysiotherapiepraktijken",
       },
-      featureList: [
-        "Praktijkoverzicht met signalering",
-        "Dagelijkse check-ins van patiënten",
-        "Afspraken en behandelplan",
-        "Herstelplannen en oefeningen",
-        "Pijn- en medicatieregistratie",
-        "Digitaal patiëntdossier",
-        "Voortgangsanalyse met grafieken",
-        "Patiëntgegevens en contacten",
-        "Behandeldoelen en mijlpalen",
-      ],
+      featureList: features.map((f) => f.title),
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
