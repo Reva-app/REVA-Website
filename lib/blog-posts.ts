@@ -722,7 +722,6 @@ export const blogPosts: BlogPost[] = [
     },
     keywords: [
       "software voor fysiopraktijken",
-      "fysiotherapie software",
       "praktijksoftware fysiotherapie",
       "software fysiotherapiepraktijk",
       "EPD fysiotherapie",
@@ -825,7 +824,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Waar REVA in jouw softwarepakket past",
         paragraphs: [
           "REVA is een patiëntenportaal voor fysiotherapiepraktijken. Het vervangt je EPD, agenda of declaratiesoftware niet, maar vult ze aan op het punt waar die systemen ophouden: de tijd tussen behandelingen. Patiënten houden zelf hun herstel bij, en jij ziet in één overzicht wie aandacht nodig heeft, zonder extra telefoontjes.",
-          "REVA werkt via de browser, op iOS en op Android, voor zowel je team als je patiënten. De meeste praktijken zijn snel operationeel, zonder ingewikkeld traject met IT. Bekijk de [functies voor fysiotherapeuten](/functies/voor-fysios) of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe REVA past bij jouw praktijk.",
+          "REVA werkt via de browser, op iOS en op Android, voor zowel je team als je patiënten. De meeste praktijken zijn snel operationeel, zonder ingewikkeld traject met IT. Op de pagina [fysiotherapie software van REVA](/fysiotherapie-software) zie je per soort software wat REVA wel en niet doet, met prijzen. Of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe REVA past bij jouw praktijk.",
         ],
       },
     ],

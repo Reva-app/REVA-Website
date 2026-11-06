@@ -44,6 +44,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "Functies", href: "/functies" },
+                { label: "Fysiotherapie software", href: "/fysiotherapie-software" },
                 { label: "Prijzen", href: "/prijzen" },
                 { label: "Over REVA", href: "/over-reva" },
                 { label: "Praktijken", href: "/praktijken" },

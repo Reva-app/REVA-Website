@@ -62,6 +62,7 @@ Zo helpt een agent de gebruiker verder:
 ## Pagina's
 
 - [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
+- [Fysiotherapie software](https://www.reva-app.nl/fysiotherapie-software): Waar REVA past naast het EPD, met per soort praktijksoftware (EPD, declareren, agenda, oefenprogramma's, patiëntenportaal) wat REVA wel en niet doet, prijzen en veelgestelde vragen.
 - [Functies](https://www.reva-app.nl/functies): Alle functies van REVA per doelgroep (fysiotherapeut, praktijk, patiënt), met per functie uitleg en een korte animatie.
 - [Functies voor fysio's](https://www.reva-app.nl/functies/voor-fysios): Wat REVA oplevert voor de fysiotherapeut en het praktijkteam: overzicht, dossier, voortgang en behandeldoelen.
 - [Functies voor patiënten](https://www.reva-app.nl/functies/voor-patienten): Wat patiënten van een aangesloten praktijk zelf ervaren: check-ins, herstelplannen en medicatieregistratie.

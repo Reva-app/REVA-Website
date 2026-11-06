@@ -8,11 +8,11 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Documentatie patiëntenportaal",
+  title: "Handleiding patiëntenportaal REVA",
   description:
-    "Een kijkje in het patiëntenportaal van REVA: zo ervaren patiënten check-ins, afspraken, oefeningen en dossier in de praktijk van jouw fysiotherapiepraktijk.",
+    "Handleiding voor het patiëntenportaal van REVA: stap voor stap hoe patiënten van jouw fysiotherapiepraktijk check-ins, afspraken, oefeningen en hun dossier gebruiken.",
   openGraph: {
-    title: "Documentatie patiëntenportaal",
+    title: "Handleiding patiëntenportaal REVA",
     description: "Zo werkt het patiëntenportaal van REVA voor de patiënten van jouw praktijk.",
     locale: "nl_NL",
     type: "website",

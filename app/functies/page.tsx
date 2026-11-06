@@ -11,11 +11,11 @@ import { featureGroups, features, featuresByGroup, REVA_LIBRARY } from "@/lib/fe
 const URL = "https://www.reva-app.nl/functies";
 
 export const metadata: Metadata = {
-  title: "Functies patiëntenportaal fysiotherapie",
+  title: "Software voor fysiotherapeuten: alle functies van REVA",
   description:
     "Alle functies van REVA: intake, herstelplannen in fases, signalering, patiëntdossier, oefenschema's, agenda en ruimtes, analyse en de patiëntapp met dagelijkse check-in.",
   openGraph: {
-    title: "Functies patiëntenportaal fysiotherapie",
+    title: "Software voor fysiotherapeuten: alle functies van REVA",
     description: "Zie per functie hoe REVA werkt, voor de fysiotherapeut, de praktijk en de patiënt.",
     locale: "nl_NL",
     type: "website",
@@ -52,7 +52,7 @@ export default function FunctiesPage() {
                 Alle functies van REVA, <span style={{ color: "#e8632a" }}>van intake tot afronding</span>
               </h1>
               <p className="text-base md:text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-                REVA is het patiëntenportaal voor fysiotherapiepraktijken. Hieronder zie je per functie wat
+                REVA is software voor fysiotherapeuten en hun patiënten, naast je EPD. Hieronder zie je per functie wat
                 het doet en hoe het eruitziet: voor de fysiotherapeut, voor de praktijk en voor je patiënten.
               </p>
             </AnimateIn>

@@ -13,6 +13,7 @@ const pages: { path: string; images?: string[] }[] = [
   { path: "/functies", images: ["/image-reva-app.png"] },
   { path: "/functies/voor-fysios" },
   { path: "/functies/voor-patienten", images: ["/check-in-mobile.png"] },
+  { path: "/fysiotherapie-software", images: ["/image-reva-app.png"] },
   { path: "/prijzen" },
   { path: "/faq" },
   { path: "/over-reva", images: ["/stef.png", "/ziekenhuis-knie.jpeg", "/rontgenfoto-knie.png"] },
