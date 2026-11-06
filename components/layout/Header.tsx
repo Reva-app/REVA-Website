@@ -26,6 +26,17 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const productRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<number | undefined>(undefined);
+
+  // Korte sluitvertraging, zodat een (schuine) beweging naar het paneel het menu niet sluit
+  const openProduct = () => {
+    window.clearTimeout(closeTimer.current);
+    setProductOpen(true);
+  };
+  const closeProductSoon = () => {
+    window.clearTimeout(closeTimer.current);
+    closeTimer.current = window.setTimeout(() => setProductOpen(false), 150);
+  };
 
   // Menu's sluiten bij het wisselen van pagina (state bijwerken tijdens het renderen,
   // zodat er geen extra render via een effect nodig is)
@@ -55,9 +66,11 @@ export function Header() {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setProductOpen(false);
     document.addEventListener("mousedown", onClick);
     document.addEventListener("keydown", onKey);
+    const timer = closeTimer;
     return () => {
       document.removeEventListener("mousedown", onClick);
       document.removeEventListener("keydown", onKey);
+      window.clearTimeout(timer.current);
     };
   }, []);
 
@@ -94,8 +107,9 @@ export function Header() {
           {/* Productmenu */}
           <div
             ref={productRef}
-            onMouseEnter={() => setProductOpen(true)}
-            onMouseLeave={() => setProductOpen(false)}
+            className="h-16 flex items-center"
+            onMouseEnter={openProduct}
+            onMouseLeave={closeProductSoon}
           >
             <button
               type="button"
@@ -115,7 +129,7 @@ export function Header() {
             </button>
 
             {productOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[min(920px,calc(100vw-2.5rem))]">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[min(920px,calc(100vw-2.5rem))]" onMouseEnter={openProduct}>
                 <div
                   id="product-menu"
                   role="region"
