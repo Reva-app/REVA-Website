@@ -8,7 +8,7 @@ import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { FeatureDemo } from "@/components/features/FeatureDemo";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 import { pricingTiers, enterpriseTier, TRIAL_DAYS } from "@/lib/pricing";
-import { pilotOffer, pilotDemoHref } from "@/lib/offer";
+import { pilotOffer } from "@/lib/offer";
 import { pageDates } from "@/lib/page-dates";
 
 const PATH = "/fysiotherapie-software";
@@ -184,10 +184,10 @@ export default function FysiotherapieSoftwarePage() {
               </p>
               {pilotOffer.active && pilotOffer.spotsLeft > 0 && (
                 <p className="text-sm mb-6" style={{ color: "#1a1a1a" }}>
-                  <span className="font-semibold">Pilotaanbod:</span> {pilotOffer.discountPercent}% korting op het eerste jaar
-                  voor de eerste {pilotOffer.spotsTotal} praktijken.{" "}
-                  <Link href={pilotDemoHref} className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
-                    Claim een pilotplek
+                  <span className="font-semibold">Pilotprogramma:</span> we zoeken {pilotOffer.spotsTotal} praktijken die REVA als
+                  eerste gebruiken, met {pilotOffer.discountPercent}% korting op het eerste jaar.{" "}
+                  <Link href="/pilot" className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
+                    Bekijk de pilot
                   </Link>
                 </p>
               )}

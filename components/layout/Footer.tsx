@@ -45,6 +45,9 @@ export function Footer() {
               {[
                 { label: "Functies", href: "/functies" },
                 { label: "Fysiotherapie software", href: "/fysiotherapie-software" },
+                { label: "Alternatief voor WhatsApp", href: "/alternatief-voor-whatsapp" },
+                { label: "Oefenprogramma-app", href: "/oefenprogramma-app" },
+                { label: "Pilotprogramma", href: "/pilot" },
                 { label: "Prijzen", href: "/prijzen" },
                 { label: "Over REVA", href: "/over-reva" },
                 { label: "Praktijken", href: "/praktijken" },

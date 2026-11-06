@@ -20,7 +20,10 @@ const softwareOptions = [
   "Weet ik nog niet",
 ];
 
-export function ContactForm() {
+/** `pilot`: aanmelding als pilotpraktijk, ook zonder ?aanbod=pilot in de URL */
+export function ContactForm({ variant = "demo" }: { variant?: "demo" | "pilot" }) {
+  const pilot = variant === "pilot";
+  const choice = () => ({ ...pricingChoice(), ...(pilot ? { aanbod: "pilot" } : {}) });
   const [form, setForm] = useState({
     name: "",
     practice: "",
@@ -50,7 +53,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "demo", ...form, ...pricingChoice(), website: honeypot }),
+        body: JSON.stringify({ type: "demo", ...form, ...choice(), website: honeypot }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
@@ -67,7 +70,7 @@ export function ContactForm() {
 
     const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
     w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "generate_lead", form_name: "demo_aanvragen", ...pricingChoice() });
+    w.dataLayer.push({ event: "generate_lead", form_name: pilot ? "pilot_aanmelding" : "demo_aanvragen", ...choice() });
   };
 
   if (status === "success") {
@@ -77,9 +80,11 @@ export function ContactForm() {
         style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}
       >
         <CheckCircle className="w-8 h-8 text-green-600" />
-        <p className="font-semibold text-green-800">Aanvraag verstuurd!</p>
+        <p className="font-semibold text-green-800">{pilot ? "Aanmelding ontvangen" : "Aanvraag verstuurd!"}</p>
         <p className="text-sm text-green-700">
-          Bedankt voor je aanvraag. We nemen binnen één werkdag contact met je op om een demo in te plannen.
+          {pilot
+            ? "Bedankt voor je aanmelding als pilotpraktijk. We nemen binnen één werkdag contact met je op voor een kennismaking."
+            : "Bedankt voor je aanvraag. We nemen binnen één werkdag contact met je op om een demo in te plannen."}
         </p>
       </div>
     );
@@ -269,7 +274,7 @@ export function ContactForm() {
         {status === "loading" ? (
           <><Loader2 className="w-4 h-4 animate-spin" /> Versturen...</>
         ) : (
-          <><Send className="w-4 h-4" /> Stuur mijn aanvraag</>
+          <><Send className="w-4 h-4" /> {pilot ? "Meld mijn praktijk aan" : "Stuur mijn aanvraag"}</>
         )}
       </button>
 

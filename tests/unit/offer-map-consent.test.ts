@@ -8,9 +8,9 @@ import { consentModeSignals } from "@/lib/cookie-consent";
 import { markdownForPath } from "@/lib/agent/markdown";
 
 test("pilotaanbod: link, label en alleen geldig zolang het loopt", () => {
-  assert.equal(pilotDemoHref, "/demo-aanvragen?aanbod=pilot");
+  assert.equal(pilotDemoHref, "/pilot#aanmelden");
   assert.equal(pilotOffer.discountPercent, 50);
-  assert.equal(pilotSpotsLabel(), "Voor de eerste 3 praktijken");
+  assert.equal(pilotSpotsLabel(), "3 plekken beschikbaar");
   assert.equal(isPilotRequest("pilot"), true);
   assert.equal(isPilotRequest("iets-anders"), false);
   assert.equal(isPilotRequest(undefined), false);

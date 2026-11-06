@@ -98,7 +98,7 @@ function HeroSection() {
                 Patiëntenportaal voor fysiotherapiepraktijken
               </h1>
               <p className="animate-fade-in-up delay-200 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white max-w-3xl">
-                Het eerste jaar REVA voor <span style={{ color: "#e8632a" }}>de halve prijs</span>
+                Word een van de drie <span style={{ color: "#e8632a" }}>pilotpraktijken</span> van REVA
               </p>
             </>
           ) : (
@@ -128,7 +128,7 @@ function HeroSection() {
             Met REVA houden je patiënten zelf hun herstel bij en zie jij in één overzicht wie
             aandacht nodig heeft. Minder telefoontjes, meer grip op je caseload.
             {offerOpen && (
-              <> De eerste {pilotOffer.spotsTotal} praktijken krijgen {pilotOffer.discountPercent}% korting op het eerste jaar, in ruil voor feedback en een korte klantervaring.</>
+              <> We zijn net gestart en zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken. Je krijgt {pilotOffer.discountPercent}% korting op het eerste jaar en persoonlijke onboarding, in ruil voor je feedback en een klantervaring.</>
             )}
           </p>
 
@@ -140,17 +140,17 @@ function HeroSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              {offerOpen ? "Claim een pilotplek" : "Vraag een demo aan"}
+              {offerOpen ? "Meld je praktijk aan" : "Vraag een demo aan"}
               <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <Link
-              href="/prijzen"
+              href={offerOpen ? "/pilot" : "/prijzen"}
               className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-base transition-colors"
               style={{ color: "#ffffff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.14)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
             >
-              Bekijk prijzen
+              {offerOpen ? "Wat houdt de pilot in?" : "Bekijk prijzen"}
             </Link>
           </div>
 
@@ -779,10 +779,10 @@ function CtaSection() {
           </p>
           {pilotOffer.active && pilotOffer.spotsLeft > 0 && (
             <p className="mt-8 text-sm" style={{ color: "#c9c9ce" }}>
-              <span className="font-semibold text-white">Pilotaanbod:</span> {pilotOffer.discountPercent}% korting op het
-              eerste jaar voor de eerste {pilotOffer.spotsTotal} praktijken.{" "}
-              <Link href={pilotDemoHref} className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
-                Claim een pilotplek
+              <span className="font-semibold text-white">Pilotprogramma:</span> we zoeken {pilotOffer.spotsTotal} praktijken die
+              REVA als eerste gebruiken, met {pilotOffer.discountPercent}% korting op het eerste jaar.{" "}
+              <Link href="/pilot" className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
+                Bekijk de pilot
               </Link>
             </p>
           )}

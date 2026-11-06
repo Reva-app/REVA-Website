@@ -342,7 +342,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Waar je op let bij de keuze",
         paragraphs: [
           "Niet elk systeem is gebouwd voor de dagelijkse realiteit van een fysiopraktijk. Let op of een portaal patiënten laagdrempelig toegang geeft zonder ingewikkelde installatie, of het overzicht geeft per patiënt én over je hele praktijk, en of het voldoet aan de eisen rond gezondheidsdata. Een uitgebreide checklist vind je in [Software voor fysiopraktijken](/blog/software-voor-fysiopraktijken).",
-          "REVA is gebouwd vanuit die praktijkbehoefte: een patiëntenportaal dat het gemak van WhatsApp behoudt voor de patiënt, maar het overzicht en de structuur biedt die een groeiende praktijk nodig heeft. [Vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe dat werkt in jouw praktijk.",
+          "REVA is gebouwd vanuit die praktijkbehoefte: een patiëntenportaal dat het gemak van WhatsApp behoudt voor de patiënt, maar het overzicht en de structuur biedt die een groeiende praktijk nodig heeft. Op de pagina [alternatief voor WhatsApp](/alternatief-voor-whatsapp) zie je het verschil per onderwerp. Of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe dat werkt in jouw praktijk.",
         ],
       },
     ],
@@ -407,7 +407,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Patiëntenportaal, EPD of app: wat is het verschil?",
         paragraphs: [
           "Een EPD is het elektronisch patiëntendossier van de fysiotherapeut. Daarin leg je vast wat er tijdens de behandeling gebeurt: anamnese, onderzoek, behandelplan en verslaglegging. Het EPD is gebouwd voor de behandelaar en het consult.",
-          "Een patiëntenportaal is gebouwd voor de patiënt en de tijd tussen behandelingen. De patiënt houdt bij hoe het gaat, de praktijk kijkt mee. Een losse oefenapp richt zich meestal alleen op het delen van oefeningen, zonder zicht op pijn, voortgang en therapietrouw. Een portaal brengt die onderdelen samen. Lees in [Software voor fysiopraktijken](/blog/software-voor-fysiopraktijken) hoe deze systemen samen een geheel vormen.",
+          "Een patiëntenportaal is gebouwd voor de patiënt en de tijd tussen behandelingen. De patiënt houdt bij hoe het gaat, de praktijk kijkt mee. Een losse oefenapp richt zich meestal alleen op het delen van oefeningen, zonder zicht op pijn, voortgang en therapietrouw. Een portaal brengt die onderdelen samen, zoals het [oefenprogramma in REVA](/oefenprogramma-app). Lees in [Software voor fysiopraktijken](/blog/software-voor-fysiopraktijken) hoe deze systemen samen een geheel vormen.",
         ],
       },
       {

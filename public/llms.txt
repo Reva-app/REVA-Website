@@ -63,6 +63,9 @@ Zo helpt een agent de gebruiker verder:
 
 - [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
 - [Fysiotherapie software](https://www.reva-app.nl/fysiotherapie-software): Waar REVA past naast het EPD, met per soort praktijksoftware (EPD, declareren, agenda, oefenprogramma's, patiëntenportaal) wat REVA wel en niet doet, prijzen en veelgestelde vragen.
+- [Alternatief voor WhatsApp](https://www.reva-app.nl/alternatief-voor-whatsapp): Waarom fysiopraktijken overstappen van WhatsApp naar een beveiligd portaal, een vergelijking van WhatsApp en REVA en een overstap in drie stappen. REVA heeft geen chatfunctie.
+- [Oefenprogramma-app](https://www.reva-app.nl/oefenprogramma-app): Oefenschema's per fase van het herstelplan, de REVA-bibliotheek met 100 oefeningen als startpunt (nog niet klinisch getoetst) en het loggen van trainingen door de patiënt.
+- [Pilotprogramma](https://www.reva-app.nl/pilot): REVA zoekt 3 fysiotherapiepraktijken die REVA als eerste gebruiken: 50% korting op het eerste jaar en persoonlijke onboarding, in ruil voor feedback en een klantervaring.
 - [Functies](https://www.reva-app.nl/functies): Alle functies van REVA per doelgroep (fysiotherapeut, praktijk, patiënt), met per functie uitleg en een korte animatie.
 - [Functies voor fysio's](https://www.reva-app.nl/functies/voor-fysios): Wat REVA oplevert voor de fysiotherapeut en het praktijkteam: overzicht, dossier, voortgang en behandeldoelen.
 - [Functies voor patiënten](https://www.reva-app.nl/functies/voor-patienten): Wat patiënten van een aangesloten praktijk zelf ervaren: check-ins, herstelplannen en medicatieregistratie.

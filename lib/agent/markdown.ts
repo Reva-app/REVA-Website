@@ -55,7 +55,7 @@ export function homeMarkdown() {
     "",
     ...(pilotOffer.active && pilotOffer.spotsLeft > 0
       ? [
-          `**Pilotaanbod:** ${pilotOffer.discountPercent}% korting op het eerste jaar voor de eerste ${pilotOffer.spotsTotal} praktijken, in ruil voor feedback en een korte klantervaring. Aanmelden via ${SITE_URL}/demo-aanvragen?aanbod=${pilotOffer.param}.`,
+          `**Pilotprogramma:** REVA zoekt ${pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken, met ${pilotOffer.discountPercent}% korting op het eerste jaar en persoonlijke onboarding, in ruil voor feedback en een klantervaring. Voorwaarden en aanmelden via ${SITE_URL}/pilot.`,
           "",
         ]
       : []),

@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
   // Pakketkeuze van de prijspagina, alleen als het een bestaand pakket is
   const interest = describeInterest(body.pakket, body.facturatie);
   const pilot = isPilotRequest(body.aanbod);
-  const tags = [pilot ? "Pilotaanbod" : "", interest?.name ?? ""].filter(Boolean);
+  const tags = [pilot ? "Pilotprogramma" : "", interest?.name ?? ""].filter(Boolean);
   const interestTag = tags.length ? ` (${tags.join(", ")})` : "";
 
   const subject =
@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
 
   const interestRows: ContactEmailRow[] = [
     ...(pilot
-      ? [{ label: "Aanbod", value: `Pilotaanbod: ${pilotOffer.discountPercent}% korting op het eerste jaar` }]
+      ? [{ label: "Aanbod", value: `Pilotprogramma: ${pilotOffer.discountPercent}% korting op het eerste jaar` }]
       : []),
     ...(interest
       ? [
@@ -124,10 +124,10 @@ export async function POST(request: NextRequest) {
   const html = renderContactEmail(
     type === "demo"
       ? {
-          badge: pilot ? "Demo-aanvraag · Pilotaanbod" : interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
+          badge: pilot ? "Aanmelding · Pilotprogramma" : interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
           title: fields.practice,
           intro: pilot
-            ? `${fields.name} wil graag een demo van REVA inplannen en reageert op het pilotaanbod (${pilotOffer.discountPercent}% korting op het eerste jaar). Neem binnen één werkdag contact op om een moment af te spreken.`
+            ? `${fields.name} meldt de praktijk aan voor het pilotprogramma (${pilotOffer.discountPercent}% korting op het eerste jaar). Neem binnen één werkdag contact op voor een kennismaking.`
             : interest
             ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor het pakket ${interest.name}. Neem binnen één werkdag contact op om een moment af te spreken.`
             : `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,

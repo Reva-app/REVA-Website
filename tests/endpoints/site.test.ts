@@ -48,7 +48,7 @@ test("404: HTML-pagina met de herstelboodschap", async () => {
 });
 
 test("overige pagina's zijn ook als Markdown beschikbaar", async () => {
-  for (const path of ["/prijzen", "/faq", "/blog", "/blog/software-voor-fysiopraktijken", "/functies", "/over-reva"]) {
+  for (const path of ["/prijzen", "/faq", "/blog", "/blog/software-voor-fysiopraktijken", "/functies", "/over-reva", "/fysiotherapie-software", "/alternatief-voor-whatsapp", "/oefenprogramma-app", "/pilot"]) {
     const res = await get(path, "text/markdown");
     assert.equal(res.status, 200, path);
     assert.match(res.headers.get("content-type") ?? "", /^text\/markdown/, path);
