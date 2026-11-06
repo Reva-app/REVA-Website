@@ -62,6 +62,11 @@ export function SimpleContactForm() {
       return;
     }
     setStatus("success");
+    // Meting via Tag Manager (alleen actief na cookietoestemming). Het onderwerp is een
+    // vaste keuze uit de lijst, dus geen persoonsgegevens.
+    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ event: "contact_form_submit", form_name: "contact", onderwerp: form.topic || undefined });
   };
 
   if (status === "success") {
