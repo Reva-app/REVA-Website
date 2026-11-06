@@ -8,10 +8,10 @@ export function Footer() {
   return (
     <footer style={{ background: "#18181a", color: "#ffffff" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-14 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
 
           {/* Brand column */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="col-span-2 space-y-4">
             <Link href="/" className="flex items-center" aria-label="REVA, naar de homepage">
               <RevaLogo size={32} color="#ffffff" />
             </Link>
@@ -44,10 +44,6 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "Functies", href: "/functies" },
-                { label: "Fysiotherapie software", href: "/fysiotherapie-software" },
-                { label: "Alternatief voor WhatsApp", href: "/alternatief-voor-whatsapp" },
-                { label: "Oefenprogramma-app", href: "/oefenprogramma-app" },
-                { label: "Pilotprogramma", href: "/pilot" },
                 { label: "Prijzen", href: "/prijzen" },
                 { label: "Over REVA", href: "/over-reva" },
                 { label: "Praktijken", href: "/praktijken" },
@@ -55,6 +51,28 @@ export function Footer() {
                 { label: "FAQ", href: "/faq" },
                 { label: "Documentatie", href: "/documentatie" },
                 { label: "Inloggen", href: "/inloggen" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="footer-link">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Landingspagina's */}
+          <nav className="space-y-3" aria-label="Pagina's">
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#52525e" }}>
+              Pagina&apos;s
+            </p>
+            <ul className="space-y-2.5">
+              {[
+                { label: "Fysiotherapie software", href: "/fysiotherapie-software" },
+                { label: "Alternatief voor WhatsApp", href: "/alternatief-voor-whatsapp" },
+                { label: "Oefenprogramma-app", href: "/oefenprogramma-app" },
+                { label: "Software voor fysiopraktijken", href: "/blog/software-voor-fysiopraktijken" },
+                { label: "Pilotprogramma", href: "/pilot" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="footer-link">
