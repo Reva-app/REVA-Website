@@ -30,7 +30,10 @@ export function AnimateIn({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+      // Drempel 0: zodra de bovenkant in beeld komt. Een percentage werkt niet voor
+      // blokken die hoger zijn dan het scherm (lange artikelen op mobiel): dan
+      // past dat percentage nooit in beeld en blijft het blok onzichtbaar.
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
