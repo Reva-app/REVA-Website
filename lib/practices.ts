@@ -9,6 +9,11 @@ export type Practice = {
   lat: number;
   lng: number;
   website?: string;
+  /** Pad naar het logo in /public, bijvoorbeeld "/praktijken/fysio-de-linde.svg". Zonder logo niet in de slider. */
+  logo?: string;
 };
+
+/** Praktijken met een logo, voor de logo-slider op de homepage */
+export const practicesWithLogo = () => practices.filter((p) => !!p.logo);
 
 export const practices: Practice[] = [];

@@ -252,6 +252,50 @@ export default async function BlogPostPage({ params }: Props) {
                       <p key={i}>{renderInline(p)}</p>
                     ))}
                   </div>
+                  {section.table && (
+                    <div className="mt-5 md:hidden space-y-3" aria-hidden="true">
+                      {section.table.rows.map((row, ri) => (
+                        <div key={ri} className="rounded-2xl border p-4" style={{ borderColor: "#e8e5df", background: "#fcfbf9" }}>
+                          <p className="text-base font-semibold mb-2" style={{ color: "#1a1a1a" }}>{row[0]}</p>
+                          <dl className="space-y-1.5 text-sm">
+                            {row.slice(1).map((cell, ci) => (
+                              <div key={ci}>
+                                <dt className="text-xs font-medium" style={{ color: "#9ca3af" }}>{section.table!.headers[ci + 1]}</dt>
+                                <dd style={{ color: "#4b5563" }}>{cell}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {section.table && (
+                    <div className="mt-5 hidden md:block overflow-x-auto rounded-2xl border" style={{ borderColor: "#e8e5df" }}>
+                      <table className="w-full min-w-[560px] text-sm text-left">
+                        <caption className="sr-only">{section.table.caption}</caption>
+                        <thead style={{ background: "#f8f7f4" }}>
+                          <tr>
+                            {section.table.headers.map((h) => (
+                              <th key={h} scope="col" className="px-4 py-3 font-semibold" style={{ color: "#1a1a1a" }}>{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, ri) => (
+                            <tr key={ri} style={{ background: ri % 2 ? "#fcfbf9" : "#ffffff" }}>
+                              {row.map((cell, ci) =>
+                                ci === 0 ? (
+                                  <th key={ci} scope="row" className="px-4 py-3 align-top font-semibold" style={{ color: "#1a1a1a" }}>{cell}</th>
+                                ) : (
+                                  <td key={ci} className="px-4 py-3 align-top leading-relaxed" style={{ color: "#4b5563" }}>{cell}</td>
+                                ),
+                              )}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                   {section.list && (
                     <ul className="mt-4 space-y-2 list-disc pl-5" style={{ color: "#4b5563" }}>
                       {section.list.map((item) => (

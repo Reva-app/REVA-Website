@@ -162,6 +162,10 @@ export function blogPostMarkdown(post: BlogPost) {
   for (const section of post.sections) {
     lines.push(`## ${section.heading}`, "", ...section.paragraphs.map((p) => `${absLinks(p)}\n`));
     if (section.list) lines.push(...section.list.map((i) => `- ${absLinks(i)}`), "");
+    if (section.table) {
+      const t = section.table;
+      lines.push(`| ${t.headers.join(" | ")} |`, `| ${t.headers.map(() => "---").join(" | ")} |`, ...t.rows.map((r) => `| ${r.join(" | ")} |`), "");
+    }
   }
   if (post.faq) lines.push(faqSection(post.faq.map((f) => ({ q: f.question, a: absLinks(f.answer) }))));
   lines.push(

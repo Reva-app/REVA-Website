@@ -3,6 +3,7 @@ import { renderContactEmail, telHref, type ContactEmailRow } from "@/lib/contact
 import { EMAIL_LOGO_CID, EMAIL_LOGO_PNG_BASE64 } from "@/lib/email-logo";
 import { describeInterest } from "@/lib/pricing";
 import { isPilotRequest, pilotOffer } from "@/lib/offer";
+import { pushLeadToPipeline } from "@/lib/lead";
 
 // Resend — server-only (geen NEXT_PUBLIC_ prefix, nooit zichtbaar in browser)
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -184,6 +185,22 @@ export async function POST(request: NextRequest) {
     });
 
     if (response.ok) {
+      // Demo-aanvragen (en Enterprise via contact) ook als lead in de pipeline van het dashboard
+      if (type === "demo" || interest?.name === "Enterprise") {
+        await pushLeadToPipeline({
+          practice: fields.practice || fields.name,
+          name: fields.name,
+          email: fields.email,
+          phone: fields.phone,
+          notes: [
+            ...interestRows.map(({ label, value }) => `${label}: ${value}`),
+            fields.employees && `Aantal medewerkers: ${fields.employees}`,
+            fields.software && `Huidige software: ${fields.software}`,
+            fields.topic && `Onderwerp: ${fields.topic}`,
+            fields.message && `Bericht: ${fields.message}`,
+          ].filter((n): n is string => !!n),
+        });
+      }
       return NextResponse.json({ success: true });
     }
 

@@ -3,15 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Menu,
-  X,
-  ArrowRight,
-  ChevronDown,
-  Stethoscope,
-  HeartPulse,
-} from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { RevaLogo } from "@/components/brand/RevaLogo";
+import { featureGroups, featuresByGroup } from "@/lib/features";
 
 const navLinks = [
   { label: "Over REVA", href: "/over-reva" },
@@ -20,27 +14,28 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const functiesLinks = [
-  {
-    icon: Stethoscope,
-    title: "Functies voor fysio's",
-    description: "Praktijkoverzicht, dossier, voortgang en behandeldoelen",
-    href: "/functies/voor-fysios",
-  },
-  {
-    icon: HeartPulse,
-    title: "Functies voor patiënten",
-    description: "Check-ins, herstelplannen en medicatieregistratie",
-    href: "/functies/voor-patienten",
-  },
+const audienceLinks = [
+  { label: "Voor fysio's", href: "/functies/voor-fysios" },
+  { label: "Voor patiënten", href: "/functies/voor-patienten" },
 ];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [functiesOpen, setFunctiesOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
+  const [mobileProductOpen, setMobileProductOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const functiesRef = useRef<HTMLDivElement>(null);
+  const productRef = useRef<HTMLDivElement>(null);
+
+  // Menu's sluiten bij het wisselen van pagina (state bijwerken tijdens het renderen,
+  // zodat er geen extra render via een effect nodig is)
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setMenuOpen(false);
+    setProductOpen(false);
+    setMobileProductOpen(false);
+  }
 
   const isHome = pathname === "/";
   const transparent = isHome && !scrolled;
@@ -52,21 +47,18 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu and functies dropdown on route change
-  useEffect(() => {
-    setMenuOpen(false);
-    setFunctiesOpen(false);
-  }, [pathname]);
-
-  // Close functies dropdown on outside click
+  // Productmenu sluiten bij klikken buiten het menu of met Escape
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (functiesRef.current && !functiesRef.current.contains(e.target as Node)) {
-        setFunctiesOpen(false);
-      }
+      if (productRef.current && !productRef.current.contains(e.target as Node)) setProductOpen(false);
     };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setProductOpen(false);
     document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
   }, []);
 
   const isActive = (href: string) => pathname.startsWith(href);
@@ -91,7 +83,7 @@ export function Header() {
           boxShadow: barTransparent ? "none" : "0 8px 28px rgba(0,0,0,0.08)",
         }}
       >
-      <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-6">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-6">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0" aria-label="REVA, naar de homepage">
           <RevaLogo size={32} color={barTransparent ? "#ffffff" : "#1a1a1a"} />
@@ -99,75 +91,82 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Hoofdnavigatie">
-          {/* Functies dropdown */}
+          {/* Productmenu */}
           <div
-            className="relative"
-            ref={functiesRef}
-            onMouseEnter={() => setFunctiesOpen(true)}
-            onMouseLeave={() => setFunctiesOpen(false)}
+            ref={productRef}
+            onMouseEnter={() => setProductOpen(true)}
+            onMouseLeave={() => setProductOpen(false)}
           >
             <button
               type="button"
-              id="functies-menu-button"
-              onClick={() => setFunctiesOpen((v) => !v)}
-              aria-expanded={functiesOpen}
+              id="product-menu-button"
+              onClick={() => setProductOpen((v) => !v)}
+              aria-expanded={productOpen}
               aria-haspopup="true"
-              aria-controls="functies-dropdown"
+              aria-controls="product-menu"
               className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors"
               style={{
-                color: functiesOpen || isActive("/functies") ? "#e8632a" : navTextColor,
+                color: productOpen || isActive("/functies") ? "#e8632a" : navTextColor,
                 background: isActive("/functies") ? "#fff3ee" : "transparent",
               }}
             >
-              Functies
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${functiesOpen ? "rotate-180" : ""}`} />
+              Product
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${productOpen ? "rotate-180" : ""}`} />
             </button>
 
-            {functiesOpen && (
-              <>
-                {/* Onzichtbare brug: voorkomt dat de dropdown sluit tijdens het oversteken van de kleine ruimte tussen knop en menu */}
-                <div className="absolute left-0 top-full w-full h-2" aria-hidden="true" />
+            {productOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[min(920px,calc(100vw-2.5rem))]">
                 <div
-                  id="functies-dropdown"
-                  role="menu"
-                  aria-labelledby="functies-menu-button"
-                  className="absolute left-0 top-full mt-2 rounded-2xl border p-3 space-y-1"
-                  style={{ background: "#ffffff", borderColor: "#e8e5df", boxShadow: "0 12px 32px rgba(0,0,0,0.1)", width: 320 }}
+                  id="product-menu"
+                  role="region"
+                  aria-labelledby="product-menu-button"
+                  className="rounded-2xl border overflow-hidden animate-fade-in"
+                  style={{ background: "#ffffff", borderColor: "#e8e5df", boxShadow: "0 24px 50px rgba(0,0,0,0.12)" }}
                 >
-                {functiesLinks.map((f) => {
-                  const Icon = f.icon;
-                  return (
+                  <div className="grid grid-cols-3 gap-2 p-6">
+                    {featureGroups.map((g) => (
+                      <div key={g.id}>
+                        <p className="px-3 text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "#9ca3af" }}>
+                          {g.title}
+                        </p>
+                        <ul>
+                          {featuresByGroup(g.id).map((f) => (
+                            <li key={f.id}>
+                              <Link
+                                href={`/functies#${f.id}`}
+                                onClick={() => setProductOpen(false)}
+                                className="group block px-3 py-2 rounded-xl transition-colors hover:bg-[#f8f7f4]"
+                              >
+                                <span className="block text-sm font-semibold transition-colors group-hover:text-[#e8632a]" style={{ color: "#1a1a1a" }}>
+                                  {f.title}
+                                </span>
+                                <span className="block text-xs mt-0.5 leading-snug" style={{ color: "#6b7280" }}>{f.menu}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap items-center justify-between gap-3 px-9 py-4" style={{ background: "#f8f7f4" }}>
                     <Link
-                      key={f.title}
-                      href={f.href}
-                      className="flex items-start gap-3 p-3 rounded-lg transition-colors hover:bg-gray-50"
-                      onClick={() => setFunctiesOpen(false)}
+                      href="/functies"
+                      onClick={() => setProductOpen(false)}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold hover-orange"
+                      style={{ color: "#e8632a" }}
                     >
-                      <div
-                        className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: "#fff3ee" }}
-                      >
-                        <Icon className="w-4 h-4" style={{ color: "#e8632a" }} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>{f.title}</p>
-                        <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{f.description}</p>
-                      </div>
+                      Bekijk alle functies <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
-                  );
-                })}
-                <div className="pt-2 mt-1 border-t px-3" style={{ borderColor: "#e8e5df" }}>
-                  <Link
-                    href="/functies"
-                    className="text-sm font-medium hover-orange"
-                    style={{ color: "#e8632a" }}
-                    onClick={() => setFunctiesOpen(false)}
-                  >
-                    Bekijk alle functies →
-                  </Link>
+                    <div className="flex items-center gap-5">
+                      {audienceLinks.map((l) => (
+                        <Link key={l.href} href={l.href} onClick={() => setProductOpen(false)} className="text-sm font-medium hover-orange" style={{ color: "#374151" }}>
+                          {l.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                </div>
-              </>
+              </div>
             )}
           </div>
 
@@ -244,22 +243,34 @@ export function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-t px-5 py-4 space-y-1"
-          style={{ borderColor: "#e8e5df" }}
-        >
-          <Link
-            href="/functies"
-            aria-current={isActive("/functies") ? "page" : undefined}
-            className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
-            style={{
-              color: isActive("/functies") ? "#e8632a" : "#374151",
-              background: isActive("/functies") ? "#fff3ee" : "transparent",
-            }}
+        <div id="mobile-menu" className="md:hidden px-5 pb-4 pt-1 space-y-1 max-h-[calc(100vh-6rem)] overflow-y-auto">
+          <button
+            type="button"
+            onClick={() => setMobileProductOpen((v) => !v)}
+            aria-expanded={mobileProductOpen}
+            className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium"
+            style={{ color: isActive("/functies") ? "#e8632a" : "#374151", background: isActive("/functies") ? "#fff3ee" : "transparent" }}
           >
-            Functies
-          </Link>
+            Product
+            <ChevronDown className={`w-4 h-4 transition-transform ${mobileProductOpen ? "rotate-180" : ""}`} />
+          </button>
+          {mobileProductOpen && (
+            <div className="pl-3 pb-2 space-y-3">
+              {featureGroups.map((g) => (
+                <div key={g.id}>
+                  <p className="px-3 pt-2 pb-1 text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#9ca3af" }}>{g.title}</p>
+                  {featuresByGroup(g.id).map((f) => (
+                    <Link key={f.id} href={`/functies#${f.id}`} onClick={() => setMenuOpen(false)} className="block px-3 py-1.5 rounded-lg text-sm" style={{ color: "#374151" }}>
+                      {f.title}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+              <Link href="/functies" onClick={() => setMenuOpen(false)} className="flex items-center gap-1.5 px-3 pt-1 text-sm font-semibold" style={{ color: "#e8632a" }}>
+                Bekijk alle functies <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          )}
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -274,7 +285,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-3 border-t mt-3" style={{ borderColor: "#e8e5df" }}>
+          <div className="pt-3">
             <Link
               href="/demo-aanvragen"
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium text-white"

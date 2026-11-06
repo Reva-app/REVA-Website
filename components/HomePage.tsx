@@ -23,6 +23,7 @@ import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { comparisonRows, homeFaq } from "@/lib/home-faq";
 import { pilotDemoHref, pilotOffer } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
+import { PracticeLogos } from "@/components/PracticeLogos";
 import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
 // ─── Data ─────────────────────────────────────────────────────
@@ -918,6 +919,7 @@ export function HomePage() {
     <>
       <HeroSection />
       <UspSection />
+      <PracticeLogos />
       <ProblemSection />
       <ProductSection />
       <FunctiesSliderSection />

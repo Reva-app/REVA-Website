@@ -2,6 +2,8 @@ export interface BlogSection {
   heading: string;
   paragraphs: string[];
   list?: string[];
+  /** Optionele tabel, bijvoorbeeld een vergelijking. Eerste kolom is de rijkop. */
+  table?: { caption: string; headers: string[]; rows: string[][] };
 }
 
 export interface BlogFaq {
@@ -851,6 +853,210 @@ export const blogPosts: BlogPost[] = [
       {
         question: "Hoe snel kan ik met nieuwe software aan de slag?",
         answer: "Dat hangt af van het type software. Een overstap naar een ander EPD is een groter project, omdat dossiers en declaraties mee moeten. Een aanvullend patiëntenportaal zoals REVA is meestal snel ingericht: je voegt medewerkers en locaties toe, stelt herstelplannen samen en nodigt daarna direct je eerste patiënten uit.",
+      },
+    ],
+  },
+  {
+    slug: "pijn-na-een-operatie",
+    title: "Pijn na een operatie: wat is normaal per type ingreep?",
+    metaDescription: "Pijn na een operatie verschilt sterk per ingreep: bot, gewricht, pees, band, spier of kijkoperatie. Een overzicht van het normale verloop, de verschillen en de alarmsignalen.",
+    excerpt: "Pijn na een botoperatie voelt anders dan na een peeshechting of kijkoperatie. Een overzicht van wat normaal is per type ingreep, en wanneer pijn een alarmsignaal is.",
+    category: "Herstel na een operatie",
+    publishedAt: "2026-11-06",
+    readTime: "8 min",
+    image: {
+      src: "/blog/pijn-na-een-operatie.webp",
+      alt: "Fysiotherapeut begeleidt een patiënt met een geopereerde knie in een lichte praktijkruimte",
+    },
+    keywords: [
+      "pijn na operatie",
+      "pijn na knieoperatie",
+      "hoe lang pijn na operatie",
+      "pijn na botoperatie",
+      "zenuwpijn na operatie",
+      "chronische pijn na operatie",
+      "pijn na kijkoperatie",
+    ],
+    summary: [
+      "Pijn na een operatie is in de eerste dagen meestal het hevigst en neemt daarna geleidelijk af, met pijn bij belasten als normaal onderdeel van de revalidatie.",
+      "Het soort weefsel bepaalt hoe de pijn voelt: bot geeft vaak een diepe, zeurende pijn, pezen en spieren reageren op aanspannen, en zenuwpijn voelt branderig of tintelend.",
+      "Een totale knieprothese wordt door veel patiënten als pijnlijker ervaren dan een heupprothese. Een kijkoperatie geeft doorgaans minder en kortere pijn.",
+      "Koorts, een rode en warme wond, een dikke pijnlijke kuit of benauwdheid zijn alarmsignalen waarbij direct contact met een arts nodig is.",
+      "Pijn volgen op vaste momenten, met een score van 0 tot 10, zegt meer over het herstel dan één losse meting.",
+    ],
+    intro: [
+      "Pijn na een operatie is normaal, maar wat normaal is, verschilt sterk per ingreep. Een patiënt met een plaat in de enkel ervaart iets anders dan iemand met een gehechte schouderpees of een kijkoperatie aan de knie. Dat maakt het voor patiënten lastig om in te schatten of hun pijn past bij het herstel, of juist een signaal is om aan de bel te trekken.",
+      "Voor fysiotherapeuten is dat een vaste vraag in de begeleiding. In dit artikel zetten we op een rij hoe pijn na een operatie meestal verloopt, hoe de pijn verschilt per soort weefsel en ingreep, welke signalen aandacht vragen en hoe je pijn tijdens de revalidatie goed volgt. Het is algemene informatie: de behandelend arts en fysiotherapeut beoordelen altijd de individuele situatie.",
+    ],
+    sections: [
+      {
+        heading: "Waarom doet een operatie pijn?",
+        paragraphs: [
+          "Bij een operatie worden weefsels beschadigd: huid, spieren, botten, pezen of banden. Het lichaam reageert daarop met een ontstekingsreactie die nodig is voor het herstel. Die reactie maakt het weefsel gevoeliger, waardoor bewegen en belasten pijn doen. Dat is nuttig: de pijn beschermt het weefsel in de eerste fase.",
+          "Daarnaast kunnen kleine zenuwen in de huid of rond het operatiegebied geraakt worden. Dat geeft een ander soort pijn, die vaak branderig, tintelend of schietend voelt. Ook factoren als slecht slapen, spanning en angst om te bewegen beïnvloeden hoe pijn wordt ervaren.",
+        ],
+      },
+      {
+        heading: "Het normale verloop van pijn na een operatie",
+        paragraphs: [
+          "In de eerste 24 tot 72 uur na de operatie is de pijn meestal het hevigst. Daarna neemt de rustpijn geleidelijk af, in de loop van dagen tot weken, afhankelijk van de ingreep. Wat langer blijft, is pijn bij belasten: bij het oefenen, lopen of tillen. Dat hoort bij de revalidatie, zolang de pijn na de inspanning weer zakt en het verloop over de weken gunstig is.",
+          "Het herstel verloopt zelden in een rechte lijn. Een drukke dag, een nieuwe oefening of een slechte nacht kan de pijn tijdelijk verhogen. Daarom zegt het verloop over meerdere dagen meer dan één losse meting.",
+          "Houdt pijn langer dan drie maanden aan na de operatie, dan spreken we van chronische postoperatieve pijn. Dat vraagt een andere aanpak en overleg met de behandelend arts.",
+        ],
+      },
+      {
+        heading: "Pijn per type weefsel en ingreep",
+        paragraphs: [
+          "Het soort weefsel dat geopereerd wordt, bepaalt voor een groot deel hoe de pijn voelt en hoe lang het herstel duurt. Onderstaande tabel geeft een algemeen beeld. Individuele verschillen zijn groot.",
+        ],
+        table: {
+          caption: "Vergelijking van pijn na een operatie per type weefsel",
+          headers: [
+            "Weefsel",
+            "Voorbeelden van ingrepen",
+            "Hoe de pijn vaak voelt",
+            "Waar je op let",
+          ],
+          rows: [
+            [
+              "Bot",
+              "Fractuur met plaat of schroeven, osteotomie",
+              "Diep en zeurend, toenemend bij belasten",
+              "Belasting opbouwen volgens het advies van de specialist",
+            ],
+            [
+              "Gewricht",
+              "Totale knieprothese, totale heupprothese",
+              "Combinatie van wondpijn, zwelling en stijfheid",
+              "Mobiliteit en zwelling; de knie wordt vaak als pijnlijker ervaren dan de heup",
+            ],
+            [
+              "Pees",
+              "Hechting van de rotator cuff of achillespees",
+              "Zeurend; bij de schouder vaak erger in de nacht",
+              "De beschermingsfase respecteren, want pezen helen langzaam",
+            ],
+            [
+              "Band",
+              "Voorste kruisbandreconstructie, enkelbandreconstructie",
+              "Mede afhankelijk van waar de nieuwe band vandaan komt",
+              "Zwelling, het strekken van de knie en pijn bij de donorplaats",
+            ],
+            [
+              "Spier",
+              "Hechting van een afgescheurde spier of spierpees",
+              "Krampachtig, vooral bij aanspannen en rekken",
+              "Geleidelijke opbouw van kracht en rek",
+            ],
+            [
+              "Kijkoperatie",
+              "Meniscectomie, artroscopie van knie of schouder",
+              "Meestal minder hevig en korter",
+              "Zwelling kan de pijn in de eerste dagen verhogen",
+            ],
+            [
+              "Zenuw",
+              "Kleine huidzenuwen rond het litteken, bij elke ingreep",
+              "Branderig, tintelend, schietend of juist doof",
+              "Aanhoudende of toenemende klachten bespreken",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Pijn na een botoperatie",
+        paragraphs: [
+          "Na een operatie aan bot, zoals het vastzetten van een breuk met een plaat of schroeven of het rechtzetten van een bot, voelt de pijn vaak diep en zeurend. Belasten doet in het begin pijn, omdat het bot nog moet vergroeien. Bot herstelt in weken tot maanden, en de specialist bepaalt hoe snel de belasting omhoog mag.",
+          "Een plaat of schroeven kunnen later nog gevoelig zijn, vooral op plekken waar weinig weefsel over het bot ligt, zoals de enkel. Dat is iets anders dan pijn door een slecht genezend bot, die juist toeneemt of niet verbetert bij belasten. Bij twijfel is overleg met de specialist nodig.",
+        ],
+      },
+      {
+        heading: "Pijn na een gewrichtsvervanging: knie en heup",
+        paragraphs: [
+          "Bij een totale knie of heupprothese komen wondpijn, zwelling en stijfheid samen. Veel patiënten ervaren een knieprothese als pijnlijker en zwaarder om van te herstellen dan een heupprothese. Bij de knie kost het terugwinnen van de beweeglijkheid, vooral buigen en strekken, vaak meer moeite, en dat gaat gepaard met pijn tijdens het oefenen.",
+          "Juist bij een knieprothese is het belangrijk dat pijn het oefenen niet volledig stillegt, omdat de beweeglijkheid anders achterblijft. Goede afspraken over pijnstilling rond de oefenmomenten en een duidelijk beeld van het verloop helpen daarbij.",
+        ],
+      },
+      {
+        heading: "Pijn na een operatie aan pezen en banden",
+        paragraphs: [
+          "Pezen en banden hebben weinig doorbloeding en herstellen daardoor langzaam. Na het hechten van een pees, zoals de rotator cuff in de schouder of de achillespees, volgt meestal een periode waarin het weefsel beschermd moet worden. Bij een schouderoperatie melden veel patiënten dat de pijn in de nacht erger is, vooral bij liggen.",
+          "Bij een voorste kruisbandreconstructie hangt een deel van de pijn samen met de plek waar de nieuwe band vandaan komt. Komt die uit de kniepees aan de voorkant, dan geeft knielen of druk aan de voorkant van de knie vaak langer klachten. Komt die uit de hamstrings, dan kan de achterkant van het bovenbeen gevoelig zijn bij aanspannen. Zwelling en het volledig strekken van de knie zijn in de eerste weken belangrijke aandachtspunten.",
+        ],
+      },
+      {
+        heading: "Pijn na een spieroperatie",
+        paragraphs: [
+          "Na het hechten van een afgescheurde spier of spierpees voelt de pijn vaak krampachtig. De pijn neemt toe bij aanspannen en bij rekken, omdat juist dan spanning op het herstellende weefsel komt. De opbouw van kracht en rek gebeurt daarom geleidelijk, binnen de grenzen die de chirurg aangeeft.",
+        ],
+      },
+      {
+        heading: "Pijn na een kijkoperatie",
+        paragraphs: [
+          "Een kijkoperatie, zoals het verwijderen van een deel van de meniscus, gebeurt via kleine sneetjes. De pijn is daardoor meestal minder hevig en korter dan na een open operatie. Toch kan het gewricht in de eerste dagen dik en gevoelig zijn door vocht in het gewricht.",
+          "Omdat de eerste pijn snel afneemt, wordt de belasting soms te snel opgevoerd. Een gewricht dat na een drukke dag weer dikker en pijnlijker wordt, geeft aan dat de opbouw rustiger moet.",
+        ],
+      },
+      {
+        heading: "Zenuwpijn en een doof gevoel rond het litteken",
+        paragraphs: [
+          "Bij vrijwel elke operatie worden kleine huidzenuwen geraakt. Dat geeft rond het litteken vaak een doof gevoel, tintelingen of een branderige pijn. Na een knieoperatie is een doof plekje aan de buitenkant van de knie bijvoorbeeld veelvoorkomend. Dit verbetert vaak in de loop van maanden, maar kan ook blijvend zijn.",
+          "Zenuwpijn reageert anders dan pijn uit gewricht of spier: hij kan ook in rust optreden en voelt vaak elektrisch of branderig. Neemt zenuwpijn toe, of ontstaat er nieuwe krachtsvermindering of gevoelsverlies, dan is overleg met de behandelend arts nodig.",
+        ],
+      },
+      {
+        heading: "Wanneer is pijn een alarmsignaal?",
+        paragraphs: [
+          "De meeste pijn na een operatie hoort bij het herstel. Sommige signalen vragen echter direct actie. Bij de volgende klachten neemt de patiënt contact op met de huisarts of de behandelend specialist, en bij benauwdheid of pijn op de borst direct met 112.",
+        ],
+        list: [
+          "Koorts, of een wond die rood, warm en dik wordt of vocht afscheidt",
+          "Pijn die na een periode van verbetering juist weer duidelijk toeneemt",
+          "Een dikke, warme en pijnlijke kuit (mogelijk een trombosebeen)",
+          "Benauwdheid of pijn op de borst: bel direct 112",
+          "Hevige pijn die niet past bij de ingreep, met een strakke zwelling of een koud, bleek of gevoelloos been of arm",
+          "Nieuwe krachtsvermindering of gevoelsverlies",
+        ],
+      },
+      {
+        heading: "Pijn meten en volgen tijdens de revalidatie",
+        paragraphs: [
+          "Een pijnscore van 0 tot 10 is de eenvoudigste manier om pijn te volgen. Meet op vaste momenten, bijvoorbeeld elke dag op hetzelfde tijdstip, en noteer apart hoe de pijn is tijdens en na het oefenen. Zo ontstaat een verloop waarin je ziet of de pijn over de weken afneemt, en hoe de patiënt reageert op een zwaardere belasting.",
+          "Spreek met de patiënt af welke pijn tijdens het oefenen acceptabel is en wanneer het signaal is om te minderen. Patiënten die weten wat ze kunnen verwachten, zijn minder angstig om te bewegen en houden hun oefeningen beter vol. Lees ook hoe je [patiënten herkent voordat ze afhaken](/blog/therapietrouw-verhogen-patienten-herkennen).",
+        ],
+      },
+      {
+        heading: "Hoe REVA helpt om pijn na een operatie te volgen",
+        paragraphs: [
+          "In REVA vult de patiënt dagelijks een korte check in met een pijnscore van 0 tot 10, aangevuld met zwelling, mobiliteit, energie en slaap. De fysiotherapeut ziet het verloop terug in het dossier, en op het dashboard markeert REVA patiënten met een pijnscore van 7 of hoger of met gemelde zwelling. Ook het medicatiegebruik, zoals het afbouwen van pijnstilling, is zichtbaar.",
+          "Zo bespreek je pijn niet op basis van een herinnering, maar op basis van het verloop van de afgelopen weken. Bekijk hoe de [dagelijkse check](/functies#check-in) en de [signalering](/functies#signalering) werken.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Hoe lang heb je pijn na een operatie?",
+        answer: "Dat verschilt per ingreep. De pijn is meestal het hevigst in de eerste 24 tot 72 uur en neemt daarna geleidelijk af over dagen tot weken. Pijn bij belasten kan tijdens de revalidatie langer aanwezig zijn. Pijn die langer dan drie maanden aanhoudt, heet chronische postoperatieve pijn.",
+      },
+      {
+        question: "Welke operatie is het meest pijnlijk?",
+        answer: "Dat verschilt per persoon, maar operaties aan bot en gewrichten en het hechten van pezen geven vaak meer en langer pijn dan een kijkoperatie. Een totale knieprothese wordt door veel patiënten als pijnlijker ervaren dan een heupprothese.",
+      },
+      {
+        question: "Is pijn bij het oefenen na een operatie normaal?",
+        answer: "Ja, pijn bij belasten hoort vaak bij de revalidatie, zolang de pijn na het oefenen weer zakt en het verloop over de weken gunstig is. Spreek met de fysiotherapeut af welke pijn acceptabel is en wanneer het signaal is om te minderen.",
+      },
+      {
+        question: "Waarom is de huid rond mijn litteken doof of branderig?",
+        answer: "Bij een operatie worden vaak kleine huidzenuwen geraakt. Dat geeft rond het litteken een doof gevoel, tintelingen of een branderige pijn. Dit verbetert vaak in de loop van maanden. Neemt het toe of ontstaat er nieuwe krachtsvermindering, overleg dan met de arts.",
+      },
+      {
+        question: "Wanneer moet je na een operatie contact opnemen met een arts?",
+        answer: "Bij koorts, een rode, warme of lekkende wond, pijn die na verbetering weer duidelijk toeneemt, een dikke pijnlijke kuit, nieuwe krachtsvermindering of gevoelsverlies. Bij benauwdheid of pijn op de borst bel je direct 112.",
+      },
+      {
+        question: "Hoe meet je pijn na een operatie?",
+        answer: "Met een pijnscore van 0 tot 10, op vaste momenten en apart tijdens en na het oefenen. Het verloop over meerdere dagen en weken zegt meer over het herstel dan één losse meting.",
       },
     ],
   },

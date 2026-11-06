@@ -310,3 +310,13 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1cdc7; border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: #b5b0a8; }
+
+/* Logo-slider praktijken: rij schuift precies één set breed op en begint naadloos opnieuw */
+@keyframes logoMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-logo-marquee {
+  animation: logoMarquee 40s linear infinite;
+}
+
