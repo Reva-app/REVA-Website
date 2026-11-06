@@ -77,18 +77,26 @@ const faqJsonLd = {
   })),
 };
 
+// Ingangsdatum van de huidige pakketindeling
+const PRICES_VALID_FROM = "2026-11-05";
+
 const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://www.reva-app.nl/prijzen#product",
   name: "REVA patiëntenportaal",
-  description: "Patiëntenportaal voor fysiotherapiepraktijken, beschikbaar in vijf pakketten.",
+  description:
+    "Patiëntenportaal voor fysiotherapiepraktijken, beschikbaar in vijf pakketten. Patiënten houden zelf hun herstel bij, de praktijk ziet in één overzicht wie aandacht nodig heeft.",
+  url: "https://www.reva-app.nl/prijzen",
+  // Meerdere verhoudingen (16:9 en 1:1), zoals Google aanbeveelt
+  image: ["https://www.reva-app.nl/image-reva-app.png", "https://www.reva-app.nl/logo.png"],
   brand: {
     "@type": "Brand",
     name: "REVA",
   },
   offers: [
-    ...pricingTiers.map((tier) => ({ name: tier.name, price: tier.monthly })),
-    { name: enterpriseTier.name, price: enterpriseTier.fromMonthly },
+    ...pricingTiers.map((tier) => ({ name: tier.name, price: tier.monthly, from: false })),
+    { name: enterpriseTier.name, price: enterpriseTier.fromMonthly, from: true },
   ].map((tier) => ({
     "@type": "Offer",
     name: `REVA ${tier.name}`,
@@ -97,13 +105,16 @@ const productJsonLd = {
     priceSpecification: {
       "@type": "UnitPriceSpecification",
       price: tier.price,
+      ...(tier.from && { minPrice: tier.price }),
       priceCurrency: "EUR",
       unitText: "per maand",
       valueAddedTaxIncluded: false,
     },
+    validFrom: PRICES_VALID_FROM,
     priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
     url: "https://www.reva-app.nl/prijzen",
     availability: "https://schema.org/InStock",
+    seller: { "@id": "https://www.reva-app.nl/#organization" },
   })),
 };
 
