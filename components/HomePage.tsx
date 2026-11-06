@@ -32,7 +32,7 @@ import { BlogCover } from "./blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { homeFaq } from "@/lib/home-faq";
 import { RevaGlyph } from "@/components/brand/RevaLogo";
-import { pilotDemoHref, pilotOffer } from "@/lib/offer";
+import { pilotDemoHref, pilotOffer, pilotSpotsLabel } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
@@ -104,6 +104,7 @@ function useTypewriter(phrases: string[], typingSpeed = 45, deletingSpeed = 30, 
 function HeroSection() {
   const rotatingText = useTypewriter(rotatingPhrases);
   preload("/headline-reva-app.webp", { as: "image", fetchPriority: "high" });
+  const offerOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;
 
   return (
     <section
@@ -118,67 +119,69 @@ function HeroSection() {
       {/* Overlay: donker naar transparant, van links naar rechts, zodat linkse tekst leesbaar blijft over een foto */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(100deg, rgba(24,24,26,0.94) 0%, rgba(24,24,26,0.82) 38%, rgba(24,24,26,0.45) 68%, rgba(24,24,26,0.15) 100%)" }}
+        style={{ background: "linear-gradient(100deg, rgba(24,24,26,0.95) 0%, rgba(24,24,26,0.85) 42%, rgba(24,24,26,0.5) 70%, rgba(24,24,26,0.2) 100%)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-5 md:px-8 w-full py-28 md:py-32">
         <div className="w-full text-left space-y-6">
-          <div className="animate-fade-in-up delay-100">
-            {pilotOffer.active && pilotOffer.spotsLeft > 0 ? (
-              // Pilotaanbod: de eerste praktijken krijgen korting in ruil voor feedback
-              <Link
-                href={pilotDemoHref}
-                className="group inline-flex items-center gap-2 text-xs font-medium pl-1.5 pr-3 py-1.5 rounded-full border transition-colors max-w-full"
-                style={{ background: "rgba(255,255,255,0.08)", color: "#ffffff", borderColor: "rgba(255,255,255,0.18)" }}
-              >
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-white shrink-0" style={{ background: "#e8632a" }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft" />
-                  Pilotaanbod
+          {offerOpen ? (
+            <>
+              <p className="animate-fade-in-up delay-100 flex items-center gap-2 text-sm font-medium" style={{ color: "#e8632a" }}>
+                <span className="flex gap-1" aria-hidden="true">
+                  {Array.from({ length: pilotOffer.spotsTotal }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ background: i < pilotOffer.spotsLeft ? "#e8632a" : "rgba(255,255,255,0.3)" }}
+                    />
+                  ))}
                 </span>
-                <span className="truncate">
-                  {pilotOffer.short}
-                  <span className="hidden sm:inline"> voor de eerste {pilotOffer.spotsTotal} praktijken</span>
+                Pilotaanbod: {pilotSpotsLabel().toLowerCase()}
+              </p>
+              <h1 className="animate-fade-in-up delay-200 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white max-w-3xl">
+                Het eerste jaar REVA voor <span style={{ color: "#e8632a" }}>de halve prijs</span>
+              </h1>
+            </>
+          ) : (
+            <>
+              <div className="animate-fade-in-up delay-100">
+                <span
+                  className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
+                  style={{ background: "#fff3ee", color: "#e8632a", borderColor: "rgba(232,99,42,0.2)" }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full animate-pulse-soft" style={{ background: "#e8632a" }} />
+                  Voor fysiotherapiepraktijken
                 </span>
-                <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: "#e8632a" }} />
-              </Link>
-            ) : (
-              <span
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
-                style={{ background: "#fff3ee", color: "#e8632a", borderColor: "rgba(232,99,42,0.2)" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse-soft" style={{ background: "#e8632a" }} />
-                Voor fysiotherapiepraktijken
-              </span>
-            )}
-          </div>
-
-          <h1
-            className="animate-fade-in-up delay-200 md:whitespace-nowrap text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.15]"
-          >
-            <span className="text-white">Voor fysiopraktijken die </span>
-            <br className="md:hidden" />
-            <span style={{ color: "#e8632a" }}>
-              {rotatingText}
-              <span className="animate-pulse-soft">|</span>
-            </span>
-          </h1>
+              </div>
+              <h1 className="animate-fade-in-up delay-200 md:whitespace-nowrap text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.15]">
+                <span className="text-white">Voor fysiopraktijken die </span>
+                <br className="md:hidden" />
+                <span style={{ color: "#e8632a" }}>
+                  {rotatingText}
+                  <span className="animate-pulse-soft">|</span>
+                </span>
+              </h1>
+            </>
+          )}
 
           <div className="max-w-2xl space-y-6">
           <p className="animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
-            REVA is het patiëntenportaal voor fysiotherapiepraktijken. Je patiënten houden zelf
-            hun herstel bij, jij ziet in één overzicht wie aandacht nodig heeft. Minder
-            telefoontjes, meer grip op je caseload.
+            Het patiëntenportaal voor fysiotherapiepraktijken: patiënten houden zelf hun herstel bij,
+            jij ziet wie aandacht nodig heeft.
+            {offerOpen && (
+              <> De eerste {pilotOffer.spotsTotal} praktijken krijgen {pilotOffer.discountPercent}% korting op het eerste jaar, in ruil voor feedback en een korte klantervaring.</>
+            )}
           </p>
 
           <div className="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3">
             <Link
-              href="/demo-aanvragen"
+              href={offerOpen ? pilotDemoHref : "/demo-aanvragen"}
               className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Vraag een demo aan
+              {offerOpen ? "Claim een pilotplek" : "Vraag een demo aan"}
               <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <Link

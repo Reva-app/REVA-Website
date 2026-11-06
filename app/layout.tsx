@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { CookieConsentProvider } from "@/lib/cookie-consent";
 import { CookieBanner } from "@/components/CookieBanner";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "./globals.css";
 
@@ -242,6 +243,7 @@ export default function RootLayout({
           <GoogleTagManager />
           {children}
           <CookieBanner />
+          <NewsletterPopup />
         </CookieConsentProvider>
       </body>
     </html>

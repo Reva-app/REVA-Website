@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         ])}
       />
       <SiteLayout>
-      <LegalLayout title="Privacy Policy" lastUpdated="31 juli 2026">
+      <LegalLayout title="Privacy Policy" lastUpdated="6 november 2026">
 
         <p>
           <strong>Opmerking vooraf:</strong> deze pagina gaat ervan uit dat de fysiotherapiepraktijk
@@ -259,6 +259,15 @@ export default function PrivacyPolicyPage() {
             e-mails (zoals wachtwoordherstel en uitnodigingen).
           </li>
         </ul>
+        <p>
+          <strong>Nieuwsbrief:</strong> meld je je aan voor onze nieuwsbrief, dan verwerken wij je
+          e-mailadres op basis van jouw toestemming, om je artikelen en nieuws over REVA en
+          praktijkvoering te sturen. Hiervoor gebruiken wij Klaviyo (Klaviyo, Inc.). Je kunt je op
+          elk moment afmelden via de link onderaan elke e-mail; daarna gebruiken we je e-mailadres
+          niet meer voor de nieuwsbrief. Verwerkt Klaviyo gegevens buiten de EER, dan gebeurt dat
+          op basis van passende waarborgen conform de AVG, zoals het EU-VS Data Privacy Framework
+          of standaardcontractbepalingen.
+        </p>
         <p>
           Met alle subverwerkers zijn verwerkersovereenkomsten gesloten die voldoen aan de
           vereisten van de AVG. Subverwerkers hebben uitsluitend toegang tot de gegevens die

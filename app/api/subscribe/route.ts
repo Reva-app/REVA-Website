@@ -4,6 +4,11 @@ const KLAVIYO_PRIVATE_KEY = process.env.KLAVIYO_PRIVATE_KEY;
 const KLAVIYO_LIST_ID = process.env.KLAVIYO_LIST_ID;
 const KLAVIYO_REVISION = "2024-10-15";
 
+const SOURCES: Record<string, string> = {
+  popup: "Website pop-up",
+  launch: "Website launchpagina",
+};
+
 export async function POST(request: NextRequest) {
   if (!KLAVIYO_PRIVATE_KEY || !KLAVIYO_LIST_ID) {
     console.error("Klaviyo env vars niet geconfigureerd.");
@@ -14,9 +19,12 @@ export async function POST(request: NextRequest) {
   }
 
   let email: string;
+  let source: string | undefined;
   try {
     const body = await request.json();
     email = (body.email ?? "").trim().toLowerCase();
+    // Herkomst van de aanmelding, zichtbaar in Klaviyo (alleen bekende bronnen)
+    source = SOURCES[body.source as string];
   } catch {
     return NextResponse.json({ error: "Ongeldig verzoek." }, { status: 400 });
   }
@@ -44,6 +52,7 @@ export async function POST(request: NextRequest) {
           data: {
             type: "profile-subscription-bulk-create-job",
             attributes: {
+              ...(source && { custom_source: source }),
               profiles: {
                 data: [
                   {
