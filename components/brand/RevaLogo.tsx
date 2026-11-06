@@ -69,15 +69,25 @@ export function RevaMark({ size = 32, className = "", style }: { size?: number; 
   );
 }
 
+/** Verhouding van de logobestanden uit het pakket (viewBox 1507 x 512). */
+const LOGO_RATIO = 1507 / 512;
+
 /**
- * Volledig logo: beeldmerk + woordmerk, in de verhoudingen uit het logopakket.
- * Het woordmerk neemt de tekstkleur over, dus zet `color` voor lichte of donkere achtergronden.
+ * Volledig logo, rechtstreeks uit het aangeleverde logopakket:
+ * `/brand/reva-logo.svg` (donker woord) en `/brand/reva-logo-wit.svg` (wit woord).
+ * Met `color="#ffffff"` (of "white") komt de witte variant, anders de donkere.
+ * Beide bestanden staan in de DOM zodat wisselen (transparante header) niet flitst.
  */
 export function RevaLogo({ size = 32, className = "", color }: { size?: number; className?: string; color?: string }) {
+  const light = !!color && /^(#fff(fff)?|white)$/i.test(color.trim());
+  const width = Math.round(size * LOGO_RATIO * 100) / 100;
+  const style: React.CSSProperties = { width, height: size, maxWidth: "none" };
   return (
-    <span className={`inline-flex items-center shrink-0 ${className}`} style={{ gap: size * 0.26, color }}>
-      <RevaMark size={size} />
-      <RevaWordmark height={Math.round(size * 0.46 * 10) / 10} />
+    <span className={`relative inline-flex shrink-0 ${className}`} style={{ width, height: size }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/brand/reva-logo.svg" alt={light ? "" : "REVA"} width={width} height={size} style={style} className={light ? "hidden" : "block"} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/brand/reva-logo-wit.svg" alt={light ? "REVA" : ""} width={width} height={size} style={style} className={light ? "block" : "hidden"} />
     </span>
   );
 }
