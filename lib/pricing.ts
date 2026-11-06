@@ -124,3 +124,38 @@ export const pricingFaq = [
 export function yearlyPerMonth(tier: PricingTier) {
   return Math.round(tier.yearly / 12);
 }
+
+// ─── Pakketkeuze doorgeven aan het demo- en contactformulier ───────────────
+
+export type Billing = "maandelijks" | "jaarlijks";
+
+export const tierSlug = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
+
+/** Link van een prijskaart naar het demoformulier, met het gekozen pakket. */
+export function demoHref(tier: PricingTier, yearly: boolean) {
+  return `/demo-aanvragen?pakket=${tierSlug(tier.name)}&facturatie=${yearly ? "jaarlijks" : "maandelijks"}`;
+}
+
+export const enterpriseContactHref = `/contact?pakket=${tierSlug(enterpriseTier.name)}`;
+
+const euro = (n: number) => `€${n.toLocaleString("nl-NL")}`;
+
+/**
+ * Leesbare pakketkeuze voor in de notificatiemail. Alleen bekende pakketten
+ * worden herkend, zodat er geen willekeurige tekst uit de URL in de mail komt.
+ */
+export function describeInterest(pakket: unknown, facturatie: unknown) {
+  if (typeof pakket !== "string") return null;
+  const slug = pakket.trim().toLowerCase();
+  if (slug === tierSlug(enterpriseTier.name)) {
+    return { name: enterpriseTier.name, billing: null, price: `vanaf ${euro(enterpriseTier.fromMonthly)} per maand` };
+  }
+  const tier = pricingTiers.find((t) => tierSlug(t.name) === slug);
+  if (!tier) return null;
+  const billing: Billing = facturatie === "jaarlijks" ? "jaarlijks" : "maandelijks";
+  const price =
+    billing === "jaarlijks"
+      ? `${euro(tier.yearly)} per jaar (${euro(yearlyPerMonth(tier))} per maand)`
+      : `${euro(tier.monthly)} per maand`;
+  return { name: tier.name, billing, price };
+}

@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
+// Pakketkeuze van de prijspagina (?pakket=team&facturatie=jaarlijks), voor in de notificatiemail
+function pricingChoice() {
+  const params = new URLSearchParams(window.location.search);
+  return { pakket: params.get("pakket") ?? undefined, facturatie: params.get("facturatie") ?? undefined };
+}
+
 const softwareOptions = [
   "Nog geen patiëntenportaal",
   "Ander patiëntenportaal",
@@ -40,7 +46,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "demo", ...form, website: honeypot }),
+        body: JSON.stringify({ type: "demo", ...form, ...pricingChoice(), website: honeypot }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
@@ -57,7 +63,7 @@ export function ContactForm() {
 
     const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
     w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "generate_lead", form_name: "demo_aanvragen" });
+    w.dataLayer.push({ event: "generate_lead", form_name: "demo_aanvragen", ...pricingChoice() });
   };
 
   if (status === "success") {

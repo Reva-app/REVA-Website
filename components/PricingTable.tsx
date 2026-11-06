@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { enterpriseTier, pricingTiers, TRIAL_DAYS, yearlyPerMonth } from "@/lib/pricing";
+import { demoHref, enterpriseContactHref, enterpriseTier, pricingTiers, TRIAL_DAYS, yearlyPerMonth } from "@/lib/pricing";
 
 function formatPrice(value: number) {
   return value.toLocaleString("nl-NL");
@@ -103,7 +103,7 @@ export function PricingTable() {
                 </ul>
 
                 <Link
-                  href="/demo-aanvragen"
+                  href={demoHref(tier, yearly)}
                   className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-colors duration-300"
                   style={
                     tier.popular
@@ -145,7 +145,7 @@ export function PricingTable() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href={enterpriseContactHref}
             className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm transition-colors duration-300 shrink-0"
             style={{ background: "#ffffff", color: "#1a1a1a", border: "1px solid #e8e5df" }}
             onMouseEnter={(e) => {

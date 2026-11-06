@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
+// Pakketkeuze van de prijspagina (?pakket=enterprise), voor in de notificatiemail
+function pricingChoice() {
+  const params = new URLSearchParams(window.location.search);
+  return { pakket: params.get("pakket") ?? undefined, facturatie: params.get("facturatie") ?? undefined };
+}
+
 const topicOptions = [
   "Algemene vraag",
   "Vraag over facturatie",
@@ -38,7 +44,7 @@ export function SimpleContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "contact", ...form, website: honeypot }),
+        body: JSON.stringify({ type: "contact", ...form, ...pricingChoice(), website: honeypot }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);

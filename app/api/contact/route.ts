@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { renderContactEmail, telHref, type ContactEmailRow } from "@/lib/contact-email";
 import { EMAIL_LOGO_CID, EMAIL_LOGO_PNG_BASE64 } from "@/lib/email-logo";
+import { describeInterest } from "@/lib/pricing";
 
 // Resend — server-only (geen NEXT_PUBLIC_ prefix, nooit zichtbaar in browser)
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -76,13 +77,32 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Pakketkeuze van de prijspagina, alleen als het een bestaand pakket is
+  const interest = describeInterest(body.pakket, body.facturatie);
+  const interestTag = interest ? ` (${interest.name})` : "";
+
   const subject =
     type === "demo"
-      ? `Demo-aanvraag: ${fields.practice} (${fields.name})`
-      : `Contactformulier: ${fields.topic || "Algemene vraag"} (${fields.name})`;
+      ? `Demo-aanvraag${interestTag}: ${fields.practice} (${fields.name})`
+      : `Contactformulier${interestTag}: ${fields.topic || "Algemene vraag"} (${fields.name})`;
+
+  const interestRows: ContactEmailRow[] = interest
+    ? [
+        { label: "Pakket", value: interest.name },
+        ...(interest.billing
+          ? [{ label: "Betaling", value: interest.billing === "jaarlijks" ? "Jaarlijks" : "Maandelijks" }]
+          : []),
+        { label: "Prijs", value: interest.price },
+        { label: "Gekozen via", value: "Prijzenpagina" },
+      ]
+    : [];
+  const interestSections = interest ? [{ title: "Interesse", rows: interestRows }] : [];
 
   const rows = FIELD_LABELS[type].filter(([key]) => fields[key]);
-  const text = rows.map(([key, label]) => `${label}: ${fields[key]}`).join("\n");
+  const text = [
+    ...interestRows.map(({ label, value }) => `${label}: ${value}`),
+    ...rows.map(([key, label]) => `${label}: ${fields[key]}`),
+  ].join("\n");
 
   const row = (label: string, key: string, href?: string): ContactEmailRow[] =>
     fields[key] ? [{ label, value: fields[key], href }] : [];
@@ -95,10 +115,13 @@ export async function POST(request: NextRequest) {
   const html = renderContactEmail(
     type === "demo"
       ? {
-          badge: "Demo-aanvraag",
+          badge: interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
           title: fields.practice,
-          intro: `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,
+          intro: interest
+            ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor het pakket ${interest.name}. Neem binnen één werkdag contact op om een moment af te spreken.`
+            : `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,
           sections: [
+            ...interestSections,
             { title: "Contactpersoon", rows: contactRows },
             {
               title: "Praktijk",
@@ -118,7 +141,7 @@ export async function POST(request: NextRequest) {
           badge: fields.topic || "Contactformulier",
           title: `Nieuw bericht van ${fields.name}`,
           intro: "Er is een vraag binnengekomen via het contactformulier. Reageer binnen één werkdag.",
-          sections: [{ title: "Afzender", rows: contactRows }],
+          sections: [...interestSections, { title: "Afzender", rows: contactRows }],
           message: { title: "Bericht", value: fields.message },
           replyEmail: fields.email,
           source: "het contactformulier",
