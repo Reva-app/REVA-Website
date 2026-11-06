@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Stethoscope, HeartPulse, ArrowRight } from "lucide-react";
+import { Lock, Server, ShieldCheck } from "lucide-react";
+import { LoginOptions } from "@/components/LoginOptions";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Inloggen",
+  title: "Inloggen bij REVA",
   description:
     "Log in bij REVA: ga naar het praktijkportaal als fysiotherapeut of naar het patiëntenportaal als patiënt.",
   openGraph: {
@@ -24,29 +25,6 @@ export const metadata: Metadata = {
     canonical: "https://www.reva-app.nl/inloggen",
   },
 };
-
-const loginOptions = [
-  {
-    icon: Stethoscope,
-    badge: "Praktijk",
-    title: "Ik ben fysiotherapeut",
-    description:
-      "Log in op het praktijkportaal voor je patiëntoverzicht, dossiers, signaleringen en herstelplannen.",
-    cta: "Inloggen als fysiotherapeut",
-    href: "https://dashboard.reva-app.nl/portal",
-    direction: "left" as const,
-  },
-  {
-    icon: HeartPulse,
-    badge: "Patiënt",
-    title: "Ik ben patiënt",
-    description:
-      "Log in op je persoonlijke portaal voor check-ins, oefeningen, medicatie en je herstelplan.",
-    cta: "Inloggen als patiënt",
-    href: "https://dashboard.reva-app.nl/login",
-    direction: "right" as const,
-  },
-];
 
 export default function InloggenPage() {
   return (
@@ -79,43 +57,15 @@ export default function InloggenPage() {
               </p>
             </AnimateIn>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {loginOptions.map((option, i) => {
-                const Icon = option.icon;
-                return (
-                  <AnimateIn key={option.title} direction={option.direction} delay={i * 100}>
-                    <a
-                      href={option.href}
-                      className="group flex flex-col h-full rounded-2xl p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                      style={{ background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
-                    >
-                      <span
-                        className="inline-block self-start text-xs font-semibold uppercase tracking-widest mb-5 px-2.5 py-1 rounded-full"
-                        style={{ color: "#e8632a", background: "#fff3ee" }}
-                      >
-                        {option.badge}
-                      </span>
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-105"
-                        style={{ background: "#fff3ee" }}
-                      >
-                        <Icon className="w-6 h-6" style={{ color: "#e8632a" }} />
-                      </div>
-                      <h2 className="text-lg font-semibold mb-2" style={{ color: "#1a1a1a" }}>
-                        {option.title}
-                      </h2>
-                      <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: "#6b7280" }}>
-                        {option.description}
-                      </p>
-                      <span className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: "#e8632a" }}>
-                        {option.cta}
-                        <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                      </span>
-                    </a>
-                  </AnimateIn>
-                );
-              })}
-            </div>
+            <LoginOptions />
+
+            <AnimateIn direction="up" delay={150} className="mt-8">
+              <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs" style={{ color: "#9ca3af" }}>
+                <li className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Beveiligde verbinding</li>
+                <li className="flex items-center gap-1.5"><Server className="w-3.5 h-3.5" /> Data op Europese servers</li>
+                <li className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5" /> Versleuteld opgeslagen</li>
+              </ul>
+            </AnimateIn>
 
             <AnimateIn direction="up" delay={200} className="mt-10 text-center">
               <p className="text-sm" style={{ color: "#9ca3af" }}>
@@ -123,6 +73,10 @@ export default function InloggenPage() {
                 <Link href="/demo-aanvragen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
                   Vraag een demo aan
                 </Link>
+                . Hulp nodig bij inloggen? Mail{" "}
+                <a href="mailto:info@reva-app.nl" className="font-medium hover-orange" style={{ color: "#6b7280" }}>
+                  info@reva-app.nl
+                </a>
                 .
               </p>
             </AnimateIn>

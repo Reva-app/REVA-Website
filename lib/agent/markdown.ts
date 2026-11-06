@@ -5,7 +5,7 @@
 import { blogPosts, getBlogPost, getSortedBlogPosts, type BlogPost } from "@/lib/blog-posts";
 import { enterpriseTier, pricingFaq, pricingTiers, TRIAL_DAYS, yearlyPerMonth } from "@/lib/pricing";
 import { faqGroups } from "@/lib/faq";
-import { homeFaq } from "@/lib/home-faq";
+import { comparisonRows, homeFaq } from "@/lib/home-faq";
 import { pilotOffer } from "@/lib/offer";
 
 export const SITE_URL = "https://www.reva-app.nl";
@@ -92,6 +92,12 @@ export function homeMarkdown() {
     "- Behandeldoelen en mijlpalen",
     "",
     "REVA werkt in de browser en op iOS en Android, voor zowel het praktijkteam als patiënten.",
+    "",
+    "## REVA naast WhatsApp, telefoon en Excel",
+    "",
+    "| | WhatsApp, telefoon en Excel | Met REVA |",
+    "| --- | --- | --- |",
+    ...comparisonRows.map((r) => `| ${r.topic} | ${r.old} | ${r.reva} |`),
     "",
     "## Prijzen",
     "",

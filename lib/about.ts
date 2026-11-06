@@ -8,6 +8,9 @@ export const company = {
   email: "info@reva-app.nl",
   founder: "Stef Robberts",
   founderLinkedIn: "https://www.linkedin.com/in/stef-robberts-82b632b6/",
+  // Vul in zodra bekend; lege waarden worden niet getoond
+  kvk: "",
+  vat: "",
 };
 
 export const aboutFaq = [

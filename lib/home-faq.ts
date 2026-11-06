@@ -26,3 +26,13 @@ export const homeFaq = [
     a: "Ja. Gezondheidsgegevens worden versleuteld opgeslagen en nooit gedeeld met derden. Jouw praktijk blijft verwerkingsverantwoordelijke, REVA werkt op basis van een verwerkersovereenkomst die aansluit bij de AVG.",
   },
 ];
+
+// Vergelijking op de homepage (en in de Markdown-versie voor AI-agents)
+export const comparisonRows = [
+  { topic: "Overzicht per patiënt", old: "Verspreid over telefoons, mappen en notities", reva: "Alles in één dossier, voor het hele team" },
+  { topic: "Wie heeft aandacht nodig", old: "Zelf nalopen of wachten tot de patiënt belt", reva: "Automatische signalering bij afwijkingen" },
+  { topic: "Oefeningen en herstelplan", old: "Papiertjes, pdf's of losse video's", reva: "In het portaal, altijd bij de hand" },
+  { topic: "Bij vakantie of ziekte", old: "Informatie zit bij één behandelaar", reva: "Elke collega ziet hetzelfde dossier" },
+  { topic: "Privacy", old: "Gezondheidsdata op privételefoons", reva: "Versleuteld op Europese servers, met verwerkersovereenkomst" },
+  { topic: "Jouw tijd", old: "Reageren tussen behandelingen door", reva: "Patiënten loggen zelf, jij kijkt wanneer het uitkomt" },
+];

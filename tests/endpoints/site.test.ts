@@ -93,3 +93,18 @@ test("over REVA: AboutPage, Person en FAQ in de structured data", async () => {
   assert.match(html, /<title>Over REVA: het verhaal achter het patiëntenportaal \| REVA App<\/title>/);
 });
 
+test("homepage: H1 met zoekterm, FAQ-schema en geen placeholders", async () => {
+  const html = await (await get("/", "text/html")).text();
+  assert.match(html, /<h1[^>]*>Patiëntenportaal voor fysiotherapiepraktijken<\/h1>/);
+  assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1);
+  assert.ok(html.includes('"@type":"FAQPage"'));
+  assert.ok(html.includes("REVA naast WhatsApp, telefoon en Excel"));
+  assert.ok(!/\[(KvK|BTW|Vestigingsplaats)/.test(html), "placeholders in de pagina");
+  assert.ok(html.includes("Kerkstraat 129"));
+});
+
+test("homepage-Markdown bevat de vergelijking", async () => {
+  const md = await (await get("/", "text/markdown")).text();
+  assert.ok(md.includes("## REVA naast WhatsApp, telefoon en Excel"));
+});
+

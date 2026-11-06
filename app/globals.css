@@ -187,6 +187,27 @@ body {
   transform: none;
 }
 
+/* Op mobiel van onderen in beeld in plaats van opzij: zijwaartse verschuiving
+   maakt de pagina breder dan het scherm zolang het blok nog niet zichtbaar is */
+@media (max-width: 767px) {
+  .scroll-anim-left:not(.is-visible),
+  .scroll-anim-right:not(.is-visible) {
+    transform: translateY(20px);
+  }
+}
+
+/* Bezoekers die minder beweging hebben ingesteld, krijgen geen scrollanimaties */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-anim-up,
+  .scroll-anim-left,
+  .scroll-anim-right,
+  .scroll-anim-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ─── Button utility classes (server-component safe) ────────── */
 
 .btn-primary {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FooterCookieSettingsLink } from "@/components/FooterCookieSettingsLink";
 import { RevaLogo } from "@/components/brand/RevaLogo";
+import { company } from "@/lib/about";
 
 export function Footer() {
   return (
@@ -25,10 +26,10 @@ export function Footer() {
               <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <div className="text-xs leading-relaxed pt-2" style={{ color: "#52525e" }}>
-              <p>REVA B.V.</p>
-              <p>KvK: [KvK-nummer]</p>
-              <p>BTW: [BTW-nummer]</p>
-              <p>[Vestigingsplaats]</p>
+              <p>{company.legalName}</p>
+              <p>{company.street}, {company.postalCode} {company.city}</p>
+              {company.kvk && <p>KvK: {company.kvk}</p>}
+              {company.vat && <p>Btw: {company.vat}</p>}
               <a href="mailto:info@reva-app.nl" className="footer-link">
                 info@reva-app.nl
               </a>
