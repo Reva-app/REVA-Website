@@ -86,6 +86,7 @@ Zo helpt een agent de gebruiker verder:
 - [AVG en patiëntdata in de fysiopraktijk](https://www.reva-app.nl/blog/avg-patientdata-fysiopraktijk): Praktische gids over de AVG: bijzondere persoonsgegevens, grondslag onder de WGBO, verwerkersovereenkomst, bewaartermijnen, datalekken en een checklist.
 - [Continuïteit van zorg bij vakantie](https://www.reva-app.nl/blog/fysio-op-vakantie-continuiteit-van-zorg): Hoe je de zorg laat doorlopen als een fysiotherapeut afwezig is, met een overdrachtschecklist en aandachtspunten bij meerdere vestigingen.
 - [Pijn na een operatie](https://www.reva-app.nl/blog/pijn-na-een-operatie): Wat normaal is per type ingreep (bot, gewricht, pees, band, spier, kijkoperatie, zenuw), met vergelijkingstabel, alarmsignalen en hoe je pijn volgt met een score van 0 tot 10.
+- [Eigen fysiotherapiepraktijk starten](https://www.reva-app.nl/blog/eigen-fysiotherapiepraktijk-starten): Stappen, registraties (BIG, AGB, KvK, LRZa, kwaliteitsregister, pensioenfonds), wettelijke eisen (Wkkgz, WGBO, AVG, meldcode), contracten met zorgverzekeraars, kosten en financiering voor een eigen fysiotherapiepraktijk.
 
 ## Juridisch
 

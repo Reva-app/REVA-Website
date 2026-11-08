@@ -1059,6 +1059,243 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "eigen-fysiotherapiepraktijk-starten",
+    title: "Eigen fysiotherapiepraktijk starten: stappen, eisen en kosten",
+    metaDescription: "Een eigen fysiotherapiepraktijk starten? De stappen op een rij: BIG en AGB, kwaliteitsregister, contracten met zorgverzekeraars, wettelijke eisen, kosten en financiering.",
+    excerpt: "Van ondernemingsplan tot eerste patiënt: welke registraties je nodig hebt, aan welke wetten je praktijk moet voldoen, wat het kost en hoe je contracten met zorgverzekeraars regelt.",
+    category: "Praktijkvoering",
+    publishedAt: "2026-11-08",
+    readTime: "12 min",
+    image: {
+      src: "/blog/eigen-fysiotherapiepraktijk-starten.webp",
+      alt: "Lichte behandelruimte van een fysiotherapiepraktijk met behandelbank, wandrek en oefenmaterialen",
+    },
+    keywords: [
+      "eigen fysiotherapiepraktijk starten",
+      "fysiotherapiepraktijk beginnen",
+      "zelfstandig fysiotherapeut worden",
+      "kosten fysiotherapiepraktijk starten",
+      "AGB-code fysiotherapeut",
+      "contract zorgverzekeraar fysiotherapie",
+      "fysiotherapiepraktijk overnemen",
+    ],
+    summary: [
+      "Een eigen fysiotherapiepraktijk start je in drie routes: als zelfstandige binnen een bestaande praktijk, door een praktijk over te nemen of door helemaal nieuw te beginnen.",
+      "Je hebt een BIG-registratie nodig, een persoonlijke AGB-code en een AGB-code voor je praktijk via Vektis, een inschrijving bij de KvK en een registratie in een kwaliteitsregister zoals KRF NL of Keurmerk Fysiotherapie.",
+      "Wettelijk moet je praktijk onder meer voldoen aan de Wkkgz (klachtenregeling, klachtenfunctionaris en aansluiting bij een geschilleninstantie), de WGBO, de AVG en de meldcode huiselijk geweld en kindermishandeling.",
+      "Om behandelingen vergoed te krijgen sluit je contracten met zorgverzekeraars en declareer je via VECOZO. Zonder contract krijgt je patiënt vaak maar een deel van het tarief vergoed.",
+      "De kosten verschillen sterk per situatie. Reken op eenmalige kosten voor inrichting en apparatuur, en op vaste lasten zoals huur, software, verzekeringen, registraties en pensioen.",
+    ],
+    intro: [
+      "Veel fysiotherapeuten spelen na een paar jaar werken met de gedachte om voor zichzelf te beginnen. Meer vrijheid in hoe je behandelt, een eigen visie op zorg en een praktijk die je zelf opbouwt. Tegelijk komt er veel bij kijken dat je in je opleiding niet leert: registraties, contracten met zorgverzekeraars, wetgeving, financiering en ondernemerschap.",
+      "In dit artikel zetten we alle stappen op een rij, van het eerste plan tot je eerste patiënt. Regels en eisen veranderen geregeld, en zorgverzekeraars stellen elk hun eigen voorwaarden. Gebruik dit artikel daarom als overzicht, en controleer de actuele eisen bij de betreffende instanties en bij een adviseur die de zorg kent.",
+    ],
+    sections: [
+      {
+        heading: "Drie manieren om voor jezelf te beginnen",
+        paragraphs: [
+          "Voor je de stappen doorloopt, is het goed om te bepalen welke route bij je past. Elke route vraagt een andere investering en geeft een ander risico.",
+        ],
+        table: {
+          caption: "De drie routes naar een eigen praktijk vergeleken",
+          headers: ["Route", "Wat het inhoudt", "Voordelen", "Aandachtspunten"],
+          rows: [
+            ["Zelfstandige in een bestaande praktijk", "Je werkt als zzp'er en huurt ruimte of werkt op basis van een afdrachtregeling", "Lage investering, patiëntenstroom en contracten vaak al aanwezig", "Minder eigen zeggenschap, afspraken over afdracht en waarneming"],
+            ["Een praktijk overnemen", "Je koopt een bestaande praktijk, vaak inclusief patiëntenbestand, inventaris en goodwill", "Direct omzet, bestaande naam en verwijzers", "Hoge overnamesom, waardering van goodwill, bestaande afspraken en personeel"],
+            ["Helemaal nieuw starten", "Je bouwt een praktijk op vanaf nul, op een eigen locatie", "Volledige vrijheid in visie, locatie en specialisatie", "Hoogste risico, patiënten werven kost tijd, contracten zelf regelen"],
+          ],
+        },
+      },
+      {
+        heading: "Stap 1: schrijf een ondernemingsplan",
+        paragraphs: [
+          "Een ondernemingsplan dwingt je om na te denken over de haalbaarheid van je praktijk. Daarnaast vraagt een bank of andere financier er vrijwel altijd om. Houd het concreet en reken met voorzichtige aannames.",
+        ],
+        list: [
+          "Visie en specialisatie: wat voor praktijk wil je zijn, en voor welke patiënten?",
+          "Markt en locatie: hoeveel praktijken zitten er al in de buurt, en wie zijn je verwijzers, zoals huisartsen, specialisten en sportclubs?",
+          "Omzetprognose: hoeveel behandelingen per week verwacht je in het eerste jaar, en tegen welk tarief?",
+          "Kosten: eenmalige investeringen en maandelijkse vaste lasten.",
+          "Financiering: hoeveel eigen geld breng je in, en hoeveel moet je lenen?",
+        ],
+      },
+      {
+        heading: "Stap 2: registraties en certificeringen",
+        paragraphs: [
+          "Als fysiotherapeut heb je een aantal registraties nodig voordat je zelfstandig mag werken en kunt declareren. Een deel heb je als werknemer waarschijnlijk al, een deel is nieuw.",
+        ],
+        table: {
+          caption: "Registraties voor een zelfstandig fysiotherapeut",
+          headers: ["Registratie", "Waarvoor", "Waar"],
+          rows: [
+            ["BIG-registratie", "De titel fysiotherapeut is wettelijk beschermd. Elke vijf jaar volgt herregistratie op basis van werkervaring of scholing", "BIG-register (bigregister.nl)"],
+            ["AGB-code zorgverlener", "Je persoonlijke code om zorg te kunnen declareren en contracten te sluiten", "Vektis"],
+            ["AGB-code praktijk", "Een aparte code voor je onderneming", "Vektis"],
+            ["Inschrijving KvK", "Verplicht voor elke onderneming", "Kamer van Koophandel"],
+            ["Landelijk Register Zorgaanbieders", "Registratie van zorgaanbieders", "LRZa, gekoppeld aan je KvK-inschrijving"],
+            ["Kwaliteitsregister", "Zorgverzekeraars stellen registratie meestal als voorwaarde voor een contract", "KRF NL of Stichting Keurmerk Fysiotherapie"],
+            ["Pensioenfonds", "Zelfstandig fysiotherapeuten vallen onder het beroepspensioen. Meld je tijdig aan", "Pensioenfonds Fysiotherapeuten"],
+          ],
+        },
+      },
+      {
+        heading: "Stap 3: kies een rechtsvorm",
+        paragraphs: [
+          "De meeste startende fysiotherapeuten beginnen als eenmanszaak. Dat is eenvoudig op te zetten en je profiteert van ondernemersaftrekken. Begin je met een collega, dan kies je vaak voor een vof of maatschap. Een bv is vooral interessant bij hogere winsten of als je je privévermogen wilt afschermen.",
+          "Fysiotherapie door een BIG-geregistreerde fysiotherapeut is in de regel vrijgesteld van btw. Dat geldt niet automatisch voor alles wat je aanbiedt, zoals losse sportlessen of producten. Bespreek met je boekhouder welke diensten wel en niet onder de vrijstelling vallen.",
+        ],
+      },
+      {
+        heading: "Stap 4: zoek een geschikte praktijkruimte",
+        paragraphs: [
+          "De locatie bepaalt voor een groot deel hoe snel je praktijk groeit. Denk aan bereikbaarheid, parkeren, zichtbaarheid en de nabijheid van verwijzers. Veel starters huren eerst een ruimte in een gezondheidscentrum of sportschool, wat de drempel en de kosten verlaagt.",
+          "Controleer bij de gemeente of de ruimte gebruikt mag worden voor een praktijk, zeker als je aan huis begint. Let daarnaast op privacy (gesprekken mogen niet te volgen zijn in de wachtruimte), hygiëne, toegankelijkheid en voldoende ruimte om te oefenen.",
+        ],
+      },
+      {
+        heading: "Stap 5: regel je verzekeringen",
+        paragraphs: [
+          "Als zelfstandige ben je zelf verantwoordelijk voor je verzekeringen. Een aantal is onmisbaar, andere zijn sterk aan te raden.",
+        ],
+        list: [
+          "Beroepsaansprakelijkheidsverzekering (BAV): dekt schade door fouten in je behandeling. Zorgverzekeraars vragen hier vaak naar.",
+          "Bedrijfsaansprakelijkheidsverzekering (AVB): dekt schade aan personen of spullen die niet uit de behandeling zelf voortkomt.",
+          "Arbeidsongeschiktheidsverzekering (AOV): als je niet kunt werken, heb je geen inkomen. Voor een fysiotherapeut met een fysiek beroep is dit een belangrijke afweging.",
+          "Inventaris- en rechtsbijstandsverzekering: voor je apparatuur en bij juridische geschillen.",
+        ],
+      },
+      {
+        heading: "Stap 6: sluit contracten met zorgverzekeraars",
+        paragraphs: [
+          "De meeste patiënten krijgen fysiotherapie vergoed via hun aanvullende verzekering of, bij bepaalde aandoeningen, via de basisverzekering. Om rechtstreeks te kunnen declareren tegen het afgesproken tarief, sluit je een contract met elke zorgverzekeraar afzonderlijk. Dat doe je via hun zorginkoopportaal.",
+          "Elke verzekeraar stelt eigen voorwaarden, bijvoorbeeld registratie in een kwaliteitsregister, eisen aan je praktijk en aan de verslaglegging. Contracten lopen meestal per kalenderjaar, dus vraag ze tijdig aan.",
+          "Zonder contract kun je wel behandelen, maar dan is het ongecontracteerde zorg. De patiënt krijgt dan vaak maar een deel van het tarief vergoed, en het verschil betaalt hij of zij zelf. Dat maakt het lastiger om patiënten te trekken.",
+        ],
+      },
+      {
+        heading: "Stap 7: kies je software",
+        paragraphs: [
+          "Software bepaalt hoeveel tijd je kwijt bent aan administratie. Kies systemen die op elkaar aansluiten en die voldoen aan de eisen voor gezondheidsgegevens.",
+        ],
+        list: [
+          "EPD: het dossier van de patiënt, met anamnese, onderzoek, behandelplan en verslaglegging. Vaak met agenda en declaratiemodule.",
+          "Declareren via VECOZO: zorgverzekeraars ontvangen declaraties via VECOZO. Je hebt een VECOZO-registratie en een toestemmingsverklaring nodig, en een EPD dat daarmee kan werken.",
+          "Online afspraken: laat patiënten zelf een afspraak maken. Dat scheelt telefoontjes.",
+          "Oefenprogramma's: om huiswerkoefeningen mee te geven.",
+          "Patiëntenportaal: om patiënten tussen de behandelingen door te volgen, en te zien wie aandacht nodig heeft. Lees meer in [Software voor fysiopraktijken](/blog/software-voor-fysiopraktijken).",
+        ],
+      },
+      {
+        heading: "Stap 8: voldoe aan de wettelijke verplichtingen",
+        paragraphs: [
+          "Als zorgaanbieder heb je te maken met een aantal wetten. Die gelden ook voor een praktijk met één fysiotherapeut.",
+        ],
+        list: [
+          "Wkkgz: je hebt een klachtenregeling, biedt patiënten een onafhankelijke klachtenfunctionaris en bent aangesloten bij een erkende geschilleninstantie, zoals de Geschillencommissie Fysiotherapie.",
+          "WGBO: je legt een dossier aan per patiënt en bewaart het in de regel 20 jaar. Je informeert de patiënt en vraagt toestemming voor de behandeling.",
+          "AVG: gezondheidsgegevens zijn bijzondere persoonsgegevens. Sluit verwerkersovereenkomsten met je softwareleveranciers, beveilig je systemen en communiceer niet via onbeveiligde kanalen. Lees meer in [AVG en patiëntdata in je fysiopraktijk](/blog/avg-patientdata-fysiopraktijk).",
+          "Meldcode huiselijk geweld en kindermishandeling: als zorgverlener ben je verplicht een meldcode te hebben en te gebruiken.",
+        ],
+      },
+      {
+        heading: "Wat kost het om een fysiotherapiepraktijk te starten?",
+        paragraphs: [
+          "Er is geen vast bedrag te noemen. Een zzp'er die ruimte huurt in een bestaande praktijk start met een paar duizend euro, terwijl een volledig nieuwe praktijk met eigen ruimte en oefenzaal een veelvoud daarvan vraagt. Een overname is meestal de duurste route, vanwege de overnamesom en goodwill.",
+          "Zet de kosten in je ondernemingsplan op een rij en vraag offertes op. De bedragen hieronder zijn indicaties van leveranciers en adviseurs, geen vaste prijzen.",
+        ],
+        table: {
+          caption: "Kostenposten bij het starten van een fysiotherapiepraktijk",
+          headers: ["Kostenpost", "Soort", "Indicatie"],
+          rows: [
+            ["Inrichting en apparatuur (behandelbank, oefenmateriaal, meubilair)", "Eenmalig", "Sterk afhankelijk van de omvang. Leasen spreidt de kosten"],
+            ["Verbouwing of aanpassing van de ruimte", "Eenmalig", "Alleen bij een eigen ruimte, vraag offertes op"],
+            ["Huur praktijkruimte", "Maandelijks", "Afhankelijk van locatie en oppervlakte"],
+            ["EPD met declaratiemodule", "Maandelijks", "Voor een solopraktijk vaak 40 tot 80 euro per maand"],
+            ["Beroeps- en bedrijfsaansprakelijkheid", "Maandelijks of jaarlijks", "Voor veel zzp'ers grofweg 15 tot 60 euro per maand samen"],
+            ["Arbeidsongeschiktheidsverzekering", "Maandelijks", "Sterk afhankelijk van leeftijd, dekking en wachttijd"],
+            ["Kwaliteitsregister, beroepsvereniging en pensioen", "Jaarlijks of maandelijks", "Contributie en premie volgens de actuele tarieven"],
+            ["Website, vindbaarheid en promotie", "Eenmalig en doorlopend", "Van een eenvoudige eigen site tot uitbesteed werk"],
+          ],
+        },
+      },
+      {
+        heading: "Financiering: hoe betaal je de start?",
+        paragraphs: [
+          "De meeste starters combineren eigen geld met een lening. Banken vragen een ondernemingsplan en vaak een eigen inbreng. Voor kleinere bedragen of als een bank afhaakt, is Qredits een bekende financier van starters. Apparatuur zoals behandelbanken kun je ook leasen, zodat je minder in één keer hoeft te investeren.",
+          "Reken in je begroting ook met de aanloopperiode. In de eerste maanden heb je minder patiënten, terwijl de vaste lasten wel doorlopen. Een buffer voor die periode voorkomt dat je in de knel komt.",
+        ],
+      },
+      {
+        heading: "Je eerste patiënten: zo word je gevonden",
+        paragraphs: [
+          "Een praktijk groeit vooral via verwijzers en via mond-tot-mondreclame. Investeer daarom vanaf het begin in relaties en in je online vindbaarheid.",
+        ],
+        list: [
+          "Stel je voor bij huisartsen, praktijkondersteuners en specialisten in de buurt.",
+          "Werk samen met sportclubs, sportscholen en andere zorgverleners.",
+          "Maak een Google Bedrijfsprofiel aan, zodat je gevonden wordt in Google Maps.",
+          "Zorg voor een heldere website met je specialisaties, je vergoedingen en een manier om direct een afspraak te maken.",
+          "Vraag tevreden patiënten om een beoordeling, bijvoorbeeld op Google of ZorgkaartNederland.",
+        ],
+      },
+      {
+        heading: "Checklist voor het starten van je praktijk",
+        paragraphs: [
+          "Gebruik deze lijst om bij te houden waar je staat.",
+        ],
+        list: [
+          "Route gekozen: zelfstandige in een bestaande praktijk, overname of nieuwe start",
+          "Ondernemingsplan en begroting geschreven",
+          "BIG-registratie actueel",
+          "AGB-code voor jezelf en voor de praktijk aangevraagd bij Vektis",
+          "Ingeschreven bij de KvK en rechtsvorm gekozen",
+          "Geregistreerd in een kwaliteitsregister",
+          "Aangemeld bij het pensioenfonds",
+          "Praktijkruimte geregeld en gecontroleerd bij de gemeente",
+          "Verzekeringen afgesloten",
+          "Contracten met zorgverzekeraars aangevraagd",
+          "EPD gekozen en VECOZO ingericht",
+          "Klachtenregeling, klachtenfunctionaris en geschilleninstantie geregeld",
+          "Privacybeleid, verwerkersovereenkomsten en meldcode op orde",
+          "Website, Google Bedrijfsprofiel en contact met verwijzers",
+        ],
+      },
+      {
+        heading: "Hoe REVA een startende praktijk ondersteunt",
+        paragraphs: [
+          "Als startende praktijk wil je je tijd besteden aan behandelen, niet aan nabellen en losse appjes. REVA is een patiëntenportaal dat naast je EPD werkt. Patiënten houden zelf hun herstel bij met een korte check-in, en jij ziet in één overzicht wie aandacht nodig heeft. Het portaal draait in de huisstijl van je eigen praktijk, wat een nieuwe praktijk direct een professionele uitstraling geeft.",
+          "REVA is er vanaf 49 euro per maand voor een zelfstandige fysiotherapeut, en je probeert het 30 dagen gratis. Bekijk de [prijzen](/prijzen) of [vraag een demo aan](/demo-aanvragen).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Wat kost het om een fysiotherapiepraktijk te starten?",
+        answer: "Dat hangt sterk af van de route. Als zelfstandige in een bestaande praktijk start je met een paar duizend euro. Een nieuwe praktijk met eigen ruimte en apparatuur, of een overname, vraagt een veelvoud daarvan. Daarnaast heb je maandelijkse kosten voor onder meer huur, software, verzekeringen, registraties en pensioen.",
+      },
+      {
+        question: "Welke registraties heb ik nodig als zelfstandig fysiotherapeut?",
+        answer: "Een BIG-registratie, een persoonlijke AGB-code en een AGB-code voor je praktijk via Vektis, een inschrijving bij de KvK, registratie in het Landelijk Register Zorgaanbieders en meestal een registratie in een kwaliteitsregister zoals KRF NL of Keurmerk Fysiotherapie. Zelfstandig fysiotherapeuten melden zich daarnaast aan bij het Pensioenfonds Fysiotherapeuten.",
+      },
+      {
+        question: "Kan ik een praktijk starten zonder contract met zorgverzekeraars?",
+        answer: "Ja, maar dan geef je ongecontracteerde zorg. Je patiënten krijgen dan vaak maar een deel van het tarief vergoed en betalen het verschil zelf. De meeste praktijken sluiten daarom contracten met de grote zorgverzekeraars.",
+      },
+      {
+        question: "Moet ik btw rekenen als fysiotherapeut?",
+        answer: "Fysiotherapie door een BIG-geregistreerde fysiotherapeut is in de regel vrijgesteld van btw. Andere diensten of producten, zoals losse sportlessen of de verkoop van hulpmiddelen, kunnen wel onder de btw vallen. Laat dit nagaan door je boekhouder.",
+      },
+      {
+        question: "Moet ik lid zijn van het KNGF?",
+        answer: "Nee, lidmaatschap van een beroepsvereniging is niet verplicht. Het KNGF biedt wel ondersteuning voor ondernemers, en leden krijgen korting op onder meer verzekeringen.",
+      },
+      {
+        question: "Hoe lang duurt het om een eigen praktijk te starten?",
+        answer: "Reken op enkele maanden voorbereiding. Vooral het vinden van een ruimte, het regelen van financiering en het afsluiten van contracten met zorgverzekeraars kost tijd. Contracten lopen meestal per kalenderjaar, dus begin daar op tijd mee.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
