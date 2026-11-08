@@ -594,6 +594,7 @@ function FaqTeaserSection() {
                     <button
                       type="button"
                       onClick={() => setOpenIndex(isOpen ? null : i)}
+                      aria-expanded={isOpen}
                       className="w-full flex items-center justify-between gap-4 py-5 text-left"
                     >
                       <span className="font-semibold text-base" style={{ color: "#1a1a1a" }}>

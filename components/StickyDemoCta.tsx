@@ -19,11 +19,25 @@ export function StickyDemoCta() {
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShown(window.scrollY > 640);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    // Verberg de balk zodra de footer in beeld komt: daar staat zelf een demoknop,
+    // en de balk zou die anders afdekken.
+    let footerVisible = false;
+    const update = () => setShown(window.scrollY > 640 && !footerVisible);
+    const footer = document.querySelector("footer");
+    const observer = footer
+      ? new IntersectionObserver(([entry]) => {
+          footerVisible = entry.isIntersecting;
+          update();
+        })
+      : null;
+    if (footer && observer) observer.observe(footer);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", update);
+      observer?.disconnect();
+    };
+  }, [pathname]);
 
   if (HIDDEN.some((p) => pathname === p || pathname.startsWith(`${p}/`)) || !hasChosen) return null;
 
@@ -43,7 +57,7 @@ export function StickyDemoCta() {
           <span className="block font-semibold text-sm" style={{ color: "#1a1a1a" }}>Zie REVA in 30 minuten</span>
           Vrijblijvend en online
         </p>
-        <Link href="/demo-aanvragen" tabIndex={shown ? 0 : -1} className="btn-primary px-4 py-2.5 text-sm shrink-0">
+        <Link href="/demo-aanvragen#aanvraag" tabIndex={shown ? 0 : -1} className="btn-primary px-4 py-2.5 text-sm shrink-0">
           Plan een demo
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>

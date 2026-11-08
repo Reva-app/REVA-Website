@@ -133,7 +133,7 @@ export default function DemoAanvragenPage() {
               </div>
 
               {/* Right: form card */}
-              <div className="lg:col-span-3">
+              <div id="aanvraag" className="lg:col-span-3">
                 <AnimateIn direction="right">
                   <div
                     className="rounded-2xl p-6 md:p-8"

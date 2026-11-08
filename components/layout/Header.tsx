@@ -223,7 +223,7 @@ export function Header() {
             Inloggen
           </Link>
           <Link
-            href="/demo-aanvragen"
+            href="/demo-aanvragen#aanvraag"
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-white transition-colors"
             style={{ background: "#e8632a" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
@@ -302,7 +302,7 @@ export function Header() {
           ))}
           <div className="pt-3">
             <Link
-              href="/demo-aanvragen"
+              href="/demo-aanvragen#aanvraag"
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium text-white"
               style={{ background: "#e8632a" }}
             >

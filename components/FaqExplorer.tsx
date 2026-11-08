@@ -15,7 +15,8 @@ export function FaqExplorer({ groups }: { groups: FaqGroup[] }) {
   const filtered = useMemo(() => {
     const q = normalize(query.trim());
     return groups
-      .filter((g) => active === "alle" || g.id === active)
+      // Bij een zoekterm altijd in alle categorieën zoeken
+      .filter((g) => q !== "" || active === "alle" || g.id === active)
       .map((g) => ({
         ...g,
         items: q ? g.items.filter((i) => normalize(`${i.q} ${i.a}`).includes(q)) : g.items,

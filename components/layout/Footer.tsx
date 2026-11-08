@@ -19,7 +19,7 @@ export function Footer() {
               Het patiëntenportaal voor fysiotherapiepraktijken. Overzicht over je patiënten, minder telefoontjes.
             </p>
             <Link
-              href="/demo-aanvragen"
+              href="/demo-aanvragen#aanvraag"
               className="group btn-primary px-4 py-2 text-sm"
             >
               Plan een demo
