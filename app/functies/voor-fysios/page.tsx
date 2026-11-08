@@ -220,7 +220,7 @@ export default function VoorFysiosPage() {
                 In een demo lopen we deze route door voor jouw praktijk.
               </p>
               <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3 mb-10">
-                Vraag een demo aan
+                Plan een demo
                 <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
               <div className="text-left">

@@ -183,7 +183,7 @@ export function LandingClosingCta({ title, text }: { title: string; text: string
           <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-white mb-4">{title}</h2>
           <p className="mb-8 text-base md:text-lg" style={{ color: "#9ca3af" }}>{text}</p>
           <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3 mb-10">
-            Vraag een demo aan
+            Plan een demo
             <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
           </Link>
           <div className="text-left">

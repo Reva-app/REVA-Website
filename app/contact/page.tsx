@@ -107,7 +107,7 @@ export default function ContactPage() {
                         <p className="text-sm font-semibold mb-0.5" style={{ color: "#1a1a1a" }}>Wil je een demo?</p>
                         <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
                           <Link href="/demo-aanvragen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
-                            Vraag hier een demo aan
+                            Plan hier een demo
                           </Link>{" "}
                           en we plannen een rondleiding op maat.
                         </p>

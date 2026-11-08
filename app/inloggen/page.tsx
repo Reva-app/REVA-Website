@@ -71,7 +71,7 @@ export default function InloggenPage() {
               <p className="text-sm" style={{ color: "#9ca3af" }}>
                 Nog geen account voor je praktijk?{" "}
                 <Link href="/demo-aanvragen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
-                  Vraag een demo aan
+                  Plan een demo
                 </Link>
                 . Hulp nodig bij inloggen? Mail{" "}
                 <a href="mailto:info@reva-app.nl" className="font-medium hover-orange" style={{ color: "#6b7280" }}>

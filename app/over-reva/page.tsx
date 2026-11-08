@@ -200,7 +200,7 @@ export default function OverRevaPage() {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm border transition-colors hover:bg-[#f1ede8]"
                   style={{ background: "#ffffff", color: "#1a1a1a", borderColor: "#e8e5df" }}
                 >
-                  Vraag een demo aan
+                  Plan een demo
                 </Link>
               </div>
             </AnimateIn>
@@ -532,7 +532,7 @@ export default function OverRevaPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
                 <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
-                  Vraag een demo aan
+                  Plan een demo
                   <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <Link href="/functies" className="btn-dark px-6 py-3 text-sm">

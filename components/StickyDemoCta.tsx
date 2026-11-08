@@ -41,7 +41,7 @@ export function StickyDemoCta() {
       <div className="flex items-center gap-3 px-4 pt-3">
         <p className="flex-1 text-xs leading-snug" style={{ color: "#6b7280" }}>
           <span className="block font-semibold text-sm" style={{ color: "#1a1a1a" }}>Zie REVA in 30 minuten</span>
-          Vrijblijvend, online of in je praktijk
+          Vrijblijvend en online
         </p>
         <Link href="/demo-aanvragen" tabIndex={shown ? 0 : -1} className="btn-primary px-4 py-2.5 text-sm shrink-0">
           Plan een demo

@@ -228,7 +228,7 @@ export function Header() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
           >
-            Vraag een demo aan
+            Plan een demo
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -305,7 +305,7 @@ export function Header() {
               className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium text-white"
               style={{ background: "#e8632a" }}
             >
-              Vraag een demo aan
+              Plan een demo
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

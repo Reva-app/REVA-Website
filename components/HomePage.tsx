@@ -706,7 +706,7 @@ function DemoSection() {
             />
             <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium" style={{ background: "rgba(255,255,255,0.92)", color: "#1a1a1a" }}>
               <Calendar className="w-3.5 h-3.5" style={{ color: "#e8632a" }} />
-              30 minuten, online of in je praktijk
+              30 minuten, online
             </div>
           </div>
         </AnimateIn>
@@ -773,7 +773,7 @@ function CtaSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Vraag een demo aan
+              Plan een demo
               <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </Link>
             <Link

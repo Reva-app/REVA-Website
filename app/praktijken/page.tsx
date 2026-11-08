@@ -155,7 +155,7 @@ export default function PraktijkenPage() {
                     <PilotOfferBanner stacked />
                   ) : (
                     <Link href="/demo-aanvragen" className="group btn-primary px-5 py-2.5 text-sm">
-                      Vraag een demo aan
+                      Plan een demo
                       <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                     </Link>
                   )}

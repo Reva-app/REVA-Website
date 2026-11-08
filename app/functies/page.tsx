@@ -140,7 +140,7 @@ export default function FunctiesPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
                 <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
-                  Vraag een demo aan
+                  Plan een demo
                   <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <Link href="/prijzen" className="btn-dark px-6 py-3 text-sm">

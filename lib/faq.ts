@@ -167,8 +167,8 @@ export const faqGroups: FaqGroup[] = [
         a: "Kies je een pakket, dan werk je gewoon door met alles wat je hebt ingericht. Kies je geen pakket, dan kunnen medewerkers niet meer in het praktijkportaal, maar houden patiënten toegang tot hun eigen gegevens.",
       },
       {
-        q: "Wat is het pilotaanbod?",
-        a: "De eerste 3 praktijken die met REVA starten, krijgen 50% korting op het eerste jaar. In ruil daarvoor vragen we hun feedback en een korte klantervaring, zodat we REVA samen verder kunnen verbeteren.",
+        q: "Wat is het pilotprogramma?",
+        a: "REVA zoekt 3 praktijken die REVA als eerste gebruiken. Pilotpraktijken krijgen 50% korting op het eerste jaar en persoonlijke onboarding. In ruil daarvoor vragen we hun feedback en een klantervaring, zodat we REVA samen verder verbeteren. Meer informatie en aanmelden via de pilotpagina.",
       },
       {
         q: "Zijn alle functies inbegrepen in elk pakket?",

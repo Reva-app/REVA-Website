@@ -103,7 +103,7 @@ export default function PilotPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="#aanmelden" className="group btn-primary px-5 py-3 text-sm justify-center">
-                  {open ? "Meld je praktijk aan" : "Vraag een demo aan"}
+                  {open ? "Meld je praktijk aan" : "Plan een demo"}
                   <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
                 <Link
@@ -298,7 +298,7 @@ export default function PilotPage() {
               <p className="text-base leading-relaxed mb-6" style={{ color: "#6b7280" }}>
                 {open
                   ? "Laat je gegevens achter. We nemen binnen één werkdag contact op voor een kennismaking van 30 minuten. Aanmelden is vrijblijvend."
-                  : `Je kunt REVA wel gewoon gebruiken. Vraag een demo aan en probeer REVA ${TRIAL_DAYS} dagen gratis.`}
+                  : `Je kunt REVA wel gewoon gebruiken. Plan een demo en probeer REVA ${TRIAL_DAYS} dagen gratis.`}
               </p>
               <p className="text-sm" style={{ color: "#6b7280" }}>
                 Liever eerst een vraag stellen? Mail naar <span className="font-medium" style={{ color: "#1a1a1a" }}>info@reva-app.nl</span>.

@@ -133,10 +133,10 @@ export default function BlogIndexPage() {
                 Klaar voor overzicht over je patiënten?
               </h2>
               <p className="mb-6" style={{ color: "#7c7c8a" }}>
-                Vraag een demo aan en ontdek hoe REVA past bij jouw praktijk.
+                Plan een demo en ontdek hoe REVA past bij jouw praktijk.
               </p>
               <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3">
-                Vraag een demo aan
+                Plan een demo
                 <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
             </AnimateIn>

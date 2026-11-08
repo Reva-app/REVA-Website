@@ -48,7 +48,7 @@ export default function NotFound() {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm border transition-colors hover:bg-[#f1ede8]"
                 style={{ background: "#ffffff", color: "#1a1a1a", borderColor: "#e8e5df" }}
               >
-                Vraag een demo aan
+                Plan een demo
               </Link>
             </div>
           </div>

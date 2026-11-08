@@ -117,7 +117,7 @@ export function PricingTable() {
                     (e.currentTarget as HTMLAnchorElement).style.background = tier.popular ? "#e8632a" : "#f8f7f4";
                   }}
                 >
-                  Vraag een demo aan
+                  Plan een demo
                   <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </Link>
               </div>

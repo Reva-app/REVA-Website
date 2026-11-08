@@ -41,8 +41,8 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-11-05",
     readTime: "5 min",
     image: {
-      src: "/blog/tijd-besparen-patientcommunicatie-fysiopraktijk.webp",
-      alt: "Losse berichten en gemiste oproepen van patiënten komen in REVA samen in één overzicht van wat er vandaag is binnengekomen",
+      src: "/blog/tijd-besparen-foto.webp",
+      alt: "Fysiotherapeut werkt aan een bureau in de praktijk, met de behandelruimte op de achtergrond",
     },
     keywords: [
       "tijd besparen fysiopraktijk",
@@ -153,8 +153,8 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-11-05",
     readTime: "4 min",
     image: {
-      src: "/blog/therapietrouw-verhogen-patienten-herkennen.webp",
-      alt: "Grafiek in REVA waarin de therapietrouw van een patiënt vier weken daalt, met een signaal om contact op te nemen",
+      src: "/blog/therapietrouw-foto.webp",
+      alt: "Patiënt doet thuis een kniebuiging, met haar telefoon op de oefenmat",
     },
     keywords: [
       "therapietrouw fysiotherapie",
@@ -612,8 +612,8 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-11-05",
     readTime: "5 min",
     image: {
-      src: "/blog/fysio-op-vakantie-continuiteit-van-zorg.webp",
-      alt: "De vaste fysiotherapeut is met vakantie en een collega op een andere vestiging ziet hetzelfde dossier met herstelplan en laatste checks van de patiënt",
+      src: "/blog/fysio-op-vakantie-foto.webp",
+      alt: "Twee collega's in een fysiotherapiepraktijk bekijken samen gegevens op een laptop",
     },
     keywords: [
       "continuïteit van zorg fysiotherapie",
@@ -864,8 +864,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-11-06",
     readTime: "8 min",
     image: {
-      src: "/blog/pijn-na-een-operatie.webp",
-      alt: "Fysiotherapeut begeleidt een patiënt met een geopereerde knie in een lichte praktijkruimte",
+      src: "/blog/pijn-na-een-operatie-foto.webp",
+      alt: "Patiënt met een kniebrace loopt door de oefenzaal van een fysiotherapiepraktijk",
     },
     keywords: [
       "pijn na operatie",

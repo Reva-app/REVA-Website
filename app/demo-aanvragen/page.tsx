@@ -79,9 +79,9 @@ export default function DemoAanvragenPage() {
                     Zie hoe REVA in <span style={{ color: "#e8632a" }}>jouw praktijk</span> past
                   </h1>
                   <p className="text-sm leading-relaxed mb-8" style={{ color: "#6b7280" }}>
-                    Laat je gegevens achter, dan bellen we binnen één werkdag terug. We plannen een
-                    moment dat in jouw agenda past en lopen het systeem stap voor stap door. Geheel
-                    vrijblijvend, en hooguit 30 minuten van je tijd.
+                    Laat je gegevens achter, dan nemen we binnen één werkdag contact op om een moment
+                    te plannen dat in jouw agenda past. De demo is online, vrijblijvend en duurt hooguit
+                    30 minuten.
                   </p>
                   <div className="relative rounded-2xl overflow-hidden mb-8" style={{ aspectRatio: "16 / 10" }}>
                     <Image
