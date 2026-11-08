@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
-import { FeatureDemo } from "@/components/features/FeatureDemo";
+import { PhotoWithDemo } from "@/components/ui/PhotoWithDemo";
 import { StoryRow } from "@/components/features/FeatureShowcase";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 import { REVA_LIBRARY } from "@/lib/features";
@@ -131,8 +131,8 @@ export default function VoorFysiosPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm justify-center">
-                  Vraag een demo aan
-                  <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                  Plan een demo van 30 minuten
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   href="/functies"
@@ -143,13 +143,9 @@ export default function VoorFysiosPage() {
                 </Link>
               </div>
             </AnimateIn>
-            <AnimateIn direction="up" delay={120}>
-              <div className="rounded-3xl p-5 sm:p-8 md:p-10" style={{ background: "#f1ede8" }}>
-                <div className="max-w-md mx-auto">
-                  <FeatureDemo demo="signalering" />
-                </div>
-              </div>
-            </AnimateIn>
+            <div className="lg:pl-12 lg:pb-14">
+              <PhotoWithDemo src="/beeld/behandelruimte.webp" alt="Lichte behandelruimte van een fysiotherapiepraktijk" demo="signalering" position="40% center" priority />
+            </div>
           </div>
         </section>
 

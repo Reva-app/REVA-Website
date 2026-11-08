@@ -94,6 +94,7 @@ export default function OefenprogrammaAppPage() {
           title="Een oefenprogramma-app die meebeweegt met het herstel"
           lead="Geef thuisoefeningen mee die horen bij de fase van het herstelplan. Je patiënt heeft het schema altijd op zak, en jij ziet of er ook echt geoefend wordt."
           demo="training"
+          photo={{ src: "/headline-2.webp", alt: "Patiënt met kniebrace loopt door de oefenzaal van een fysiotherapiepraktijk", position: "60% center" }}
           secondary={{ href: "/functies#oefeningen", label: "Meer over oefeningen" }}
         />
 

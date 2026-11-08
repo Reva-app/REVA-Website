@@ -4,6 +4,7 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { FeatureDemo } from "@/components/features/FeatureDemo";
+import { PhotoWithDemo } from "@/components/ui/PhotoWithDemo";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 import type { DemoKey } from "@/lib/features";
 import { pilotOffer } from "@/lib/offer";
@@ -54,12 +55,15 @@ export function LandingHero({
   title,
   lead,
   demo,
+  photo,
   secondary = { href: "/prijzen", label: "Bekijk de prijzen" },
 }: {
   eyebrow: string;
   title: string;
   lead: string;
   demo: DemoKey;
+  /** Sfeerfoto achter de productkaart; zonder foto staat alleen de kaart er */
+  photo?: { src: string; alt: string; position?: string };
   secondary?: { href: string; label: string };
 }) {
   const offerOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;
@@ -83,8 +87,8 @@ export function LandingHero({
           )}
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm justify-center">
-              Vraag een demo aan
-              <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+              Plan een demo van 30 minuten
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
             <Link
               href={secondary.href}
@@ -103,13 +107,19 @@ export function LandingHero({
             ))}
           </ul>
         </AnimateIn>
-        <AnimateIn direction="up" delay={120}>
-          <div className="rounded-3xl p-5 sm:p-8 md:p-10" style={{ background: "#f1ede8" }}>
-            <div className="max-w-md mx-auto">
-              <FeatureDemo demo={demo} />
-            </div>
+        {photo ? (
+          <div className="lg:pl-12 lg:pb-14">
+            <PhotoWithDemo src={photo.src} alt={photo.alt} position={photo.position} demo={demo} priority />
           </div>
-        </AnimateIn>
+        ) : (
+          <AnimateIn direction="up" delay={120}>
+            <div className="rounded-3xl p-5 sm:p-8 md:p-10" style={{ background: "#f1ede8" }}>
+              <div className="max-w-md mx-auto">
+                <FeatureDemo demo={demo} />
+              </div>
+            </div>
+          </AnimateIn>
+        )}
       </div>
     </section>
   );

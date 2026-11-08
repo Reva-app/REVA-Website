@@ -196,6 +196,21 @@ body {
   }
 }
 
+/* Zachte zweefbeweging voor productkaarten boven een foto */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.animate-float-soft { animation: floatSoft 6s ease-in-out infinite; }
+
+/* Foto zoomt rustig in zijn kader zodra het blok in beeld komt */
+.img-reveal { transform: scale(1.06); transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.is-visible .img-reveal { transform: scale(1); }
+
+/* Mobiele demo-balk schuift van onderen in beeld */
+.sticky-cta { transform: translateY(110%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.sticky-cta.is-shown { transform: translateY(0); }
+
 /* Bezoekers die minder beweging hebben ingesteld, krijgen geen scrollanimaties */
 @media (prefers-reduced-motion: reduce) {
   .scroll-anim-up,
@@ -206,6 +221,8 @@ body {
     transform: none;
     transition: none;
   }
+  .animate-float-soft { animation: none; }
+  .img-reveal { transform: none; transition: none; }
 }
 
 /* ─── Button utility classes (server-component safe) ────────── */

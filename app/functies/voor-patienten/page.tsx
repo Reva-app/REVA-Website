@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Mail, KeyRound, ClipboardCheck, Smartphone, Globe } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
@@ -129,8 +130,8 @@ export default function VoorPatientenPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm justify-center">
-                  Vraag een demo aan
-                  <ArrowRight className="w-3.5 h-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                  Plan een demo van 30 minuten
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   href="/functies/voor-fysios"
@@ -146,8 +147,20 @@ export default function VoorPatientenPage() {
               </div>
             </AnimateIn>
             <AnimateIn direction="up" delay={120}>
-              <div className="rounded-3xl py-8 px-4" style={{ background: "#f1ede8" }}>
-                <FeatureDemo demo="checkin" />
+              <div className="relative rounded-3xl overflow-hidden py-10 px-4">
+                <Image
+                  src="/beeld/thuis-oefenen.webp"
+                  alt="Patiënt doet thuis een oefening, met haar telefoon op de oefenmat"
+                  fill
+                  priority
+                  className="object-cover img-reveal"
+                  style={{ objectPosition: "55% center" }}
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(24,24,26,0.05), rgba(24,24,26,0.35))" }} />
+                <div className="relative animate-float-soft">
+                  <FeatureDemo demo="checkin" />
+                </div>
               </div>
             </AnimateIn>
           </div>

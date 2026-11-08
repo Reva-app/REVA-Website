@@ -6,7 +6,7 @@ import { company } from "@/lib/about";
 
 export function Footer() {
   return (
-    <footer style={{ background: "#18181a", color: "#ffffff" }}>
+    <footer className="pb-20 md:pb-0" style={{ background: "#18181a", color: "#ffffff" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-14 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
 

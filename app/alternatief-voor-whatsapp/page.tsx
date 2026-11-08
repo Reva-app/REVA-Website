@@ -85,6 +85,7 @@ export default function AlternatiefVoorWhatsappPage() {
           title="Een veilig alternatief voor WhatsApp met je patiënten"
           lead="Appjes over pijn, oefeningen en voortgang lopen via privételefoons en verdwijnen in chats. Met REVA geven patiënten zelf door hoe het gaat, en zie jij het verloop terug in het dossier."
           demo="checkin"
+          photo={{ src: "/beeld/thuis-oefenen.webp", alt: "Patiënt doet thuis een oefening met haar telefoon op de oefenmat", position: "55% center" }}
           secondary={{ href: "/blog/van-whatsapp-naar-patientenportaal", label: "Lees over de overstap" }}
         />
 

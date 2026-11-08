@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { preload } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,56 +21,17 @@ import { AnimateIn } from "./ui/AnimateIn";
 import { BlogCover } from "./blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { comparisonRows, homeFaq } from "@/lib/home-faq";
-import { pilotDemoHref, pilotOffer } from "@/lib/offer";
+import { pilotOffer } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { PracticeLogos } from "@/components/PracticeLogos";
+import { FeatureDemo } from "@/components/features/FeatureDemo";
 import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
 // ─── Data ─────────────────────────────────────────────────────
 
-// ─── Rotating headline ───────────────────────────────────────────
-
-const rotatingPhrases = [
-  "tijd willen besparen.",
-  "minder willen bellen en appen.",
-  "patiënten tussen afspraken volgen.",
-  "zich willen onderscheiden.",
-];
-
-function useTypewriter(phrases: string[], typingSpeed = 45, deletingSpeed = 30, pause = 1800) {
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = phrases[index % phrases.length];
-
-    if (!deleting && text === current) {
-      const timeout = setTimeout(() => setDeleting(true), pause);
-      return () => clearTimeout(timeout);
-    }
-
-    if (deleting && text === "") {
-      const timeout = setTimeout(() => {
-        setDeleting(false);
-        setIndex((i) => (i + 1) % phrases.length);
-      }, typingSpeed);
-      return () => clearTimeout(timeout);
-    }
-
-    const timeout = setTimeout(() => {
-      setText((t) => (deleting ? current.slice(0, t.length - 1) : current.slice(0, t.length + 1)));
-    }, deleting ? deletingSpeed : typingSpeed);
-    return () => clearTimeout(timeout);
-  }, [text, deleting, index, phrases, typingSpeed, deletingSpeed, pause]);
-
-  return text;
-}
-
 // ─── Sections ──────────────────────────────────────────────────
 
 function HeroSection() {
-  const rotatingText = useTypewriter(rotatingPhrases);
   preload("/headline-reva-app.webp", { as: "image", fetchPriority: "high" });
   const offerOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;
 
@@ -90,58 +51,44 @@ function HeroSection() {
         style={{ background: "linear-gradient(100deg, rgba(24,24,26,0.95) 0%, rgba(24,24,26,0.85) 42%, rgba(24,24,26,0.5) 70%, rgba(24,24,26,0.2) 100%)" }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-5 md:px-8 w-full py-28 md:py-32">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8 w-full py-28 md:py-32 grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-14 items-center">
         <div className="w-full text-left space-y-6">
-          {offerOpen ? (
-            <>
-              <h1 className="animate-fade-in-up delay-100 text-sm font-medium" style={{ color: "#e8632a" }}>
-                Patiëntenportaal voor fysiotherapiepraktijken
-              </h1>
-              <p className="animate-fade-in-up delay-200 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white max-w-3xl">
-                Word een van de drie <span style={{ color: "#e8632a" }}>pilotpraktijken</span> van REVA
-              </p>
-            </>
-          ) : (
-            <>
-              <div className="animate-fade-in-up delay-100">
-                <span
-                  className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border"
-                  style={{ background: "#fff3ee", color: "#e8632a", borderColor: "rgba(232,99,42,0.2)" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full animate-pulse-soft" style={{ background: "#e8632a" }} />
-                  Voor fysiotherapiepraktijken
-                </span>
-              </div>
-              <h1 className="animate-fade-in-up delay-200 md:whitespace-nowrap text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.15]">
-                <span className="text-white">Voor fysiopraktijken die </span>
-                <br className="md:hidden" />
-                <span style={{ color: "#e8632a" }}>
-                  {rotatingText}
-                  <span className="animate-pulse-soft">|</span>
-                </span>
-              </h1>
-            </>
+          {offerOpen && (
+            <Link
+              href="/pilot"
+              className="animate-fade-in-up delay-100 group inline-flex items-center gap-2 text-xs sm:text-sm font-medium pl-2 pr-3 py-1.5 rounded-full transition-colors"
+              style={{ background: "rgba(232,99,42,0.14)", color: "#ffffff", border: "1px solid rgba(232,99,42,0.35)" }}
+            >
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-white text-xs font-semibold" style={{ background: "#e8632a" }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft" />
+                Pilot
+              </span>
+              {pilotOffer.discountPercent}% korting voor de eerste {pilotOffer.spotsTotal} praktijken
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           )}
+          <h1 className="animate-fade-in-up delay-100 text-sm font-medium" style={{ color: "#e8632a" }}>
+            Patiëntenportaal voor fysiotherapiepraktijken
+          </h1>
+          <p className="animate-fade-in-up delay-200 text-4xl md:text-5xl lg:text-[3.4rem] font-semibold tracking-tight leading-[1.08] text-white max-w-3xl">
+            Zie direct welke patiënt <span style={{ color: "#e8632a" }}>aandacht nodig heeft</span>
+          </p>
 
-          <div className="max-w-2xl space-y-6">
-          <p className="animate-fade-in-up delay-300 text-base leading-relaxed" style={{ color: "#c9c9ce" }}>
-            Met REVA houden je patiënten zelf hun herstel bij en zie jij in één overzicht wie
-            aandacht nodig heeft. Minder telefoontjes, meer grip op je caseload.
-            {offerOpen && (
-              <> We zijn net gestart en zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken. Je krijgt {pilotOffer.discountPercent}% korting op het eerste jaar en persoonlijke onboarding, in ruil voor je feedback en een klantervaring.</>
-            )}
+          <p className="animate-fade-in-up delay-300 text-base md:text-lg leading-relaxed max-w-xl" style={{ color: "#c9c9ce" }}>
+            Je patiënten loggen thuis pijn, oefeningen en voortgang in een korte check-in. Jij ziet in één
+            overzicht wie afwijkt van het herstelplan, zonder te bellen of te appen.
           </p>
 
           <div className="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3">
             <Link
-              href={offerOpen ? pilotDemoHref : "/demo-aanvragen"}
+              href="/demo-aanvragen"
               className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              {offerOpen ? "Meld je praktijk aan" : "Vraag een demo aan"}
-              <ArrowRight className="w-4 h-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+              Plan een demo van 30 minuten
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
             <Link
               href={offerOpen ? "/pilot" : "/prijzen"}
@@ -150,34 +97,30 @@ function HeroSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.14)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
             >
-              {offerOpen ? "Wat houdt de pilot in?" : "Bekijk prijzen"}
+              {offerOpen ? "Word pilotpraktijk" : "Bekijk prijzen"}
             </Link>
           </div>
 
-          {offerOpen && (
-            <p className="animate-fade-in-up delay-500 flex items-center gap-2 text-sm" style={{ color: "#c9c9ce" }}>
-              <span className="flex gap-1" aria-hidden="true">
-                {Array.from({ length: pilotOffer.spotsTotal }).map((_, i) => (
-                  <span
-                    key={i}
-                    className="w-2 h-2 rounded-full"
-                    style={{ background: i < pilotOffer.spotsLeft ? "#e8632a" : "rgba(255,255,255,0.3)" }}
-                  />
-                ))}
-              </span>
-              Nog {pilotOffer.spotsLeft} van de {pilotOffer.spotsTotal} pilotplekken beschikbaar
-            </p>
-          )}
-
           <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-x-5 gap-y-2">
-            {["Europese servers", `${TRIAL_DAYS} dagen gratis proberen`, "Persoonlijke onboarding"].map((label) => (
+            {["Werkt naast je EPD", "Vanaf 49 euro per maand", `${TRIAL_DAYS} dagen gratis proberen`].map((label) => (
               <div key={label} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
                 <span className="text-sm" style={{ color: "#c9c9ce" }}>{label}</span>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Product direct zichtbaar: zo ziet het dashboard van de fysio eruit */}
+        <div className="animate-fade-in-up delay-300 w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
+          <div className="animate-float-soft">
+            <div className="rounded-2xl p-2.5 sm:p-3" style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.14)", backdropFilter: "blur(10px)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+              <FeatureDemo demo="signalering" />
+            </div>
           </div>
+          <p className="mt-4 text-xs text-center lg:text-left" style={{ color: "#9ca3af" }}>
+            Het praktijkoverzicht in REVA, met signalering per patiënt
+          </p>
         </div>
       </div>
     </section>
@@ -395,6 +338,16 @@ function ProblemSection() {
             Je ziet een patiënt een of twee keer per week. Wat er in de dagen daartussen gebeurt, bepaalt
             voor een groot deel het resultaat. Herken je dit?
           </p>
+          <div className="mt-8 relative rounded-2xl overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
+            <Image
+              src="/beeld/thuis-oefenen.webp"
+              alt="Patiënt doet thuis een kniebuiging in de woonkamer, met haar telefoon op de oefenmat"
+              fill
+              className="object-cover img-reveal"
+              style={{ objectPosition: "55% center" }}
+              sizes="(min-width: 1024px) 420px, 100vw"
+            />
+          </div>
         </AnimateIn>
         <div className="space-y-4">
           {painPoints.map((p, i) => (
@@ -434,7 +387,7 @@ function ProductSection() {
               src="/image-reva-app.png"
               alt="Fysiotherapeut bekijkt het patiëntoverzicht van REVA op een computer in de praktijk"
               fill
-              className="object-cover"
+              className="object-cover img-reveal"
               sizes="(min-width: 1024px) 560px, 100vw"
             />
           </div>
@@ -458,10 +411,16 @@ function ProductSection() {
               </div>
             ))}
           </dl>
-          <Link href="/functies" className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium hover-orange" style={{ color: "#e8632a" }}>
-            Bekijk alle functies
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+            <Link href="/demo-aanvragen" className="group btn-primary px-5 py-2.5 text-sm justify-center">
+              Zie het in een demo
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link href="/functies" className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange" style={{ color: "#e8632a" }}>
+              Bekijk alle functies
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </AnimateIn>
       </div>
     </section>
@@ -722,6 +681,67 @@ function BlogTeaserSection() {
   );
 }
 
+// ─── De demo ───────────────────────────────────────────────────
+
+const demoAgenda = [
+  { title: "Jouw werkwijze als uitgangspunt", text: "We beginnen bij hoe jij nu patiënten volgt, en laten zien wat REVA daaraan verandert." },
+  { title: "Het dashboard met voorbeeldpatiënten", text: "Je ziet de signalering, een dossier en een herstelplan zoals jij ze straks gebruikt." },
+  { title: "De app van je patiënt", text: "Hoe een check-in eruitziet, en hoe je patiënt oefeningen en voortgang ziet." },
+  { title: "Prijs en planning", text: "Je weet direct welk pakket past, wat het kost en hoe snel je kunt starten." },
+];
+
+function DemoSection() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: "#ffffff" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <AnimateIn direction="up">
+          <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
+            <Image
+              src="/beeld/demo-gesprek.webp"
+              alt="Fysiotherapeut en praktijkeigenaar bekijken samen REVA op een laptop in de praktijk"
+              fill
+              className="object-cover img-reveal"
+              style={{ objectPosition: "center" }}
+              sizes="(min-width: 1024px) 560px, 100vw"
+            />
+            <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium" style={{ background: "rgba(255,255,255,0.92)", color: "#1a1a1a" }}>
+              <Calendar className="w-3.5 h-3.5" style={{ color: "#e8632a" }} />
+              30 minuten, online of in je praktijk
+            </div>
+          </div>
+        </AnimateIn>
+        <AnimateIn direction="up" delay={100}>
+          <p className="text-sm font-semibold mb-3" style={{ color: "#e8632a" }}>De demo</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4" style={{ color: "#1a1a1a" }}>
+            In 30 minuten weet je of REVA bij je praktijk past
+          </h2>
+          <p className="text-base leading-relaxed mb-8" style={{ color: "#6b7280" }}>
+            Geen verkooppraatje, maar een rondleiding met jouw praktijk in gedachten. Dit nemen we samen door:
+          </p>
+          <ol className="space-y-5 mb-8">
+            {demoAgenda.map((item, i) => (
+              <li key={item.title} className="flex items-start gap-4">
+                <span className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white shrink-0" style={{ background: "#e8632a" }}>
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="text-sm font-semibold mb-0.5" style={{ color: "#1a1a1a" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <Link href="/demo-aanvragen" className="group btn-primary px-6 py-3 text-base justify-center">
+            Plan je demo
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <p className="mt-3 text-xs" style={{ color: "#9ca3af" }}>We nemen binnen één werkdag contact op om een moment te plannen.</p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
 function CtaSection() {
   return (
     <section
@@ -922,9 +942,10 @@ export function HomePage() {
       <PracticeLogos />
       <ProblemSection />
       <ProductSection />
-      <FunctiesSliderSection />
       <HowItWorksSection />
+      <FunctiesSliderSection />
       <ComparisonSection />
+      <DemoSection />
       <PricingTeaserSection />
       <AboutTeaserSection />
       <FaqTeaserSection />

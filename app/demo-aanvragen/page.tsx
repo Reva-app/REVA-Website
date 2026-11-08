@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Users, LayoutDashboard, Lightbulb, Euro } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
@@ -82,6 +83,16 @@ export default function DemoAanvragenPage() {
                     moment dat in jouw agenda past en lopen het systeem stap voor stap door. Geheel
                     vrijblijvend, en hooguit 30 minuten van je tijd.
                   </p>
+                  <div className="relative rounded-2xl overflow-hidden mb-8" style={{ aspectRatio: "16 / 10" }}>
+                    <Image
+                      src="/beeld/demo-gesprek.webp"
+                      alt="Fysiotherapeut en praktijkeigenaar bekijken samen REVA op een laptop"
+                      fill
+                      priority
+                      className="object-cover img-reveal"
+                      sizes="(min-width: 1024px) 440px, 100vw"
+                    />
+                  </div>
                 </AnimateIn>
 
                 <div className="space-y-5">
