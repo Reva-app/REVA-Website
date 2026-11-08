@@ -112,7 +112,7 @@ function HeroSection() {
         </div>
 
         {/* Product direct zichtbaar: zo ziet het dashboard van de fysio eruit */}
-        <div className="animate-fade-in-up delay-300 w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
+        <div className="hidden sm:block animate-fade-in-up delay-300 w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
           <div className="animate-float-soft">
             <div className="rounded-2xl p-2.5 sm:p-3" style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.14)", backdropFilter: "blur(10px)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
               <FeatureDemo demo="signalering" />
@@ -838,10 +838,11 @@ const usps = [
 function UspSection() {
   return (
     <section className="py-14 md:py-16 border-b" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
-      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.18fr_1fr_1fr] gap-8 lg:gap-6">
+      {/* Op mobiel een veegrij, vanaf tablet een raster */}
+      <div className="max-w-6xl mx-auto px-5 md:px-8 no-scrollbar flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none sm:grid-cols-2 lg:grid-cols-[1fr_1.18fr_1fr_1fr] gap-4 sm:gap-8 lg:gap-6 scroll-px-5">
         {usps.map(({ icon: Icon, title, text }, i) => (
-          <AnimateIn key={title} direction="up" delay={i * 80}>
-            <div>
+          <AnimateIn key={title} direction="up" delay={i * 80} className="snap-start shrink-0 w-[80%] sm:w-auto">
+            <div className="h-full rounded-2xl border p-5 sm:border-0 sm:p-0 sm:rounded-none" style={{ borderColor: "#e8e5df" }}>
               <h2 className="flex items-center gap-2 text-base font-semibold mb-1.5" style={{ color: "#1a1a1a" }}>
                 <Icon className="w-4 h-4 shrink-0" style={{ color: "#e8632a" }} />
                 {title}

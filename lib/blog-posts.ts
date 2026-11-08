@@ -30,13 +30,22 @@ export interface BlogPost {
   faq?: BlogFaq[];
 }
 
+/** De vaste onderwerpen van de blog, in de volgorde van de filter op /blog */
+export const blogCategories = [
+  "Praktijkvoering",
+  "Digitalisering",
+  "Patiëntbegeleiding",
+  "Herstel & revalidatie",
+  "Privacy & AVG",
+] as const;
+
 export const blogPosts: BlogPost[] = [
   {
     slug: "tijd-besparen-patientcommunicatie-fysiopraktijk",
     title: "Stop met WhatsAppen: zo win je uren terug in je fysiopraktijk",
     metaDescription: "Telefoontjes en berichten via WhatsApp tussen behandelingen door kosten fysiopraktijken uren per week. Waar die tijd naartoe gaat en hoe je hem terugwint.",
     excerpt: "Telefoontjes en appjes tussen behandelingen door kosten meer tijd dan je denkt. Zo win je die tijd terug.",
-    category: "Patiëntcommunicatie",
+    category: "Patiëntbegeleiding",
     publishedAt: "2026-07-06",
     updatedAt: "2026-11-05",
     readTime: "5 min",
@@ -148,7 +157,7 @@ export const blogPosts: BlogPost[] = [
     title: "De stille afhakers: zo herken je patiënten voordat ze stoppen",
     metaDescription: "Therapietrouw daalt zelden plotseling. Zo herken je vroege signalen van afhakende patiënten in je fysiopraktijk en stuur je bij voordat ze stoppen.",
     excerpt: "Patiënten haken zelden plotseling af. De signalen zijn er vaak al weken eerder, als je weet waar je op moet letten.",
-    category: "Therapietrouw",
+    category: "Patiëntbegeleiding",
     publishedAt: "2026-07-13",
     updatedAt: "2026-11-05",
     readTime: "4 min",
@@ -487,7 +496,7 @@ export const blogPosts: BlogPost[] = [
     title: "AVG en patiëntdata: de praktische gids voor je fysiopraktijk",
     metaDescription: "Fysiopraktijken verwerken gezondheidsgegevens en hebben daarom extra plichten onder de AVG. Een praktische gids over grondslag, verwerkersovereenkomst, beveiliging en datalekken.",
     excerpt: "Gezondheidsgegevens zijn bijzondere persoonsgegevens onder de AVG. Een overzicht van waar je op let als je patiëntcommunicatie digitaliseert.",
-    category: "AVG & privacy",
+    category: "Privacy & AVG",
     publishedAt: "2026-07-31",
     updatedAt: "2026-11-05",
     readTime: "5 min",
@@ -860,7 +869,7 @@ export const blogPosts: BlogPost[] = [
     title: "Pijn na een operatie: wat is normaal per type ingreep?",
     metaDescription: "Pijn na een operatie verschilt sterk per ingreep: bot, gewricht, pees, band, spier of kijkoperatie. Een overzicht van het normale verloop, de verschillen en de alarmsignalen.",
     excerpt: "Pijn na een botoperatie voelt anders dan na een peeshechting of kijkoperatie. Een overzicht van wat normaal is per type ingreep, en wanneer pijn een alarmsignaal is.",
-    category: "Herstel na een operatie",
+    category: "Herstel & revalidatie",
     publishedAt: "2026-11-06",
     readTime: "8 min",
     image: {

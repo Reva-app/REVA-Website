@@ -1,10 +1,11 @@
-import { MessageSquare, Laptop2, ShieldCheck, Building2, ClipboardList, type LucideIcon } from "lucide-react";
+import { MessageSquare, Laptop2, ShieldCheck, Building2, ClipboardList, Activity, type LucideIcon } from "lucide-react";
 
 const categoryConfig: Record<string, { icon: LucideIcon }> = {
-  "Patiëntcommunicatie": { icon: MessageSquare },
+  "Patiëntbegeleiding": { icon: MessageSquare },
   "Digitalisering": { icon: Laptop2 },
-  "AVG & privacy": { icon: ShieldCheck },
+  "Privacy & AVG": { icon: ShieldCheck },
   "Praktijkvoering": { icon: Building2 },
+  "Herstel & revalidatie": { icon: Activity },
 };
 
 export function BlogIllustration({

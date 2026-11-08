@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { BlogCover } from "@/components/blog/BlogCover";
-import { getSortedBlogPosts } from "@/lib/blog-posts";
+import { blogCategories, getSortedBlogPosts } from "@/lib/blog-posts";
+import { BlogGrid } from "@/components/blog/BlogGrid";
 
 export const metadata: Metadata = {
   title: "Blog voor fysiotherapiepraktijken",
@@ -22,14 +22,6 @@ export const metadata: Metadata = {
     canonical: "https://www.reva-app.nl/blog",
   },
 };
-
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("nl-NL", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 export default function BlogIndexPage() {
   const posts = getSortedBlogPosts();
@@ -82,46 +74,10 @@ export default function BlogIndexPage() {
         {/* Post grid */}
         <section className="py-12 md:py-16" style={{ background: "#ffffff" }}>
           <div className="max-w-6xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {posts.map((post, i) => (
-                <AnimateIn key={post.slug} direction="up" delay={i * 60}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="flex flex-col h-full rounded-2xl border overflow-hidden transition-shadow hover:shadow-md"
-                    style={{ background: "#f8f7f4", borderColor: "#e8e5df" }}
-                  >
-                    <BlogCover post={post} className="aspect-[16/9]" />
-                    <div className="flex flex-col flex-1 p-6">
-                      <span
-                        className="inline-block w-fit text-xs font-semibold uppercase tracking-widest mb-4 px-2.5 py-1 rounded-full"
-                        style={{ color: "#e8632a", background: "#fff3ee" }}
-                      >
-                        {post.category}
-                      </span>
-                      <h2 className="text-lg font-semibold mb-2 leading-snug" style={{ color: "#1a1a1a" }}>
-                        {post.title}
-                      </h2>
-                      <p className="text-sm leading-relaxed mb-5" style={{ color: "#6b7280" }}>
-                        {post.excerpt}
-                      </p>
-                      <div
-                        className="mt-auto flex items-center gap-4 text-xs pt-4 border-t"
-                        style={{ color: "#9ca3af", borderColor: "#e8e5df" }}
-                      >
-                        <span className="flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5" />
-                          {formatDate(post.publishedAt)}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </AnimateIn>
-              ))}
-            </div>
+            <BlogGrid
+              categories={blogCategories}
+              posts={posts.map(({ slug, title, excerpt, category, publishedAt, readTime, image }) => ({ slug, title, excerpt, category, publishedAt, readTime, image }))}
+            />
           </div>
         </section>
 

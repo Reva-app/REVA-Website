@@ -82,8 +82,9 @@ export function Header() {
   const navTextColor = barTransparent ? "#ffffff" : "#374151";
 
   return (
+    <>
     <header
-      className={`${isHome ? "fixed" : "sticky"} top-0 z-50 w-full transition-all duration-300 ${barTransparent ? "px-0 pt-0" : "px-3 pt-3 md:px-5 md:pt-4"}`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${barTransparent ? "px-0 pt-0" : "px-3 pt-3 md:px-5 md:pt-4"}`}
     >
       <div
         className="mx-auto transition-all duration-300"
@@ -313,5 +314,8 @@ export function Header() {
       )}
       </div>
     </header>
+    {/* Ruimte voor de vaste header; op de homepage valt de hero er bewust onder */}
+    {!isHome && <div aria-hidden="true" className="h-[78px] md:h-[82px] shrink-0" />}
+    </>
   );
 }

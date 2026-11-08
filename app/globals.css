@@ -60,6 +60,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ankerlinks (zoals #aanmelden) niet onder de vaste header laten vallen */
+html { scroll-padding-top: 104px; }
+
 /* ─── Animaties ─────────────────────────────────────────────── */
 
 @keyframes fadeIn {
