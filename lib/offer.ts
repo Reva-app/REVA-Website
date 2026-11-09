@@ -6,9 +6,16 @@ export const pilotOffer = {
   active: true,
   spotsTotal: 3,
   spotsLeft: 3,
+  /** Eerste maanden volledig gratis */
+  freeMonths: 6,
+  /** Korting op de resterende maanden van het eerste contractjaar */
   discountPercent: 50,
-  /** Korte vermelding, bijvoorbeeld in de hero */
-  short: "50% korting op het eerste jaar",
+  /** Korte vermelding, bijvoorbeeld in labels en knoppen */
+  short: "6 maanden gratis, daarna 50% korting",
+  /** Volledige omschrijving in een zin */
+  full: "de eerste 6 maanden gratis en daarna 50% korting tot het einde van het eerste contractjaar",
+  /** Pakketten waarvoor het aanbod geldt */
+  eligible: "Solo, Team, Praktijk en Praktijk Plus",
   /** Wat een praktijk ervoor teruggeeft, in één zin */
   inReturn: "In ruil voor je feedback en een klantervaring die we mogen delen",
   /** Querystring waarmee het formulier en de mail het aanbod herkennen */
@@ -18,8 +25,8 @@ export const pilotOffer = {
 /** Wat een pilotpraktijk krijgt */
 export const pilotBenefits = [
   {
-    title: `${pilotOffer.discountPercent}% korting op het eerste jaar`,
-    text: "Op elk pakket, van Solo tot Praktijk Plus. Daarna geldt het gewone tarief van je pakket.",
+    title: `De eerste ${pilotOffer.freeMonths} maanden gratis`,
+    text: `Daarna ${pilotOffer.discountPercent}% korting tot het einde van het eerste contractjaar. Geldt voor ${pilotOffer.eligible}.`,
   },
   {
     title: "Persoonlijke onboarding",

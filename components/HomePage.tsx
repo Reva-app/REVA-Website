@@ -21,7 +21,7 @@ import { AnimateIn } from "./ui/AnimateIn";
 import { BlogCover } from "./blog/BlogCover";
 import { getSortedBlogPosts } from "@/lib/blog-posts";
 import { comparisonRows, homeFaq } from "@/lib/home-faq";
-import { pilotOffer } from "@/lib/offer";
+import { pilotOffer, pilotSpotsLabel } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { PracticeLogos } from "@/components/PracticeLogos";
 import { FeatureDemo } from "@/components/features/FeatureDemo";
@@ -63,7 +63,7 @@ function HeroSection() {
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft" />
                 Pilot
               </span>
-              {pilotOffer.discountPercent}% korting voor de eerste {pilotOffer.spotsTotal} praktijken
+              {pilotOffer.freeMonths} maanden gratis voor de eerste {pilotOffer.spotsTotal} praktijken
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           )}
@@ -81,28 +81,28 @@ function HeroSection() {
 
           <div className="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3">
             <Link
-              href="/demo-aanvragen"
+              href={offerOpen ? "/pilot#aanmelden" : "/demo-aanvragen"}
               className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-white text-base transition-colors duration-300"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#d4581f"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#e8632a"; }}
             >
-              Plan een demo van 30 minuten
+              {offerOpen ? `Word pilotpraktijk: ${pilotOffer.freeMonths} maanden gratis` : "Plan een demo van 30 minuten"}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
             <Link
-              href={offerOpen ? "/pilot" : "/prijzen"}
+              href={offerOpen ? "/demo-aanvragen" : "/prijzen"}
               className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium text-base transition-colors"
               style={{ color: "#ffffff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.14)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
             >
-              {offerOpen ? "Word pilotpraktijk" : "Bekijk prijzen"}
+              {offerOpen ? "Plan een demo" : "Bekijk prijzen"}
             </Link>
           </div>
 
           <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-x-5 gap-y-2">
-            {["Werkt naast je EPD", "Vanaf 49 euro per maand", `${TRIAL_DAYS} dagen gratis proberen`].map((label) => (
+            {["Werkt naast je EPD", "Vanaf 49 euro per maand", offerOpen ? "Persoonlijke onboarding" : `${TRIAL_DAYS} dagen gratis proberen`].map((label) => (
               <div key={label} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
                 <span className="text-sm" style={{ color: "#c9c9ce" }}>{label}</span>
@@ -682,6 +682,63 @@ function BlogTeaserSection() {
   );
 }
 
+// ─── Pilot ─────────────────────────────────────────────────────
+
+function PilotSection() {
+  if (!pilotOffer.active || pilotOffer.spotsLeft <= 0) return null;
+  const team = pricingTiers.find((t) => t.popular) ?? pricingTiers[1];
+  const saving = team.monthly * 12 - (12 - pilotOffer.freeMonths) * team.monthly * (1 - pilotOffer.discountPercent / 100);
+  return (
+    <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <AnimateIn direction="up">
+          <div className="relative overflow-hidden rounded-3xl p-7 md:p-12 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-center" style={{ background: "#1c1c1e" }}>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#e8632a" }}>
+                Pilotprogramma · {pilotSpotsLabel()}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
+                De eerste {pilotOffer.freeMonths} maanden gratis, daarna {pilotOffer.discountPercent}% korting
+              </h2>
+              <p className="text-base leading-relaxed mb-7 max-w-xl" style={{ color: "#c9c9ce" }}>
+                We zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken. Je krijgt persoonlijke onboarding en
+                direct contact met de oprichter. In ruil daarvoor vragen we je feedback en een klantervaring.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/pilot#aanmelden" className="group btn-primary px-6 py-3 text-base justify-center">
+                  Meld je praktijk aan
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  href="/pilot"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-base transition-colors"
+                  style={{ color: "#ffffff", border: "1px solid rgba(255,255,255,0.18)" }}
+                >
+                  Bekijk de voorwaarden
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <p className="text-sm mb-4" style={{ color: "#9ca3af" }}>Rekenvoorbeeld pakket {team.name}</p>
+              <dl className="space-y-3 text-sm">
+                <div className="flex justify-between gap-4"><dt style={{ color: "#c9c9ce" }}>Maand 1 t/m {pilotOffer.freeMonths}</dt><dd className="font-semibold tabular-nums" style={{ color: "#e8632a" }}>&euro;0</dd></div>
+                <div className="flex justify-between gap-4"><dt style={{ color: "#c9c9ce" }}>Maand {pilotOffer.freeMonths + 1} t/m 12</dt><dd className="font-semibold tabular-nums text-white">&euro;{(team.monthly / 2).toLocaleString("nl-NL", { minimumFractionDigits: 2 })} per maand</dd></div>
+                <div className="flex justify-between gap-4 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}><dt className="text-white font-medium">Je bespaart in het eerste jaar</dt><dd className="font-semibold tabular-nums" style={{ color: "#4ade80" }}>&euro;{saving.toLocaleString("nl-NL", { maximumFractionDigits: 2 })}</dd></div>
+              </dl>
+              <div className="mt-5 flex items-center gap-2" aria-hidden="true">
+                {Array.from({ length: pilotOffer.spotsTotal }).map((_, i) => (
+                  <span key={i} className="h-2 flex-1 rounded-full" style={{ background: i < pilotOffer.spotsLeft ? "#e8632a" : "rgba(255,255,255,0.15)" }} />
+                ))}
+              </div>
+              <p className="mt-2 text-xs" style={{ color: "#9ca3af" }}>{pilotSpotsLabel()} · geldt voor {pilotOffer.eligible}</p>
+            </div>
+          </div>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
 // ─── De demo ───────────────────────────────────────────────────
 
 const demoAgenda = [
@@ -801,7 +858,7 @@ function CtaSection() {
           {pilotOffer.active && pilotOffer.spotsLeft > 0 && (
             <p className="mt-8 text-sm" style={{ color: "#c9c9ce" }}>
               <span className="font-semibold text-white">Pilotprogramma:</span> we zoeken {pilotOffer.spotsTotal} praktijken die
-              REVA als eerste gebruiken, met {pilotOffer.discountPercent}% korting op het eerste jaar.{" "}
+              REVA als eerste gebruiken: {pilotOffer.short}.{" "}
               <Link href="/pilot" className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
                 Bekijk de pilot
               </Link>
@@ -944,6 +1001,7 @@ export function HomePage() {
       <PracticeLogos />
       <ProblemSection />
       <ProductSection />
+      <PilotSection />
       <HowItWorksSection />
       <FunctiesSliderSection />
       <ComparisonSection />

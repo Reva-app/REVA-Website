@@ -18,7 +18,7 @@ test("pilotaanbod: link, label en alleen geldig zolang het loopt", () => {
 
 test("homepage-Markdown noemt het pilotaanbod en de USP's", () => {
   const md = markdownForPath("/")!;
-  assert.ok(md.includes("50% korting op het eerste jaar"));
+  assert.ok(md.includes("de eerste 6 maanden gratis"));
   assert.ok(md.includes("Europese servers"));
 });
 

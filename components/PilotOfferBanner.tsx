@@ -25,7 +25,7 @@ export function PilotOfferBanner({ dark = false, stacked = false }: { dark?: boo
           We zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken
         </p>
         <p className="text-sm" style={{ color: dark ? "#c9c9ce" : "#6b7280" }}>
-          {pilotOffer.discountPercent}% korting op het eerste jaar en persoonlijke onboarding. {pilotOffer.inReturn}.
+          De eerste {pilotOffer.freeMonths} maanden gratis, daarna {pilotOffer.discountPercent}% korting tot het einde van het eerste jaar. {pilotOffer.inReturn}.
         </p>
       </div>
       <Link href="/pilot" className={`group btn-primary px-5 py-2.5 text-sm justify-center shrink-0 ${stacked ? "w-full" : ""}`}>

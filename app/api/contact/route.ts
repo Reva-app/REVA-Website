@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
 
   const interestRows: ContactEmailRow[] = [
     ...(pilot
-      ? [{ label: "Aanbod", value: `Pilotprogramma: ${pilotOffer.discountPercent}% korting op het eerste jaar` }]
+      ? [{ label: "Aanbod", value: `Pilotprogramma: ${pilotOffer.short}` }]
       : []),
     ...(interest
       ? [
@@ -127,7 +127,7 @@ export async function POST(request: NextRequest) {
           badge: pilot ? "Aanmelding · Pilotprogramma" : interest ? `Demo-aanvraag · ${interest.name}` : "Demo-aanvraag",
           title: fields.practice,
           intro: pilot
-            ? `${fields.name} meldt de praktijk aan voor het pilotprogramma (${pilotOffer.discountPercent}% korting op het eerste jaar). Neem binnen één werkdag contact op voor een kennismaking.`
+            ? `${fields.name} meldt de praktijk aan voor het pilotprogramma (${pilotOffer.short}). Neem binnen één werkdag contact op voor een kennismaking.`
             : interest
             ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor het pakket ${interest.name}. Neem binnen één werkdag contact op om een moment af te spreken.`
             : `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { useCookieConsent } from "@/lib/cookie-consent";
+import { pilotOffer, pilotSpotsLabel } from "@/lib/offer";
 
 /** Pagina's waar de demo-balk niets toevoegt of in de weg zit */
 const HIDDEN = ["/demo-aanvragen", "/pilot", "/inloggen", "/contact"];
@@ -13,6 +14,8 @@ const HIDDEN = ["/demo-aanvragen", "/pilot", "/inloggen", "/contact"];
  * Vaste balk onderin op mobiel met de demo-knop. Verschijnt pas na de hero, zodat
  * hij de eerste indruk niet verstoort, en wacht tot de cookiekeuze is gemaakt.
  */
+const pilotOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;
+
 export function StickyDemoCta() {
   const pathname = usePathname();
   const { hasChosen } = useCookieConsent();
@@ -54,11 +57,20 @@ export function StickyDemoCta() {
     >
       <div className="flex items-center gap-3 px-4 pt-3">
         <p className="flex-1 text-xs leading-snug" style={{ color: "#6b7280" }}>
-          <span className="block font-semibold text-sm" style={{ color: "#1a1a1a" }}>Zie REVA in 30 minuten</span>
-          Vrijblijvend en online
+          {pilotOpen ? (
+            <>
+              <span className="block font-semibold text-sm" style={{ color: "#1a1a1a" }}>{pilotOffer.freeMonths} maanden REVA gratis</span>
+              Pilotprogramma · {pilotSpotsLabel().toLowerCase()}
+            </>
+          ) : (
+            <>
+              <span className="block font-semibold text-sm" style={{ color: "#1a1a1a" }}>Zie REVA in 30 minuten</span>
+              Vrijblijvend en online
+            </>
+          )}
         </p>
-        <Link href="/demo-aanvragen#aanvraag" tabIndex={shown ? 0 : -1} className="btn-primary px-4 py-2.5 text-sm shrink-0">
-          Plan een demo
+        <Link href={pilotOpen ? "/pilot#aanmelden" : "/demo-aanvragen#aanvraag"} tabIndex={shown ? 0 : -1} className="btn-primary px-4 py-2.5 text-sm shrink-0">
+          {pilotOpen ? "Meld je aan" : "Plan een demo"}
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>

@@ -168,7 +168,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Wat is het pilotprogramma?",
-        a: "REVA zoekt 3 praktijken die REVA als eerste gebruiken. Pilotpraktijken krijgen 50% korting op het eerste jaar en persoonlijke onboarding. In ruil daarvoor vragen we hun feedback en een klantervaring, zodat we REVA samen verder verbeteren. Meer informatie en aanmelden via de pilotpagina.",
+        a: "REVA zoekt 3 praktijken die REVA als eerste gebruiken. Pilotpraktijken krijgen de eerste 6 maanden gratis en daarna 50% korting tot het einde van het eerste contractjaar, met persoonlijke onboarding. Het aanbod geldt voor Solo, Team, Praktijk en Praktijk Plus. In ruil daarvoor vragen we hun feedback en een klantervaring, zodat we REVA samen verder verbeteren. Meer informatie en aanmelden via de pilotpagina.",
       },
       {
         q: "Zijn alle functies inbegrepen in elk pakket?",

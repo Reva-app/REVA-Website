@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { RevaLogo } from "@/components/brand/RevaLogo";
 import { featureGroups, featuresByGroup } from "@/lib/features";
+import { pilotOffer } from "@/lib/offer";
 
 const navLinks = [
   { label: "Over REVA", href: "/over-reva" },
@@ -18,6 +19,8 @@ const audienceLinks = [
   { label: "Voor fysio's", href: "/functies/voor-fysios" },
   { label: "Voor patiënten", href: "/functies/voor-patienten" },
 ];
+
+const pilotOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -185,6 +188,20 @@ export function Header() {
             )}
           </div>
 
+          {pilotOpen && (
+            <Link
+              href="/pilot"
+              aria-current={isActive("/pilot") ? "page" : undefined}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              style={{ color: isActive("/pilot") ? "#e8632a" : navTextColor, background: isActive("/pilot") ? "#fff3ee" : "transparent" }}
+            >
+              Pilot
+              <span className="text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded-full text-white" style={{ background: "#e8632a" }}>
+                {pilotOffer.freeMonths} mnd gratis
+              </span>
+            </Link>
+          )}
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -285,6 +302,19 @@ export function Header() {
                 Bekijk alle functies <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
+          )}
+          {pilotOpen && (
+            <Link
+              href="/pilot"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium"
+              style={{ color: "#1a1a1a", background: "#fff3ee" }}
+            >
+              <span>Pilotprogramma</span>
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full text-white" style={{ background: "#e8632a" }}>
+                {pilotOffer.freeMonths} maanden gratis
+              </span>
+            </Link>
           )}
           {navLinks.map((link) => (
             <Link

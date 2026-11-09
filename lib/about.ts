@@ -35,6 +35,6 @@ export const aboutFaq = [
   },
   {
     q: "Kan ik als praktijk meedenken over REVA?",
-    a: "Ja, graag zelfs. Fysiotherapeuten en patiënten kunnen via een feedbackformulier wensen, ideeën en bugs delen. De eerste praktijken die met REVA starten, krijgen bovendien een pilotplek met korting in ruil voor hun feedback.",
+    a: "Ja, graag zelfs. Fysiotherapeuten en patiënten kunnen via een feedbackformulier wensen, ideeën en bugs delen. De eerste praktijken die met REVA starten, krijgen bovendien een pilotplek: de eerste 6 maanden gratis en daarna 50% korting tot het einde van het eerste jaar, in ruil voor hun feedback.",
   },
 ];

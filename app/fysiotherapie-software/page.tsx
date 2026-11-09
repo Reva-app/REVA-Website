@@ -185,7 +185,7 @@ export default function FysiotherapieSoftwarePage() {
               {pilotOffer.active && pilotOffer.spotsLeft > 0 && (
                 <p className="text-sm mb-6" style={{ color: "#1a1a1a" }}>
                   <span className="font-semibold">Pilotprogramma:</span> we zoeken {pilotOffer.spotsTotal} praktijken die REVA als
-                  eerste gebruiken, met {pilotOffer.discountPercent}% korting op het eerste jaar.{" "}
+                  eerste gebruiken: {pilotOffer.short}.{" "}
                   <Link href="/pilot" className="font-medium underline underline-offset-2" style={{ color: "#e8632a" }}>
                     Bekijk de pilot
                   </Link>
