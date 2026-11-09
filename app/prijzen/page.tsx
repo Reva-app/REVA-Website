@@ -11,7 +11,7 @@ import { enterpriseTier, pricingFaq as faq, pricingTiers } from "@/lib/pricing";
 export const metadata: Metadata = {
   title: "Prijzen patiëntenportaal fysiotherapie",
   description:
-    "Vijf heldere pakketten voor fysiopraktijken: Solo 49, Team 129, Praktijk 229, Praktijk Plus 349 en Enterprise vanaf 699 euro per maand. 30 dagen gratis proberen.",
+    "Vijf heldere pakketten voor fysiopraktijken: Solo 49, Team 129, Praktijk 229, Praktijk Plus 349 en Enterprise vanaf 699 euro per maand, exclusief btw.",
   openGraph: {
     title: "Prijzen patiëntenportaal fysiotherapie",
     description: "Vijf heldere pakketten voor fysiotherapiepraktijken, van zelfstandig fysiotherapeut tot keten. Alle functies inbegrepen, 30 dagen gratis proberen.",
