@@ -65,12 +65,13 @@ export default function DemoAanvragenPage() {
         ])}
       />
       <SiteLayout>
-        <section className="py-16 md:py-24" style={{ background: "#f8f7f4" }}>
+        <section className="py-10 md:py-24" style={{ background: "#f8f7f4" }}>
           <div className="max-w-6xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            {/* Mobiel: kop, dan direct het formulier, daarna de uitleg. Desktop: tekst links, formulier rechts. */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-x-16 lg:gap-y-0 items-start">
 
-              {/* Left: intro + wat je kunt verwachten */}
-              <div className="lg:col-span-2">
+              {/* Kop en korte intro */}
+              <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1">
                 <AnimateIn direction="up">
                   <span className="inline-block text-xs font-semibold uppercase tracking-widest mb-4 px-3 py-1.5 rounded-full" style={{ color: "#e8632a", background: "#fff3ee" }}>
                     Demo aanvragen
@@ -78,11 +79,27 @@ export default function DemoAanvragenPage() {
                   <h1 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4" style={{ color: "#1a1a1a" }}>
                     Zie hoe REVA in <span style={{ color: "#e8632a" }}>jouw praktijk</span> past
                   </h1>
-                  <p className="text-sm leading-relaxed mb-8" style={{ color: "#6b7280" }}>
+                  <p className="text-sm leading-relaxed lg:mb-8" style={{ color: "#6b7280" }}>
                     Laat je gegevens achter, dan nemen we binnen één werkdag contact op om een moment
                     te plannen dat in jouw agenda past. De demo is online, vrijblijvend en duurt hooguit
                     30 minuten.
                   </p>
+                </AnimateIn>
+              </div>
+
+              {/* Formulier */}
+              <div id="aanvraag" className="lg:col-span-3 lg:col-start-3 lg:row-start-1 lg:row-span-2">
+                <div
+                  className="rounded-2xl p-6 md:p-8"
+                  style={{ background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
+                >
+                  <ContactForm />
+                </div>
+              </div>
+
+              {/* Wat je kunt verwachten */}
+              <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2">
+                <AnimateIn direction="up">
                   <div className="relative rounded-2xl overflow-hidden mb-8" style={{ aspectRatio: "16 / 10" }}>
                     <Image
                       src="/beeld/demo-gesprek.webp"
@@ -129,18 +146,6 @@ export default function DemoAanvragenPage() {
                     </Link>
                     .
                   </p>
-                </AnimateIn>
-              </div>
-
-              {/* Right: form card */}
-              <div id="aanvraag" className="lg:col-span-3">
-                <AnimateIn direction="right">
-                  <div
-                    className="rounded-2xl p-6 md:p-8"
-                    style={{ background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
-                  >
-                    <ContactForm />
-                  </div>
                 </AnimateIn>
               </div>
             </div>
