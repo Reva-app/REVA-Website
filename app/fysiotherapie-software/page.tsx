@@ -15,7 +15,7 @@ const PATH = "/fysiotherapie-software";
 const URL = `https://www.reva-app.nl${PATH}`;
 const TITLE = "Fysiotherapie software voor overzicht tussen de behandelingen";
 const DESCRIPTION =
-  "REVA is fysiotherapie software naast je EPD: patiënten loggen pijn, oefeningen en voortgang, jij ziet wie aandacht nodig heeft. Vanaf 49 euro per maand, 30 dagen gratis.";
+  "Fysiotherapie software naast je EPD: patiënten loggen pijn, oefeningen en voortgang, jij ziet wie aandacht nodig heeft. Vanaf 49 euro per maand.";
 
 export const metadata: Metadata = {
   title: "Fysiotherapie software: patiëntenportaal naast je EPD",

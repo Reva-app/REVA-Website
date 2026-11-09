@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <ul>
           <li>
-            <strong>Dagelijkse check-ins:</strong> pijnscore (schaal 1–5), energieniveau,
+            <strong>Dagelijkse check-ins:</strong> pijnscore (0 tot 10), dagscore (1 tot 5), energieniveau,
             stemming en eventuele notities per dag.
           </li>
           <li>

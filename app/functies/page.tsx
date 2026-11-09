@@ -13,7 +13,7 @@ const URL = "https://www.reva-app.nl/functies";
 export const metadata: Metadata = {
   title: "Software voor fysiotherapeuten: alle functies van REVA",
   description:
-    "Alle functies van REVA: intake, herstelplannen in fases, signalering, patiëntdossier, oefenschema's, agenda en ruimtes, analyse en de patiëntapp met dagelijkse check-in.",
+    "Alle functies van REVA: intake, herstelplannen, signalering, dossier, oefenschema's, agenda en analyse, plus de patiëntapp met dagelijkse check-in.",
   openGraph: {
     title: "Software voor fysiotherapeuten: alle functies van REVA",
     description: "Zie per functie hoe REVA werkt, voor de fysiotherapeut, de praktijk en de patiënt.",

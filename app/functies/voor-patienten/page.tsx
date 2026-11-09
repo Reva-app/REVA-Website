@@ -13,11 +13,11 @@ import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd
 const URL = "https://www.reva-app.nl/functies/voor-patienten";
 
 export const metadata: Metadata = {
-  title: "Fysio app voor je patiënten: oefeningen, check-ins en herstel",
+  title: "Fysio app voor je patiënten: oefeningen en check-ins",
   description:
-    "De fysio app die je patiënten van jouw praktijk krijgen: een eigen portaal in je huisstijl, met dagelijkse check-in, oefeningen, medicatieherinneringen, doelen en inzicht in hun herstel.",
+    "De fysio app voor je patiënten: een eigen portaal in je huisstijl, met dagelijkse check-in, oefeningen, medicatieherinneringen en inzicht in herstel.",
   openGraph: {
-    title: "Fysio app voor je patiënten: oefeningen, check-ins en herstel",
+    title: "Fysio app voor je patiënten: oefeningen en check-ins",
     description: "Een eigen patiëntenportaal op de telefoon van je patiënt, in de huisstijl van jouw praktijk.",
     locale: "nl_NL",
     type: "website",

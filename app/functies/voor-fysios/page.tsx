@@ -15,7 +15,7 @@ const URL = "https://www.reva-app.nl/functies/voor-fysios";
 export const metadata: Metadata = {
   title: "REVA voor fysiotherapeuten: overzicht tussen de afspraken",
   description:
-    "Zo werkt REVA voor de fysiotherapeut: intake met voorgesteld herstelplan, fases met criteria, signalering van wie aandacht nodig heeft en een compleet dossier voor elk consult.",
+    "Zo werkt REVA voor de fysiotherapeut: intake met herstelplan, fases met criteria, signalering van wie aandacht nodig heeft en een compleet dossier.",
   openGraph: {
     title: "REVA voor fysiotherapeuten",
     description: "Van intake tot afronding: zo houd je met REVA grip op elke patiënt, ook tussen de afspraken door.",

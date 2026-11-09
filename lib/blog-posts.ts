@@ -494,7 +494,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "avg-patientdata-fysiopraktijk",
     title: "AVG en patiëntdata: de praktische gids voor je fysiopraktijk",
-    metaDescription: "Fysiopraktijken verwerken gezondheidsgegevens en hebben daarom extra plichten onder de AVG. Een praktische gids over grondslag, verwerkersovereenkomst, beveiliging en datalekken.",
+    metaDescription: "Fysiopraktijken verwerken gezondheidsgegevens en hebben extra plichten onder de AVG. Een praktische gids over grondslag, verwerkersovereenkomst en beveiliging.",
     excerpt: "Gezondheidsgegevens zijn bijzondere persoonsgegevens onder de AVG. Een overzicht van waar je op let als je patiëntcommunicatie digitaliseert.",
     category: "Privacy & AVG",
     publishedAt: "2026-07-31",
@@ -867,7 +867,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "pijn-na-een-operatie",
     title: "Pijn na een operatie: wat is normaal per type ingreep?",
-    metaDescription: "Pijn na een operatie verschilt sterk per ingreep: bot, gewricht, pees, band, spier of kijkoperatie. Een overzicht van het normale verloop, de verschillen en de alarmsignalen.",
+    metaDescription: "Pijn na een operatie verschilt per ingreep: bot, gewricht, pees, band, spier of kijkoperatie. Het normale verloop, de verschillen en de alarmsignalen.",
     excerpt: "Pijn na een botoperatie voelt anders dan na een peeshechting of kijkoperatie. Een overzicht van wat normaal is per type ingreep, en wanneer pijn een alarmsignaal is.",
     category: "Herstel & revalidatie",
     publishedAt: "2026-11-06",
@@ -1071,7 +1071,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "eigen-fysiotherapiepraktijk-starten",
     title: "Eigen fysiotherapiepraktijk starten: stappen, eisen en kosten",
-    metaDescription: "Een eigen fysiotherapiepraktijk starten? De stappen op een rij: BIG en AGB, kwaliteitsregister, contracten met zorgverzekeraars, wettelijke eisen, kosten en financiering.",
+    metaDescription: "Een eigen fysiotherapiepraktijk starten? De stappen op een rij: BIG en AGB, kwaliteitsregister, zorgverzekeraars, wettelijke eisen, kosten en financiering.",
     excerpt: "Van ondernemingsplan tot eerste patiënt: welke registraties je nodig hebt, aan welke wetten je praktijk moet voldoen, wat het kost en hoe je contracten met zorgverzekeraars regelt.",
     category: "Praktijkvoering",
     publishedAt: "2026-11-08",

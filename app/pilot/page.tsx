@@ -10,13 +10,13 @@ import { pilotAsks, pilotBenefits, pilotFit, pilotOffer, pilotSpotsLabel } from 
 import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
 
 const URL = "https://www.reva-app.nl/pilot";
-const DESCRIPTION = `REVA zoekt ${pilotOffer.spotsTotal} fysiotherapiepraktijken die REVA als eerste gebruiken. Pilotpraktijken krijgen ${pilotOffer.full} en persoonlijke onboarding, in ruil voor feedback en een klantervaring.`;
+const DESCRIPTION = `Word een van de ${pilotOffer.spotsTotal} pilotpraktijken van REVA: de eerste ${pilotOffer.freeMonths} maanden gratis, daarna ${pilotOffer.discountPercent}% korting tot het einde van het eerste jaar, met persoonlijke onboarding.`;
 
 export const metadata: Metadata = {
-  title: "Pilotprogramma: word pilotpraktijk van REVA",
+  title: "Pilotprogramma: 6 maanden REVA gratis",
   description: DESCRIPTION,
   openGraph: {
-    title: "Word pilotpraktijk van REVA",
+    title: "Pilotprogramma: 6 maanden REVA gratis",
     description: `We zoeken ${pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken: ${pilotOffer.short}.`,
     locale: "nl_NL",
     type: "website",

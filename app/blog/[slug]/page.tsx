@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://www.reva-app.nl/blog/${post.slug}`;
 
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.metaDescription,
     keywords: post.keywords,
     openGraph: {

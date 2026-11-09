@@ -3,19 +3,19 @@
 // als die bij elke deploy verspringt zonder dat de inhoud wijzigt.
 
 export const pageDates: Record<string, string> = {
-  "/": "2026-11-06",
+  "/": "2026-11-09",
   "/functies": "2026-11-06",
   "/fysiotherapie-software": "2026-11-06",
   "/alternatief-voor-whatsapp": "2026-11-06",
   "/oefenprogramma-app": "2026-11-06",
-  "/pilot": "2026-11-06",
+  "/pilot": "2026-11-09",
   "/functies/voor-fysios": "2026-11-06",
   "/functies/voor-patienten": "2026-11-06",
   "/prijzen": "2026-11-06",
   "/faq": "2026-11-06",
   "/over-reva": "2026-11-06",
   "/documentatie": "2026-11-06",
-  "/demo-aanvragen": "2026-08-03",
+  "/demo-aanvragen": "2026-11-09",
   "/contact": "2026-08-03",
   "/inloggen": "2026-11-06",
   "/privacy-policy": "2026-11-06",

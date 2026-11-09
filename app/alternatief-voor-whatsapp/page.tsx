@@ -9,7 +9,7 @@ const PATH = "/alternatief-voor-whatsapp";
 const URL = `https://www.reva-app.nl${PATH}`;
 const NAME = "Alternatief voor WhatsApp in de fysiopraktijk";
 const DESCRIPTION =
-  "Een veilig alternatief voor WhatsApp met je patiënten. Met REVA geven patiënten gestructureerd door hoe het gaat, en staat alles in het dossier in plaats van op privételefoons.";
+  "Een veilig alternatief voor WhatsApp met je patiënten: ze geven gestructureerd door hoe het gaat, en alles staat in het dossier, niet op een telefoon.";
 
 export const metadata: Metadata = {
   title: "Alternatief voor WhatsApp in je fysiopraktijk",

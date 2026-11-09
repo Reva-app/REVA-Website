@@ -10,7 +10,7 @@ import { REVA_LIBRARY } from "@/lib/features";
 const PATH = "/oefenprogramma-app";
 const URL = `https://www.reva-app.nl${PATH}`;
 const NAME = "Oefenprogramma-app voor fysiotherapeuten";
-const DESCRIPTION = `Geef thuisoefeningen mee in een app die past bij het herstelplan. Oefenschema's per fase, een bibliotheek met ${REVA_LIBRARY.exercises} oefeningen als startpunt, en je ziet of je patiënt oefent.`;
+const DESCRIPTION = `Thuisoefeningen in een app die past bij het herstelplan: schema's per fase, ${REVA_LIBRARY.exercises} oefeningen als startpunt, en je ziet of je patiënt oefent.`;
 
 export const metadata: Metadata = {
   title: "Oefenprogramma-app voor fysiotherapeuten en hun patiënten",
