@@ -8,7 +8,7 @@ import { PhotoWithDemo } from "@/components/ui/PhotoWithDemo";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 import type { DemoKey } from "@/lib/features";
 import { pilotOffer } from "@/lib/offer";
-import { TRIAL_DAYS } from "@/lib/pricing";
+import { euro, PRICING, TRIAL_DAYS } from "@/lib/pricing";
 import { pageDates } from "@/lib/page-dates";
 
 /**
@@ -99,7 +99,7 @@ export function LandingHero({
             </Link>
           </div>
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{ color: "#6b7280" }}>
-            {[`${TRIAL_DAYS} dagen gratis proberen`, "Vanaf 49 euro per maand", "Naast je EPD", "Europese servers"].map((t) => (
+            {[`${TRIAL_DAYS} dagen gratis proberen`, `${euro(PRICING.seatPrice)} per behandelaar, incl. btw`, "Naast elk EPD", "Europese servers"].map((t) => (
               <li key={t} className="inline-flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#e8632a" }} />
                 {t}

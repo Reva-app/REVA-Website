@@ -1,3 +1,5 @@
+import { euro, PRICING, priceSentence, TRIAL_DAYS } from "@/lib/pricing";
+
 export interface BlogSection {
   heading: string;
   paragraphs: string[];
@@ -270,7 +272,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "WhatsApp werkte prima toen de praktijk klein was. Bij groei wordt het al snel een systeem dat tegen je begint te werken.",
     category: "Digitalisering",
     publishedAt: "2026-07-20",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-13",
     readTime: "4 min",
     image: {
       src: "/blog/van-whatsapp-naar-patientenportaal.webp",
@@ -344,7 +346,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Hoe je patiënten meeneemt",
         paragraphs: [
           "Patiënten stappen makkelijk over als het nieuwe systeem minstens zo eenvoudig is als wat ze gewend zijn. Leg bij de start kort uit waarom je met een portaal werkt: hun herstel is zo voor de hele praktijk zichtbaar, en ze hebben hun oefeningen altijd bij de hand.",
-          "Houd de dagelijkse check kort. In REVA vullen patiënten die doorgaans in minder dan een minuut in op hun telefoon. Hoe minder moeite het kost, hoe beter patiënten het volhouden.",
+          "Houd de dagelijkse check kort. In REVA kost de check-in patiënten ongeveer 30 seconden op hun telefoon. Hoe minder moeite het kost, hoe beter patiënten het volhouden.",
         ],
       },
       {
@@ -370,7 +372,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: "Willen oudere patiënten wel met een portaal werken?",
-        answer: "Dat hangt vooral af van hoe eenvoudig het portaal is. REVA werkt in de browser en op iOS en Android, en de dagelijkse check is in minder dan een minuut ingevuld. Leg bij de start kort uit hoe het werkt, dan lukt het de meeste patiënten goed.",
+        answer: "Dat hangt vooral af van hoe eenvoudig het portaal is. REVA werkt in de browser en patiënten kunnen het als app op hun beginscherm zetten. De dagelijkse check-in kost ongeveer 30 seconden. Leg bij de start kort uit hoe het werkt, dan lukt het de meeste patiënten goed.",
       },
     ],
   },
@@ -381,7 +383,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "De term valt steeds vaker, maar wat is een patiëntenportaal precies en wanneer heeft het meerwaarde voor jouw praktijk?",
     category: "Digitalisering",
     publishedAt: "2026-07-27",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-13",
     readTime: "5 min",
     image: {
       src: "/blog/wat-is-een-patientenportaal.webp",
@@ -452,7 +454,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Wat kost een patiëntenportaal?",
         paragraphs: [
           "Patiëntenportalen werken meestal met een abonnement per maand of per jaar, afhankelijk van de grootte van de praktijk.",
-          "Bij REVA kies je uit vijf pakketten waarin alle functies zijn inbegrepen: Solo voor 49 euro per maand voor de zelfstandige fysiotherapeut, Team voor 129 euro per maand voor praktijken met 2 tot 5 medewerkers, Praktijk voor 229 euro per maand voor 6 tot 10 medewerkers, Praktijk Plus voor 349 euro per maand voor 11 tot 20 medewerkers en Enterprise vanaf 699 euro per maand voor grote praktijken en ketens. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA 30 dagen gratis proberen. Alle prijzen zijn exclusief btw. Bekijk alle details op de [prijzenpagina](/prijzen).",
+          `${priceSentence} Alle functies zijn inbegrepen. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA ${TRIAL_DAYS} dagen gratis proberen. Bereken je prijs op de [prijzenpagina](/prijzen).`,
         ],
       },
       {
@@ -479,15 +481,15 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: "Is een patiëntenportaal ook geschikt voor een kleine praktijk?",
-        answer: "Ja. Ook een zelfstandige fysiotherapeut profiteert van minder losse telefoontjes en meer overzicht. REVA heeft daarvoor het pakket Solo, voor 49 euro per maand.",
+        answer: `Ja. Ook een zelfstandige fysiotherapeut profiteert van minder losse telefoontjes en meer overzicht. Je betaalt per behandelaar: als zelfstandige ${euro(PRICING.seatPrice)} per maand, inclusief btw.`,
       },
       {
         question: "Wat kost een patiëntenportaal voor fysiotherapie?",
-        answer: "REVA kost 49 euro per maand voor een zelfstandige fysiotherapeut, 129 euro voor 2 tot 5 medewerkers, 229 euro voor 6 tot 10 medewerkers, 349 euro voor 11 tot 20 medewerkers en vanaf 699 euro voor grotere praktijken en ketens, exclusief btw. Je kunt REVA 30 dagen gratis proberen.",
+        answer: `${priceSentence} Je kunt REVA ${TRIAL_DAYS} dagen gratis proberen.`,
       },
       {
         question: "Werkt een patiëntenportaal op de telefoon?",
-        answer: "Een goed portaal wel. REVA werkt in de browser en op iOS en Android, voor zowel je team als je patiënten. Patiënten vullen hun dagelijkse check doorgaans in minder dan een minuut in.",
+        answer: "Een goed portaal wel. REVA werkt in de browser, voor zowel je team als je patiënten, en patiënten kunnen het als app op hun beginscherm zetten. De dagelijkse check-in kost ongeveer 30 seconden.",
       },
     ],
   },
@@ -724,6 +726,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "EPD, agenda, declareren, oefenprogramma's en een patiëntenportaal: welke software heeft een fysiopraktijk nodig, en waar let je op bij het kiezen?",
     category: "Digitalisering",
     publishedAt: "2026-11-05",
+    updatedAt: "2026-11-13",
     readTime: "7 min",
     image: {
       src: "/blog/software-voor-fysiopraktijken.webp",
@@ -814,7 +817,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Wat kost software voor een fysiopraktijk?",
         paragraphs: [
           "De kosten verschillen sterk per type software en per leverancier. Een EPD wordt vaak afgerekend per behandelaar per maand, soms aangevuld met kosten voor modules of koppelingen. Aanvullende tools zoals oefenprogramma's en patiëntenportalen werken meestal met een abonnement per maand of per jaar.",
-          "Bij REVA kies je uit vijf pakketten waarin alle functies zijn inbegrepen: Solo voor 49 euro per maand voor de zelfstandige fysiotherapeut, Team voor 129 euro per maand voor praktijken met 2 tot 5 medewerkers, Praktijk voor 229 euro per maand voor 6 tot 10 medewerkers, Praktijk Plus voor 349 euro per maand voor 11 tot 20 medewerkers en Enterprise vanaf 699 euro per maand voor grote praktijken en ketens. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA 30 dagen gratis proberen. Alle prijzen zijn exclusief btw. Bekijk alle details op de [prijzenpagina](/prijzen).",
+          `${priceSentence} Alle functies zijn inbegrepen. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA ${TRIAL_DAYS} dagen gratis proberen. Bereken je prijs op de [prijzenpagina](/prijzen).`,
         ],
       },
       {
@@ -832,8 +835,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Waar REVA in jouw softwarepakket past",
         paragraphs: [
-          "REVA is een patiëntenportaal voor fysiotherapiepraktijken. Het vervangt je EPD, agenda of declaratiesoftware niet, maar vult ze aan op het punt waar die systemen ophouden: de tijd tussen behandelingen. Patiënten houden zelf hun herstel bij, en jij ziet in één overzicht wie aandacht nodig heeft, zonder extra telefoontjes.",
-          "REVA werkt via de browser, op iOS en op Android, voor zowel je team als je patiënten. De meeste praktijken zijn snel operationeel, zonder ingewikkeld traject met IT. Op de pagina [fysiotherapie software van REVA](/fysiotherapie-software) zie je per soort software wat REVA wel en niet doet, met prijzen. Of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe REVA past bij jouw praktijk.",
+          "REVA is een patiëntenportaal en Recovery Management Platform voor fysiotherapiepraktijken. Het vervangt je EPD, agenda of declaratiesoftware niet en koppelt er niet mee, maar werkt ernaast op het punt waar die systemen ophouden: de tijd tussen behandelingen, zonder dubbele invoer. Patiënten houden zelf hun herstel bij, en jij ziet in één overzicht wie aandacht nodig heeft, zonder extra telefoontjes.",
+          "REVA werkt via de browser, voor zowel je team als je patiënten, en patiënten zetten het als app op hun beginscherm. De meeste praktijken zijn snel operationeel, zonder ingewikkeld traject met IT. Op de pagina [fysiotherapie software van REVA](/fysiotherapie-software) zie je per soort software wat REVA wel en niet doet, met prijzen. Of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe REVA past bij jouw praktijk.",
         ],
       },
     ],
@@ -848,11 +851,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: "Vervangt REVA mijn bestaande EPD of praktijksoftware?",
-        answer: "Nee. REVA is een aanvullend patiëntenportaal en vervangt je EPD, agenda of declaratiesysteem niet. De meeste praktijken gebruiken REVA naast hun huidige software, specifiek voor de communicatie en het overzicht tussen behandelingen door.",
+        answer: "Nee. REVA werkt naast je EPD, zonder koppeling, en vervangt je EPD, agenda of declaratiesysteem niet. Agenda en administratie blijven daar, dus er is geen dubbele invoer. REVA richt zich op het herstel van je patiënten tussen de behandelingen door.",
       },
       {
         question: "Wat kost software voor een fysiopraktijk?",
-        answer: "Dat verschilt per type software en leverancier. Een EPD wordt vaak per behandelaar per maand afgerekend. REVA kost 49 euro per maand voor een zelfstandige fysiotherapeut, 129 euro voor 2 tot 5 medewerkers, 229 euro voor 6 tot 10 medewerkers, 349 euro voor 11 tot 20 medewerkers en vanaf 699 euro voor grotere praktijken en ketens, met alle functies inbegrepen en exclusief btw.",
+        answer: `Dat verschilt per type software en leverancier. Een EPD wordt vaak per behandelaar per maand afgerekend. ${priceSentence} Alle functies zijn inbegrepen.`,
       },
       {
         question: "Waar moet software voor fysiotherapie aan voldoen op het gebied van privacy?",
@@ -1075,6 +1078,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Van ondernemingsplan tot eerste patiënt: welke registraties je nodig hebt, aan welke wetten je praktijk moet voldoen, wat het kost en hoe je contracten met zorgverzekeraars regelt.",
     category: "Praktijkvoering",
     publishedAt: "2026-11-08",
+    updatedAt: "2026-11-13",
     readTime: "12 min",
     image: {
       src: "/blog/eigen-fysiotherapiepraktijk-starten.webp",
@@ -1274,7 +1278,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Hoe REVA een startende praktijk ondersteunt",
         paragraphs: [
           "Als startende praktijk wil je je tijd besteden aan behandelen, niet aan nabellen en losse appjes. REVA is een patiëntenportaal dat naast je EPD werkt. Patiënten houden zelf hun herstel bij met een korte check-in, en jij ziet in één overzicht wie aandacht nodig heeft. Het portaal draait in de huisstijl van je eigen praktijk, wat een nieuwe praktijk direct een professionele uitstraling geeft.",
-          "REVA is er vanaf 49 euro per maand voor een zelfstandige fysiotherapeut, en je probeert het 30 dagen gratis. Bekijk de [prijzen](/prijzen) of [vraag een demo aan](/demo-aanvragen).",
+          `REVA kost ${euro(PRICING.seatPrice)} per behandelaar per maand, inclusief btw, en je probeert het ${TRIAL_DAYS} dagen gratis. Bekijk de [prijzen](/prijzen) of [vraag een demo aan](/demo-aanvragen).`,
         ],
       },
     ],

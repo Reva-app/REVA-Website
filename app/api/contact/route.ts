@@ -79,8 +79,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Pakketkeuze van de prijspagina, alleen als het een bestaand pakket is
-  const interest = describeInterest(body.pakket, body.facturatie);
+  // Keuze van de prijspagina (aantal behandelaars of Maatwerk), alleen als die geldig is
+  const interest = describeInterest({ behandelaars: body.behandelaars, pakket: body.pakket, facturatie: body.facturatie });
   const pilot = isPilotRequest(body.aanbod);
   const tags = [pilot ? "Pilotprogramma" : "", interest?.name ?? ""].filter(Boolean);
   const interestTag = tags.length ? ` (${tags.join(", ")})` : "";
@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
       : []),
     ...(interest
       ? [
-          { label: "Pakket", value: interest.name },
+          { label: interest.billing ? "Behandelaars" : "Pakket", value: interest.name },
           ...(interest.billing
             ? [{ label: "Betaling", value: interest.billing === "jaarlijks" ? "Jaarlijks" : "Maandelijks" }]
             : []),
@@ -129,7 +129,7 @@ export async function POST(request: NextRequest) {
           intro: pilot
             ? `${fields.name} meldt de praktijk aan voor het pilotprogramma (${pilotOffer.short}). Neem binnen één werkdag contact op voor een kennismaking.`
             : interest
-            ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor het pakket ${interest.name}. Neem binnen één werkdag contact op om een moment af te spreken.`
+            ? `${fields.name} wil graag een demo van REVA inplannen en koos op de prijzenpagina voor ${interest.billing ? interest.name : "Maatwerk"}. Neem binnen één werkdag contact op om een moment af te spreken.`
             : `${fields.name} wil graag een demo van REVA inplannen. Neem binnen één werkdag contact op om een moment af te spreken.`,
           sections: [
             ...interestSections,
@@ -185,8 +185,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (response.ok) {
-      // Demo-aanvragen (en Enterprise via contact) ook als lead in de pipeline van het dashboard
-      if (type === "demo" || interest?.name === "Enterprise") {
+      // Demo-aanvragen (en Maatwerk via contact) ook als lead in de pipeline van het dashboard
+      if (type === "demo" || interest?.name === "Maatwerk") {
         await pushLeadToPipeline({
           practice: fields.practice || fields.name,
           name: fields.name,

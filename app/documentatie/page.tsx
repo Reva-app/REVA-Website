@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import {
   LayoutDashboard, ClipboardCheck, CalendarDays,
-  Dumbbell, Pill, FolderOpen, BarChart3, HelpCircle,
+  Dumbbell, Pill, FolderOpen, BarChart3, HelpCircle, Smartphone,
 } from "lucide-react";
+import { HomescreenGuide } from "@/components/HomescreenGuide";
+import { homescreenSteps } from "@/lib/homescreen";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -10,7 +12,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Handleiding patiëntenportaal REVA",
   description:
-    "Handleiding voor het patiëntenportaal van REVA: zo gebruiken patiënten van je fysiopraktijk check-ins, afspraken, oefeningen en hun dossier.",
+    "Handleiding voor het patiëntenportaal van REVA: zo gebruiken patiënten van je fysiopraktijk check-ins, oefeningen, testresultaten en hun dossier.",
   openGraph: {
     title: "Handleiding patiëntenportaal REVA",
     description: "Zo werkt het patiëntenportaal van REVA voor de patiënten van jouw praktijk.",
@@ -30,31 +32,46 @@ const sections = [
     title: "Aan de slag",
     content: [
       {
-        heading: "Account aanmaken",
-        text: "Een patiënt ontvangt van jouw praktijk een uitnodiging en gaat naar dashboard.reva-app.nl om te registreren. Naam, e-mailadres en een wachtwoord zijn voldoende: er is geen creditcard nodig.",
+        heading: "Uitnodiging openen",
+        text: "Een patiënt ontvangt van jouw praktijk een uitnodiging per e-mail en maakt een account aan op dashboard.reva-app.nl. Patiënten krijgen alleen toegang via een uitnodiging van hun praktijk, en REVA is voor hen gratis.",
       },
       {
-        heading: "Hersteltraject instellen",
-        text: "Na het aanmaken van het account vult de patiënt het eigen hersteltraject in: de blessure of operatie, de startdatum en het doel. Op basis daarvan stelt REVA het persoonlijke dashboard samen.",
+        heading: "Tweestapsverificatie instellen",
+        text: "Bij het eerste inloggen stelt de patiënt tweestapsverificatie in met een authenticator-app, zoals Google Authenticator, Microsoft Authenticator of Authy. Dat is verplicht voor iedereen. Is de patiënt zijn telefoon kwijt, dan kan de behandelaar de tweestapsverificatie resetten.",
       },
       {
-        heading: "Dashboard inrichten",
-        text: "De patiënt voegt de eerste afspraken, medicatie en oefeningen toe. Het dashboard past zich automatisch aan op basis van wat er wordt ingevuld.",
+        heading: "Intake invullen",
+        text: "Daarna vult de patiënt zelf de intake in de app in. De fysiotherapeut ziet de ingevulde intake, vult aan waar nodig en rondt hem af. Vanaf dan staan het herstelplan en het schema klaar.",
+      },
+      {
+        heading: "REVA op het beginscherm zetten",
+        text: "REVA werkt in de browser. Op iPhone en Android kan de patiënt REVA als app op het beginscherm zetten, zodat het net zo snel opent als een gewone app. Hieronder staat stap voor stap hoe dat werkt.",
+      },
+    ],
+  },
+  {
+    id: "beginscherm",
+    icon: Smartphone,
+    title: "REVA op het beginscherm",
+    content: [
+      {
+        heading: "Waarom op het beginscherm?",
+        text: "REVA werkt in de browser, zonder App Store of Google Play. Zet je REVA op het beginscherm, dan opent het met één tik, net als een gewone app. Zo is de dagelijkse check-in in ongeveer 30 seconden gedaan.",
       },
     ],
   },
   {
     id: "dashboard",
     icon: LayoutDashboard,
-    title: "Dashboard",
+    title: "Het eigen herstel in één overzicht",
     content: [
       {
-        heading: "Wat ziet een patiënt op het dashboard?",
-        text: "Het dashboard toont een dagelijkse samenvatting: de check-in streak, de pijnscore van vandaag, de eerstvolgende afspraak en de herstelvoortgang. Alles in één oogopslag.",
+        heading: "Wat de patiënt ziet",
+        text: "De patiënt ziet het herstelplan en de fase waarin hij zit, het schema van de fysiotherapeut, zijn doelen en mijlpalen en zijn voortgang. Alles in de huisstijl van jouw praktijk.",
       },
       {
-        heading: "Statistieken deze week",
-        text: "Het blok 'Deze week' geeft een overzicht van de gemiddelde check-in score, afgeronde trainingen, medicijninnames en behaalde mijlpalen van de patiënt.",
+        heading: "Pushmeldingen",
+        text: "De patiënt krijgt een pushmelding als herinnering voor de check-in, herinneringen voor de medicatie, en een melding als de fysiotherapeut het schema aanpast of een nieuwe fase start.",
       },
     ],
   },
@@ -65,30 +82,26 @@ const sections = [
     content: [
       {
         heading: "Wat is een check-in?",
-        text: "Een dagelijkse check-in is een korte registratie van hoe een patiënt zich voelt: een score voor pijn, energie en stemming. Het duurt minder dan een minuut.",
+        text: "Een dagelijkse check-in is een korte registratie van hoe het gaat: een dagscore, pijn, mobiliteit, energie, slaap, stemming en zwelling, met een notitie als er iets te melden is. Het kost ongeveer 30 seconden.",
       },
       {
-        heading: "Waarom dagelijks?",
-        text: "Door elke dag bij te houden hoe het gaat, ontstaat er een patroon. Zo wordt zichtbaar op welke dagen het beter gaat, wat het herstel positief of negatief beïnvloedt en hoe de voortgang zich ontwikkelt.",
-      },
-      {
-        heading: "Streak",
-        text: "Elke dag dat een patiënt een check-in doet, bouwt die een streak op. De streak motiveert om consistent te blijven bijhouden hoe het gaat.",
+        heading: "Waarom elke dag?",
+        text: "Door elke dag bij te houden hoe het gaat, ontstaat er een patroon. De fysiotherapeut ziet zo tussen de behandelingen door wie aandacht nodig heeft, bijvoorbeeld bij meer pijn of zwelling.",
       },
     ],
   },
   {
     id: "afspraken",
     icon: CalendarDays,
-    title: "Afspraken",
+    title: "Eigen afspraken",
     content: [
       {
-        heading: "Afspraken toevoegen",
-        text: "Een patiënt voegt afspraken toe via het tabblad 'Afspraken': naam van de zorgverlener, datum en tijdstip, met optioneel een locatie of notitie.",
+        heading: "Afspraken bijhouden",
+        text: "Een patiënt houdt zijn eigen afspraken bij, bijvoorbeeld in het ziekenhuis, voor een scan of bij de fysiotherapeut, als onderdeel van zijn herstel.",
       },
       {
-        heading: "Overzicht",
-        text: "Komende en eerdere afspraken staan in chronologische volgorde. De eerstvolgende afspraak verschijnt ook op het dashboard.",
+        heading: "Geen planning door de praktijk",
+        text: "De praktijk plant geen afspraken in REVA. De agenda van de praktijk blijft in het eigen EPD of agendasysteem.",
       },
     ],
   },
@@ -98,12 +111,12 @@ const sections = [
     title: "Trainingen en oefeningen",
     content: [
       {
-        heading: "Oefeningen bijhouden",
-        text: "Een patiënt voegt de oefeningen toe die van de fysiotherapeut zijn meegekregen, en vinkt ze per dag af, eventueel met sets, herhalingen of een notitie.",
+        heading: "Het schema van de fysiotherapeut",
+        text: "De patiënt ziet het schema dat de fysiotherapeut heeft klaargezet, met uitleg per oefening en de dosering: sets, herhalingen, duur en belasting.",
       },
       {
-        heading: "Voortgang",
-        text: "REVA houdt bij hoeveel trainingen per week zijn afgerond. Dit is zichtbaar op het dashboard van de patiënt en in de analyse voor de behandelend fysiotherapeut.",
+        heading: "Trainen in de workoutmodus",
+        text: "In de workoutmodus doorloopt de patiënt de oefeningen een voor een en logt hij per oefening de pijn. Eigen thuisschema's kan de patiënt ook toevoegen.",
       },
     ],
   },
@@ -113,12 +126,12 @@ const sections = [
     title: "Medicatie",
     content: [
       {
-        heading: "Medicatie toevoegen",
-        text: "Een patiënt voegt medicijnen toe met naam, dosering en innametijdstip. REVA onthoudt wanneer wat moet worden ingenomen.",
+        heading: "Medicatie bijhouden",
+        text: "Een patiënt voegt medicatie toe met naam, dosering en innametijdstip, krijgt een herinnering bij elke inname en vinkt die af. De fysiotherapeut ziet in het dossier de laatste medicatie, bijvoorbeeld bij het afbouwen van pijnstilling.",
       },
       {
-        heading: "Innames registreren",
-        text: "Na elke inname wordt dit afgevinkt. Zo is zichtbaar of het schema is gevolgd, en is in de analyse terug te zien wanneer medicatie nodig was.",
+        heading: "Geen medisch advies",
+        text: "REVA geeft geen medisch advies over medicatie. Bij vragen raadpleegt de patiënt altijd de arts of apotheker.",
       },
     ],
   },
@@ -128,27 +141,27 @@ const sections = [
     title: "Persoonlijk dossier",
     content: [
       {
-        heading: "Wat kan een patiënt opslaan?",
-        text: "Diagnoses, brieven van specialisten, röntgenfoto's, echo's en andere medische documenten worden overzichtelijk opgeslagen in het persoonlijke dossier. Alles bij elkaar, altijd beschikbaar.",
+        heading: "Documenten opslaan",
+        text: "Brieven van specialisten, verslagen en andere documenten bewaart de patiënt overzichtelijk in het eigen dossier. Die documenten zijn alleen voor de patiënt zelf zichtbaar.",
       },
       {
-        heading: "Privacy",
-        text: "Het dossier van een patiënt is privé. Alleen de patiënt zelf heeft toegang. Documenten worden versleuteld opgeslagen en nooit gedeeld met derden.",
+        heading: "Wie kan het zien?",
+        text: "Gegevens zijn afgeschermd per praktijk: zorgverleners zien alleen patiënten van hun eigen praktijk, en elke inzage in een dossier wordt gelogd. Gegevens worden versleuteld opgeslagen en nooit gedeeld met derden.",
       },
     ],
   },
   {
     id: "analyse",
     icon: BarChart3,
-    title: "Voortgang en analyse",
+    title: "Mijn herstel",
     content: [
       {
-        heading: "Grafieken",
-        text: "De analyse toont grafieken van pijnscore, energie en stemming over tijd, zodat patronen zichtbaar worden die in een enkel gesprek makkelijk worden gemist.",
+        heading: "Voortgang en wat al bereikt is",
+        text: "In Mijn herstel ziet de patiënt zijn voortgang in grafieken en wat hij al heeft bereikt, zoals afgeronde fases en mijlpalen.",
       },
       {
-        heading: "Mijlpalen",
-        text: "Patiënten stellen mijlpalen in, zoals 'eerste keer lopen zonder kruk' of '10 kilometer fietsen'. REVA markeert de voortgang zodra een mijlpaal wordt behaald.",
+        heading: "Testresultaten",
+        text: "Testen die de fysiotherapeut afneemt, zoals een hop test of kracht links en rechts, ziet de patiënt hier terug, met de resultaten in de tijd.",
       },
     ],
   },
@@ -159,15 +172,15 @@ const sections = [
     content: [
       {
         heading: "Werkt REVA ook op de telefoon van een patiënt?",
-        text: "Ja. REVA werkt als Progressive Web App (PWA) op iPhone en Android. Patiënten kunnen het toevoegen aan hun beginscherm voor een native app-ervaring.",
+        text: "Ja. REVA werkt in de browser op elke telefoon, en de patiënt kan het als app op het beginscherm van een iPhone of Android-telefoon zetten.",
       },
       {
-        heading: "Kan een patiënt de eigen gegevens exporteren?",
-        text: "Ja. Een patiënt kan een export maken van check-ins, afspraken en andere gegevens als PDF of CSV, bijvoorbeeld om te delen met de behandelend fysiotherapeut of arts.",
+        heading: "Betaalt een patiënt iets voor REVA?",
+        text: "Nee. De REVA-app is gratis voor patiënten van een aangesloten praktijk.",
       },
       {
         heading: "Is REVA geschikt voor alle soorten blessures?",
-        text: "Ja. REVA is ontworpen voor patiënten in elk hersteltraject, ongeacht het type blessure of operatie: van een knieblessure, enkelblessure of schouderoperatie tot een heupvervanging, rugklachten of herstel na een val of botbreuk.",
+        text: "Ja. REVA is ontworpen voor patiënten in een herstel- of revalidatietraject: van een knieblessure, enkelblessure of schouderoperatie tot een heupprothese of rugklachten.",
       },
       {
         heading: "Wat als een patiënt een probleem heeft?",
@@ -183,7 +196,7 @@ const howToJsonLd = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   name: "Hoe patiënten aan de slag gaan met REVA",
-  description: "Stap voor stap hoe een patiënt van jouw praktijk met REVA begint: account aanmaken, hersteltraject instellen en dashboard inrichten.",
+  description: "Stap voor stap hoe een patiënt van jouw praktijk met REVA begint: uitnodiging openen, tweestapsverificatie instellen, intake invullen en REVA op het beginscherm zetten.",
   step: gettingStarted.content.map((c) => ({
     "@type": "HowToStep",
     name: c.heading,
@@ -191,10 +204,19 @@ const howToJsonLd = {
   })),
 };
 
+const homescreenHowTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "REVA op het beginscherm van je iPhone zetten",
+  description: "Zo zet je REVA als app op het beginscherm van een iPhone, via Safari.",
+  step: homescreenSteps.ios.map((s) => ({ "@type": "HowToStep", name: s.title, text: s.text })),
+};
+
 export default function DocumentatiePage() {
   return (
     <>
       <JsonLd data={howToJsonLd} />
+      <JsonLd data={homescreenHowTo} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", url: "https://www.reva-app.nl/" },
@@ -253,6 +275,11 @@ export default function DocumentatiePage() {
                         </div>
                         <h2 className="text-xl font-semibold" style={{ color: "#1a1a1a" }}>{s.title}</h2>
                       </div>
+                      {s.id === "beginscherm" && (
+                        <div className="mb-6">
+                          <HomescreenGuide />
+                        </div>
+                      )}
                       <div className="space-y-5">
                         {s.content.map((c) => (
                           <div key={c.heading}>

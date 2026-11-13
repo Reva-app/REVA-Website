@@ -15,7 +15,7 @@ const URL = "https://www.reva-app.nl/functies/voor-patienten";
 export const metadata: Metadata = {
   title: "Fysio app voor je patiënten: oefeningen en check-ins",
   description:
-    "De fysio app voor je patiënten: een eigen portaal in je huisstijl, met dagelijkse check-in, oefeningen, medicatieherinneringen en inzicht in herstel.",
+    "De fysio app voor je patiënten: een eigen app in je huisstijl, met dagelijkse check-in, oefeningen, medicatieherinneringen en inzicht in het eigen herstel.",
   openGraph: {
     title: "Fysio app voor je patiënten: oefeningen en check-ins",
     description: "Een eigen patiëntenportaal op de telefoon van je patiënt, in de huisstijl van jouw praktijk.",
@@ -27,46 +27,46 @@ export const metadata: Metadata = {
 };
 
 const start = [
-  { icon: Mail, title: "Uitnodiging per mail", text: "Na de intake krijgt je patiënt direct een uitnodiging, in de huisstijl van je praktijk." },
-  { icon: KeyRound, title: "Account activeren", text: "Je patiënt activeert het eigen portaal. Het herstelplan staat al klaar." },
-  { icon: ClipboardCheck, title: "Eerste check-in", text: "Binnen een minuut de eerste check-in ingevuld. Vanaf dan zie jij het verloop." },
+  { icon: Mail, title: "Uitnodiging per mail", text: "Je patiënt krijgt een uitnodiging in de huisstijl van je praktijk. Gratis voor de patiënt." },
+  { icon: KeyRound, title: "Inloggen en intake", text: "Je patiënt logt in met tweestapsverificatie en vult zelf de intake in. Jij rondt hem af." },
+  { icon: ClipboardCheck, title: "Eerste check-in", text: "In ongeveer 30 seconden de eerste check-in ingevuld. Vanaf dan zie jij het verloop." },
 ];
 
 const experience = [
   {
     eyebrow: "Elke dag",
-    title: "Een check-in in minder dan een minuut",
-    text: "Je patiënt geeft een dagscore en vult aan wat relevant is: pijn, mobiliteit, energie, stemming, slaap en zwelling. Een herinnering helpt om het vol te houden, en de eigen hersteltrend laat zien dat het de goede kant op gaat.",
+    title: "Een check-in in ongeveer 30 seconden",
+    text: "Je patiënt geeft een dagscore en vult pijn, mobiliteit, energie, slaap, stemming en zwelling in, met een notitie als er iets te melden is. Een pushmelding helpt om het vol te houden.",
     demo: "checkin" as const,
   },
   {
     eyebrow: "Thuis oefenen",
     title: "Het schema van de fysio altijd bij de hand",
-    text: "De oefeningen uit de actuele fase staan klaar met sets, herhalingen en uitleg. Na een sessie logt je patiënt wat er gedaan is, eventueel met een opmerking die jij in het dossier terugziet.",
+    text: "Het schema dat jij klaarzet, staat in de app met uitleg per oefening. In de workoutmodus traint je patiënt oefening voor oefening en logt hij de pijn per oefening. Pas jij het schema aan of start een nieuwe fase, dan krijgt hij een pushmelding.",
     demo: "training" as const,
   },
   {
     eyebrow: "Medicatie",
     title: "Herinneringen op de juiste momenten",
-    text: "Je patiënt legt het medicatieschema vast met dosering en tijdstippen en krijgt een herinnering bij elke inname. Zo zie je ook het afbouwen van pijnstilling terug.",
+    text: "Je patiënt legt het medicatieschema vast met dosering en tijdstippen en krijgt een herinnering bij elke inname. Jij ziet de laatste medicatie in het dossier, en zo ook het afbouwen van pijnstilling.",
     demo: "medicatie" as const,
   },
   {
     eyebrow: "Motivatie",
     title: "Een doel voor ogen, en zichtbare mijlpalen",
-    text: "Een hoofddoel zoals weer voetballen of zonder pijn traplopen, met mijlpalen uit het herstelplan. Elke behaalde stap wordt zichtbaar, en dat houdt patiënten gemotiveerd.",
+    text: "Eigen doelen zoals weer voetballen of zonder pijn traplopen, met mijlpalen uit het herstelplan. Elke behaalde stap wordt zichtbaar, en dat houdt patiënten gemotiveerd.",
     demo: "doelen" as const,
   },
   {
     eyebrow: "Inzicht",
     title: "Zien dat het herstel vooruitgaat",
-    text: "In de analyse ziet je patiënt het verloop van pijn en mobiliteit en de score op trainingsdagen tegenover rustdagen, met korte observaties in begrijpelijke taal. Dat geeft houvast, ook op een mindere dag.",
+    text: "In Mijn herstel ziet je patiënt zijn voortgang, wat hij al heeft bereikt en de resultaten van de testen die jij afneemt. Dat geeft houvast, ook op een mindere dag.",
     demo: "inzicht" as const,
   },
   {
     eyebrow: "Alles op één plek",
-    title: "Een eigen dossier en dagboek",
-    text: "Brieven, verslagen en scans, foto-updates van de voortgang en contactgegevens van het behandelteam staan bij elkaar. Het dagboek laat per dag de afspraken, check-ins, trainingen en medicatie zien.",
+    title: "Een eigen dossier en eigen afspraken",
+    text: "Brieven, verslagen en foto's van de voortgang staan bij elkaar in het eigen dossier. Je patiënt houdt ook zijn eigen afspraken bij, bijvoorbeeld in het ziekenhuis. De agenda van je praktijk blijft in je EPD.",
     demo: "patientdossier" as const,
   },
 ];
@@ -74,15 +74,15 @@ const experience = [
 const faq = [
   {
     q: "Hoe krijgt een patiënt toegang tot REVA?",
-    a: "Via de praktijk. Na de intake ontvangt de patiënt een uitnodiging per mail om het eigen portaal te activeren. Zonder uitnodiging van een praktijk kan een patiënt geen account aanmaken voor jouw praktijk.",
+    a: "Via de praktijk. De patiënt ontvangt een uitnodiging per mail, logt in met tweestapsverificatie en vult zelf de intake in. Zonder uitnodiging van een praktijk kan een patiënt geen account aanmaken voor jouw praktijk. Voor de patiënt is REVA gratis.",
   },
   {
     q: "Werkt REVA op de telefoon van mijn patiënten?",
-    a: "Ja. REVA werkt in de browser en op iOS en Android. De dagelijkse check-in is doorgaans in minder dan een minuut ingevuld.",
+    a: "Ja. REVA werkt in de browser op elke telefoon, en je patiënt kan het als app op het beginscherm zetten. De dagelijkse check-in kost ongeveer 30 seconden.",
   },
   {
     q: "Geeft REVA medisch advies aan patiënten?",
-    a: "Nee. Observaties in de app zijn informatief en geen medisch advies. Bij medicatie staat er expliciet dat de patiënt altijd de arts of apotheker raadpleegt. Het advies komt van jou als fysiotherapeut.",
+    a: "Nee. De informatie in de app is informatief en geen medisch advies. Bij medicatie raadpleegt de patiënt altijd de arts of apotheker. Het advies komt van jou als fysiotherapeut.",
   },
   {
     q: "Kan een patiënt zijn gegevens laten verwijderen?",
@@ -126,7 +126,7 @@ export default function VoorPatientenPage() {
               </h1>
               <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#6b7280" }}>
                 Je patiënten krijgen een persoonlijk hersteldashboard op hun telefoon, in de huisstijl van jouw
-                praktijk. Zij houden het herstel bij, jij ziet het verloop terug in het dossier.
+                praktijk en gratis voor hen. Zij houden het herstel bij, jij ziet het verloop terug in het dossier.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/demo-aanvragen" className="group btn-primary px-5 py-3 text-sm justify-center">
@@ -142,7 +142,7 @@ export default function VoorPatientenPage() {
                 </Link>
               </div>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{ color: "#6b7280" }}>
-                <span className="flex items-center gap-1.5"><Smartphone className="w-4 h-4" style={{ color: "#e8632a" }} /> iOS en Android</span>
+                <span className="flex items-center gap-1.5"><Smartphone className="w-4 h-4" style={{ color: "#e8632a" }} /> Als app op het beginscherm</span>
                 <span className="flex items-center gap-1.5"><Globe className="w-4 h-4" style={{ color: "#e8632a" }} /> In de browser</span>
               </div>
             </AnimateIn>

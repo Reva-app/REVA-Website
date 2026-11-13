@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, Clock, Gift, GraduationCap, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Clock, Euro, Gift, GraduationCap, MapPin, MessageCircle, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
 import { pilotAsks, pilotBenefits, pilotFit, pilotOffer, pilotSpotsLabel } from "@/lib/offer";
-import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
+import { euro, monthlyPrice, priceExamples, PRICING, TRIAL_DAYS } from "@/lib/pricing";
 
 const URL = "https://www.reva-app.nl/pilot";
-const DESCRIPTION = `Word een van de ${pilotOffer.spotsTotal} pilotpraktijken van REVA: de eerste ${pilotOffer.freeMonths} maanden gratis, daarna ${pilotOffer.discountPercent}% korting tot het einde van het eerste jaar, met persoonlijke onboarding.`;
+const DESCRIPTION = `Word een van de ${pilotOffer.spotsTotal} pilotpraktijken van REVA: ${pilotOffer.freeMonths} maanden gratis, daarna voor altijd ${euro(pilotOffer.pilotSeatPrice)} per behandelaar per maand incl. btw.`;
+const TITLE = `Pilotpraktijk: ${pilotOffer.freeMonths} maanden gratis, daarna altijd ${euro(pilotOffer.pilotSeatPrice)}`;
 
 export const metadata: Metadata = {
-  title: "Pilotprogramma: 6 maanden REVA gratis",
+  title: TITLE,
   description: DESCRIPTION,
   openGraph: {
-    title: "Pilotprogramma: 6 maanden REVA gratis",
+    title: TITLE,
     description: `We zoeken ${pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken: ${pilotOffer.short}.`,
     locale: "nl_NL",
     type: "website",
@@ -25,46 +26,50 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
 };
 
-const benefitIcons = [Gift, GraduationCap, MessageCircle, Sparkles];
+const benefitIcons = [Gift, Euro, GraduationCap, MessageCircle, Sparkles, MapPin];
 
-const euro = (n: number) =>
-  n.toLocaleString("nl-NL", { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
-
-/** Wat een pilotpraktijk in het eerste jaar betaalt: gratis maanden, daarna korting */
-const pilotYearTotal = (monthly: number) =>
-  (12 - pilotOffer.freeMonths) * monthly * (1 - pilotOffer.discountPercent / 100);
+/** Normale maandprijs tegenover de pilotprijs, per aantal behandelaars */
+const pilotMonthly = (seats: number) => seats * pilotOffer.pilotSeatPrice;
 
 const steps = [
   { title: "Aanmelden", text: "Vul het formulier in. Dat kost twee minuten.", time: "2 minuten" },
   { title: "Kennismaken", text: "We laten REVA zien en bespreken samen of de pilot bij je praktijk past.", time: "30 minuten" },
-  { title: "Samen inrichten", text: "We zetten je praktijk, team en eerste herstelplannen samen klaar.", time: "Eén sessie" },
-  { title: "Gebruiken en evalueren", text: "Je nodigt patiënten uit en we bespreken regelmatig wat werkt en wat beter kan.", time: "Eerste maanden" },
+  { title: "Samen inrichten", text: "We zetten je huisstijl, team, locaties, patiëntenlijst en eerste herstelplannen samen klaar.", time: "Eén sessie" },
+  { title: "Gebruiken en evalueren", text: `Je begeleidt minimaal ${pilotOffer.minPatients} patiënten met REVA en we evalueren na ongeveer 4 en 10 weken.`, time: `${pilotOffer.freeMonths} maanden` },
 ];
 
 const faq = [
   {
+    q: "Wat kost REVA na de pilot?",
+    a: `De eerste ${pilotOffer.freeMonths} maanden betaal je niets. Daarna betaal je ${euro(pilotOffer.pilotSeatPrice)} per behandelaar per maand, inclusief btw, vanaf de eerste behandelaar. Dat is de prijs die andere praktijken pas vanaf de ${PRICING.staffelFrom}e behandelaar krijgen; zij betalen ${euro(PRICING.seatPrice)}. Jaarlijks betalen kan ook: ${euro(pilotOffer.pilotSeatPrice * PRICING.yearlyMonths)} per behandelaar per jaar.`,
+  },
+  {
+    q: "Blijft de pilotprijs echt gelden?",
+    a: `Ja, zolang je klant blijft. Ook als je praktijk groeit, betaal je voor elke behandelaar ${euro(pilotOffer.pilotSeatPrice)} per maand, ook voor behandelaars die er later bij komen. Met 5 behandelaars is dat ${euro(pilotMonthly(5))} per maand in plaats van ${euro(monthlyPrice(5))}.`,
+  },
+  {
+    q: `Wat als ik minder dan ${pilotOffer.minPatients} patiënten heb?`,
+    a: "Neem contact met ons op. We kijken samen of de pilot past bij jouw praktijk, bijvoorbeeld als je als zelfstandige minder patiënten in een revalidatietraject hebt.",
+  },
+  {
+    q: "Kan ik tussentijds stoppen?",
+    a: `Ja. Stop je in de gratis periode van ${pilotOffer.freeMonths} maanden, dan betaal je niets. Daarna kun je opzeggen volgens de algemene voorwaarden. Na het stoppen vervalt de pilotprijs definitief: begin je later opnieuw, dan geldt de prijs van dat moment.`,
+  },
+  {
     q: "Waarom zoekt REVA pilotpraktijken?",
-    a: "REVA is net gestart. We willen dat het portaal aansluit op hoe fysiotherapeuten echt werken, en dat leer je alleen in de dagelijkse praktijk. Daarom werken we het eerste jaar nauw samen met een klein aantal praktijken.",
+    a: "We willen dat REVA aansluit op hoe fysiotherapeuten echt werken, en dat leer je alleen in de dagelijkse praktijk met echte patiënten. Daarom werken we nauw samen met een klein aantal praktijken.",
   },
   {
     q: "Is REVA al klaar voor gebruik?",
     a: "Ja. De functies die op deze site staan, kun je direct gebruiken met je patiënten. De pilot gaat over verfijnen op basis van jullie ervaring, niet over het testen van een half product.",
   },
   {
-    q: "Wat kost de pilot?",
-    a: `De eerste ${pilotOffer.freeMonths} maanden betaal je niets. Daarna betaal je tot het einde van het eerste contractjaar de helft van het gewone tarief. Voor een praktijk met 2 tot 5 medewerkers (Team) is dat ${pilotOffer.freeMonths} maanden 0 euro en daarna ${euro(pricingTiers[1].monthly / 2)} euro per maand: ${euro(pilotYearTotal(pricingTiers[1].monthly))} euro over het eerste jaar in plaats van ${euro(pricingTiers[1].monthly * 12)} euro. Prijzen zijn exclusief btw.`,
-  },
-  {
-    q: "Voor welke pakketten geldt de pilot?",
-    a: `Voor ${pilotOffer.eligible}. Enterprise, voor praktijken met meer dan 20 medewerkers, valt buiten het pilotprogramma.`,
-  },
-  {
-    q: "Wat gebeurt er na het eerste jaar?",
-    a: "Dan geldt het gewone tarief van je pakket. Je houdt alles wat je in REVA hebt opgebouwd, zoals herstelplannen, oefeningen en patiëntgegevens.",
+    q: "Voor welke praktijken is de pilot?",
+    a: `Voor ${pilotOffer.eligible}.`,
   },
   {
     q: "Hoeveel tijd kost de pilot naast het gewone gebruik?",
-    a: "Weinig. Naast het gebruik van REVA met je patiënten vragen we een paar korte evaluatiegesprekken, op momenten die jou uitkomen, en na de eerste maanden een korte klantervaring.",
+    a: `Weinig. Naast het gebruik van REVA met je patiënten vragen we twee korte evaluatiegesprekken, na ongeveer 4 en 10 weken, en na ${pilotOffer.freeMonths} maanden een korte klantervaring.`,
   },
   {
     q: "Wat als alle plekken vergeven zijn?",
@@ -101,12 +106,12 @@ export default function PilotPage() {
                 Pilotprogramma &middot; {pilotSpotsLabel()}
               </p>
               <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-5" style={{ color: "#1a1a1a" }}>
-                Zes maanden REVA <span style={{ color: "#e8632a" }}>gratis</span> als een van de drie pilotpraktijken
+                {pilotOffer.freeMonths} maanden <span style={{ color: "#e8632a" }}>gratis</span>, daarna voor altijd {euro(pilotOffer.pilotSeatPrice)} per behandelaar
               </h1>
               <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#6b7280" }}>
-                REVA is net gestart. We zoeken {pilotOffer.spotsTotal} fysiotherapiepraktijken die REVA als eerste in de
-                dagelijkse praktijk gebruiken en ons helpen het nog beter te maken. Je krijgt {pilotOffer.full},
-                met persoonlijke begeleiding. In ruil daarvoor vragen we je feedback en een klantervaring.
+                We zoeken {pilotOffer.spotsTotal} fysiotherapiepraktijken die REVA als eerste met echte patiënten gebruiken,
+                tussen de behandelingen door. Je krijgt {pilotOffer.full}, met persoonlijke inrichting en direct
+                contact met de oprichter. In ruil daarvoor vragen we echt gebruik, eerlijke feedback en een klantervaring.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="#aanmelden" className="group btn-primary px-5 py-3 text-sm justify-center">
@@ -161,10 +166,10 @@ export default function PilotPage() {
                 Wat je als pilotpraktijk krijgt
               </h2>
               <p className="text-base" style={{ color: "#6b7280" }}>
-                Meer dan korting: je bent de eerste praktijk die REVA gebruikt, en dat merk je in de begeleiding.
+                Een vaste, lagere prijs voor altijd, en je bent een van de eerste praktijken die REVA gebruikt. Dat merk je in de begeleiding.
               </p>
             </AnimateIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {pilotBenefits.map((b, i) => {
                 const Icon = benefitIcons[i % benefitIcons.length];
                 return (
@@ -228,51 +233,51 @@ export default function PilotPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <AnimateIn direction="up" className="max-w-2xl mb-8">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4" style={{ color: "#1a1a1a" }}>
-                Wat je betaalt in het eerste jaar
+                Wat je betaalt als pilotpraktijk
               </h2>
               <p className="text-base" style={{ color: "#6b7280" }}>
-                De eerste {pilotOffer.freeMonths} maanden betaal je niets, daarna de helft tot het einde van het eerste
-                contractjaar. Alle functies zitten in elk pakket. Prijzen exclusief btw.
+                De eerste {pilotOffer.freeMonths} maanden betaal je niets. Daarna betaal je voor altijd {euro(pilotOffer.pilotSeatPrice)} per
+                behandelaar per maand, zolang je klant blijft. Alle functies zijn inbegrepen. Alle bedragen inclusief btw.
               </p>
             </AnimateIn>
             <AnimateIn direction="up" delay={80}>
               <table className="w-full text-sm border-separate border-spacing-0 rounded-2xl overflow-hidden border" style={{ borderColor: "#e8e5df" }}>
                 <thead>
                   <tr style={{ background: "#f8f7f4" }}>
-                    <th scope="col" className="text-left font-semibold px-4 md:px-5 py-4" style={{ color: "#6b7280" }}>Pakket</th>
+                    <th scope="col" className="text-left font-semibold px-4 md:px-5 py-4" style={{ color: "#6b7280" }}>Behandelaars</th>
                     <th scope="col" className="text-right font-semibold px-3 md:px-5 py-4" style={{ color: "#e8632a" }}>Maand 1 t/m {pilotOffer.freeMonths}</th>
-                    <th scope="col" className="text-right font-semibold px-3 md:px-5 py-4" style={{ color: "#6b7280" }}>Maand {pilotOffer.freeMonths + 1} t/m 12</th>
-                    <th scope="col" className="hidden sm:table-cell text-right font-semibold px-3 md:px-5 py-4" style={{ color: "#6b7280" }}>Je bespaart</th>
+                    <th scope="col" className="text-right font-semibold px-3 md:px-5 py-4" style={{ color: "#6b7280" }}>Daarna</th>
+                    <th scope="col" className="hidden sm:table-cell text-right font-semibold px-3 md:px-5 py-4" style={{ color: "#6b7280" }}>Je bespaart per jaar</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {pricingTiers.map((t, i) => (
-                    <tr key={t.name} style={{ background: i % 2 ? "#fcfbf9" : "#ffffff" }}>
+                  {priceExamples.map((ex, i) => (
+                    <tr key={ex.seats} style={{ background: i % 2 ? "#fcfbf9" : "#ffffff" }}>
                       <th scope="row" className="text-left px-4 md:px-5 py-4 align-top">
-                        <span className="block font-semibold" style={{ color: "#1a1a1a" }}>{t.name}</span>
+                        <span className="block font-semibold" style={{ color: "#1a1a1a" }}>{ex.seats}</span>
                         <span className="block text-xs font-normal mt-0.5" style={{ color: "#9ca3af" }}>
-                          {t.features.find((f) => f.includes("medewerker"))} · normaal &euro;{euro(t.monthly)} p/m
+                          normaal {euro(ex.monthly)} per maand
                         </span>
                         <span className="sm:hidden block text-xs font-medium mt-1" style={{ color: "#16a34a" }}>
-                          Je bespaart &euro;{euro(t.monthly * 12 - pilotYearTotal(t.monthly))} in het eerste jaar
+                          Je bespaart {euro((ex.monthly - pilotMonthly(ex.seats)) * 12)} per jaar
                         </span>
                       </th>
                       <td className="text-right px-3 md:px-5 py-4 align-top tabular-nums font-semibold" style={{ color: "#e8632a" }}>
                         &euro;0
                       </td>
                       <td className="text-right px-3 md:px-5 py-4 align-top tabular-nums font-semibold" style={{ color: "#1a1a1a" }}>
-                        &euro;{euro(t.monthly * (1 - pilotOffer.discountPercent / 100))}
+                        {euro(pilotMonthly(ex.seats))}
                         <span className="block text-xs font-normal" style={{ color: "#9ca3af" }}>per maand</span>
                       </td>
                       <td className="hidden sm:table-cell text-right px-3 md:px-5 py-4 align-top tabular-nums font-semibold" style={{ color: "#16a34a" }}>
-                        &euro;{euro(t.monthly * 12 - pilotYearTotal(t.monthly))}
+                        {euro((ex.monthly - pilotMonthly(ex.seats)) * 12)}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
               <p className="mt-4 text-sm" style={{ color: "#6b7280" }}>
-                Enterprise (meer dan 20 medewerkers) valt buiten de pilot; daarvoor maken we een voorstel op maat. Alle details per pakket staan op de{" "}
+                Ketens en Maatwerk vallen buiten de pilot; daarvoor maken we een voorstel op maat. Het gewone prijsmodel staat op de{" "}
                 <Link href="/prijzen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>prijzenpagina</Link>.
               </p>
             </AnimateIn>

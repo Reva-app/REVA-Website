@@ -1,5 +1,8 @@
 // Veelgestelde vragen, gedeeld door de FAQ-pagina, het FAQ-schema en de Markdown-versie voor AI-agents.
-// Antwoorden zijn gebaseerd op hoe het REVA-dashboard werkelijk werkt.
+// Antwoorden zijn gebaseerd op hoe het REVA-dashboard werkelijk werkt. Bedragen komen uit lib/pricing.ts.
+
+import { euro, PRICING, priceSentence, TRIAL_DAYS, vatNote, whoCounts, yearlySentence } from "@/lib/pricing";
+import { pilotSentence } from "@/lib/offer";
 
 export type FaqItem = { q: string; a: string };
 export type FaqGroup = { id: string; category: string; intro: string; items: FaqItem[] };
@@ -12,23 +15,39 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Wat is REVA precies?",
-        a: "REVA is een patiëntenportaal dat specifiek gebouwd is voor fysiotherapiepraktijken. Patiënten houden na een blessure of operatie zelf hun herstel bij: dagelijkse check-ins over pijn en energie, foto-updates, medicatiegebruik en de voortgang van hun oefenprogramma. Als praktijk zie je al die informatie automatisch samenkomen in één overzicht, inclusief signalering van patiënten die extra aandacht nodig hebben.",
+        a: "REVA is een Recovery Management Platform voor fysiotherapiepraktijken: het platform voor herstelbegeleiding tussen de behandelingen door. Patiënten houden na een blessure of operatie in de REVA-app hun herstel bij: een dagelijkse check-in, hun oefenschema, medicatie en doelen. De fysiotherapeut ziet in het praktijkportaal wie aandacht nodig heeft, werkt met herstelplannen in fases en volgt de voortgang per patiënt.",
+      },
+      {
+        q: "Wat is een Recovery Management Platform?",
+        a: "Een Recovery Management Platform is software voor het begeleiden van herstel tussen de behandelingen door. Het EPD van de praktijk blijft leidend voor agenda, verslaglegging en declaratie. REVA richt zich op wat daar niet in past: hoe het thuis met de patiënt gaat, het herstelplan en de voortgang. REVA is de brug tussen fysiotherapeut en patiënt.",
       },
       {
         q: "Voor wie is REVA bedoeld?",
-        a: "REVA is bedoeld voor fysiotherapiepraktijken van elke omvang: van zelfstandige fysiotherapeuten tot praktijken met meerdere behandelaars en vestigingen. Het is vooral waardevol voor praktijken die patiënten begeleiden na een operatie, blessure of langdurig hersteltraject, waarbij overzicht en therapietrouw tussen behandelingen door belangrijk zijn.",
+        a: "REVA is bedoeld voor fysiotherapiepraktijken van elke omvang: van zelfstandige fysiotherapeuten tot praktijken met meerdere behandelaars en vestigingen. Het is vooral waardevol voor praktijken die patiënten begeleiden na een operatie, sportblessure of langdurig hersteltraject, waarbij overzicht en therapietrouw tussen behandelingen door belangrijk zijn.",
       },
       {
         q: "Vervangt REVA mijn bestaande EPD of praktijksoftware?",
-        a: "Nee, REVA vervangt je bestaande EPD, agenda- of declaratiesysteem niet. REVA is een aanvullend patiëntenportaal dat zich richt op de communicatie en het overzicht tussen behandelingen door: check-ins, herstelplannen en voortgang. De meeste praktijken gebruiken REVA naast hun huidige software.",
+        a: "Nee. REVA werkt naast je EPD. Agenda, verslaglegging, administratie en declaraties blijven daar. REVA richt zich op het herstel van je patiënten tussen de behandelingen door: check-ins, herstelplannen, oefeningen, testen en voortgang.",
+      },
+      {
+        q: "Moeten we gegevens dubbel invoeren?",
+        a: "Nee. In REVA leg je alleen vast wat over herstel gaat: het herstelplan, de oefeningen, testen en voortgang. Agenda en administratie blijven in je EPD. Je bestaande patiëntenlijst laad je in één keer in via een CSV-bestand.",
       },
       {
         q: "Koppelt REVA met mijn EPD?",
-        a: "Op dit moment heeft REVA geen koppeling met een EPD. REVA werkt ernaast, voor de tijd tussen de behandelingen. De patiëntenlijst kun je wel exporteren als CSV-bestand. Wil je weten wat er in jouw situatie mogelijk is, neem dan contact met ons op.",
+        a: "Nee. REVA werkt naast elk EPD, zonder koppeling. Je patiëntenlijst kun je wel importeren en exporteren als CSV-bestand. Wil je weten wat er in jouw situatie mogelijk is, neem dan contact met ons op.",
+      },
+      {
+        q: "Doet REVA ook agenda of planning?",
+        a: "Nee. De agenda en planning van je praktijk blijven in je EPD. REVA plant geen afspraken en geen ruimtes. Een patiënt kan in de app wel zijn eigen afspraken bijhouden, bijvoorbeeld in het ziekenhuis of voor een scan, als onderdeel van zijn herstel.",
+      },
+      {
+        q: "Heeft REVA een chatfunctie?",
+        a: "Nee. REVA heeft geen chatfunctie. Patiënten laten via de dagelijkse check-in weten hoe het gaat, en jij ziet in het overzicht wie aandacht nodig heeft. Zo neem je gericht contact op, op een moment dat jou uitkomt.",
       },
       {
         q: "Wat maakt REVA anders dan een algemene fitness- of trainingsapp?",
-        a: "Generieke fitnessapps zijn gebouwd voor trainingsschema's, niet voor een hersteltraject onder begeleiding. REVA is ontworpen rond de fases van herstel na een blessure of operatie: het combineert intake, herstelplannen met criteria per fase, pijn- en medicatieregistratie, een dossier en voortgangsanalyse, en de fysiotherapeut kijkt mee.",
+        a: "Generieke fitnessapps zijn gebouwd voor trainingsschema's, niet voor een hersteltraject onder begeleiding. REVA is ontworpen rond de fases van herstel na een blessure of operatie: het combineert intake, herstelplannen met criteria per fase, testen, pijn- en medicatieregistratie, een dossier en voortgangsanalyse, en de fysiotherapeut kijkt mee.",
       },
       {
         q: "Wie zit er achter REVA?",
@@ -43,51 +62,63 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Welke functies heeft REVA voor de praktijk?",
-        a: "Een intake met voorgesteld herstelplan, herstelplannen in fases met criteria en mijlpalen, een patiëntoverzicht met signalering, een compleet patiëntdossier, een bibliotheek met oefeningen en trainingsschema's, agenda en ruimteplanning, praktijkanalyse, rollen voor je team en een portaal in je eigen huisstijl. Op de functiepagina zie je per functie hoe het werkt.",
+        a: "Een dashboard Mijn patiënten met de lijst Aandacht nodig, een patiëntdossier, een intake die de patiënt zelf invult, herstelplannen in fases, een oefeningenbibliotheek met schema's per patiënt, testen en metingen, REVA-inzichten met AI-suggesties, analyse en rapporten, een voortgangsrapport als PDF, patiënten importeren via CSV, rollen voor je team en een eigen huisstijl. Op de functiepagina zie je per functie hoe het werkt.",
       },
       {
         q: "Hoe weet ik welke patiënten aandacht nodig hebben?",
-        a: "Op je dashboard markeert REVA patiënten bij een pijnscore van 7 of hoger, gemelde zwelling of een lage dagscore in de laatste check-in, en bij weinig activiteit. Je ziet het signaal per patiënt, en het totale aantal patiënten dat aandacht nodig heeft.",
+        a: "Op je dashboard Mijn patiënten staat de lijst Aandacht nodig. Daarin zet REVA patiënten met een pijnscore van 7 of hoger, gemelde zwelling, een lage dagscore of weinig activiteit, en patiënten die hun intake hebben ingevuld. Op werkdagen krijg je als behandelaar een pushmelding met het aantal, zonder patiëntgegevens.",
       },
       {
         q: "Hoe werkt de intake van een nieuwe patiënt?",
-        a: "Je doorloopt drie stappen: de aanleiding (sport, operatie of klacht, blessuretype en zijde), de intake zelf (onder meer pijn, zwelling, hulpmiddel, belasting, beperking en doelen) en een samenvatting. REVA zet de aandachtspunten en hersteldoelen op een rij en stelt een passend herstelplan voor. Alle velden zijn optioneel, je vult in wat je al weet.",
+        a: "Je patiënt vult na het inloggen zelf de intake in de app in. Jij ziet de ingevulde intake bij Aandacht nodig, vult aan waar nodig en rondt hem af. REVA zet daarbij een intake-inzicht klaar als voorstel. Jij beslist.",
       },
       {
         q: "Kan ik mijn eigen herstelplannen maken?",
-        a: "Ja. Je bouwt herstelplannen met fases, en per fase een doel, weken, criteria, mijlpalen, educatie, verboden activiteiten en gekoppelde trainingsschema's. Een patiënt gaat pas naar de volgende fase als alle criteria zijn afgevinkt, met een korte meting bij elke overgang.",
+        a: "Ja. Je maakt eigen herstelplannen in fases, en per fase leg je criteria, mijlpalen, educatie en verboden activiteiten vast. Een patiënt gaat pas naar de volgende fase als alle criteria zijn afgevinkt, met een korte meting bij elke overgang. Je kunt een eigen eerste fase instellen, of een REVA-herstelplan kopiëren en aanpassen.",
       },
       {
         q: "Wat zit er in de REVA-bibliotheek?",
-        a: "Ruim 40 voorbeeldherstelplannen, onder andere voor ACL-reconstructie, meniscus, rotator cuff, knie- en heupprothese, enkelverzwikking, hamstring, lage rug en hersenschudding, en 100 oefeningen. Ze zijn bedoeld als startpunt: je kopieert ze naar je eigen bibliotheek, beoordeelt ze en past ze aan voordat je ze aan een patiënt toewijst.",
+        a: "Ruim 40 REVA-herstelplannen, onder andere voor ACL-reconstructie, knieprothese, heupprothese, enkel, hamstring, lies, schouder, achilles, lage rug en lopersknie, ongeveer 480 oefeningen en 36 tests. Ze zijn bedoeld als startpunt: je filtert, kopieert en past ze aan voordat je ze aan een patiënt toewijst. Eigen oefeningen voeg je toe met je eigen foto of video.",
       },
       {
         q: "Kan ik oefeningen aanpassen tijdens een consult?",
-        a: "Ja. Je voegt oefeningen toe, past sets, herhalingen of duur aan of haalt ze weg, terwijl de patiënt er nog is. De patiënt ziet de wijziging direct terug in het eigen portaal, zonder dat je een los document hoeft te sturen.",
+        a: "Ja. Je past de dosering per oefening aan (sets, herhalingen, duur en belasting), voegt oefeningen toe of haalt ze weg. De patiënt krijgt een pushmelding en ziet het nieuwe schema direct in de app. In de praktijk kun je ook samen trainen in de workoutmodus op volledig scherm.",
+      },
+      {
+        q: "Kunnen patiënten mijn gegevens of documenten zien, en ik die van hen?",
+        a: "Documenten die een patiënt in het eigen dossier bewaart, zijn alleen voor de patiënt zelf. Als fysiotherapeut zie je wat voor het herstel nodig is: de check-ins, het herstelplan, het schema, de testen en onder andere de laatste foto, medicatie en afspraken.",
+      },
+      {
+        q: "Hoe werken testen in REVA?",
+        a: "Je kiest uit een bibliotheek van 36 tests en legt per patiënt de resultaten vast. Je ziet de resultaten in de tijd en de LSI, de vergelijking tussen links en rechts. Een test kun je koppelen aan een fase van het herstelplan. De patiënt ziet zijn testresultaten in de app.",
+      },
+      {
+        q: "Beslist de AI in REVA zelf?",
+        a: "Nee. REVA-inzichten doet voorstellen, bijvoorbeeld voor de dosering, een fase-overgang, een samenvatting van de voortgang of een intake-inzicht. Het blijft altijd een voorstel: jij beoordeelt het en past het met één klik toe, of je negeert het. REVA-inzichten stelt geen diagnoses en geeft geen medisch advies. Het is inbegrepen in de prijs.",
       },
       {
         q: "Werkt REVA met meerdere behandelaars en vestigingen?",
-        a: "Ja. Je richt meerdere locaties in binnen één organisatie en koppelt medewerkers en patiënten aan de juiste behandelaar en vestiging. Neemt een collega een patiënt over, dan ziet die hetzelfde dossier en herstelplan.",
+        a: "Ja. Je richt meerdere locaties in binnen één organisatie en koppelt medewerkers en patiënten aan de juiste behandelaar en locatie. Neemt een collega een patiënt over, dan ziet die hetzelfde dossier en herstelplan. Het aantal locaties is onbeperkt.",
       },
       {
         q: "Welke rollen zijn er voor medewerkers?",
-        a: "Er zijn rollen voor de praktijkeigenaar, de fysiotherapeut en de receptie. De praktijkeigenaar beheert onder meer het team, de huisstijl, de analyse en het activiteitenlog. De receptie ziet alleen contactgegevens en de agenda, geen medische informatie.",
+        a: "Er zijn twee rollen: praktijkeigenaar en fysiotherapeut. De praktijkeigenaar beheert onder meer het team, de locaties, de huisstijl, de analyse en het activiteitenlog. Fysiotherapeuten werken met hun patiënten en zien de analyse van hun eigen patiënten.",
       },
       {
-        q: "Kan REVA ook roosters en ruimtes plannen?",
-        a: "Ja. Per locatie leg je ruimtes, werkroosters en verlof vast. In de weekplanning zie je reserveringen per ruimte en fysio, en met de AI-suggestie verdeelt REVA de ruimtes over de behandelaars die die dag werken. Handmatig plannen kan altijd.",
+        q: "Welke inzichten geeft de analyse?",
+        a: "Als praktijkeigenaar zie je een overzicht met KPI's en de vergelijking met de vorige periode, en rapporten over onder andere de uitkomst bij afsluiting, de behandelduur per blessure, de tijd per fase, therapietrouw, testresultaten en tevredenheid (gemiddelde en NPS). Je exporteert de gegevens als CSV. Op maandagochtend krijg je een korte e-mail met de KPI's van de afgelopen week; die kun je uitzetten.",
       },
       {
-        q: "Kan ik mijn eigen agenda koppelen?",
-        a: "Ja. Medewerkers kunnen hun persoonlijke agenda koppelen via een iCal-link, bijvoorbeeld uit Google Agenda. REVA leest die agenda alleen uit en schrijft er nooit in terug.",
+        q: "Hoe meet REVA de tevredenheid van patiënten?",
+        a: "Na afsluiting van de behandeling geeft de patiënt een score met een optionele toelichting. Die is alleen zichtbaar voor je eigen praktijk, in de analyse. Het is geen openbare review en wordt niet op Google geplaatst.",
       },
       {
-        q: "Welke inzichten geeft de praktijkanalyse?",
-        a: "De praktijkeigenaar ziet de gemiddelde doorlooptijd per blessure, het aantal nieuwe patiënten per jaar, de werkdruk per behandelaar en hoe REVA binnen het team wordt gebruikt.",
+        q: "Kan ik een voortgangsrapport delen?",
+        a: "Ja. Per patiënt maak je een voortgangsrapport als PDF, dat je kunt printen of opslaan.",
       },
       {
         q: "Kan REVA in de huisstijl van mijn praktijk?",
-        a: "Ja. Je stelt het logo, de kleur en de naam van je praktijk in. Die zie je terug in het portaal, in de app van je patiënten en als afzender van de e-mails.",
+        a: "Ja. Je stelt het logo en de kleur van je praktijk in. Die zie je terug in het praktijkportaal, de app van je patiënten, de inlogschermen, de e-mails en de pushmeldingen.",
       },
     ],
   },
@@ -98,23 +129,27 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Wat houdt een patiënt precies bij in REVA?",
-        a: "Patiënten vullen een korte check-in in met een dagscore en, waar relevant, pijn, mobiliteit, energie, stemming, slaap en zwelling. Daarnaast loggen ze trainingen en medicatie, voegen ze foto-updates en documenten toe en werken ze aan hun doelen en mijlpalen. Al die gegevens komen samen in het dossier dat jij als fysio inziet.",
+        a: "Patiënten doen een dagelijkse check-in van ongeveer 30 seconden met een dagscore, pijn, mobiliteit, energie, slaap, stemming en zwelling, met een notitie. Daarnaast volgen ze hun oefenschema in de workoutmodus, houden ze medicatie en eigen afspraken bij, werken ze aan doelen en mijlpalen en bewaren ze documenten in hun dossier. In Mijn herstel zien ze hun voortgang en testresultaten.",
       },
       {
         q: "Hoe nodig ik een patiënt uit voor REVA?",
-        a: "Na de intake ontvangt de patiënt direct een e-mail om het eigen portaal te activeren. Het herstelplan staat dan al klaar. Patiënten krijgen alleen toegang via een uitnodiging van hun praktijk.",
+        a: "Je nodigt een patiënt uit vanuit het praktijkportaal, of je importeert je bestaande patiëntenlijst in één keer via CSV. De patiënt logt in, stelt tweestapsverificatie in en vult zelf de intake in. Patiënten krijgen alleen toegang via een uitnodiging van hun praktijk.",
       },
       {
         q: "Werkt REVA op de telefoon van mijn patiënten?",
-        a: "Ja. Zowel jij als je patiënten kunnen REVA gebruiken via de browser, iOS en Android. Patiënten vullen hun dagelijkse check-in doorgaans in minder dan een minuut in op hun telefoon.",
+        a: "Ja. REVA werkt in de browser op elke telefoon, tablet en computer. Patiënten kunnen REVA als app op het beginscherm van hun telefoon zetten. De dagelijkse check-in kost ongeveer 30 seconden.",
       },
       {
-        q: "Krijgen patiënten herinneringen?",
-        a: "Ja. Patiënten kunnen herinneringen krijgen om hun check-in in te vullen, en herinneringen op de vaste tijdstippen van hun medicatieschema.",
+        q: "Krijgen patiënten meldingen?",
+        a: "Ja. Patiënten krijgen een pushmelding als herinnering voor de check-in, herinneringen op de vaste tijdstippen van hun medicatieschema, en een melding als de fysiotherapeut het schema aanpast of een nieuwe fase start.",
+      },
+      {
+        q: "Betalen patiënten iets?",
+        a: "Nee. De REVA-app is gratis voor patiënten van een aangesloten praktijk. De praktijk betaalt per behandelaar.",
       },
       {
         q: "Geeft REVA medisch advies aan patiënten?",
-        a: "Nee. Observaties in de app zijn informatief en vormen geen medisch advies. Bij medicatie staat expliciet dat de patiënt altijd de arts of apotheker raadpleegt. Het behandeladvies komt van de fysiotherapeut.",
+        a: "Nee. De informatie in de app is informatief en vormt geen medisch advies. Bij medicatie raadpleegt de patiënt altijd de arts of apotheker. Het behandeladvies komt van de fysiotherapeut.",
       },
       {
         q: "Kan een patiënt zijn of haar gegevens laten verwijderen?",
@@ -129,15 +164,15 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Hoe lang duurt het om REVA in mijn praktijk in te richten?",
-        a: "De meeste praktijken hebben REVA snel operationeel, zonder ingewikkeld traject met IT. Je richt je organisatie in, voegt medewerkers en locaties toe en kiest herstelplannen uit je eigen of de REVA-bibliotheek. Daarna nodig je direct je eerste patiënten uit.",
+        a: "De meeste praktijken hebben REVA snel operationeel, zonder ingewikkeld traject met IT en zonder koppeling met je EPD. Je stelt je huisstijl in, voegt medewerkers en locaties toe, importeert je patiëntenlijst via CSV en kiest herstelplannen uit je eigen of de REVA-bibliotheek. Daarna nodig je direct je eerste patiënten uit.",
       },
       {
         q: "Heeft mijn team veel training nodig om met REVA te werken?",
-        a: "Nee. REVA is bewust eenvoudig opgezet, vergelijkbaar met apps die je team al dagelijks gebruikt. Bij de start begeleiden we je team persoonlijk. In de pakketten Praktijk en Praktijk Plus is persoonlijke onboarding standaard inbegrepen.",
+        a: "Nee. REVA is bewust eenvoudig opgezet, vergelijkbaar met apps die je team al dagelijks gebruikt. Bij de start krijg je persoonlijke onboarding, en support per e-mail en telefoon.",
       },
       {
-        q: "Kan ik REVA eerst zien voordat ik overstap?",
-        a: "Ja. Tijdens een persoonlijke demo laten we REVA zien aan de hand van jouw eigen praktijksituatie, zodat je precies ziet hoe het werkt voor je patiënten en je team. Daarnaast kun je REVA 30 dagen gratis proberen.",
+        q: "Kan ik REVA eerst zien voordat ik start?",
+        a: `Ja. Tijdens een persoonlijke demo laten we REVA zien aan de hand van jouw eigen praktijksituatie, zodat je precies ziet hoe het werkt voor je patiënten en je team. Daarnaast kun je REVA ${TRIAL_DAYS} dagen gratis proberen.`,
       },
       {
         q: "Moet ik al mijn patiënten tegelijk overzetten?",
@@ -145,46 +180,50 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Hoe voeg ik medewerkers toe?",
-        a: "Je nodigt medewerkers uit per mail en kiest hun rol en locatie. Het aantal medewerkers hangt af van je pakket. Openstaande uitnodigingen tellen mee.",
+        a: "Je nodigt medewerkers uit per mail en kiest hun rol (praktijkeigenaar of fysiotherapeut) en locatie. Iedere medewerker met een account telt als behandelaar voor de prijs.",
       },
     ],
   },
   {
     id: "prijzen",
-    category: "Prijzen en pakketten",
-    intro: "Wat REVA kost en hoe de pakketten werken.",
+    category: "Prijzen",
+    intro: "Wat REVA kost en hoe de prijs per behandelaar werkt.",
     items: [
       {
         q: "Wat kost REVA voor mijn praktijk?",
-        a: "REVA heeft vijf pakketten: Solo (49 euro per maand) voor de zelfstandige fysiotherapeut, Team (129 euro per maand) voor een kleine praktijk, Praktijk (229 euro per maand) voor een gevestigde praktijk met een vast team, Praktijk Plus (349 euro per maand) voor meerdere locaties en Enterprise (vanaf 699 euro per maand) voor grote praktijken en ketens. Bij jaarlijks betalen krijg je 2 maanden gratis. Alle prijzen zijn exclusief btw.",
+        a: `${priceSentence} Alle functies zijn inbegrepen, ook de AI-suggesties. ${yearlySentence}`,
+      },
+      {
+        q: "Wie telt als behandelaar?",
+        a: whoCounts,
+      },
+      {
+        q: "Zijn de prijzen inclusief btw?",
+        a: `Ja, alle prijzen zijn inclusief btw. Wat je ziet, is wat je betaalt. ${vatNote}`,
       },
       {
         q: "Is er een proefperiode?",
-        a: "Ja. Je kunt REVA 30 dagen gratis proberen. Wil je eerst zien hoe REVA werkt in jouw praktijk, dan laten we het je graag zien tijdens een persoonlijke demo.",
+        a: `Ja. Je kunt REVA ${TRIAL_DAYS} dagen gratis proberen. Wil je eerst zien hoe REVA werkt in jouw praktijk, dan laten we het je graag zien tijdens een persoonlijke demo.`,
       },
       {
         q: "Wat gebeurt er na de proefperiode?",
-        a: "Kies je een pakket, dan werk je gewoon door met alles wat je hebt ingericht. Kies je geen pakket, dan kunnen medewerkers niet meer in het praktijkportaal, maar houden patiënten toegang tot hun eigen gegevens.",
+        a: "Kies je voor REVA, dan werk je gewoon door met alles wat je hebt ingericht. Kies je er niet voor, dan kunnen medewerkers niet meer in het praktijkportaal, maar houden patiënten toegang tot hun eigen gegevens.",
       },
       {
         q: "Wat is het pilotprogramma?",
-        a: "REVA zoekt 3 praktijken die REVA als eerste gebruiken. Pilotpraktijken krijgen de eerste 6 maanden gratis en daarna 50% korting tot het einde van het eerste contractjaar, met persoonlijke onboarding. Het aanbod geldt voor Solo, Team, Praktijk en Praktijk Plus. In ruil daarvoor vragen we hun feedback en een klantervaring, zodat we REVA samen verder verbeteren. Meer informatie en aanmelden via de pilotpagina.",
+        a: `${pilotSentence} Je krijgt persoonlijke inrichting en direct contact met de oprichter. In ruil daarvoor vraagt REVA echt gebruik bij minimaal 10 patiënten, twee korte evaluatiegesprekken en een klantervaring. Meer informatie en aanmelden via de pilotpagina.`,
       },
       {
-        q: "Zijn alle functies inbegrepen in elk pakket?",
-        a: "Ja. Er is geen afgeslankte versie: elk pakket geeft toegang tot alle functies van REVA. Het verschil zit in het aantal medewerkers, vestigingen en actieve patiënten, en in support en onboarding.",
+        q: "Zijn alle functies inbegrepen?",
+        a: "Ja. Er is geen afgeslankte versie: iedere behandelaar heeft toegang tot alle functies van REVA, ook REVA-inzichten, de eigen huisstijl en de praktijkanalyse.",
       },
       {
-        q: "Wat zijn actieve patiënten?",
-        a: "Alleen patiënten die op dit moment bij je in behandeling zijn, tellen mee voor je pakket. Patiënten van wie de behandeling is afgerond, tellen niet mee.",
-      },
-      {
-        q: "Wat gebeurt er als ik boven de limiet van mijn pakket kom?",
-        a: "Je kunt gewoon doorwerken. We nemen contact met je op over een passend pakket. Alleen nieuwe medewerkers uitnodigen kan niet meer zodra je het maximum van je pakket hebt bereikt.",
+        q: "Zit er een limiet op het aantal patiënten of locaties?",
+        a: `Nee. Het aantal patiënten en locaties is onbeperkt. Alleen behandelaars tellen: ${euro(PRICING.seatPrice)} per behandelaar per maand, vanaf de ${PRICING.staffelFrom}e ${euro(PRICING.staffelPrice)}.`,
       },
       {
         q: "Zitten er verborgen kosten aan REVA?",
-        a: "Nee. Elk pakket heeft een vaste maand- of jaarprijs waarin alle functies zijn inbegrepen. Alle prijzen zijn exclusief btw.",
+        a: "Nee. Je betaalt een vaste prijs per behandelaar per maand of per jaar, inclusief btw, met alle functies inbegrepen. Voor ketens en afwijkende afspraken maken we een voorstel op maat.",
       },
     ],
   },
@@ -195,7 +234,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Is patiëntdata veilig bij REVA?",
-        a: "Ja. Gezondheidsgegevens worden versleuteld opgeslagen op servers binnen de Europese Economische Ruimte en nooit gedeeld of verkocht aan derden. Tweestapsverificatie is verplicht voor alle medewerkers van de praktijk.",
+        a: "Ja. Gezondheidsgegevens zijn afgeschermd per praktijk en worden versleuteld opgeslagen op servers binnen de Europese Economische Ruimte. Ze worden nooit gedeeld of verkocht aan derden. Tweestapsverificatie is verplicht voor iedereen, ook voor patiënten.",
       },
       {
         q: "Is REVA AVG-proof, en is er een verwerkersovereenkomst?",
@@ -210,12 +249,12 @@ export const faqGroups: FaqGroup[] = [
         a: "Ja. In het activiteitenlog ziet de praktijkeigenaar wie welk patiëntdossier heeft ingezien, gewijzigd of geëxporteerd, en wanneer. Zo sluit REVA aan bij de norm NEN 7513 voor logging in de zorg.",
       },
       {
-        q: "Wie in mijn praktijk kan welke gegevens zien?",
-        a: "Dat bepaalt de rol. Fysiotherapeuten zien de patiënten waarmee ze werken, de praktijkeigenaar beheert de organisatie, en de receptie ziet alleen contactgegevens en de agenda. Interne notities over een patiënt zijn alleen zichtbaar voor collega's binnen de praktijk.",
+        q: "Wie kan welke gegevens zien?",
+        a: "Zorgverleners zien alleen patiënten van hun eigen praktijk. Fysiotherapeuten werken met hun patiënten, de praktijkeigenaar beheert de organisatie. Interne notities over een patiënt zijn alleen zichtbaar voor collega's binnen de praktijk.",
       },
       {
-        q: "Hoe log ik veilig in als medewerker?",
-        a: "Met je wachtwoord en een code uit een authenticator-app op je telefoon. Die tweestapsverificatie is verplicht voor medewerkers van de praktijk en wordt afgedwongen in de database zelf, dus niet alleen op het inlogscherm.",
+        q: "Is inloggen veilig?",
+        a: "Ja. Tweestapsverificatie is verplicht voor iedereen, voor medewerkers én patiënten. Je logt in met je wachtwoord en een code uit een authenticator-app, zoals Google Authenticator, Microsoft Authenticator of Authy. Is een patiënt zijn telefoon kwijt, dan kan de behandelaar de tweestapsverificatie resetten.",
       },
     ],
   },

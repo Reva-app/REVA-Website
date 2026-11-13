@@ -4,6 +4,7 @@ import { CheckCircle } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FactsBox, LandingClosingCta, LandingFaq, LandingHero, LandingJsonLd, SectionIntro } from "@/components/landing/Landing";
+import { euro, PRICING, priceSentence } from "@/lib/pricing";
 
 const PATH = "/alternatief-voor-whatsapp";
 const URL = `https://www.reva-app.nl${PATH}`;
@@ -39,7 +40,7 @@ const rows = [
   { topic: "Bij vakantie of ziekte", whatsapp: "De gesprekken zitten bij één persoon", reva: "Elke collega met toegang ziet hetzelfde dossier" },
   { topic: "Oefeningen", whatsapp: "Foto's, pdf's en losse uitleg in de chat", reva: "Het schema uit het herstelplan, met sets, herhalingen en uitleg" },
   { topic: "Bereikbaarheid", whatsapp: "Patiënten verwachten snel antwoord, ook 's avonds", reva: "Patiënten loggen zelf, jij kijkt wanneer het uitkomt" },
-  { topic: "Kosten", whatsapp: "Gratis", reva: "Vanaf 49 euro per maand, exclusief btw" },
+  { topic: "Kosten", whatsapp: "Gratis", reva: `${euro(PRICING.seatPrice)} per behandelaar per maand, inclusief btw` },
 ];
 
 const steps = [
@@ -63,11 +64,11 @@ const faq = [
   },
   {
     q: "Moeten mijn patiënten een app installeren?",
-    a: "Dat kan, voor iOS en Android, maar het hoeft niet. REVA werkt ook in de browser. Een check-in kost een patiënt doorgaans minder dan een minuut.",
+    a: "Nee. REVA werkt in de browser, en patiënten kunnen het als app op het beginscherm van hun telefoon zetten. Een check-in kost een patiënt ongeveer 30 seconden.",
   },
   {
     q: "Wat kost REVA in vergelijking met WhatsApp?",
-    a: "WhatsApp is gratis. REVA kost vanaf 49 euro per maand voor een zelfstandige fysiotherapeut en 129 euro voor een team tot 5 medewerkers, exclusief btw. Daar staat tegenover dat je minder tijd kwijt bent aan berichten en telefoontjes, en dat gezondheidsgegevens niet meer op telefoons staan.",
+    a: `WhatsApp is gratis. ${priceSentence} Daar staat tegenover dat je minder tijd kwijt bent aan berichten en telefoontjes, en dat gezondheidsgegevens niet meer op telefoons staan.`,
   },
   {
     q: "Hoe stap ik over zonder dat patiënten afhaken?",

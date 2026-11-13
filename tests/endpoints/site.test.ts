@@ -66,7 +66,7 @@ test("llms.txt, sitemap en robots zijn bereikbaar", async () => {
   assert.ok((await (await get("/robots.txt", "text/plain")).text()).includes("Sitemap:"));
 });
 
-test("prijzen: Product-schema met afbeelding en alle pakketten", async () => {
+test("prijzen: Product-schema met afbeelding en de prijs per behandelaar incl. btw", async () => {
   const html = await (await get("/prijzen", "text/html")).text();
   const product = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/g)]
     .map((m) => JSON.parse(m[1]))
@@ -74,11 +74,15 @@ test("prijzen: Product-schema met afbeelding en alle pakketten", async () => {
   assert.ok(product, "Product-schema ontbreekt");
   assert.ok(Array.isArray(product.image) && product.image.length > 0, "image ontbreekt");
   for (const url of product.image) assert.equal((await fetch(url)).status, 200, url);
-  assert.deepEqual(
-    product.offers.map((o: { name: string; price: number }) => `${o.name} ${o.price}`),
-    ["REVA Solo 49", "REVA Team 129", "REVA Praktijk 229", "REVA Praktijk Plus 349", "REVA Enterprise 699"],
-  );
-  for (const offer of product.offers) assert.ok(offer.validFrom && offer.priceValidUntil);
+  const offer = product.offers;
+  assert.equal(offer["@type"], "Offer");
+  assert.equal(offer.price, 29);
+  assert.equal(offer.priceCurrency, "EUR");
+  assert.equal(offer.priceSpecification["@type"], "UnitPriceSpecification");
+  assert.equal(offer.priceSpecification.price, 29);
+  assert.equal(offer.priceSpecification.unitText, "per behandelaar per maand");
+  assert.equal(offer.priceSpecification.valueAddedTaxIncluded, true);
+  assert.ok(offer.validFrom && offer.priceValidUntil);
 });
 
 test("over REVA: AboutPage, Person en FAQ in de structured data", async () => {

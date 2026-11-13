@@ -4,6 +4,7 @@ import { CookieConsentProvider } from "@/lib/cookie-consent";
 import { CookieBanner } from "@/components/CookieBanner";
 import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { features } from "@/lib/features";
+import { PRICING } from "@/lib/pricing";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "./globals.css";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     "patiëntenportaal fysiotherapie",
     "software fysiotherapiepraktijk",
     "praktijksoftware fysiotherapie",
-    "praktijkmanagement software fysiotherapie",
+    "recovery management platform",
     "revalidatiesoftware",
     "herstelplan software",
     "patiëntcommunicatie fysio",
@@ -145,7 +146,8 @@ const jsonLd = {
         "Fysiotherapie",
         "Revalidatiesoftware",
         "Patiëntenportalen",
-        "Praktijkmanagement",
+        "Herstelbegeleiding",
+        "Recovery management",
         "Digitale zorg",
       ],
       telephone: "+31614933478",
@@ -190,15 +192,15 @@ const jsonLd = {
       inLanguage: "nl-NL",
     },
     {
-      "@type": ["SoftwareApplication", "WebApplication", "MobileApplication"],
+      "@type": ["SoftwareApplication", "WebApplication"],
       "@id": "https://www.reva-app.nl/#app",
       name: "REVA App",
       applicationCategory: "BusinessApplication",
-      applicationSubCategory: "Healthcare Practice Management Software",
-      operatingSystem: "Web, iOS, Android",
+      applicationSubCategory: "Recovery Management Platform",
+      operatingSystem: "Web",
       url: "https://www.reva-app.nl",
       description:
-        "Patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden hun herstel bij (check-ins, afspraken, oefeningen, medicatie en voortgang), praktijken krijgen overzicht en signalering van wie aandacht nodig heeft.",
+        "Recovery Management Platform en patiëntenportaal voor fysiotherapiepraktijken: het platform voor herstelbegeleiding tussen de behandelingen door, naast het EPD. Patiënten houden hun herstel bij (check-ins, oefeningen, medicatie en voortgang), de fysiotherapeut ziet wie aandacht nodig heeft.",
       inLanguage: "nl-NL",
       provider: { "@id": "https://www.reva-app.nl/#organization" },
       creator: { "@id": "https://www.reva-app.nl/#organization" },
@@ -208,11 +210,16 @@ const jsonLd = {
       },
       featureList: features.map((f) => f.title),
       offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "EUR",
-        lowPrice: "49",
-        highPrice: "699",
-        offerCount: "5",
+        "@type": "Offer",
+        price: PRICING.seatPrice,
+        priceCurrency: PRICING.currency,
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: PRICING.seatPrice,
+          priceCurrency: PRICING.currency,
+          unitText: PRICING.unit,
+          valueAddedTaxIncluded: true,
+        },
         url: "https://www.reva-app.nl/prijzen",
       },
     },

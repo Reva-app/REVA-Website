@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BellRing, CheckCircle, ClipboardList, Layers, ShieldCheck, Smartphone, Minus } from "lucide-react";
+import { ArrowRight, BellRing, CheckCircle, ClipboardList, Database, Layers, ShieldCheck, Smartphone, Stethoscope, Minus } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { PhotoWithDemo } from "@/components/ui/PhotoWithDemo";
 import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd";
-import { pricingTiers, enterpriseTier, TRIAL_DAYS } from "@/lib/pricing";
+import { euro, priceExamples, PRICING, priceSentence, TRIAL_DAYS, yearlySentence } from "@/lib/pricing";
 import { pilotOffer } from "@/lib/offer";
 import { pageDates } from "@/lib/page-dates";
 
@@ -15,7 +15,7 @@ const PATH = "/fysiotherapie-software";
 const URL = `https://www.reva-app.nl${PATH}`;
 const TITLE = "Fysiotherapie software voor overzicht tussen de behandelingen";
 const DESCRIPTION =
-  "Fysiotherapie software naast je EPD: patiënten loggen pijn, oefeningen en voortgang, jij ziet wie aandacht nodig heeft. Vanaf 49 euro per maand.";
+  "Fysiotherapie software naast je EPD: patiënten loggen pijn, oefeningen en voortgang, jij ziet wie aandacht nodig heeft. €29 per behandelaar per maand.";
 
 export const metadata: Metadata = {
   title: "Fysiotherapie software: patiëntenportaal naast je EPD",
@@ -27,10 +27,11 @@ export const metadata: Metadata = {
     "praktijksoftware fysiotherapie",
     "software voor fysiotherapeuten",
     "patiëntenportaal fysiotherapie",
+    "recovery management platform",
   ],
   openGraph: {
     title: "Fysiotherapie software: patiëntenportaal naast je EPD",
-    description: "Zie wie aandacht nodig heeft, zonder te bellen. REVA werkt naast je EPD, vanaf 49 euro per maand.",
+    description: "Zie wie aandacht nodig heeft, zonder te bellen. REVA werkt naast je EPD, voor €29 per behandelaar per maand incl. btw.",
     locale: "nl_NL",
     type: "website",
     url: URL,
@@ -40,19 +41,37 @@ export const metadata: Metadata = {
 
 /** Kernfeiten bovenaan: direct antwoord voor lezers en citeerbaar voor AI-zoekmachines */
 const facts = [
-  "REVA is fysiotherapie software voor de tijd tussen de behandelingen: patiënten houden zelf pijn, oefeningen, medicatie en voortgang bij, en de praktijk ziet dat terug in één overzicht.",
-  "REVA werkt naast je EPD. Dossiervorming, declareren en online afspraken boeken blijven in je eigen systeem.",
-  "REVA markeert automatisch patiënten met een pijnscore van 7 of hoger, gemelde zwelling, een lage dagscore of weinig activiteit.",
-  `Pakketten van 49 tot 349 euro per maand, Enterprise vanaf ${enterpriseTier.fromMonthly} euro, exclusief btw. Alle functies zitten in elk pakket en je probeert REVA ${TRIAL_DAYS} dagen gratis.`,
+  "REVA is een Recovery Management Platform voor fysiotherapiepraktijken: het platform voor herstelbegeleiding tussen de behandelingen door. Patiënten houden zelf pijn, oefeningen, medicatie en voortgang bij, en de praktijk ziet dat terug in één overzicht.",
+  "REVA werkt naast elk EPD, zonder koppeling. Het EPD blijft leidend voor agenda, verslaglegging en declaratie, dus er is geen dubbele invoer.",
+  "REVA zet patiënten met hoge pijn, gemelde zwelling, een lage dagscore, weinig activiteit of een ingevulde intake automatisch in de lijst Aandacht nodig.",
+  `${priceSentence} Alle functies zijn inbegrepen en je probeert REVA ${TRIAL_DAYS} dagen gratis.`,
 ];
 
 /** Welke software een praktijk gebruikt, en welke rol REVA daarin heeft */
 const softwareTypes: { type: string; what: string; reva: "ja" | "deels" | "nee"; role: string }[] = [
-  { type: "EPD", what: "Dossier, anamnese, behandelplan en verslaglegging per behandeling", reva: "nee", role: "Blijft je basis. REVA werkt ernaast en heeft nu geen EPD-koppeling." },
+  { type: "EPD", what: "Dossier, anamnese, behandelplan en verslaglegging per behandeling", reva: "nee", role: "Blijft leidend. REVA werkt ernaast, zonder koppeling en zonder dubbele invoer." },
   { type: "Declareren", what: "Behandelingen indienen bij zorgverzekeraars", reva: "nee", role: "Loopt via je EPD of declaratiesoftware." },
-  { type: "Agenda", what: "Afspraken plannen en online boeken", reva: "deels", role: "Online boeken blijft in je eigen systeem. REVA regelt werkroosters, verlof en ruimtes per locatie, en toont de afspraken van patiënten in de weekplanning." },
-  { type: "Oefenprogramma's", what: "Huiswerkoefeningen samenstellen en meegeven", reva: "ja", role: "Oefenschema's per fase van het herstelplan, met een eigen bibliotheek en de REVA-bibliotheek als startpunt." },
-  { type: "Patiëntenportaal", what: "Patiënten volgen tussen de afspraken door", reva: "ja", role: "De kern van REVA: dagelijkse check-ins, signalering, herstelplannen en een app in je huisstijl." },
+  { type: "Agenda", what: "Afspraken plannen en online boeken", reva: "nee", role: "Blijft in je EPD of agendasysteem. REVA plant geen afspraken; patiënten kunnen in de app alleen hun eigen afspraken bijhouden." },
+  { type: "Oefenprogramma's", what: "Huiswerkoefeningen samenstellen en meegeven", reva: "ja", role: "Schema's per patiënt uit ongeveer 480 REVA-oefeningen of je eigen oefeningen, met dosering per oefening en een workoutmodus." },
+  { type: "Patiëntenportaal", what: "Patiënten volgen tussen de afspraken door", reva: "ja", role: "De kern van REVA: dagelijkse check-ins, Aandacht nodig, herstelplannen, testen en een app in je huisstijl." },
+];
+
+const stations = [
+  {
+    icon: Database,
+    title: "EPD: agenda, verslaglegging en declaratie",
+    text: "Blijft zoals het is en blijft leidend. REVA koppelt er niet mee en neemt niets over, dus je voert niets dubbel in.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Fysiotherapeut: het REVA-praktijkportaal",
+    text: "Je begeleidt het herstel: herstelplannen, schema's, testen en de lijst Aandacht nodig, met voorstellen van REVA-inzichten.",
+  },
+  {
+    icon: Smartphone,
+    title: "Patiënt: de REVA-app",
+    text: "Je patiënt houdt thuis zijn herstel bij met een dagelijkse check-in, het oefenschema en zijn doelen. Gratis voor de patiënt.",
+  },
 ];
 
 const outcomes = [
@@ -65,27 +84,27 @@ const outcomes = [
   {
     icon: ClipboardList,
     title: "In 30 seconden voorbereid op het consult",
-    text: "Het verloop van pijn, mobiliteit, energie en slaap staat in het dossier, met foto-updates, medicatie en trainingen.",
+    text: "Het verloop van de check-ins, het herstelplan, het schema en de testen staan in het dossier, met de laatste foto en medicatie.",
     href: "/functies#dossier",
   },
   {
     icon: Layers,
     title: "Herstelplannen in fases",
-    text: "Per fase een doel, criteria, mijlpalen en oefenschema's. De patiënt gaat pas door als de criteria zijn behaald.",
+    text: "Ruim 40 REVA-herstelplannen in fases, met criteria en mijlpalen. Te kopiëren en aan te passen, of maak je eigen plan.",
     href: "/functies#herstelplannen",
   },
   {
     icon: Smartphone,
     title: "Een app in de huisstijl van je praktijk",
-    text: "Je patiënten krijgen een eigen portaal met jouw logo en kleur. Een check-in kost ze minder dan een minuut.",
+    text: "Je patiënten krijgen een eigen app met jouw logo en kleur, gratis voor hen. Een check-in kost ze ongeveer 30 seconden.",
     href: "/functies/voor-patienten",
   },
 ];
 
 const steps = [
-  { title: "Demo van 30 minuten", text: "We lopen REVA door met jouw praktijk in gedachten en kijken welk pakket past." },
-  { title: "Praktijk inrichten", text: "Je voegt medewerkers en locaties toe, kiest je huisstijl en zet je eerste herstelplannen klaar. Zonder IT-traject." },
-  { title: "Eerste patiënten uitnodigen", text: "Na de intake krijgt de patiënt een uitnodiging per mail. Vanaf de eerste check-in zie je het verloop." },
+  { title: "Demo van 30 minuten", text: "We lopen REVA door met jouw praktijk in gedachten en laten zien hoe het naast je EPD werkt." },
+  { title: "Praktijk inrichten", text: "Je voegt medewerkers en locaties toe, kiest je huisstijl, importeert je patiëntenlijst via CSV en zet je eerste herstelplannen klaar. Zonder IT-traject." },
+  { title: "Eerste patiënten uitnodigen", text: "Je patiënt vult zelf de intake in de app in. Vanaf de eerste check-in zie je het verloop." },
 ];
 
 const faq = [
@@ -95,27 +114,31 @@ const faq = [
   },
   {
     q: "Welke fysiotherapie software heb ik naast mijn EPD nodig?",
-    a: "Het EPD legt vast wat er tijdens de behandeling gebeurt. Voor de tijd daartussen, zoals pijn volgen, oefeningen meegeven en zien wie aandacht nodig heeft, gebruik je een patiëntenportaal zoals REVA. Daarmee vervang je ook het contact via WhatsApp en telefoon.",
+    a: "Het EPD legt vast wat er tijdens de behandeling gebeurt. Voor de tijd daartussen, zoals pijn volgen, oefeningen meegeven en zien wie aandacht nodig heeft, gebruik je een patiëntenportaal of Recovery Management Platform zoals REVA. Daarmee vervang je ook veel los contact via WhatsApp en telefoon.",
+  },
+  {
+    q: "Wat is een Recovery Management Platform?",
+    a: "Een Recovery Management Platform is software voor herstelbegeleiding tussen de behandelingen door. Het EPD blijft leidend voor agenda, verslaglegging en declaratie; het platform richt zich op hoe het thuis met de patiënt gaat, het herstelplan en de voortgang. REVA is zo'n platform voor fysiotherapiepraktijken.",
   },
   {
     q: "Vervangt REVA mijn EPD?",
-    a: "Nee. REVA is een aanvullend patiëntenportaal. Je EPD, declaratie- en agendasysteem blijf je gebruiken. REVA heeft op dit moment geen koppeling met een EPD, de patiëntenlijst kun je wel exporteren als CSV-bestand.",
+    a: "Nee. REVA werkt naast je EPD, zonder koppeling. Agenda, verslaglegging en declaraties blijven daar, dus er is geen dubbele invoer. In REVA leg je alleen vast wat over herstel gaat. Je patiëntenlijst kun je importeren en exporteren als CSV-bestand.",
   },
   {
     q: "Wat kost fysiotherapie software zoals REVA?",
-    a: `REVA kost 49 euro per maand voor een zelfstandige fysiotherapeut, 129 euro voor een team tot 5 medewerkers, 229 euro voor 6 tot 10 medewerkers en 349 euro voor 11 tot 20 medewerkers. Enterprise begint bij ${enterpriseTier.fromMonthly} euro per maand. Prijzen zijn exclusief btw, bij jaarlijks betalen krijg je 2 maanden gratis.`,
+    a: `${priceSentence} Met 3 behandelaars betaal je ${euro(priceExamples.find((e) => e.seats === 3)!.monthly)} per maand. ${yearlySentence}`,
   },
   {
     q: "Hoe snel kan mijn praktijk met REVA starten?",
-    a: "Je hebt geen IT-traject nodig. Na het inrichten van medewerkers, locaties, huisstijl en herstelplannen nodig je direct je eerste patiënten uit. Bij de pakketten Praktijk en hoger hoort persoonlijke onboarding.",
+    a: "Je hebt geen IT-traject nodig. Na het inrichten van medewerkers, locaties, huisstijl en herstelplannen, en het importeren van je patiëntenlijst, nodig je direct je eerste patiënten uit. Persoonlijke onboarding is inbegrepen.",
   },
   {
     q: "Is REVA geschikt voor gezondheidsgegevens onder de AVG?",
-    a: "Ja. Gegevens staan versleuteld op servers binnen de EU. Je praktijk blijft verwerkingsverantwoordelijke en REVA werkt op basis van een verwerkersovereenkomst. Er is tweestapsverificatie en een activiteitenlog volgens NEN 7513.",
+    a: "Ja. Gegevens staan versleuteld op servers binnen de EU en zijn afgeschermd per praktijk. Je praktijk blijft verwerkingsverantwoordelijke en REVA werkt op basis van een verwerkersovereenkomst. Tweestapsverificatie is verplicht voor iedereen, ook voor patiënten, en elke inzage wordt gelogd volgens NEN 7513.",
   },
   {
     q: "Werkt REVA op de telefoon van mijn patiënten?",
-    a: "Ja. Zowel je patiënten als je team gebruiken REVA via de browser, iOS en Android. Patiënten vullen hun dagelijkse check-in doorgaans in minder dan een minuut in.",
+    a: "Ja. REVA werkt in de browser, en patiënten kunnen het als app op het beginscherm van hun telefoon zetten. De dagelijkse check-in kost ongeveer 30 seconden.",
   },
 ];
 
@@ -181,6 +204,7 @@ export default function FysiotherapieSoftwarePage() {
               <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: "#6b7280" }}>
                 Je EPD laat zien wat er in de behandelkamer gebeurt. REVA laat zien hoe het je patiënten daarna
                 vergaat: wie pijn heeft, wie oefent en wie aandacht nodig heeft, zonder te bellen of te appen.
+                REVA is een Recovery Management Platform: het werkt naast je EPD, zonder dubbele invoer.
               </p>
               {pilotOffer.active && pilotOffer.spotsLeft > 0 && (
                 <p className="text-sm mb-6" style={{ color: "#1a1a1a" }}>
@@ -205,7 +229,7 @@ export default function FysiotherapieSoftwarePage() {
                 </Link>
               </div>
               <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{ color: "#6b7280" }}>
-                {[`${TRIAL_DAYS} dagen gratis proberen`, "Vanaf 49 euro per maand", "Naast je EPD", "Europese servers"].map((t) => (
+                {[`${TRIAL_DAYS} dagen gratis proberen`, `${euro(PRICING.seatPrice)} per behandelaar, incl. btw`, "Naast elk EPD", "Europese servers"].map((t) => (
                   <li key={t} className="inline-flex items-center gap-1.5">
                     <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#e8632a" }} />
                     {t}
@@ -236,6 +260,34 @@ export default function FysiotherapieSoftwarePage() {
                 <p className="mt-5 text-xs" style={{ color: "#9ca3af" }}>Bijgewerkt op {updated}</p>
               </div>
             </AnimateIn>
+          </div>
+        </section>
+
+        {/* Drie stations: EPD, fysiotherapeut, patiënt */}
+        <section className="py-16 md:py-20" style={{ background: "#ffffff" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up" className="max-w-2xl mb-10">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4" style={{ color: "#1a1a1a" }}>
+                REVA naast je EPD: geen dubbele invoer, wel grip op het herstel
+              </h2>
+              <p className="text-base" style={{ color: "#6b7280" }}>
+                REVA is een Recovery Management Platform, het platform voor herstelbegeleiding tussen de behandelingen door.
+                Denk in drie stations: elk doet waar het goed in is.
+              </p>
+            </AnimateIn>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {stations.map(({ icon: Icon, title, text }, i) => (
+                <AnimateIn key={title} direction="up" delay={i * 70} className="h-full">
+                  <div className="h-full rounded-2xl border p-6" style={{ background: i === 1 ? "#1c1c1e" : "#ffffff", borderColor: i === 1 ? "#1c1c1e" : "#e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                    <span className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: i === 1 ? "rgba(232,99,42,0.16)" : "#fff3ee" }}>
+                      <Icon className="w-5 h-5" style={{ color: "#e8632a" }} />
+                    </span>
+                    <h3 className="text-base font-semibold mb-2" style={{ color: i === 1 ? "#ffffff" : "#1a1a1a" }}>{title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: i === 1 ? "#c9c9ce" : "#6b7280" }}>{text}</p>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -350,40 +402,39 @@ export default function FysiotherapieSoftwarePage() {
                 Wat kost fysiotherapie software van REVA?
               </h2>
               <p className="text-base max-w-sm" style={{ color: "#6b7280" }}>
-                Je betaalt naar de grootte van je praktijk. Alle functies zitten in elk pakket, prijzen zijn exclusief btw.
+                Je betaalt per behandelaar, inclusief btw. Onbeperkt patiënten en locaties, alle functies inbegrepen.
               </p>
             </AnimateIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {pricingTiers.map((tier, i) => (
-                <AnimateIn key={tier.name} direction="up" delay={i * 60} className="h-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {priceExamples.map((ex, i) => (
+                <AnimateIn key={ex.seats} direction="up" delay={i * 60} className="h-full">
                   <div
                     className="h-full rounded-2xl p-6 flex flex-col"
                     style={
-                      tier.popular
+                      i === 0
                         ? { background: "#1c1c1e" }
                         : { background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }
                     }
                   >
-                    <h3 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#e8632a" }}>{tier.name}</h3>
+                    <h3 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#e8632a" }}>
+                      {ex.seats} {ex.seats === 1 ? "behandelaar" : "behandelaars"}
+                    </h3>
                     <p className="mb-2">
-                      <span className="text-3xl font-bold tracking-tight" style={{ color: tier.popular ? "#ffffff" : "#1a1a1a" }}>&euro;{tier.monthly}</span>
-                      <span className="text-sm" style={{ color: tier.popular ? "#9ca3af" : "#6b7280" }}> / maand</span>
+                      <span className="text-3xl font-bold tracking-tight" style={{ color: i === 0 ? "#ffffff" : "#1a1a1a" }}>{euro(ex.monthly)}</span>
+                      <span className="text-sm" style={{ color: i === 0 ? "#9ca3af" : "#6b7280" }}> / maand</span>
                     </p>
-                    <p className="text-sm" style={{ color: tier.popular ? "#c9c9ce" : "#6b7280" }}>{tier.tagline}</p>
-                    <p className="mt-3 text-xs" style={{ color: tier.popular ? "#9ca3af" : "#9ca3af" }}>
-                      {tier.features.filter((f) => f.includes("medewerker") || f.includes("patiënten")).join(" · ")}
-                    </p>
+                    <p className="mt-auto text-xs" style={{ color: "#9ca3af" }}>incl. btw · {euro(ex.yearly)} per jaar</p>
                   </div>
                 </AnimateIn>
               ))}
             </div>
             <AnimateIn direction="up" delay={200} className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-sm" style={{ color: "#6b7280" }}>
-                Meer dan 20 medewerkers of een keten? Enterprise vanaf &euro;{enterpriseTier.fromMonthly} per maand.
-                Bij jaarlijks betalen krijg je 2 maanden gratis.
+                {euro(PRICING.seatPrice)} per behandelaar per maand, vanaf de {PRICING.staffelFrom}e {euro(PRICING.staffelPrice)}. Een keten of afwijkende
+                afspraken? Dan maken we een voorstel op maat. Bij jaarlijks betalen krijg je 2 maanden gratis.
               </p>
               <Link href="/prijzen" className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange shrink-0" style={{ color: "#e8632a" }}>
-                Alle pakketten vergelijken
+                Bereken je prijs
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </AnimateIn>
@@ -401,8 +452,8 @@ export default function FysiotherapieSoftwarePage() {
                 <div>
                   <h2 className="text-lg font-semibold mb-1.5" style={{ color: "#1a1a1a" }}>Gebouwd voor gezondheidsgegevens</h2>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                    Versleutelde opslag op servers binnen de EU, een verwerkersovereenkomst onder de AVG, tweestapsverificatie
-                    en een activiteitenlog volgens NEN 7513. Je praktijk blijft eigenaar van de gegevens.{" "}
+                    Versleutelde opslag op servers binnen de EU, gegevens afgeschermd per praktijk, een verwerkersovereenkomst onder de AVG,
+                    verplichte tweestapsverificatie voor iedereen en een activiteitenlog volgens NEN 7513. Je praktijk blijft eigenaar van de gegevens.{" "}
                     <Link href="/blog/avg-patientdata-fysiopraktijk" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
                       Lees meer over de AVG in je praktijk
                     </Link>

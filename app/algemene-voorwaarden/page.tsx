@@ -29,7 +29,7 @@ export default function AlgemeneVoorwaardenPage() {
         ])}
       />
       <SiteLayout>
-      <LegalLayout title="Algemene Voorwaarden" lastUpdated="5 november 2026">
+      <LegalLayout title="Algemene Voorwaarden" lastUpdated="13 november 2026">
         <p>
           <strong>Opmerking vooraf:</strong> deze voorwaarden gaan uit van een B2B-relatie waarin een
           fysiotherapiepraktijk REVA afneemt en zelf patiënten uitnodigt. Deze tekst is nog niet
@@ -43,6 +43,7 @@ export default function AlgemeneVoorwaardenPage() {
           <li><strong>REVA / wij:</strong> de aanbieder van de REVA App dienst.</li>
           <li><strong>Praktijk / Klant:</strong> de fysiotherapiepraktijk die een overeenkomst met REVA aangaat om de dienst te gebruiken.</li>
           <li><strong>Praktijkgebruiker:</strong> een medewerker van de praktijk met een REVA-account.</li>
+          <li><strong>Behandelaar:</strong> een praktijkgebruiker met de rol praktijkeigenaar of fysiotherapeut en een account in het praktijkportaal.</li>
           <li><strong>Patiënt:</strong> de natuurlijke persoon die door de praktijk wordt uitgenodigd om REVA te gebruiken voor zijn of haar hersteltraject.</li>
           <li><strong>Dienst:</strong> het patiëntenportaal dat via reva-app.nl en dashboard.reva-app.nl wordt aangeboden.</li>
           <li><strong>Account:</strong> de persoonlijke omgeving van een praktijkgebruiker of patiënt binnen de dienst.</li>
@@ -88,36 +89,44 @@ export default function AlgemeneVoorwaardenPage() {
           minderjarige voor REVA.
         </p>
 
-        <h2>5. Abonnementen en pakketten</h2>
+        <h2>5. Abonnement en prijs</h2>
         <p>
-          REVA wordt aangeboden in vijf pakketten: Solo, Team, Praktijk, Praktijk Plus en Enterprise. Elk pakket
-          geeft toegang tot alle functies van REVA en verschilt in het aantal medewerkers,
-          vestigingen en actieve patiënten dat is inbegrepen, en in het niveau van support en onboarding. De
-          actuele pakketten en de bijbehorende prijzen staan op{" "}
-          <a href="/prijzen">reva-app.nl/prijzen</a>.
+          REVA wordt aangeboden tegen een prijs per behandelaar per maand. Iedere behandelaar telt mee
+          voor de prijs. Het abonnement geeft toegang tot alle functies van REVA, voor een onbeperkt
+          aantal patiënten en vestigingen. Patiënten betalen niets voor het gebruik van REVA. De
+          actuele prijzen staan op{" "}
+          <a href="/prijzen">reva-app.nl/prijzen</a>. Voor ketens en afwijkende afspraken kan een
+          maatwerkovereenkomst worden gesloten; de afspraken in die overeenkomst gaan dan voor.
         </p>
         <p>
           Een abonnement wordt aangegaan voor de duur van een maand of een jaar, afhankelijk van de
           gekozen facturatiewijze, en wordt telkens stilzwijgend verlengd voor eenzelfde periode
-          tenzij de praktijk tijdig opzegt conform artikel 7. Een praktijk kan op elk moment
-          overstappen naar een groter of kleiner pakket door contact met ons op te nemen; wij
-          bevestigen de wijziging en de ingangsdatum schriftelijk.
+          tenzij de praktijk tijdig opzegt conform artikel 7. Een praktijk kan het aantal
+          behandelaars op elk moment wijzigen door behandelaars toe te voegen of te verwijderen; wij
+          bevestigen een wijziging in de prijs en de ingangsdatum daarvan schriftelijk.
         </p>
         <p>
-          Groeit een praktijk buiten de grenzen van het gekozen pakket, dan nemen wij contact op om
-          samen een passend pakket te bepalen voordat er extra kosten in rekening worden gebracht.
+          <strong>Pilotpraktijken.</strong> REVA kan een beperkt aantal praktijken als pilotpraktijk
+          toelaten. Een pilotplek geldt alleen na schriftelijke bevestiging per e-mail door REVA. Een
+          pilotpraktijk gebruikt REVA de eerste 3 maanden kosteloos en betaalt daarna een vaste,
+          verlaagde prijs per behandelaar, zoals vermeld in die bevestiging. Die prijs blijft gelden
+          zolang de overeenkomst ononderbroken doorloopt, ook voor behandelaars die later worden
+          toegevoegd, en is niet overdraagbaar. Eindigt de overeenkomst, dan vervalt de pilotprijs
+          definitief. Start de praktijk later opnieuw, dan gelden de prijzen die op dat moment op de
+          prijzenpagina staan. De tegenprestaties van de pilotpraktijk, zoals gebruik bij een minimum
+          aantal patiënten, evaluatiegesprekken en een klantervaring, staan in de bevestiging.
         </p>
 
         <h2>6. Betalingen en facturatie</h2>
         <p>
           Facturatie vindt plaats maandelijks of jaarlijks vooraf, afhankelijk van de gekozen
           facturatiewijze. Bij jaarlijkse facturatie geldt de korting die op het moment van afsluiten
-          op de prijzenpagina is vermeld.
+          op de prijzenpagina is vermeld. Alle op de prijzenpagina vermelde prijzen zijn inclusief btw.
         </p>
         <p>
           Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan. Bij het uitblijven van
           betaling kunnen wij, na een herinnering, de toegang tot de dienst tijdelijk opschorten
-          totdat het openstaande bedrag is voldaan. Wijzigingen in de prijs van een pakket worden
+          totdat het openstaande bedrag is voldaan. Wijzigingen in de prijs per behandelaar worden
           minimaal 30 dagen van tevoren aangekondigd aan de praktijk.
         </p>
 
@@ -144,11 +153,10 @@ export default function AlgemeneVoorwaardenPage() {
 
         <h2>9. Support</h2>
         <p>
-          Alle pakketten geven recht op e-mailsupport tijdens werkdagen, met een reactietijd van
-          maximaal 1 werkdag. Het Team-pakket en hoger geeft daarnaast recht op telefonische support.
-          Het Praktijk-pakket en hoger geeft recht op prioriteitsondersteuning met een kortere
-          reactietijd. Enterprise-klanten krijgen een vaste, persoonlijke accountmanager als eerste
-          aanspreekpunt. Support is bereikbaar via{" "}
+          Iedere praktijk heeft recht op persoonlijke onboarding bij de start en op support per e-mail
+          en telefoon tijdens werkdagen, met een reactietijd van maximaal 1 werkdag. Bij een
+          maatwerkovereenkomst krijgt de praktijk een vaste contactpersoon als eerste aanspreekpunt.
+          Support is bereikbaar via{" "}
           <a href="mailto:info@reva-app.nl">info@reva-app.nl</a>.
         </p>
 

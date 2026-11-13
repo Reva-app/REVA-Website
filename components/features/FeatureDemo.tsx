@@ -114,9 +114,9 @@ function IntakeDemo() {
   ];
   return (
     <div ref={ref}>
-      <Frame title="Nieuwe patiënt" meta="Intake">
+      <Frame title="Intake van Sanne" meta="Ingevuld door patiënt">
         <div className="flex gap-1.5 mb-4">
-          {["Aanleiding", "Intake", "REVA-analyse"].map((s, i) => (
+          {["Patiënt vult in", "Jij vult aan", "Afronden"].map((s, i) => (
             <span
               key={s}
               className="flex-1 text-center text-[10.5px] font-semibold py-1.5 rounded-lg transition-colors duration-300"
@@ -136,10 +136,10 @@ function IntakeDemo() {
         </div>
         <div className={`mt-3 rounded-xl p-3 ${show(at(6))}`} style={{ background: "#1c1c1e" }}>
           <p className="flex items-center gap-1.5 text-[10.5px] font-semibold mb-1" style={{ color: "#f59e6b" }}>
-            <Sparkles className="w-3 h-3" /> Aanbevolen herstelplan
+            <Sparkles className="w-3 h-3" /> Intake-inzicht, voorstel
           </p>
-          <p className="text-[13px] font-semibold text-white">ACL-reconstructie herstelprotocol</p>
-          <p className="text-[11px] mt-0.5" style={{ color: "#9ca3af" }}>Uitnodiging per mail klaar om te versturen</p>
+          <p className="text-[13px] font-semibold text-white">Past bij herstelplan ACL-reconstructie</p>
+          <p className="text-[11px] mt-0.5" style={{ color: "#9ca3af" }}>Toepassen of negeren: jij beslist</p>
         </div>
       </Frame>
     </div>
@@ -230,7 +230,7 @@ function SignaleringDemo() {
 function DossierDemo() {
   const { ref, step } = useDemoStep(8, 1100);
   const tab = Math.min(3, Math.floor(step / 2));
-  const tabs = ["Check-ins", "Foto's", "Medicatie", "Training"];
+  const tabs = ["Check-ins", "Foto", "Medicatie", "Schema"];
   return (
     <div ref={ref}>
       <Frame title="Sanne de Vries" meta="Patiëntdossier">
@@ -343,50 +343,72 @@ function OefeningenDemo() {
 
 // ─── Demo's voor de praktijk ────────────────────────────────────────────────
 
-function AgendaDemo() {
+function TestenDemo() {
   const { ref, at } = useDemoStep(6);
-  const rooms = ["Ruimte 1", "Ruimte 2", "Oefenzaal"];
-  const blocks: { room: number; day: number; who: string; k: number }[] = [
-    { room: 0, day: 0, who: "Tom", k: 2 },
-    { room: 1, day: 0, who: "Femke", k: 3 },
-    { room: 0, day: 1, who: "Femke", k: 3 },
-    { room: 2, day: 1, who: "Tom", k: 4 },
-    { room: 1, day: 2, who: "Anne", k: 4 },
-    { room: 2, day: 3, who: "Anne", k: 5 },
-    { room: 0, day: 4, who: "Tom", k: 5 },
+  const results: [string, string, number, number][] = [
+    ["Week 6", "71%", 71, 1],
+    ["Week 10", "84%", 84, 2],
+    ["Week 14", "93%", 93, 3],
   ];
-  const days = ["ma", "di", "wo", "do", "vr"];
   return (
     <div ref={ref}>
-      <Frame title="Ruimteverdeling" meta="Locatie Centrum">
-        <div className="grid grid-cols-[64px_repeat(5,1fr)] gap-1 text-[10px]">
-          <span />
-          {days.map((d) => <span key={d} className="text-center font-semibold" style={{ color: "#9ca3af" }}>{d}</span>)}
-          {rooms.map((r, ri) => (
-            <div key={r} className="contents">
-              <span className="self-center truncate" style={{ color: "#6b7280" }}>{r}</span>
-              {days.map((_, di) => {
-                const b = blocks.find((x) => x.room === ri && x.day === di);
-                return (
-                  <div key={di} className="h-9 rounded-md" style={{ background: "#f8f7f4" }}>
-                    {b && (
-                      <div className={`h-full rounded-md flex items-center justify-center font-semibold ${show(at(b.k))}`} style={{ background: "#fff3ee", color: ORANGE }}>
-                        {b.who}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+      <Frame title="Single leg hop test" meta="Testen">
+        <div className="grid grid-cols-2 gap-2 mb-3.5">
+          {[["Links (geopereerd)", at(3) ? "131 cm" : at(2) ? "119 cm" : "101 cm"], ["Rechts", "141 cm"]].map(([l, v]) => (
+            <div key={l} className="rounded-xl p-2.5" style={{ background: "#f8f7f4" }}>
+              <p className="text-[9.5px]" style={{ color: "#9ca3af" }}>{l}</p>
+              <p className="text-base font-semibold tabular-nums" style={{ color: "#1a1a1a" }}>{v}</p>
             </div>
           ))}
         </div>
-        <div
-          className="mt-3.5 flex items-center justify-center gap-1.5 text-[12px] font-semibold rounded-lg py-2.5 transition-all duration-300"
-          style={{ background: at(1) && !at(5) ? ORANGE : "#f1ede8", color: at(1) && !at(5) ? "#ffffff" : "#6b7280" }}
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          {at(5) ? "Ruimtes verdeeld op basis van werkroosters" : "AI-suggestie genereren"}
+        <p className="text-[11px] font-semibold mb-2" style={{ color: "#6b7280" }}>LSI in de tijd</p>
+        <div className="space-y-2 mb-3">
+          {results.map(([w, label, pct, k]) => (
+            <div key={w} className="grid grid-cols-[56px_1fr_36px] items-center gap-2 text-[11px]">
+              <span style={{ color: "#1a1a1a" }}>{w}</span>
+              <div className="h-2.5 rounded-full" style={{ background: "#f1ede8" }}>
+                <div className="h-full rounded-full transition-all duration-700 ease-out" style={{ width: at(k) ? `${pct}%` : "0%", background: k === 3 ? ORANGE : "#f2a07a" }} />
+              </div>
+              <span className="text-right tabular-nums" style={{ color: "#9ca3af" }}>{label}</span>
+            </div>
+          ))}
         </div>
+        <div className={`flex items-center gap-2 rounded-lg px-3 py-2 ${show(at(4))}`} style={{ background: "#fff3ee" }}>
+          <Check className="w-3.5 h-3.5 shrink-0" style={{ color: ORANGE }} />
+          <span className="text-[11px]" style={{ color: "#1a1a1a" }}>Gekoppeld aan fase 3, zichtbaar voor de patiënt</span>
+        </div>
+      </Frame>
+    </div>
+  );
+}
+
+function InzichtenDemo() {
+  const { ref, at } = useDemoStep(6);
+  return (
+    <div ref={ref}>
+      <Frame title="REVA-inzichten" meta="Sanne de Vries">
+        <div className={`rounded-xl p-3 mb-2 ${show(at(1))}`} style={{ background: "#1c1c1e" }}>
+          <p className="flex items-center gap-1.5 text-[10.5px] font-semibold mb-1" style={{ color: "#f59e6b" }}>
+            <Sparkles className="w-3 h-3" /> Voorstel: dosering
+          </p>
+          <p className="text-[12.5px] font-semibold text-white">Step-down van 3 x 8 naar 3 x 10</p>
+          <p className="text-[10.5px] mt-0.5" style={{ color: "#9ca3af" }}>Pijn bij deze oefening 2 weken lang 2 van 10 of lager</p>
+          <div className="flex gap-1.5 mt-2.5">
+            <span className="text-[10.5px] font-semibold px-2.5 py-1 rounded-md transition-colors duration-300" style={{ background: at(3) ? ORANGE : "rgba(255,255,255,0.12)", color: "#ffffff" }}>
+              {at(4) ? "Toegepast" : "Toepassen"}
+            </span>
+            <span className="text-[10.5px] font-semibold px-2.5 py-1 rounded-md" style={{ background: "rgba(255,255,255,0.06)", color: "#9ca3af" }}>Negeren</span>
+          </div>
+        </div>
+        <div className={`rounded-xl p-3 ${show(at(2))}`} style={{ background: "#f8f7f4" }}>
+          <p className="flex items-center gap-1.5 text-[10.5px] font-semibold mb-1" style={{ color: ORANGE }}>
+            <Sparkles className="w-3 h-3" /> Voorstel: fase-overgang
+          </p>
+          <p className="text-[12px] font-medium" style={{ color: "#1a1a1a" }}>Alle criteria van fase 2 zijn behaald</p>
+        </div>
+        <p className={`mt-2.5 text-[10.5px] ${show(at(5))}`} style={{ color: "#9ca3af" }}>
+          Altijd een voorstel. Jij beslist.
+        </p>
       </Frame>
     </div>
   );
@@ -402,8 +424,8 @@ function AnalyseDemo() {
   ];
   return (
     <div ref={ref}>
-      <Frame title="Praktijkanalyse" meta="Dit jaar">
-        <p className="text-[11px] font-semibold mb-2" style={{ color: "#6b7280" }}>Gemiddelde doorlooptijd per blessure</p>
+      <Frame title="Analyse en rapporten" meta="Dit jaar">
+        <p className="text-[11px] font-semibold mb-2" style={{ color: "#6b7280" }}>Behandelduur per blessure</p>
         <div className="space-y-2 mb-4">
           {bars.map(([l, w, v], i) => (
             <div key={l} className="grid grid-cols-[100px_1fr_40px] items-center gap-2 text-[11px]">
@@ -417,12 +439,12 @@ function AnalyseDemo() {
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-xl p-3" style={{ background: "#1c1c1e" }}>
-            <p className="text-[10px]" style={{ color: "#7c7c8a" }}>Nieuwe patiënten dit jaar</p>
-            <p className="text-xl font-semibold text-white">{at(2) ? 184 : at(1) ? 96 : 0}</p>
+            <p className="text-[10px]" style={{ color: "#7c7c8a" }}>Afgesloten, vs. vorige periode</p>
+            <p className="text-xl font-semibold text-white">{at(2) ? "184" : at(1) ? "96" : "0"}{at(2) && <span className="text-[11px] font-medium ml-1" style={{ color: "#86efac" }}>+12%</span>}</p>
           </div>
           <div className="rounded-xl p-3" style={{ background: "#f8f7f4" }}>
-            <p className="text-[10px]" style={{ color: "#9ca3af" }}>Werkdruk per behandelaar</p>
-            <p className="text-xl font-semibold" style={{ color: "#1a1a1a" }}>{at(3) ? "Gelijk verdeeld" : "..."}</p>
+            <p className="text-[10px]" style={{ color: "#9ca3af" }}>Tevredenheid (NPS)</p>
+            <p className="text-xl font-semibold" style={{ color: "#1a1a1a" }}>{at(3) ? "+62" : "..."}</p>
           </div>
         </div>
       </Frame>
@@ -432,11 +454,11 @@ function AnalyseDemo() {
 
 function TeamDemo() {
   const { ref, at } = useDemoStep(5);
-  const members: [string, string, "orange" | "gray" | "purple"][] = [
+  const members: [string, string, "orange" | "gray"][] = [
     ["Anne de Groot", "Praktijkeigenaar", "orange"],
     ["Tom Bakker", "Fysiotherapeut", "gray"],
     ["Femke van Dijk", "Fysiotherapeut", "gray"],
-    ["Joyce Smit", "Receptie", "purple"],
+    ["Joyce Smit", "Fysiotherapeut", "gray"],
   ];
   return (
     <div ref={ref}>
@@ -462,7 +484,7 @@ function TeamDemo() {
           ))}
         </div>
         <p className={`mt-2 text-[10.5px] ${show(at(4))}`} style={{ color: "#9ca3af" }}>
-          Receptie ziet alleen contactgegevens en de agenda.
+          Patiëntenlijst importeren via CSV, met een controle vooraf.
         </p>
       </Frame>
     </div>
@@ -616,7 +638,7 @@ function TrainingDemo() {
           ))}
         </div>
         <div className={`rounded-xl px-3 py-2 text-[10.5px] ${show(at(5))}`} style={{ background: "#fff3ee", color: "#1a1a1a" }}>
-          Sessie gelogd. Opmerking: &ldquo;Step-up ging lichter dan vorige week&rdquo;
+          Sessie gelogd. Pijn bij step-up: 2 van 10
         </div>
       </Phone>
     </div>
@@ -690,8 +712,8 @@ function InzichtDemo() {
   const pain = "0,30 20,34 40,32 60,36 80,34 100,36 120,35 140,37 160,36 180,38";
   return (
     <div ref={ref}>
-      <Phone title="Analyse">
-        <p className="text-[10px] font-semibold mb-1" style={{ color: "#9ca3af" }}>HERSTELTREND</p>
+      <Phone title="Mijn herstel">
+        <p className="text-[10px] font-semibold mb-1" style={{ color: "#9ca3af" }}>VOORTGANG</p>
         <p className="text-[12px] font-semibold mb-2" style={{ color: "#1a1a1a" }}>Mobiliteit en pijn</p>
         <div className="bg-white border rounded-xl p-2.5 mb-3" style={{ borderColor: "#e8e5df" }}>
           <svg viewBox="0 0 180 70" className="w-full h-20 overflow-visible">
@@ -705,12 +727,12 @@ function InzichtDemo() {
             <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#9ca3af" }} /> Pijn</span>
           </div>
         </div>
-        <p className="text-[10px] font-semibold mb-1.5" style={{ color: "#9ca3af" }}>WAT VALT OP</p>
+        <p className="text-[10px] font-semibold mb-1.5" style={{ color: "#9ca3af" }}>BEREIKT</p>
         <div className={`rounded-xl px-3 py-2 text-[10.5px] mb-1.5 ${show(at(3))}`} style={{ background: "#fff3ee", color: "#1a1a1a" }}>
-          Je mobiliteit verbetert terwijl je pijnniveau stabiel blijft.
+          Fase 2 afgerond: traplopen zonder pijn
         </div>
         <div className={`rounded-xl px-3 py-2 text-[10.5px] ${show(at(4))}`} style={{ background: "#f8f7f4", border: "1px solid #e8e5df", color: "#1a1a1a" }}>
-          Op trainingsdagen is je score gemiddeld hoger.
+          Testresultaat hop test: 93% van je andere been
         </div>
       </Phone>
     </div>
@@ -742,12 +764,12 @@ function PatientDossierDemo() {
             </div>
           ))}
         </div>
-        <p className="text-[10px] font-semibold mb-1.5" style={{ color: "#9ca3af" }}>BEHANDELTEAM</p>
+        <p className="text-[10px] font-semibold mb-1.5" style={{ color: "#9ca3af" }}>MIJN AFSPRAKEN</p>
         <div className={`flex items-center gap-2 bg-white border rounded-xl px-2.5 py-2 ${show(at(6))}`} style={{ borderColor: "#e8e5df" }}>
-          <span className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-semibold text-white" style={{ background: ORANGE }}>T</span>
+          <span className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-semibold text-white" style={{ background: ORANGE }}>14</span>
           <div>
-            <p className="text-[11px] font-medium" style={{ color: "#1a1a1a" }}>Tom Bakker</p>
-            <p className="text-[9.5px]" style={{ color: "#9ca3af" }}>Fysiotherapeut, Fysio de Linde</p>
+            <p className="text-[11px] font-medium" style={{ color: "#1a1a1a" }}>Controle orthopeed</p>
+            <p className="text-[9.5px]" style={{ color: "#9ca3af" }}>Ziekenhuis, 10:30</p>
           </div>
         </div>
       </Phone>
@@ -763,7 +785,6 @@ const demos: Record<DemoKey, () => React.JSX.Element> = {
   signalering: SignaleringDemo,
   dossier: DossierDemo,
   oefeningen: OefeningenDemo,
-  agenda: AgendaDemo,
   analyse: AnalyseDemo,
   team: TeamDemo,
   huisstijl: HuisstijlDemo,
@@ -774,6 +795,8 @@ const demos: Record<DemoKey, () => React.JSX.Element> = {
   doelen: DoelenDemo,
   inzicht: InzichtDemo,
   patientdossier: PatientDossierDemo,
+  testen: TestenDemo,
+  inzichten: InzichtenDemo,
 };
 
 /** Korte, rustige animatie van een functie zoals die in het dashboard werkt. */

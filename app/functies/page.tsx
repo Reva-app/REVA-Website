@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Database } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
@@ -13,7 +13,7 @@ const URL = "https://www.reva-app.nl/functies";
 export const metadata: Metadata = {
   title: "Software voor fysiotherapeuten: alle functies van REVA",
   description:
-    "Alle functies van REVA: intake, herstelplannen, signalering, dossier, oefenschema's, agenda en analyse, plus de patiëntapp met dagelijkse check-in.",
+    "Alle functies van REVA: intake, herstelplannen, signalering, dossier, oefenschema's, testen en analyse, plus de patiëntapp met dagelijkse check-in.",
   openGraph: {
     title: "Software voor fysiotherapeuten: alle functies van REVA",
     description: "Zie per functie hoe REVA werkt, voor de fysiotherapeut, de praktijk en de patiënt.",
@@ -52,8 +52,9 @@ export default function FunctiesPage() {
                 Alle functies van REVA, <span style={{ color: "#e8632a" }}>van intake tot afronding</span>
               </h1>
               <p className="text-base md:text-lg leading-relaxed" style={{ color: "#6b7280" }}>
-                REVA is software voor fysiotherapeuten en hun patiënten, naast je EPD. Hieronder zie je per functie wat
-                het doet en hoe het eruitziet: voor de fysiotherapeut, voor de praktijk en voor je patiënten.
+                REVA is software voor fysiotherapeuten en hun patiënten: een Recovery Management Platform voor herstelbegeleiding
+                tussen de behandelingen door, naast je EPD. Hieronder zie je per functie wat het doet en hoe het eruitziet: voor de
+                fysiotherapeut, voor de praktijk en voor je patiënten.
               </p>
             </AnimateIn>
 
@@ -115,10 +116,10 @@ export default function FunctiesPage() {
                     <div>
                       <h3 className="text-lg font-semibold mb-1" style={{ color: "#1a1a1a" }}>De REVA-bibliotheek als startpunt</h3>
                       <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                        Je begint niet met een leeg scherm. REVA bevat {REVA_LIBRARY.protocols} voorbeeldherstelplannen,
-                        van ACL-reconstructie en knieprothese tot enkelverzwikking en hersenschudding, en{" "}
-                        {REVA_LIBRARY.exercises} oefeningen. Je kopieert ze naar je eigen bibliotheek, beoordeelt ze
-                        en past ze aan op jouw werkwijze voordat je ze aan een patiënt toewijst.
+                        Je begint niet met een leeg scherm. REVA bevat {REVA_LIBRARY.protocols} herstelplannen,
+                        van ACL-reconstructie en knieprothese tot achilles en lopersknie, {REVA_LIBRARY.exercises}{" "}
+                        oefeningen en {REVA_LIBRARY.tests} tests. Je filtert, kopieert en past ze aan op jouw werkwijze
+                        voordat je ze aan een patiënt toewijst.
                       </p>
                     </div>
                   </div>
@@ -127,6 +128,34 @@ export default function FunctiesPage() {
             </div>
           </section>
         ))}
+
+        {/* Wat REVA bewust niet doet. Het anker #agenda blijft zo werken voor oude links. */}
+        <section id="agenda" className="scroll-mt-24 py-16 md:py-20" style={{ background: featureGroups.length % 2 ? "#f8f7f4" : "#ffffff" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up">
+              <div id="naast-je-epd" className="scroll-mt-24 rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row gap-5 md:items-start" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+                <span className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "#fff3ee" }}>
+                  <Database className="w-5 h-5" style={{ color: "#e8632a" }} />
+                </span>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-semibold tracking-tight mb-2" style={{ color: "#1a1a1a" }}>
+                    Wat REVA bewust niet doet: agenda en declaratie blijven in je EPD
+                  </h2>
+                  <p className="text-sm md:text-base leading-relaxed" style={{ color: "#6b7280" }}>
+                    REVA werkt naast elk EPD, zonder koppeling. Agenda, planning, verslaglegging en declaratie blijven in je eigen
+                    systeem, dus je voert niets dubbel in. REVA richt zich volledig op het herstel van je patiënten tussen de
+                    behandelingen door. Patiënten kunnen in de app wel hun eigen afspraken bijhouden, bijvoorbeeld in het
+                    ziekenhuis. Meer hierover lees je op{" "}
+                    <Link href="/fysiotherapie-software" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+                      fysiotherapie software naast je EPD
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
 
         {/* Afsluiter */}
         <section className="py-16 md:py-24" style={{ background: "#1c1c1e" }}>

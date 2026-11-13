@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CalendarRange, BarChart3, Users, Palette, ShieldCheck } from "lucide-react";
+import { ArrowRight, Ruler, Sparkles, BarChart3, Users, Palette, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -15,7 +15,7 @@ const URL = "https://www.reva-app.nl/functies/voor-fysios";
 export const metadata: Metadata = {
   title: "REVA voor fysiotherapeuten: overzicht tussen de afspraken",
   description:
-    "Zo werkt REVA voor de fysiotherapeut: intake met herstelplan, fases met criteria, signalering van wie aandacht nodig heeft en een compleet dossier.",
+    "Zo werkt REVA voor de fysiotherapeut: intake door de patiënt, herstelplannen in fases, testen, zien wie aandacht nodig heeft en een compleet dossier.",
   openGraph: {
     title: "REVA voor fysiotherapeuten",
     description: "Van intake tot afronding: zo houd je met REVA grip op elke patiënt, ook tussen de afspraken door.",
@@ -29,65 +29,70 @@ export const metadata: Metadata = {
 const journey = [
   {
     eyebrow: "Dag 1: de intake",
-    title: "Een nieuwe patiënt staat binnen een paar minuten klaar",
-    text: "Je loopt de intake door: waarvoor de patiënt komt, de blessure en zijde, pijn, zwelling, hulpmiddel, belasting en wat de patiënt weer wil kunnen. REVA zet de aandachtspunten en hersteldoelen op een rij en stelt een passend herstelplan voor. Je patiënt krijgt direct een uitnodiging per mail.",
+    title: "Je patiënt vult de intake zelf in, jij rondt af",
+    text: "Je nodigt je patiënt uit, of importeert je patiëntenlijst via CSV. Na het inloggen vult de patiënt zelf de intake in de app in: waarvoor hij komt, zijn klachten en wat hij weer wil kunnen. Jij ziet de ingevulde intake bij Aandacht nodig, vult aan en rondt af. REVA zet een intake-inzicht klaar als voorstel. Jij beslist.",
     demo: "intake" as const,
     link: { href: "/functies#intake", label: "Meer over de intake" },
   },
   {
     eyebrow: "Week 1: het herstelplan",
     title: "Een plan in fases, dat je zelf in de hand houdt",
-    text: `Je wijst een herstelplan toe uit je eigen bibliotheek of uit de REVA-bibliotheek met ${REVA_LIBRARY.protocols} voorbeeldplannen. Per fase staan doel, criteria, mijlpalen, educatie en oefenschema's klaar. Pas als alle criteria zijn behaald, zet je de patiënt door naar de volgende fase, met een korte meting erbij.`,
+    text: `Je wijst een herstelplan toe uit je eigen bibliotheek of uit de REVA-bibliotheek met ${REVA_LIBRARY.protocols} herstelplannen, te filteren op blessure. Per fase staan criteria, mijlpalen, educatie en verboden activiteiten klaar. Pas als alle criteria zijn behaald, zet je de patiënt door naar de volgende fase, met een korte meting erbij. REVA-inzichten stelt een fase-overgang voor zodra het past; jij beslist.`,
     demo: "herstelplan" as const,
     link: { href: "/functies#herstelplannen", label: "Meer over herstelplannen" },
   },
   {
     eyebrow: "Tussen de afspraken",
     title: "Je ziet wie aandacht nodig heeft, zonder te bellen",
-    text: "Je patiënt vult thuis korte check-ins in en logt oefeningen en medicatie. Op je dashboard markeert REVA wie een hoge pijnscore doorgaf, zwelling meldde, een lage dagscore had of weinig actief is. Zo neem je gericht contact op, op het moment dat het ertoe doet.",
+    text: "Je patiënt doet thuis een check-in van ongeveer 30 seconden en logt oefeningen en medicatie. Op je dashboard Mijn patiënten zet REVA in de lijst Aandacht nodig wie hoge pijn of zwelling meldde, een lage dagscore had of weinig actief is. Zo neem je gericht contact op, op het moment dat het ertoe doet.",
     demo: "signalering" as const,
     link: { href: "/functies#signalering", label: "Meer over signalering" },
   },
   {
     eyebrow: "Voor het consult",
     title: "In 30 seconden weet je hoe de week ging",
-    text: "Open het dossier en je ziet het verloop van dagscore, pijn, mobiliteit, energie, stemming en slaap, naast foto-updates, medicatie en trainingen. Tijdens het consult pas je oefeningen direct aan, en je patiënt ziet de wijziging meteen in de eigen app.",
+    text: "Open het dossier en je ziet het verloop van de check-ins, het herstelplan, het schema en de testen, met de laatste foto, medicatie en afspraken van de patiënt. Leg een test vast en je ziet de LSI meteen. Wil je de voortgang delen, dan maak je een voortgangsrapport als PDF.",
     demo: "dossier" as const,
     link: { href: "/functies#dossier", label: "Meer over het dossier" },
   },
   {
     eyebrow: "Tijdens het consult",
     title: "Oefeningen aanpassen terwijl de patiënt er nog is",
-    text: "Voeg een oefening toe uit de bibliotheek, pas sets of herhalingen aan of haal een oefening weg. Het schema hoort bij de fase van het herstelplan, met een vaste frequentie per week. Geen losse papiertjes of pdf's meer.",
+    text: "Voeg een oefening toe uit ongeveer 480 REVA-oefeningen of je eigen oefeningen, pas de dosering aan of haal een oefening weg. Je patiënt krijgt een pushmelding bij het nieuwe schema. In de praktijk start je de workoutmodus op volledig scherm en log je de training samen.",
     demo: "oefeningen" as const,
     link: { href: "/functies#oefeningen", label: "Meer over oefeningen en schema's" },
   },
 ];
 
 const practiceItems = [
-  { icon: CalendarRange, title: "Agenda en ruimtes", text: "Werkroosters, verlof en ruimteverdeling per locatie, met een AI-suggestie.", href: "/functies#agenda" },
-  { icon: BarChart3, title: "Praktijkanalyse", text: "Doorlooptijd per blessure, nieuwe patiënten en werkdruk per behandelaar.", href: "/functies#analyse" },
-  { icon: Users, title: "Team en rollen", text: "Praktijkeigenaar, fysiotherapeut en receptie, op meerdere locaties.", href: "/functies#team" },
-  { icon: Palette, title: "Eigen huisstijl", text: "Logo, kleur en praktijknaam in het portaal, de app en e-mails.", href: "/functies#huisstijl" },
-  { icon: ShieldCheck, title: "Veiligheid", text: "Tweestapsverificatie, activiteitenlog (NEN 7513) en Europese servers.", href: "/functies#veiligheid" },
+  { icon: Ruler, title: "Testen en metingen", text: "36 tests met resultaten in de tijd en LSI, optioneel per fase.", href: "/functies#testen" },
+  { icon: Sparkles, title: "REVA-inzichten", text: "Voorstellen voor dosering en fase-overgang. Jij beslist.", href: "/functies#inzichten" },
+  { icon: BarChart3, title: "Analyse en rapporten", text: "Uitkomst, behandelduur, therapietrouw en tevredenheid met NPS.", href: "/functies#analyse" },
+  { icon: Users, title: "Team, locaties en import", text: "Praktijkeigenaar en fysiotherapeut, patiënten importeren via CSV.", href: "/functies#team" },
+  { icon: Palette, title: "Eigen huisstijl", text: "Logo en kleur in portaal, patiëntenapp, e-mails en pushmeldingen.", href: "/functies#huisstijl" },
+  { icon: ShieldCheck, title: "Veiligheid", text: "Tweestapsverificatie voor iedereen, activiteitenlog (NEN 7513) en Europese servers.", href: "/functies#veiligheid" },
 ];
 
 const faq = [
   {
     q: "Hoeveel tijd kost REVA mij per patiënt?",
-    a: "De intake duurt een paar minuten en een herstelplan wijs je toe uit je bibliotheek. Daarna houdt de patiënt zelf het herstel bij. Voor het consult zie je in een halve minuut hoe de week ging.",
+    a: "De patiënt vult de intake zelf in; jij vult aan en rondt af. Een herstelplan wijs je toe uit je bibliotheek. Daarna houdt de patiënt zelf het herstel bij. Voor het consult zie je in een halve minuut hoe de week ging.",
   },
   {
     q: "Kan ik mijn eigen herstelplannen en oefeningen gebruiken?",
-    a: `Ja. Je bouwt je eigen bibliotheek met herstelplannen, schema's en oefeningen. De REVA-bibliotheek met ${REVA_LIBRARY.protocols} voorbeeldplannen en ${REVA_LIBRARY.exercises} oefeningen gebruik je als startpunt: je kopieert ze, beoordeelt ze en past ze aan voordat je ze toewijst.`,
+    a: `Ja. Je bouwt je eigen bibliotheek met herstelplannen, schema's en oefeningen. De REVA-bibliotheek met ${REVA_LIBRARY.protocols} herstelplannen en ${REVA_LIBRARY.exercises} oefeningen gebruik je als startpunt: je kopieert ze, beoordeelt ze en past ze aan voordat je ze toewijst. Eigen oefeningen voeg je toe met je eigen foto of video.`,
   },
   {
     q: "Wanneer markeert REVA een patiënt als aandacht nodig?",
-    a: "Bij een pijnscore van 7 of hoger, gemelde zwelling of een lage dagscore in de laatste check-in, en bij weinig activiteit. Je ziet het signaal per patiënt op je dashboard en in de patiëntenlijst.",
+    a: "Bij een pijnscore van 7 of hoger, gemelde zwelling of een lage dagscore in de check-in, bij weinig activiteit en als een patiënt zijn intake heeft ingevuld. Je ziet die patiënten in de lijst Aandacht nodig op je dashboard Mijn patiënten.",
+  },
+  {
+    q: "Beslist de AI zelf?",
+    a: "Nee. REVA-inzichten doet voorstellen voor de dosering, een fase-overgang, een samenvatting van de voortgang en een intake-inzicht. Jij past een voorstel met één klik toe of negeert het. REVA stelt geen diagnoses en geeft geen medisch advies.",
   },
   {
     q: "Vervangt REVA mijn EPD?",
-    a: "Nee. REVA is een aanvullend patiëntenportaal voor de tijd tussen de behandelingen. Je EPD, agenda- en declaratiesysteem blijf je gewoon gebruiken.",
+    a: "Nee. REVA werkt naast je EPD, zonder koppeling. Agenda, verslaglegging en declaratie blijven daar, dus je voert niets dubbel in. REVA richt zich op het herstel van je patiënten tussen de behandelingen door.",
   },
 ];
 
@@ -179,7 +184,7 @@ export default function VoorFysiosPage() {
                 Werk je met een team of meerdere locaties? Dan regelt REVA ook de randzaken.
               </p>
             </AnimateIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {practiceItems.map(({ icon: Icon, title, text, href }, i) => (
                 <AnimateIn key={title} direction="up" delay={i * 60} className="h-full">
                   <Link href={href} className="group block h-full rounded-2xl border p-5 transition-shadow hover:shadow-md" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>

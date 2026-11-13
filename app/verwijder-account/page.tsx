@@ -199,7 +199,7 @@ export default function VerwijderAccountPage() {
               {[
                 "Accountgegevens (naam en e-mailadres)",
                 "Alle dagelijkse check-ins",
-                "Afspraken en agenda",
+                "Eigen afspraken",
                 "Medicatiegegevens en pijnregistraties",
                 "Trainingen en oefeningen",
                 "Persoonlijk dossier en documenten",

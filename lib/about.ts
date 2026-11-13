@@ -1,3 +1,5 @@
+import { pilotOffer } from "@/lib/offer";
+
 // Feiten en veelgestelde vragen voor de pagina Over REVA, gedeeld door de pagina en de structured data.
 
 export const company = {
@@ -23,11 +25,11 @@ export const aboutFaq = [
   },
   {
     q: "Waarom is REVA opgericht?",
-    a: "Tijdens zijn herstel merkte Stef hoe groot de afstand tussen fysiotherapeut en patiënt vaak is, en dat bestaande software vooral gericht is op declareren en agenda's. Er was geen plek waar pijn, medicatie, oefeningen en voortgang samenkwamen. REVA brengt patiënt en fysiotherapeut dichter bij elkaar, ook tussen de afspraken door.",
+    a: "Tijdens zijn herstel merkte Stef hoe groot de afstand tussen fysiotherapeut en patiënt vaak is, en dat bestaande software vooral gericht is op declareren en agenda's. Er was geen plek waar pijn, medicatie, oefeningen en voortgang samenkwamen. REVA brengt patiënt en fysiotherapeut dichter bij elkaar, ook tussen de afspraken door: als Recovery Management Platform naast het EPD van de praktijk.",
   },
   {
     q: "Voor wie is REVA bedoeld?",
-    a: "REVA is bedoeld voor fysiotherapiepraktijken in Nederland, van de zelfstandige fysiotherapeut tot praktijken met meerdere behandelaars en vestigingen. De praktijk biedt REVA aan haar patiënten aan als eigen patiëntenportaal.",
+    a: "REVA is bedoeld voor fysiotherapiepraktijken in Nederland, van de zelfstandige fysiotherapeut tot praktijken met meerdere behandelaars en vestigingen. De praktijk biedt REVA aan haar patiënten aan als eigen patiëntenportaal, in de eigen huisstijl.",
   },
   {
     q: "Is REVA een Nederlands bedrijf?",
@@ -35,6 +37,6 @@ export const aboutFaq = [
   },
   {
     q: "Kan ik als praktijk meedenken over REVA?",
-    a: "Ja, graag zelfs. Fysiotherapeuten en patiënten kunnen via een feedbackformulier wensen, ideeën en bugs delen. De eerste praktijken die met REVA starten, krijgen bovendien een pilotplek: de eerste 6 maanden gratis en daarna 50% korting tot het einde van het eerste jaar, in ruil voor hun feedback.",
+    a: `Ja, graag zelfs. Fysiotherapeuten en patiënten kunnen via een feedbackformulier wensen, ideeën en bugs delen. De eerste praktijken die met REVA starten, krijgen bovendien een pilotplek: ${pilotOffer.short}, in ruil voor echt gebruik en eerlijke feedback.`,
   },
 ];

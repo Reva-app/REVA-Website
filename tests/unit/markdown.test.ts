@@ -1,28 +1,27 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { blogPosts } from "@/lib/blog-posts";
-import { pricingTiers, enterpriseTier, yearlyPerMonth } from "@/lib/pricing";
+import { euro, priceExamples, priceSentence } from "@/lib/pricing";
 import { isMissingBlogPost, markdownForPath, notFoundMarkdown } from "@/lib/agent/markdown";
 import { htmlToMarkdown } from "@/lib/agent/html-to-markdown";
 
-test("homepage heeft een Markdown-versie met merk, product en prijzen", () => {
+test("homepage heeft een Markdown-versie met merk, positionering en prijzen", () => {
   const md = markdownForPath("/");
   assert.ok(md);
-  assert.match(md, /^# REVA App: patiëntenportaal en fysiotherapiesoftware/);
-  for (const tier of pricingTiers) assert.ok(md.includes(`| ${tier.name}`), tier.name);
+  assert.match(md, /^# REVA App: Recovery Management Platform/);
+  assert.ok(md.includes(priceSentence));
   assert.ok(md.includes("https://www.reva-app.nl/llms.txt"));
+  for (const old of ["Solo", "Praktijk Plus", "Enterprise", "exclusief btw", "actieve patiënten", "iOS"]) assert.ok(!md.includes(old), old);
 });
 
 test("prijzen in Markdown komen overeen met de prijsdata", () => {
   const md = markdownForPath("/prijzen")!;
-  for (const tier of pricingTiers) {
-    assert.ok(md.includes(`€${tier.monthly}`), `${tier.name} maandprijs`);
-    assert.ok(md.includes(`€${yearlyPerMonth(tier)} per maand`), `${tier.name} jaarprijs per maand`);
+  for (const ex of priceExamples) {
+    assert.ok(md.includes(`| ${ex.seats} | ${euro(ex.monthly)} | ${euro(ex.yearly)} |`), `${ex.seats} behandelaars`);
   }
-  assert.ok(md.includes(`vanaf €${enterpriseTier.fromMonthly}`));
-  assert.ok(md.includes("exclusief btw"));
-  assert.equal(yearlyPerMonth(pricingTiers[0]), 41);
-  assert.deepEqual(pricingTiers.map(yearlyPerMonth), [41, 108, 191, 291]);
+  assert.ok(md.includes("inclusief btw"));
+  assert.ok(!md.includes("exclusief btw"));
+  assert.deepEqual(priceExamples.map((e) => e.monthly), [29, 87, 145, 261, 330]);
 });
 
 test("elk blogartikel heeft een Markdown-versie met absolute links", () => {
@@ -79,3 +78,15 @@ test("HTML naar Markdown: afbeeldingen weg, link los van voorgaande tekst", () =
   assert.ok(md.includes("Lees het verhaal [Demo](https://www.reva-app.nl/demo-aanvragen)"), md);
 });
 
+
+test("llms.txt loopt gelijk met de prijs- en pilotdata en noemt geen oude pakketten", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { pilotSentence } = await import("@/lib/offer");
+  const txt = readFileSync(new URL("../../public/llms.txt", import.meta.url), "utf8");
+  assert.ok(txt.includes(priceSentence), "kernzin prijs");
+  assert.ok(txt.includes(pilotSentence), "kernzin pilot");
+  for (const ex of priceExamples) assert.ok(txt.includes(`${ex.seats === 1 ? "1 behandelaar" : `${ex.seats} behandelaars`} ${euro(ex.monthly)}`), `${ex.seats} behandelaars`);
+  for (const old of ["Solo", "Praktijk Plus", "Enterprise", "exclusief btw", "actieve patiënten", "50% korting", "6 maanden gratis", "receptie"]) {
+    assert.ok(!txt.includes(old), old);
+  }
+});

@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { isPilotRequest, pilotDemoHref, pilotOffer, pilotSpotsLabel } from "@/lib/offer";
+import { isPilotRequest, pilotDemoHref, pilotOffer, pilotSentence, pilotSpotsLabel } from "@/lib/offer";
+import { PRICING } from "@/lib/pricing";
 import { NL_MAP, projectLatLng } from "@/lib/nl-map";
 import { practices } from "@/lib/practices";
 import sitemap from "@/app/sitemap";
@@ -9,8 +10,10 @@ import { markdownForPath } from "@/lib/agent/markdown";
 
 test("pilotaanbod: link, label en alleen geldig zolang het loopt", () => {
   assert.equal(pilotDemoHref, "/pilot#aanmelden");
-  assert.equal(pilotOffer.discountPercent, 50);
-  assert.equal(pilotSpotsLabel(), "3 plekken beschikbaar");
+  assert.equal(pilotOffer.freeMonths, 3);
+  assert.equal(pilotOffer.pilotSeatPrice, PRICING.staffelPrice);
+  assert.equal(pilotOffer.minPatients, 10);
+  assert.equal(pilotSpotsLabel(), "5 plekken beschikbaar");
   assert.equal(isPilotRequest("pilot"), true);
   assert.equal(isPilotRequest("iets-anders"), false);
   assert.equal(isPilotRequest(undefined), false);
@@ -18,7 +21,9 @@ test("pilotaanbod: link, label en alleen geldig zolang het loopt", () => {
 
 test("homepage-Markdown noemt het pilotaanbod en de USP's", () => {
   const md = markdownForPath("/")!;
-  assert.ok(md.includes("de eerste 6 maanden gratis"));
+  assert.ok(md.includes(pilotSentence));
+  assert.ok(md.includes("5 pilotpraktijken"));
+  assert.ok(!md.includes("50% korting") && !md.includes("6 maanden gratis"));
   assert.ok(md.includes("Europese servers"));
 });
 

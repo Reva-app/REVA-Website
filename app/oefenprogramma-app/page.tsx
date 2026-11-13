@@ -6,6 +6,7 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { StoryRow } from "@/components/features/FeatureShowcase";
 import { FactsBox, LandingClosingCta, LandingFaq, LandingHero, LandingJsonLd, SectionIntro } from "@/components/landing/Landing";
 import { REVA_LIBRARY } from "@/lib/features";
+import { priceSentence, TRIAL_DAYS } from "@/lib/pricing";
 
 const PATH = "/oefenprogramma-app";
 const URL = `https://www.reva-app.nl${PATH}`;
@@ -36,21 +37,21 @@ const facts = [
 const blocks = [
   {
     title: "Schema's die bij het herstelplan horen",
-    text: "Geen losse lijstjes meer. Elk schema hoort bij een fase van het herstelplan, met een doel, criteria en een frequentie per week.",
+    text: "Geen losse lijstjes meer. Je stelt per patiënt een schema samen, met per oefening de dosering: sets, herhalingen, duur en belasting.",
     demo: "oefeningen" as const,
     eyebrow: "Voor de fysiotherapeut",
     link: { href: "/functies#oefeningen", label: "Meer over oefeningen en schema's" },
   },
   {
     title: "Op de telefoon van je patiënt",
-    text: "Je patiënt ziet de oefeningen van de actuele fase met sets, herhalingen en uitleg, en logt na elke sessie wat er gedaan is.",
+    text: "Je patiënt ziet het schema met uitleg per oefening, traint in de workoutmodus en logt de pijn per oefening.",
     demo: "training" as const,
     eyebrow: "Voor de patiënt",
     link: { href: "/functies#training", label: "Meer over de patiëntapp" },
   },
   {
     title: "Je ziet of er geoefend wordt",
-    text: "Gelogde trainingen en opmerkingen komen in het dossier. Wie weinig actief is, markeert REVA op je dashboard.",
+    text: "Gelogde trainingen en de pijn per oefening komen in het dossier. Wie weinig actief is, staat in de lijst Aandacht nodig op je dashboard.",
     demo: "dossier" as const,
     eyebrow: "In het dossier",
     link: { href: "/functies#dossier", label: "Meer over het dossier" },
@@ -64,7 +65,7 @@ const faq = [
   },
   {
     q: "Welke oefeningen zitten in de REVA-bibliotheek?",
-    a: `De bibliotheek bevat ${REVA_LIBRARY.exercises} oefeningen en ${REVA_LIBRARY.protocols} voorbeeldplannen als startpunt. Je kopieert ze, beoordeelt ze en past ze aan voordat je ze toewijst. De bibliotheek is nog niet klinisch getoetst, de fysiotherapeut blijft verantwoordelijk voor de keuze.`,
+    a: `De bibliotheek bevat ${REVA_LIBRARY.exercises} oefeningen en ${REVA_LIBRARY.protocols} herstelplannen als startpunt. Eigen oefeningen voeg je toe met je eigen foto of video. Je kopieert ze, beoordeelt ze en past ze aan voordat je ze toewijst. De bibliotheek is nog niet klinisch getoetst, de fysiotherapeut blijft verantwoordelijk voor de keuze.`,
   },
   {
     q: "Kan ik mijn eigen oefeningen toevoegen?",
@@ -72,7 +73,7 @@ const faq = [
   },
   {
     q: "Zie ik of mijn patiënt de oefeningen doet?",
-    a: "Ja. De patiënt logt na elke sessie wat er gedaan is, met eventueel een opmerking. Dat zie je terug in het dossier, en REVA markeert patiënten die weinig actief zijn.",
+    a: "Ja. De patiënt logt zijn training in de workoutmodus, met de pijn per oefening. Dat zie je terug in het dossier, en patiënten die weinig actief zijn, verschijnen in de lijst Aandacht nodig.",
   },
   {
     q: "Wat is het verschil met een losse oefenapp?",
@@ -80,7 +81,7 @@ const faq = [
   },
   {
     q: "Wat kost het?",
-    a: "Het oefenprogramma zit in elk pakket van REVA, vanaf 49 euro per maand voor een zelfstandige fysiotherapeut, exclusief btw. Je probeert REVA 30 dagen gratis.",
+    a: `Het oefenprogramma zit gewoon in REVA, zonder meerprijs. ${priceSentence} Je probeert REVA ${TRIAL_DAYS} dagen gratis.`,
   },
 ];
 

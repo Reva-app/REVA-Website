@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Handshake } from "lucide-react";
 import { pilotOffer, pilotSpotsLabel } from "@/lib/offer";
+import { euro } from "@/lib/pricing";
 
 /** Pilotaanbod voor de eerste praktijken; verdwijnt vanzelf als het aanbod niet meer loopt. */
 export function PilotOfferBanner({ dark = false, stacked = false }: { dark?: boolean; stacked?: boolean }) {
@@ -25,7 +26,7 @@ export function PilotOfferBanner({ dark = false, stacked = false }: { dark?: boo
           We zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken
         </p>
         <p className="text-sm" style={{ color: dark ? "#c9c9ce" : "#6b7280" }}>
-          De eerste {pilotOffer.freeMonths} maanden gratis, daarna {pilotOffer.discountPercent}% korting tot het einde van het eerste jaar. {pilotOffer.inReturn}.
+          {pilotOffer.freeMonths} maanden gratis, daarna voor altijd {euro(pilotOffer.pilotSeatPrice)} per behandelaar per maand, incl. btw. {pilotOffer.inReturn}.
         </p>
       </div>
       <Link href="/pilot" className={`group btn-primary px-5 py-2.5 text-sm justify-center shrink-0 ${stacked ? "w-full" : ""}`}>

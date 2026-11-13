@@ -15,7 +15,7 @@ import {
   Server,
   HeartHandshake,
   ChartLine,
-  Smartphone,
+  Layers,
 } from "lucide-react";
 import { AnimateIn } from "./ui/AnimateIn";
 import { BlogCover } from "./blog/BlogCover";
@@ -25,7 +25,7 @@ import { pilotOffer, pilotSpotsLabel } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { PracticeLogos } from "@/components/PracticeLogos";
 import { FeatureDemo } from "@/components/features/FeatureDemo";
-import { pricingTiers, TRIAL_DAYS } from "@/lib/pricing";
+import { euro, priceExamples, PRICING, TRIAL_DAYS } from "@/lib/pricing";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -75,8 +75,9 @@ function HeroSection() {
           </p>
 
           <p className="animate-fade-in-up delay-300 text-base md:text-lg leading-relaxed max-w-xl" style={{ color: "#c9c9ce" }}>
-            Je patiënten loggen thuis pijn, oefeningen en voortgang in een korte check-in. Jij ziet in één
-            overzicht wie afwijkt van het herstelplan, zonder te bellen of te appen.
+            REVA is het Recovery Management Platform voor de tijd tussen de behandelingen. Je patiënten loggen
+            thuis pijn, oefeningen en voortgang, jij ziet wie aandacht nodig heeft. Je EPD blijft leidend voor
+            agenda en declaratie, zonder dubbele invoer.
           </p>
 
           <div className="animate-fade-in-up delay-400 flex flex-col sm:flex-row gap-3">
@@ -102,7 +103,7 @@ function HeroSection() {
           </div>
 
           <div className="animate-fade-in-up delay-500 flex flex-wrap items-center gap-x-5 gap-y-2">
-            {["Werkt naast je EPD", "Vanaf 49 euro per maand", offerOpen ? "Persoonlijke onboarding" : `${TRIAL_DAYS} dagen gratis proberen`].map((label) => (
+            {["Werkt naast elk EPD", `${euro(PRICING.seatPrice)} per behandelaar, incl. btw`, offerOpen ? "Persoonlijke onboarding" : `${TRIAL_DAYS} dagen gratis proberen`].map((label) => (
               <div key={label} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4" style={{ color: "#e8632a" }} />
                 <span className="text-sm" style={{ color: "#c9c9ce" }}>{label}</span>
@@ -129,10 +130,10 @@ function HeroSection() {
 
 const functiesSliderItems = [
   {
-    title: "Praktijkoverzicht voor eigenaren",
-    anchor: "signalering",
-    stat: "Per fysio inzichtelijk",
-    description: "Zie als praktijkeigenaar in één oogopslag hoeveel patiënten elke fysio onder behandeling heeft en waar de drukte in je praktijk zit.",
+    title: "Analyse voor eigenaren",
+    anchor: "analyse",
+    stat: "Elke maandag in je mail",
+    description: "Zie als praktijkeigenaar de uitkomst bij afsluiting, de behandelduur per blessure, therapietrouw en tevredenheid, met de vergelijking met de vorige periode.",
     image: "/praktijk-eigenaar.png",
     imagePosition: "center",
   },
@@ -178,18 +179,18 @@ const functiesSliderItems = [
   },
   {
     title: "Oefeningen aanpassen tijdens het consult",
-    anchor: "herstelplannen",
+    anchor: "oefeningen",
     stat: "Direct bijsturen",
     description: "Pas oefeningen aan, voeg ze toe of haal ze weg terwijl de patiënt nog op de behandelbank ligt.",
     image: "/4.png",
     imagePosition: "center",
   },
   {
-    title: "Agenda en ruimteplanning",
-    anchor: "agenda",
-    stat: "Met AI-suggestie",
-    description: "Plan ruimtes en behandelaars per locatie, met werkroosters, verlof en een voorstel voor de ruimteverdeling.",
-    image: "/1.png",
+    title: "Testen en metingen",
+    anchor: "testen",
+    stat: "36 tests, met LSI",
+    description: "Leg objectieve metingen vast, zoals kracht of een hop test, en zie de resultaten en de vergelijking tussen links en rechts in de tijd.",
+    image: "/beeld/behandelruimte.webp",
     imagePosition: "center",
   },
 ];
@@ -371,10 +372,12 @@ function ProblemSection() {
 // ─── Product ───────────────────────────────────────────────────
 
 const productPoints = [
-  { title: "Signalering", text: "Zie direct wie een hoge pijnscore doorgaf, zwelling meldt of checks mist." },
-  { title: "Herstelplannen", text: "Start vanuit je eigen basisplan en pas het per patiënt aan, ook tijdens het consult." },
-  { title: "Voorbereid op elk consult", text: "Zie in 30 seconden hoe de afgelopen week ging: checks, oefeningen en medicatie." },
-  { title: "In je eigen huisstijl", text: "Patiënten zien het portaal van jouw praktijk, op hun eigen telefoon." },
+  { title: "Aandacht nodig", text: "Zie direct wie een hoge pijnscore doorgaf, zwelling meldt of weinig actief is." },
+  { title: "Herstelplannen", text: "Ruim 40 herstelplannen in fases als startpunt, aan te passen per patiënt." },
+  { title: "Testen en metingen", text: "Objectieve metingen met LSI, zodat je voortgang ook in cijfers ziet." },
+  { title: "REVA-inzichten", text: "Voorstellen voor dosering en fase-overgang. Altijd een voorstel: jij beslist." },
+  { title: "Voorbereid op elk consult", text: "Zie in 30 seconden hoe de afgelopen week ging: check-ins, oefeningen en medicatie." },
+  { title: "In je eigen huisstijl", text: "Patiënten zien het platform van jouw praktijk, op hun eigen telefoon." },
 ];
 
 function ProductSection() {
@@ -430,9 +433,9 @@ function ProductSection() {
 // ─── Zo werkt het ──────────────────────────────────────────────
 
 const steps = [
-  { title: "Richt je praktijk in", text: "Voeg je team en locaties toe en maak herstelplannen die je steeds opnieuw gebruikt." },
-  { title: "Nodig je patiënt uit", text: "Vul blessure, startdatum en herstelplan in. Je patiënt krijgt direct een uitnodiging per mail." },
-  { title: "Je patiënt houdt het bij", text: "Korte dagelijkse checks, oefeningen, medicatie en foto-updates, op de eigen telefoon." },
+  { title: "Richt je praktijk in", text: "Voeg je team en locaties toe en kies herstelplannen. Je EPD blijft zoals het is." },
+  { title: "Nodig je patiënten uit", text: "Eén voor één, of je importeert je patiëntenlijst in één keer via CSV. Je patiënt vult zelf de intake in." },
+  { title: "Je patiënt houdt het bij", text: "Een korte dagelijkse check-in, oefeningen, medicatie en foto's, op de eigen telefoon." },
   { title: "Jij ziet wie aandacht nodig heeft", text: "Voor elk consult zie je hoe de week ging, en je past het plan direct aan." },
 ];
 
@@ -686,8 +689,9 @@ function BlogTeaserSection() {
 
 function PilotSection() {
   if (!pilotOffer.active || pilotOffer.spotsLeft <= 0) return null;
-  const team = pricingTiers.find((t) => t.popular) ?? pricingTiers[1];
-  const saving = team.monthly * 12 - (12 - pilotOffer.freeMonths) * team.monthly * (1 - pilotOffer.discountPercent / 100);
+  const seats = 3;
+  const normal = priceExamples.find((ex) => ex.seats === seats)!.monthly;
+  const pilot = seats * pilotOffer.pilotSeatPrice;
   return (
     <section className="py-16 md:py-20" style={{ background: "#f8f7f4" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -698,11 +702,11 @@ function PilotSection() {
                 Pilotprogramma · {pilotSpotsLabel()}
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
-                De eerste {pilotOffer.freeMonths} maanden gratis, daarna {pilotOffer.discountPercent}% korting
+                {pilotOffer.freeMonths} maanden gratis, daarna voor altijd {euro(pilotOffer.pilotSeatPrice)} per behandelaar
               </h2>
               <p className="text-base leading-relaxed mb-7 max-w-xl" style={{ color: "#c9c9ce" }}>
-                We zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken. Je krijgt persoonlijke onboarding en
-                direct contact met de oprichter. In ruil daarvoor vragen we je feedback en een klantervaring.
+                We zoeken {pilotOffer.spotsTotal} praktijken die REVA als eerste met echte patiënten gebruiken. Je krijgt een vaste,
+                lagere prijs, persoonlijke inrichting en direct contact met de oprichter. In ruil daarvoor vragen we eerlijke feedback en een klantervaring.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/pilot#aanmelden" className="group btn-primary px-6 py-3 text-base justify-center">
@@ -719,18 +723,18 @@ function PilotSection() {
               </div>
             </div>
             <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-              <p className="text-sm mb-4" style={{ color: "#9ca3af" }}>Rekenvoorbeeld pakket {team.name}</p>
+              <p className="text-sm mb-4" style={{ color: "#9ca3af" }}>Rekenvoorbeeld met {seats} behandelaars, incl. btw</p>
               <dl className="space-y-3 text-sm">
                 <div className="flex justify-between gap-4"><dt style={{ color: "#c9c9ce" }}>Maand 1 t/m {pilotOffer.freeMonths}</dt><dd className="font-semibold tabular-nums" style={{ color: "#e8632a" }}>&euro;0</dd></div>
-                <div className="flex justify-between gap-4"><dt style={{ color: "#c9c9ce" }}>Maand {pilotOffer.freeMonths + 1} t/m 12</dt><dd className="font-semibold tabular-nums text-white">&euro;{(team.monthly / 2).toLocaleString("nl-NL", { minimumFractionDigits: 2 })} per maand</dd></div>
-                <div className="flex justify-between gap-4 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}><dt className="text-white font-medium">Je bespaart in het eerste jaar</dt><dd className="font-semibold tabular-nums" style={{ color: "#4ade80" }}>&euro;{saving.toLocaleString("nl-NL", { maximumFractionDigits: 2 })}</dd></div>
+                <div className="flex justify-between gap-4"><dt style={{ color: "#c9c9ce" }}>Daarna, voor altijd</dt><dd className="font-semibold tabular-nums text-white">{euro(pilot)} per maand</dd></div>
+                <div className="flex justify-between gap-4 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}><dt className="text-white font-medium">Normaal</dt><dd className="font-semibold tabular-nums" style={{ color: "#9ca3af" }}>{euro(normal)} per maand</dd></div>
               </dl>
               <div className="mt-5 flex items-center gap-2" aria-hidden="true">
                 {Array.from({ length: pilotOffer.spotsTotal }).map((_, i) => (
                   <span key={i} className="h-2 flex-1 rounded-full" style={{ background: i < pilotOffer.spotsLeft ? "#e8632a" : "rgba(255,255,255,0.15)" }} />
                 ))}
               </div>
-              <p className="mt-2 text-xs" style={{ color: "#9ca3af" }}>{pilotSpotsLabel()} · geldt voor {pilotOffer.eligible}</p>
+              <p className="mt-2 text-xs" style={{ color: "#9ca3af" }}>{pilotSpotsLabel()} · zelfstandigen en teams, geen ketens</p>
             </div>
           </div>
         </AnimateIn>
@@ -741,11 +745,11 @@ function PilotSection() {
 
 // ─── De demo ───────────────────────────────────────────────────
 
-const demoAgenda = [
+const demoSteps = [
   { title: "Jouw werkwijze als uitgangspunt", text: "We beginnen bij hoe jij nu patiënten volgt, en laten zien wat REVA daaraan verandert." },
   { title: "Het dashboard met voorbeeldpatiënten", text: "Je ziet de signalering, een dossier en een herstelplan zoals jij ze straks gebruikt." },
   { title: "De app van je patiënt", text: "Hoe een check-in eruitziet, en hoe je patiënt oefeningen en voortgang ziet." },
-  { title: "Prijs en planning", text: "Je weet direct welk pakket past, wat het kost en hoe snel je kunt starten." },
+  { title: "Prijs en planning", text: "Je weet direct wat REVA kost voor jouw aantal behandelaars en hoe snel je kunt starten." },
 ];
 
 function DemoSection() {
@@ -777,7 +781,7 @@ function DemoSection() {
             Geen verkooppraatje, maar een rondleiding met jouw praktijk in gedachten. Dit nemen we samen door:
           </p>
           <ol className="space-y-5 mb-8">
-            {demoAgenda.map((item, i) => (
+            {demoSteps.map((item, i) => (
               <li key={item.title} className="flex items-start gap-4">
                 <span className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white shrink-0" style={{ background: "#e8632a" }}>
                   {i + 1}
@@ -887,9 +891,9 @@ const usps = [
     text: "Je patiënten zien hun eigen voortgang, jij ziet direct wie afwijkt van het plan en aandacht nodig heeft.",
   },
   {
-    icon: Smartphone,
-    title: "Altijd een coach bij de hand",
-    text: "Herstelplan, oefeningen en jouw advies staan op de telefoon van je patiënt, ook op dagen zonder afspraak.",
+    icon: Layers,
+    title: "Naast elk EPD",
+    text: "Agenda, verslaglegging en declaratie blijven in je EPD. REVA richt zich op het herstel, zonder dubbele invoer.",
   },
 ];
 
@@ -921,67 +925,70 @@ function PricingTeaserSection() {
         <AnimateIn direction="up" className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 md:mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "#1a1a1a" }}>
-              Heldere pakketten,<br />alle functies inbegrepen
+              Eén prijs per behandelaar,<br />alle functies inbegrepen
             </h2>
           </div>
           <p className="text-base max-w-sm" style={{ color: "#6b7280" }}>
-            Je betaalt naar de grootte van je praktijk, niet per functie. Probeer REVA {TRIAL_DAYS} dagen gratis.
+            Onbeperkt patiënten en locaties: alleen behandelaars tellen. Probeer REVA {TRIAL_DAYS} dagen gratis.
           </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
-          {pricingTiers.map((tier, i) => {
-            const staff = tier.features.find((f) => f.includes("medewerker")) ?? "";
-            const patients = tier.features.find((f) => f.includes("patiënten")) ?? "";
-            return (
-              <AnimateIn key={tier.name} direction="up" delay={i * 70} className="h-full">
-                <Link
-                  href={`/prijzen`}
-                  className="relative h-full flex flex-col rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={
-                    tier.popular
-                      ? { background: "#1c1c1e", boxShadow: "0 20px 40px rgba(0,0,0,0.18)" }
-                      : { background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }
-                  }
-                >
-                  {tier.popular && (
-                    <span className="absolute -top-3 left-6 text-xs font-semibold px-3 py-1 rounded-full text-white" style={{ background: "#e8632a" }}>
-                      Meest gekozen
-                    </span>
-                  )}
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#e8632a" }}>
-                    {tier.name}
-                  </p>
-                  <p className="mb-3">
-                    <span className="text-3xl font-bold tracking-tight" style={{ color: tier.popular ? "#ffffff" : "#1a1a1a" }}>
-                      &euro;{tier.monthly}
-                    </span>
-                    <span className="text-sm" style={{ color: tier.popular ? "#9ca3af" : "#6b7280" }}> / maand</span>
-                  </p>
-                  <p className="text-sm mb-4" style={{ color: tier.popular ? "#9ca3af" : "#6b7280" }}>{tier.tagline}</p>
-                  <ul className="mt-auto space-y-1.5">
-                    {[staff, patients].filter(Boolean).map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm" style={{ color: tier.popular ? "#d1d5db" : "#374151" }}>
-                        <CheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: "#e8632a" }} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </Link>
-              </AnimateIn>
-            );
-          })}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-4 mb-5">
+          <AnimateIn direction="up" className="h-full">
+            <Link
+              href="/prijzen"
+              className="h-full flex flex-col rounded-2xl p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              style={{ background: "#1c1c1e", boxShadow: "0 20px 40px rgba(0,0,0,0.18)" }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#e8632a" }}>
+                Per behandelaar
+              </p>
+              <p className="mb-2">
+                <span className="text-4xl font-bold tracking-tight text-white">{euro(PRICING.seatPrice)}</span>
+                <span className="text-sm" style={{ color: "#9ca3af" }}> per maand, incl. btw</span>
+              </p>
+              <p className="text-sm mb-6" style={{ color: "#9ca3af" }}>
+                Vanaf de {PRICING.staffelFrom}e behandelaar {euro(PRICING.staffelPrice)}. Voor minder dan de prijs van één behandeling per maand
+                begeleid je al je patiënten ook tussen de afspraken door.
+              </p>
+              <ul className="mt-auto space-y-1.5">
+                {["Onbeperkt patiënten en locaties", "Alle functies, ook REVA-inzichten", "Jaarlijks betalen: 2 maanden gratis"].map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "#d1d5db" }}>
+                    <CheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: "#e8632a" }} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </Link>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={80} className="h-full">
+            <div className="h-full rounded-2xl p-6 md:p-7" style={{ background: "#ffffff", border: "1px solid #e8e5df", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+              <p className="text-sm font-semibold mb-4" style={{ color: "#1a1a1a" }}>Wat betaal jij per maand?</p>
+              <dl className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                {priceExamples.map((ex) => (
+                  <div key={ex.seats} className="rounded-xl p-3.5" style={{ background: "#f8f7f4" }}>
+                    <dt className="text-xs mb-1" style={{ color: "#9ca3af" }}>
+                      {ex.seats} {ex.seats === 1 ? "behandelaar" : "behandelaars"}
+                    </dt>
+                    <dd className="text-xl font-semibold tabular-nums" style={{ color: "#1a1a1a" }}>{euro(ex.monthly)}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-4 text-xs" style={{ color: "#9ca3af" }}>
+                Alle bedragen inclusief btw. Fysiotherapie is vrijgesteld van btw, dus dit is wat je echt betaalt.
+              </p>
+            </div>
+          </AnimateIn>
         </div>
 
         <AnimateIn direction="up" delay={200}>
           <p className="text-xs mb-8" style={{ color: "#9ca3af" }}>
-            Prijzen per maand, exclusief btw. Bij jaarlijks betalen krijg je 2 maanden gratis. Meer dan 20
-            medewerkers of een keten? Dan maken we een voorstel op maat.
+            Een keten of afwijkende afspraken? Dan maken we een voorstel op maat.
           </p>
           <PilotOfferBanner />
           <div className="mt-8 text-center">
             <Link href="/prijzen" className="inline-flex items-center gap-1.5 text-sm font-medium hover-orange" style={{ color: "#e8632a" }}>
-              Bekijk alle pakketten en wat er inbegrepen is
+              Bereken je prijs en bekijk wat er inbegrepen is
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
