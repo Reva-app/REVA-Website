@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Lees hoe REVA als verwerker omgaat met patiëntgegevens namens fysiotherapiepraktijken, en welke afspraken daarover gelden in de verwerkersovereenkomst.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Privacy Policy",
     description: "Hoe REVA omgaat met patiëntgegevens namens fysiotherapiepraktijken.",
     locale: "nl_NL",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Lees welke cookies REVA gebruikt, waarom, en hoe je op elk moment je cookievoorkeuren kunt aanpassen.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Cookiebeleid",
     description: "Welke cookies REVA gebruikt en hoe je je voorkeuren aanpast.",
     locale: "nl_NL",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight, Check, Clock, Euro, Gift, GraduationCap, MapPin, MessageCircle, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {
+    images: OG_IMAGES,
     title: TITLE,
     description: `We zoeken ${pilotOffer.spotsTotal} praktijken die REVA als eerste gebruiken: ${pilotOffer.short}.`,
     locale: "nl_NL",

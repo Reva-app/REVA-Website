@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import Image from "next/image";
 import { Users, LayoutDashboard, Lightbulb, Euro } from "lucide-react";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Vraag een vrijblijvende demo van REVA aan. In een gesprek van 30 minuten zie je de praktijksoftware in actie en weet je direct wat REVA voor jouw praktijk kost.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Vraag een demo aan",
     description: "Een vrijblijvend gesprek van hooguit 30 minuten over REVA voor jouw praktijk.",
     locale: "nl_NL",

@@ -85,6 +85,10 @@ test("llms.txt loopt gelijk met de prijs- en pilotdata en noemt geen oude pakket
   const txt = readFileSync(new URL("../../public/llms.txt", import.meta.url), "utf8");
   assert.ok(txt.includes(priceSentence), "kernzin prijs");
   assert.ok(txt.includes(pilotSentence), "kernzin pilot");
+  const { savingsExampleSentence } = await import("@/lib/savings");
+  const { provinces } = await import("@/lib/provinces");
+  assert.ok(txt.includes(savingsExampleSentence()), "rekenvoorbeeld besparing");
+  for (const p of provinces) assert.ok(txt.includes(`/fysiotherapie-software/${p.slug})`), p.slug);
   for (const ex of priceExamples) assert.ok(txt.includes(`${ex.seats === 1 ? "1 behandelaar" : `${ex.seats} behandelaars`} ${euro(ex.monthly)}`), `${ex.seats} behandelaars`);
   for (const old of ["Solo", "Praktijk Plus", "Enterprise", "exclusief btw", "actieve patiënten", "50% korting", "6 maanden gratis", "receptie"]) {
     assert.ok(!txt.includes(old), old);

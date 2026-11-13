@@ -25,7 +25,10 @@ import { pilotOffer, pilotSpotsLabel } from "@/lib/offer";
 import { PilotOfferBanner } from "@/components/PilotOfferBanner";
 import { PracticeLogos } from "@/components/PracticeLogos";
 import { FeatureDemo } from "@/components/features/FeatureDemo";
-import { euro, priceExamples, PRICING, TRIAL_DAYS } from "@/lib/pricing";
+import { euro, priceExamples, priceSentence, PRICING, TRIAL_DAYS } from "@/lib/pricing";
+import { SavingsCalculator } from "@/components/SavingsCalculator";
+import { softwareTypes } from "@/lib/software-types";
+import { computeSavings, nl1, savingsDefaults } from "@/lib/savings";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -68,7 +71,7 @@ function HeroSection() {
             </Link>
           )}
           <h1 className="animate-fade-in-up delay-100 text-sm font-medium" style={{ color: "#e8632a" }}>
-            Patiëntenportaal voor fysiotherapiepraktijken
+            Software voor fysiopraktijken: patiëntenportaal naast je EPD
           </h1>
           <p className="animate-fade-in-up delay-200 text-4xl md:text-5xl lg:text-[3.4rem] font-semibold tracking-tight leading-[1.08] text-white max-w-3xl">
             Zie direct welke patiënt <span style={{ color: "#e8632a" }}>aandacht nodig heeft</span>
@@ -998,6 +1001,109 @@ function PricingTeaserSection() {
   );
 }
 
+// ─── Besparing berekenen ───────────────────────────────────────
+
+function SavingsSection() {
+  const ex = computeSavings(savingsDefaults);
+  return (
+    <section id="besparing" className="scroll-mt-24 py-20 md:py-28" style={{ background: "#ffffff" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <AnimateIn direction="up" className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 md:mb-12">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold mb-3" style={{ color: "#e8632a" }}>Bereken je besparing</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "#1a1a1a" }}>
+              Hoeveel tijd wint jouw praktijk terug?
+            </h2>
+          </div>
+          <p className="text-base max-w-sm" style={{ color: "#6b7280" }}>
+            Een praktijk met {savingsDefaults.seats} behandelaars wint ongeveer {nl1(ex.hoursSavedPerWeek)} uur per week terug. Vul je eigen cijfers in.
+          </p>
+        </AnimateIn>
+        <AnimateIn direction="up" delay={80}>
+          <SavingsCalculator />
+        </AnimateIn>
+        <AnimateIn direction="up" delay={160}>
+          <p className="mt-5 text-sm" style={{ color: "#6b7280" }}>
+            Wil je de aannames erachter zien?{" "}
+            <Link href="/besparing-berekenen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+              Bekijk de uitleg bij de besparingstool
+            </Link>
+            .
+          </p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+// ─── Software voor fysiopraktijken ─────────────────────────────
+
+const homeFacts = [
+  "REVA is software voor fysiopraktijken: een Recovery Management Platform en patiëntenportaal voor herstelbegeleiding tussen de behandelingen door.",
+  "REVA werkt naast elk EPD, zonder koppeling. Agenda, verslaglegging en declaratie blijven in het EPD, dus er is geen dubbele invoer.",
+  "Patiënten doen thuis een dagelijkse check-in van ongeveer 30 seconden en volgen hun oefenschema. De fysiotherapeut ziet in één overzicht wie aandacht nodig heeft.",
+  priceSentence,
+];
+
+function SoftwareOverviewSection() {
+  return (
+    <section id="software-voor-fysiopraktijken" className="scroll-mt-24 py-20 md:py-28" style={{ background: "#f8f7f4" }}>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-14 items-start">
+        <AnimateIn direction="up">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4" style={{ color: "#1a1a1a" }}>
+            Welke software heeft een fysiopraktijk nodig?
+          </h2>
+          <p className="text-base leading-relaxed mb-6" style={{ color: "#6b7280" }}>
+            Een fysiopraktijk werkt meestal met vijf soorten software: een EPD, een agenda, software om te declareren,
+            een tool voor oefenprogramma&apos;s en een patiëntenportaal. Het EPD legt vast wat er in de behandelkamer gebeurt.
+            REVA richt zich op wat daarna komt: hoe het thuis met je patiënt gaat.
+          </p>
+          <div className="rounded-2xl border p-6" style={{ background: "#ffffff", borderColor: "#e8e5df" }}>
+            <h3 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#e8632a" }}>REVA in het kort</h3>
+            <ul className="space-y-3">
+              {homeFacts.map((f) => (
+                <li key={f} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: "#1a1a1a" }}>
+                  <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#e8632a" }} />
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </AnimateIn>
+        <AnimateIn direction="up" delay={100}>
+          <ul className="rounded-2xl border overflow-hidden" style={{ borderColor: "#e8e5df", background: "#ffffff" }}>
+            {softwareTypes.map((row, i) => (
+              <li key={row.type} className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 px-5 py-4" style={{ borderTop: i ? "1px solid #f1ede8" : "none" }}>
+                <span
+                  className="row-span-2 mt-0.5 inline-flex items-center justify-center text-[11px] font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap h-fit"
+                  style={row.reva === "ja" ? { background: "#fff3ee", color: "#e8632a" } : { background: "#f3f4f6", color: "#6b7280" }}
+                >
+                  {row.reva === "ja" ? "In REVA" : "Eigen systeem"}
+                </span>
+                <h3 className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>
+                  {row.type} <span className="font-normal" style={{ color: "#9ca3af" }}>· {row.what}</span>
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{row.role}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm" style={{ color: "#6b7280" }}>
+            Uitgebreid vergelijken, met een checklist om te kiezen? Lees{" "}
+            <Link href="/blog/software-voor-fysiopraktijken" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+              welke systemen je fysiopraktijk echt nodig heeft
+            </Link>
+            , of het verschil tussen{" "}
+            <Link href="/blog/verschil-epd-en-recovery-management-platform" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+              een EPD en een Recovery Management Platform
+            </Link>
+            .
+          </p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
 // ─── Main export ───────────────────────────────────────────────
 
 export function HomePage() {
@@ -1007,11 +1113,13 @@ export function HomePage() {
       <UspSection />
       <PracticeLogos />
       <ProblemSection />
+      <SavingsSection />
       <ProductSection />
       <PilotSection />
       <HowItWorksSection />
       <FunctiesSliderSection />
       <ComparisonSection />
+      <SoftwareOverviewSection />
       <DemoSection />
       <PricingTeaserSection />
       <AboutTeaserSection />

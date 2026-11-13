@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "REVA kost €29 per behandelaar per maand incl. btw, vanaf de 10e €23. Onbeperkt patiënten en locaties, alle functies inbegrepen.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Prijzen patiëntenportaal fysiotherapie",
     description: "€29 per behandelaar per maand incl. btw, vanaf de 10e €23. Onbeperkt patiënten en locaties, alle functies inbegrepen, 30 dagen gratis proberen.",
     locale: "nl_NL",

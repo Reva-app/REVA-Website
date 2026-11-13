@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: ["alternatief whatsapp fysiotherapie", "whatsapp fysiotherapeut patiënten", "whatsapp avg fysiotherapie", "veilig communiceren met patiënten"],
   openGraph: {
+    images: OG_IMAGES,
     title: "Alternatief voor WhatsApp in je fysiopraktijk",
     description: "Geen gezondheidsgegevens meer op privételefoons. Patiënten loggen hun herstel in REVA, jij ziet het in het dossier.",
     locale: "nl_NL",

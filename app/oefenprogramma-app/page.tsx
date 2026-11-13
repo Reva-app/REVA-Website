@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { RefreshCw } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: ["oefenprogramma app fysiotherapie", "oefenschema app", "thuisoefeningen app fysiotherapie", "huiswerkoefeningen fysiotherapie", "oefenapp fysio"],
   openGraph: {
+    images: OG_IMAGES,
     title: "Oefenprogramma-app voor fysiotherapeuten",
     description: "Oefenschema's per fase van het herstelplan, en zien of je patiënt ze ook doet.",
     locale: "nl_NL",

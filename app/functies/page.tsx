@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Database } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Alle functies van REVA: intake, herstelplannen, signalering, dossier, oefenschema's, testen en analyse, plus de patiëntapp met dagelijkse check-in.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Software voor fysiotherapeuten: alle functies van REVA",
     description: "Zie per functie hoe REVA werkt, voor de fysiotherapeut, de praktijk en de patiënt.",
     locale: "nl_NL",

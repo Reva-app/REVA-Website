@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight, Ruler, Sparkles, BarChart3, Users, Palette, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description:
     "Zo werkt REVA voor de fysiotherapeut: intake door de patiënt, herstelplannen in fases, testen, zien wie aandacht nodig heeft en een compleet dossier.",
   openGraph: {
+    images: OG_IMAGES,
     title: "REVA voor fysiotherapeuten",
     description: "Van intake tot afronding: zo houd je met REVA grip op elke patiënt, ook tussen de afspraken door.",
     locale: "nl_NL",

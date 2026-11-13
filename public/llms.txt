@@ -57,6 +57,7 @@ Zo helpt een agent de gebruiker verder:
 - Beveiliging: verplichte tweestapsverificatie voor medewerkers én patiënten, met een authenticator-app; gezondheidsgegevens afgeschermd per praktijk; activiteitenlog met inzage in dossiers (NEN 7513); versleutelde opslag op servers binnen de EER; verwerkersovereenkomst.
 - Prijs: REVA kost €29 per behandelaar per maand inclusief btw, vanaf de 10e behandelaar €23, met onbeperkt patiënten en locaties. Alle functies zijn inbegrepen, ook de AI-suggesties. Jaarlijks betalen: 2 maanden gratis (€290 per behandelaar per jaar, €230 vanaf de 10e). 30 dagen gratis proberen. Maatwerk voor ketens op aanvraag. Persoonlijke onboarding en support per e-mail en telefoon. Alle prijzen zijn inclusief btw, omdat fysiotherapie is vrijgesteld van btw en een praktijk btw niet kan terugvragen.
 - Pilotprogramma: REVA zoekt 5 pilotpraktijken: zij krijgen 3 maanden gratis in plaats van 30 dagen, en betalen daarna voor altijd €23 per behandelaar per maand inclusief btw, de prijs die anderen pas vanaf de 10e behandelaar krijgen. In ruil gebruiken ze REVA bij minimaal 10 patiënten, voeren ze twee korte evaluatiegesprekken en geven ze een klantervaring. Niet voor ketens. Aanmelden via https://www.reva-app.nl/pilot.
+- Tijdsbesparing: Rekenvoorbeeld: een praktijk met 3 behandelaars die elk 5 korte contactmomenten van 5 minuten per dag hebben, 4 dagen per week, wint bij 50% minder van die contactmomenten ongeveer 2,5 uur per week terug, 115 uur per jaar. Bij €60 per uur is dat €6.900 per jaar, tegenover €1.044 voor REVA. Zelf rekenen: https://www.reva-app.nl/besparing-berekenen.
 - Hosting: patiëntdata staat versleuteld op servers binnen de Europese Economische Ruimte.
 - Beschikbaar in de browser, voor zowel praktijkteams als patiënten. Patiënten kunnen REVA als app op het beginscherm van hun telefoon zetten. Er is (nog) geen app in de App Store of Google Play.
 - Taal: volledig Nederlandstalig product en website.
@@ -66,7 +67,8 @@ Zo helpt een agent de gebruiker verder:
 
 ## Pagina's
 
-- [Homepage](https://www.reva-app.nl/): Wat REVA is, voor welke praktijken het bedoeld is en waarom het overzicht en tijd oplevert.
+- [Homepage: software voor fysiopraktijken](https://www.reva-app.nl/): Wat REVA is, welke software een fysiopraktijk nodig heeft en waar REVA past, een besparingstool, prijzen en veelgestelde vragen.
+- [Besparing berekenen](https://www.reva-app.nl/besparing-berekenen): Interactieve tool die laat zien hoeveel uur en euro een fysiopraktijk per jaar terugwint met REVA, met alle aannames uitgelegd.
 - [Fysiotherapie software](https://www.reva-app.nl/fysiotherapie-software): REVA als Recovery Management Platform naast het EPD, de drie stations (EPD, fysiotherapeut, patiënt), per soort praktijksoftware wat REVA wel en niet doet, prijzen en veelgestelde vragen.
 - [Alternatief voor WhatsApp](https://www.reva-app.nl/alternatief-voor-whatsapp): Waarom fysiopraktijken overstappen van WhatsApp naar een beveiligd portaal, een vergelijking van WhatsApp en REVA en een overstap in drie stappen. REVA heeft geen chatfunctie.
 - [Oefenprogramma-app](https://www.reva-app.nl/oefenprogramma-app): Oefenschema's per patiënt, de REVA-bibliotheek met ongeveer 480 oefeningen als startpunt (nog niet klinisch getoetst), de workoutmodus en het loggen van trainingen door de patiënt.
@@ -83,6 +85,8 @@ Zo helpt een agent de gebruiker verder:
 
 ## Blogartikelen
 
+- [EPD of Recovery Management Platform](https://www.reva-app.nl/blog/verschil-epd-en-recovery-management-platform): Het verschil tussen een EPD en een Recovery Management Platform, wat je waar vastlegt zonder dubbele invoer, en waarom REVA bewust geen EPD is.
+
 - [Software voor fysiopraktijken](https://www.reva-app.nl/blog/software-voor-fysiopraktijken): De vijf soorten software in een fysiopraktijk (EPD, agenda, declareren, oefenprogramma's en patiëntenportaal), waar je op let bij het kiezen, wat het kost en waar REVA in past.
 - [Wat is een patiëntenportaal](https://www.reva-app.nl/blog/wat-is-een-patientenportaal): Uitleg over wat een patiëntenportaal is, het verschil met een EPD, welke functies erin horen en voor welke praktijken het meerwaarde heeft.
 - [Van WhatsApp naar patiëntenportaal](https://www.reva-app.nl/blog/van-whatsapp-naar-patientenportaal): Waarom fysiopraktijken overstappen van WhatsApp naar een patiëntenportaal, of WhatsApp past binnen de AVG en hoe je de overstap in vier stappen aanpakt.
@@ -92,6 +96,23 @@ Zo helpt een agent de gebruiker verder:
 - [Continuïteit van zorg bij vakantie](https://www.reva-app.nl/blog/fysio-op-vakantie-continuiteit-van-zorg): Hoe je de zorg laat doorlopen als een fysiotherapeut afwezig is, met een overdrachtschecklist en aandachtspunten bij meerdere vestigingen.
 - [Pijn na een operatie](https://www.reva-app.nl/blog/pijn-na-een-operatie): Wat normaal is per type ingreep (bot, gewricht, pees, band, spier, kijkoperatie, zenuw), met vergelijkingstabel, alarmsignalen en hoe je pijn volgt met een score van 0 tot 10.
 - [Eigen fysiotherapiepraktijk starten](https://www.reva-app.nl/blog/eigen-fysiotherapiepraktijk-starten): Stappen, registraties (BIG, AGB, KvK, LRZa, kwaliteitsregister, pensioenfonds), wettelijke eisen (Wkkgz, WGBO, AVG, meldcode), contracten met zorgverzekeraars, kosten en financiering voor een eigen fysiotherapiepraktijk.
+
+## Per provincie
+
+REVA werkt online voor fysiotherapiepraktijken in heel Nederland. Per provincie staat een pagina met de belangrijkste steden en een uitleg in de streektaal of het dialect van de regio.
+
+- [Groningen](https://www.reva-app.nl/fysiotherapie-software/groningen): Groningen, Hoogezand, Veendam, Stadskanaal, Delfzijl, Winschoten.
+- [Friesland](https://www.reva-app.nl/fysiotherapie-software/friesland): Leeuwarden, Drachten, Sneek, Heerenveen, Harlingen, Dokkum.
+- [Drenthe](https://www.reva-app.nl/fysiotherapie-software/drenthe): Emmen, Assen, Hoogeveen, Meppel, Coevorden.
+- [Overijssel](https://www.reva-app.nl/fysiotherapie-software/overijssel): Enschede, Zwolle, Deventer, Hengelo, Almelo, Kampen.
+- [Flevoland](https://www.reva-app.nl/fysiotherapie-software/flevoland): Almere, Lelystad, Dronten, Emmeloord, Zeewolde, Urk.
+- [Gelderland](https://www.reva-app.nl/fysiotherapie-software/gelderland): Nijmegen, Apeldoorn, Arnhem, Ede, Doetinchem, Harderwijk.
+- [Utrecht](https://www.reva-app.nl/fysiotherapie-software/utrecht): Utrecht, Amersfoort, Veenendaal, Nieuwegein, Zeist.
+- [Noord-Holland](https://www.reva-app.nl/fysiotherapie-software/noord-holland): Amsterdam, Haarlem, Zaandam, Amstelveen, Alkmaar, Hilversum.
+- [Zuid-Holland](https://www.reva-app.nl/fysiotherapie-software/zuid-holland): Rotterdam, Den Haag, Leiden, Zoetermeer, Dordrecht, Delft.
+- [Zeeland](https://www.reva-app.nl/fysiotherapie-software/zeeland): Middelburg, Vlissingen, Goes, Terneuzen, Zierikzee.
+- [Noord-Brabant](https://www.reva-app.nl/fysiotherapie-software/noord-brabant): Eindhoven, Tilburg, Breda, 's-Hertogenbosch, Helmond.
+- [Limburg](https://www.reva-app.nl/fysiotherapie-software/limburg): Maastricht, Venlo, Heerlen, Sittard-Geleen, Roermond.
 
 ## Juridisch
 

@@ -835,7 +835,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Waar REVA in jouw softwarepakket past",
         paragraphs: [
-          "REVA is een patiëntenportaal en Recovery Management Platform voor fysiotherapiepraktijken. Het vervangt je EPD, agenda of declaratiesoftware niet en koppelt er niet mee, maar werkt ernaast op het punt waar die systemen ophouden: de tijd tussen behandelingen, zonder dubbele invoer. Patiënten houden zelf hun herstel bij, en jij ziet in één overzicht wie aandacht nodig heeft, zonder extra telefoontjes.",
+          "REVA is [software voor fysiopraktijken](/): een patiëntenportaal en Recovery Management Platform. Het vervangt je EPD, agenda of declaratiesoftware niet en koppelt er niet mee, maar werkt ernaast op het punt waar die systemen ophouden: de tijd tussen behandelingen, zonder dubbele invoer. Patiënten houden zelf hun herstel bij, en jij ziet in één overzicht wie aandacht nodig heeft, zonder extra telefoontjes.",
           "REVA werkt via de browser, voor zowel je team als je patiënten, en patiënten zetten het als app op hun beginscherm. De meeste praktijken zijn snel operationeel, zonder ingewikkeld traject met IT. Op de pagina [fysiotherapie software van REVA](/fysiotherapie-software) zie je per soort software wat REVA wel en niet doet, met prijzen. Of [vraag een vrijblijvende demo aan](/demo-aanvragen) om te zien hoe REVA past bij jouw praktijk.",
         ],
       },
@@ -1306,6 +1306,129 @@ export const blogPosts: BlogPost[] = [
       {
         question: "Hoe lang duurt het om een eigen praktijk te starten?",
         answer: "Reken op enkele maanden voorbereiding. Vooral het vinden van een ruimte, het regelen van financiering en het afsluiten van contracten met zorgverzekeraars kost tijd. Contracten lopen meestal per kalenderjaar, dus begin daar op tijd mee.",
+      },
+    ],
+  },
+  {
+    slug: "verschil-epd-en-recovery-management-platform",
+    title: "EPD of Recovery Management Platform: wat is het verschil?",
+    metaDescription: "Wat is het verschil tussen een EPD en een Recovery Management Platform in de fysiotherapie? Wat je waar vastlegt, en waarom ze naast elkaar werken.",
+    excerpt: "Het EPD legt vast wat er in de behandelkamer gebeurt. Een Recovery Management Platform laat zien hoe het daarna met je patiënt gaat. Zo werken ze samen.",
+    category: "Digitalisering",
+    publishedAt: "2026-11-13",
+    readTime: "6 min",
+    keywords: [
+      "recovery management platform",
+      "verschil EPD en patiëntenportaal",
+      "EPD fysiotherapie",
+      "software voor fysiopraktijken",
+      "herstelbegeleiding tussen behandelingen",
+    ],
+    summary: [
+      "Een EPD (elektronisch patiëntendossier) legt vast wat er tijdens een behandeling gebeurt, en regelt vaak ook agenda en declaratie. Voor een fysiotherapeut is dat dossier wettelijk verplicht.",
+      "Een Recovery Management Platform (RMP) richt zich op de tijd tussen de behandelingen: hoe het thuis met de patiënt gaat, het herstelplan, de oefeningen, testen en voortgang.",
+      "De twee vervangen elkaar niet. Het EPD blijft leidend voor agenda, verslaglegging en declaratie; een RMP zoals REVA werkt ernaast, zonder koppeling en zonder dubbele invoer.",
+      "REVA is bewust geen EPD. Daardoor kan het zich volledig richten op herstel, betrokkenheid en inzicht in voortgang.",
+    ],
+    intro: [
+      "Wie software voor een fysiopraktijk vergelijkt, komt al snel twee begrippen tegen: het EPD en het patiëntenportaal. Sinds kort valt ook de term Recovery Management Platform. Wat is het verschil, en heb je ze allebei nodig?",
+      "In dit artikel zetten we het EPD en een Recovery Management Platform naast elkaar: wat ze doen, wie ze invult, en hoe je voorkomt dat je dingen dubbel vastlegt. Aan het eind lees je onze eigen insteek met REVA.",
+    ],
+    sections: [
+      {
+        heading: "Wat is een EPD in de fysiotherapie?",
+        paragraphs: [
+          "Een EPD, het elektronisch patiëntendossier, is het dossier van de praktijk. Daarin legt de fysiotherapeut de anamnese, het onderzoek, het behandelplan en het verslag van elke behandeling vast. Een fysiotherapeut is volgens de WGBO verplicht een dossier bij te houden, dus het EPD is voor bijna elke praktijk de basis.",
+          "De meeste EPD's voor fysiotherapie regelen meer dan het dossier alleen. Vaak zitten de agenda, online afspraken maken en het declareren bij zorgverzekeraars er ook in. Het EPD is daarmee het administratieve hart van de praktijk.",
+        ],
+      },
+      {
+        heading: "Wat is een Recovery Management Platform?",
+        paragraphs: [
+          "Een Recovery Management Platform is software voor herstelbegeleiding tussen de behandelingen door. Waar het EPD vastlegt wat er in de behandelkamer gebeurt, laat een Recovery Management Platform zien hoe het daarna met de patiënt gaat.",
+          "De patiënt houdt thuis zelf zijn herstel bij, bijvoorbeeld met een korte dagelijkse check-in over pijn, zwelling, mobiliteit en slaap, en volgt zijn oefenschema. De fysiotherapeut ziet in één overzicht wie aandacht nodig heeft, werkt met herstelplannen in fases en volgt de voortgang met testen en metingen.",
+          "Een patiëntenportaal is een onderdeel daarvan: de plek waar de patiënt inlogt. Een Recovery Management Platform omvat ook de kant van de fysiotherapeut en de praktijk, zoals signalering, herstelplannen en analyse. Lees meer in [wat is een patiëntenportaal](/blog/wat-is-een-patientenportaal).",
+        ],
+      },
+      {
+        heading: "EPD en Recovery Management Platform naast elkaar",
+        paragraphs: [
+          "Het verschil wordt het duidelijkst als je ze naast elkaar zet. Ze beantwoorden een andere vraag: het EPD vraagt wat er tijdens de behandeling is gedaan, een Recovery Management Platform vraagt hoe het herstel ervoor staat.",
+        ],
+        table: {
+          caption: "Verschil tussen een EPD en een Recovery Management Platform in de fysiotherapie",
+          headers: ["Onderwerp", "EPD", "Recovery Management Platform"],
+          rows: [
+            ["Hoofdvraag", "Wat is er tijdens de behandeling gedaan?", "Hoe gaat het herstel tussen de behandelingen?"],
+            ["Wie vult het in", "De fysiotherapeut", "De patiënt en de fysiotherapeut samen"],
+            ["Wanneer", "Tijdens of direct na de behandeling", "Dagelijks, thuis en in de praktijk"],
+            ["Wat staat erin", "Anamnese, onderzoek, behandelplan, verslaglegging", "Check-ins, herstelplan in fases, oefenschema, testen, voortgang"],
+            ["Agenda en declaratie", "Meestal wel", "Nee, die blijven in het EPD"],
+            ["Signalering", "Meestal niet", "Ja, wie aandacht nodig heeft"],
+            ["Wettelijke basis", "Verplicht dossier volgens de WGBO", "Aanvullend, naast het dossier"],
+          ],
+        },
+      },
+      {
+        heading: "Waarom de tijd tussen de behandelingen ertoe doet",
+        paragraphs: [
+          "Een patiënt ziet zijn fysiotherapeut misschien een of twee keer per week. De rest van de week werkt hij thuis aan zijn herstel, of juist niet. Juist in die tijd ontstaan de signalen die ertoe doen: meer pijn, zwelling na een training, of een patiënt die stilletjes stopt met oefenen.",
+          "Het EPD ziet die tijd niet, omdat het pas weer opengaat bij de volgende afspraak. Daardoor vallen afhakende patiënten vaak pas op als ze een afspraak afzeggen. Hoe je die signalen eerder herkent, lees je in [de stille afhakers](/blog/therapietrouw-verhogen-patienten-herkennen).",
+        ],
+      },
+      {
+        heading: "Geen dubbele invoer: wat leg je waar vast?",
+        paragraphs: [
+          "De grootste zorg van praktijkeigenaren bij extra software is dubbel werk. Dat voorkom je met een heldere taakverdeling: elk systeem doet waar het goed in is.",
+        ],
+        list: [
+          "In het EPD: agenda, verslaglegging per behandeling, het wettelijke dossier en declaraties.",
+          "In het Recovery Management Platform: het herstelplan, de oefeningen, testen en de voortgang tussen de behandelingen.",
+          "Door de patiënt zelf: de dagelijkse check-in, de uitgevoerde trainingen, medicatie en eigen doelen.",
+        ],
+      },
+      {
+        heading: "Onze insteek: REVA is bewust geen EPD",
+        paragraphs: [
+          "Wij bouwen REVA bewust niet als EPD en zonder agenda of declaratie. Elke praktijk heeft al een EPD dat dat goed doet, en nog een agenda erbij zorgt alleen voor dubbele invoer. Door die keuze kan REVA zich volledig richten op het herstel van de patiënt: het menselijke aspect en inzicht in voortgang.",
+          "Denk aan drie stations. Het EPD regelt agenda, verslaglegging en declaratie. De fysiotherapeut begeleidt het herstel in het REVA-praktijkportaal. De patiënt houdt zijn herstel thuis bij in de REVA-app, in de huisstijl van de praktijk. REVA werkt naast elk EPD, zonder koppeling: je patiëntenlijst laad je in één keer in via een CSV-bestand.",
+          "AI speelt daarbij een ondersteunende rol. REVA-inzichten doet voorstellen, bijvoorbeeld voor de dosering of een fase-overgang, maar de fysiotherapeut beslist altijd. Hoe dat in de praktijk werkt, zie je op de pagina [software voor fysiopraktijken](/) en bij de [functies van REVA](/functies).",
+        ],
+      },
+      {
+        heading: "Heeft jouw praktijk een Recovery Management Platform nodig?",
+        paragraphs: [
+          "Niet elke praktijk heeft dezelfde behoefte. Een Recovery Management Platform levert het meest op als een paar van deze punten herkenbaar zijn:",
+        ],
+        list: [
+          "Je begeleidt patiënten na een operatie of sportblessure, in trajecten van weken of maanden.",
+          "Je hoort pas bij de volgende afspraak hoe de afgelopen week ging.",
+          "Er komen veel telefoontjes en appjes binnen over pijn en oefeningen, vaak op privételefoons.",
+          "Bij vakantie of ziekte mist een collega het verloop van een patiënt.",
+          "Je wilt als praktijk inzicht in uitkomsten, behandelduur en tevredenheid.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Wat is het verschil tussen een EPD en een Recovery Management Platform?",
+        answer: "Een EPD legt vast wat er tijdens de behandeling gebeurt en regelt vaak agenda en declaratie. Een Recovery Management Platform richt zich op het herstel tussen de behandelingen door: check-ins van de patiënt, herstelplannen, oefeningen, testen en voortgang. Ze werken naast elkaar.",
+      },
+      {
+        question: "Vervangt een Recovery Management Platform het EPD?",
+        answer: "Nee. Het EPD blijft nodig voor het wettelijke dossier, de agenda en declaraties. Een Recovery Management Platform zoals REVA werkt ernaast, zonder koppeling en zonder dubbele invoer.",
+      },
+      {
+        question: "Moet ik gegevens dubbel invoeren als ik naast mijn EPD REVA gebruik?",
+        answer: "Nee. In REVA leg je alleen vast wat over herstel gaat: het herstelplan, de oefeningen, testen en voortgang. Agenda en administratie blijven in je EPD. Je patiëntenlijst laad je in één keer in via een CSV-bestand.",
+      },
+      {
+        question: "Is een patiëntenportaal hetzelfde als een Recovery Management Platform?",
+        answer: "Niet helemaal. Een patiëntenportaal is de plek waar de patiënt inlogt. Een Recovery Management Platform omvat ook de kant van de fysiotherapeut en de praktijk, zoals signalering van wie aandacht nodig heeft, herstelplannen in fases en analyse.",
+      },
+      {
+        question: "Wat kost een Recovery Management Platform zoals REVA?",
+        answer: `${priceSentence} Je kunt REVA ${TRIAL_DAYS} dagen gratis proberen.`,
       },
     ],
   },

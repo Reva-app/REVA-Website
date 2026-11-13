@@ -1,11 +1,20 @@
 // FAQ op de homepage, gedeeld met de Markdown-versie voor AI-agents
 
 import { priceSentence, TRIAL_DAYS } from "@/lib/pricing";
+import { savingsExampleSentence } from "@/lib/savings";
 
 export const homeFaq = [
   {
     q: "Wat is REVA precies?",
     a: "REVA is een Recovery Management Platform voor fysiotherapiepraktijken: het platform voor herstelbegeleiding tussen de behandelingen door. Patiënten houden na een blessure of operatie in de app zelf hun herstel bij: check-ins, oefeningen, medicatie en doelen. Jij ziet in het praktijkportaal wie aandacht nodig heeft en volgt de voortgang per patiënt.",
+  },
+  {
+    q: "Welke software heeft een fysiopraktijk nodig?",
+    a: "Een fysiopraktijk werkt meestal met vijf soorten software: een EPD voor dossier en verslaglegging, een agenda, software om te declareren, een tool voor oefenprogramma's en een patiëntenportaal. Het EPD is de basis. REVA vult het aan voor de tijd tussen de behandelingen: patiënten houden zelf hun herstel bij en de fysiotherapeut ziet wie aandacht nodig heeft.",
+  },
+  {
+    q: "Wat is het verschil tussen een EPD en een Recovery Management Platform?",
+    a: "Een EPD legt vast wat er tijdens de behandeling gebeurt en regelt vaak agenda en declaratie. Een Recovery Management Platform zoals REVA richt zich op het herstel tussen de behandelingen door: check-ins, herstelplannen, oefeningen, testen en voortgang. De twee werken naast elkaar, zonder dubbele invoer.",
   },
   {
     q: "Vervangt REVA mijn bestaande EPD of praktijksoftware?",
@@ -14,6 +23,10 @@ export const homeFaq = [
   {
     q: "Wat kost REVA voor mijn praktijk?",
     a: `${priceSentence} Alle functies zijn inbegrepen. Bij jaarlijks betalen krijg je 2 maanden gratis, en je kunt REVA ${TRIAL_DAYS} dagen gratis proberen.`,
+  },
+  {
+    q: "Hoeveel tijd bespaart REVA een fysiopraktijk?",
+    a: `${savingsExampleSentence()} Met de besparingstool op de homepage reken je het uit met je eigen cijfers.`,
   },
   {
     q: "Hoe lang duurt het om REVA in te richten?",

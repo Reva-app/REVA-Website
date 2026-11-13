@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { Settings, Trash2, AlertTriangle, CheckCircle, ChevronRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Lees hoe je jouw REVA account en alle bijbehorende gegevens permanent kunt verwijderen via de instellingen van de app.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Account verwijderen",
     description: "Stap voor stap uitleg om een REVA account en alle bijbehorende gegevens permanent te verwijderen.",
     locale: "nl_NL",

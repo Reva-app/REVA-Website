@@ -74,8 +74,11 @@ export function Footer() {
                 { label: "Fysiotherapie software", href: "/fysiotherapie-software" },
                 { label: "Alternatief voor WhatsApp", href: "/alternatief-voor-whatsapp" },
                 { label: "Oefenprogramma-app", href: "/oefenprogramma-app" },
-                { label: "Software voor fysiopraktijken", href: "/blog/software-voor-fysiopraktijken" },
+                { label: "Software voor fysiopraktijken", href: "/" },
+                { label: "Besparing berekenen", href: "/besparing-berekenen" },
+                { label: "Welke software heb je nodig?", href: "/blog/software-voor-fysiopraktijken" },
                 { label: "Pilotprogramma", href: "/pilot" },
+                { label: "Per provincie", href: "/fysiotherapie-software#provincies" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="footer-link">

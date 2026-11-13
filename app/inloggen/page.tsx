@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { Lock, Server, ShieldCheck } from "lucide-react";
 import { LoginOptions } from "@/components/LoginOptions";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Log in bij REVA: ga naar het praktijkportaal als fysiotherapeut of naar het patiëntenportaal als patiënt.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Inloggen",
     description: "Kies of je inlogt als fysiotherapeut of als patiënt bij REVA.",
     locale: "nl_NL",

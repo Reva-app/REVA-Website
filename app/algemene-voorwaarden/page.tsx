@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "De algemene voorwaarden van REVA App voor fysiotherapiepraktijken. Lees de afspraken en gebruiksregels van onze dienst.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Algemene Voorwaarden",
     description: "De algemene voorwaarden van REVA App voor fysiotherapiepraktijken.",
     locale: "nl_NL",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { Mail, MessageCircle, HelpCircle, Phone } from "lucide-react";
 import { company } from "@/lib/about";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Heb je een vraag over REVA? Neem contact op via het formulier of mail naar info@reva-app.nl. Wil je liever een demo? Vraag die apart aan.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Contact",
     description: "Neem contact op met REVA voor vragen over de software, je account of een samenwerking.",
     locale: "nl_NL",

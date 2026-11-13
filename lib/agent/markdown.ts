@@ -8,6 +8,8 @@ import { faqGroups } from "@/lib/faq";
 import { comparisonRows, homeFaq } from "@/lib/home-faq";
 import { pilotOffer, pilotSentence } from "@/lib/offer";
 import { features } from "@/lib/features";
+import { savingsExampleSentence } from "@/lib/savings";
+import { provinces } from "@/lib/provinces";
 
 export const SITE_URL = "https://www.reva-app.nl";
 
@@ -27,6 +29,7 @@ const MORE_LINKS = [
   `- [Alternatief voor WhatsApp](${SITE_URL}/alternatief-voor-whatsapp)`,
   `- [Oefenprogramma-app](${SITE_URL}/oefenprogramma-app)`,
   `- [Pilotprogramma](${SITE_URL}/pilot)`,
+  `- [Besparing berekenen](${SITE_URL}/besparing-berekenen)`,
   `- [Prijzen](${SITE_URL}/prijzen)`,
   `- [Veelgestelde vragen](${SITE_URL}/faq)`,
   `- [Blog](${SITE_URL}/blog)`,
@@ -109,6 +112,14 @@ export function homeMarkdown() {
     "## Prijzen",
     "",
     pricingTable(),
+    "",
+    "## Hoeveel tijd bespaart REVA?",
+    "",
+    `${savingsExampleSentence()} Zelf rekenen met je eigen cijfers: ${SITE_URL}/besparing-berekenen.`,
+    "",
+    "## Per provincie",
+    "",
+    `REVA werkt online voor fysiotherapiepraktijken in heel Nederland: ${provinces.map((p) => `[${p.name}](${SITE_URL}/fysiotherapie-software/${p.slug})`).join(", ")}.`,
     "",
     faqSection(homeFaq),
     MORE_LINKS,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import {
   LayoutDashboard, ClipboardCheck, CalendarDays,
   Dumbbell, Pill, FolderOpen, BarChart3, HelpCircle, Smartphone,
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "Handleiding voor het patiëntenportaal van REVA: zo gebruiken patiënten van je fysiopraktijk check-ins, oefeningen, testresultaten en hun dossier.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Handleiding patiëntenportaal REVA",
     description: "Zo werkt het patiëntenportaal van REVA voor de patiënten van jouw praktijk.",
     locale: "nl_NL",

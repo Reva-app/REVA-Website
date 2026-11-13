@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Mail, KeyRound, ClipboardCheck, Smartphone, Globe } from "lucide-react";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description:
     "De fysio app voor je patiënten: een eigen app in je huisstijl, met dagelijkse check-in, oefeningen, medicatieherinneringen en inzicht in het eigen herstel.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Fysio app voor je patiënten: oefeningen en check-ins",
     description: "Een eigen patiëntenportaal op de telefoon van je patiënt, in de huisstijl van jouw praktijk.",
     locale: "nl_NL",

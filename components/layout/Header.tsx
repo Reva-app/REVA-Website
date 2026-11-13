@@ -18,6 +18,7 @@ const navLinks = [
 const audienceLinks = [
   { label: "Voor fysio's", href: "/functies/voor-fysios" },
   { label: "Voor patiënten", href: "/functies/voor-patienten" },
+  { label: "Besparing berekenen", href: "/besparing-berekenen" },
 ];
 
 const pilotOpen = pilotOffer.active && pilotOffer.spotsLeft > 0;

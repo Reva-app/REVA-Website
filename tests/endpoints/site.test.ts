@@ -25,10 +25,19 @@ test("homepage: HTML bij Accept: text/html", async () => {
   assert.equal(res.status, 200);
   assert.match(res.headers.get("content-type") ?? "", /^text\/html/);
   const html = await res.text();
-  assert.match(html, /<title>REVA App \| Patiëntenportaal en fysiotherapiesoftware<\/title>/);
+  assert.match(html, /<title>Software voor fysiopraktijken en patiëntenportaal \| REVA App<\/title>/);
   assert.ok(html.includes('"@type":"Organization"'));
   assert.ok(html.includes('"contactPoint"'));
   assert.ok(html.includes('"@type":"PostalAddress"') && html.includes('"postalCode":"2153 BH"'));
+});
+
+test("provinciepagina's: 200 met Service-schema en dialect met lang-attribuut, onbekende provincie 404", async () => {
+  const html = await (await get("/fysiotherapie-software/limburg", "text/html")).text();
+  assert.match(html, /<h1[^>]*>Software voor fysiopraktijken in Limburg<\/h1>/);
+  assert.ok(html.includes('"@type":"Service"') && html.includes('"name":"Maastricht"'));
+  assert.ok(html.includes('lang="li"'));
+  assert.ok(html.includes('"@type":"FAQPage"'));
+  assert.equal((await get("/fysiotherapie-software/atlantis", "text/html")).status, 404);
 });
 
 test("404: Markdown met uitleg en links, status 404", async () => {
@@ -99,7 +108,9 @@ test("over REVA: AboutPage, Person en FAQ in de structured data", async () => {
 
 test("homepage: H1 met zoekterm, FAQ-schema en geen placeholders", async () => {
   const html = await (await get("/", "text/html")).text();
-  assert.match(html, /<h1[^>]*>Patiëntenportaal voor fysiotherapiepraktijken<\/h1>/);
+  assert.match(html, /<h1[^>]*>Software voor fysiopraktijken: patiëntenportaal naast je EPD<\/h1>/);
+  assert.ok(html.includes("Welke software heeft een fysiopraktijk nodig?"));
+  assert.ok(html.includes("Hoeveel tijd wint jouw praktijk terug?"));
   assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1);
   assert.ok(html.includes('"@type":"FAQPage"'));
   assert.ok(html.includes("REVA naast WhatsApp, telefoon en Excel"));

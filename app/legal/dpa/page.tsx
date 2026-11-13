@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { LegalLayout } from "@/components/layout/LegalLayout";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "De verwerkersovereenkomst (DPA) tussen REVA en fysiotherapiepraktijken conform de AVG, geaccepteerd bij het afsluiten van een abonnement op REVA.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Verwerkersovereenkomst",
     description: "De verwerkersovereenkomst (DPA) tussen REVA en jouw praktijk, conform de AVG.",
     locale: "nl_NL",

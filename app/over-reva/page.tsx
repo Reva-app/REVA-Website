@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   description:
     "Stef Robberts richtte REVA op na zijn eigen knieblessure. Lees hoe een persoonlijk hersteldashboard uitgroeide tot een patiëntenportaal voor fysiopraktijken.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Over REVA: het verhaal achter het patiëntenportaal",
     description:
       "Van afgescheurde kniepees tot patiëntenportaal voor fysiotherapiepraktijken: het verhaal van oprichter Stef Robberts.",

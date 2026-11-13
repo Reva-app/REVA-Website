@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Artikelen over patiëntcommunicatie, therapietrouw, digitalisering en AVG voor fysiotherapiepraktijken. Praktische inzichten om overzicht te houden.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Blog voor fysiotherapiepraktijken",
     description: "Artikelen voor fysiotherapiepraktijken over patiëntcommunicatie, therapietrouw en digitalisering.",
     locale: "nl_NL",

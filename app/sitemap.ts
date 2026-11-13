@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
 import { practices } from "@/lib/practices";
 import { pageDates } from "@/lib/page-dates";
+import { provinces } from "@/lib/provinces";
 
 const BASE = "https://www.reva-app.nl";
 const abs = (path: string) => `${BASE}${path}`;
@@ -14,6 +15,7 @@ const pages: { path: string; images?: string[] }[] = [
   { path: "/functies/voor-fysios" },
   { path: "/functies/voor-patienten", images: ["/check-in-mobile.png"] },
   { path: "/fysiotherapie-software", images: ["/image-reva-app.png"] },
+  { path: "/besparing-berekenen" },
   { path: "/alternatief-voor-whatsapp" },
   { path: "/oefenprogramma-app" },
   { path: "/pilot" },
@@ -55,5 +57,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ? [{ url: abs("/praktijken"), lastModified: pageDates["/praktijken"] }]
     : [];
 
-  return [...staticEntries, ...practiceEntries, ...blogEntries];
+  // Provinciepagina's voor lokale vindbaarheid
+  const provinceEntries: MetadataRoute.Sitemap = provinces.map((p) => ({
+    url: abs(`/fysiotherapie-software/${p.slug}`),
+    lastModified: pageDates[`/fysiotherapie-software/${p.slug}`],
+  }));
+
+  return [...staticEntries, ...provinceEntries, ...practiceEntries, ...blogEntries];
 }

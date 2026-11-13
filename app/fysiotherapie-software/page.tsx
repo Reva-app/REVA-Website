@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight, BellRing, CheckCircle, ClipboardList, Database, Layers, ShieldCheck, Smartphone, Stethoscope, Minus } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -10,6 +11,8 @@ import { JsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/components/seo/JsonLd
 import { euro, priceExamples, PRICING, priceSentence, TRIAL_DAYS, yearlySentence } from "@/lib/pricing";
 import { pilotOffer } from "@/lib/offer";
 import { pageDates } from "@/lib/page-dates";
+import { softwareTypes } from "@/lib/software-types";
+import { provinces } from "@/lib/provinces";
 
 const PATH = "/fysiotherapie-software";
 const URL = `https://www.reva-app.nl${PATH}`;
@@ -30,6 +33,7 @@ export const metadata: Metadata = {
     "recovery management platform",
   ],
   openGraph: {
+    images: OG_IMAGES,
     title: "Fysiotherapie software: patiëntenportaal naast je EPD",
     description: "Zie wie aandacht nodig heeft, zonder te bellen. REVA werkt naast je EPD, voor €29 per behandelaar per maand incl. btw.",
     locale: "nl_NL",
@@ -45,15 +49,6 @@ const facts = [
   "REVA werkt naast elk EPD, zonder koppeling. Het EPD blijft leidend voor agenda, verslaglegging en declaratie, dus er is geen dubbele invoer.",
   "REVA zet patiënten met hoge pijn, gemelde zwelling, een lage dagscore, weinig activiteit of een ingevulde intake automatisch in de lijst Aandacht nodig.",
   `${priceSentence} Alle functies zijn inbegrepen en je probeert REVA ${TRIAL_DAYS} dagen gratis.`,
-];
-
-/** Welke software een praktijk gebruikt, en welke rol REVA daarin heeft */
-const softwareTypes: { type: string; what: string; reva: "ja" | "deels" | "nee"; role: string }[] = [
-  { type: "EPD", what: "Dossier, anamnese, behandelplan en verslaglegging per behandeling", reva: "nee", role: "Blijft leidend. REVA werkt ernaast, zonder koppeling en zonder dubbele invoer." },
-  { type: "Declareren", what: "Behandelingen indienen bij zorgverzekeraars", reva: "nee", role: "Loopt via je EPD of declaratiesoftware." },
-  { type: "Agenda", what: "Afspraken plannen en online boeken", reva: "nee", role: "Blijft in je EPD of agendasysteem. REVA plant geen afspraken; patiënten kunnen in de app alleen hun eigen afspraken bijhouden." },
-  { type: "Oefenprogramma's", what: "Huiswerkoefeningen samenstellen en meegeven", reva: "ja", role: "Schema's per patiënt uit ongeveer 480 REVA-oefeningen of je eigen oefeningen, met dosering per oefening en een workoutmodus." },
-  { type: "Patiëntenportaal", what: "Patiënten volgen tussen de afspraken door", reva: "ja", role: "De kern van REVA: dagelijkse check-ins, Aandacht nodig, herstelplannen, testen en een app in je huisstijl." },
 ];
 
 const stations = [
@@ -438,6 +433,34 @@ export default function FysiotherapieSoftwarePage() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </AnimateIn>
+          </div>
+        </section>
+
+        {/* Per provincie */}
+        <section id="provincies" className="scroll-mt-24 py-14 md:py-16" style={{ background: "#ffffff" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-8">
+            <AnimateIn direction="up" className="max-w-2xl mb-8">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3" style={{ color: "#1a1a1a" }}>
+                Fysiotherapie software in jouw provincie
+              </h2>
+              <p className="text-base" style={{ color: "#6b7280" }}>
+                REVA werkt online voor fysiopraktijken in heel Nederland. Per provincie lees je wat REVA betekent voor praktijken in de regio, en hoe we het in de streektaal uitleggen.
+              </p>
+            </AnimateIn>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {provinces.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/fysiotherapie-software/${p.slug}`}
+                    className="group flex flex-col h-full rounded-xl border px-4 py-3 transition-colors hover:bg-[#f8f7f4]"
+                    style={{ borderColor: "#e8e5df" }}
+                  >
+                    <span className="text-sm font-semibold group-hover:text-[#e8632a] transition-colors" style={{ color: "#1a1a1a" }}>{p.name}</span>
+                    <span className="text-xs mt-0.5" style={{ color: "#9ca3af" }}>{p.cities.slice(0, 3).map((c) => c.name).join(", ")}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

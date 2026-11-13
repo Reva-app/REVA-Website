@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/og";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Ruim 40 antwoorden over REVA, het patiëntenportaal voor fysiotherapiepraktijken: functies, implementatie, prijzen, proefperiode, AVG en beveiliging.",
   openGraph: {
+    images: OG_IMAGES,
     title: "Veelgestelde vragen over REVA",
     description: "Antwoorden op de meest gestelde vragen over REVA, voor fysiotherapiepraktijken.",
     locale: "nl_NL",
