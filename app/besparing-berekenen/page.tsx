@@ -63,7 +63,7 @@ const assumptions = [
   ["Minder contactmomenten met REVA", `${savingsDefaults.reductionPct}%`, "Bewust voorzichtig: niet elk contact verdwijnt, en dat is ook niet de bedoeling"],
   ["Werkweken per jaar", `${WORK_WEEKS}`, "Na vakantie en feestdagen"],
   ["Duur van een behandeling", `${TREATMENT_MINUTES} minuten`, "Om vrijgekomen tijd om te rekenen naar behandelingen"],
-  ["Waarde van een uur", euroRound(savingsDefaults.hourValue), "Pas dit aan naar wat een uur van een behandelaar jouw praktijk oplevert"],
+  ["Waarde van een uur", euroRound(savingsDefaults.hourValue), "Een voorzichtige schatting van wat een uur van een behandelaar een praktijk oplevert"],
 ];
 
 const faq = [
@@ -108,7 +108,7 @@ export default function BesparingBerekenenPage() {
           <div className="max-w-6xl mx-auto px-5 md:px-8">
             <SectionIntro
               title="Jouw besparing in één minuut"
-              text={`Begin met de standaardwaarden: een praktijk met ${savingsDefaults.seats} behandelaars wint dan ongeveer ${nl1(ex.hoursSavedPerWeek)} uur per week terug. Schuif daarna met je eigen cijfers.`}
+              text={`Vul het aantal behandelaars en werkdagen van je praktijk in en klik op Bereken. Ter vergelijking: een praktijk met ${savingsDefaults.seats} behandelaars die ${savingsDefaults.daysPerWeek} dagen per week werken, wint ongeveer ${nl1(ex.hoursSavedPerWeek)} uur per week terug.`}
             />
             <AnimateIn direction="up" delay={80}>
               <SavingsCalculator />
@@ -179,7 +179,7 @@ export default function BesparingBerekenenPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <SectionIntro
               title="De aannames, eerlijk uitgelegd"
-              text="Een berekening is zo goed als de aannames erachter. Dit zijn de standaardwaarden; in de tool pas je ze aan naar je eigen praktijk."
+              text="Een berekening is zo goed als de aannames erachter. Jij vult het aantal behandelaars en werkdagen in; met deze vaste waarden rekenen we verder. Wil je met je eigen cijfers rekenen, dan doen we dat graag samen in een demo."
             />
             <AnimateIn direction="up" delay={80}>
               <div className="overflow-x-auto">

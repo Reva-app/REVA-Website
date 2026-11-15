@@ -1,7 +1,8 @@
 // Rekenmodel voor de besparingstool (homepage en /besparing-berekenen).
 // Uitgangspunten sluiten aan op het rekenvoorbeeld in de blog "Stop met WhatsAppen":
 // vijf korte contactmomenten van vijf minuten per behandelaar per dag. Alles is een
-// schatting die de bezoeker zelf aanpast; de prijs komt uit lib/pricing.ts.
+// schatting: de praktijk vult het aantal behandelaars en werkdagen in, de overige
+// aannames staan vast in savingsDefaults. De prijs komt uit lib/pricing.ts.
 
 import { monthlyPrice, yearlyPrice } from "@/lib/pricing";
 
@@ -39,7 +40,7 @@ export const savingsDefaults: SavingsInput = {
 
 /** Grenzen van de schuifjes in de tool */
 export const savingsLimits = {
-  seats: [1, 30],
+  seats: [1, 50],
   contactsPerDay: [1, 15],
   minutesPerContact: [1, 15],
   reductionPct: [10, 80],

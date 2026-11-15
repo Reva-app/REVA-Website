@@ -28,7 +28,6 @@ import { FeatureDemo } from "@/components/features/FeatureDemo";
 import { euro, priceExamples, priceSentence, PRICING, TRIAL_DAYS } from "@/lib/pricing";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { softwareTypes } from "@/lib/software-types";
-import { computeSavings, nl1, savingsDefaults } from "@/lib/savings";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -1004,7 +1003,6 @@ function PricingTeaserSection() {
 // ─── Besparing berekenen ───────────────────────────────────────
 
 function SavingsSection() {
-  const ex = computeSavings(savingsDefaults);
   return (
     <section id="besparing" className="scroll-mt-24 py-20 md:py-28" style={{ background: "#ffffff" }}>
       <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -1016,7 +1014,7 @@ function SavingsSection() {
             </h2>
           </div>
           <p className="text-base max-w-sm" style={{ color: "#6b7280" }}>
-            Een praktijk met {savingsDefaults.seats} behandelaars wint ongeveer {nl1(ex.hoursSavedPerWeek)} uur per week terug. Vul je eigen cijfers in.
+            Vul het aantal behandelaars en werkdagen in, en zie direct wat je praktijk terugwint in uren en euro&apos;s.
           </p>
         </AnimateIn>
         <AnimateIn direction="up" delay={80}>
