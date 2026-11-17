@@ -121,7 +121,8 @@ export default function FunctiesPage() {
                         Je begint niet met een leeg scherm. REVA bevat {REVA_LIBRARY.protocols} herstelplannen,
                         van ACL-reconstructie en knieprothese tot achilles en lopersknie, {REVA_LIBRARY.exercises}{" "}
                         oefeningen en {REVA_LIBRARY.tests} tests. Je filtert, kopieert en past ze aan op jouw werkwijze
-                        voordat je ze aan een patiënt toewijst.
+                        voordat je ze aan een patiënt toewijst.{" "}
+                        <Link href="/herstelplannen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>Bekijk alle herstelplannen</Link>.
                       </p>
                     </div>
                   </div>

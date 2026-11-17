@@ -75,6 +75,7 @@ export function Footer() {
                 { label: "Alternatief voor WhatsApp", href: "/alternatief-voor-whatsapp" },
                 { label: "Oefenprogramma-app", href: "/oefenprogramma-app" },
                 { label: "Software voor fysiopraktijken", href: "/" },
+                { label: "Herstelplannen", href: "/herstelplannen" },
                 { label: "Besparing berekenen", href: "/besparing-berekenen" },
                 { label: "Welke software heb je nodig?", href: "/blog/software-voor-fysiopraktijken" },
                 { label: "Pilotprogramma", href: "/pilot" },
@@ -96,6 +97,7 @@ export function Footer() {
             </p>
             <ul className="space-y-2.5">
               {[
+                { label: "Veiligheid en privacy", href: "/veiligheid" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Algemene Voorwaarden", href: "/algemene-voorwaarden" },
                 { label: "Cookiebeleid", href: "/cookiebeleid" },

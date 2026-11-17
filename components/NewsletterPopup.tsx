@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { track } from "@/lib/analytics";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { X, Loader2, CheckCircle, BookOpen, HeartPulse, ShieldCheck } from "lucide-react";
@@ -119,9 +120,7 @@ export function NewsletterPopup() {
     }
     remember("subscribed");
     setStatus("success");
-    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "newsletter_signup", form_name: "nieuwsbrief_popup" });
+    track("newsletter_signup", { form_name: "nieuwsbrief_popup" });
   }
 
   if (!open) return null;

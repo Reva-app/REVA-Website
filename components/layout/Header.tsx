@@ -18,6 +18,7 @@ const navLinks = [
 const audienceLinks = [
   { label: "Voor fysio's", href: "/functies/voor-fysios" },
   { label: "Voor patiënten", href: "/functies/voor-patienten" },
+  { label: "Herstelplannen", href: "/herstelplannen" },
   { label: "Besparing berekenen", href: "/besparing-berekenen" },
 ];
 

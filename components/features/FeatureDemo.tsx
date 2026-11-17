@@ -559,7 +559,7 @@ function VeiligheidDemo() {
           <Check className="w-3.5 h-3.5" /> Ingelogd
         </p>
       </Frame>
-      <Frame title="Activiteitenlog" meta="NEN 7513">
+      <Frame title="Activiteitenlog" meta="Inzage per dossier">
         <div className="space-y-1.5">
           {log.map(([a, w, Icon], i) => (
             <div key={i} className={`flex items-center gap-2 px-2.5 py-2 rounded-lg ${show(at(i + 4))}`} style={{ background: "#f8f7f4" }}>

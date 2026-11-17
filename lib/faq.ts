@@ -246,7 +246,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Wordt bijgehouden wie een dossier inziet?",
-        a: "Ja. In het activiteitenlog ziet de praktijkeigenaar wie welk patiëntdossier heeft ingezien, gewijzigd of geëxporteerd, en wanneer. Zo sluit REVA aan bij de norm NEN 7513 voor logging in de zorg.",
+        a: "Ja. In het activiteitenlog ziet de praktijkeigenaar wie welk patiëntdossier heeft ingezien, gewijzigd of geëxporteerd, en wanneer. Zo kun je verantwoorden wie er bij de gezondheidsgegevens van je patiënten is geweest.",
       },
       {
         q: "Wie kan welke gegevens zien?",

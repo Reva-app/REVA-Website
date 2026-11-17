@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/analytics";
+import { monthlyPrice } from "@/lib/pricing";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 // Keuze van de site (?behandelaars=5&facturatie=jaarlijks, ?pakket=maatwerk, ?aanbod=pilot), voor in de notificatiemail
@@ -69,9 +71,15 @@ export function ContactForm({ variant = "demo" }: { variant?: "demo" | "pilot" }
     }
     setStatus("success");
 
-    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "generate_lead", form_name: pilot ? "pilot_aanmelding" : "demo_aanvragen", ...choice() });
+    // Meting via Tag Manager; value = jaarwaarde bij het gekozen aantal behandelaars (of 1)
+    const c = choice();
+    const seats = Number(c.behandelaars) > 0 ? Number(c.behandelaars) : 1;
+    track("generate_lead", {
+      form_name: pilot ? "pilot_aanmelding" : "demo_aanvragen",
+      ...c,
+      value: monthlyPrice(seats) * 12,
+      currency: "EUR",
+    });
   };
 
   if (status === "success") {

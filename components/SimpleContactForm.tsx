@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/analytics";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 // Keuze van de site (?behandelaars=5&facturatie=jaarlijks, ?pakket=maatwerk, ?aanbod=pilot), voor in de notificatiemail
@@ -65,9 +66,7 @@ export function SimpleContactForm() {
     setStatus("success");
     // Meting via Tag Manager (alleen actief na cookietoestemming). Het onderwerp is een
     // vaste keuze uit de lijst, dus geen persoonsgegevens.
-    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event: "contact_form_submit", form_name: "contact", onderwerp: form.topic || undefined });
+    track("contact_form_submit", { form_name: "contact", onderwerp: form.topic || undefined, ...pricingChoice() });
   };
 
   if (status === "success") {

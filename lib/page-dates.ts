@@ -3,12 +3,15 @@
 // als die bij elke deploy verspringt zonder dat de inhoud wijzigt.
 
 import { provinces } from "@/lib/provinces";
+import { injuryPages } from "@/lib/herstelplannen";
 
 /** Laatste inhoudelijke wijziging van de provinciepagina's */
 const PROVINCES_UPDATED = "2026-11-13";
 
 export const pageDates: Record<string, string> = {
-  "/besparing-berekenen": "2026-11-13",
+  "/besparing-berekenen": "2026-11-15",
+  "/herstelplannen": "2026-11-15",
+  "/veiligheid": "2026-11-15",
   "/": "2026-11-13",
   "/functies": "2026-11-13",
   "/fysiotherapie-software": "2026-11-13",
@@ -30,5 +33,6 @@ export const pageDates: Record<string, string> = {
   "/legal/dpa": "2026-08-01",
   "/verwijder-account": "2026-11-13",
   "/praktijken": "2026-11-06",
+  ...Object.fromEntries(injuryPages.map((p) => [`/herstelplannen/${p.slug}`, "2026-11-15"])),
   ...Object.fromEntries(provinces.map((p) => [`/fysiotherapie-software/${p.slug}`, PROVINCES_UPDATED])),
 };

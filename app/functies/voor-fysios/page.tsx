@@ -72,7 +72,7 @@ const practiceItems = [
   { icon: BarChart3, title: "Analyse en rapporten", text: "Uitkomst, behandelduur, therapietrouw en tevredenheid met NPS.", href: "/functies#analyse" },
   { icon: Users, title: "Team, locaties en import", text: "Praktijkeigenaar en fysiotherapeut, patiënten importeren via CSV.", href: "/functies#team" },
   { icon: Palette, title: "Eigen huisstijl", text: "Logo en kleur in portaal, patiëntenapp, e-mails en pushmeldingen.", href: "/functies#huisstijl" },
-  { icon: ShieldCheck, title: "Veiligheid", text: "Tweestapsverificatie voor iedereen, activiteitenlog (NEN 7513) en Europese servers.", href: "/functies#veiligheid" },
+  { icon: ShieldCheck, title: "Veiligheid", text: "Tweestapsverificatie voor iedereen, een activiteitenlog van elke inzage en Europese servers.", href: "/veiligheid" },
 ];
 
 const faq = [

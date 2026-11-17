@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/analytics";
 import Link from "next/link";
 import { Check, ArrowRight, Minus, Plus } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
@@ -46,7 +47,10 @@ export function PricingCalculator() {
                 role="switch"
                 aria-checked={yearly}
                 aria-label="Wissel tussen maandelijks en jaarlijks betalen"
-                onClick={() => setYearly((v) => !v)}
+                onClick={() => {
+                  setYearly((v) => !v);
+                  track("pricing_calculator_use", { actie: "facturatie", behandelaars: seats, facturatie: yearly ? "maandelijks" : "jaarlijks" });
+                }}
                 className="relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors"
                 style={{ background: yearly ? "#e8632a" : "#3f3f46" }}
               >
@@ -120,6 +124,8 @@ export function PricingCalculator() {
 
             <Link
               href={demoHref(seats, yearly)}
+              data-no-track
+              onClick={() => track("cta_click", { cta: "prijscalculator_demo", behandelaars: seats, facturatie: yearly ? "jaarlijks" : "maandelijks", value: (yearly ? yearlyPrice(seats) : monthlyPrice(seats) * 12), currency: "EUR" })}
               className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium text-sm text-white transition-colors duration-150"
               style={{ background: "#e8632a" }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "#d4581f"; }}

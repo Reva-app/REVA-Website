@@ -1,0 +1,2578 @@
+[
+ {
+  "name": "Herstelplan achillespees-tendinopathie",
+  "category": "achilles_tendinopathy",
+  "description": "Herstelprogramma bij achillespees-tendinopathie (overbelastingsklachten van de achillespees, veelvoorkomend bij hardlopers), opgebouwd van pijnmanagement met isometrische belasting, via zware, langzame en excentrische belasting, naar een gestructureerde terugkeer naar hardlopen. Dit is geen protocol voor een acute achillespeesruptuur: plotselinge, scherpe pijn met het onvermogen om af te zetten vraagt om directe medische beoordeling. Vaak een langzaam herstellende blessure die minimaal 12 weken en geduld en consistentie vraagt.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijn- en belastingmanagement",
+    "goal": "Pijn verminderen met isometrische belasting en de trainingsbelasting tijdelijk aanpassen, zonder de pees volledig te ontlasten.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Heuvel- of trappentraining",
+     "Volledig stoppen met alle belasting"
+    ],
+    "criteria": [
+     "Ochtendstijfheid van de achillespees duidelijk verminderd",
+     "Isometrische kuitoefening uit te voeren met acceptabele pijn (niet toenemend nadien)",
+     "Dagelijkse activiteiten mogelijk zonder duidelijke pijntoename"
+    ]
+   },
+   {
+    "name": "Fase 2: Zware, langzame en excentrische belasting",
+    "goal": "De kern van het herstel: geleidelijk opbouwende excentrische en zware, langzame belastingsoefeningen voor de kuit en achillespees, de in de literatuur best onderbouwde aanpak bij deze blessure.",
+    "weeks": "Week 3-9",
+    "forbidden": [
+     "Hardlopen",
+     "Springen en plyometrie",
+     "Snelle richtingsveranderingen"
+    ],
+    "criteria": [
+     "Excentrische hakoefeningen uit te voeren met acceptabele, niet-toenemende pijn",
+     "Ochtendstijfheid grotendeels verdwenen",
+     "Enkelbenige tenenheffen mogelijk met redelijke controle",
+     "Geleidelijke toename van belastbaarheid over de weken merkbaar"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar hardlopen en sport",
+    "goal": "Een gestructureerde, geleidelijke opbouw van hardloopvolume en, waar relevant, plyometrische belasting, met behoud van het krachtprogramma als onderhoud.",
+    "weeks": "Week 9-12+",
+    "forbidden": [
+     "Grote sprongen in hardloopvolume of -snelheid",
+     "Meteen terug naar het oude trainingsschema"
+    ],
+    "criteria": [
+     "Eenbenige tenenheffen krachtig en gecontroleerd uit te voeren",
+     "Wandelen en stevig doorlopen volledig klachtenvrij",
+     "Eerste hardloopblokken zonder toename van klachten de dag erna"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "ACL-reconstructie herstelprotocol",
+  "category": "acl",
+  "description": "Uitgebreid herstelprotocol na een voorste-kruisbandreconstructie, opgebouwd in zes fases van de acute fase direct na de operatie tot volledige, begeleide terugkeer naar sport (ca. 8-12 maanden).",
+  "phases": [
+   {
+    "name": "Fase 1: Acute fase",
+    "goal": "Ontsteking en zwelling onder controle brengen, wondgenezing bewaken en de knie beschermen terwijl de eerste mobiliteit en spieraansturing worden opgebouwd.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Hurken of diep buigen",
+     "Draaien op één been",
+     "Sport hervatten"
+    ],
+    "criteria": [
+     "Volledige passieve knie-extensie (0°) bereikt",
+     "Minimaal 90° knieflexie bereikt",
+     "Zwelling duidelijk afgenomen",
+     "Quadriceps actief aan te spannen",
+     "Lopen met krukken zonder hinken"
+    ]
+   },
+   {
+    "name": "Fase 2: Vroege mobilisatie",
+    "goal": "Volledige beweeglijkheid herwinnen, de krukken afbouwen en starten met lichte functionele belasting.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Contactsport",
+     "Zware belasting"
+    ],
+    "criteria": [
+     "Minimaal 120° knieflexie bereikt",
+     "Lopen zonder krukken, zonder hinken",
+     "Traplopen met leuning zonder pijn",
+     "Balans op één been minimaal 10 seconden"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht- en stabiliteitsopbouw",
+    "goal": "Spierkracht symmetrisch opbouwen en de stabiliteit en controle van de knie verbeteren.",
+    "weeks": "Week 6-12",
+    "forbidden": [
+     "Hardlopen op onvoorspelbare ondergrond",
+     "Springen en landen",
+     "Richtingsveranderingen",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Quadricepskracht minimaal 70% van het andere been",
+     "Balans op één been minimaal 30 seconden",
+     "Geen zwelling na training",
+     "Volledige, symmetrische mobiliteit"
+    ]
+   },
+   {
+    "name": "Fase 4: Neuromusculaire controle & hardlopen",
+    "goal": "Hardlopen geleidelijk hervatten en dynamische stabiliteit en landingscontrole opbouwen als voorbereiding op sportspecifieke training.",
+    "weeks": "Week 12-20",
+    "forbidden": [
+     "Wedstrijdsport",
+     "Contactsport",
+     "Onvoorspelbare richtingsveranderingen op hoge snelheid"
+    ],
+    "criteria": [
+     "20 minuten hardlopen pijnvrij op vlakke ondergrond",
+     "Symmetrische landing bij hoptest (beoordeeld door fysiotherapeut)",
+     "Geen instabiliteitsgevoel bij dagelijkse activiteiten",
+     "Balans op instabiele ondergrond minimaal 30 seconden"
+    ]
+   },
+   {
+    "name": "Fase 5: Sportspecifieke training",
+    "goal": "Richtingsveranderingen, sprinten en sportspecifieke bewegingen op snelheid trainen, gericht op een veilige terugkeer naar training.",
+    "weeks": "Week 20-32",
+    "forbidden": [
+     "Wedstrijden",
+     "Onbegeleide contactmomenten"
+    ],
+    "criteria": [
+     "Hoptesten (single, triple, cross-over) symmetrie boven 90%",
+     "Sprinten op volle snelheid pijnvrij",
+     "Richtingsveranderingen op snelheid zonder instabiliteit",
+     "Voldoende vertrouwen in de knie (besproken met fysiotherapeut)",
+     "Quadriceps- en hamstringkracht (isokinetisch of handheld dynamometer): minimaal 90% symmetrie"
+    ]
+   },
+   {
+    "name": "Fase 6: Terugkeer naar sport",
+    "goal": "Volledige, begeleide terugkeer naar training en wedstrijd, met een onderhoudsprogramma om het opgebouwde niveau vast te houden.",
+    "weeks": "Week 32+",
+    "forbidden": [],
+    "criteria": [
+     "Volledig meegetraind zonder klachten",
+     "Goedkeuring fysiotherapeut voor wedstrijddeelname",
+     "Geen zwelling of instabiliteit na volledige training",
+     "Single-leg hoptest: symmetrie-index minimaal 90% t.o.v. de niet-geopereerde zijde",
+     "IKDC Subjective Knee Form: score minimaal 90"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Conservatief ACL-traject (zonder operatie)",
+  "category": "acl",
+  "description": "Herstelprotocol voor patiënten die, samen met hun chirurg, hebben gekozen voor een niet-operatieve behandeling van een voorste-kruisbandletsel. Geen operatieve fase. De nadruk ligt op neuromusculaire training en het testen of iemand functioneel een ‘coper’ is (kan sporten zonder kruisband) of een ‘non-coper’ (bij wie een operatie alsnog overwogen kan worden). Doorlooptijd circa 4-6 maanden. Voor patiënten die wél een reconstructie ondergaan, zie het reguliere herstelplan ‘ACL-reconstructie herstelprotocol’.",
+  "phases": [
+   {
+    "name": "Fase 1: Acute reactie en functieherstel",
+    "goal": "Zwelling en pijn beheersen, quadricepscontrole herwinnen en een normaal looppatroon herstellen na het kniedistorsie-letsel, zonder chirurgische ingreep.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Pivoterende bewegingen",
+     "Hardlopen",
+     "Sporten met richtingsveranderingen",
+     "Traplopen zonder controle"
+    ],
+    "criteria": [
+     "Volledige knie-extensie (0°) bereikt",
+     "Zwelling duidelijk afgenomen",
+     "Quadriceps actief aan te spannen",
+     "Lopen zonder hinken",
+     "Pijn onder controle in rust"
+    ]
+   },
+   {
+    "name": "Fase 2: Neuromusculaire controle en krachtopbouw",
+    "goal": "Symmetrische spierkracht en dynamische controle opbouwen als basis om te bepalen of de knie zonder kruisband voldoende belasting kan opvangen (‘coper’-status).",
+    "weeks": "Week 3-10",
+    "forbidden": [
+     "Pivoterende sporten",
+     "Contactsport",
+     "Onvoorspelbare richtingsveranderingen"
+    ],
+    "criteria": [
+     "Quadricepskracht minimaal 80% van het andere been",
+     "Hamstringkracht symmetrisch aan het andere been",
+     "Balans op één been minimaal 30 seconden",
+     "Eerste functionele hoptest afgenomen door fysiotherapeut"
+    ]
+   },
+   {
+    "name": "Fase 3: Dynamische stabiliteit en sportspecifieke belasting",
+    "goal": "Richtingsveranderingen, hardlopen en sportspecifieke bewegingen geleidelijk introduceren, met voortdurende aandacht voor instabiliteitsgevoel.",
+    "weeks": "Week 10-16",
+    "forbidden": [
+     "Wedstrijdsport",
+     "Contactsport",
+     "Onvoorspelbare duels"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 85%",
+     "Richtingsveranderingen zonder instabiliteitsgevoel",
+     "20 minuten hardlopen pijnvrij op vlakke ondergrond",
+     "Geen episodes van doorzakken (‘giving-way’) in deze fase"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport en onderhoud",
+    "goal": "Volledige, begeleide terugkeer naar sport voor patiënten die functioneel stabiel zijn gebleken, met een onderhoudsprogramma om het niveau vast te houden.",
+    "weeks": "Week 16-24",
+    "forbidden": [],
+    "criteria": [
+     "Volledig meegetraind zonder klachten of instabiliteit",
+     "Goedkeuring fysiotherapeut voor sportterugkeer",
+     "Single-leg hoptest: symmetrie-index minimaal 90% t.o.v. de andere zijde",
+     "IKDC Subjective Knee Form: score minimaal 90"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Enkelbandletsel herstelprotocol (chronisch/operatief)",
+  "category": "ankle_ligament",
+  "description": "Herstelprotocol na een operatieve enkelbandreconstructie (bv. na aanhoudende instabiliteit), van bescherming van de hersteldde band tot volledige, begeleide terugkeer naar sport (ca. 14-16 weken). Voor een acute verzwikking zonder operatie, zie het herstelplan 'Enkelverzwikking'.",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en vroege mobilisatie",
+    "goal": "De gereconstrueerde band beschermen (vaak in brace of boot) terwijl zwelling afneemt en voorzichtig wordt gestart met mobiliteit binnen de toegestane grenzen.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Inversie-bewegingen (naar binnen zwikken)",
+     "Belasten buiten het toegestane schema",
+     "Hardlopen",
+     "Springen",
+     "Sporten"
+    ],
+    "criteria": [
+     "Wond genezen zonder tekenen van infectie",
+     "Zwelling duidelijk afgenomen",
+     "Belasten volgens het opgebouwde schema van de chirurg"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en belastingopbouw",
+    "goal": "De brace geleidelijk afbouwen, volledige mobiliteit herwinnen en lopen zonder hulpmiddel hervatten.",
+    "weeks": "Week 3-8",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Inversie-bewegingen",
+     "Sporten op oneffen ondergrond"
+    ],
+    "criteria": [
+     "Volledige, symmetrische dorsiflexie bereikt",
+     "Lopen zonder hulpmiddel, zonder hinken",
+     "Traplopen met leuning zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en propriocepsis",
+    "goal": "Spierkracht symmetrisch opbouwen en het gevoel voor de enkel (propriocepsis) herstellen — een van de belangrijkste voorwaarden om herverzwikking te voorkomen.",
+    "weeks": "Week 8-14",
+    "forbidden": [
+     "Hardlopen op onvoorspelbare ondergrond",
+     "Richtingsveranderingen op snelheid",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Kracht inversie/eversie minimaal 80% van de andere zijde",
+     "Balans op één been minimaal 30 seconden",
+     "Wandelen 30 minuten pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport",
+    "goal": "Richtingsveranderingen, hardlopen en sportspecifieke bewegingen op snelheid trainen als voorbereiding op een veilige sportterugkeer.",
+    "weeks": "Week 14+",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 90%",
+     "Richtingsveranderingen op snelheid zonder instabiliteitsgevoel",
+     "Volledig sportspecifiek trainen zonder klachten"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan enkelbandreconstructie, versneld traject (topsport)",
+  "category": "ankle_ligament",
+  "description": "Versneld, intensief begeleid herstelplan na een operatieve enkelbandreconstructie, specifiek voor competitieve of high-level sporters. Kenmerkt zich door frequentere begeleide sessies en strengere voortgangscriteria dan het standaardtraject, resulterend in een merkbaar kortere tijdlijn (ca. 10-12 weken in plaats van 14-16 weken). Uitdrukkelijk alleen geschikt onder intensieve, frequente begeleiding van een fysiotherapeut die de opbouw nauwlettend kan monitoren. Voor het standaardtraject, zie het herstelplan 'Enkelbandletsel herstelprotocol (chronisch/operatief)'.",
+  "phases": [
+   {
+    "name": "Fase 1: Intensieve vroege mobilisatie",
+    "goal": "Onder intensieve, frequente begeleiding zwelling beheersen en sneller dan in het standaardtraject starten met gecontroleerde mobiliteit en belasting, binnen de grenzen die de chirurg toestaat.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Inversie-bewegingen (naar binnen zwikken)",
+     "Onbegeleide belasting buiten het schema",
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Wond genezen zonder tekenen van infectie",
+     "Zwelling duidelijk afgenomen",
+     "Belasten volgens het versnelde, intensief begeleide schema",
+     "Minimaal twee begeleide sessies per week gevolgd"
+    ]
+   },
+   {
+    "name": "Fase 2: Versnelde belastingopbouw",
+    "goal": "De brace geleidelijk afbouwen en mobiliteit en belasting sneller opbouwen dan in het standaardtraject, dankzij intensieve, frequente begeleiding en monitoring.",
+    "weeks": "Week 2-5",
+    "forbidden": [
+     "Hardlopen op onvoorspelbare ondergrond",
+     "Inversie-bewegingen",
+     "Onbegeleide sportbelasting"
+    ],
+    "criteria": [
+     "Volledige, symmetrische dorsiflexie bereikt",
+     "Lopen zonder hulpmiddel, zonder hinken",
+     "Minimaal drie begeleide sessies per week gevolgd"
+    ]
+   },
+   {
+    "name": "Fase 3: Intensieve kracht en propriocepsis",
+    "goal": "Spierkracht en propriocepsis versneld opbouwen onder intensieve begeleiding, de kern van het versnelde traject, met frequente sportspecifieke belastingstests.",
+    "weeks": "Week 5-9",
+    "forbidden": [
+     "Contactsport",
+     "Onbegeleide richtingsveranderingen op snelheid"
+    ],
+    "criteria": [
+     "Kracht inversie/eversie minimaal 90% van de andere zijde",
+     "Balans op instabiele ondergrond minimaal 45 seconden",
+     "Minimaal drie tot vier begeleide sessies per week gevolgd"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar topsport",
+    "goal": "Sportspecifieke belasting op wedstrijdniveau opbouwen onder intensieve begeleiding, met een uitgebreide functionele testbatterij voorafgaand aan volledige sportterugkeer.",
+    "weeks": "Week 9-12",
+    "forbidden": [
+     "Wedstrijden zonder uitgebreide functionele testing en goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 95%",
+     "Richtingsveranderingen op wedstrijdsnelheid zonder instabiliteitsgevoel",
+     "Volledige functionele testbatterij succesvol afgerond"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan enkelverzwikking (hardlopen)",
+  "category": "ankle_sprain",
+  "description": "Herstelplan voor een acute, conservatief behandelde enkelverzwikking (inversietrauma) bij hardlopers/duursporters, van RICE en vroege belasting via run-walk-opbouw tot een geleidelijke, functionele terugkeer naar de volledige wekelijkse hardloopmijlage (ca. 4-6 weken). Voor voetballers, zie het herstelplan 'Enkelverzwikking (voetbal)'.",
+  "phases": [
+   {
+    "name": "Fase 1: RICE en vroege belasting",
+    "goal": "Zwelling beperken met Rust, IJs, Compressie en Elevatie, en zo snel als de pijn het toelaat voorzichtig weer belasten.",
+    "weeks": "Dag 0-7",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Lange wandelingen",
+     "Onbelaste rust langer dan nodig"
+    ],
+    "criteria": [
+     "Zwelling onder controle",
+     "Belasten mogelijk met minimale pijn",
+     "Actieve dorsiflexie mogelijk binnen de pijngrens"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en kracht",
+    "goal": "Volledige dorsiflexiemobiliteit en kuitkracht opbouwen als basis voor een veilige afzet bij hardlopen, met vroege balanstraining.",
+    "weeks": "Week 1-3",
+    "forbidden": [
+     "Hardlopen op oneffen ondergrond",
+     "Springen"
+    ],
+    "criteria": [
+     "Volledige mobiliteit hersteld",
+     "Lopen zonder hinken op alle ondergronden",
+     "Eenbenige calf raise minimaal 15 keer zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Run-walk opbouw",
+    "goal": "Geleidelijk terug naar hardlopen via een run-walk-schema, met functionele testen ter controle van de belastbaarheid.",
+    "weeks": "Week 3-5",
+    "forbidden": [
+     "Snelheidstraining",
+     "Trailrennen op oneffen terrein",
+     "Wedstrijden"
+    ],
+    "criteria": [
+     "Sprong-voor-afstand-test-symmetrie boven 85%",
+     "Run-walk-schema (week 1 en 2) doorlopen zonder toename van klachten",
+     "Geen zwelling na inspanning"
+    ]
+   },
+   {
+    "name": "Fase 4: Hardloop-mijlageopbouw en terugkeer",
+    "goal": "De wekelijkse hardloopafstand geleidelijk terugbrengen naar het oude niveau, met een onderhoudsprogramma om herhaling te voorkomen.",
+    "weeks": "Week 5-6",
+    "forbidden": [],
+    "criteria": [
+     "Volledige wekelijkse mijlage hervat zonder klachten",
+     "Sprong-voor-afstand-test-symmetrie boven 95%",
+     "Geen klachten na een duurloop",
+     "Cumberland Ankle Instability Tool (CAIT): score minimaal 27",
+     "Single-leg balanstest: minimaal 30 seconden, ogen open"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan enkelverzwikking (voetbal)",
+  "category": "ankle_sprain",
+  "description": "Compact herstelplan voor een acute, conservatief behandelde enkelverzwikking (inversietrauma) bij voetballers, van RICE en vroege belasting tot volledige sportterugkeer (ca. 4-6 weken). Voor een operatief behandelde, chronische instabiliteit, zie het herstelplan 'Enkelbandletsel (chronisch/operatief)'.",
+  "phases": [
+   {
+    "name": "Fase 1: RICE en vroege belasting",
+    "goal": "Zwelling beperken met Rust, IJs, Compressie en Elevatie, en zo snel als de pijn het toelaat voorzichtig weer belasten.",
+    "weeks": "Dag 0-7",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Sporten",
+     "Langdurig staan zonder rust"
+    ],
+    "criteria": [
+     "Zwelling onder controle",
+     "Belasten mogelijk met minimale pijn",
+     "Actieve dorsiflexie mogelijk binnen de pijngrens"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en kracht",
+    "goal": "Volledige mobiliteit herwinnen en enkelkracht opbouwen, met de vroege start van balanstraining.",
+    "weeks": "Week 1-3",
+    "forbidden": [
+     "Sporten",
+     "Hardlopen op oneffen ondergrond"
+    ],
+    "criteria": [
+     "Volledige mobiliteit hersteld",
+     "Lopen zonder hinken op alle ondergronden",
+     "Hinkelen op de aangedane voet mogelijk zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar sport",
+    "goal": "Balans, richtingsveranderingen en voetbalspecifieke bewegingen op snelheid trainen als voorbereiding op volledige sportterugkeer.",
+    "weeks": "Week 3-6",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut of trainer"
+    ],
+    "criteria": [
+     "Balans op instabiele ondergrond minimaal 30 seconden",
+     "Richtingsveranderingen zonder instabiliteitsgevoel",
+     "Volledig meetrainen zonder klachten",
+     "Cumberland Ankle Instability Tool (CAIT): score minimaal 27",
+     "Single-leg balanstest: minimaal 30 seconden, ogen open"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan kuitblessure (spierverrekking)",
+  "category": "calf_strain",
+  "description": "Herstelplan na een acute verrekking van de kuitspier (gastrocnemius of soleus), opgebouwd in vier fases van pijngestuurd lopen tot een gestructureerde terugkeer naar hardlopen en sport (ca. 6-8 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en pijngestuurd lopen",
+    "goal": "Pijn en zwelling laten afnemen en pijnvrij, pijngestuurd blijven lopen binnen de mogelijkheden van de kuit.",
+    "weeks": "Week 0-1",
+    "forbidden": [
+     "Hardlopen",
+     "Sprinten of afzetten",
+     "Stevig doorrekken van de kuit",
+     "Sporten met sprint- of sprongbelasting"
+    ],
+    "criteria": [
+     "Lopen op vlakke ondergrond zonder hinken",
+     "Zwelling en verkleuring duidelijk afgenomen",
+     "Op de tenen staan mogelijk zonder scherpe pijn"
+    ]
+   },
+   {
+    "name": "Fase 2: Rekken en lichte belasting",
+    "goal": "Voorzichtig de mobiliteit van de kuit herstellen en starten met isometrische en lichte dynamische belasting.",
+    "weeks": "Week 1-3",
+    "forbidden": [
+     "Hardlopen",
+     "Sprongen en afzetten",
+     "Fors doorrekken tot pijn"
+    ],
+    "criteria": [
+     "Volledige, pijnvrije enkelmobiliteit",
+     "Kuitrek mogelijk zonder scherpe pijn",
+     "Kuitheffing op twee benen mogelijk zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Excentrische krachtopbouw",
+    "goal": "Progressieve, excentrisch gerichte krachttraining van de kuit opbouwen richting eenbenige belasting.",
+    "weeks": "Week 3-5",
+    "forbidden": [
+     "Hardlopen op snelheid",
+     "Sprongbelasting",
+     "Sporten met plotselinge afzetmomenten"
+    ],
+    "criteria": [
+     "Kuitheffing op één been minimaal 15 keer mogelijk",
+     "Geen pijn de dag na training",
+     "Kracht duidelijk symmetrisch ten opzichte van de andere kuit"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar hardlopen en sport",
+    "goal": "Gestructureerde opbouw van hardloopvolume en sportspecifieke belasting, met behoud van kuitkracht.",
+    "weeks": "Week 5-8",
+    "forbidden": [
+     "Sprinten zonder opbouw",
+     "Wedstrijden zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "20 minuten duurlopen pijnvrij op vlakke ondergrond",
+     "Versnellingen mogelijk zonder pijn of spanning",
+     "Sportspecifieke richtingsveranderingen zonder klachten"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan hersenschudding (voetbal)",
+  "category": "concussion",
+  "description": "Bewust conservatief, gefaseerd terugkeerprotocol na een hersenschudding, gebaseerd op het internationaal erkende \"return to sport\"-model: rust en symptoommonitoring, lichte aerobe activiteit, sportspecifieke training zonder impact en tot slot volledige, medisch goedgekeurde terugkeer. Elke stap vereist minimaal 24 uur zonder toename van klachten voordat de volgende stap gezet mag worden. Dit protocol vervangt op geen enkele manier medische beoordeling.",
+  "phases": [
+   {
+    "name": "Fase 1: Rust en symptoommonitoring",
+    "goal": "Acute symptomen (hoofdpijn, duizeligheid, concentratieproblemen) laten afnemen en dagelijkse activiteiten uitsluitend geleidelijk hervatten, zonder ze te verergeren.",
+    "weeks": "Dag 1 t/m klachtenvrij",
+    "forbidden": [
+     "Fysieke inspanning",
+     "Sporten",
+     "Intensief cognitief werk of schermtijd bij toename van klachten",
+     "Autorijden (bij aanhoudende klachten)"
+    ],
+    "criteria": [
+     "Acute symptomen nemen af in rust",
+     "Geen verergering van klachten bij lichte dagelijkse activiteiten",
+     "Minimaal 24 uur zonder toename van symptomen"
+    ]
+   },
+   {
+    "name": "Fase 2: Lichte aerobe activiteit",
+    "goal": "Voorzichtig starten met lichte, laag-intensieve aerobe inspanning (wandelen, fietsen) zonder enig risico op hoofdcontact.",
+    "weeks": "Vanaf 24 uur symptoomvrij",
+    "forbidden": [
+     "Sporten met kans op hoofdcontact",
+     "Krachttraining",
+     "Activiteiten die symptomen verergeren"
+    ],
+    "criteria": [
+     "Lichte inspanning zonder toename van symptomen gedurende minimaal 24 uur",
+     "Hartslag mag oplopen zonder dat klachten terugkeren"
+    ]
+   },
+   {
+    "name": "Fase 3: Sportspecifieke training zonder impact",
+    "goal": "Sportspecifieke bewegingen en niet-contact trainingsonderdelen hervatten, uitsluitend zonder enig risico op hoofdcontact.",
+    "weeks": "Vanaf 24 uur symptoomvrij op vorige stap",
+    "forbidden": [
+     "Kopballen",
+     "Duels en contactmomenten",
+     "Sparren of tackelen"
+    ],
+    "criteria": [
+     "Sportspecifieke bewegingen (lopen, draaien, sprinten) zonder symptomen",
+     "Niet-contact trainingsonderdelen zonder klachten",
+     "Medische goedkeuring voor de volgende stap"
+    ]
+   },
+   {
+    "name": "Fase 4: Volledige terugkeer naar training en wedstrijd",
+    "goal": "Volledige, medisch goedgekeurde terugkeer naar training met contact en uiteindelijk wedstrijdsport.",
+    "weeks": "Vanaf medische goedkeuring",
+    "forbidden": [],
+    "criteria": [
+     "Uitdrukkelijke medische goedkeuring voor volledig contact",
+     "Volledig meetrainen zonder klachten",
+     "Geen symptomen na wedstrijdbelasting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan hersenschudding: terugkeer naar werk/school (return to learn)",
+  "category": "concussion",
+  "description": "Bewust conservatief, gefaseerd terugkeerprotocol na een hersenschudding voor niet-sporters (kantoormedewerkers, studenten), gericht op opbouw van cognitieve belasting (schermtijd, lezen, werk- en schooltaken) in plaats van sportbelasting. Zelfde voorzichtige, symptoomgestuurde opbouw als het sportgerichte protocol: elke stap vereist minimaal 24 uur zonder toename van klachten voordat de volgende stap gezet mag worden. Dit protocol vervangt op geen enkele manier medische beoordeling.",
+  "phases": [
+   {
+    "name": "Fase 1: Rust en symptoommonitoring",
+    "goal": "Acute symptomen (hoofdpijn, duizeligheid, concentratieproblemen, lichtgevoeligheid) laten afnemen met korte, relatieve rust, en dagelijkse activiteiten uitsluitend geleidelijk hervatten zonder ze te verergeren.",
+    "weeks": "Dag 1 t/m klachtenvrij",
+    "forbidden": [
+     "Werken of studeren",
+     "Langdurige schermtijd",
+     "Autorijden",
+     "Fel licht of veel prikkels bij toename van klachten",
+     "Sporten of fysieke inspanning"
+    ],
+    "criteria": [
+     "Acute symptomen nemen af in rust",
+     "Geen verergering van klachten bij korte, lichte prikkels",
+     "Minimaal 24 uur zonder toename van symptomen"
+    ]
+   },
+   {
+    "name": "Fase 2: Lichte cognitieve en fysieke belasting",
+    "goal": "Voorzichtig starten met korte werkblokken, lezen en beeldschermgebruik, afgewisseld met pauzes, en lichte fysieke activiteit zoals rustig wandelen.",
+    "weeks": "Vanaf 24 uur symptoomvrij",
+    "forbidden": [
+     "Langdurige aaneengesloten schermtijd",
+     "Multitasken",
+     "Drukke of prikkelrijke omgevingen",
+     "Fysieke inspanning met kans op hoofdcontact"
+    ],
+    "criteria": [
+     "Cognitieve taak van 15 tot 20 minuten zonder toename van klachten",
+     "Lichte wandeling zonder klachten",
+     "Geen toename van symptomen na een kort werk- of leesblok"
+    ]
+   },
+   {
+    "name": "Fase 3: Opbouw werk- en schooltaken",
+    "goal": "Duur en complexiteit van werk- of schooltaken stap voor stap uitbreiden, met langere schermtijd en voorzichtige hervatting van sociale/groepssituaties.",
+    "weeks": "Vanaf 24 uur symptoomvrij op vorige stap",
+    "forbidden": [
+     "Volledige werk- of schooldag zonder opbouw",
+     "Toetsen of examens zonder aangepaste voorwaarden",
+     "Prikkelrijke omgevingen zonder pauzemogelijkheid"
+    ],
+    "criteria": [
+     "Halve werk- of schooldag zonder toename van klachten",
+     "Langere schermtijd (circa 45 minuten) zonder klachten",
+     "Concentratie voldoende hersteld voor eenvoudige taken"
+    ]
+   },
+   {
+    "name": "Fase 4: Volledige terugkeer naar werk of school",
+    "goal": "Volledige werk- of schooldagen hervatten, inclusief piekmomenten zoals toetsen, examens of drukke werkperiodes, met aandacht voor eventueel terugkerende klachten.",
+    "weeks": "Vanaf medische goedkeuring / volledig klachtenvrij bij opbouw",
+    "forbidden": [],
+    "criteria": [
+     "Volledige werk- of schooldag zonder toename van klachten",
+     "Piekmomenten (toetsen, examens, drukke werkperiodes) zonder toename van klachten",
+     "Bij aanhoudende klachten: contact met een arts vóór verdere opbouw"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan elleboogklachten (tennis-/golferselleboog)",
+  "category": "elbow_tendinopathy",
+  "description": "Herstelplan voor peesoverbelasting van de onderarmspieren rond de elleboog, van toepassing op zowel tennisarm (laterale epicondylalgie, buitenzijde) als golferselleboog (mediale epicondylalgie, binnenzijde). De opbouw volgt de stappen isometrisch, isotoon en excentrisch belasten. Dit is vaak een traag en soms hardnekkig herstel, reken op ongeveer 8-12 weken.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijn en belasting reduceren",
+    "goal": "De belastende activiteiten (grijpen, tillen, herhaaldelijke polsbewegingen) tijdelijk aanpassen en starten met pijnverlichtende isometrische belasting.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Zwaar tillen met de aangedane arm",
+     "Langdurig, herhaaldelijk grijpen of knijpen",
+     "Sport- of werkbeweging die de klachten uitlokt",
+     "Massage of drukbelasting direct op de pijnlijke plek"
+    ],
+    "criteria": [
+     "Pijn in rust duidelijk afgenomen",
+     "Isometrische oefeningen uitvoerbaar zonder toename van pijn",
+     "Dagelijkse, lichte handelingen weer mogelijk"
+    ]
+   },
+   {
+    "name": "Fase 2: Isometrische naar isotone belasting",
+    "goal": "De belasting geleidelijk opbouwen van stilstaand aanspannen naar bewegend (isotoon) kracht opbouwen door het volledige polsbewegingstraject.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Sport- of werkbeweging die de klachten uitlokt",
+     "Plotselinge zware belasting"
+    ],
+    "criteria": [
+     "Isotone oefeningen uitvoerbaar zonder toename van pijn de volgende dag",
+     "Gripkracht merkbaar verbeterd",
+     "Lichte dagelijkse tilhandelingen zonder klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Excentrische belasting en functionele grip",
+    "goal": "Excentrische polsbelasting toevoegen, het meest onderbouwde onderdeel van pees-revalidatie, en de grip functioneel belasten.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Plotselinge maximale krachtsbelasting"
+    ],
+    "criteria": [
+     "Excentrische oefeningen uitvoerbaar met matig gewicht",
+     "Functionele tiltraining zonder klachten",
+     "Gripkracht dicht bij de andere zijde"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar volledige grip en activiteit",
+    "goal": "Sport- of werkspecifieke bewegingen geleidelijk opbouwen naar volledige belasting, met behoud van een onderhoudsroutine.",
+    "weeks": "Week 10-12",
+    "forbidden": [],
+    "criteria": [
+     "Gripkracht symmetrisch met de andere zijde",
+     "Sport- of werkspecifieke beweging op volle intensiteit zonder klachten",
+     "Geen pijn meer bij dagelijkse activiteiten"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan chronische liesklachten (sporters-lies)",
+  "category": "groin_strain",
+  "description": "Herstelplan voor chronische / langdurige liesklachten (\"sporters-lies\"), een multifactorieel beeld waarbij naast de adductoren ook heupmobiliteit en core-/bekkenstabiliteit worden meegenomen. Bredere en langere opbouw dan bij een acute verrekking, van klachteninventarisatie via graded loading tot volledige sport- en belastingsterugkeer (ca. 10-12 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Brede inventarisatie en pijnregulatie",
+    "goal": "Pijn laten afnemen en de bijdragende factoren (heupmobiliteit, core-/bekkenstabiliteit, adductorbelasting) in kaart brengen, terwijl voorzichtig isometrisch wordt getraind.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Sprinten",
+     "Snelle richtingsveranderingen",
+     "Schieten op kracht",
+     "Zware buik- of liestraining"
+    ],
+    "criteria": [
+     "Pijn bij dagelijkse activiteiten duidelijk afgenomen",
+     "Isometrische belasting mogelijk zonder scherpe pijn",
+     "Heupmobiliteit en mogelijke bijdragende factoren in kaart gebracht",
+     "Wandelen pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 2: Graded loading (heup, core en adductoren)",
+    "goal": "Adductorkracht, heupmobiliteit en core-/bekkenstabiliteit gelijktijdig en geleidelijk opbouwen, en starten met joggen op laag tempo.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Sprinten op snelheid",
+     "Kicken/schieten op snelheid",
+     "Plotselinge richtingsveranderingen",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Adductorkracht merkbaar verbeterd",
+     "Core-/bekkenstabiliteit verbeterd bij functionele bewegingen",
+     "Joggen op laag tempo pijnvrij",
+     "Geen toename van klachten na training"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele kracht en sportspecifieke belasting",
+    "goal": "Toewerken naar hogere belasting: functionele krachtoefeningen, hardloopopbouw op normaal tempo en rotatiebewegingen.",
+    "weeks": "Week 6-9",
+    "forbidden": [
+     "Wedstrijdsport",
+     "Volledige sprint zonder opbouw"
+    ],
+    "criteria": [
+     "Adductorkracht minimaal 85% van de andere zijde",
+     "Hardlopen op normaal tempo pijnvrij",
+     "Rotatie- en draaibewegingen zonder klachten",
+     "Geen klachten na sportspecifieke belasting"
+    ]
+   },
+   {
+    "name": "Fase 4: Onderhoud en terugkeer naar sport",
+    "goal": "Volledige sportspecifieke belasting en terugkeer naar training/wedstrijd, met een structureel onderhoudsprogramma om terugval te voorkomen.",
+    "weeks": "Week 9-12",
+    "forbidden": [],
+    "criteria": [
+     "Volledige sportspecifieke belasting zonder klachten",
+     "Richtingsveranderingen en schieten/duels zonder pijn",
+     "Symmetrische kracht behouden bij hogere belasting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan liesblessure (voetbal)",
+  "category": "groin_strain",
+  "description": "Herstelplan voor een liesblessure (adductorverrekking) bij voetballers, van pijnreductie en isometrische activatie via gerichte adductorkrachttraining tot volledige sprint- en sportterugkeer (ca. 6-8 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnreductie en isometrische activatie",
+    "goal": "Pijn laten afnemen terwijl de adductoren voorzichtig isometrisch actief worden gehouden.",
+    "weeks": "Week 0-1",
+    "forbidden": [
+     "Sprinten",
+     "Richtingsveranderingen",
+     "Schieten",
+     "Wijdbeens bewegingen (brede uitvalspas of spagaatachtige belasting)"
+    ],
+    "criteria": [
+     "Pijn bij lopen duidelijk afgenomen",
+     "Isometrische adductie mogelijk zonder scherpe pijn",
+     "Wandelen pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 2: Krachtopbouw adductoren",
+    "goal": "Adductorkracht gericht opbouwen — een van de belangrijkste beschermende factoren tegen een (herhaalde) liesblessure — en starten met joggen.",
+    "weeks": "Week 1-4",
+    "forbidden": [
+     "Sprinten",
+     "Richtingsveranderingen op snelheid",
+     "Wedstrijdsport"
+    ],
+    "criteria": [
+     "Volledige, pijnvrije heupmobiliteit",
+     "Adductorkracht minimaal 70% van het andere been",
+     "Joggen pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 3: Sprint- en richtingsveranderingsopbouw",
+    "goal": "Sprinten, richtingsveranderingen en voetbalspecifieke bewegingen (schieten, passen) op snelheid trainen als voorbereiding op volledige terugkeer.",
+    "weeks": "Week 4-8",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut of trainer"
+    ],
+    "criteria": [
+     "Sprinten pijnvrij",
+     "Richtingsveranderingen zonder klachten",
+     "Schieten en passen zonder pijn"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan hamstringblessure (proximaal, graad II)",
+  "category": "hamstring_strain",
+  "description": "Herstelplan voor een zwaardere, proximale hamstringblessure (graad II) bij de pees nabij de zitbeenknobbel, een blessure met een hoger recidiefrisico dan een blessure in de spierbuik. Langere beschermende fase, expliciete terughoudendheid met rekken en peescompressie in de vroege fase, en een voorzichtigere opbouw naar excentrische belasting (ca. 10-12 weken). Voor een blessure in de spierbuik, zie het herstelplan 'Hamstringblessure (voetbal)'.",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en pijncontrole",
+    "goal": "De proximale hamstringpees beschermen tegen compressie en rek, terwijl pijn afneemt en voorzichtige isometrische activatie start.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Rekken/stretchen van de hamstring",
+     "Diep zitten in een lage stoel (heupflexie + peescompressie)",
+     "Lunges en diepe kniebuigingen",
+     "Sprinten",
+     "Traplopen met grote passen"
+    ],
+    "criteria": [
+     "Pijn bij zitten op een harde ondergrond duidelijk afgenomen",
+     "Isometrische aanspanning mogelijk zonder scherpe pijn bij de zitbeenknobbel",
+     "Wandelen op vlakke ondergrond pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 2: Geleidelijke belastingsopbouw zonder rek",
+    "goal": "Kracht opbouwen via aanspanning in een beperkte, pijnvrije range, zonder de hamstring te rekken.",
+    "weeks": "Week 2-5",
+    "forbidden": [
+     "Rekken/stretchen van de hamstring",
+     "Sprinten",
+     "Lunges met grote pasafstand",
+     "Explosieve richtingsveranderingen"
+    ],
+    "criteria": [
+     "Pijnvrije actieve knieflexie in volledige range",
+     "Isometrische kracht dichter bij volledige heupextensie mogelijk",
+     "Zitten op een harde ondergrond langer dan 30 minuten zonder klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Progressieve excentrische training en functionele opbouw",
+    "goal": "Voorzichtig en geleidelijk excentrische kracht opbouwen en starten met joggen op laag tempo.",
+    "weeks": "Week 5-9",
+    "forbidden": [
+     "Sprinten op maximale snelheid",
+     "Wedstrijdsport",
+     "Diepe lunges"
+    ],
+    "criteria": [
+     "Hamstringkracht minimaal 70% van het andere been",
+     "Joggen op laag tempo pijnvrij",
+     "Excentrische oefeningen uitvoerbaar zonder pijn bij de zitbeenknobbel"
+    ]
+   },
+   {
+    "name": "Fase 4: Sprintopbouw en terugkeer naar sport",
+    "goal": "Sprintsnelheid extra geleidelijk opbouwen en sportspecifieke acceleratie/deceleratie trainen als voorbereiding op volledige, veilige terugkeer.",
+    "weeks": "Week 9-12",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut of trainer"
+    ],
+    "criteria": [
+     "Sprinten op 80% snelheid pijnvrij",
+     "Volledige, symmetrische hamstringkracht",
+     "Sportspecifieke acceleratie/deceleratie zonder klachten bij de zitbeenknobbel",
+     "Actieve knie-extensietest: symmetrie minimaal 90% t.o.v. de andere zijde",
+     "Isokinetische hamstring/quadriceps-krachtratio binnen normwaarden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan hamstringblessure (voetbal)",
+  "category": "hamstring_strain",
+  "description": "Herstelplan voor een hamstringblessure (spierverrekking) bij voetballers, van pijnreductie en isometrische activatie via progressieve excentrische training tot volledige sprint- en sportterugkeer (ca. 6-8 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnreductie en isometrische activatie",
+    "goal": "Pijn en ontsteking laten afnemen terwijl de hamstring voorzichtig en isometrisch actief wordt gehouden.",
+    "weeks": "Week 0-1",
+    "forbidden": [
+     "Sprinten",
+     "Hardlopen op snelheid",
+     "Explosieve bewegingen",
+     "Diep voorover buigen met gestrekt been",
+     "Rekken/stretchen van de hamstring"
+    ],
+    "criteria": [
+     "Pijn bij lopen duidelijk afgenomen",
+     "Isometrische aanspanning mogelijk zonder scherpe pijn",
+     "Wandelen pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 2: Progressieve excentrische belasting",
+    "goal": "Kracht opbouwen met nadruk op excentrische training — een van de best onderbouwde methoden bij hamstringblessures — en starten met joggen op laag tempo.",
+    "weeks": "Week 1-4",
+    "forbidden": [
+     "Sprinten",
+     "Richtingsveranderingen op snelheid",
+     "Wedstrijdsport"
+    ],
+    "criteria": [
+     "Volledige, pijnvrije mobiliteit",
+     "Hamstringkracht minimaal 70% van het andere been",
+     "Joggen op laag tempo pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 3: Sprintopbouw en terugkeer naar sport",
+    "goal": "Sprintsnelheid geleidelijk opbouwen en sportspecifieke acceleratie/deceleratie trainen als voorbereiding op volledige terugkeer.",
+    "weeks": "Week 4-8",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut of trainer"
+    ],
+    "criteria": [
+     "Sprinten op 80% snelheid pijnvrij",
+     "Hoge-snelheid loopwerk zonder aarzeling",
+     "Sportspecifieke acceleratie/deceleratie zonder klachten",
+     "Actieve knie-extensietest: symmetrie minimaal 90% t.o.v. de andere zijde",
+     "Isokinetische hamstring/quadriceps-krachtratio binnen normwaarden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan heupartrose",
+  "category": "hip_osteoarthritis",
+  "description": "Conservatief zelfmanagementprogramma bij heupartrose, gericht op pijnmanagement, geleidelijke opbouw van kracht en laagbelaste conditie, en een blijvend onderhoudsritme. Geen nazorgtraject na een operatie: dit plan is voor het managen van artrose zonder (of in afwachting van) een operatie.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnmanagement en activiteitenopbouw",
+    "goal": "Leren dat bewegen goed is bij artrose, een dagritme vinden tussen volledige rust en overbelasting, en de eerste, voorzichtige oefeningen opstarten.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Langdurig hardlopen",
+     "Springen",
+     "Zware belasting bij een opspelende, gezwollen heup",
+     "Volledige bedrust bij pijn"
+    ],
+    "criteria": [
+     "Dagelijkse pijn beter in kaart gebracht via een eenvoudig dagritme",
+     "Wandelen van minimaal 10 minuten mogelijk zonder sterke pijntoename",
+     "Bekkenkanteling en lichte heupoefeningen pijnvrij uit te voeren",
+     "Begrip van het verschil tussen normale spierpijn en waarschuwende gewrichtspijn"
+    ]
+   },
+   {
+    "name": "Fase 2: Progressieve heup- en bilkracht met laagbelaste conditie",
+    "goal": "Gericht opbouwen van kracht rond de heup en bil, aangevuld met laagbelaste conditievormen zoals fietsen, zwemmen of wandelen.",
+    "weeks": "Week 3-8",
+    "forbidden": [
+     "Hardlopen op harde ondergrond",
+     "Springen",
+     "Zwaar tillen met een gebogen rug",
+     "Trainen door aanhoudende gewrichtspijn heen"
+    ],
+    "criteria": [
+     "Bridge en heupabductie staand pijnvrij uit te voeren",
+     "Minimaal twee laagbelaste conditiesessies per week volgehouden",
+     "Traplopen merkbaar comfortabeler dan bij de start",
+     "Geen toename van rustpijn na een trainingsweek"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele kracht en stabiliteit",
+    "goal": "Kracht en balans verder opbouwen richting het niveau dat nodig is voor traplopen, langere wandelingen en dagelijkse activiteiten.",
+    "weeks": "Week 8-11",
+    "forbidden": [
+     "Hoogintensieve sprongtraining",
+     "Zware, ongeleide krachttraining zonder opbouw"
+    ],
+    "criteria": [
+     "Traplopen zonder leuning mogelijk bij milde artrose",
+     "Balans op één been minimaal 15 seconden",
+     "Wandelen van 30 minuten mogelijk met acceptabele nabelasting"
+    ]
+   },
+   {
+    "name": "Fase 4: Langdurig zelfmanagement en onderhoud",
+    "goal": "Heupartrose is een blijvende aandoening. Deze fase zet het opgebouwde kracht- en conditieniveau om in een vast onderhoudsritme dat langdurig wordt volgehouden.",
+    "weeks": "Week 11+",
+    "forbidden": [],
+    "criteria": [
+     "Vast wekelijks beweegritme opgebouwd",
+     "Dagelijkse activiteiten mogelijk met acceptabel klachtenniveau",
+     "Zelf herkennen wanneer belasting tijdelijk verlaagd moet worden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan knieartrose",
+  "category": "knee_osteoarthritis",
+  "description": "Herstelplan voor het managen van knieartrose, een chronische, degeneratieve aandoening. Niet bedoeld voor een post-operatief traject (zie de aparte plannen voor ACL, meniscus, MCL of knieprothese) en niet elke patient met knieartrose heeft of wil een operatie. Opgebouwd van pijnmanagement en activiteitopbouw, via quadricepskracht en laagimpact conditie, naar een langdurige onderhoudsroutine (ca. 10-12 weken gestructureerd programma, met oefeningen die op de lange termijn blijven doorlopen).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnmanagement en activiteit opbouwen",
+    "goal": "De pijn naar een hanteerbaar niveau brengen en dagelijks in beweging blijven, zonder de knie volledig te ontzien of juist te overbelasten.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Langdurige, volledige rust van de knie",
+     "Hardlopen of springen bij duidelijke pijntoename",
+     "Zware belasting zonder opbouw"
+    ],
+    "criteria": [
+     "Pijn verminderd tot een hanteerbaar niveau",
+     "Dagelijks wandelen mogelijk zonder duidelijke pijntoename",
+     "Basisoefeningen uitvoerbaar zonder zwelling achteraf"
+    ]
+   },
+   {
+    "name": "Fase 2: Quadricepskracht opbouwen",
+    "goal": "Progressief quadricepskracht opbouwen, de best onderbouwde interventie bij knieartrose, om de knie beter te ondersteunen.",
+    "weeks": "Week 3-7",
+    "forbidden": [
+     "Hardlopen of springen bij pijntoename",
+     "Zware belasting zonder opbouw"
+    ],
+    "criteria": [
+     "Wandzit minimaal 20 seconden vol te houden",
+     "Mini squat en step-up uitvoerbaar zonder duidelijke pijntoename",
+     "Traplopen merkbaar makkelijker"
+    ]
+   },
+   {
+    "name": "Fase 3: Laagimpact conditie en functionele belasting",
+    "goal": "De algehele conditie opbouwen met knievriendelijke, laagimpact vormen van beweging en de balans en functionele belasting verbeteren.",
+    "weeks": "Week 7-10",
+    "forbidden": [
+     "Hardlopen of springen bij pijntoename",
+     "Hoge-impact sport zonder opbouw"
+    ],
+    "criteria": [
+     "Fietsen of zwemmen minimaal 20 minuten volgehouden",
+     "Balans op één been minimaal 20 seconden met lichte steun",
+     "Dagelijkse activiteiten zonder duidelijke pijntoename"
+    ]
+   },
+   {
+    "name": "Fase 4: Langdurig zelfmanagement en onderhoud",
+    "goal": "Een blijvende onderhoudsroutine van kracht en laagimpact conditie vasthouden, als doorlopend onderdeel van het leven met knieartrose.",
+    "weeks": "Week 10+",
+    "forbidden": [],
+    "criteria": [
+     "Onderhoudsroutine zelfstandig twee tot drie keer per week uitgevoerd",
+     "Dagelijkse activiteiten uitvoerbaar met een hanteerbaar klachtenniveau"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan lage rugklachten",
+  "category": "low_back_pain",
+  "description": "Herstelplan voor aanhoudende of terugkerende lage rugklachten (aspecifieke lage rugpijn), opgebouwd volgens het actieve-behandelprincipe: in beweging blijven, motorische controle en core-stabiliteit opbouwen, en geleidelijk terugkeren naar volledige belasting (ca. 6-10 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnreductie en actief blijven",
+    "goal": "De pijn naar een hanteerbaar niveau brengen en actief blijven in dagelijkse activiteiten — langdurige bedrust vertraagt het herstel.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Langdurig plat bedrust",
+     "Zwaar tillen",
+     "Diep voorover buigen met gestrekte benen",
+     "Langdurig zitten zonder onderbreking"
+    ],
+    "criteria": [
+     "Pijn verminderd tot een hanteerbaar niveau",
+     "Dagelijkse activiteiten (opstaan, lopen, zitten) weer mogelijk",
+     "Geen uitstralende pijn, tintelingen of krachtsverlies in het been"
+    ]
+   },
+   {
+    "name": "Fase 2: Motorische controle en core-stabiliteit",
+    "goal": "Actieve controle over de romp en het bekken opbouwen als basis voor een veerkrachtige rug.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Zwaar tillen zonder begeleiding",
+     "Plotselinge, ongecontroleerde bewegingen"
+    ],
+    "criteria": [
+     "Pijnvrij zitten langer dan 30 minuten",
+     "Core-oefeningen uitvoerbaar zonder toename van pijn",
+     "Volledige buiging en strekking van de rug mogelijk"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en functionele belasting",
+    "goal": "Algehele romp- en beenkracht opbouwen en veilige tiltechniek trainen, gericht op volledige terugkeer naar werk, sport en dagelijkse activiteiten.",
+    "weeks": "Week 6-10",
+    "forbidden": [],
+    "criteria": [
+     "Plank en zijplank uitvoerbaar zonder pijn",
+     "Tillen met correcte techniek mogelijk",
+     "Werk-, sport- of hobbygerelateerde bewegingen zonder klachten",
+     "Oswestry Disability Index (ODI): score maximaal 20%"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan lage rugklachten met uitstraling (radiculair)",
+  "category": "low_back_pain",
+  "description": "Herstelplan voor lage rugklachten met uitstraling in het been (radiculair/discusgerelateerd beeld), opgebouwd volgens een extensiegericht (directional-preference) principe: flexie en langdurig zitten worden in de vroege fase vermeden, en centralisatie van de uitstralende pijn is een kernvoortgangscriterium. Voor niet-uitstralende, aspecifieke rugklachten, zie het herstelplan 'Lage rugklachten' (ca. 8-12 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijncontrole en centralisatie",
+    "goal": "De uitstralende beenpijn laten centraliseren richting de rug door flexie en langdurig zitten te vermijden en extensiegerichte oefeningen regelmatig te herhalen.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Langdurig zitten",
+     "Voorover buigen vanuit de rug",
+     "Zwaar tillen",
+     "Hardlopen",
+     "Zittende hamstringstretch met gestrekte knie"
+    ],
+    "criteria": [
+     "Uitstralende pijn trekt terug richting de rug (centralisatie) in plaats van verder het been in",
+     "Geen toename van kracht- of gevoelsverlies in het been",
+     "Rechtop staan en lopen mogelijk zonder toename van beenpijn",
+     "Geen tekenen van cauda-equinasyndroom (controleverlies blaas/darm, zadelanesthesie)"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en motorische controle",
+    "goal": "Volledige extensiemobiliteit opbouwen en actieve controle over de romp trainen, terwijl flexiebelasting nog terughoudend wordt opgebouwd.",
+    "weeks": "Week 3-6",
+    "forbidden": [
+     "Zwaar tillen zonder begeleiding",
+     "Langdurig voorover gebogen werken",
+     "Plotselinge draai- of buigbewegingen"
+    ],
+    "criteria": [
+     "Uitstraling volledig verdwenen of beperkt tot boven de knie",
+     "Volledige lumbale extensie zonder toename van beenklachten",
+     "Core-oefeningen uitvoerbaar zonder provocatie van uitstraling",
+     "Pijnvrij zitten langer dan 30 minuten"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele kracht en belastingsopbouw",
+    "goal": "Algehele romp- en rugkracht opbouwen en veilige tiltechniek trainen, met geleidelijke, gecontroleerde introductie van lichte flexiebelasting.",
+    "weeks": "Week 6-9",
+    "forbidden": [
+     "Contactsport",
+     "Maximale krachttraining",
+     "Torderen (draaien) onder belasting"
+    ],
+    "criteria": [
+     "Volledige, symmetrische mobiliteit van rug en been",
+     "Voldoende functionele kracht voor tillen met correcte techniek",
+     "Langdurig zitten en staan zonder klachten"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar volledige belasting en onderhoud",
+    "goal": "Volledige terugkeer naar werk, sport en dagelijkse activiteiten, met een onderhoudsprogramma om het opgebouwde niveau vast te houden.",
+    "weeks": "Week 9-12",
+    "forbidden": [],
+    "criteria": [
+     "Volledige, symmetrische romp- en rugkracht",
+     "Geen beperkingen meer in dagelijkse, werk- of sportgerelateerde bewegingen",
+     "Zelfmanagementstrategie voor eventuele terugval helder",
+     "Oswestry Disability Index (ODI): score maximaal 20%"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan kniebandletsel MCL (graad III, brace)",
+  "category": "mcl_sprain",
+  "description": "Herstelplan voor een ernstige mediale kniebandblessure (MCL, graad III) met volledige instabiliteit, behandeld met een scharnierbrace (hinged knee brace). Langere beschermende fase, stapsgewijze ROM-opbouw in de brace en expliciete afbouwcriteria voordat de brace wordt losgelaten, van bescherming tot volledige sport- en belastingsterugkeer (ca. 10-14 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming in brace",
+    "goal": "De knie volledig beschermen in de scharnierbrace terwijl pijn en zwelling afnemen en de eerste spieraansturing terugkeert.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Valgusbelasting (zijwaartse druk op de knie)",
+     "Brace afdoen zonder toestemming",
+     "Volledig gewicht zonder toestemming fysiotherapeut",
+     "Draaien op het belaste been",
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Brace correct en consistent gedragen volgens voorschrift",
+     "Pijn in rust onder controle",
+     "Quadriceps actief aan te spannen",
+     "Zwelling duidelijk afgenomen"
+    ]
+   },
+   {
+    "name": "Fase 2: Voorzichtige mobiliteit en brace-ROM opbouw",
+    "goal": "De bewegingsuitslag die de brace toestaat stap voor stap verruimen, en starten met lichte, gecontroleerde belasting binnen de brace-limiet.",
+    "weeks": "Week 3-6",
+    "forbidden": [
+     "Brace afzetten buiten toegestane oefenmomenten",
+     "Valgusbelasting",
+     "Draaien op het belaste been",
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Brace-ROM stapsgewijs verruimd volgens schema",
+     "Lopen met brace zonder hinken",
+     "Mini squat binnen de toegestane brace-hoek pijnvrij",
+     "Geen toename van instabiliteitsgevoel bij verruiming"
+    ]
+   },
+   {
+    "name": "Fase 3: Krachtopbouw en voorbereiding brace-afbouw",
+    "goal": "Kracht en stabiliteit rond de knie opbouwen en toewerken naar het loslaten van de brace overdag, op basis van objectieve criteria.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Valgusbelasting op snelheid",
+     "Contactsport",
+     "Hardlopen zonder toestemming fysiotherapeut",
+     "Brace afbouwen zonder akkoord fysiotherapeut"
+    ],
+    "criteria": [
+     "Kracht minimaal 80% van het andere been",
+     "Geen instabiliteitsgevoel bij dagelijkse activiteiten",
+     "Goedkeuring fysiotherapeut voor afbouw brace-gebruik overdag",
+     "Balans op één been mogelijk zonder duidelijke compensatie"
+    ]
+   },
+   {
+    "name": "Fase 4: Functionele afbouw en terugkeer naar sport",
+    "goal": "Volledige functionele belasting, hardlopen en richtingsveranderingen opbouwen, met een medisch goedgekeurde overgang naar sport met of zonder sportbrace.",
+    "weeks": "Week 10-14",
+    "forbidden": [
+     "Contactsport zonder goedkeuring fysiotherapeut of arts"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 90%",
+     "Richtingsveranderingen zonder instabiliteitsgevoel",
+     "Medische goedkeuring voor sport met of zonder brace"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan kniebandletsel MCL (voetbal)",
+  "category": "mcl_sprain",
+  "description": "Herstelplan voor een conservatief behandelde mediale kniebandblessure (MCL, graad I-II) bij voetballers, van bescherming tegen zijwaartse belasting tot volledige sprint- en sportterugkeer (ca. 6-10 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en pijnreductie",
+    "goal": "De mediale kniebanden beschermen tegen zijwaartse (valgus-)belasting terwijl pijn en zwelling afnemen.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Valgus-belasting (zijwaartse druk op de knie)",
+     "Draaien op het belaste been",
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Pijn bij lopen duidelijk afgenomen",
+     "Volledige knie-extensie mogelijk",
+     "Zwelling afgenomen",
+     "Quadriceps actief aan te spannen"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en kracht",
+    "goal": "Volledige mobiliteit herwinnen en symmetrische kracht in quadriceps en hamstrings opbouwen voor een stabiele knie.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Richtingsveranderingen",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Volledige mobiliteit hersteld",
+     "Lopen zonder hulpmiddel",
+     "Mini squat tot 90° pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht, stabiliteit en terugkeer naar sport",
+    "goal": "Kracht en stabiliteit rond de knie verder opbouwen en richtingsveranderingen en hardlopen trainen als voorbereiding op sportterugkeer.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut of trainer"
+    ],
+    "criteria": [
+     "Kracht minimaal 90% van het andere been",
+     "Balans op één been minimaal 30 seconden",
+     "Richtingsveranderingen zonder instabiliteitsgevoel",
+     "Hoptest-symmetrie boven 90%"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan partiële meniscectomie",
+  "category": "meniscus",
+  "description": "Herstelplan na een artroscopische partiële meniscectomie (verwijderen van gescheurd meniscusweefsel, geen hechting), een aanzienlijk sneller en minder beschermend traject dan bij een meniscushechting, omdat er geen hechtnaad hoeft te herstellen en vrijwel direct volledig mag worden belast. Duurt doorgaans 4 tot 6 weken. Voor een meniscushechting met een beschermende aanpak, zie het herstelplan 'Meniscusoperatie herstelprotocol'.",
+  "phases": [
+   {
+    "name": "Fase 1: Directe belasting en zwelling beheersen",
+    "goal": "Zwelling en pijn beheersen terwijl, in tegenstelling tot bij een meniscushechting, vrijwel direct volledig gewicht mag worden belast op het been.",
+    "weeks": "Week 0-1",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Intensief sporten"
+    ],
+    "criteria": [
+     "Volledige belasting mogelijk zonder toename van pijn",
+     "Zwelling duidelijk afgenomen ten opzichte van de eerste dagen",
+     "Actieve extensie tot 0° bereikt",
+     "Flexie tot minimaal 90° pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 2: Mobiliteit en functioneel herstel",
+    "goal": "Volledige mobiliteit herwinnen en functionele bewegingen zoals hurken en traplopen zonder leuning hervatten.",
+    "weeks": "Week 1-2",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Volledige, symmetrische flexie bereikt",
+     "Traplopen zonder leuning mogelijk",
+     "Hurken tot een normale diepte pijnvrij",
+     "Lopen zonder hinken, ook buitenshuis"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en stabiliteit",
+    "goal": "Symmetrische kracht opbouwen en, op geleide van pijn en zwelling, starten met joggen.",
+    "weeks": "Week 2-4",
+    "forbidden": [
+     "Springen en landen op snelheid",
+     "Contactsport",
+     "Richtingsveranderingen op snelheid"
+    ],
+    "criteria": [
+     "Quadricepskracht minimaal 80% van het andere been",
+     "Balans op één been minimaal 30 seconden",
+     "Joggen 15-20 minuten zonder zwelling nadien",
+     "Geen zwelling na dagelijkse activiteiten"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport",
+    "goal": "Richtingsveranderingen, sprongen en sportspecifieke bewegingen hervatten ter voorbereiding op volledige sportterugkeer.",
+    "weeks": "Week 4-6",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 90%",
+     "Richtingsveranderingen op snelheid zonder klachten",
+     "Volledig sportspecifiek trainen zonder zwelling nadien",
+     "Single-leg hoptest: symmetrie-index minimaal 90% t.o.v. de andere zijde",
+     "Quadricepskracht: minimaal 90% symmetrie t.o.v. de andere zijde"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Meniscusoperatie herstelprotocol",
+  "category": "meniscus",
+  "description": "Herstelprotocol na een artroscopische meniscusoperatie (met nadruk op bescherming van een meniscushechting), opgebouwd in vier fases van vroege mobilisatie tot volledige, begeleide terugkeer naar sport (ca. 10-14 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en vroege mobilisatie",
+    "goal": "De gehechte meniscus beschermen terwijl zwelling afneemt en de eerste mobiliteit en spieraansturing worden opgebouwd.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Diepe hurkzit",
+     "Draaien op het belaste been",
+     "Hardlopen",
+     "Springen",
+     "Knielen op het geopereerde been"
+    ],
+    "criteria": [
+     "Volledige passieve knie-extensie (0°) bereikt",
+     "Flexie tot minimaal 90° zonder pijn",
+     "Zwelling duidelijk afgenomen",
+     "Quadriceps actief aan te spannen",
+     "Lopen zonder hinken (met of zonder kruk)"
+    ]
+   },
+   {
+    "name": "Fase 2: Functionele mobiliteit en kracht",
+    "goal": "Volledige beweeglijkheid herwinnen, lopen zonder hulpmiddel en starten met gecontroleerde functionele belasting.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Draaien op het belaste been",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Volledige, symmetrische flexie bereikt",
+     "Lopen zonder hulpmiddel, zonder hinken",
+     "Traplopen met leuning zonder pijn",
+     "Mini squat tot 45° pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht- en stabiliteitsopbouw",
+    "goal": "Spierkracht symmetrisch opbouwen, stabiliteit verbeteren en voorzichtig starten met joggen.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Springen en landen",
+     "Richtingsveranderingen op snelheid",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Quadricepskracht minimaal 80% van het andere been",
+     "Balans op één been minimaal 30 seconden",
+     "Geen zwelling na training",
+     "20 minuten hardlopen pijnvrij op vlakke ondergrond"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport",
+    "goal": "Richtingsveranderingen, sprongen en sportspecifieke bewegingen trainen als voorbereiding op een veilige terugkeer naar training en wedstrijd.",
+    "weeks": "Week 10-14",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Hoptest-symmetrie boven 90%",
+     "Richtingsveranderingen op snelheid zonder instabiliteit",
+     "Volledig sportspecifiek trainen zonder klachten",
+     "Single-leg hoptest: symmetrie-index minimaal 90% t.o.v. de niet-geopereerde zijde",
+     "Quadricepskracht: minimaal 90% symmetrie t.o.v. de andere zijde"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan spierverrekking, algemeen",
+  "category": "muscle_strain_general",
+  "description": "Generiek basisherstelplan voor een spierverrekking die niet onder een van de specifiekere blessuretypen valt (voor hamstring, kuit of lies bestaan al eigen, meer toegespitste herstelplannen). Volgt de klassieke opbouw van pijnreductie via geleidelijke rek- en krachtopbouw naar functionele en sportspecifieke terugkeer (ca. 6 tot 8 weken). Pas de oefeningen en spiergroep aan op de specifieke situatie van de patiënt.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnreductie en vroege activatie",
+    "goal": "Pijn en zwelling beperken terwijl de spier voorzichtig actief blijft, in plaats van volledige rust.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Maximale spierbelasting",
+     "Explosieve of ballistische bewegingen",
+     "Sport hervatten"
+    ],
+    "criteria": [
+     "Lopen of dagelijkse activiteiten zonder duidelijk hinken of ontzien",
+     "Pijn in rust duidelijk afgenomen",
+     "Isometrische aanspanning pijnvrij mogelijk"
+    ]
+   },
+   {
+    "name": "Fase 2: Progressieve rek- en krachtopbouw",
+    "goal": "De rek en spierkracht geleidelijk opbouwen richting het niveau van vóór de blessure.",
+    "weeks": "Week 2-5",
+    "forbidden": [
+     "Sprinten",
+     "Explosieve richtingsveranderingen",
+     "Wedstrijdsport"
+    ],
+    "criteria": [
+     "Volledige, pijnvrije rek van de aangedane spier",
+     "Licht concentrisch krachtwerk zonder pijn",
+     "Wandelen of fietsen zonder klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Excentrische kracht en functionele belasting",
+    "goal": "Excentrische kracht opbouwen en de spier weer belasten in functionele, dagelijkse of sportgerichte bewegingspatronen.",
+    "weeks": "Week 5-7",
+    "forbidden": [
+     "Wedstrijdsport zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Excentrische belasting pijnvrij mogelijk",
+     "Functionele bewegingen zonder compensatie of ontzien",
+     "Kracht subjectief vergelijkbaar met de andere zijde"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport en onderhoud",
+    "goal": "Volledige, begeleide terugkeer naar sport of werk, met een onderhoudsprogramma om herverrekking te voorkomen.",
+    "weeks": "Week 7-8",
+    "forbidden": [],
+    "criteria": [
+     "Sportspecifieke belasting zonder klachten",
+     "Goedkeuring fysiotherapeut voor volledige hervatting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan chronische nekklachten",
+  "category": "neck_pain_chronic",
+  "description": "Herstelplan voor aanhoudende, niet-traumatische nekklachten, bijvoorbeeld door houding, werkplek of langdurig beeldschermwerk. Opgebouwd van pijnmanagement en zachte mobiliteit, via houding en kracht van de diepe nekflexoren en schouderbladspieren, naar functioneel herstel met een blijvende onderhoudsroutine (ca. 8-10 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnmanagement en zachte mobiliteit",
+    "goal": "De pijn naar een hanteerbaar niveau brengen en voorzichtig de mobiliteit van nek en schouders onderhouden.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Langdurig in dezelfde houding zonder pauze",
+     "Plotselinge, snelle nekbewegingen",
+     "Zware belasting van nek of schouders"
+    ],
+    "criteria": [
+     "Pijn verminderd tot een hanteerbaar niveau",
+     "Nek vrij te bewegen binnen een comfortabel bereik",
+     "Geen uitstraling, tintelingen of krachtsverlies in de arm"
+    ]
+   },
+   {
+    "name": "Fase 2: Houding, ergonomie en kracht",
+    "goal": "De diepe nekflexoren en schouderbladspieren gericht trainen als basis voor een veerkrachtige nek, met aandacht voor houding en werkplekinrichting.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Langdurig in dezelfde houding zonder pauze",
+     "Zware, ongecontroleerde belasting van de nek"
+    ],
+    "criteria": [
+     "Diepe nekflexor houding minimaal 10 seconden vol te houden",
+     "Langer zitten mogelijk zonder toename van klachten",
+     "Scapulaire oefeningen uitvoerbaar zonder compensatie"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele terugkeer en onderhoud",
+    "goal": "Volledige terugkeer naar werk en dagelijkse activiteiten, met een blijvende, korte onderhoudsroutine ter preventie van terugval.",
+    "weeks": "Week 6-10",
+    "forbidden": [],
+    "criteria": [
+     "Volledige werkdag of dagelijkse belasting zonder klachten",
+     "Functionele nek- en schouderkracht symmetrisch en voldoende",
+     "Onderhoudsroutine zelfstandig ingebouwd in de week"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan lopersknie (patellofemoraal pijnsyndroom)",
+  "category": "patellofemoral_pain",
+  "description": "Herstelplan voor patellofemoraal pijnsyndroom (lopersknie), een overbelastingsklacht die vaak voorkomt bij lopers. Opgebouwd in vier fases van belastingmanagement tot een gestructureerde terugkeer naar hardlopen (ca. 8-12 weken), met de nadruk op geleidelijke opbouw van heup- en kniekracht in plaats van bescherming of rust.",
+  "phases": [
+   {
+    "name": "Fase 1: Belastingmanagement en pijnreductie",
+    "goal": "De pijnprikkelende belasting tijdelijk verminderen, niet volledig stoppen, en starten met pijnvrije basisoefeningen.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Activiteiten die de pijn duidelijk verergeren (boven een milde prikkeling)",
+     "Abrupt fors verhogen van hardloopvolume",
+     "Langdurig diep gebogen zitten of hurken bij klachten"
+    ],
+    "criteria": [
+     "Pijn bij traplopen niet meer dan mild",
+     "Langer zitten mogelijk zonder duidelijke toename van klachten",
+     "Wandelen pijnvrij mogelijk"
+    ]
+   },
+   {
+    "name": "Fase 2: Heup en quadricepskracht opbouwen",
+    "goal": "Gerichte krachttraining van heup en quadriceps, aangezien heupkracht een belangrijke rol speelt bij het herstel van patellofemorale klachten.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Activiteiten die de pijn duidelijk verergeren",
+     "Diepe, snelle kniebuigingen met hoge belasting"
+    ],
+    "criteria": [
+     "Heupabductiekracht merkbaar toegenomen",
+     "Mini squat pijnvrij tot een comfortabele diepte",
+     "Traplopen zonder meer dan milde klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar hardlopen",
+    "goal": "Geleidelijke opbouw van hardloopvolume en intensiteit, met aandacht voor looptechniek zoals pasfrequentie en het vermijden van overstriding.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Activiteiten die de pijn duidelijk verergeren",
+     "Te snelle toename van hardloopvolume of intensiteit"
+    ],
+    "criteria": [
+     "20 minuten duurlopen met niet meer dan milde klachten",
+     "Pasfrequentie merkbaar verhoogd ten opzichte van de startsituatie",
+     "Geen toename van klachten de dag na het lopen"
+    ]
+   },
+   {
+    "name": "Fase 4: Onderhoud en terugvalpreventie",
+    "goal": "Het opgebouwde kracht en loopniveau vasthouden en het risico op terugkerende klachten beperken.",
+    "weeks": "Week 10-12",
+    "forbidden": [
+     "Plotselinge, sterke toename van trainingsbelasting zonder opbouw"
+    ],
+    "criteria": [
+     "Volledig hardloopvolume van vóór de klachten hervat",
+     "Heup en beenkracht op een stabiel, onderhouden niveau",
+     "Geen terugkeer van klachten bij normale trainingsbelasting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan bekkenbodemklachten",
+  "category": "pelvic_floor_dysfunction",
+  "description": "Herstelplan gericht op algemene bekkenbodembewustwording en -kracht, vaak inzetbaar na de bevalling. Dit plan is opgebouwd rond wat een algemeen fysiotherapeut veilig kan begeleiden: ademhaling, activatie-oefeningen, coördinatie met de core en een voorzichtige opbouw naar impact (ca. 8-12 weken). Specifiek inwendig onderzoek en gerichte behandeling van bijvoorbeeld verzakkingsklachten of aanhoudend urineverlies vallen hier nadrukkelijk buiten en vereisen verwijzing naar een bekkenfysiotherapeut. Vereist beoordeling door een fysiotherapeut met bekkenbodem-/pelvic-health-specialisatie voordat het bij patiënten wordt ingezet.",
+  "phases": [
+   {
+    "name": "Fase 1: Bewustwording en ademhaling",
+    "goal": "Bewustwording opbouwen van de bekkenbodem en een rustige, diafragmatische ademhaling aanleren als basis voor de verdere opbouw.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Zware buikspieroefeningen zoals sit-ups en crunches",
+     "Zwaar tillen",
+     "Hardlopen en springen",
+     "Langdurig persen bij toiletgang zonder aandacht voor ontspanning"
+    ],
+    "criteria": [
+     "Bekkenbodem bewust te herkennen en licht aan te spannen",
+     "Diafragmatische ademhaling toe te passen in rust",
+     "Geen toename van klachten zoals zwaartegevoel of urineverlies bij dagelijkse activiteiten"
+    ]
+   },
+   {
+    "name": "Fase 2: Actieve bekkenbodemactivatie en coördinatie",
+    "goal": "De bekkenbodem langer leren aanspannen en de samenwerking met de diepe buikspier oefenen, als basis voor functionele belasting.",
+    "weeks": "Week 3-6",
+    "forbidden": [
+     "Zware buikspieroefeningen",
+     "Hardlopen en springen",
+     "Zwaar tillen zonder bewuste bekkenbodemcontrole"
+    ],
+    "criteria": [
+     "Bekkenbodem 5 seconden kunnen aanspannen en vasthouden",
+     "Coördinatie tussen buik en bekkenbodem voelbaar",
+     "Bruggetje uitvoeren zonder toename van klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele coördinatie en opbouw impactbelasting",
+    "goal": "De opgebouwde controle toepassen tijdens functionele bewegingen en voorzichtig kennismaken met lichte impactbelasting.",
+    "weeks": "Week 6-9",
+    "forbidden": [
+     "Hardlopen op hoge snelheid",
+     "Zware sprongbelasting zonder opbouw"
+    ],
+    "criteria": [
+     "Functionele squat zonder toename van klachten",
+     "Wandelen van 30 minuten zonder toename van klachten",
+     "Lichte huppeloefeningen zonder lekkage of zwaartegevoel"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar impact en sport",
+    "goal": "Verdere opbouw naar hardlopen en sportspecifieke belasting, met behoud van bekkenbodemcontrole onder hogere belasting.",
+    "weeks": "Week 9-12",
+    "forbidden": [
+     "Wedstrijden of intensieve training zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Hardlopen zonder klachten",
+     "Sportspecifieke bewegingen zonder lekkage of zwaartegevoel",
+     "Bekkenbodem blijft functioneel bij hogere belasting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan bekkeninstabiliteit",
+  "category": "pelvic_instability",
+  "description": "Herstelplan bij bekkeninstabiliteit, met bekkenpijn tijdens of na de zwangerschap als meest voorkomende situatie (bekkeninstabiliteit door een andere oorzaak past ook binnen dit plan). Opgebouwd van pijneducatie en belastingopbouw, via herstel van bekkenstabiliteit en core-/bilspiercontrole, naar functionele terugkeer in het dagelijks leven en eventueel sport (ca. 8-12 weken). Vereist beoordeling door een fysiotherapeut met bekkenbodem-/pelvic-health-specialisatie voordat het bij patiënten wordt ingezet.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijneducatie en belastingopbouw",
+    "goal": "Inzicht krijgen in wat de klachten uitlokt, asymmetrische belasting vermijden en rustig starten met bewuste bekkenbodem- en kernactivatie.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Asymmetrisch belasten van één been, bijvoorbeeld lang op één been staan",
+     "Wijdbeens bewegen, zoals met gespreide benen uit de auto stappen",
+     "Hardlopen of springen",
+     "Zwaar of eenzijdig tillen",
+     "Lang staan zonder pauze"
+    ],
+    "criteria": [
+     "Pijn bij dagelijkse bewegingen onder controle",
+     "Bekkenbodem en diepe buikspier bewust aan te spannen",
+     "Symmetrisch kunnen staan en lopen zonder duidelijke compensatie",
+     "Een korte wandeling mogelijk zonder toename van klachten"
+    ]
+   },
+   {
+    "name": "Fase 2: Opbouw van bekkenstabiliteit en spiercontrole",
+    "goal": "Geleidelijk kracht en controle opbouwen in bilspieren en core, als basis voor stabiliteit van het bekken bij dagelijkse bewegingen.",
+    "weeks": "Week 3-6",
+    "forbidden": [
+     "Hardlopen of springen",
+     "Zware asymmetrische tilbewegingen",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Bruggetje uitvoeren zonder compensatie of pijn",
+     "Heupabductie met controle en zonder pijn",
+     "Traplopen zonder toename van klachten",
+     "Wandelen van 20 tot 30 minuten zonder toename van klachten"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele terugkeer naar dagelijkse activiteiten",
+    "goal": "De opgebouwde stabiliteit toepassen in functionele, dagelijkse bewegingen zoals tillen, langer staan en langere wandelingen.",
+    "weeks": "Week 6-9",
+    "forbidden": [
+     "Hardlopen op hoge snelheid",
+     "Zware til- of duwbewegingen zonder opbouw"
+    ],
+    "criteria": [
+     "Traplopen zonder leuning mogelijk",
+     "Lichte voorwerpen symmetrisch kunnen tillen",
+     "Balans op één been minimaal 15 tot 20 seconden",
+     "Langere wandeling zonder toename van klachten"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport en volledige belasting",
+    "goal": "Voor wie dat van toepassing is: verdere opbouw naar hardlopen en sportspecifieke belasting, met behoud van symmetrische kracht en controle.",
+    "weeks": "Week 9-12",
+    "forbidden": [
+     "Wedstrijden zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "20 minuten hardlopen pijnvrij op vlakke ondergrond",
+     "Sportspecifieke bewegingen zonder klachten",
+     "Symmetrische kracht in bilspieren en core hersteld"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan hielspoor (fasciitis plantaris)",
+  "category": "plantar_fasciitis",
+  "description": "Herstelplan voor hielspoor (fasciitis plantaris), een overbelastingsklacht van de voetzoolfascie met de typerende pijn bij de eerste stappen na het opstaan. Dit is een hardnekkige klacht die vaak langzaam herstelt. Opgebouwd in drie fases van pijnmanagement tot progressieve krachtopbouw en terugkeer naar volledige activiteit, met een blijvende onderhoudsroutine (ca. 8 tot 12 weken, soms langer).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnmanagement en belastingaanpassing",
+    "goal": "De belasting op de voetzoolfascie verminderen en de acute pijn verminderen, onder andere via schoeisel- en steunzooladvies en rek- en mobiliteitsoefeningen.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Blootsvoets lopen op harde ondergrond",
+     "Hardlopen",
+     "Langdurig staan zonder pauze"
+    ],
+    "criteria": [
+     "Ochtendpijn bij de eerste stappen duidelijk afgenomen",
+     "Passend schoeisel of steunzolen besproken",
+     "Kortere wandelingen mogelijk zonder toenemende pijn"
+    ]
+   },
+   {
+    "name": "Fase 2: Progressieve krachtopbouw",
+    "goal": "Gericht kracht opbouwen in de kuit en de kleine voetspieren, met de nadruk op excentrische belasting van de kuit, een kernonderdeel van herstel bij fasciitis plantaris.",
+    "weeks": "Week 3-8",
+    "forbidden": [
+     "Hardlopen op hard oppervlak",
+     "Langdurig blootsvoets lopen"
+    ],
+    "criteria": [
+     "Excentrische hielheffen pijnvrij mogelijk, minimaal 3 sets van 15",
+     "Langer staan of lopen mogelijk zonder toenemende pijn",
+     "Ochtendpijn grotendeels of volledig verdwenen"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar volledige activiteit en onderhoud",
+    "goal": "Geleidelijk terugkeren naar volledige dagelijkse activiteit en eventueel hardlopen, met een blijvende onderhoudsroutine om terugval te voorkomen.",
+    "weeks": "Week 8-12",
+    "forbidden": [
+     "Plotselinge terugkeer naar hardlopen zonder opbouw"
+    ],
+    "criteria": [
+     "Volledig pijnvrij door de dag heen, inclusief lang staan",
+     "Hardlopen of sportspecifieke belasting pijnvrij opgebouwd",
+     "Onderhoudsroutine van rekken en kracht vastgesteld"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan diastase recti (buikwandscheiding)",
+  "category": "rectus_diastasis",
+  "description": "Herstelplan bij diastase recti (buikwandscheiding), vaak ontstaan tijdens de zwangerschap. Opgebouwd van voorzichtige kernactivatie zonder de buikdruk overmatig te verhogen, via progressieve training van de diepe buikspieren in coördinatie met de bekkenbodem, naar functionele terugkeer naar normale activiteit en training (ca. 10-12 weken). Vereist beoordeling door een fysiotherapeut met bekkenbodem-/pelvic-health-specialisatie voordat het bij patiënten wordt ingezet.",
+  "phases": [
+   {
+    "name": "Fase 1: Vroege, voorzichtige kernactivatie",
+    "goal": "De diepe buikspier leren aanspannen zonder de buikdruk overmatig te verhogen, en dagelijkse bewegingen zoals opstaan aanpassen om de buikwand te ontlasten.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Volledige sit-ups of crunches",
+     "Zwaar tillen met slechte bracing",
+     "Buikspieroefeningen waarbij de buik zichtbaar opbolt (doming)",
+     "Zware inspanning die de buikdruk sterk verhoogt, zoals zwaar persen"
+    ],
+    "criteria": [
+     "Diepe buikspier bewust te activeren",
+     "Geen zichtbare opbolling (doming) van de buik tijdens oefeningen",
+     "Opstaan uit bed via zijligging toegepast",
+     "Geen toename van rug- of bekkenklachten"
+    ]
+   },
+   {
+    "name": "Fase 2: Progressieve diepe core- en bekkenbodemcoördinatie",
+    "goal": "De kernactivatie combineren met armen- en beenbewegingen, met behoud van een stabiele, niet-opbollende buikwand.",
+    "weeks": "Week 3-7",
+    "forbidden": [
+     "Volledige sit-ups of crunches",
+     "Zware buikspiertraining",
+     "Zwaar tillen zonder bracing"
+    ],
+    "criteria": [
+     "Kernactivatie te combineren met armen- of beenbewegingen",
+     "Geen opbolling bij oefeningen op handen en knieën",
+     "Bruggetje en vogelhond zonder compensatie"
+    ]
+   },
+   {
+    "name": "Fase 3: Functionele stabiliteit en tillen",
+    "goal": "De opgebouwde kernstabiliteit toepassen bij functionele bewegingen zoals tillen en squatten, en de conditie geleidelijk uitbreiden.",
+    "weeks": "Week 7-10",
+    "forbidden": [
+     "Zwaar tillen zonder opbouw",
+     "Hoge impact activiteiten zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Functioneel tillen met correcte bracing",
+     "Squat met kernstabiliteit zonder opbolling",
+     "Wandelen van 30 minuten zonder toename van klachten"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar volledige activiteit en training",
+    "goal": "Verdere opbouw naar volledige dagelijkse activiteit en trainingsbelasting, met behoud van kernstabiliteit onder hogere belasting.",
+    "weeks": "Week 10-12",
+    "forbidden": [
+     "Intensieve training zonder goedkeuring fysiotherapeut"
+    ],
+    "criteria": [
+     "Volledige kernstabiliteit bij dagelijkse en sportieve bewegingen",
+     "Geen zichtbare opbolling meer bij belasting",
+     "Hardlopen of trainen zonder klachten"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan schouderoverbelasting (impingement, conservatief)",
+  "category": "rotator_cuff",
+  "description": "Herstelplan voor overbelastingsgerelateerde subacromiale schouderklachten (impingement), volledig conservatief en zonder operatie. Dit protocol verschilt daarmee wezenlijk van de twee andere rotator cuff-herstelplannen: het kent geen sling-fase zoals het protocol na een peesreconstructie, en geen postoperatieve fase zoals het protocol na een subacromiale decompressie. De klachten ontstaan door overbelasting, vaak in combinatie met een minder gunstige schouderhouding, en worden hier volledig via fysiotherapie behandeld. Opgebouwd in drie fases van pijn- en belastingmanagement tot volledige, begeleide terugkeer naar bovenhoofdse activiteit (ca. 8 tot 10 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Pijn- en belastingmanagement",
+    "goal": "De belasting op de irriteerbare schouderstructuren verminderen, bewustwording opbouwen van houding en scapulapositie, en pijn tot rust laten komen.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Bovenhoofds tillen",
+     "Langdurig werken met de arm boven schouderhoogte",
+     "Zwaar duwen of trekken"
+    ],
+    "criteria": [
+     "Pijn in rust duidelijk afgenomen",
+     "Slapen op de aangedane zijde minder of niet meer verstoord",
+     "Bewustwording van schouderhouding en scapulapositie aanwezig"
+    ]
+   },
+   {
+    "name": "Fase 2: Opbouw rotator cuff- en scapulaire kracht",
+    "goal": "Gericht kracht opbouwen in de rotator cuff-spieren en de schouderbladstabilisatoren, om de ruimte onder het schouderdak te vergroten en herhaling van de klacht te voorkomen.",
+    "weeks": "Week 3-7",
+    "forbidden": [
+     "Bovenhoofdse krachttraining met zwaar gewicht",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Actieve mobiliteit pijnvrij tot boven schouderhoogte",
+     "Buiten- en binnenrotatiekracht merkbaar verbeterd",
+     "Scapulaire controle tijdens armbewegingen verbeterd"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar volledige bovenhoofdse activiteit en onderhoud",
+    "goal": "Volledige, begeleide terugkeer naar werk, training of sport met bovenhoofdse belasting, met een onderhoudsprogramma om herhaling van de overbelastingsklacht te voorkomen.",
+    "weeks": "Week 7-10",
+    "forbidden": [
+     "Plotselinge terugkeer naar zware bovenhoofdse sport zonder opbouw"
+    ],
+    "criteria": [
+     "Volledige, symmetrische kracht en mobiliteit",
+     "Bovenhoofdse werk- of sportbeweging pijnvrij uitvoerbaar",
+     "Onderhoudsroutine vastgesteld",
+     "Constant-Murley Score: minimaal 80, of vergelijkbaar met de andere zijde",
+     "DASH-score (Disabilities of the Arm, Shoulder and Hand): duidelijke verbetering t.o.v. voor het herstel"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan subacromiale decompressie (schouder)",
+  "category": "rotator_cuff",
+  "description": "Herstelplan na een subacromiale decompressie of bursitis-operatie aan de schouder, een minder ingrijpende ingreep dan een peeshechting, zonder gehechte pees die beschermd moet worden. Actieve mobilisatie mag daardoor vrijwel direct starten, in tegenstelling tot de sling-fase van zes weken bij het rotator cuff-hechtingsprotocol. Duurt doorgaans 8 tot 10 weken. Voor een peesreconstructie met sling-bescherming, zie het herstelplan 'Rotator cuff schouderoperatie herstelprotocol'.",
+  "phases": [
+   {
+    "name": "Fase 1: Vroege mobilisatie en pijncontrole",
+    "goal": "Pijn en zwelling na de decompressie beheersen, terwijl actieve mobiliteit al vroeg mag worden opgebouwd omdat er geen gehechte pees is die beschermd moet worden.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Zwaar tillen",
+     "Bovenhoofdse belasting met gewicht",
+     "Plotselinge krachtsbelasting"
+    ],
+    "criteria": [
+     "Pijn onder controle in rust",
+     "Wond genezen zonder tekenen van infectie",
+     "Actieve flexie tot minimaal 90° bereikt",
+     "Geen sling meer nodig voor dagelijkse activiteiten"
+    ]
+   },
+   {
+    "name": "Fase 2: Actieve mobiliteit uitbreiden",
+    "goal": "Volledige actieve mobiliteit herwinnen en starten met lichte scapulaire en rotator cuff-activatie.",
+    "weeks": "Week 2-4",
+    "forbidden": [
+     "Zwaar tillen",
+     "Contactsport",
+     "Bovenhoofdse krachttraining met gewicht"
+    ],
+    "criteria": [
+     "Actieve flexie tot minimaal 150°",
+     "Geen inklemmingsklachten bij dagelijkse bewegingen",
+     "Scapulaire controle hersteld"
+    ]
+   },
+   {
+    "name": "Fase 3: Krachtopbouw",
+    "goal": "Progressieve krachttraining opbouwen richting functionele en bovenhoofdse belasting, sneller dan bij een peesreconstructie, omdat er geen hechting is die extra tijd nodig heeft.",
+    "weeks": "Week 4-7",
+    "forbidden": [
+     "Contactsport",
+     "Onbegeleide zware bovenhoofdse belasting"
+    ],
+    "criteria": [
+     "Kracht buiten- en binnenrotatie minimaal 80% van de andere zijde",
+     "Boven schouderhoogte reiken zonder compensatie",
+     "Volledige actieve mobiliteit"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar sport en werk",
+    "goal": "Volledige, begeleide terugkeer naar werk of sport, inclusief bovenhoofdse belasting, met een onderhoudsprogramma om het bereikte niveau vast te houden.",
+    "weeks": "Week 7-10",
+    "forbidden": [],
+    "criteria": [
+     "Volledige, symmetrische kracht en mobiliteit",
+     "Sportspecifieke of werkgerelateerde bewegingen zonder klachten",
+     "Goedkeuring fysiotherapeut voor volledige hervatting",
+     "Constant-Murley Score: minimaal 80, of vergelijkbaar met de andere zijde",
+     "DASH-score (Disabilities of the Arm, Shoulder and Hand): duidelijke verbetering t.o.v. voor het herstel"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Rotator cuff schouderoperatie herstelprotocol",
+  "category": "rotator_cuff",
+  "description": "Herstelprotocol na een rotator cuff-hechting (reconstructie), van de beschermende sling-fase met uitsluitend passieve mobiliteit tot volledige, begeleide terugkeer naar werk of sport (ca. 5-6 maanden).",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en passieve mobiliteit",
+    "goal": "De hechting beschermen in de sling terwijl uitsluitend passieve mobiliteit wordt onderhouden — actieve belasting van de gehechte pees is in deze fase niet toegestaan.",
+    "weeks": "Week 0-6",
+    "forbidden": [
+     "Actief de arm heffen",
+     "Tillen met de geopereerde arm",
+     "Steunen op de arm",
+     "Reiken achter de rug",
+     "Autorijden"
+    ],
+    "criteria": [
+     "Pijn onder controle in rust",
+     "Wond genezen zonder tekenen van infectie",
+     "Passieve flexie tot minimaal 90-120° bereikt"
+    ]
+   },
+   {
+    "name": "Fase 2: Actieve mobiliteit en lichte belasting",
+    "goal": "Actieve mobiliteit opbouwen en starten met lichte isometrische en scapulaire training, onder schouderhoogte.",
+    "weeks": "Week 6-12",
+    "forbidden": [
+     "Zwaar tillen",
+     "Bovenhoofdse belasting",
+     "Plotselinge krachtsbelasting",
+     "Contactsport"
+    ],
+    "criteria": [
+     "Actieve flexie tot minimaal 150°",
+     "Geen pijn bij dagelijkse activiteiten onder schouderhoogte",
+     "Scapulaire controle hersteld"
+    ]
+   },
+   {
+    "name": "Fase 3: Krachtopbouw",
+    "goal": "Progressieve krachttraining opbouwen richting functionele en bovenhoofdse belasting.",
+    "weeks": "Week 12-20",
+    "forbidden": [
+     "Contactsport",
+     "Onbegeleide zware belasting"
+    ],
+    "criteria": [
+     "Kracht buiten- en binnenrotatie minimaal 80% van de andere zijde",
+     "Boven schouderhoogte reiken zonder compensatie",
+     "Volledige actieve mobiliteit"
+    ]
+   },
+   {
+    "name": "Fase 4: Terugkeer naar activiteit en onderhoud",
+    "goal": "Volledige, begeleide terugkeer naar werk of sport, met een onderhoudsprogramma om het opgebouwde niveau vast te houden.",
+    "weeks": "Week 20+",
+    "forbidden": [],
+    "criteria": [
+     "Volledige, symmetrische kracht en mobiliteit",
+     "Sportspecifieke of werkgerelateerde bewegingen zonder klachten",
+     "Goedkeuring fysiotherapeut voor volledige hervatting",
+     "Constant-Murley Score: minimaal 80, of vergelijkbaar met de andere zijde",
+     "DASH-score (Disabilities of the Arm, Shoulder and Hand): duidelijke verbetering t.o.v. voor het herstel"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan scheenbeenvliesklachten (mediaal tibiaal stresssyndroom)",
+  "category": "shin_splints",
+  "description": "Herstelplan voor scheenbeenvliesklachten (mediaal tibiaal stresssyndroom), een overbelastingsklacht die vaak ontstaat door een plotselinge toename in hardloopvolume, intensiteit of een verandering van ondergrond of schoeisel. Opgebouwd in drie fases van relatieve rust en pijnreductie tot een gestructureerde, pijngestuurde terugkeer naar hardlopen (ca. 6 tot 10 weken).",
+  "phases": [
+   {
+    "name": "Fase 1: Belastingvermindering en pijnreductie",
+    "goal": "De belasting op het scheenbeenvlies verminderen zodat de irritatie tot rust komt. Dit betekent relatieve rust, niet volledige immobilisatie: rustig bewegen op lage-impactvormen blijft toegestaan.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Hoogintensieve balsporten",
+     "Trainen op hard oppervlak"
+    ],
+    "criteria": [
+     "Pijn bij wandelen duidelijk afgenomen",
+     "Geen drukpijn meer bij lichte aanraking van het scheenbeen",
+     "Fietsen op hometrainer pijnvrij mogelijk",
+     "Geen nachtelijke of rustpijn meer"
+    ]
+   },
+   {
+    "name": "Fase 2: Kuitkracht opbouwen en bijdragende factoren aanpakken",
+    "goal": "Kuitkracht en de kracht aan de voorkant van het scheenbeen opbouwen, en bijdragende factoren zoals schoeisel, ondergrond en looppatroon (cadans) bespreken en waar nodig aanpassen.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen op hard oppervlak",
+     "Springen",
+     "Plotselinge volumesprongen in wandelen of fietsen"
+    ],
+    "criteria": [
+     "Volledig pijnvrij wandelen, ook langere afstanden",
+     "Kuitheffen tweebenig pijnvrij, minimaal 3 sets van 15",
+     "Schoeisel en trainingsondergrond besproken en indien nodig aangepast",
+     "Geen drukpijn meer op het scheenbeen"
+    ]
+   },
+   {
+    "name": "Fase 3: Gestructureerde terugkeer naar hardlopen",
+    "goal": "Stapsgewijs en pijngestuurd hardloopvolume opbouwen, met blijvende aandacht voor kuitkracht en een zachte ondergrond waar mogelijk.",
+    "weeks": "Week 6-10",
+    "forbidden": [
+     "Plotselinge volumesprongen",
+     "Hardlopen bij aanhoudende pijn tijdens het lopen"
+    ],
+    "criteria": [
+     "20 minuten aaneengesloten hardlopen pijnvrij mogelijk",
+     "Geen pijn de dag na een hardloopsessie",
+     "Kuitkracht symmetrisch aan de andere zijde"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan bevroren schouder (frozen shoulder)",
+  "category": "shoulder_chronic_pain",
+  "description": "Begeleidingsplan bij een bevroren schouder (adhesive capsulitis), opgebouwd rond het natuurlijke beloop van deze aandoening in drie stadia: een pijnlijke fase, een stijve fase en een ontdooifase. Dit traject duurt doorgaans 6 tot 12 maanden en soms langer, geduld is een kernonderdeel van het herstel.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnlijke fase",
+    "goal": "De schouder doet in deze fase het meest pijn, vaak ook in de nacht, en de beweeglijkheid begint af te nemen. Het doel is de pijn behapbaar houden en de schouder pijnvrij in beweging houden, zonder te forceren.",
+    "weeks": "Maand 0-3 (indicatief)",
+    "forbidden": [
+     "Agressief stretchen door de pijn heen",
+     "Zware belasting van de arm",
+     "Bovenhoofds tillen",
+     "Slapen op de aangedane schouder bij nachtpijn"
+    ],
+    "criteria": [
+     "Pijn overdag beter behapbaar dan bij de start",
+     "Pendulum-oefening dagelijks uit te voeren zonder pijn erna",
+     "Bewust zijn van welke bewegingen en houdingen de pijn uitlokken"
+    ]
+   },
+   {
+    "name": "Fase 2: Stijve fase",
+    "goal": "De pijn neemt geleidelijk af, maar de schouder voelt nu duidelijk stijf en beperkt in beweging. Dit is het moment om, nu de pijn dat toelaat, geleidelijk meer rek en mobiliteit op te bouwen.",
+    "weeks": "Maand 3-9 (indicatief)",
+    "forbidden": [
+     "Plotselinge, forse rek",
+     "Bovenhoofdse belasting met gewicht",
+     "Trainen door een duidelijke pijnpiek heen"
+    ],
+    "criteria": [
+     "Rustpijn duidelijk minder dan in fase 1",
+     "Stokoefeningen dagelijks uit te voeren met acceptabele stretch-sensatie",
+     "Merkbare, langzame toename van bewegingsuitslag over de weken"
+    ]
+   },
+   {
+    "name": "Fase 3: Ontdooifase",
+    "goal": "De beweeglijkheid keert geleidelijk terug. Nu is de fase om, samen met verdere mobiliteit, actief kracht op te bouwen richting volledig, pijnvrij functioneren.",
+    "weeks": "Maand 9-12+ (indicatief)",
+    "forbidden": [
+     "Te snel terug naar volledige belasting bij aanhoudende stijfheid"
+    ],
+    "criteria": [
+     "Bewegingsuitslag dicht bij die van de andere schouder",
+     "Lichte weerstandsoefeningen pijnvrij uit te voeren",
+     "Dagelijkse activiteiten, inclusief reiken boven schouderhoogte, weer mogelijk"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan schouderluxatie (conservatief)",
+  "category": "shoulder_dislocation",
+  "description": "Herstelplan na een eerste, conservatief (niet-operatief) behandelde schouderluxatie, opgebouwd in vier fases van bescherming in de sling tot een begeleide, sportspecifieke terugkeer (ca. 10-12 weken). Extra aandacht voor het verhoogde risico op een nieuwe luxatie, vooral bij jonge sporters.",
+  "phases": [
+   {
+    "name": "Fase 1: Bescherming en rust in de sling",
+    "goal": "De schouder beschermen in de sling, pijn en zwelling onder controle krijgen, en de provocerende positie van abductie met exorotatie vermijden.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Abductie gecombineerd met exorotatie (de \"provocerende positie\")",
+     "Actief boven schouderhoogte reiken",
+     "Steunen op de arm",
+     "Sporten en tillen",
+     "Slapen zonder sling in de eerste weken"
+    ],
+    "criteria": [
+     "Sling grotendeels volgens advies gedragen",
+     "Pijn in rust onder controle",
+     "Zwelling duidelijk afgenomen",
+     "Elleboog, pols en hand pijnvrij te bewegen"
+    ]
+   },
+   {
+    "name": "Fase 2: Actieve mobiliteit herwinnen",
+    "goal": "Geleidelijk de sling afbouwen en actieve beweeglijkheid van de schouder terugwinnen binnen een veilig, pijnvrij bereik.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Volledige abductie met exorotatie",
+     "Tillen van zware voorwerpen",
+     "Contactsport",
+     "Steunen op de uitgestrekte arm"
+    ],
+    "criteria": [
+     "Sling overdag niet meer nodig",
+     "Actieve flexie tot minimaal schouderhoogte",
+     "Actieve exorotatie tot neutraal zonder pijn",
+     "Dagelijkse activiteiten onder schouderhoogte pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 3: Rotator cuff en scapulaire stabiliteit",
+    "goal": "Progressieve krachttraining van de rotator cuff en scapulaire stabilisatoren om het schoudergewricht actief te ondersteunen.",
+    "weeks": "Week 6-9",
+    "forbidden": [
+     "Plotselinge, ongecontroleerde bewegingen boven schouderhoogte",
+     "Contactsport",
+     "Zwaar tillen zonder opbouw"
+    ],
+    "criteria": [
+     "Kracht buitenrotatie minimaal 70% van de andere zijde",
+     "Scapulaire controle bij armbewegingen boven schouderhoogte",
+     "Volledige, pijnvrije actieve mobiliteit"
+    ]
+   },
+   {
+    "name": "Fase 4: Sportspecifieke terugkeer",
+    "goal": "Sportspecifieke stabiliteit en belasting opbouwen als voorbereiding op een veilige, begeleide terugkeer naar training en wedstrijd.",
+    "weeks": "Week 9-12",
+    "forbidden": [
+     "Terugkeer naar contactsport zonder goedkeuring fysiotherapeut",
+     "Onvoorbereide, plotselinge bovenhoofdse krachtsinspanning"
+    ],
+    "criteria": [
+     "Symmetrische kracht rotator cuff en scapulaire spieren",
+     "Sportspecifieke bewegingen zonder apprehensie of instabiliteitsgevoel",
+     "Goedkeuring fysiotherapeut voor volledige sporthervatting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Herstelplan peesklachten, algemeen",
+  "category": "tendinopathy_general",
+  "description": "Generiek basisherstelplan voor peesklachten (tendinopathie) die niet onder een van de specifiekere categorieën vallen (voor achillespees en elleboog bestaan al eigen, meer toegespitste herstelplannen). Volgt de evidence-based opbouw van isometrische belasting via progressieve isotonische en excentrische training naar functionele en sportspecifieke terugkeer (ca. 8 tot 12 weken, vaak een langzaam proces). Pas de oefeningen en pees aan op de specifieke situatie van de patiënt.",
+  "phases": [
+   {
+    "name": "Fase 1: Pijnmanagement en isometrische belasting",
+    "goal": "Pijn verminderen en belastbaarheid onderhouden met isometrische oefeningen, in plaats van de pees volledig te ontzien.",
+    "weeks": "Week 0-3",
+    "forbidden": [
+     "Volledige rust",
+     "Plotselinge piekbelasting",
+     "Sport hervatten"
+    ],
+    "criteria": [
+     "Isometrische belasting uitvoerbaar zonder toename van pijn nadien",
+     "Dagelijkse activiteiten mogelijk binnen een draaglijke pijngrens"
+    ]
+   },
+   {
+    "name": "Fase 2: Isotonische en excentrische krachtopbouw",
+    "goal": "De belastbaarheid van de pees geleidelijk opbouwen met isotonische en excentrische krachttraining.",
+    "weeks": "Week 3-8",
+    "forbidden": [
+     "Plotselinge sprongbelasting",
+     "Wedstrijdsport"
+    ],
+    "criteria": [
+     "Isotonische training zonder toename van klachten de volgende dag",
+     "Excentrische training gestart en pijnvrij opgebouwd",
+     "Functionele bewegingen mogelijk zonder ontzien"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar sport en onderhoud",
+    "goal": "Volledige, begeleide terugkeer naar sport of werk, met een langdurig onderhoudsprogramma om de klachten niet te laten terugkeren.",
+    "weeks": "Week 8-12",
+    "forbidden": [],
+    "criteria": [
+     "Sportspecifieke belasting zonder klachten de volgende dag",
+     "Goedkeuring fysiotherapeut voor volledige hervatting"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Totale heupprothese herstelprotocol",
+  "category": "total_hip_replacement",
+  "description": "Herstelprotocol na plaatsing van een totale heupprothese, van de ziekenhuisfase met heupvoorzorgen tot volledige functionele zelfstandigheid (ca. 3-4 maanden).",
+  "phases": [
+   {
+    "name": "Fase 1: Ziekenhuisfase & vroege mobilisatie",
+    "goal": "Pijn en zwelling onder controle brengen, de wond laten genezen en veilig starten met mobilisatie binnen de heupvoorzorgen van je chirurg.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Been kruisen",
+     "Diep buigen in de heup (bijv. lage stoel)",
+     "Draaien op het geopereerde been",
+     "Op de zij liggen zonder kussen tussen de knieën"
+    ],
+    "criteria": [
+     "Wond genezen zonder tekenen van infectie",
+     "Zelfstandig transfers (bed, stoel) mogelijk",
+     "Lopen met looprek of rollator zonder hinken",
+     "Pijn onder controle met medicatie"
+    ]
+   },
+   {
+    "name": "Fase 2: Functioneel herstel thuis",
+    "goal": "Zelfstandigheid in dagelijkse activiteiten uitbreiden en hulpmiddelen geleidelijk afbouwen, met behoud van de heupvoorzorgen.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Sporten met impact",
+     "Been kruisen"
+    ],
+    "criteria": [
+     "Lopen binnenshuis zonder hulpmiddel",
+     "Zelfstandig aan- en uitkleden",
+     "Traplopen met leuning zonder pijn",
+     "Heupflexie tot minimaal 90° zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en uithoudingsvermogen",
+    "goal": "Heupkracht en conditie verder opbouwen richting volledige zelfstandigheid, met een stabiel looppatroon zonder hulpmiddel.",
+    "weeks": "Week 6-12",
+    "forbidden": [
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Lopen zonder hulpmiddel, ook buitenshuis",
+     "Traplopen zonder leuning",
+     "Wandelen 30 minuten pijnvrij",
+     "Balans stabiel op één been"
+    ]
+   },
+   {
+    "name": "Fase 4: Onderhoud en terugkeer naar activiteiten",
+    "goal": "Terugkeer naar gewenste hobby's en activiteiten, met een onderhoudsprogramma om het bereikte niveau vast te houden.",
+    "weeks": "Week 12+",
+    "forbidden": [],
+    "criteria": [
+     "Wandelen langer dan 30 minuten pijnvrij zonder hulpmiddel",
+     "Geen zwelling na belasting",
+     "Deelname aan gewenste dagelijkse en recreatieve activiteiten",
+     "Harris Hip Score: significante verbetering t.o.v. voor de operatie",
+     "Timed Up and Go (TUG)-test: minder dan 12 seconden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Totale heupprothese herstelprotocol, voorste (anterieure) benadering",
+  "category": "total_hip_replacement",
+  "description": "Herstelprotocol voor patiënten die een totale heupprothese hebben gekregen via de voorste (anterieure) chirurgische benadering. Deze spiersparende techniek kent wezenlijk andere voorzorgen dan de klassieke achterste benadering: de gebruikelijke heupvoorzorgen (niet kruisen, niet diep buigen, niet naar binnen draaien) gelden doorgaans niet, maar voorzichtigheid is geboden bij het combineren van heupstrekking met buitenwaartse rotatie. Mobilisatie start sneller. Doorlooptijd circa 8-10 weken tot volledige functionele zelfstandigheid, korter dan het standaardprotocol van 3-4 maanden.",
+  "phases": [
+   {
+    "name": "Fase 1: Ziekenhuisfase en versnelde mobilisatie",
+    "goal": "Dankzij de spiersparende voorste benadering kan mobilisatie sneller starten dan bij de klassieke achterste toegang.",
+    "weeks": "Week 0-1",
+    "forbidden": [
+     "Heup gelijktijdig ver strekken én naar buiten draaien",
+     "Lang stilstaan zonder steun",
+     "Traplopen zonder toezicht in de eerste dagen"
+    ],
+    "criteria": [
+     "Lopen met looprek of rollator binnen 24-48 uur",
+     "Wond genezen zonder tekenen van infectie",
+     "Zelfstandige transfer (bed, stoel) binnen 1-2 dagen",
+     "Pijn onder controle met medicatie"
+    ]
+   },
+   {
+    "name": "Fase 2: Functioneel herstel en snelle opbouw",
+    "goal": "Zelfstandigheid in dagelijkse activiteiten uitbreiden en hulpmiddelen sneller afbouwen dan bij de klassieke achterste benadering gebruikelijk is.",
+    "weeks": "Week 1-4",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Heup gelijktijdig ver strekken én naar buiten draaien",
+     "Sporten met impact"
+    ],
+    "criteria": [
+     "Lopen binnenshuis zonder hulpmiddel binnen 2-3 weken",
+     "Zelfstandig aan- en uitkleden",
+     "Traplopen met leuning zonder pijn",
+     "Heupflexie ruim voorbij 90° zonder pijn (geen flexiebeperking bij deze benadering)"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en volledige zelfstandigheid",
+    "goal": "Heupkracht en conditie verder opbouwen richting volledige zelfstandigheid, met een stabiel looppatroon zonder hulpmiddel.",
+    "weeks": "Week 4-8",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Heup gelijktijdig ver strekken én naar buiten draaien"
+    ],
+    "criteria": [
+     "Lopen zonder hulpmiddel, ook buitenshuis",
+     "Traplopen zonder leuning",
+     "Wandelen 30 minuten pijnvrij",
+     "Balans stabiel op één been"
+    ]
+   },
+   {
+    "name": "Fase 4: Onderhoud en terugkeer naar activiteiten",
+    "goal": "Terugkeer naar gewenste hobby's en activiteiten, met een onderhoudsprogramma om het bereikte niveau vast te houden.",
+    "weeks": "Week 8+",
+    "forbidden": [],
+    "criteria": [
+     "Wandelen langer dan 30 minuten pijnvrij zonder hulpmiddel",
+     "Geen zwelling na belasting",
+     "Deelname aan gewenste dagelijkse en recreatieve activiteiten",
+     "Harris Hip Score: significante verbetering t.o.v. voor de operatie",
+     "Timed Up and Go (TUG)-test: minder dan 12 seconden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Totale knieprothese herstelprotocol",
+  "category": "total_knee_replacement",
+  "description": "Uitgebreid herstelprotocol na plaatsing van een totale knieprothese, van de ziekenhuisfase en vroege mobilisatie tot volledige functionele zelfstandigheid (ca. 3-4 maanden).",
+  "phases": [
+   {
+    "name": "Fase 1: Ziekenhuisfase & vroege mobilisatie",
+    "goal": "Pijn en zwelling onder controle brengen, de wond laten genezen en veilig starten met de eerste mobilisatie en zelfstandige transfers.",
+    "weeks": "Week 0-2",
+    "forbidden": [
+     "Knielen op het geopereerde been",
+     "Draaien op één been",
+     "Lange autoritten"
+    ],
+    "criteria": [
+     "Wond genezen zonder tekenen van infectie",
+     "Volledige knie-extensie (0°) bereikt",
+     "Minimaal 90° knieflexie bereikt",
+     "Zelfstandig transfers (bed, stoel) mogelijk"
+    ]
+   },
+   {
+    "name": "Fase 2: Functioneel herstel thuis",
+    "goal": "Zelfstandigheid in dagelijkse activiteiten uitbreiden en hulpmiddelen geleidelijk afbouwen.",
+    "weeks": "Week 2-6",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Sporten met impact"
+    ],
+    "criteria": [
+     "Minimaal 110° knieflexie bereikt",
+     "Lopen binnenshuis zonder hulpmiddel",
+     "Zelfstandig aan- en uitkleden",
+     "Traplopen met leuning zonder pijn"
+    ]
+   },
+   {
+    "name": "Fase 3: Kracht en uithoudingsvermogen",
+    "goal": "Spierkracht en conditie verder opbouwen richting volledige zelfstandigheid, zonder hulpmiddel en met een stabiel looppatroon.",
+    "weeks": "Week 6-12",
+    "forbidden": [
+     "Hardlopen",
+     "Springen"
+    ],
+    "criteria": [
+     "Minimaal 120° knieflexie bereikt",
+     "Lopen zonder hulpmiddel, ook buitenshuis",
+     "Traplopen zonder leuning",
+     "Wandelen 30 minuten pijnvrij"
+    ]
+   },
+   {
+    "name": "Fase 4: Onderhoud en terugkeer naar activiteiten",
+    "goal": "Terugkeer naar gewenste hobby's, lichte sport en werk, met een onderhoudsprogramma om het bereikte niveau vast te houden.",
+    "weeks": "Week 12+",
+    "forbidden": [],
+    "criteria": [
+     "Wandelen langer dan 30 minuten pijnvrij zonder hulpmiddel",
+     "Geen zwelling na belasting",
+     "Deelname aan gewenste dagelijkse en recreatieve activiteiten",
+     "Oxford Knee Score: significante verbetering t.o.v. voor de operatie",
+     "Timed Up and Go (TUG)-test: minder dan 12 seconden"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "Versneld hersteltraject knieprothese (fast-track / ERAS)",
+  "category": "total_knee_replacement",
+  "description": "Versneld herstelprotocol (Enhanced Recovery After Surgery) na plaatsing van een totale knieprothese, bedoeld als alternatief voor fittere, jongere of gemotiveerde patiënten die door chirurg en fysiotherapeut geschikt zijn bevonden. Mobilisatie start al op de operatiedag en lopen zonder hulpmiddel wordt binnen dagen nagestreefd in plaats van weken. Doorlooptijd circa 6-8 weken, aanzienlijk korter dan het standaardprotocol van 3-4 maanden. Niet geschikt voor elke patiënt. Bij twijfel geldt het reguliere ‘Totale knieprothese herstelprotocol’.",
+  "phases": [
+   {
+    "name": "Fase 1: Operatiedag en directe mobilisatie",
+    "goal": "Dankzij multimodale pijnbestrijding en een ERAS-aanpak wordt al op de operatiedag zelf gestart met staan en de eerste stappen, in plaats van pas de volgende dag.",
+    "weeks": "Dag 0-3",
+    "forbidden": [
+     "Langdurig platliggen",
+     "Knielen op het geopereerde been",
+     "Onbegeleide mobilisatie zonder hulpmiddel"
+    ],
+    "criteria": [
+     "Staan en enkele passen zetten op de operatiedag zelf (met looprek)",
+     "Zelfstandige transfer bed-stoel binnen 24 uur",
+     "Pijn onder controle met multimodale pijnstilling",
+     "Wond zonder tekenen van infectie"
+    ]
+   },
+   {
+    "name": "Fase 2: Snelle functionele opbouw",
+    "goal": "Lopen zonder hulpmiddel, traplopen en zelfstandige mobiliteit versneld opbouwen ten opzichte van het standaardtraject.",
+    "weeks": "Week 1-3",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Knielen op het geopereerde been",
+     "Sporten met impact"
+    ],
+    "criteria": [
+     "Lopen zonder hulpmiddel binnenshuis binnen 1 week",
+     "Knieflexie minimaal 100° binnen 2 weken",
+     "Traplopen zonder leuning vanaf week 3"
+    ]
+   },
+   {
+    "name": "Fase 3: Terugkeer naar activiteit en onderhoud",
+    "goal": "Volledige functionele zelfstandigheid bereiken en terugkeren naar werk en lichte hobby's, met een onderhoudsprogramma.",
+    "weeks": "Week 3-8",
+    "forbidden": [
+     "Hardlopen",
+     "Springen",
+     "Sporten met impact"
+    ],
+    "criteria": [
+     "Wandelen 30 minuten pijnvrij zonder hulpmiddel",
+     "Volledige zelfstandigheid in dagelijkse activiteiten",
+     "Geen zwelling na een actieve dag",
+     "Oxford Knee Score: significante verbetering t.o.v. voor de operatie",
+     "Timed Up and Go (TUG)-test: minder dan 12 seconden"
+    ]
+   }
+  ]
+ }
+]

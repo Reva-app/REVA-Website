@@ -5,6 +5,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { features } from "@/lib/features";
 import { PRICING } from "@/lib/pricing";
+import { AnalyticsClicks } from "@/components/AnalyticsClicks";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "./globals.css";
 
@@ -245,6 +246,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <CookieConsentProvider>
           <GoogleTagManager />
+          <AnalyticsClicks />
           {children}
           <CookieBanner />
           <NewsletterPopup />

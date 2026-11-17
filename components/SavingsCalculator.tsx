@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import { track } from "@/lib/analytics";
 import Link from "next/link";
 import { ArrowRight, Wallet, Euro, CalendarPlus, TrendingUp, Minus, Plus, Calculator, RotateCcw } from "lucide-react";
 import { computeSavings, euroRound, nl1, savingsDefaults, savingsLimits, TREATMENT_MINUTES, WORK_WEEKS } from "@/lib/savings";
@@ -69,6 +70,14 @@ export function SavingsCalculator({ headingLevel = "h3" }: { headingLevel?: "h2"
     const input = validate();
     if (!input) return;
     setCalculated(input);
+    const res = computeSavings({ ...savingsDefaults, ...input });
+    track("savings_calculated", {
+      behandelaars: input.seats,
+      werkdagen: input.daysPerWeek,
+      uren_per_week: Math.round(res.hoursSavedPerWeek * 10) / 10,
+      value: Math.round(res.valuePerYear),
+      currency: "EUR",
+    });
     // Na het berekenen de uitkomst in beeld en voorlezen
     requestAnimationFrame(() => {
       resultRef.current?.focus({ preventScroll: true });

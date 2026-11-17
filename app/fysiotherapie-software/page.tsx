@@ -129,7 +129,7 @@ const faq = [
   },
   {
     q: "Is REVA geschikt voor gezondheidsgegevens onder de AVG?",
-    a: "Ja. Gegevens staan versleuteld op servers binnen de EU en zijn afgeschermd per praktijk. Je praktijk blijft verwerkingsverantwoordelijke en REVA werkt op basis van een verwerkersovereenkomst. Tweestapsverificatie is verplicht voor iedereen, ook voor patiënten, en elke inzage wordt gelogd volgens NEN 7513.",
+    a: "Ja. Gegevens staan versleuteld op servers binnen de EU en zijn afgeschermd per praktijk. Je praktijk blijft verwerkingsverantwoordelijke en REVA werkt op basis van een verwerkersovereenkomst. Tweestapsverificatie is verplicht voor iedereen, ook voor patiënten, en elke inzage in een dossier wordt vastgelegd in een activiteitenlog.",
   },
   {
     q: "Werkt REVA op de telefoon van mijn patiënten?",
@@ -476,9 +476,9 @@ export default function FysiotherapieSoftwarePage() {
                   <h2 className="text-lg font-semibold mb-1.5" style={{ color: "#1a1a1a" }}>Gebouwd voor gezondheidsgegevens</h2>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
                     Versleutelde opslag op servers binnen de EU, gegevens afgeschermd per praktijk, een verwerkersovereenkomst onder de AVG,
-                    verplichte tweestapsverificatie voor iedereen en een activiteitenlog volgens NEN 7513. Je praktijk blijft eigenaar van de gegevens.{" "}
-                    <Link href="/blog/avg-patientdata-fysiopraktijk" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
-                      Lees meer over de AVG in je praktijk
+                    verplichte tweestapsverificatie voor iedereen en een activiteitenlog van elke inzage in een dossier. Je praktijk blijft eigenaar van de gegevens.{" "}
+                    <Link href="/veiligheid" className="font-medium hover-orange" style={{ color: "#e8632a" }}>
+                      Zo beschermt REVA de gegevens van je patiënten
                     </Link>
                     .
                   </p>

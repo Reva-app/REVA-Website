@@ -3,6 +3,7 @@ import { blogPosts } from "@/lib/blog-posts";
 import { practices } from "@/lib/practices";
 import { pageDates } from "@/lib/page-dates";
 import { provinces } from "@/lib/provinces";
+import { injuryPages } from "@/lib/herstelplannen";
 
 const BASE = "https://www.reva-app.nl";
 const abs = (path: string) => `${BASE}${path}`;
@@ -16,6 +17,8 @@ const pages: { path: string; images?: string[] }[] = [
   { path: "/functies/voor-patienten", images: ["/check-in-mobile.png"] },
   { path: "/fysiotherapie-software", images: ["/image-reva-app.png"] },
   { path: "/besparing-berekenen" },
+  { path: "/herstelplannen" },
+  { path: "/veiligheid" },
   { path: "/alternatief-voor-whatsapp" },
   { path: "/oefenprogramma-app" },
   { path: "/pilot" },
@@ -63,5 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: pageDates[`/fysiotherapie-software/${p.slug}`],
   }));
 
-  return [...staticEntries, ...provinceEntries, ...practiceEntries, ...blogEntries];
+  // Herstelplannen per blessure
+  const injuryEntries: MetadataRoute.Sitemap = injuryPages.map((p) => ({
+    url: abs(`/herstelplannen/${p.slug}`),
+    lastModified: pageDates[`/herstelplannen/${p.slug}`],
+  }));
+
+  return [...staticEntries, ...injuryEntries, ...provinceEntries, ...practiceEntries, ...blogEntries];
 }
