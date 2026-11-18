@@ -63,7 +63,7 @@ const productJsonLd = {
   description: `Recovery Management Platform voor fysiotherapiepraktijken: het platform voor herstelbegeleiding tussen de behandelingen door. ${priceSentence}`,
   url: "https://www.reva-app.nl/prijzen",
   // Meerdere verhoudingen (16:9 en 1:1), zoals Google aanbeveelt
-  image: ["https://www.reva-app.nl/image-reva-app.png", "https://www.reva-app.nl/logo.png"],
+  image: ["https://www.reva-app.nl/beeld/fysiotherapeut-praktijkoverzicht-reva.webp", "https://www.reva-app.nl/logo.png"],
   brand: {
     "@type": "Brand",
     name: "REVA",

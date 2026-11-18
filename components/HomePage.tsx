@@ -136,7 +136,8 @@ const functiesSliderItems = [
     anchor: "analyse",
     stat: "Elke maandag in je mail",
     description: "Zie als praktijkeigenaar de uitkomst bij afsluiting, de behandelduur per blessure, therapietrouw en tevredenheid, met de vergelijking met de vorige periode.",
-    image: "/praktijk-eigenaar.png",
+    image: "/beeld/praktijkeigenaar-bekijkt-praktijkanalyse.webp",
+    alt: "Praktijkeigenaar bekijkt de praktijkanalyse van REVA op een computer in de praktijk",
     imagePosition: "center",
   },
   {
@@ -144,7 +145,8 @@ const functiesSliderItems = [
     anchor: "doelen",
     stat: "Voortgang zichtbaar",
     description: "Leg doelen en mijlpalen vast, zodat patiënten letterlijk zien hoe ver ze al gekomen zijn in hun herstel.",
-    image: "/5.png",
+    image: "/beeld/krukken-herstel-na-knieoperatie.webp",
+    alt: "Krukken tegen de muur van een fysiotherapiepraktijk, tijdens het herstel na een knieoperatie",
     imagePosition: "center",
   },
   {
@@ -152,7 +154,8 @@ const functiesSliderItems = [
     anchor: "signalering",
     stat: "30 seconden per patiënt",
     description: "Zie vlak voor het consult hoe het gaat: laatste check-in, pijnscore en medicatie. Zo start je goed voorbereid het gesprek.",
-    image: "/2.png",
+    image: "/beeld/fysiotherapeut-bereidt-consult-voor-in-dossier.webp",
+    alt: "Fysiotherapeut bekijkt voor het consult het patiëntdossier in REVA met check-ins en medicatie",
     imagePosition: "center",
   },
   {
@@ -160,7 +163,8 @@ const functiesSliderItems = [
     anchor: "check-in",
     stat: "Check-ins en foto's automatisch binnen",
     description: "Volg de dagelijkse check-ins, pijnscores en foto-updates van je patiënten, zonder zelf te hoeven bellen of appen.",
-    image: "/3.png",
+    image: "/beeld/dagelijkse-check-in-in-patientenapp.webp",
+    alt: "Dagelijkse check-in met dagscore en pijnscore in de REVA-app op een telefoon",
     imagePosition: "center",
   },
   {
@@ -168,7 +172,8 @@ const functiesSliderItems = [
     anchor: "herstelplannen",
     stat: "Fases met criteria",
     description: "Bouw herstelplannen in fases die aansluiten bij de werkwijze van je praktijk, of start vanuit de REVA-bibliotheek.",
-    image: "/8.png",
+    image: "/beeld/herstelplannen-bibliotheek-praktijkportaal.webp",
+    alt: "Bibliotheek met herstelplannen in het REVA-praktijkportaal op een computerscherm",
     imagePosition: "center",
   },
   {
@@ -176,7 +181,8 @@ const functiesSliderItems = [
     anchor: "herstelplannen",
     stat: "Volledig op maat",
     description: "Geen twee patiënten herstellen hetzelfde. Stel voor iedere patiënt een persoonlijk plan samen dat meebeweegt met zijn traject.",
-    image: "/6.png",
+    image: "/beeld/patient-revalideert-in-oefenzaal.webp",
+    alt: "Patiënt loopt tussen de loopbrug in de oefenzaal van een fysiotherapiepraktijk",
     imagePosition: "center",
   },
   {
@@ -184,7 +190,8 @@ const functiesSliderItems = [
     anchor: "oefeningen",
     stat: "Direct bijsturen",
     description: "Pas oefeningen aan, voeg ze toe of haal ze weg terwijl de patiënt nog op de behandelbank ligt.",
-    image: "/4.png",
+    image: "/beeld/oefeningen-aanpassen-tijdens-consult.webp",
+    alt: "Fysiotherapeut past met de telefoon de oefeningen aan terwijl de patiënt op de beenpers traint",
     imagePosition: "center",
   },
   {
@@ -193,6 +200,7 @@ const functiesSliderItems = [
     stat: "36 tests, met LSI",
     description: "Leg objectieve metingen vast, zoals kracht of een hop test, en zie de resultaten en de vergelijking tussen links en rechts in de tijd.",
     image: "/beeld/behandelruimte.webp",
+    alt: "Lichte behandelruimte van een fysiotherapiepraktijk met behandelbank en wandrek",
     imagePosition: "center",
   },
 ];
@@ -232,7 +240,7 @@ function FunctiesSliderSection() {
                 >
                   <Image
                     src={f.image}
-                    alt={f.title}
+                    alt={f.alt}
                     fill
                     className="object-cover"
                     style={{ objectPosition: f.imagePosition }}
@@ -389,7 +397,7 @@ function ProductSection() {
         <AnimateIn direction="up">
           <div className="relative rounded-2xl overflow-hidden border" style={{ aspectRatio: "16 / 10", borderColor: "#e8e5df" }}>
             <Image
-              src="/image-reva-app.png"
+              src="/beeld/fysiotherapeut-praktijkoverzicht-reva.webp"
               alt="Fysiotherapeut bekijkt het patiëntoverzicht van REVA op een computer in de praktijk"
               fill
               className="object-cover img-reveal"

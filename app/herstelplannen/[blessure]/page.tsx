@@ -211,6 +211,8 @@ export default async function BlessurePage({ params }: Props) {
               </ul>
               <p className="mt-5 text-sm">
                 <Link href="/functies#testen" className="font-medium hover-orange" style={{ color: "#e8632a" }}>Meer over testen en metingen</Link>
+                <span className="mx-2" style={{ color: "#c4c0b8" }}>·</span>
+                <Link href="/blog/proms-fysiotherapie-uitkomsten-meten" className="font-medium hover-orange" style={{ color: "#e8632a" }}>Zo meet je uitkomsten met PROMs</Link>
               </p>
             </AnimateIn>
             <AnimateIn direction="up" delay={100}>

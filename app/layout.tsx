@@ -133,8 +133,8 @@ const jsonLd = {
       // Google Bedrijfsprofiel (Knowledge Graph-ID), zodat Google profiel en site aan elkaar koppelt
       sameAs: ["https://www.google.com/search?kgmid=/g/11ntn9c9nl"],
       description:
-        "REVA is een patiëntenportaal voor fysiotherapiepraktijken. Patiënten houden zelf hun herstel bij, praktijken krijgen overzicht en signalering van wie aandacht nodig heeft.",
-      slogan: "Overzicht over je patiënten, zonder extra telefoontjes",
+        "REVA is software voor fysiopraktijken: een Recovery Management Platform en patiëntenportaal voor herstelbegeleiding tussen de behandelingen door, naast het EPD. Patiënten houden zelf hun herstel bij, de fysiotherapeut ziet wie aandacht nodig heeft.",
+      slogan: "Grip op het herstel van je patiënten, naast je EPD",
       founder: {
         "@type": "Person",
         "@id": "https://www.reva-app.nl/#person-stef-robberts",

@@ -11,11 +11,11 @@ const abs = (path: string) => `${BASE}${path}`;
 // Pagina's in volgorde van belang. Afbeeldingen komen in de sitemap terecht als
 // image:image-regels, zodat ze in Google Afbeeldingen gevonden kunnen worden.
 const pages: { path: string; images?: string[] }[] = [
-  { path: "/", images: ["/headline-reva-app.webp", "/image-reva-app.png"] },
-  { path: "/functies", images: ["/image-reva-app.png"] },
+  { path: "/", images: ["/headline-reva-app.webp", "/beeld/fysiotherapeut-praktijkoverzicht-reva.webp", "/beeld/dagelijkse-check-in-in-patientenapp.webp", "/beeld/herstelplannen-bibliotheek-praktijkportaal.webp"] },
+  { path: "/functies" },
   { path: "/functies/voor-fysios" },
-  { path: "/functies/voor-patienten", images: ["/check-in-mobile.png"] },
-  { path: "/fysiotherapie-software", images: ["/image-reva-app.png"] },
+  { path: "/functies/voor-patienten" },
+  { path: "/fysiotherapie-software", images: ["/beeld/fysiotherapeut-praktijkoverzicht-reva.webp"] },
   { path: "/besparing-berekenen" },
   { path: "/herstelplannen" },
   { path: "/veiligheid" },

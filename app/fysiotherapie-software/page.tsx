@@ -233,7 +233,7 @@ export default function FysiotherapieSoftwarePage() {
               </ul>
             </AnimateIn>
             <div className="lg:pl-12 lg:pb-14">
-              <PhotoWithDemo src="/image-reva-app.png" alt="Fysiotherapeut bekijkt het patiëntoverzicht van REVA in de praktijk" demo="signalering" priority />
+              <PhotoWithDemo src="/beeld/fysiotherapeut-praktijkoverzicht-reva.webp" alt="Fysiotherapeut bekijkt het patiëntoverzicht van REVA in de praktijk" demo="signalering" priority />
             </div>
           </div>
         </section>

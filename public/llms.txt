@@ -97,6 +97,7 @@ Zo helpt een agent de gebruiker verder:
 
 ## Blogartikelen
 
+- [PROMs in de fysiotherapie](https://www.reva-app.nl/blog/proms-fysiotherapie-uitkomsten-meten): Wat PROMs zijn, welke vragenlijst bij welke klacht past (KOOS, HOOS, IKDC, Oswestry, NDI, QuickDASH, SPADI, CAIT, PSK), wanneer je meet en hoe je uitkomsten meet met REVA.
 - [EPD of Recovery Management Platform](https://www.reva-app.nl/blog/verschil-epd-en-recovery-management-platform): Het verschil tussen een EPD en een Recovery Management Platform, wat je waar vastlegt zonder dubbele invoer, en waarom REVA bewust geen EPD is.
 
 - [Software voor fysiopraktijken](https://www.reva-app.nl/blog/software-voor-fysiopraktijken): De vijf soorten software in een fysiopraktijk (EPD, agenda, declareren, oefenprogramma's en patiëntenportaal), waar je op let bij het kiezen, wat het kost en waar REVA in past.

@@ -1432,6 +1432,136 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "proms-fysiotherapie-uitkomsten-meten",
+    title: "PROMs in de fysiotherapie: zo meet je resultaat",
+    metaDescription: "Wat zijn PROMs, welke vragenlijst past bij welke klacht en hoe meet je als fysiopraktijk structureel uitkomsten zonder extra administratie?",
+    excerpt: "PROMs laten zien wat je behandeling oplevert, volgens de patiënt zelf. Welke vragenlijst past bij welke klacht, wanneer meet je, en hoe houd je het vol?",
+    category: "Praktijkvoering",
+    publishedAt: "2026-11-18",
+    readTime: "8 min",
+    keywords: [
+      "PROMs fysiotherapie",
+      "uitkomstmetingen fysiotherapie",
+      "patient reported outcome measures",
+      "behandeluitkomsten meten fysiopraktijk",
+      "KOOS HOOS Oswestry vragenlijst",
+    ],
+    summary: [
+      "PROMs (patient reported outcome measures) zijn gevalideerde vragenlijsten waarmee de patiënt zelf aangeeft hoe het gaat met zijn klachten en functioneren, zoals de KOOS bij knieklachten of de Oswestry Disability Index bij rugklachten.",
+      "Voor een fysiopraktijk laten PROMs zien wat de behandeling oplevert. Dat helpt bij samen beslissen met de patiënt, bij gesprekken met verwijzers en zorgverzekeraars, en om als team te leren.",
+      "Het werkt het best met één passende vragenlijst per klacht, gemeten op vaste momenten: bij de start, tussentijds en bij afsluiting.",
+      "In REVA leg je PROMs en andere testen vast per patiënt, zie je de resultaten in de tijd en zie je als praktijk de uitkomst bij afsluiting, de behandelduur en de tevredenheid van patiënten.",
+    ],
+    intro: [
+      "Als fysiotherapeut zie je dat een patiënt vooruitgaat. Maar hoe laat je dat zien, aan de patiënt, aan een verwijzer of aan een zorgverzekeraar? En hoe weet je als praktijk of je behandelingen gemiddeld net zo goed werken als je denkt?",
+      "Daar zijn PROMs voor: korte, gevalideerde vragenlijsten waarin de patiënt zelf aangeeft hoe het gaat. In dit artikel lees je wat PROMs zijn, welke vragenlijst bij welke klacht past, wanneer je meet en hoe je uitkomsten meten volhoudt zonder er een administratieve klus van te maken.",
+    ],
+    sections: [
+      {
+        heading: "Wat zijn PROMs?",
+        paragraphs: [
+          "PROM staat voor patient reported outcome measure: een gestandaardiseerde vragenlijst waarmee de patiënt zelf zijn klachten, functioneren of kwaliteit van leven beoordeelt. Het verschil met een lichamelijke test is wie de meting doet. Bij een hoptest of een krachtmeting meet jij; bij een PROM vertelt de patiënt het zelf.",
+          "Naast PROMs bestaan PREMs (patient reported experience measures). Die gaan niet over het resultaat, maar over de ervaring met de zorg, zoals de tevredenheid of de vraag of iemand de praktijk zou aanbevelen. Samen met objectieve testen geven PROMs en PREMs een compleet beeld: hoe functioneert de patiënt, hoe ervaart hij dat zelf, en hoe ervaart hij de zorg.",
+        ],
+      },
+      {
+        heading: "Waarom PROMs belangrijk zijn voor je praktijk",
+        paragraphs: [
+          "Uitkomsten meten is niet alleen iets voor onderzoek. Voor een fysiopraktijk levert het in de dagelijkse praktijk direct iets op.",
+        ],
+        list: [
+          "Samen beslissen: een score die verbetert of stilstaat, maakt het gesprek met de patiënt concreet. Is het tijd voor de volgende fase, of moet het plan anders?",
+          "Motivatie: patiënten zien zwart op wit dat ze vooruitgaan, ook op dagen dat het tegenzit.",
+          "Verantwoording: steeds meer verwijzers, zorgverzekeraars en kwaliteitsregisters vragen naar uitkomsten. Met gegevens in de hand voer je dat gesprek sterker.",
+          "Leren als team: zie je per blessure hoe patiënten herstellen en hoe lang dat duurt, dan zie je ook waar je je zorg kunt verbeteren.",
+          "Onderscheid: een praktijk die kan laten zien wat haar behandelingen opleveren, valt op bij patiënten en verwijzers.",
+        ],
+      },
+      {
+        heading: "Welke PROM past bij welke klacht?",
+        paragraphs: [
+          "De belangrijkste regel: kies per klacht één gevalideerde vragenlijst en gebruik die consequent. Zo kun je metingen van verschillende patiënten en momenten met elkaar vergelijken. Dit zijn veelgebruikte PROMs in de fysiotherapie.",
+        ],
+        table: {
+          caption: "Veelgebruikte PROMs in de fysiotherapie per klacht",
+          headers: ["Klacht of situatie", "Vragenlijst", "Wat het meet"],
+          rows: [
+            ["Knieklachten, knieprothese, meniscus", "KOOS (Knee injury and Osteoarthritis Outcome Score)", "Pijn, symptomen, dagelijkse activiteiten, sport en kwaliteit van leven"],
+            ["Voorste kruisband en knie bij sporters", "IKDC Subjective Knee Form, Lysholm", "Klachten en functioneren van de knie, ook bij sport"],
+            ["Terugkeer naar sport na een kruisbandoperatie", "ACL-RSI", "Mentale bereidheid om terug te keren naar sport"],
+            ["Heupklachten en heupprothese", "HOOS (Hip disability and Osteoarthritis Outcome Score)", "Pijn, symptomen, dagelijkse activiteiten en kwaliteit van leven"],
+            ["Lage rugklachten", "Oswestry Disability Index (ODI)", "Beperkingen in het dagelijks leven door rugklachten"],
+            ["Nekklachten", "Neck Disability Index (NDI)", "Beperkingen in het dagelijks leven door nekklachten"],
+            ["Schouder, arm en hand", "QuickDASH, SPADI", "Beperkingen en pijn bij schouder- en armklachten"],
+            ["Enkelinstabiliteit", "CAIT (Cumberland Ankle Instability Tool)", "Ervaren instabiliteit van de enkel"],
+            ["Algemeen, elke klacht", "PSK (Patiënt Specifieke Klachten), pijnscore 0 tot 10", "Moeite met de activiteiten die de patiënt zelf belangrijk vindt, en de ervaren pijn"],
+          ],
+        },
+      },
+      {
+        heading: "Wanneer meet je?",
+        paragraphs: [
+          "Een PROM vertelt het meeste als je hem op vaste momenten afneemt. Een praktische indeling:",
+        ],
+        list: [
+          "Bij de start: de nulmeting, zodat je weet waar de patiënt begint.",
+          "Tussentijds: bijvoorbeeld bij elke overgang naar een volgende fase van het herstelplan, zodat je ziet of de patiënt klaar is voor de volgende stap.",
+          "Bij afsluiting: de eindmeting, die laat zien wat de behandeling heeft opgeleverd.",
+        ],
+      },
+      {
+        heading: "Waarom uitkomsten meten vaak blijft liggen",
+        paragraphs: [
+          "Bijna elke fysiotherapeut weet dat meten waardevol is. Toch gebeurt het in veel praktijken niet structureel. De redenen zijn bekend: het kost tijd tijdens een volle behandeldag, de vragenlijst ligt op papier of in een losse map, de tussenmeting wordt vergeten, en de scores staan verspreid over dossiers. Daardoor kan de praktijk er achteraf ook weinig mee.",
+          "Het probleem is zelden de vragenlijst zelf, maar de werkwijze eromheen. Met een paar vaste afspraken en de juiste plek om scores vast te leggen, wordt meten een gewoonte in plaats van een extra klus.",
+        ],
+      },
+      {
+        heading: "Zo maak je uitkomsten meten makkelijk",
+        paragraphs: ["Vijf afspraken die in de praktijk goed werken:"],
+        list: [
+          "Kies per klacht één vragenlijst en spreek die als team af.",
+          "Koppel de metingen aan vaste momenten in het herstelplan: start, fase-overgang en afsluiting.",
+          "Leg scores vast op één plek per patiënt, zodat je het verloop in één oogopslag ziet.",
+          "Bespreek de uitkomst met de patiënt. Een score die je laat zien, motiveert meer dan een score die in een map verdwijnt.",
+          "Kijk als praktijk elk kwartaal naar de uitkomsten per blessure en bespreek die in het teamoverleg.",
+        ],
+      },
+      {
+        heading: "Uitkomsten meten met REVA",
+        paragraphs: [
+          "REVA is software voor fysiopraktijken die naast je EPD werkt, zonder koppeling en zonder dubbele invoer. Je verslaglegging, de PSK en je declaraties blijven in je EPD. In REVA leg je vast wat over het herstel gaat, en daar horen uitkomstmetingen bij.",
+          "In de testbibliotheek van REVA staan 36 tests, waaronder tien vragenlijsten: KOOS, HOOS, IKDC, Lysholm, ACL-RSI, de Oswestry Disability Index, de Neck Disability Index, QuickDASH, SPADI en CAIT. Daarnaast staan er objectieve testen in, zoals de single leg hop test, krachtmetingen met een dynamometer en de Timed Up and Go. Je legt de score per patiënt vast, ziet de resultaten in de tijd en, bij testen voor links en rechts, de LSI. Een test koppel je optioneel aan een fase van het [herstelplan](/herstelplannen), en de patiënt ziet zijn testresultaten terug in de app.",
+          "Tussen de metingen door doet de patiënt thuis een dagelijkse check-in van ongeveer 30 seconden, met onder andere een pijnscore van 0 tot 10, zwelling en mobiliteit. Zo zie je niet alleen de meetmomenten, maar ook het verloop daartussen.",
+          "Als praktijkeigenaar zie je in [analyse en rapporten](/functies#analyse) de uitkomst bij afsluiting, de behandelduur per blessure, de tijd per fase, therapietrouw en testresultaten. Na afsluiting geeft de patiënt een tevredenheidsscore, die je terugziet als gemiddelde en als NPS. Alle gegevens exporteer je als CSV. Bekijk alle [functies van REVA](/functies) of lees hoe REVA past naast je EPD op de pagina [software voor fysiopraktijken](/).",
+          `${priceSentence} Je probeert REVA ${TRIAL_DAYS} dagen gratis, en in een [demo](/demo-aanvragen) laten we zien hoe uitkomsten meten er in jouw praktijk uitziet.`,
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Wat zijn PROMs in de fysiotherapie?",
+        answer: "PROMs (patient reported outcome measures) zijn gevalideerde vragenlijsten waarmee de patiënt zelf aangeeft hoe het gaat met zijn klachten en functioneren. Voorbeelden zijn de KOOS bij knieklachten, de HOOS bij heupklachten en de Oswestry Disability Index bij lage rugklachten.",
+      },
+      {
+        question: "Wat is het verschil tussen een PROM en een PREM?",
+        answer: "Een PROM meet de uitkomst van de zorg volgens de patiënt, zoals pijn of beperkingen. Een PREM meet de ervaring met de zorg, zoals de tevredenheid of de vraag of iemand de praktijk zou aanbevelen.",
+      },
+      {
+        question: "Hoe vaak moet je een PROM afnemen?",
+        answer: "Op vaste momenten: bij de start van de behandeling, tussentijds (bijvoorbeeld bij een overgang naar een volgende fase van het herstelplan) en bij afsluiting. Zo zie je het verloop en het eindresultaat.",
+      },
+      {
+        question: "Welke PROM gebruik je bij knieklachten?",
+        answer: "Veelgebruikt zijn de KOOS bij knieklachten in het algemeen en na een knieprothese, de IKDC en Lysholm bij sporters en na een kruisbandletsel, en de ACL-RSI voor de mentale bereidheid om terug te keren naar sport.",
+      },
+      {
+        question: "Kan ik PROMs bijhouden in REVA?",
+        answer: "Ja. In de testbibliotheek van REVA staan tien vragenlijsten, waaronder KOOS, HOOS, IKDC, Oswestry, QuickDASH en SPADI. Je legt de score per patiënt vast, ziet het verloop in de tijd en koppelt een meting optioneel aan een fase van het herstelplan. REVA werkt naast je EPD.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
