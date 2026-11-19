@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://www.reva-app.nl/blog/${post.slug}`;
 
   return {
-    title: { absolute: post.title },
+    title: { absolute: post.seoTitle ?? post.title },
     description: post.metaDescription,
     keywords: post.keywords,
     openGraph: {
-      title: post.title,
+      title: post.seoTitle ?? post.title,
       description: post.metaDescription,
       locale: "nl_NL",
       type: "article",

@@ -16,6 +16,8 @@ export interface BlogFaq {
 export interface BlogPost {
   slug: string;
   title: string;
+  // Optionele titel voor Google (title-tag); de H1 op de pagina blijft `title`
+  seoTitle?: string;
   metaDescription: string;
   excerpt: string;
   category: string;
@@ -722,7 +724,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "software-voor-fysiopraktijken",
     title: "Software voor fysiopraktijken: welke systemen heb je echt nodig?",
-    metaDescription: "Welke software heeft je fysiopraktijk nodig? EPD, agenda, declareren, oefenprogramma's en patiëntenportaal op een rij, met een checklist om goed te kiezen.",
+    seoTitle: "Software voor fysiopraktijken: wat heb je nodig? Checklist 2026",
+    metaDescription: "EPD, agenda, declareren, oefenprogramma's of patiëntenportaal: welke software heeft je fysiopraktijk echt nodig? Overzicht per type plus keuzechecklist.",
     excerpt: "EPD, agenda, declareren, oefenprogramma's en een patiëntenportaal: welke software heeft een fysiopraktijk nodig, en waar let je op bij het kiezen?",
     category: "Digitalisering",
     publishedAt: "2026-11-05",
@@ -1074,7 +1077,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "eigen-fysiotherapiepraktijk-starten",
     title: "Eigen fysiotherapiepraktijk starten: stappen, eisen en kosten",
-    metaDescription: "Een eigen fysiotherapiepraktijk starten? De stappen op een rij: BIG en AGB, kwaliteitsregister, zorgverzekeraars, wettelijke eisen, kosten en financiering.",
+    seoTitle: "Eigen fysiotherapiepraktijk starten: stappenplan, eisen en kosten",
+    metaDescription: "Zelf een fysiotherapiepraktijk beginnen? Stappenplan van BIG en AGB tot contracten met zorgverzekeraars, plus wettelijke eisen, startkosten en financiering.",
     excerpt: "Van ondernemingsplan tot eerste patiënt: welke registraties je nodig hebt, aan welke wetten je praktijk moet voldoen, wat het kost en hoe je contracten met zorgverzekeraars regelt.",
     category: "Praktijkvoering",
     publishedAt: "2026-11-08",
